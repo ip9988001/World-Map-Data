@@ -1,0 +1,85 @@
+name: count-sources
+
+# 全量源计数扫描：只取每个源的「记录数」，不拉数据。
+# 用途：产出覆盖率地图（哪个州有多少真实门牌点、服务端上限是多少）。
+on:
+  workflow_dispatch:
+    inputs:
+      priorities:
+        description: "要扫描的优先级（逗号分隔，留空=全部）"
+        required: false
+        default: ""
+      limit:
+        description: "最多扫描多少个源（0=全部）"
+        required: false
+        default: "0"
+      min_interval:
+        description: "每主机最小请求间隔（秒）——采集铁律，不要调小"
+        required: false
+        default: "0.8"
+      concurrency:
+        description: "并发上限（保持克制）"
+        required: false
+        default: "3"
+
+permissions:
+  contents: read
+
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 计数扫描
+        run: |
+          LIMIT="${{ github.event.inputs.limit }}"
+          if [ "$LIMIT" = "0" ] || [ -z "$LIMIT" ]; then LIMITARG=""; else LIMITARG="--limit $LIMIT"; fi
+          python -m collectors.count_all \
+            --priorities "${{ github.event.inputs.priorities }}" \
+            $LIMITARG \
+            --min-interval ${{ github.event.inputs.min_interval }} \
+            --concurrency ${{ github.event.inputs.concurrency }} \
+            --out out/counts.csv \
+            --log out/count_log.jsonl
+
+      - name: 覆盖率汇总
+        if: always()
+        run: |
+          python - <<'PY'
+          import csv, collections, os, json
+          p = "out/counts.csv"
+          if not os.path.exists(p):
+              print("没有产出 counts.csv"); raise SystemExit(0)
+          rows = list(csv.DictReader(open(p, encoding="utf-8-sig")))
+          ok = [r for r in rows if r["status"] == "OK"]
+          num = [r for r in ok if str(r["count"]).isdigit()]
+          print(f"扫描 {len(rows)} 个源 | 可用 {len(ok)} ({len(ok)/len(rows)*100:.1f}%)"
+                f" | 有记录数 {len(num)} | 记录总数 {sum(int(r['count']) for r in num):,}")
+          by_state = collections.Counter()
+          for r in num:
+              by_state[r["state"]] += int(r["count"])
+          print("\n各州真实门牌点总量（Top 25）:")
+          for s, n in by_state.most_common(25):
+              print(f"  {s:4s} {n:>12,}")
+          print(f"\n覆盖州数: {len(by_state)}")
+          empty = [r["state"] for r in rows if r["status"] == "OK"
+                   and r["state"] not in by_state]
+          print("有源但无计数（文件型/异常）:", sorted(set(empty))[:20])
+          PY
+
+      - name: 上传
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: count-output
+          path: |
+            out/counts.csv
+            out/counts_summary.json
+            out/count_log.jsonl
+          retention-days: 30
+          if-no-files-found: warn

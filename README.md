@@ -78,11 +78,57 @@ Per-source licence and attribution live in the [`license`](data/源总表.csv) c
 ## Repository layout
 
 ```
-docs/      Survey and design documents
-data/      Normalised source tables (CSV)
-scripts/   Parsing, reporting and probing utilities
-raw/       Scratch downloads (git-ignored, never committed)
+docs/        Survey and design documents
+data/        Normalised source tables (CSV)
+collectors/  Collection adapters (ArcGIS / file download) + normalisation + merge
+scripts/     Parsing, reporting and probing utilities
+.github/     Collection workflows
+raw/         Scratch downloads (git-ignored, never committed)
 ```
+
+---
+
+## How this repository is used
+
+**This repository is the pipeline and the provenance record — not the data warehouse.**
+
+| Where | What lives there |
+|---|---|
+| **This repository** | collection adapters, source definitions, normalisation rules, source tables, manifests |
+| **A dedicated data server (self-hosted)** | the cleaned, merged address datasets, published and served from object storage |
+
+In short: **this repo produces the data; our own data server serves it.**
+
+Downstream applications never read the dataset from here. They read it from the data server through a single configurable base URL, so the storage backend can change without touching application code.
+
+### Why datasets are not committed here
+
+Large address datasets are **intentionally never committed to this repository**:
+
+- git keeps every version of every file forever, so dataset updates would grow the
+  repository without bound;
+- cloning, CI checkout and backup all degrade as history grows;
+- publishing volumes of data from a source-code host is not what it is designed for.
+
+So the split is deliberate:
+
+```
+collect  →  normalise  →  merge  →  publish to data server  →  applications fetch by URL
+   ↑                                                                    ↑
+ this repository                                            DATA_BASE_URL (configurable)
+```
+
+The only data artefacts kept here are small, human-reviewable tables: the source inventory,
+per-source availability results, and the manifests that describe what was published elsewhere.
+
+### Operating the pipeline
+
+1. Keep the source inventory (`data/源总表.csv`) up to date — it is the single source of truth
+   for what is collected, from where, and under which licence.
+2. Run a collection job (see the workflows) — it respects each source's published limits.
+3. Review the normalised output and the merge report.
+4. Publish the merged dataset to the data server and record a manifest entry here.
+5. Point applications at the data server; never at this repository.
 
 ---
 
