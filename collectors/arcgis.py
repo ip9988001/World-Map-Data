@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 
 from .politeness import Politeness, safe_page_size
 
@@ -53,7 +54,7 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
                 max_records: int | None = None, page_size: int | None = None,
                 out_fields: str = "*", progress=None,
                 offset_start: int = 0, oid_hi: int | None = None,
-                oid_lo: int | None = None) -> dict:
+                oid_lo: int | None = None, max_seconds: int = 0) -> dict:
     """拉取一个图层全部属性 → NDJSON。
 
     ⚠️ 关键实现：使用**键集分页（keyset pagination）**而不是 resultOffset。
@@ -75,8 +76,13 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
     kept, pages, skipped = 0, 0, 0
     last = None
     use_keyset = True
+    stopped_by_budget = False
+    deadline = (time.monotonic() + max_seconds) if max_seconds else None
     with open(out_ndjson, "w", encoding="utf-8") as fh:
         while kept < target:
+            if deadline and time.monotonic() >= deadline:
+                stopped_by_budget = True     # 主动到点停：留给下一个 job 接续
+                break
             want = min(ps, target - kept)
             if last is None:
                 conds = []
@@ -142,4 +148,5 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
 
     return {"url": meta["url"], "layer": meta["name"], "server_total": total,
             "offset_start": offset_start, "fetched": kept, "pages": pages, "page_size": ps,
+            "last_oid": last, "done": not stopped_by_budget,
             "server_max_record_count": meta["maxRecordCount"], "fields": meta["fields"]}

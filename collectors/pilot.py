@@ -58,7 +58,7 @@ def load_sources(ids=None, priorities=None, limit=None):
     return rows[:limit] if limit else rows
 
 
-def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_start=0, oid_hi=None, oid_lo=None):
+def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_start=0, oid_hi=None, oid_lo=None, max_seconds=0):
     os.makedirs(out_dir, exist_ok=True)
     pol = Politeness(min_interval=min_interval, max_concurrency=concurrency, log_path=log_path)
     raw_dir, norm_dir = os.path.join(out_dir, "raw"), os.path.join(out_dir, "normalized")
@@ -78,7 +78,8 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
             if row["channel"] == "ARCGIS":
                 raw_path = os.path.join(raw_dir, safe + ".ndjson")
                 info = fetch_layer(pol, row["url"], raw_path, max_records=max_records,
-                                   offset_start=offset_start, oid_hi=oid_hi, oid_lo=oid_lo)
+                                   offset_start=offset_start, oid_hi=oid_hi, oid_lo=oid_lo,
+                                   max_seconds=max_seconds)
                 st.update(info)
 
                 def _raw_iter(path=raw_path):
@@ -123,6 +124,21 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
             print(f"[{i}/{len(rows)}] {sid:28s} ✗ {st['error'][:100]}", flush=True)
         stats.append(st)
 
+    # 断点：记录每个源抓到哪了，供下一个 job 接续（主动接管，不被动等回收）
+    prog = {}
+    for st in stats:
+        prog[st["source_id"]] = {
+            "source_id": st["source_id"],
+            "last_oid": st.get("last_oid") or 0,
+            "oid_hi": oid_hi,
+            "done": bool(st.get("done")) or ("error" not in st and st.get("fetched", 0) == 0),
+            "fetched": st.get("fetched") or st.get("raw_rows") or 0,
+            "kept": st.get("kept") or 0,
+            "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        }
+    with open(os.path.join(out_dir, "progress.json"), "w", encoding="utf-8") as fh:
+        json.dump(prog, fh, ensure_ascii=False, indent=2)
+
     merged = os.path.join(out_dir, "merged.ndjson")
     report = merge_ndjson(norm_files, merged, os.path.join(out_dir, "merge_report.json"))
     summary = {"sources_tried": len(rows), "sources_ok": sum(1 for s in stats if "error" not in s),
@@ -144,6 +160,7 @@ def main(argv=None):
     ap.add_argument("--max-records", type=int, default=20000)
     ap.add_argument("--oid-hi", type=int, default=None)
     ap.add_argument("--oid-lo", type=int, default=None)
+    ap.add_argument("--max-seconds", type=int, default=0)
     ap.add_argument("--offset-start", type=int, default=0,
                     help="从服务端第 N 条开始取（大源并行分块用）")
     ap.add_argument("--min-interval", type=float, default=0.8)
@@ -158,7 +175,7 @@ def main(argv=None):
         print("没有匹配的源", file=sys.stderr)
         return 2
     print(f"待采集源：{len(rows)} 个")
-    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log, a.offset_start, a.oid_hi, a.oid_lo)
+    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log, a.offset_start, a.oid_hi, a.oid_lo, a.max_seconds)
     print(json.dumps({"sources_ok": s["sources_ok"], "requests": s["requests"],
                       "merge": s["merge"]}, ensure_ascii=False, indent=2))
     return 0
