@@ -1,69 +1,131 @@
-# Word-map-data
+# World-map-data
 
-> **世界地图公开数据库 · 归集整理总仓库**
+**A consolidated, cleaned and traceable open address-data commons for the world.**
 
-本仓库用于**归集、整理、清洗全球公开地址数据**，产出一套可长期维护、可追溯来源、可随时迁移的地址数据资产。
-
-数据最终用途：为自有网站提供**真实存在的地址信息**生成能力（地址 / 身份 / 邮编等测试与开发场景）。
-
----
-
-## 一、采集铁律（最高约束，不可违背）
-
-1. **只收真实存在的门牌点数据。** 没有门牌号的地址一律不做，不生成、不推算、不补全。
-2. **区间数据只取每侧两端。** 形如 `100~198` 的路段区间，只保留该侧最小号与最大号；**中间号一律丢弃**。
-3. **绝不编造。** 宁可数据少，不可数据假。
-4. **反爬安全前提。** 任何采集（爬取或 API）都必须在**不触发对方反爬机制**的前提下执行：
-   - API 官方单次上限 1000 条 → 我们最多取 **900 条**；
-   - 分页/并发/频率一律留余量，宁慢不封；
-   - 失败退避重试，全程记录请求日志。
-5. **来源可追溯。** 每条数据保留其来源标识与授权信息。
+> 世界地图公开数据库 · 归集整理总仓库
+> [中文说明 →](README.zh-CN.md)
 
 ---
 
-## 二、数据源（全部公开免费）
+## Why this exists
 
-| 层 | 来源 | 说明 |
+Address data is essential public infrastructure. Yet across most of the world it is:
+
+- **scattered** across thousands of county, city, provincial and national portals;
+- **inconsistent** in schema, encoding, language and granularity;
+- **expensive** when obtained commercially;
+- **hard to audit** — you rarely know where a record actually came from.
+
+At the same time, developers, QA engineers, researchers and students constantly need *plausible test addresses*. When no trustworthy open test data exists, the path of least resistance is to sample **real people's home addresses** — which leaks personal data and causes real harm to real households.
+
+**This project exists to break that trade-off.**
+
+We gather *publicly available* address data, normalise it, preserve its provenance, and publish it in an open, machine-readable form — so that anyone can build software, tests and research against real-world address structures **without touching a single real household's private information**.
+
+Free, open, attributable, and auditable. That is the point.
+
+---
+
+## What this is
+
+- **A data commons.** Aggregated from public, traceable sources and standardised into a single schema.
+- **A provenance-preserving pipeline.** Every record retains its source and licence.
+- **Real structure, not invention.** Entries come from address records that genuinely exist.
+
+## What this is not
+
+- **Not personal data.** No names, no phone numbers, no identities, no personal attributes.
+- **Not a fraud tool.** Not for impersonation, credit fraud, or evading verification.
+- **Not a commercial validation service.** Use an official postal provider for that.
+
+---
+
+## Two iron rules
+
+### 1. Data integrity — we never fabricate
+
+- Only address records that **actually exist** are admitted.
+- Where a source publishes only **ranges** (e.g. `100–198`), we keep only the **endpoints of each side**. Mid-range numbers are discarded, never synthesised.
+- Addresses without a house number are excluded entirely.
+- **Less data is better than fake data.**
+
+### 2. Ethical collection — we never burden a public service
+
+- Every collector honours the source's published limits. If an API permits 1,000 records per call, we take **900**.
+- Rate limits, concurrency ceilings and exponential back-off are built in. We crawl slowly rather than get blocked or strain a public endpoint.
+- Every request is logged. Every source's licence and required attribution are recorded alongside the data.
+
+---
+
+## Sources
+
+All upstream sources are **publicly and freely accessible**. We do not bypass authentication or paywalls.
+
+| Layer | Source | Note |
 |---|---|---|
-| 聚合层 | **OpenAddresses** | 源定义库公开在 GitHub，全美 1,923 个独立数据源 |
-| 聚合层 | **OpenStreetMap** | Geofabrik 按州 pbf / Overpass API |
-| 检索层 | **ArcGIS Online / Hub** | 县市级要素服务检索入口 |
-| 检索层 | **Socrata** | 城市开放数据检索入口 |
-| 联邦层 | **US Census TIGER/Line** | 覆盖 100%，公有领域 |
-| 州/县/市 | 各地政府开放数据门户 | 逐源适配 |
-| 国际 | JP / FR / AU / NL / UK / KR / TW / HK / SG / NZ 等 | 官方全量地址库 |
+| Aggregator | **OpenAddresses** | Source definitions published on GitHub |
+| Aggregator | **OpenStreetMap** | Geofabrik extracts / Overpass API |
+| Discovery | **ArcGIS Online / Hub** | Entry point to county & city feature services |
+| Discovery | **Socrata** | Entry point to municipal open-data portals |
+| National (US) | **US Census TIGER/Line** | Full coverage, public domain |
+| Sub-national | State / county / city open-data portals | Per-source adapters |
+| International | JP · FR · AU · NL · UK · KR · TW · HK · SG · NZ | Official open address registries |
+
+Per-source licence and attribution live in the [`license`](data/源总表.csv) column of the source table.
 
 ---
 
-## 三、目录结构
+## Repository layout
 
 ```
-docs/     调查与设计文档（数据源清单、统计报告、可用性报告）
-data/     清洗后的源总表（CSV）
-scripts/  采集/解析/统计脚本
-raw/      临时下载（已 gitignore，不入库）
+docs/      Survey and design documents
+data/      Normalised source tables (CSV)
+scripts/   Parsing, reporting and probing utilities
+raw/       Scratch downloads (git-ignored, never committed)
 ```
 
 ---
 
-## 四、当前进度
+## Status
 
-- [x] 数据源摸底（全球 + 全美，全部 HTTP 实测）
-- [x] 全美源总表：**1,923 个独立源 / 1,933 条地址图层**
-- [x] 采集通道分析：**ArcGIS 83.2% / 文件下载 12.9% / CSV 3.9%**
-- [x] 可用性抽样：121 个源 → **可用 73%**，64 个源产出 **3,214 万条**真实门牌号
-- [ ] 写 ArcGIS 适配器 + 文件下载适配器
-- [ ] 一期样跑（州级源）→ 覆盖率与体积实测
-- [ ] 全量采集与去重合并
+- [x] Global source survey (all endpoints HTTP-verified)
+- [x] US source table — **1,923 sources / 1,933 address layers**
+- [x] Collection-channel analysis — **ArcGIS 83.2% · file download 12.9% · CSV 3.9%**
+- [x] Availability sampling — 121 sources → **73% reachable**; 64 sources yielded **32.1 million** real address records
+- [ ] ArcGIS adapter + file-download adapter
+- [ ] First pilot run (state-level sources) → coverage & size report
+- [ ] Full collection, deduplication and merge
 
 ---
 
-## 五、授权说明
+## Licensing & attribution
 
-各数据源授权不同，主要分三类：
+Upstream licences differ. Three families dominate:
 
-- **公有领域**（如 US Census TIGER/Line）：无限制
-- **CC-BY / 需署名**（如 GeoNames、多数地方政府数据）
-- **ODbL**（OpenStreetMap）：署名 + 衍生数据同许可
+- **Public domain** (e.g. US Census TIGER/Line) — unrestricted.
+- **CC-BY / attribution required** (e.g. GeoNames, most municipal datasets).
+- **ODbL** (OpenStreetMap) — attribution **and** share-alike on derivative databases.
 
-逐源授权信息记录在 `data/源总表.csv` 的 `license` 字段中。
+We preserve this information per source. **If you redistribute derived data, you inherit the obligations of the upstream licence.**
+
+---
+
+## Responsible use
+
+This dataset is intended for: software development, automated testing, QA, education, research, geospatial engineering, and privacy-preserving data practice.
+
+**Explicitly prohibited:** identity fraud, credit or benefits fraud, impersonation, circumventing regulatory or platform controls, or any use causing harm to a real person or organisation.
+
+Nothing in this repository constitutes real personal data, and no contributor may introduce any.
+
+---
+
+## Contributing
+
+Issues and pull requests are welcome — especially:
+
+- new public sources (with licence and attribution);
+- corrections where a source has changed or gone offline;
+- adapter code that respects the collection rules above.
+
+*If you find that a source has changed its terms, please open an issue rather than working around it.*
