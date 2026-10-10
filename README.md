@@ -93,7 +93,8 @@ raw/       Scratch downloads (git-ignored, never committed)
 - [x] Collection-channel analysis — **ArcGIS 83.2% · file download 12.9% · CSV 3.9%**
 - [x] Availability sampling — 121 sources → **73% reachable**; 64 sources yielded **32.1 million** real address records
 - [x] **ArcGIS adapter + file-download adapter** (with politeness: server limit × 0.9)
-- [ ] First pilot run (state-level sources) → coverage & size report  ← *in progress*
+- [x] First pilot run — **100% source success on Actions**; 5.57M records in a single state source
+- [ ] Full P0 (state-level) run → 50-state coverage report
 - [ ] Full collection, deduplication and merge
 
 ---
