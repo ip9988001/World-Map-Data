@@ -1,0 +1,3 @@
+source_id,url,count,reason
+us/ms/statewide-east,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/1,1120249,地块面(Parcel Polygon)非门牌点+API报Pagination is not supported无法分页
+us/ms/statewide-west,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/0,874590,同上
