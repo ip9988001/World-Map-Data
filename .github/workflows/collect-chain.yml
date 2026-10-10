@@ -48,6 +48,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -138,6 +139,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -228,6 +230,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -318,6 +321,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -406,6 +410,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1663346)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -496,6 +501,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1663346)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -586,6 +592,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1663346)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -676,6 +683,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1663346)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -764,6 +772,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -854,6 +863,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -944,6 +954,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1034,6 +1045,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1124,6 +1136,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1214,6 +1227,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1304,6 +1318,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1394,6 +1409,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 1)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1482,6 +1498,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1572,6 +1589,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1662,6 +1680,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1752,6 +1771,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1842,6 +1862,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1932,6 +1953,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -2022,6 +2044,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -2112,6 +2135,7 @@ jobs:
                       continue
                   done = done or bool(v.get('done'))
                   lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          lo = max(lo, 2799878)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"

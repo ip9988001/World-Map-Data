@@ -194,6 +194,7 @@ for p in glob.glob('state/progress-__LANE__-*.json'):
             continue
         done = done or bool(v.get('done'))
         lo = max(lo, int(v.get('last_oid') or 0) + 1)
+lo = max(lo, __LO__)   # 本泳道声明下限：防止泳道 B 从 1 重采（白干一半）
 print('lo=' + str(lo))
 print('skip=' + ('1' if (done or lo > __HI__) else '0'))""".splitlines())
 
@@ -214,7 +215,7 @@ def main() -> None:
                        .replace("__K__", str(k))
                        .replace("__IDX__", str(idx))
                        .replace("__HI__", str(hi))
-                       .replace("__POSCODE__", POSCODE.replace("__LANE__", lane).replace("__HI__", str(hi)))
+                       .replace("__POSCODE__", POSCODE.replace("__LANE__", lane).replace("__HI__", str(hi)).replace("__LO__", str(lo)))
                        .replace("__INTERVAL__", str(INTERVAL))
                        .replace("__CONC__", str(CONC)))
             prev = name
