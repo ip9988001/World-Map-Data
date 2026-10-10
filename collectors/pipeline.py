@@ -133,6 +133,14 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
                   f"下一个源 {sid} 交给下一段", flush=True)
             break
         row = table[item["i"]]
+        # 磁盘护栏（运维事实，不是安全劝阻）：原始档只增不删，快满时必须停手并报告
+        import shutil as _shutil
+        free_gb = _shutil.disk_usage(".").free / 1024 ** 3
+        if free_gb < 2.0:
+            print(f"[磁盘护栏] 剩余 {free_gb:.1f}GB < 2GB，停止开新源（已完成的都已落盘）",
+                  flush=True)
+            stats["stopped_by_disk"] = True
+            break
         if not payload_files(archive_dir(archive, sid)):
             stats["downloaded"] += 1
         try:
@@ -178,3 +186,62 @@ def report(state: dict, top: int = 10) -> str:
         for v in gaps[:top]:
             lines.append(f"  · {v['source_id']}: {v.get('reason', '')[:90]}")
     return "\n".join(lines)
+
+
+def main(argv=None) -> None:
+    """批式跑一组源：python -m collectors.pipeline --list-file data/xxx.csv --max-seconds 5400"""
+    import argparse
+    import csv as _csv
+
+    ap = argparse.ArgumentParser(description="统一采集流水线（下载→规则→分诊）")
+    ap.add_argument("--list-file", default="", help="CSV，含 source_id 列（风险清单/重采清单）")
+    ap.add_argument("--sources", default="", help="逗号分隔的 source_id")
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--max-seconds", type=int, default=3600)
+    ap.add_argument("--per-source-max", type=int, default=420)
+    ap.add_argument("--archive", default="raw_archive")
+    ap.add_argument("--parsed", default="parsed")
+    ap.add_argument("--state", default=STATE)
+    ap.add_argument("--min-interval", type=float, default=0.8)
+    ap.add_argument("--concurrency", type=int, default=3)
+    ap.add_argument("--http-timeout", type=int, default=20)
+    ap.add_argument("--rules-limit", type=int, default=0, help="每源最多洗 N 行（试跑用）")
+    ap.add_argument("--force-fetch", action="store_true")
+    a = ap.parse_args(argv)
+
+    sids: list[str] = []
+    if a.list_file:
+        with open(a.list_file, encoding="utf-8-sig") as fh:
+            for r in _csv.DictReader(fh):
+                sid = (r.get("source_id") or r.get("source") or "").strip()
+                if sid:
+                    sids.append(sid)
+    if a.sources:
+        sids += [s.strip() for s in a.sources.split(",") if s.strip()]
+    if not sids:
+        raise SystemExit("给 --list-file 或 --sources")
+
+    table = list(_csv.DictReader(open("data/源总表-执行序.csv", encoding="utf-8-sig")))
+    idx = {r["source_id"]: i for i, r in enumerate(table)}
+    items = [{"source_id": s, "i": idx[s]} for s in sids if s in idx]
+    missing = [s for s in sids if s not in idx]
+    if missing:
+        print(f"[警告] {len(missing)} 个源不在源总表里，已跳过（前 3: {missing[:3]}）", flush=True)
+    if a.limit:
+        items = items[: a.limit]
+    print(f"待跑 {len(items)} 个源，预算 {a.max_seconds}s，单源上限 {a.per_source_max}s", flush=True)
+
+    state = load_state(a.state)
+    pol = Politeness(min_interval=a.min_interval, max_concurrency=a.concurrency,
+                     max_retries=1, timeout=a.http_timeout,
+                     log_path=os.path.join("out", "pipeline_log.jsonl"))
+    stats = run_queue(items, table, state, pol, archive=a.archive, out_root=a.parsed,
+                      max_seconds=a.max_seconds, limit=a.rules_limit,
+                      state_path=a.state, force_fetch=a.force_fetch,
+                      per_source_max=a.per_source_max)
+    print(json.dumps(stats, ensure_ascii=False), flush=True)
+    print(report(state))
+
+
+if __name__ == "__main__":
+    main()
