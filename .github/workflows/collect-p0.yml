@@ -35,7 +35,6 @@ jobs:
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json, math
           src = json.load(open("${{ github.event.inputs.job_file }}", encoding="utf-8"))
-          MAX_REQ_PER_JOB = 1200          # 每块最多约 1200 次请求（≈16 分钟）
           items = []
           for x in src:
               ps = max(100, int(x.get("page_size") or 1800))
@@ -43,8 +42,9 @@ jobs:
               #       当前一键集分页，offset 切块已无意义，故一源一 job。
               chunks = 1
               for k in range(chunks):
+                  # 一键集分页：offset 切块无意义，一源一 job；lim=0 → 取整源（arcgis.py: not max_records）
                   items.append({"i": x["i"], "k": k, "id": x["source_id"],
-                                "off": k * per, "lim": per, "n": x["count"]})
+                                "off": 0, "lim": 0, "n": x["count"]})
           print("jobs=" + json.dumps(items, separators=(",", ":")))
           print("n=" + str(len(items)))
           PY
