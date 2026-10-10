@@ -52,7 +52,7 @@ def layer_count(pol: Politeness, url: str) -> int:
 def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
                 max_records: int | None = None, page_size: int | None = None,
                 out_fields: str = "*", progress=None,
-                offset_start: int = 0) -> dict:
+                offset_start: int = 0, oid_hi: int | None = None) -> dict:
     """拉取一个图层全部属性 → NDJSON。
 
     ⚠️ 关键实现：使用**键集分页（keyset pagination）**而不是 resultOffset。
@@ -77,8 +77,12 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
     with open(out_ndjson, "w", encoding="utf-8") as fh:
         while kept < target:
             want = min(ps, target - kept)
+            if last is None:
+                where = "1=1" if oid_hi is None else f"{oid} <= {oid_hi}"
+            else:
+                where = f"{oid} > {last}" if oid_hi is None else f"{oid} > {last} AND {oid} <= {oid_hi}"
             params = {
-                "where": "1=1" if last is None else f"{oid} > {last}",
+                "where": where,
                 "outFields": out_fields,
                 "returnGeometry": "false",
                 "resultRecordCount": want,
@@ -102,6 +106,7 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
             feats = d.get("features") or []
             if not feats:
                 break
+            short_page = len(feats) < want   # 服务端已到本块末尾
             max_oid = None
             for f in feats:
                 a = f.get("attributes", {})
@@ -122,6 +127,8 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
             if max_oid is None or (last is not None and max_oid <= last):
                 break                     # 无法推进 → 结束，避免死循环
             last = max_oid
+            if short_page:
+                break
             if kept >= target:
                 break
 
