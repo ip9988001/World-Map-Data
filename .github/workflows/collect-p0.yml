@@ -13,6 +13,10 @@ on:
         description: "每主机最小请求间隔（秒）——不要调小"
         required: false
         default: "0.8"
+      chunk_size:
+        description: "每块条数（大=少job长job；小=多job短job）"
+        required: false
+        default: "500000"
       skip_merge:
         description: "只采集不合并（1=跳过合并）"
         required: false
@@ -33,6 +37,8 @@ jobs:
         id: gen
         run: |
           python collectors/make_matrix.py "${{ github.event.inputs.job_file }}" >> "$GITHUB_OUTPUT"
+        env:
+          CHUNK: ${{ github.event.inputs.chunk_size }}
 
   collect:
     needs: prepare
@@ -60,6 +66,7 @@ jobs:
             --job-index ${{ matrix.job.i }} \
             --offset-start 0 \
             --max-records 0 \
+            --oid-lo ${{ matrix.job.lo }} \
             --oid-hi ${{ matrix.job.hi }} \
             --min-interval ${{ github.event.inputs.min_interval }} \
             --concurrency 2 \

@@ -58,7 +58,7 @@ def load_sources(ids=None, priorities=None, limit=None):
     return rows[:limit] if limit else rows
 
 
-def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_start=0, oid_hi=None):
+def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_start=0, oid_hi=None, oid_lo=None):
     os.makedirs(out_dir, exist_ok=True)
     pol = Politeness(min_interval=min_interval, max_concurrency=concurrency, log_path=log_path)
     raw_dir, norm_dir = os.path.join(out_dir, "raw"), os.path.join(out_dir, "normalized")
@@ -78,7 +78,7 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
             if row["channel"] == "ARCGIS":
                 raw_path = os.path.join(raw_dir, safe + ".ndjson")
                 info = fetch_layer(pol, row["url"], raw_path, max_records=max_records,
-                                   offset_start=offset_start, oid_hi=oid_hi)
+                                   offset_start=offset_start, oid_hi=oid_hi, oid_lo=oid_lo)
                 st.update(info)
 
                 def _raw_iter(path=raw_path):
@@ -143,6 +143,7 @@ def main(argv=None):
     ap.add_argument("--out", default="out/pilot")
     ap.add_argument("--max-records", type=int, default=20000)
     ap.add_argument("--oid-hi", type=int, default=None)
+    ap.add_argument("--oid-lo", type=int, default=None)
     ap.add_argument("--offset-start", type=int, default=0,
                     help="从服务端第 N 条开始取（大源并行分块用）")
     ap.add_argument("--min-interval", type=float, default=0.8)
@@ -157,7 +158,7 @@ def main(argv=None):
         print("没有匹配的源", file=sys.stderr)
         return 2
     print(f"待采集源：{len(rows)} 个")
-    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log, a.offset_start, a.oid_hi)
+    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log, a.offset_start, a.oid_hi, a.oid_lo)
     print(json.dumps({"sources_ok": s["sources_ok"], "requests": s["requests"],
                       "merge": s["merge"]}, ensure_ascii=False, indent=2))
     return 0
