@@ -82,6 +82,49 @@ def norm_number(n) -> str:
     return m.group(1) if m else ""
 
 
+# ---------- 州码校验（脏数据闸门）----------
+# 老逻辑 `norm_text(raw)[:2]` 会把 "1" / "55" / "ST" / "TEXAS"(→TE) 之类当成州码，
+# 也会把 ZIP、街道后缀截进来 —— 这就是脏州码的来源。
+STATE_CODES = set("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO "
+                  "MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY "
+                  "DC PR VI GU AS MP".split())
+STATE_NAMES = {
+    "ALABAMA": "AL", "ALASKA": "AK", "ARIZONA": "AZ", "ARKANSAS": "AR", "CALIFORNIA": "CA",
+    "COLORADO": "CO", "CONNECTICUT": "CT", "DELAWARE": "DE", "FLORIDA": "FL", "GEORGIA": "GA",
+    "HAWAII": "HI", "IDAHO": "ID", "ILLINOIS": "IL", "INDIANA": "IN", "IOWA": "IA",
+    "KANSAS": "KS", "KENTUCKY": "KY", "LOUISIANA": "LA", "MAINE": "ME", "MARYLAND": "MD",
+    "MASSACHUSETTS": "MA", "MICHIGAN": "MI", "MINNESOTA": "MN", "MISSISSIPPI": "MS",
+    "MISSOURI": "MO", "MONTANA": "MT", "NEBRASKA": "NE", "NEVADA": "NV",
+    "NEW HAMPSHIRE": "NH", "NEW JERSEY": "NJ", "NEW MEXICO": "NM", "NEW YORK": "NY",
+    "NORTH CAROLINA": "NC", "NORTH DAKOTA": "ND", "OHIO": "OH", "OKLAHOMA": "OK",
+    "OREGON": "OR", "PENNSYLVANIA": "PA", "RHODE ISLAND": "RI", "SOUTH CAROLINA": "SC",
+    "SOUTH DAKOTA": "SD", "TENNESSEE": "TN", "TEXAS": "TX", "UTAH": "UT", "VERMONT": "VT",
+    "VIRGINIA": "VA", "WASHINGTON": "WA", "WEST VIRGINIA": "WV", "WISCONSIN": "WI",
+    "WYOMING": "WY", "DISTRICT OF COLUMBIA": "DC", "WASHINGTON DC": "DC",
+}
+
+
+def norm_state(raw, default: str = "") -> str:
+    """只认合法州码；认不出就退回 default（源表里的州），都没有则返回空串 → 该条丢弃。"""
+    t = norm_text(raw)
+    if t:
+        if t in STATE_NAMES:
+            return STATE_NAMES[t]
+        if t in STATE_CODES:
+            return t
+        head = t.split()[0] if t.split() else ""
+        if head in STATE_NAMES:
+            return STATE_NAMES[head]
+        if head in STATE_CODES:
+            return head
+    d = norm_text(default)
+    if d in STATE_CODES:
+        return d
+    if d in STATE_NAMES:
+        return STATE_NAMES[d]
+    return ""
+
+
 # ---------- 取值核心 ----------
 def cell(row: dict, key: str):
     if key in row:
@@ -196,18 +239,31 @@ def resolve(row: dict, spec, sep: str = " ") -> str:
 
 
 # ---------- 主入口 ----------
-def to_record(row: dict, mapping: dict, source: str, default_state: str = "") -> dict | None:
-    """原始行 → 标准化记录。不合法（无门牌号 / 无街道）返回 None。"""
+def to_record_ex(row: dict, mapping: dict, source: str, default_state: str = ""):
+    """原始行 → (标准化记录, 丢弃原因)。合格记录的原因位为 None。"""
     number = norm_number(resolve(row, mapping.get("number"), sep=""))
     street = norm_street(resolve(row, mapping.get("street")))
-    if not number or not street:
-        return None                       # ← 铁律：没有门牌号，整条丢弃
-    state = norm_text(resolve(row, mapping.get("region")))[:2] or norm_text(default_state)[:2]
+    if not number:
+        return None, "no_number"          # ← 铁律：没有门牌号，整条丢弃
+    if not street:
+        return None, "no_street"
+    state = norm_state(resolve(row, mapping.get("region")), default_state)
+    if not state:
+        return None, "state_invalid"
     city = norm_city(resolve(row, mapping.get("city")))
     zip5 = norm_zip(resolve(row, mapping.get("postcode")))
+    if zip5 and number == zip5:
+        return None, "number_is_zip"      # 整串地址兜底残留：ZIP 被当成门牌号
+    if zip5 and street.startswith(zip5 + " "):
+        return None, "street_is_address_blob"
     key = f"{state}|{city}|{zip5}|{street}|{number}"
-    return {"state": state, "city": city, "zip": zip5, "street": street,
-            "number": number, "key": key, "source": source}
+    return ({"state": state, "city": city, "zip": zip5, "street": street,
+             "number": number, "key": key, "source": source}, None)
+
+
+def to_record(row: dict, mapping: dict, source: str, default_state: str = "") -> dict | None:
+    """兼容旧调用：只要记录，丢弃原因走 to_record_ex。"""
+    return to_record_ex(row, mapping, source, default_state)[0]
 
 
 def parse_mapping_from_table(csv_row: dict) -> dict:
