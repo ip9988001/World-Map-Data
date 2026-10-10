@@ -140,7 +140,8 @@ per-source availability results, and the manifests that describe what was publis
 - [x] Availability sampling — 121 sources → **73% reachable**; 64 sources yielded **32.1 million** real address records
 - [x] **ArcGIS adapter + file-download adapter** (with politeness: server limit × 0.9)
 - [x] First pilot run — **100% source success on Actions**; 5.57M records in a single state source
-- [ ] Full P0 (state-level) run → 50-state coverage report
+- [x] **Full sweep of all 1,933 address layers** — 77.1% reachable, **141.4 million** real address points, **50 states covered**
+- [ ] State-sharded full collection → merge & dedupe
 - [ ] Full collection, deduplication and merge
 
 ---
