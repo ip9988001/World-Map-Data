@@ -27,6 +27,26 @@ from .politeness import Politeness
 TABLE = "data/源总表-执行序.csv"
 
 
+def load_job_file(path, index):
+    """按 job 索引取一条既定的源。
+
+    关键：必须回到「源总表」取**带字段映射的完整行**（任务文件里只有 id/url，
+    若直接用任务文件的精简行，字段映射为空 → 整源会被误判为「无门牌号」）。
+    同一 source_id 可能有多个图层，因此按 (source_id, url) 双重匹配。
+    """
+    jobs = json.load(open(path, encoding="utf-8"))
+    j = jobs[int(index)]
+    table = list(csv.DictReader(open(TABLE, encoding="utf-8-sig")))
+    for r in table:
+        if r["source_id"] == j["source_id"] and r["url"].rstrip("/") == j["url"].rstrip("/"):
+            return [r]
+    # 兜底：同名源
+    for r in table:
+        if r["source_id"] == j["source_id"]:
+            return [r]
+    raise SystemExit(f"未在源总表中找到 {j['source_id']} / {j['url'][:60]}")
+
+
 def load_sources(ids=None, priorities=None, limit=None):
     rows = list(csv.DictReader(open(TABLE, encoding="utf-8-sig")))
     if ids:
@@ -38,7 +58,7 @@ def load_sources(ids=None, priorities=None, limit=None):
     return rows[:limit] if limit else rows
 
 
-def run(rows, out_dir, max_records, min_interval, concurrency, log_path):
+def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_start=0):
     os.makedirs(out_dir, exist_ok=True)
     pol = Politeness(min_interval=min_interval, max_concurrency=concurrency, log_path=log_path)
     raw_dir, norm_dir = os.path.join(out_dir, "raw"), os.path.join(out_dir, "normalized")
@@ -57,7 +77,8 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path):
             raw_rows = []
             if row["channel"] == "ARCGIS":
                 raw_path = os.path.join(raw_dir, safe + ".ndjson")
-                info = fetch_layer(pol, row["url"], raw_path, max_records=max_records)
+                info = fetch_layer(pol, row["url"], raw_path, max_records=max_records,
+                                   offset_start=offset_start)
                 st.update(info)
                 with open(raw_path, encoding="utf-8") as fh:
                     raw_rows = [json.loads(l) for l in fh if l.strip()]
@@ -104,21 +125,28 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
+    ap.add_argument("--job-file")
+    ap.add_argument("--job-index")
     ap.add_argument("--sources")
     ap.add_argument("--priorities")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--out", default="out/pilot")
     ap.add_argument("--max-records", type=int, default=20000)
+    ap.add_argument("--offset-start", type=int, default=0,
+                    help="从服务端第 N 条开始取（大源并行分块用）")
     ap.add_argument("--min-interval", type=float, default=0.8)
     ap.add_argument("--concurrency", type=int, default=2)
     ap.add_argument("--log", default="out/request_log.jsonl")
     a = ap.parse_args(argv)
-    rows = load_sources(a.sources, a.priorities, a.limit)
+    if a.job_file and a.job_index is not None:
+        rows = load_job_file(a.job_file, a.job_index)
+    else:
+        rows = load_sources(a.sources, a.priorities, a.limit)
     if not rows:
         print("没有匹配的源", file=sys.stderr)
         return 2
     print(f"待采集源：{len(rows)} 个")
-    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log)
+    s = run(rows, a.out, a.max_records, a.min_interval, a.concurrency, a.log, a.offset_start)
     print(json.dumps({"sources_ok": s["sources_ok"], "requests": s["requests"],
                       "merge": s["merge"]}, ensure_ascii=False, indent=2))
     return 0

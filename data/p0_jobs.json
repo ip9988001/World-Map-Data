@@ -1,0 +1,198 @@
+[
+ {
+  "i": 0,
+  "source_id": "us/ar/statewide",
+  "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Location/FeatureServer/14",
+  "count": 1798756,
+  "page_size": 180
+ },
+ {
+  "i": 1,
+  "source_id": "us/co/douglas",
+  "url": "https://services.arcgis.com/seTexOicoRXDvRsJ/arcgis/rest/services/Address/FeatureServer/0",
+  "count": 193755,
+  "page_size": 900
+ },
+ {
+  "i": 2,
+  "source_id": "us/de/statewide",
+  "url": "https://enterprise.firstmaptest.delaware.gov/arcgis/rest/services/Location/County_Roads_and_Addresses/FeatureServer/0",
+  "count": 532164,
+  "page_size": 1800
+ },
+ {
+  "i": 3,
+  "source_id": "us/id/statewide",
+  "url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/ArcGIS/rest/services/Address_Points_From_Footprints/FeatureServer/0",
+  "count": 873374,
+  "page_size": 1800
+ },
+ {
+  "i": 4,
+  "source_id": "us/il/city_of_chicago",
+  "url": "https://gisapps.cityofchicago.org/arcgis/rest/services/ExternalApps/operational/MapServer/1",
+  "count": 605558,
+  "page_size": 1800
+ },
+ {
+  "i": 5,
+  "source_id": "us/il/edgar",
+  "url": "https://services5.arcgis.com/6VdFeKk2GI4rFk2D/arcgis/rest/services/Reach_Parcels/FeatureServer/0",
+  "count": 18098,
+  "page_size": 1800
+ },
+ {
+  "i": 6,
+  "source_id": "us/in/statewide",
+  "url": "https://gisdata.in.gov/server/rest/services/Hosted/Address_Points_of_Indiana_Current/FeatureServer/0",
+  "count": 3326690,
+  "page_size": 1800
+ },
+ {
+  "i": 7,
+  "source_id": "us/ks/statewide",
+  "url": "https://services6.arcgis.com/7XhimSpf8B7lHIMy/arcgis/rest/services/AddressPoints_NG911_ALL_GCS/FeatureServer/0",
+  "count": 1035861,
+  "page_size": 1800
+ },
+ {
+  "i": 8,
+  "source_id": "us/ky/statewide",
+  "url": "https://services3.arcgis.com/ghsX9CKghMvyYjBU/arcgis/rest/services/Ky_911_Site_Structure_Address_Points_gdb/FeatureServer/1",
+  "count": 2485416,
+  "page_size": 1800
+ },
+ {
+  "i": 9,
+  "source_id": "us/me/statewide",
+  "url": "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/arcgis/rest/services/Maine_E911_Addresses_Feature/FeatureServer/0",
+  "count": 801786,
+  "page_size": 1800
+ },
+ {
+  "i": 10,
+  "source_id": "us/mn/statewide",
+  "url": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/loc_addresses_open/FeatureServer/0",
+  "count": 2220021,
+  "page_size": 1800
+ },
+ {
+  "i": 11,
+  "source_id": "us/ms/statewide-east",
+  "url": "https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/1",
+  "count": 1120249,
+  "page_size": 1800
+ },
+ {
+  "i": 12,
+  "source_id": "us/ms/statewide-partial",
+  "url": "https://www.gisonline.ms.gov/arcgis/rest/services/MDEQ/Download/MapServer/56",
+  "count": 286865,
+  "page_size": 900
+ },
+ {
+  "i": 13,
+  "source_id": "us/ms/statewide-west",
+  "url": "https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/0",
+  "count": 874590,
+  "page_size": 1800
+ },
+ {
+  "i": 14,
+  "source_id": "us/nd/statewide",
+  "url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUBSiteStructureAddressPoints/FeatureServer/0",
+  "count": 438067,
+  "page_size": 1800
+ },
+ {
+  "i": 15,
+  "source_id": "us/ne/omaha",
+  "url": "https://dcgis.org/server/rest/services/vector/Address_Points/FeatureServer/0",
+  "count": 225672,
+  "page_size": 1800
+ },
+ {
+  "i": 16,
+  "source_id": "us/ne/statewide",
+  "url": "https://gis.ne.gov/Enterprise/rest/services/Address_Points/FeatureServer/0",
+  "count": 878424,
+  "page_size": 1800
+ },
+ {
+  "i": 17,
+  "source_id": "us/nh/statewide",
+  "url": "https://nhgeodata.unh.edu/nhgeodata/rest/services/CAD/ParcelMosaic/MapServer/0",
+  "count": 617065,
+  "page_size": 1800
+ },
+ {
+  "i": 18,
+  "source_id": "us/oh/statewide",
+  "url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/ArcGIS/rest/services/Statewide_LBRS_Address_Points/FeatureServer/0",
+  "count": 5573001,
+  "page_size": 1800
+ },
+ {
+  "i": 19,
+  "source_id": "us/oh/statewide",
+  "url": "https://webgis.co.trumbull.oh.us/gisserver/rest/services/Maps/DDTI/MapServer/0",
+  "count": 97137,
+  "page_size": 900
+ },
+ {
+  "i": 20,
+  "source_id": "us/or/statewide",
+  "url": "https://services8.arcgis.com/8PAo5HGmvRMlF2eU/arcgis/rest/services/Oregon_Address_Points/FeatureServer/0",
+  "count": 1942377,
+  "page_size": 1800
+ },
+ {
+  "i": 21,
+  "source_id": "us/ri/statewide",
+  "url": "https://services2.arcgis.com/S8zZg9pg23JUEexQ/arcgis/rest/services/FACILITY_AddressPoints_E911domains/FeatureServer/5",
+  "count": 420441,
+  "page_size": 1800
+ },
+ {
+  "i": 22,
+  "source_id": "us/tx/capcog",
+  "url": "https://services5.arcgis.com/8DjE4f6iFLArDhsU/ArcGIS/rest/services/Regional_Address_Points/FeatureServer/0",
+  "count": 1123045,
+  "page_size": 1800
+ },
+ {
+  "i": 23,
+  "source_id": "us/ut/statewide",
+  "url": "https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahAddressPoints/FeatureServer/0",
+  "count": 1501596,
+  "page_size": 1800
+ },
+ {
+  "i": 24,
+  "source_id": "us/va/warrenton",
+  "url": "https://services3.arcgis.com/7Q2bdSYWSeUYx2U5/arcgis/rest/services/Warrenton_Municipality_Address_Points/FeatureServer/0",
+  "count": 13799,
+  "page_size": 1800
+ },
+ {
+  "i": 25,
+  "source_id": "us/vt/statewide",
+  "url": "https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ESITE_point_SP_v1/FeatureServer/0",
+  "count": 353161,
+  "page_size": 1800
+ },
+ {
+  "i": 26,
+  "source_id": "us/wv/statewide",
+  "url": "https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/5",
+  "count": 1048836,
+  "page_size": 1800
+ },
+ {
+  "i": 27,
+  "source_id": "us/wy/statewide",
+  "url": "https://services3.arcgis.com/r0iJ85SKZ4zAzz3P/arcgis/rest/services/Wyoming_Parcels_for_2026/FeatureServer/0",
+  "count": 373666,
+  "page_size": 1800
+ }
+]

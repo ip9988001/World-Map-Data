@@ -1,0 +1,138 @@
+name: collect-p0
+
+# P0 州级源正式采集：matrix 分片（每个源一个 job）→ 中央合并去重 → 按州切片。
+# 采集铁律：分页 = 服务端上限 × 0.9；每主机最小间隔 0.8s；并发 2。
+on:
+  workflow_dispatch:
+    inputs:
+      job_file:
+        description: "任务文件"
+        required: false
+        default: "data/p0_jobs.json"
+      min_interval:
+        description: "每主机最小请求间隔（秒）——不要调小"
+        required: false
+        default: "0.8"
+      skip_merge:
+        description: "只采集不合并（1=跳过合并）"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      jobs: ${{ steps.gen.outputs.jobs }}
+      n: ${{ steps.gen.outputs.n }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 生成任务矩阵（大源自动分块并行）
+        id: gen
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, math
+          src = json.load(open("${{ github.event.inputs.job_file }}", encoding="utf-8"))
+          MAX_REQ_PER_JOB = 1200          # 每块最多约 1200 次请求（≈16 分钟）
+          items = []
+          for x in src:
+              ps = max(100, int(x.get("page_size") or 1800))
+              per = min(1_500_000, ps * MAX_REQ_PER_JOB)
+              chunks = max(1, math.ceil(x["count"] / per))
+              for k in range(chunks):
+                  items.append({"i": x["i"], "k": k, "id": x["source_id"],
+                                "off": k * per, "lim": per, "n": x["count"]})
+          print("jobs=" + json.dumps(items, separators=(",", ":")))
+          print("n=" + str(len(items)))
+          PY
+
+  collect:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        job: ${{ fromJSON(needs.prepare.outputs.jobs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 采集 ${{ matrix.job.id }} 块${{ matrix.job.k }}
+        run: |
+          python -m collectors.pilot \
+            --job-file "${{ github.event.inputs.job_file }}" \
+            --job-index ${{ matrix.job.i }} \
+            --offset-start ${{ matrix.job.off }} \
+            --max-records ${{ matrix.job.lim }} \
+            --min-interval ${{ github.event.inputs.min_interval }} \
+            --concurrency 2 \
+            --out "out/job_${{ matrix.job.i }}_${{ matrix.job.k }}" \
+            --log "out/job_${{ matrix.job.i }}_${{ matrix.job.k }}/request_log.jsonl"
+
+      - name: 打包（丢弃原始层，只留清洗结果）
+        if: always()
+        run: |
+          cd "out/job_${{ matrix.job.i }}_${{ matrix.job.k }}" || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          ls -la; du -sh .
+
+      - name: 上传本分片
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: norm-${{ matrix.job.i }}-${{ matrix.job.k }}
+          path: out/job_${{ matrix.job.i }}_${{ matrix.job.k }}/
+          retention-days: 30
+          if-no-files-found: warn
+          compression-level: 0
+
+  merge:
+    needs: [prepare, collect]
+    if: ${{ github.event.inputs.skip_merge != '1' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 下载全部分片
+        uses: actions/download-artifact@v4
+        with:
+          path: in
+          pattern: norm-*
+          merge-multiple: true
+
+      - name: 合并去重（外部排序，内存恒定）+ 按州切片
+        run: |
+          set -o pipefail
+          df -h / | tail -1
+          mkdir -p out/merged
+          : > /tmp/all.ndjson
+          for f in $(find in -name 'normalized*.ndjson.gz' | sort); do gzip -dc "$f" >> /tmp/all.ndjson; done
+          for f in $(find in -name 'normalized*.ndjson' | sort); do cat "$f" >> /tmp/all.ndjson; done
+          wc -l /tmp/all.ndjson
+          LC_ALL=C sort -S 3G -T /tmp --parallel=2 /tmp/all.ndjson \
+            | python -m collectors.merge_stream - \
+                --out out/merged/merged.ndjson.gz \
+                --split-dir out/merged/by_state \
+                --report out/merged/merge_report.json
+          rm -f /tmp/all.ndjson
+          ls -la out/merged; du -sh out/merged/*
+
+      - name: 上传合并结果
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-p0
+          path: out/merged/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn

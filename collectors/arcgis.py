@@ -51,16 +51,18 @@ def layer_count(pol: Politeness, url: str) -> int:
 
 def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
                 max_records: int | None = None, page_size: int | None = None,
-                out_fields: str = "*", progress=None) -> dict:
+                out_fields: str = "*", progress=None,
+                offset_start: int = 0) -> dict:
     """拉取一个图层全部属性 → NDJSON。返回统计信息。"""
     meta = layer_meta(pol, url)
     total = layer_count(pol, meta["url"])
     ps = page_size or safe_page_size(meta["maxRecordCount"])
     oid = meta["objectIdField"]
-    target = min(total, max_records) if max_records else total
+    remaining = max(0, total - offset_start)
+    target = min(remaining, max_records) if max_records else remaining
 
     os.makedirs(os.path.dirname(out_ndjson) or ".", exist_ok=True)
-    kept, offset, pages = 0, 0, 0
+    kept, offset, pages = 0, offset_start, 0
     with open(out_ndjson, "w", encoding="utf-8") as fh:
         while kept < target:
             want = min(ps, target - kept)
@@ -89,5 +91,5 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
                 break
 
     return {"url": meta["url"], "layer": meta["name"], "server_total": total,
-            "fetched": kept, "pages": pages, "page_size": ps,
+            "offset_start": offset_start, "fetched": kept, "pages": pages, "page_size": ps,
             "server_max_record_count": meta["maxRecordCount"], "fields": meta["fields"]}
