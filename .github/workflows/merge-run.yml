@@ -1,0 +1,85 @@
+name: merge-run
+
+# 独立合并任务：把某次采集运行的全部 norm-* 分片合并去重并切片。
+# 可复用：任何一次 collect 运行结束后都能单独跑合并。
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "要合并的采集运行 ID（collect-p0 的 run id）"
+        required: true
+      state:
+        description: "只合并某个州（留空=全部）"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 下载采集分片
+        uses: actions/download-artifact@v4
+        with:
+          path: in
+          pattern: norm-*
+          merge-multiple: true
+          run-id: ${{ github.event.inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 合并去重（外部排序，内存恒定）+ 按州切片
+        run: |
+          set -o pipefail
+          df -h / | tail -1
+          mkdir -p out/merged
+          : > /tmp/all.ndjson
+          n=0
+          for f in $(find in -name '*.ndjson.gz' | sort); do gzip -dc "$f" >> /tmp/all.ndjson; n=$((n+1)); done
+          for f in $(find in -name '*.ndjson' | sort); do cat "$f" >> /tmp/all.ndjson; n=$((n+1)); done
+          echo "分片数: $n   输入行数: $(wc -l < /tmp/all.ndjson)"
+          LC_ALL=C sort -S 3G -T /tmp --parallel=2 /tmp/all.ndjson \
+            | python -m collectors.merge_stream - \
+                --out out/merged/merged.ndjson.gz \
+                --split-dir out/merged/by_state \
+                --report out/merged/merge_report.json
+          rm -f /tmp/all.ndjson
+          echo "--- 结果 ---"
+          du -sh out/merged; ls out/merged/by_state | head -20
+
+      - name: 摘要
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os, glob
+          p = "out/merged/merge_report.json"
+          if not os.path.exists(p):
+              print("没有 merge_report.json"); raise SystemExit(0)
+          d = json.load(open(p, encoding="utf-8"))
+          print("唯一地址:", f"{d['去重后唯一记录']:,}")
+          print("输入行数:", f"{d['输入行数']:,}", "| 重复:", f"{d['重复条数']:,}",
+                "| 非法:", f"{d['非法行数']:,}", "| 多源交叉:", f"{d['多源交叉命中']:,}")
+          print("覆盖州:", d["覆盖州数"])
+          print("\n各州唯一地址数:")
+          for s, n in d["按州"].items(): print(f"  {s:4s} {n:>12,}")
+          sz = sum(os.path.getsize(f) for f in glob.glob("out/merged/by_state/*"))
+          print(f"\n按州切片体积合计: {sz/1024/1024:.0f} MB")
+          PY
+
+      - name: 上传合并结果
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-final
+          path: out/merged/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
