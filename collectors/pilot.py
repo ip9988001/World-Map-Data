@@ -21,7 +21,7 @@ import time
 from .arcgis import fetch_layer
 from .filedl import fetch_file, iter_rows
 from .merge import merge_ndjson
-from .normalize import parse_mapping_from_table, to_record
+from .normalize import mapping_sanity, parse_mapping_from_table, to_record
 from .politeness import Politeness
 
 TABLE = "data/源总表-执行序.csv"
@@ -68,6 +68,7 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path):
                 raw_rows = list(iter_rows(info))
 
             good, bad = 0, 0
+            missing = mapping_sanity(raw_rows[0], mapping) if raw_rows else []
             norm_path = os.path.join(norm_dir, safe + ".ndjson")
             with open(norm_path, "w", encoding="utf-8") as fh:
                 for r in raw_rows:
@@ -80,6 +81,7 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path):
             if good:
                 norm_files.append(norm_path)
             st.update({"raw_rows": len(raw_rows), "kept": good, "dropped_no_number": bad,
+                       "mapping_missing_fields": missing,
                        "kept_ratio": round(good / len(raw_rows), 4) if raw_rows else 0,
                        "seconds": round(time.time() - t0, 1)})
             print(f"[{i}/{len(rows)}] {sid:28s} 原始 {len(raw_rows):>8,} → 合规则 {good:>8,}"
