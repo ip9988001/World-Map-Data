@@ -92,8 +92,8 @@ raw/       Scratch downloads (git-ignored, never committed)
 - [x] US source table — **1,923 sources / 1,933 address layers**
 - [x] Collection-channel analysis — **ArcGIS 83.2% · file download 12.9% · CSV 3.9%**
 - [x] Availability sampling — 121 sources → **73% reachable**; 64 sources yielded **32.1 million** real address records
-- [ ] ArcGIS adapter + file-download adapter
-- [ ] First pilot run (state-level sources) → coverage & size report
+- [x] **ArcGIS adapter + file-download adapter** (with politeness: server limit × 0.9)
+- [ ] First pilot run (state-level sources) → coverage & size report  ← *in progress*
 - [ ] Full collection, deduplication and merge
 
 ---

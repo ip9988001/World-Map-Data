@@ -6,3 +6,4 @@ raw/
 *.gdb/
 __pycache__/
 .venv/
+out/

@@ -1,0 +1,94 @@
+name: collect-pilot
+
+# 一期采集：手动触发为主，后续可加 cron 做定期增量更新
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "指定 source_id（逗号分隔，如 us/de/statewide,us/ri/statewide）"
+        required: false
+        default: ""
+      priorities:
+        description: "按优先级跑（P0/P1/P2/P3/P4，逗号分隔）——sources 为空时生效"
+        required: false
+        default: "P0"
+      limit:
+        description: "最多跑几个源"
+        required: false
+        default: "4"
+      max_records:
+        description: "每个源最多取多少条（试跑用）"
+        required: false
+        default: "5000"
+      min_interval:
+        description: "每主机最小请求间隔（秒）——采集铁律，不要调小"
+        required: false
+        default: "0.8"
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 环境与可达性探测
+        run: |
+          echo "== 出口 IP =="; curl -s https://api.ipify.org || true; echo
+          echo "== 联邦源可达性（决定 TIGER 能否用）=="
+          for u in "https://www2.census.gov/geo/tiger/TIGER2024/ADDRFEAT/" \
+                   "https://ftp2.census.gov/geo/tiger/TIGER2024/ADDRFEAT/" \
+                   "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=4600+Silver+Hill+Rd+Washington+DC&benchmark=Public_AR_Current&format=json"; do
+            printf "%-95s " "${u:0:88}"
+            curl -sL -m 25 -o /dev/null -w "http=%{http_code}\n" "$u" || echo "FAIL"
+          done
+
+      - name: 采集（内置限速：官方上限 × 0.9）
+        run: |
+          python -m collectors.pilot \
+            --sources "${{ github.event.inputs.sources }}" \
+            --priorities "${{ github.event.inputs.priorities }}" \
+            --limit ${{ github.event.inputs.limit }} \
+            --max-records ${{ github.event.inputs.max_records }} \
+            --min-interval ${{ github.event.inputs.min_interval }} \
+            --concurrency 2 \
+            --out out/pilot \
+            --log out/request_log.jsonl
+
+      - name: 结果摘要
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os
+          p = "out/pilot/stats.json"
+          if not os.path.exists(p):
+              print("没有 stats.json（采集阶段可能失败）"); raise SystemExit(0)
+          d = json.load(open(p, encoding="utf-8"))
+          print("源成功:", d["sources_ok"], "/", d["sources_tried"])
+          print("请求统计:", d["requests"])
+          print("合并:", {k: v for k, v in d["merge"].items() if k not in ("按来源", "按州")})
+          print("按州:", d["merge"].get("按州"))
+          print("—" * 60)
+          for s in d["per_source"]:
+              print(f"{s['source_id']:26s} 原始 {s.get('raw_rows',0):>8,} → 合规 {s.get('kept',0):>8,}"
+                    f" 保留率 {s.get('kept_ratio',0)*100:5.1f}%  分页 {s.get('page_size','-')}"
+                    f"  用时 {s.get('seconds')}s  {s.get('error','')}")
+          PY
+
+      - name: 上传产物
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot-output
+          path: |
+            out/pilot/**
+            out/request_log.jsonl
+          retention-days: 30
+          if-no-files-found: warn
