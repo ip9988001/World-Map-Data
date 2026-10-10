@@ -1,0 +1,67 @@
+{
+ "us/ar/statewide": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+  "seconds": 32.9,
+  "source_id": "us/ar/statewide",
+  "stage": "fetch",
+  "updated": "2026-10-11 02:49:20"
+ },
+ "us/ca/san_francisco": {
+  "done": true,
+  "error": "",
+  "fetched": 5000,
+  "kept": 5000,
+  "path": "parsed/us/ca/san_francisco/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 5000,
+    "ratio": 1.0,
+    "rows": 5000,
+    "rule": "mapping@v1",
+    "seconds": 3.0,
+    "verdict": "PASS",
+    "why": "合规 5000/5000 = 100%"
+   }
+  ],
+  "seconds": 3.0,
+  "source_id": "us/ca/san_francisco",
+  "stage": "parsed",
+  "updated": "2026-10-11 02:50:10"
+ },
+ "us/ms/lauderdale": {
+  "done": true,
+  "error": "",
+  "fetched": 720,
+  "kept": 353,
+  "path": "parsed/us/ms/lauderdale/mapping@v1.ndjson",
+  "ratio": 0.49,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 353,
+    "ratio": 0.49,
+    "rows": 720,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "PASS",
+    "why": "合规 353/720 = 49%"
+   }
+  ],
+  "seconds": 0.0,
+  "source_id": "us/ms/lauderdale",
+  "stage": "parsed",
+  "updated": "2026-10-11 02:50:13"
+ }
+}
