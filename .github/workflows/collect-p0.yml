@@ -29,30 +29,19 @@ jobs:
       n: ${{ steps.gen.outputs.n }}
     steps:
       - uses: actions/checkout@v4
-      - name: 生成任务矩阵（大源自动分块并行）
+      - name: 生成任务矩阵（按 OID 切块，单块 50 万条 ≈4~8 分钟）
         id: gen
         run: |
-          python - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, math
-          src = json.load(open("${{ github.event.inputs.job_file }}", encoding="utf-8"))
-          items = []
-          for x in src:
-              ps = max(100, int(x.get("page_size") or 1800))
-              # TODO: 用 outStatistics 取 OID 上下界后可做 OID 区间切块并行；
-              #       当前一键集分页，offset 切块已无意义，故一源一 job。
-              chunks = 1
-              for k in range(chunks):
-                  # 一键集分页：offset 切块无意义，一源一 job；lim=0 → 取整源（arcgis.py: not max_records）
-                  items.append({"i": x["i"], "k": k, "id": x["source_id"],
-                                "off": 0, "lim": 0, "n": x["count"]})
-          print("jobs=" + json.dumps(items, separators=(",", ":")))
-          print("n=" + str(len(items)))
-          PY
+          python collectors/make_matrix.py "${{ github.event.inputs.job_file }}" >> "$GITHUB_OUTPUT"
 
   collect:
     needs: prepare
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 60
+    # 同源各块串行：chunk 之间不并发，保证对同一主机仍满足 ≥0.8s/请求
+    concurrency:
+      group: wmd-src-${{ matrix.job.id }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       max-parallel: 16
@@ -64,13 +53,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 采集 ${{ matrix.job.id }} 块${{ matrix.job.k }}
+      - name: 采集 ${{ matrix.job.id }} 块${{ matrix.job.k }}（OID ≤ ${{ matrix.job.hi }} / 约 ${{ matrix.job.n }} 条）
         run: |
           python -m collectors.pilot \
             --job-file "${{ github.event.inputs.job_file }}" \
             --job-index ${{ matrix.job.i }} \
-            --offset-start ${{ matrix.job.off }} \
-            --max-records ${{ matrix.job.lim }} \
+            --offset-start 0 \
+            --max-records 0 \
+            --oid-hi ${{ matrix.job.hi }} \
             --min-interval ${{ github.event.inputs.min_interval }} \
             --concurrency 2 \
             --out "out/job_${{ matrix.job.i }}_${{ matrix.job.k }}" \

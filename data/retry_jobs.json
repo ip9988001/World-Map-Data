@@ -8,20 +8,6 @@
  },
  {
   "i": 1,
-  "source_id": "us/ms/statewide-east",
-  "url": "https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/1",
-  "count": 1120249,
-  "page_size": 1800
- },
- {
-  "i": 2,
-  "source_id": "us/ms/statewide-west",
-  "url": "https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/0",
-  "count": 874590,
-  "page_size": 1800
- },
- {
-  "i": 3,
   "source_id": "us/oh/statewide",
   "url": "https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/ArcGIS/rest/services/Statewide_LBRS_Address_Points/FeatureServer/0",
   "count": 5573001,
