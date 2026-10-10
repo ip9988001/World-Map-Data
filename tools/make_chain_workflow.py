@@ -19,11 +19,12 @@ INTERVAL = float(os.environ.get("INTERVAL", "1.6"))
 CONC = int(os.environ.get("CONC", "3"))
 
 # (前缀, job_file 里的索引, 源 id, 起点, 终点)
+# (泳道, job 索引, 起点, 终点, 段数上限)
 LANES = [
-    ("inA", 0, "us/in/statewide", 1, 1663345),
-    ("inB", 0, "us/in/statewide", 1663346, 3326690),
-    ("ohA", 1, "us/oh/statewide", 1, 2799877),
-    ("ohB", 1, "us/oh/statewide", 2799878, 5599754),
+    ("inA", 0, 1, 1663345, 4),
+    ("inB", 0, 1663346, 3326690, 4),
+    ("ohA", 1, 1, 2799877, 8),
+    ("ohB", 1, 2799878, 5599754, 8),
 ]
 
 HEAD = """name: collect-chain
@@ -188,8 +189,11 @@ for p in glob.glob('state/progress-__LANE__-*.json'):
         d = json.load(open(p, encoding='utf-8'))
     except Exception:
         continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
+    for v in (d.values() if isinstance(d, dict) else [d]):
+        if not isinstance(v, dict):
+            continue
+        done = done or bool(v.get('done'))
+        lo = max(lo, int(v.get('last_oid') or 0) + 1)
 print('lo=' + str(lo))
 print('skip=' + ('1' if (done or lo > __HI__) else '0'))""".splitlines())
 
@@ -197,9 +201,9 @@ print('skip=' + ('1' if (done or lo > __HI__) else '0'))""".splitlines())
 def main() -> None:
     out = [HEAD.replace("__BUDGET__", str(BUDGET))]
     names = []
-    for lane, idx, _sid, lo, hi in LANES:
+    for lane, idx, lo, hi, nseg in LANES:
         prev = None
-        for k in range(STAGES):
+        for k in range(nseg):
             name = "chain-%s-%d" % (lane, k)
             names.append(name)
             needs = "    needs: [%s]\n    if: always()\n" % prev if prev else ""

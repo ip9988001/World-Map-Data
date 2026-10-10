@@ -43,8 +43,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -130,8 +133,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -217,8 +223,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -304,8 +313,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 1663345) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -360,93 +372,6 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
-  chain-inA-4:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    needs: [chain-inA-3]
-    if: always()
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: 取回已有断点
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          path: state
-          pattern: state-inA-*
-          merge-multiple: true
-
-      - name: 定起点（读断点，若该段已完成则跳过）
-        id: pos
-        run: |
-          ls -la state 2>/dev/null || true
-          python3 -c "
-          import glob, json
-          lo, done = 1, False
-          for p in glob.glob('state/progress-inA-*.json'):
-              try:
-                  d = json.load(open(p, encoding='utf-8'))
-              except Exception:
-                  continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
-          print('lo=' + str(lo))
-          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-          " >> "$GITHUB_OUTPUT"
-
-      - name: 采集 inA 第 4 段（最多 16 分钟，到点主动停）
-        if: steps.pos.outputs.skip != '1'
-        run: |
-          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 1663345"
-          python -m collectors.pilot \
-            --job-file data/retry_jobs.json \
-            --job-index 0 \
-            --oid-lo ${{ steps.pos.outputs.lo }} \
-            --oid-hi 1663345 \
-            --max-records 0 \
-            --min-interval 1.6 \
-            --concurrency 3 \
-            --max-seconds ${{ github.event.inputs.max_seconds }} \
-            --out out/seg \
-            --log out/seg/request_log.jsonl
-          echo "--- 断点 ---"; cat out/seg/progress.json
-
-      - name: 打包（丢原始层）
-        if: always() && steps.pos.outputs.skip != '1'
-        run: |
-          cd out/seg || exit 0
-          rm -rf raw
-          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
-          du -sh .
-
-      - name: 上传本段数据
-        if: always() && steps.pos.outputs.skip != '1'
-        uses: actions/upload-artifact@v4
-        with:
-          name: seg-inA-4
-          path: out/seg/normalized/
-          retention-days: 30
-          compression-level: 0
-          if-no-files-found: warn
-
-      - name: 备好断点文件
-        if: always() && steps.pos.outputs.skip != '1'
-        run: |
-          mkdir -p state
-          cp out/seg/progress.json state/progress-inA-4.json || true
-
-      - name: 上传断点（下一段靠它接续）
-        if: always() && steps.pos.outputs.skip != '1'
-        uses: actions/upload-artifact@v4
-        with:
-          name: state-inA-4
-          path: state/progress-inA-4.json
-          retention-days: 30
-          if-no-files-found: warn
-
   chain-inB-0:
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -476,8 +401,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -563,8 +491,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -650,8 +581,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -737,8 +671,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 3326690) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -793,93 +730,6 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
-  chain-inB-4:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    needs: [chain-inB-3]
-    if: always()
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: 取回已有断点
-        uses: actions/download-artifact@v4
-        continue-on-error: true
-        with:
-          path: state
-          pattern: state-inB-*
-          merge-multiple: true
-
-      - name: 定起点（读断点，若该段已完成则跳过）
-        id: pos
-        run: |
-          ls -la state 2>/dev/null || true
-          python3 -c "
-          import glob, json
-          lo, done = 1, False
-          for p in glob.glob('state/progress-inB-*.json'):
-              try:
-                  d = json.load(open(p, encoding='utf-8'))
-              except Exception:
-                  continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
-          print('lo=' + str(lo))
-          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-          " >> "$GITHUB_OUTPUT"
-
-      - name: 采集 inB 第 4 段（最多 16 分钟，到点主动停）
-        if: steps.pos.outputs.skip != '1'
-        run: |
-          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 3326690"
-          python -m collectors.pilot \
-            --job-file data/retry_jobs.json \
-            --job-index 0 \
-            --oid-lo ${{ steps.pos.outputs.lo }} \
-            --oid-hi 3326690 \
-            --max-records 0 \
-            --min-interval 1.6 \
-            --concurrency 3 \
-            --max-seconds ${{ github.event.inputs.max_seconds }} \
-            --out out/seg \
-            --log out/seg/request_log.jsonl
-          echo "--- 断点 ---"; cat out/seg/progress.json
-
-      - name: 打包（丢原始层）
-        if: always() && steps.pos.outputs.skip != '1'
-        run: |
-          cd out/seg || exit 0
-          rm -rf raw
-          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
-          du -sh .
-
-      - name: 上传本段数据
-        if: always() && steps.pos.outputs.skip != '1'
-        uses: actions/upload-artifact@v4
-        with:
-          name: seg-inB-4
-          path: out/seg/normalized/
-          retention-days: 30
-          compression-level: 0
-          if-no-files-found: warn
-
-      - name: 备好断点文件
-        if: always() && steps.pos.outputs.skip != '1'
-        run: |
-          mkdir -p state
-          cp out/seg/progress.json state/progress-inB-4.json || true
-
-      - name: 上传断点（下一段靠它接续）
-        if: always() && steps.pos.outputs.skip != '1'
-        uses: actions/upload-artifact@v4
-        with:
-          name: state-inB-4
-          path: state/progress-inB-4.json
-          retention-days: 30
-          if-no-files-found: warn
-
   chain-ohA-0:
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -909,8 +759,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -996,8 +849,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1083,8 +939,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1170,8 +1029,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1257,8 +1119,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 2799877) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1313,6 +1178,276 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
+  chain-ohA-5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohA-4]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohA-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohA 第 5 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 2799877"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 2799877 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohA-5
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohA-5.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohA-5
+          path: state/progress-ohA-5.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  chain-ohA-6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohA-5]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohA-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohA 第 6 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 2799877"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 2799877 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohA-6
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohA-6.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohA-6
+          path: state/progress-ohA-6.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  chain-ohA-7:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohA-6]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohA-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohA 第 7 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 2799877"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 2799877 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohA-7
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohA-7.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohA-7
+          path: state/progress-ohA-7.json
+          retention-days: 30
+          if-no-files-found: warn
+
   chain-ohB-0:
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -1342,8 +1477,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1429,8 +1567,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1516,8 +1657,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1603,8 +1747,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1690,8 +1837,11 @@ jobs:
                   d = json.load(open(p, encoding='utf-8'))
               except Exception:
                   continue
-              done = done or bool(d.get('done'))
-              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
           print('lo=' + str(lo))
           print('skip=' + ('1' if (done or lo > 5599754) else '0'))
           " >> "$GITHUB_OUTPUT"
@@ -1746,10 +1896,280 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
+  chain-ohB-5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohB-4]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohB-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohB 第 5 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 5599754"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 5599754 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohB-5
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohB-5.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohB-5
+          path: state/progress-ohB-5.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  chain-ohB-6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohB-5]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohB-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohB 第 6 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 5599754"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 5599754 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohB-6
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohB-6.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohB-6
+          path: state/progress-ohB-6.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  chain-ohB-7:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: [chain-ohB-6]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 取回已有断点
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          path: state
+          pattern: state-ohB-*
+          merge-multiple: true
+
+      - name: 定起点（读断点，若该段已完成则跳过）
+        id: pos
+        run: |
+          ls -la state 2>/dev/null || true
+          python3 -c "
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              for v in (d.values() if isinstance(d, dict) else [d]):
+                  if not isinstance(v, dict):
+                      continue
+                  done = done or bool(v.get('done'))
+                  lo = max(lo, int(v.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
+
+      - name: 采集 ohB 第 7 段（最多 16 分钟，到点主动停）
+        if: steps.pos.outputs.skip != '1'
+        run: |
+          echo "起点 OID = ${{ steps.pos.outputs.lo }}  上限 = 5599754"
+          python -m collectors.pilot \
+            --job-file data/retry_jobs.json \
+            --job-index 1 \
+            --oid-lo ${{ steps.pos.outputs.lo }} \
+            --oid-hi 5599754 \
+            --max-records 0 \
+            --min-interval 1.6 \
+            --concurrency 3 \
+            --max-seconds ${{ github.event.inputs.max_seconds }} \
+            --out out/seg \
+            --log out/seg/request_log.jsonl
+          echo "--- 断点 ---"; cat out/seg/progress.json
+
+      - name: 打包（丢原始层）
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          cd out/seg || exit 0
+          rm -rf raw
+          gzip -9 -f normalized/*.ndjson 2>/dev/null || true
+          du -sh .
+
+      - name: 上传本段数据
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seg-ohB-7
+          path: out/seg/normalized/
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: warn
+
+      - name: 备好断点文件
+        if: always() && steps.pos.outputs.skip != '1'
+        run: |
+          mkdir -p state
+          cp out/seg/progress.json state/progress-ohB-7.json || true
+
+      - name: 上传断点（下一段靠它接续）
+        if: always() && steps.pos.outputs.skip != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-ohB-7
+          path: state/progress-ohB-7.json
+          retention-days: 30
+          if-no-files-found: warn
+
   merge:
     runs-on: ubuntu-latest
     timeout-minutes: 300
-    needs: [chain-inA-0, chain-inA-1, chain-inA-2, chain-inA-3, chain-inA-4, chain-inB-0, chain-inB-1, chain-inB-2, chain-inB-3, chain-inB-4, chain-ohA-0, chain-ohA-1, chain-ohA-2, chain-ohA-3, chain-ohA-4, chain-ohB-0, chain-ohB-1, chain-ohB-2, chain-ohB-3, chain-ohB-4]
+    needs: [chain-inA-0, chain-inA-1, chain-inA-2, chain-inA-3, chain-inB-0, chain-inB-1, chain-inB-2, chain-inB-3, chain-ohA-0, chain-ohA-1, chain-ohA-2, chain-ohA-3, chain-ohA-4, chain-ohA-5, chain-ohA-6, chain-ohA-7, chain-ohB-0, chain-ohB-1, chain-ohB-2, chain-ohB-3, chain-ohB-4, chain-ohB-5, chain-ohB-6, chain-ohB-7]
     if: always()
     steps:
       - uses: actions/checkout@v4
