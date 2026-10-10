@@ -1,0 +1,122 @@
+﻿source_id,state,scope,priority,channel,url,status,detail,count,ms
+us/ak/statewide,AK,statewide,P0,ARCGIS,https://services3.arcgis.com/3NvWZvRqANiCzqqd/arcgis/rest/services/NG911_Alaska_Address_gdb/FeatureServer/0,ERROR,Invalid URL,,375
+us/ar/statewide,AR,statewide,P0,ARCGIS,https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Location/FeatureServer/14,OK,,1798756,11184
+us/az/statewide,AZ,statewide,P0,FILE_DOWNLOAD,https://www.arcgis.com/sharing/rest/content/items/eab3c6c60d604781a2ac186586dd2604/data,OK,,,562
+us/co/statewide,CO,statewide,P0,FILE_DOWNLOAD,https://www.arcgis.com/sharing/rest/content/items/b6e244650e7c472ba53667f19ee01181/data,OK,,,507
+us/co/douglas,CO,statewide,P0,ARCGIS,https://services.arcgis.com/seTexOicoRXDvRsJ/arcgis/rest/services/Address/FeatureServer/0,OK,,193755,536
+us/ct/statewide,CT,statewide,P0,FILE_DOWNLOAD,https://data.ct.gov/api/views/m6xx-nb28/files/35ec5873-bc1d-4f36-a0a1-07b44f28bc3d?filename=CT911_CTData.gdb.zip,OK,,,3483
+us/de/statewide,DE,statewide,P0,ARCGIS,https://enterprise.firstmaptest.delaware.gov/arcgis/rest/services/Location/County_Roads_and_Addresses/FeatureServer/0,OK,,532164,991
+us/ia/statewide,IA,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/ingalls/bdc482/IOWA_911_ADDRESSES.zip,OK,GET-ok(head blocked),,1085
+us/id/statewide,ID,statewide,P0,ARCGIS,https://services1.arcgis.com/CNPdEkvnGl65jCX8/ArcGIS/rest/services/Address_Points_From_Footprints/FeatureServer/0,OK,,873374,605
+us/il/city_of_chicago,IL,statewide,P0,ARCGIS,https://gisapps.cityofchicago.org/arcgis/rest/services/ExternalApps/operational/MapServer/1,OK,,605558,1559
+us/il/city_of_schaumburg,IL,statewide,P0,ARCGIS,https://gisweb.ci.schaumburg.il.us/arcgis/rest/services/OpenData/AddressPointsOpenData/MapServer/0,TIMEOUT,<urlopen error timed out>,,25696
+us/il/edgar,IL,statewide,P0,ARCGIS,https://services5.arcgis.com/6VdFeKk2GI4rFk2D/arcgis/rest/services/Reach_Parcels/FeatureServer/0,OK,,18098,466
+us/in/statewide,IN,statewide,P0,ARCGIS,https://gisdata.in.gov/server/rest/services/Hosted/Address_Points_of_Indiana_Current/FeatureServer/0,OK,,3326690,1132
+us/ks/statewide,KS,statewide,P0,ARCGIS,https://services6.arcgis.com/7XhimSpf8B7lHIMy/arcgis/rest/services/AddressPoints_NG911_ALL_GCS/FeatureServer/0,OK,,1035861,555
+us/ky/statewide,KY,statewide,P0,ARCGIS,https://services3.arcgis.com/ghsX9CKghMvyYjBU/arcgis/rest/services/Ky_911_Site_Structure_Address_Points_gdb/FeatureServer/1,OK,,2485416,378
+us/ky/boyd,KY,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/iandees/4c9049/MasterAddresses.zip,OK,GET-ok(head blocked),,1050
+us/ma/statewide,MA,statewide,P0,FILE_DOWNLOAD,https://hub.arcgis.com/api/v3/datasets/c33281538f854507a90351760c3468fc_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1,OK,,,1023
+us/md/statewide,MD,statewide,P0,ARCGIS,https://geodata.md.gov/imap/rest/services/PlanningCadastre/MD_PropertyData/MapServer/0,FAIL,HTTP Error 503: Service Unavailable,,1223
+us/me/statewide,ME,statewide,P0,ARCGIS,https://services1.arcgis.com/RbMX0mRVOFNTdLzd/arcgis/rest/services/Maine_E911_Addresses_Feature/FeatureServer/0,OK,,801786,509
+us/mi/statewide,MI,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/iandees/2026-02-15-jtu8s/StructurePointsZip.zip,OK,GET-ok(head blocked),,999
+us/mn/metrogis,MN,statewide,P0,FILE_DOWNLOAD,ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metrogis/loc_address_points/shp_loc_address_points.zip,TIMEOUT,<urlopen error timed out>,,50442
+us/mn/statewide,MN,statewide,P0,ARCGIS,https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/loc_addresses_open/FeatureServer/0,OK,,2220021,4218
+us/mo/statewide,MO,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/iandees/2026-02-20-whw3k/MissouriAddresses_020326.gdb.zip,OK,GET-ok(head blocked),,987
+us/ms/statewide-east,MS,statewide,P0,ARCGIS,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/1,OK,,1120249,2520
+us/ms/statewide-partial,MS,statewide,P0,ARCGIS,https://www.gisonline.ms.gov/arcgis/rest/services/MDEQ/Download/MapServer/56,OK,,286865,973
+us/ms/statewide-west,MS,statewide,P0,ARCGIS,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/0,OK,,874590,874
+us/mt/statewide,MT,statewide,P0,FILE_DOWNLOAD,https://ftpgeoinfo.msl.mt.gov/Data/Spatial/MSDI/AddressStructures/StructuresFramework_shp.zip,TIMEOUT,<urlopen error timed out>,,50513
+us/nc/statewide,NC,statewide,P0,FILE_DOWNLOAD,https://s3.amazonaws.com/dit-cgia-gis-data/NCOM-data/addresses/AddressNC-addresses-07-03-2024.zip,FAIL,HTTP Error 404: Not Found,,1456
+us/nc/town_of_chapel_hill,NC,statewide,P0,ARCGIS,https://gisweb.townofchapelhill.org/arcgis/rest/services/CorporateData/AddressPoints/MapServer/0,ERROR,Service not found,,1107
+us/nc/blowing_rock,NC,statewide,P0,ARCGIS,https://services5.arcgis.com/qWbsNTne6eidnUv9/ArcGIS/rest/services/BlowingRock_Parcels_201709/FeatureServer/0,ERROR,Invalid URL,,737
+us/nd/statewide,ND,statewide,P0,ARCGIS,https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUBSiteStructureAddressPoints/FeatureServer/0,OK,,438067,441
+us/ne/omaha,NE,statewide,P0,ARCGIS,https://dcgis.org/server/rest/services/vector/Address_Points/FeatureServer/0,OK,,225672,1546
+us/ne/statewide,NE,statewide,P0,ARCGIS,https://gis.ne.gov/Enterprise/rest/services/Address_Points/FeatureServer/0,TIMEOUT,<urlopen error timed out>,,37076
+us/nh/statewide,NH,statewide,P0,ARCGIS,https://nhgeodata.unh.edu/nhgeodata/rest/services/CAD/ParcelMosaic/MapServer/0,OK,,617065,1776
+us/nj/statewide,NJ,statewide,P0,FILE_DOWNLOAD,https://geoapps.nj.gov/njgin/address/Addr_NG911.gdb.zip,OK,,,1007
+us/nm/statewide,NM,statewide,P0,FILE_DOWNLOAD,https://gstore.unm.edu/apps/rgis/datasets/8850b25e-e495-46b5-952d-0fa1fa129ada/NM911_Address_202608.original.zip,OK,,,1120
+us/ny/statewide,NY,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/CraigFargione/2026-02-12-f8fm2/OpenAddresses_NYS_20260210.gdb.zip,OK,GET-ok(head blocked),,1153
+us/oh/statewide,OH,statewide,P0,ARCGIS,https://services2.arcgis.com/MlJ0G8iWUyC7jAmu/ArcGIS/rest/services/Statewide_LBRS_Address_Points/FeatureServer/0,OK,,5573001,486
+us/oh/statewide,OH,statewide,P0,ARCGIS,https://webgis.co.trumbull.oh.us/gisserver/rest/services/Maps/DDTI/MapServer/0,OK,,97137,1159
+us/or/statewide,OR,statewide,P0,ARCGIS,https://services8.arcgis.com/8PAo5HGmvRMlF2eU/arcgis/rest/services/Oregon_Address_Points/FeatureServer/0,OK,,1942377,888
+us/pr/statewide,PR,statewide,P0,CSV_DIRECT,https://data.pr.gov/api/views/h9md-ic24/rows.csv?accessType=DOWNLOAD,FAIL,HTTP Error 404: Not Found,,1462
+us/ri/statewide,RI,statewide,P0,ARCGIS,https://services2.arcgis.com/S8zZg9pg23JUEexQ/arcgis/rest/services/FACILITY_AddressPoints_E911domains/FeatureServer/5,OK,,420441,388
+us/sc/statewide,SC,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/jeffdefacto/2025-11-11-05ekg/SC.zip,OK,GET-ok(head blocked),,977
+us/sd/statewide,SD,statewide,P0,ARCGIS,https://arcgis.sd.gov/arcgis/rest/services/BIT/AddressViewer/MapServer/0,TIMEOUT,<urlopen error timed out>,,25076
+us/sd/lawrence,SD,statewide,P0,ARCGIS,https://www.1stdistrict.org/arcgis/rest/services/Lawrence/lawrencemapnet/FeatureServer/1,ERROR,Error performing query operation,,801
+us/tn/statewide,TN,statewide,P0,FILE_DOWNLOAD,https://tnmap.tn.gov/NG911/TN_NG911.zip,TIMEOUT,<urlopen error _ssl.c:975: The handshake operation timed out>,,69744
+us/tx/capcog,TX,statewide,P0,ARCGIS,https://services5.arcgis.com/8DjE4f6iFLArDhsU/ArcGIS/rest/services/Regional_Address_Points/FeatureServer/0,OK,,1123045,327
+us/tx/statewide,TX,statewide,P0,FILE_DOWNLOAD,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-04-02-njyij/stratmap25-addresspoints_48_ap.zip,OK,GET-ok(head blocked),,1045
+us/ut/statewide,UT,statewide,P0,ARCGIS,https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahAddressPoints/FeatureServer/0,OK,,1501596,358
+us/va/statewide,VA,statewide,P0,ARCGIS,https://gismaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Address_Points/FeatureServer/0,FAIL,<urlopen error [Errno -2] Name or service not known>,,482
+us/va/town_of_blacksburg,VA,statewide,P0,FILE_DOWNLOAD,https://s3.amazonaws.com/Blacksburg_Va/GIS_Updates/8_15_2022/Addresses.zip,OK,,,727
+us/va/warrenton,VA,statewide,P0,ARCGIS,https://services3.arcgis.com/7Q2bdSYWSeUYx2U5/arcgis/rest/services/Warrenton_Municipality_Address_Points/FeatureServer/0,OK,,13799,459
+us/vt/statewide,VT,statewide,P0,ARCGIS,https://services1.arcgis.com/BkFxaEFNwHqX3tAw/arcgis/rest/services/FS_VCGI_OPENDATA_Emergency_ESITE_point_SP_v1/FeatureServer/0,OK,,353161,398
+us/wa/statewide,WA,statewide,P0,FILE_DOWNLOAD,https://files.slack.com/files-pri/T029HV94T-F06GLTZQ1U6/download/site_address_points_oct2023.zip?pub_secret=ad47d7aa18,OK,GET-ok(head blocked),,28458
+us/wi/statewide,WI,statewide,P0,ARCGIS,https://services3.arcgis.com/n6uYoouQZW75n5WI/arcgis/rest/services/Wisconsin_Statewide_Parcels/FeatureServer/0,ERROR,Invalid URL,,283
+us/wv/statewide,WV,statewide,P0,ARCGIS,https://services.wvgis.wvu.edu/arcgis/rest/services/Planning_Cadastre/WV_Parcels/MapServer/5,OK,,1048836,1158
+us/wy/statewide,WY,statewide,P0,ARCGIS,https://services3.arcgis.com/r0iJ85SKZ4zAzz3P/arcgis/rest/services/Wyoming_Parcels_for_2026/FeatureServer/0,OK,,373666,840
+us/fl/nassau,FL,county,P1,ARCGIS,https://maps.ncpafl.com/ncflpa_arcgis/rest/services/nassau/TaxMap4_CitrixV2/MapServer/231,OK,,54325,1036
+us/wa/skagit,WA,county,P1,ARCGIS,https://gis.skagitcountywa.gov/arcgis/rest/services/Assessor/PropertyMap/MapServer/3,OK,,70649,554
+us/ny/tompkins,NY,county,P1,ARCGIS,https://services.arcgis.com/oJbAAWNInLrxvF0A/arcgis/rest/services/TCAddress/FeatureServer/0,OK,,59886,419
+us/ga/wilkinson,GA,county,P1,ARCGIS,https://services1.arcgis.com/YwCV9A7cLN6cgxhP/arcgis/rest/services/AMI_Tax_Parcels/FeatureServer/2,ERROR,Invalid URL,,477
+us/al/washington,AL,county,P1,ARCGIS,https://146.148.59.120/arcgis/rest/services/Parcels/Washington/MapServer/0,TIMEOUT,<urlopen error timed out>,,25054
+us/il/effingham,IL,county,P1,ARCGIS,https://services.arcgis.com/vj0V9Lal6oiz0YXp/arcgis/rest/services/Features/FeatureServer/3,OK,,23680,487
+us/mi/branch,MI,county,P1,ARCGIS,https://services2.arcgis.com/OHynDFZ1SVDsGFwm/ArcGIS/rest/services/BranchCountyAddressPoints/FeatureServer/0,OK,,22344,314
+us/ms/lafayette,MS,county,P1,ARCGIS,https://gis.mississippi.edu/server/rest/services/CountyPointAddresses/Lafayette_PointAddresses_2022/MapServer/0,OK,,20554,22505
+us/fl/pasco,FL,county,P1,ARCGIS,https://services6.arcgis.com/Mo4MddfRHpFwT7UF/ArcGIS/rest/services/PascoMapper_Addresses/FeatureServer/16,OK,,363257,424
+us/or/hood_river,OR,county,P1,ARCGIS,https://services7.arcgis.com/xtfQPw7zwSRPkcfN/ArcGIS/rest/services/Address_Points_Public/FeatureServer/37,OK,,11569,533
+us/ca/lassen,CA,county,P1,ARCGIS,https://services.arcgis.com/q3Zg9ERurv23iysr/ArcGIS/rest/services/Lassen_Parcel_Final_Schema1/FeatureServer/0,OK,,47354,486
+us/fl/baker,FL,county,P1,ARCGIS,https://services6.arcgis.com/HSWu3dhzHf7nZfIa/ArcGIS/rest/services/911_Addresses_Website2/FeatureServer/0,OK,,14118,458
+us/mo/jefferson,MO,county,P1,ARCGIS,https://www.semogis.com/arcgis/rest/services/JeffersonLayers/MapServer/7,FAIL,<urlopen error [Errno -2] Name or service not known>,,1398
+us/co/phillips,CO,county,P1,ARCGIS,https://services5.arcgis.com/UWXeShqi0BLIyN15/arcgis/rest/services/PhillipsCountyParcels/FeatureServer/0,OK,,5503,577
+us/co/ouray,CO,county,P1,ARCGIS,https://services7.arcgis.com/pehZWDHjiyZAAcRP/ArcGIS/rest/services/OC_parcel__2_15_21_BASIC/FeatureServer/0,OK,,8391,634
+us/sc/marlboro,SC,county,P1,ARCGIS,https://smpesri.scdot.org/arcgis/rest/services/GISMapping/SC_Parcels/MapServer/33,TIMEOUT,<urlopen error timed out>,,25181
+us/sc/lancaster,SC,county,P1,ARCGIS,https://services3.arcgis.com/rJcpRneDUBgTeCT3/ArcGIS/rest/services/LC_Addresses/FeatureServer/0,OK,,64926,537
+us/wv/lincoln,WV,county,P1,ARCGIS,https://services3.arcgis.com/nJbIFHiSnaX0z0hS/ArcGIS/rest/services/Lincoln_WV_Service/FeatureServer/8,OK,,12152,873
+us/or/lake,OR,county,P1,ARCGIS,https://services3.arcgis.com/e3KSI9Py4B7m3xu6/arcgis/rest/services/Lake01_TL_Addresspoints/FeatureServer/0,OK,,4444,477
+us/il/woodford,IL,county,P1,ARCGIS,https://services1.arcgis.com/iOG1OLysrxLAswZi/arcgis/rest/services/Address_Points_Public_View/FeatureServer/0,OK,,16892,513
+us/mn/isanti,MN,county,P1,ARCGIS,https://gis.co.isanti.mn.us/arcgis/rest/services/Addressing/AddressPoints_Public/FeatureServer/0,TIMEOUT,<urlopen error timed out>,,25450
+us/ca/yolo,CA,county,P1,ARCGIS,https://services2.arcgis.com/RETsakmE0SJfZXCd/ArcGIS/rest/services/YoloCounty_OpenData_AddressPoints/FeatureServer/3,OK,,102821,375
+us/id/adams,ID,county,P1,ARCGIS,https://services9.arcgis.com/ab7oZGsZDc90ZJE2/ArcGIS/rest/services/Parcels/FeatureServer/0,OK,,7634,569
+us/sc/cherokee,SC,county,P1,ARCGIS,https://gis.scacog.org/arcgis/rest/services/CherokeeCountyPublic/MapServer/6,TIMEOUT,<urlopen error timed out>,,33709
+us/fl/indian_river,FL,county,P1,ARCGIS,https://gisportal.ircgov.com/server3/rest/services/Addressing/IRC_Address_Points_woLabels_MS/MapServer/0,TIMEOUT,<urlopen error timed out>,,25100
+us/wv/greenbrier,WV,county,P1,ARCGIS,https://services3.arcgis.com/nJbIFHiSnaX0z0hS/ArcGIS/rest/services/GreenbrierService/FeatureServer/0,OK,,23063,363
+us/tx/galveston,TX,county,P1,ARCGIS,https://services2.arcgis.com/7Zo7vX4Yxo9Z7Vw3/ArcGIS/rest/services/MyMapService/FeatureServer/0,OK,,190324,353
+us/ks/shawnee_county,KS,county,P1,ARCGIS,https://services2.arcgis.com/2XE514jeVQMWNKHX/arcgis/rest/services/AddressPoints/FeatureServer/0,OK,,75607,654
+us/ca/kings,CA,county,P1,ARCGIS,https://services3.arcgis.com/24gLq1DBBzDfd0cZ/ArcGIS/rest/services/Address_Kings_County/FeatureServer/4,OK,,51882,579
+us/in/white,IN,county,P1,ARCGIS,https://elb2.39dn.com/arcgis/rest/services/eGISDynamicServices/WhiteINDynamic/MapServer/5,FAIL,<urlopen error [Errno -5] No address associated with hostname>,,419
+us/ms/covington,MS,county,P1,ARCGIS,https://gis.mississippi.edu/server/rest/services/CountyPointAddresses/Covington_PointAddresses_2022/MapServer/0,OK,,10908,22520
+us/va/louisa,VA,county,P1,ARCGIS,https://services.arcgis.com/JpCRGiMdPvzLX1GI/arcgis/rest/services/Louisa_WL_P/FeatureServer/13,OK,,22548,302
+us/pa/pike,PA,county,P1,ARCGIS,https://gis.pikepa.org/arcgis/rest/services/PikeCo_AddressPoints/MapServer/1,TIMEOUT,<urlopen error timed out>,,26604
+us/mn/wilkin,MN,county,P1,ARCGIS,https://gisweb.co.wilkin.mn.us/arcgis/rest/services/Addressing/Addressing_public/FeatureServer/0,OK,,1205,1241
+us/il/douglas,IL,county,P1,ARCGIS,https://services3.arcgis.com/HXjsHxkFFcZquC8P/ArcGIS/rest/services/Parcels/FeatureServer/0,OK,,15498,481
+us/pa/dauphin,PA,county,P1,ARCGIS,https://services2.arcgis.com/EEtiX55QzkHKYQKY/arcgis/rest/services/DC_Parcels/FeatureServer/0,OK,,117800,250
+us/ks/kearny_county,KS,county,P1,ARCGIS,https://72.205.198.131/ArcGIS/rest/services/Kearny/Kearny/MapServer/35,TIMEOUT,<urlopen error timed out>,,25059
+us/ut/duchesne,UT,county,P1,ARCGIS,https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/Parcels_Duchesne/FeatureServer/0,OK,,32354,412
+us/mn/carlton,MN,county,P1,ARCGIS,https://gis.co.carlton.mn.us/arcgis/rest/services/OpenData/AddressPoints_CarltonCountyMN/MapServer/0,OK,,17318,1990
+us/va/clarke,VA,county,P1,ARCGIS,https://services7.arcgis.com/1uNEgmtBVWGKSY5Q/arcgis/rest/services/Addresses/FeatureServer/0,OK,,7529,440
+us/fl/city_of_pinellas_park,FL,city,P2,ARCGIS,https://arcgis4.roktech.net/arcgis/rest/services/PinellasPark/GoMaps4/MapServer/10,FAIL,<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify fai,,785
+us/ks/city_of_olathe,KS,city,P2,ARCGIS,https://ozone.olatheks.org/arcgis/rest/services/govoutreach/olathecc/MapServer/0,FAIL,Expecting value: line 3 column 1 (char 4),,3388
+us/co/city_of_fort_collins,CO,city,P2,ARCGIS,https://services1.arcgis.com/dLpFH5mwVvxSN4OE/arcgis/rest/services/Addresses/FeatureServer/0/,OK,,111087,365
+us/ct/city_of_manchester,CT,city,P2,ARCGIS,https://gis1.townofmanchester.org/arcgis/rest/services/Basemaps/ToMMI3_BaseMap/MapServer/2,TIMEOUT,<urlopen error timed out>,,25103
+us/tx/city_of_beaumont,TX,city,P2,ARCGIS,https://gis.beaumonttexas.gov/arcgis/rest/services/CWAMS/MapServer/1,OK,,57169,8077
+us/wi/city_of_milwaukee,WI,city,P2,ARCGIS,https://milwaukeemaps.milwaukee.gov/arcgis/rest/services/Accela/AccelaApo/MapServer/0,OK,,334308,13510
+us/nc/city_of_boone,NC,city,P2,ARCGIS,https://gisviewer.townofboone.net/arcgis/rest/services/Parcels/MapServer/1,FAIL,<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify fai,,843
+us/va/city_of_richmond,VA,city,P2,ARCGIS,https://services1.arcgis.com/k3vhq11XkBNeeOfM/arcgis/rest/services/Addresses/FeatureServer/0,OK,,148941,362
+us/ca/city_of_redding,CA,city,P2,ARCGIS,https://services2.arcgis.com/3cLBYFivUvlzVu0H/ArcGIS/rest/services/AddressPoints/FeatureServer/0,OK,,42212,776
+us/az/city_of_flagstaff,AZ,city,P2,ARCGIS,https://gis.flagstaffaz.gov/arcgisserver/rest/services/COF_Authoritative/FeatureServer/1,AUTH,HTTP Error 403: Forbidden,,89
+us/ga/city_of_johns_creek,GA,city,P2,ARCGIS,https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Address_Points_New/FeatureServer/0,OK,,32814,371
+us/va/city_of_alexandria,VA,city,P2,ARCGIS,https://maps15.alexandriava.gov/arcgis/rest/services/alxAddressWm/MapServer/0,OK,,36043,994
+us/ks/anderson_county,KS,county,P3,CSV_DIRECT,https://data.openaddresses.io/cache/us-ks-anderson_county.csv,OK,GET-ok(head blocked),,1114
+us/or/benton,OR,county,P3,FILE_DOWNLOAD,https://gis.co.benton.or.us/gisdata/Address/AddressSHPs.zip,TIMEOUT,<urlopen error timed out>,,50261
+us/ia/pocahontas,IA,county,P3,FILE_DOWNLOAD,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Pocahontas/Address_76.zip,TIMEOUT,<urlopen error timed out>,,50257
+us/ks/bourbon_county,KS,county,P3,CSV_DIRECT,https://data.openaddresses.io/cache/us-ks-bourbon_county.csv,OK,GET-ok(head blocked),,1077
+us/ks/linn_county,KS,county,P3,CSV_DIRECT,https://data.openaddresses.io/cache/us-ks-linn_county.csv,OK,GET-ok(head blocked),,1038
+us/ia/scott,IA,county,P3,FILE_DOWNLOAD,https://github.com/user-attachments/files/16608268/SHP_Address.zip,OK,,,1734
+us/wy/teton,WY,county,P3,FILE_DOWNLOAD,https://maps.terragis.net/tetonwy/mapserver/download/data/ownership_shp.zip,OK,,,1050
+us/wi/menominee,WI,county,P3,FILE_DOWNLOAD,https://web.s3.wisc.edu/rml-gisdata/MENOMINEE_ADDRESSES_2025.zip,OK,,,2014
+us/ia/benton,IA,county,P3,FILE_DOWNLOAD,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Benton/address_06.zip,TIMEOUT,<urlopen error timed out>,,50044
+us/wi/dunn,WI,county,P3,FILE_DOWNLOAD,https://web.s3.wisc.edu/rml-gisdata/DUNN_ADDRESSES_2025.zip,OK,,,796
+us/wi/trempealeau,WI,county,P3,FILE_DOWNLOAD,https://web.s3.wisc.edu/rml-gisdata/TREMPEALEAU_ADDRESSES_2025.zip,OK,,,794
+us/wa/wakiakum,WA,county,P3,FILE_DOWNLOAD,https://www.co.wahkiakum.wa.us/DocumentCenter/View/2055,OK,GET-ok(head blocked),,4316
