@@ -80,19 +80,29 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
                 info = fetch_layer(pol, row["url"], raw_path, max_records=max_records,
                                    offset_start=offset_start)
                 st.update(info)
-                with open(raw_path, encoding="utf-8") as fh:
-                    raw_rows = [json.loads(l) for l in fh if l.strip()]
+
+                def _raw_iter(path=raw_path):
+                    with open(path, encoding="utf-8") as fh:
+                        for l in fh:
+                            if l.strip():
+                                yield json.loads(l)
+                raw_stream = _raw_iter()
             else:
                 info = fetch_file(pol, row["url"], os.path.join(raw_dir, safe))
                 st.update({k: v for k, v in info.items() if k != "members"})
                 st["members"] = len(info.get("members", []))
-                raw_rows = list(iter_rows(info))
+                raw_stream = iter_rows(info)
 
-            good, bad = 0, 0
-            missing = mapping_sanity(raw_rows[0], mapping) if raw_rows else []
+            # 流式清洗：边读边写，不在内存里囤全量（大源数百万条会撑爆 + 被回收即全丢）
+            good, bad, n_raw, missing = 0, 0, 0, []
             norm_path = os.path.join(norm_dir, safe + ".ndjson")
             with open(norm_path, "w", encoding="utf-8") as fh:
-                for r in raw_rows:
+                for r in raw_stream:
+                    n_raw += 1
+                    if n_raw == 1:
+                        missing = mapping_sanity(r, mapping)
+                    if n_raw % 200000 == 0:
+                        print(f"    ... {sid} 已清洗 {n_raw:,}", flush=True)
                     rec = to_record(r, mapping, sid, default_state=row.get("state", ""))
                     if rec is None:
                         bad += 1
@@ -101,11 +111,11 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
                     good += 1
             if good:
                 norm_files.append(norm_path)
-            st.update({"raw_rows": len(raw_rows), "kept": good, "dropped_no_number": bad,
+            st.update({"raw_rows": n_raw, "kept": good, "dropped_no_number": bad,
                        "mapping_missing_fields": missing,
-                       "kept_ratio": round(good / len(raw_rows), 4) if raw_rows else 0,
+                       "kept_ratio": round(good / n_raw, 4) if n_raw else 0,
                        "seconds": round(time.time() - t0, 1)})
-            print(f"[{i}/{len(rows)}] {sid:28s} 原始 {len(raw_rows):>8,} → 合规则 {good:>8,}"
+            print(f"[{i}/{len(rows)}] {sid:28s} 原始 {n_raw:>8,} → 合规则 {good:>8,}"
                   f" (丢弃 {bad:,}) {st['seconds']}s", flush=True)
         except Exception as e:
             st.update({"error": f"{type(e).__name__}: {str(e)[:600]}",
