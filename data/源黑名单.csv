@@ -1,0 +1,2 @@
+source_id,kind,reason,evidence,first_seen,retest_after,hits
+us/az/statewide,ENGINE_GAP,下载前侦察判定形态未覆盖：体积 254MB 且无刀确信能切（application/zip）→ 判形态缺口，不下载（省 254MB × 刀数）,待造刀,2026-10-11 02:26,2026-11-10,1
