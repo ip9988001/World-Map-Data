@@ -7,3 +7,8 @@ raw/
 __pycache__/
 .venv/
 out/
+raw_archive/
+parsed/
+out/casc*/
+out/rule_compare/
+logs/
