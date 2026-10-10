@@ -35,21 +35,19 @@ jobs:
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inA 第 0 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -124,21 +122,19 @@ print('skip=' + ('1' if (done or lo > 1663345) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inA 第 1 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -213,21 +209,19 @@ print('skip=' + ('1' if (done or lo > 1663345) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inA 第 2 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -302,21 +296,19 @@ print('skip=' + ('1' if (done or lo > 1663345) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inA 第 3 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -391,21 +383,19 @@ print('skip=' + ('1' if (done or lo > 1663345) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 1663345) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 1663345) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inA 第 4 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -478,21 +468,19 @@ print('skip=' + ('1' if (done or lo > 1663345) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inB 第 0 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -567,21 +555,19 @@ print('skip=' + ('1' if (done or lo > 3326690) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inB 第 1 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -656,21 +642,19 @@ print('skip=' + ('1' if (done or lo > 3326690) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inB 第 2 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -745,21 +729,19 @@ print('skip=' + ('1' if (done or lo > 3326690) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inB 第 3 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -834,21 +816,19 @@ print('skip=' + ('1' if (done or lo > 3326690) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-inB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 3326690) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-inB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 3326690) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 inB 第 4 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -921,21 +901,19 @@ print('skip=' + ('1' if (done or lo > 3326690) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 2799877) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohA 第 0 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1010,21 +988,19 @@ print('skip=' + ('1' if (done or lo > 2799877) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 2799877) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohA 第 1 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1099,21 +1075,19 @@ print('skip=' + ('1' if (done or lo > 2799877) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 2799877) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohA 第 2 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1188,21 +1162,19 @@ print('skip=' + ('1' if (done or lo > 2799877) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 2799877) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohA 第 3 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1277,21 +1249,19 @@ print('skip=' + ('1' if (done or lo > 2799877) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohA-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 2799877) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohA-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 2799877) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohA 第 4 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1364,21 +1334,19 @@ print('skip=' + ('1' if (done or lo > 2799877) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 5599754) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohB 第 0 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1453,21 +1421,19 @@ print('skip=' + ('1' if (done or lo > 5599754) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 5599754) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohB 第 1 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1542,21 +1508,19 @@ print('skip=' + ('1' if (done or lo > 5599754) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 5599754) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohB 第 2 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1631,21 +1595,19 @@ print('skip=' + ('1' if (done or lo > 5599754) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 5599754) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohB 第 3 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -1720,21 +1682,19 @@ print('skip=' + ('1' if (done or lo > 5599754) else '0'))
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-ohB-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > 5599754) else '0'))
-" >> "$GITHUB_OUTPUT"
+          import glob, json
+          lo, done = 1, False
+          for p in glob.glob('state/progress-ohB-*.json'):
+              try:
+                  d = json.load(open(p, encoding='utf-8'))
+              except Exception:
+                  continue
+              done = done or bool(d.get('done'))
+              lo = max(lo, int(d.get('last_oid') or 0) + 1)
+          print('lo=' + str(lo))
+          print('skip=' + ('1' if (done or lo > 5599754) else '0'))
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 ohB 第 4 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'

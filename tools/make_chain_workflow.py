@@ -64,21 +64,9 @@ __NEEDS__    steps:
         id: pos
         run: |
           ls -la state 2>/dev/null || true
-          echo "lo=1" >> "$GITHUB_OUTPUT"
-          echo "skip=0" >> "$GITHUB_OUTPUT"
           python3 -c "
-import glob, json
-lo, done = 1, False
-for p in glob.glob('state/progress-__LANE__-*.json'):
-    try:
-        d = json.load(open(p, encoding='utf-8'))
-    except Exception:
-        continue
-    done = done or bool(d.get('done'))
-    lo = max(lo, int(d.get('last_oid') or 0) + 1)
-print('lo=' + str(lo))
-print('skip=' + ('1' if (done or lo > __HI__) else '0'))
-" >> "$GITHUB_OUTPUT"
+__POSCODE__
+          " >> "$GITHUB_OUTPUT"
 
       - name: 采集 __LANE__ 第 __K__ 段（最多 16 分钟，到点主动停）
         if: steps.pos.outputs.skip != '1'
@@ -193,6 +181,19 @@ MERGE = """  merge:
 """
 
 
+POSCODE = "\n".join("          " + l for l in """import glob, json
+lo, done = 1, False
+for p in glob.glob('state/progress-__LANE__-*.json'):
+    try:
+        d = json.load(open(p, encoding='utf-8'))
+    except Exception:
+        continue
+    done = done or bool(d.get('done'))
+    lo = max(lo, int(d.get('last_oid') or 0) + 1)
+print('lo=' + str(lo))
+print('skip=' + ('1' if (done or lo > __HI__) else '0'))""".splitlines())
+
+
 def main() -> None:
     out = [HEAD.replace("__BUDGET__", str(BUDGET))]
     names = []
@@ -209,6 +210,7 @@ def main() -> None:
                        .replace("__K__", str(k))
                        .replace("__IDX__", str(idx))
                        .replace("__HI__", str(hi))
+                       .replace("__POSCODE__", POSCODE.replace("__LANE__", lane).replace("__HI__", str(hi)))
                        .replace("__INTERVAL__", str(INTERVAL))
                        .replace("__CONC__", str(CONC)))
             prev = name
