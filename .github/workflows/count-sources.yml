@@ -28,7 +28,12 @@ permissions:
 jobs:
   count:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,18 +46,21 @@ jobs:
           if [ "$LIMIT" = "0" ] || [ -z "$LIMIT" ]; then LIMITARG=""; else LIMITARG="--limit $LIMIT"; fi
           python -m collectors.count_all \
             --priorities "${{ github.event.inputs.priorities }}" \
+            --shard "${{ matrix.shard }}/8" \
             $LIMITARG \
             --min-interval ${{ github.event.inputs.min_interval }} \
             --concurrency ${{ github.event.inputs.concurrency }} \
-            --out out/counts.csv \
-            --log out/count_log.jsonl
+            --timeout 20 --retries 1 \
+            --out out/counts_${{ matrix.shard }}.csv \
+            --log out/count_log_${{ matrix.shard }}.jsonl
 
       - name: 覆盖率汇总
         if: always()
         run: |
           python - <<'PY'
           import csv, collections, os, json
-          p = "out/counts.csv"
+          import glob
+          p = sorted(glob.glob("out/counts_*.csv"))[0] if glob.glob("out/counts_*.csv") else "out/counts.csv"
           if not os.path.exists(p):
               print("没有产出 counts.csv"); raise SystemExit(0)
           rows = list(csv.DictReader(open(p, encoding="utf-8-sig")))
@@ -76,10 +84,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: count-output
+          name: count-output-${{ matrix.shard }}
           path: |
-            out/counts.csv
-            out/counts_summary.json
-            out/count_log.jsonl
+            out/counts_*.csv
+            out/counts_*_summary.json
+            out/count_log_*.jsonl
           retention-days: 30
           if-no-files-found: warn

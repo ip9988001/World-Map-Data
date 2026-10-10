@@ -22,7 +22,7 @@ from .arcgis import layer_count, layer_meta, normalize_layer_url
 from .politeness import Politeness
 
 
-def load_rows(priorities=None, ids=None, limit=None):
+def load_rows(priorities=None, ids=None, limit=None, shard=None):
     rows = list(csv.DictReader(open("data/源总表-执行序.csv", encoding="utf-8-sig")))
     if ids:
         want = {s.strip() for s in ids.split(",") if s.strip()}
@@ -30,6 +30,9 @@ def load_rows(priorities=None, ids=None, limit=None):
     elif priorities:
         wantp = {p.strip() for p in priorities.split(",")}
         rows = [r for r in rows if r["priority"] in wantp]
+    if shard:
+        i, n = shard
+        rows = [r for k, r in enumerate(rows) if k % n == i]
     return rows[:limit] if limit else rows
 
 
@@ -72,16 +75,24 @@ def main(argv=None):
     ap.add_argument("--min-interval", type=float, default=0.8)
     ap.add_argument("--concurrency", type=int, default=3)
     ap.add_argument("--log", default="out/count_log.jsonl")
+    ap.add_argument("--shard", help="分片：i/N，例如 3/8")
+    ap.add_argument("--timeout", type=int, default=20,
+                    help="单请求超时秒数（计数扫描不需要长超时）")
+    ap.add_argument("--retries", type=int, default=1, help="重试次数（计数扫描保持轻量）")
     a = ap.parse_args(argv)
 
-    rows = load_rows(a.priorities, a.sources, a.limit)
+    shard = None
+    if a.shard:
+        i, n = a.shard.split("/")
+        shard = (int(i), int(n))
+    rows = load_rows(a.priorities, a.sources, a.limit, shard)
     if not rows:
         print("没有匹配的源", file=sys.stderr)
         return 2
     print(f"待扫描源：{len(rows)} 个（每个源仅 1~2 个只读请求）", flush=True)
 
     pol = Politeness(min_interval=a.min_interval, max_concurrency=a.concurrency,
-                     log_path=a.log)
+                     max_retries=a.retries, timeout=a.timeout, log_path=a.log)
     results = []
     t0 = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=a.concurrency) as ex:
