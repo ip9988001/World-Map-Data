@@ -79,10 +79,12 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
         while kept < target:
             want = min(ps, target - kept)
             if last is None:
-                where = f"{oid} >= {oid_lo}" if oid_lo is not None else "1=1"
+                conds = []
+                if oid_lo is not None:
+                    conds.append(f"{oid} >= {oid_lo}")
                 if oid_hi is not None:
-                    where = where if where == "1=1" else where
-                    where += ("" if where == "1=1" else " AND ") + f"{oid} <= {oid_hi}"
+                    conds.append(f"{oid} <= {oid_hi}")
+                where = " AND ".join(conds) if conds else "1=1"
             else:
                 where = f"{oid} > {last}"
                 if oid_hi is not None:
