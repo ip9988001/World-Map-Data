@@ -78,7 +78,7 @@ Per-source licence and attribution live in the [`license`](data/源总表.csv) c
 ## Repository layout
 
 ```
-docs/        Survey and design documents
+docs/        Survey and design documents (incl. 全自动数据工厂设计-v1.md)
 data/        Normalised source tables (CSV)
 collectors/  Collection adapters (ArcGIS / file download) + normalisation + merge
 scripts/     Parsing, reporting and probing utilities
@@ -141,8 +141,12 @@ per-source availability results, and the manifests that describe what was publis
 - [x] **ArcGIS adapter + file-download adapter** (with politeness: server limit × 0.9)
 - [x] First pilot run — **100% source success on Actions**; 5.57M records in a single state source
 - [x] **Full sweep of all 1,933 address layers** — 77.1% reachable, **141.4 million** real address points, **50 states covered**
-- [ ] State-sharded full collection → merge & dedupe
-- [ ] Full collection, deduplication and merge
+- [x] **Resumable collection pipeline** — each stage stops itself at 16 minutes and hands a checkpoint to the next; survives runner reclamation (20+ stages, zero losses)
+- [x] First state-level full collection (Indiana + Ohio) — **+7.94 million** unique addresses
+- [x] Merge & clean-up — **19,736,473** unique real address points; 689 dirty rows dropped (invalid state 506 / bad house number 172 / ZIP-as-number 10 / address blob 1)
+- [x] **First dataset release** — `v0.1.0-dataset` (single 160 MB package; per-state sharding is the next structure)
+- [ ] Fully automated data factory — design in `docs/全自动数据工厂设计-v1.md` (**pending confirmation, not implemented**)
+- [ ] Remaining US states + global expansion (the 22 countries/regions covered by meiguodizhi)
 
 ---
 
