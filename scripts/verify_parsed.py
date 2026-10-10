@@ -145,47 +145,15 @@ def check_resample(sid: str, row: dict, sample: int = 200, archive: str = "raw_a
     random.shuffle(pool)
     picked = pool[:sample]
     hit = sum(1 for p in picked if p in fresh)
-    return {"protocol": proto, "fresh_rows": len(fresh), "sampled": len(picked),
-            "hit": hit, "rate": round(hit / len(picked), 3) if picked else 0.0,
+    if os.environ.get("VERIFY_DEBUG"):
+        print(f"   [debug] rule={rule_name} parsed={len(parsed)} fresh={len(fresh)} "
+              f"parsed[:2]={pool[:2][:2]} fresh[:2]={sorted(fresh)[:2]}")
+    return {"protocol": proto, "rule": rule_name, "fresh_rows": len(fresh),
+            "sampled": len(picked), "hit": hit,
+            "rate": round(hit / len(picked), 3) if picked else 0.0,
             "skipped": False}
 
 
-def check_resample(sid: str, row: dict, sample: int = 200, archive: str = "raw_archive") -> dict:
-    """回源抽检：重取一小段原始数据（临时目录），比对记录仍存在。"""
-    pol = Politeness(min_interval=1.0, max_concurrency=1, max_retries=1, timeout=20,
-                     log_path="out/verify_log.jsonl")
-    tmp = "out/verify_tmp"
-    os.makedirs(tmp, exist_ok=True)
-    proto = pick_protocol(row["url"])
-    try:
-        if proto == "direct":
-            return {"skipped": True, "why": "直链文件整份下载代价大，回源抽检跳过（本地溯源已覆盖）"}
-        man = fetch_raw(pol, sid, row["url"], tmp, force=True, budget_s=90)
-    except Exception as e:
-        return {"skipped": True, "why": f"回源失败（按网络抖动处理）: {type(e).__name__}"}
-    fresh: set[tuple] = set()
-    for raw in iter_rows_from_archive(archive_dir(tmp, sid)):
-        for k, v in raw.items():
-            pass
-        n = next((norm_number(v) for k, v in raw.items()
-                  if isinstance(v, str) and norm_number(v)), "")
-        s = next((norm_street(v) for k, v in raw.items()
-                  if isinstance(v, str) and norm_street(v) and norm_street(v) != n), "")
-        if n and s:
-            fresh.add((n, s))
-    parsed = set()
-    pdir = os.path.join("parsed", *sid.split("/"))
-    for f in (os.listdir(pdir) if os.path.isdir(pdir) else []):
-        if f.endswith(".ndjson"):
-            for rec in load_records(os.path.join(pdir, f)):
-                parsed.add((norm_number(rec.get("number")), norm_street(rec.get("street"))))
-    pool = list(parsed)
-    random.shuffle(pool)
-    picked = pool[:sample]
-    hit = sum(1 for p in picked if p in fresh)
-    return {"protocol": proto, "fresh_rows": len(fresh), "sampled": len(picked),
-            "hit": hit, "rate": round(hit / len(picked), 3) if picked else 0.0,
-            "skipped": False}
 
 
 def main(argv=None) -> None:
