@@ -53,41 +53,76 @@ def fetch_layer(pol: Politeness, url: str, out_ndjson: str,
                 max_records: int | None = None, page_size: int | None = None,
                 out_fields: str = "*", progress=None,
                 offset_start: int = 0) -> dict:
-    """拉取一个图层全部属性 → NDJSON。返回统计信息。"""
+    """拉取一个图层全部属性 → NDJSON。
+
+    ⚠️ 关键实现：使用**键集分页（keyset pagination）**而不是 resultOffset。
+       ArcGIS 服务在 resultOffset 变深时会直接报 400
+       （'Cannot perform query. Invalid query parameters'），
+       表现为「任务成功但产出 0 条」。改为每页用
+           where = "<oidField> > <上一页最大 OID>"
+       即可无限深度翻页，且不依赖 offset。
+
+    offset_start 保留仅为兼容旧调用（键集模式下会被忽略后丢弃前 N 条）。
+    """
     meta = layer_meta(pol, url)
     total = layer_count(pol, meta["url"])
     ps = page_size or safe_page_size(meta["maxRecordCount"])
     oid = meta["objectIdField"]
-    remaining = max(0, total - offset_start)
-    target = min(remaining, max_records) if max_records else remaining
+    target = total if not max_records else min(total, max_records)
 
     os.makedirs(os.path.dirname(out_ndjson) or ".", exist_ok=True)
-    kept, offset, pages = 0, offset_start, 0
+    kept, pages, skipped = 0, 0, 0
+    last = None
+    use_keyset = True
     with open(out_ndjson, "w", encoding="utf-8") as fh:
         while kept < target:
             want = min(ps, target - kept)
-            d = pol.get_json(f"{meta['url']}/query", {
-                "where": "1=1",
+            params = {
+                "where": "1=1" if last is None else f"{oid} > {last}",
                 "outFields": out_fields,
                 "returnGeometry": "false",
-                "orderByFields": oid,
-                "resultOffset": offset,
                 "resultRecordCount": want,
                 "f": "json",
-            })
-            if "error" in d:
+            }
+            if use_keyset:
+                params["orderByFields"] = oid
+            try:
+                d = pol.get_json(f"{meta['url']}/query", params)
+            except Exception as e:
+                if use_keyset:
+                    # 个别服务不支持 orderByFields → 退回 offset 模式
+                    use_keyset = False
+                    continue
+                raise
+            if isinstance(d, dict) and "error" in d:
+                if use_keyset:
+                    use_keyset = False
+                    continue
                 raise RuntimeError(f"arcgis query error: {d['error']}")
             feats = d.get("features") or []
             if not feats:
                 break
+            max_oid = None
             for f in feats:
-                fh.write(json.dumps(f.get("attributes", {}), ensure_ascii=False) + "\n")
-            kept += len(feats)
-            offset += len(feats)
+                a = f.get("attributes", {})
+                v = a.get(oid)
+                try:
+                    vi = int(float(v))
+                    max_oid = vi if max_oid is None else max(max_oid, vi)
+                except Exception:
+                    pass
+                if skipped < offset_start:
+                    skipped += 1
+                    continue
+                fh.write(json.dumps(a, ensure_ascii=False) + "\n")
+                kept += 1
             pages += 1
             if progress:
                 progress(kept, target, pages)
-            if offset >= total:
+            if max_oid is None or (last is not None and max_oid <= last):
+                break                     # 无法推进 → 结束，避免死循环
+            last = max_oid
+            if kept >= target:
                 break
 
     return {"url": meta["url"], "layer": meta["name"], "server_total": total,

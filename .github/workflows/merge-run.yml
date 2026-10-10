@@ -8,8 +8,8 @@ on:
       run_id:
         description: "要合并的采集运行 ID（collect-p0 的 run id）"
         required: true
-      state:
-        description: "只合并某个州（留空=全部）"
+      run_id2:
+        description: "第二来源运行 ID（可选，用于把补跑结果并进来）"
         required: false
         default: ""
 
@@ -27,13 +27,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 下载采集分片
+      - name: 下载采集分片（主运行）
         uses: actions/download-artifact@v4
         with:
-          path: in
+          path: in/a
           pattern: norm-*
           merge-multiple: true
           run-id: ${{ github.event.inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 下载采集分片（补跑运行）
+        if: ${{ github.event.inputs.run_id2 != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          path: in/b
+          pattern: norm-*
+          merge-multiple: true
+          run-id: ${{ github.event.inputs.run_id2 }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 合并去重（外部排序，内存恒定）+ 按州切片

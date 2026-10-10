@@ -39,8 +39,9 @@ jobs:
           items = []
           for x in src:
               ps = max(100, int(x.get("page_size") or 1800))
-              per = min(1_500_000, ps * MAX_REQ_PER_JOB)
-              chunks = max(1, math.ceil(x["count"] / per))
+              # TODO: 用 outStatistics 取 OID 上下界后可做 OID 区间切块并行；
+              #       当前一键集分页，offset 切块已无意义，故一源一 job。
+              chunks = 1
               for k in range(chunks):
                   items.append({"i": x["i"], "k": k, "id": x["source_id"],
                                 "off": k * per, "lim": per, "n": x["count"]})

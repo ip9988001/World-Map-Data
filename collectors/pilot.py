@@ -108,7 +108,7 @@ def run(rows, out_dir, max_records, min_interval, concurrency, log_path, offset_
             print(f"[{i}/{len(rows)}] {sid:28s} 原始 {len(raw_rows):>8,} → 合规则 {good:>8,}"
                   f" (丢弃 {bad:,}) {st['seconds']}s", flush=True)
         except Exception as e:
-            st.update({"error": f"{type(e).__name__}: {str(e)[:160]}",
+            st.update({"error": f"{type(e).__name__}: {str(e)[:600]}",
                        "seconds": round(time.time() - t0, 1)})
             print(f"[{i}/{len(rows)}] {sid:28s} ✗ {st['error'][:100]}", flush=True)
         stats.append(st)
