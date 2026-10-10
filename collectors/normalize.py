@@ -170,9 +170,18 @@ def _apply_function(row: dict, spec: dict) -> str:
         return src[:-len(p)].strip() if p and src.upper().endswith(p.upper()) else src
     if fn == "regexp":
         pat = spec.get("pattern") or ""
-        rep = spec.get("replace") or ""
+        rep = spec.get("replace")
         try:
-            return re.sub(pat, rep, src).strip()
+            if rep is None:
+                # 没有 replace → **提取语义**：有捕获组就取第 1 组。
+                # （老实现用 re.sub(pat, "", src)：当 pattern 能匹配整串时会把街道名整条删空 → 整源 0 条）
+                m = re.search(pat, src)
+                if not m:
+                    return src
+                return (m.group(1) if m.groups() else m.group(0)).strip()
+            # 有 replace → 替换语义，但必须把 JS/PHP 风格的 $1 转成 Python 的 \g<1>。
+            # （老实现直接 re.sub(pat, "$1", src)：Python 不认 $1，会输出**字面量 "$1"** → 街道名变成 "$1"）
+            return re.sub(pat, _js_repl_to_py(str(rep)), src).strip()
         except re.error:
             return src
     if fn == "join":
@@ -213,6 +222,11 @@ def _apply_function(row: dict, spec: dict) -> str:
             return v
     # 未知函数 → 退回字段值
     return " ".join(v for v in vals if v)
+
+
+def _js_repl_to_py(rep: str) -> str:
+    """把 JS/PHP 风格的 $1 / $2 替换语法规整成 Python re.sub 认的 \\g<1>。"""
+    return re.sub(r"\$(\d+)", r"\\g<\1>", rep)
 
 
 def _apply_passthrough(text: str, spec: dict) -> str:

@@ -1,0 +1,220 @@
+source_id,count,col,kind,pattern,replace
+us/id/statewide,873374,number,$n语法(会输出字面量),"^(?:.+\s)?(\d+(-\d+)?)(?:\s.+,.+,\s(?:OR|ID|WA),\s.+)$",$1
+us/wy/statewide,373666,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*?)(?: {2}.*)?$,$1
+us/ca/kern,0,street,无replace(会删空字段),"(?i)^(?:\s*(?:\d+(?:[ -]\d/\d)?|\d+-\d+|\d+-?[A-Z])\s+)?(.+?)(?:\s+(?:(?:UNIT|APARTMENT|APT\.?|SUITE|STE\.?|BUILDING|BLDG\.?|LOT)\s+|#).+)?(?:,\s*[^,]+)?$",None
+us/co/mineral,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/co/summit,40978,street,无replace(会删空字段),^(?:\d+(?:[A-Z]|-\d+|\.\d+)?\s+)(.+?)(?:(?:\(|UNIT\s|LOT\s|BLDG\s|OFC\s|SPC\s).+)?$,None
+us/ga/coffee,21029,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ia/adair,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/allamakee,9121,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/id/adams,7634,street,无replace(会删空字段),^(?:\d+\s)(?:#\d+\s)?(.+?)$,None
+us/id/canyon,103060,city_f,$n语法(会输出字面量),^.*CITY OF (.+)$,$1
+us/id/franklin,10941,street,无replace(会删空字段),^(?:\d+\s)(.+?)(?:\s#\d)?$,None
+us/id/jefferson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/id/teton,13259,street,无replace(会删空字段),^(?:[0-9]+ )(.+?)(?:\s+(?:UNIT\s+|Unit\s+|#).+)?$,None
+us/il/christian,24347,street,$n语法(会输出字面量),^(?:[0-9]+[A-Za-z]?(?:\s?1/2)?(?:-[0-9]+[A-Za-z]?(?:\s?1/2)?)?)\s+(.*)$,$1
+us/il/clark,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/coles,27608,city_f,$n语法(会输出字面量),^(.*)(?:\sIL\s\d{5})$,$1
+us/il/cumberland,11767,city_f,$n语法(会输出字面量),^(.*)(?:\sIL\s\d{5})$,$1
+us/il/dewitt,11164,number,$n语法(会输出字面量),^(\d+)(?:\s.+)$,$1
+us/il/douglas,15498,street,$n语法(会输出字面量),^(?:[0-9]+[A-Z]? +)(.*),$1
+us/il/effingham,23680,city_f,$n语法(会输出字面量),^(.*?)\s+IL\s+[0-9]{5}(?:-[0-9]{4})?$,$1
+us/il/jersey,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/kendall,58839,city_f,$n语法(会输出字面量),^(.+?)\s+IL\s+\d{5}.*$,$1
+us/il/knox,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/lawrence,0,street,$n语法(会输出字面量),^(?:[0-9]+ )([^;]+);.*$,$1
+us/il/macoupin,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/mclean,85220,street,无replace(会删空字段),^(?:\d+\s+)?(.+?)(?:\s+(?:#|UNIT|APT)\s+.+)?$,None
+us/il/menard,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/moultrie,0,number,$n语法(会输出字面量),^([0-9]+)(.*)$,$1
+us/il/putnam,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/schuyler,9109,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/il/williamson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/in/adams,20242,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/in/harrison,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/in/hendricks,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/in/miami,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ks/dickinson_county,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ks/reno_county,0,street,$n语法(会输出字面量),"^(?:[0-9]+ )([^,]+),(?:.*)$",$1
+us/ky/campbell,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*?)(?: (LOT|STE|UNIT|APT|GRGE|CTG).*|$),$1
+us/la/lincoln,28034,street,无replace(会删空字段),^(.+?)(?: Pvt)?$,None
+us/mi/emmet,32391,street,无replace(会删空字段),^(?:\d+(?:\.\d+)?)?(.+?)(?:\s+(?:BLD\s.+|[A-Z]?#.+|COT\s.+|UNIT\s.+|STE\s.+|APT\s.+|[A-Z]\d+))?$,None
+us/mi/kent,232073,region,$n语法(会输出字面量),^([A-Z]{2})([0-9]{5})\s*$,$1
+us/mi/marquette,45674,street,$n语法(会输出字面量),^(?:[0-9]+) (.*),$1
+us/mi/washtenaw,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/mn/koochiching,55289,number,$n语法(会输出字面量),^(\d+)\s+.*,$1
+us/mn/mahnomen,6222,street,$n语法(会输出字面量),^(?:[0-9]+) (.*),$1
+us/mn/norman,9689,street,$n语法(会输出字面量),^(?:[0-9]+) (.*),$1
+us/mn/pennington,10484,street,$n语法(会输出字面量),^(?:[0-9]+) (.*),$1
+us/mn/polk,14470,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/mn/red_lake,4215,street,$n语法(会输出字面量),^(?:[0-9]+) (.*),$1
+us/mn/roseau,16011,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/mn/sherburne,44783,city_f,无replace(会删空字段),^(.+?)(?:\s+MN\s*)?$,None
+us/mn/wadena,7788,street,$n语法(会输出字面量),^[0-9]+ (.*)$,$1
+us/mn/yellow_medicine,10783,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/mo/jefferson,0,street,无replace(会删空字段),^(?:\s*\d+\s+)?(.+)\s+(?:\d{5})?$,None
+us/ms/clay,13080,city_f,$n语法(会输出字面量),"^(.+)(?:, MS)(?: \d{5})?$",$1
+us/ms/lauderdale,720,street,无replace(会删空字段),(.+?)(?:\s+[A-DF-MO-RT-VX-Z])?$,None
+us/nc/alexander,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/nc/polk,16878,street,无replace(会删空字段),"^\d+\s+(.+?)(?:,?\s*#\d+)?\s*$",None
+us/nd/city_of_grafton,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/nd/ramsey,0,street,无replace(会删空字段),^(?:\d+(?:-1/2)?\s+)?(.+?)(?:(?:LT#|STE\s|#|APT\s|UNIT\s|LOT\s).+)?$,None
+us/ne/antelope,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/arthur,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/banner,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/blaine,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/boone,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/box_butte,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/brown,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/buffalo,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/burt,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/butler,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/cass,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/cedar,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/chase,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/cherry,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/cheyenne,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/clay,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/cuming,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/custer,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/dakota,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/dawson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/deuel,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/fillmore,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/franklin,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/frontier,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/gage,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/garden,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/garfield,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/gosper,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/grant,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/greeley,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/hamilton,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/harlan,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/hayes,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/hitchcock,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/holt,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/hooker,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/howard,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/johnson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/kearney,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/keith,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/keya_paha,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/kimball,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/knox,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/logan,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/madison,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/merrick,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/morrill,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/nance,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/nemaha,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/nuckolls,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/otoe,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/pawnee,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/perkins,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/phelps,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/pierce,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/platte,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/polk,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/red_willow,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/richardson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/rock,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/saline,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/seward,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/sheridan,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/sherman,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/sioux,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/stanton,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/thayer,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/thomas,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/thurston,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/valley,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/webster,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ne/york,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/nm/lincoln,22916,street,无replace(会删空字段),^(.+?)\b(?:\s*(?:-|=|\.)\s*)(?:\d+[A-Z]?)?$,None
+us/ny/orange,0,street,无replace(会删空字段),^\s*(?:\d+)\s+(.+?)\s*(?:\b(?:(?:Apt|Lot|Suite|Unit|MH\d*)\b.*|REAR)\b)?\s*$,None
+us/ny/erie,502241,street,$n语法(会输出字面量),^[0-9]+\s+([^\r]+),$1
+us/oh/geauga,51485,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ok/acog-counties,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/or/klamath,61227,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/pa/lebanon,54382,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/pa/somerset,43761,street,$n语法(会输出字面量),^[0-9]+\s+(.*?)\s+(?:NEW BALTIMORE|CENTRAL CITY|HIDDEN VALLEY|FORT HILL|TIRE HILL|BUFFALO MILLS|SOMERSET|WINDBER|MEYERSDALE|BERLIN|ROCKWOOD|BOSWELL|FRIEDENS|STOYSTOWN|HOLLSOPPLE|CONFLUENCE|JOHNSTOWN|CHAMPION|SALISBURY|HOOVERSVILLE|DAVIDSVILLE|ADDISON|FAIRHOPE|GARRETT|CAIRNBROOK|MARKLETON|JENNERSTOWN|JEROME|HYNDMAN|JENNERS|URSINA|ACOSTA|SPRINGS|SHANKSVILLE|GRAY|WELLERSBURG|BOYNTON|SIPESVILLE|LISTIE|QUECREEK|SEANOR|SCHELLSBURG)$,$1
+us/sc/greenville,0,street,无replace(会删空字段),^\d+\s+(?:\d+\s+)?(.+)$,None
+us/sc/sumter,61423,city_f,$n语法(会输出字面量),"^(?:.+,\s)(.+)(?:,\sSC,\s\d{5})$",$1
+us/tn/williamson,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/va/king_and_queen,7914,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/wa/garfield,4205,city_f,$n语法(会输出字面量),"^(.*?)(, WA)(.*)$",$1
+us/wv/berkeley,63286,street,$n语法(会输出字面量),^[0-9]+\s+(.*?)(?:\s+(?:APT|STE|UNT)\s+\S+)?$,$1
+us/wy/lincoln,4257,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*?)(UNIT .*|$),$1
+us/ct/city_of_haddam,0,street,无replace(会删空字段),^(?:[0-9]+\s+)(.+?)(?:\s+#.+)?$,None
+us/md/city_of_rockville,41108,street,无replace(会删空字段),"^\s*(?:\d+(?:-\w+)?)\s+(.+?)(?:, SUITE \d+)?$",None
+us/me/city_of_biddeford,8229,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/sc/city_of_rock_hill,0,street,$n语法(会输出字面量),"^(?:[0-9]+ )([^,]*)(?:,.*)?$",$1
+us/tx/city_of_amarillo,125790,number,$n语法(会输出字面量),^([0-9]+)(?:\.0)?$,$1
+us/va/city_of_staunton,11894,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/wi/city_of_milwaukee,334308,postcode,$n语法(会输出字面量),^([\d]{5})([\d]{4})$,$1-$2
+us/ga/appling,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/bacon,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/brantley,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/candler,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/clinch,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/colquitt,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/early,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/echols,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/heard,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/houston,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/jefferson,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/johnson,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/jones,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/miller,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/mitchell,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/quitman,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/seminole,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/tattnall,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/wheeler,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ga/calhoun,0,number,$n语法(会输出字面量),^([0-9]+)( .*),$1
+us/ia/benton,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*)( (Unit|Apt) [0-9A-Za-z])?$,$1
+us/ia/black_hawk,0,city_f,$n语法(会输出字面量),"^(.+)(?:,\sIA\s\d{5})$",$1
+us/ia/buchanan,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/buena_vista,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/calhoun,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/carroll,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/cherokee,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/clarke,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/clay,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/crawford,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/decatur,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/dickinson,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/emmet,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/franklin,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/greene,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/guthrie,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/harrison,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/howard,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/humboldt,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/ida,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/jasper,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/kossuth,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/lucas,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/madison,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/marion,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/marshall,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/monona,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/monroe,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/montgomery,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/palo_alto,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/pocahontas,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/sac,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/shelby,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ia/sioux,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/id/fremont,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/mi/mason,0,city_f,$n语法(会输出字面量),"^(.*),.*$",$1
+us/nc/columbus,0,street,$n语法(会输出字面量),^([0-9]+) (.*),$2
+us/nd/stutsman,0,street,$n语法(会输出字面量),^(?:[0-9]+)(.*?)( (UNIT|LOT).*|$),$1
+us/wa/lewis,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/wa/pacific,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/wy/albany,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*)(?:\s(ALBANY|BOSLER|BUFORD|CENTENNIAL|FOX PARK|FOXPARK|GARRETT|GRANITE CANON|JELM|KEYSTONE|LARAMIE|MEDICINE BOW|ROCK RIVER|TIE SIDING|TIESIDING|WHEATLAND|WYCOLO))?$,$1
+us/wy/carbon,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*)(?:\s(ARLINGTON|BAGGS|BLK\s\d+|DIXON|ELK MOUNTAIN|ENCAMPMENT|HANNA|MEDICINE BOW|MUDDY GAP|RAWLINS|RIVERSIDE|RURAL|SARATOGA|SINCLAIR|\(\d{5}\)))?$,$1
+us/wy/hot_springs,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*),$1
+us/ak/city_of_juneau,0,street,$n语法(会输出字面量),^(?:[0-9]+ )(.*?)(?: (?:[Aa][Pp][Tt]|[Uu][Nn][Ii][Tt]) .*?)?(?:;.*$|$),$1
+us/ri/providence,0,street,无replace(会删空字段),^(?:\d+(?:\w+|-\d+|/2)?)\s+(.+?)(?:\b(?:Unit|Bldg|Apt)\b(?:\s+\w+)?)?$,None
