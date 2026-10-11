@@ -75,8 +75,23 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
         st["archive"] = {"protocol": man.get("protocol"), "bytes": man.get("bytes", 0),
                          "done": man.get("done"), "error": man.get("error", "")}
         if man.get("error"):
-            st.update({"done": False, "stage": "fetch", "error": man["error"],
+            # 取数失败也要分诊（否则死源每次跑批都要再撞一次）：
+            #   上游自报 not found / Invalid URL / 4xx → 源坏，拉黑
+            #   DNS/SSL/超时 → TRANSIENT，下批重试（不拉黑）
+            from .triage import evidence_probe
+            err = str(man["error"])
+            low = err.lower()
+            kind = "TRANSIENT"
+            if any(t in low for t in ("not found", "invalid url", "http error 404",
+                                      "http error 410", "http error 403", "http error 401")):
+                kind = "SOURCE_BROKEN"
+            st.update({"done": False, "stage": "fetch", "kind": kind, "error": err,
                        "attempts": 1, "seconds": round(time.time() - t0, 1)})
+            if kind == "SOURCE_BROKEN":
+                ev = evidence_probe(row["url"])
+                st["evidence"] = ev
+                blacklist_add(sid, kind, f"取数失败：{err[:200]}",
+                              json.dumps(ev, ensure_ascii=False)[:500])
             return st
 
     pref = preferred_engine(sid)
@@ -163,8 +178,8 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
                   f"{st['seconds']}s", flush=True)
         elif st.get("kind"):
             stats["gap"] += 1
-            print(f"[{k}/{len(items)}] {sid:28s} ⚠ [{st['kind']}] "
-                  f"{st['reason'][:90]}", flush=True)
+            msg = st.get("reason") or st.get("error") or ""
+            print(f"[{k}/{len(items)}] {sid:28s} ⚠ [{st['kind']}] {msg[:90]}", flush=True)
         else:
             stats["errors"] += 1
             print(f"[{k}/{len(items)}] {sid:28s} ✗ {str(st.get('error'))[:110]}", flush=True)
@@ -207,15 +222,22 @@ def main(argv=None) -> None:
     ap.add_argument("--http-timeout", type=int, default=20)
     ap.add_argument("--rules-limit", type=int, default=0, help="每源最多洗 N 行（试跑用）")
     ap.add_argument("--force-fetch", action="store_true")
+    ap.add_argument("--order", choices=("list", "size", "size_desc"), default="list",
+                    help="跑批顺序：list=按清单原序；size=小源先跑（预算内尽量多完成）；size_desc=大源先跑")
     a = ap.parse_args(argv)
 
     sids: list[str] = []
+    sizes: dict[str, int] = {}
     if a.list_file:
         with open(a.list_file, encoding="utf-8-sig") as fh:
             for r in _csv.DictReader(fh):
                 sid = (r.get("source_id") or r.get("source") or "").strip()
                 if sid:
                     sids.append(sid)
+                    try:
+                        sizes[sid] = int(r.get("count") or 0)
+                    except ValueError:
+                        sizes[sid] = 0
     if a.sources:
         sids += [s.strip() for s in a.sources.split(",") if s.strip()]
     if not sids:
@@ -229,7 +251,11 @@ def main(argv=None) -> None:
         print(f"[警告] {len(missing)} 个源不在源总表里，已跳过（前 3: {missing[:3]}）", flush=True)
     if a.limit:
         items = items[: a.limit]
-    print(f"待跑 {len(items)} 个源，预算 {a.max_seconds}s，单源上限 {a.per_source_max}s", flush=True)
+    if a.order != "list" and sizes:
+        items.sort(key=lambda it: sizes.get(it["source_id"], 0),
+                   reverse=(a.order == "size_desc"))
+    print(f"待跑 {len(items)} 个源，预算 {a.max_seconds}s，单源上限 {a.per_source_max}s，"
+          f"顺序 {a.order}", flush=True)
 
     state = load_state(a.state)
     pol = Politeness(min_interval=a.min_interval, max_concurrency=a.concurrency,

@@ -143,12 +143,13 @@ def _s(v) -> str:
     return "" if v.upper() in _EMPTYISH else v
 
 
-def _apply_function(row: dict, spec: dict) -> str:
+def _apply_function(row: dict, spec: dict, text: str | None = None) -> str:
+    """执行一个映射函数。text 非 None 时以它作为输入（用于 chain 中间值/变量引用）。"""
     fn = str(spec.get("function") or "").lower()
     field = spec.get("field")
     fields = spec.get("fields") or ([field] if field else [])
     vals = [_s(cell(row, f)) for f in fields]
-    src = vals[0] if vals else ""
+    src = text if text is not None else (vals[0] if vals else "")
 
     if fn in ("prefixed_number", "prefix_number"):
         m = _LEAD_NUM.match(src)
@@ -164,10 +165,20 @@ def _apply_function(row: dict, spec: dict) -> str:
         return src[:m.start()].strip() if m else src
     if fn == "remove_prefix":
         p = str(spec.get("prefix") or "")
-        return src[len(p):].strip() if src.upper().startswith(p.upper()) else src
+        if not p and spec.get("field_to_remove"):
+            p = _s(cell(row, spec["field_to_remove"]))
+        i = src.upper().find(p.upper()) if p else -1
+        return (src[:i] + src[i + len(p):]).strip(" ,;") if i == 0 else src
     if fn == "remove_postfix":
+        # OA 语义两种写法：postfix 直接给字符串；field_to_remove 给**另一个字段名**，
+        # 取该字段的值当要删的后缀（如 SiteAddress 去掉 SiteCSZ="Mason IL 62443"）。
         p = str(spec.get("postfix") or "")
-        return src[:-len(p)].strip() if p and src.upper().endswith(p.upper()) else src
+        if not p and spec.get("field_to_remove"):
+            p = _s(cell(row, spec["field_to_remove"]))
+        if not p:
+            return src
+        i = src.upper().rfind(p.upper())
+        return (src[:i] + src[i + len(p):]).strip(" ,;") if i >= 0 else src
     if fn == "regexp":
         pat = spec.get("pattern") or ""
         rep = spec.get("replace")
@@ -197,16 +208,27 @@ def _apply_function(row: dict, spec: dict) -> str:
     if fn == "constant":
         return str(spec.get("value") or "")
     if fn == "chain":
-        out = src
-        for sub in (spec.get("chain") or []):
-            if isinstance(sub, dict):
-                tmp = dict(sub)
-                tmp.setdefault("field", "")
-                if not tmp.get("fields") and not tmp.get("field") and out:
-                    out = _apply_passthrough(out, tmp)
-                else:
-                    out = _apply_function(row, tmp) or out
-        return out
+        # ⚠ 2026-10-11 修：OA 规范里子步骤在 "functions" 键下，老实现只读 "chain" 键
+        #   → 子步骤一个都不执行 → 街道整段为空 → 整源 0 条（us/il/effingham 就是这样丢的 2.3 万条）。
+        # 变量引用：子步骤里 field 写 "oa:<variable>" 或直接写 variable 名时，输入取**中间值**。
+        steps = spec.get("functions") or spec.get("chain") or []
+        var = str(spec.get("variable") or "")
+        cur = src
+        for sub in steps:
+            if not isinstance(sub, dict):
+                continue
+            t = dict(sub)
+            f = str(t.get("field") or "")
+            is_var = bool(f) and (f.startswith("oa:") or (var and f == var))
+            t2 = dict(t)
+            if is_var:
+                t2.pop("field", None)
+                t2.pop("fields", None)
+            if is_var or (not f and not t2.get("fields")):
+                cur = _apply_function(row, t2, text=cur)
+            else:
+                cur = _apply_function(row, t2) or cur
+        return cur
     if fn == "swap":
         return " ".join(reversed([v for v in vals if v]))
     if fn in ("lower", "upper", "truncate"):
@@ -230,14 +252,8 @@ def _js_repl_to_py(rep: str) -> str:
 
 
 def _apply_passthrough(text: str, spec: dict) -> str:
-    fn = str(spec.get("function") or "").lower()
-    if fn in ("prefixed_number", "prefix_number"):
-        m = _LEAD_NUM.match(text)
-        return m.group(1) if m else ""
-    if fn == "postfixed_street":
-        m = _LEAD_NUM.match(text)
-        return text[m.end():].strip() if m else text
-    return text
+    """纯文本版本（无字段引用）—— 现已被 _apply_function(text=...) 取代，保留兼容旧调用。"""
+    return _apply_function({}, dict(spec, field=None, fields=None), text=text)
 
 
 def resolve(row: dict, spec, sep: str = " ") -> str:

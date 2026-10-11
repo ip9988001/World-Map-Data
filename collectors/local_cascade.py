@@ -23,6 +23,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 import time
 from collections import Counter
@@ -42,17 +43,33 @@ PARSED = "parsed"
 GATE_MIN_KEPT = 5
 GATE_MIN_RATIO = 0.30
 TRIAGE_DIR = "out/triage"
+# 「带地址内容的行」：至少一个字段值里有连续两个字母（数字/空/URL/纯 ID 不算）
+# 为何这样判：大量源里存在空置地块/林地/无门牌号的税档记录（如 garfield 只有 47% 的行带地址），
+# 拿全部行做分母会把正常源误判成「规则洗不出」（gate 误报），所以分母只算真正有内容的行。
+CONTENTFUL_RE = re.compile(r"[A-Za-z]{2,}")
 
 
-def _gate(kept: int, fetched: int) -> tuple[bool, str]:
-    if fetched == 0:
+def _is_contentful(row: dict) -> bool:
+    for k, v in row.items():
+        if str(k).startswith("_"):
+            continue
+        if isinstance(v, str) and CONTENTFUL_RE.search(v):
+            return True
+    return False
+
+
+def _gate(kept: int, contentful: int, rows: int) -> tuple[bool, str]:
+    if rows == 0:
         return False, "0 行"
-    ratio = kept / fetched
+    if contentful == 0:
+        return False, f"{rows:,} 行里没有一行带地址内容（源不含地址）"
+    ratio = kept / contentful
     if kept >= GATE_MIN_KEPT and ratio >= GATE_MIN_RATIO:
-        return True, f"合规 {kept}/{fetched} = {ratio:.0%}"
-    if kept >= 3 and ratio >= 0.8 and fetched <= 10:
-        return True, f"小源放行 {kept}/{fetched}"
-    return False, f"合规 {kept}/{fetched} = {ratio:.0%}（阈 {GATE_MIN_RATIO:.0%}）"
+        return True, f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；总行 {rows:,}）"
+    if kept >= 3 and ratio >= 0.8 and contentful <= 10:
+        return True, f"小源放行 {kept}/{contentful}"
+    return False, (f"合规 {kept}/{contentful} = {ratio:.0%}（阈 {GATE_MIN_RATIO:.0%}；"
+                   f"总行 {rows:,}，带地址 {contentful:,}）")
 
 
 def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIVE,
@@ -73,7 +90,7 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
         stats: Counter = Counter()
         dst = os.path.join(dst_dir, rname + ".ndjson")
         ctx = RuleCtx(sid, row, mapping, default_state, dict())
-        fetched = kept = 0
+        fetched = kept = contentful_n = kept_contentful = 0
         hint_seen = None
         try:
             with open(dst, "w", encoding="utf-8") as fh:
@@ -88,23 +105,31 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                     fetched += 1
                     if not sample and len(sample) < 5:
                         sample.append(raw)
+                    contentful = _is_contentful(raw)
+                    contentful_n += 1 if contentful else 0
                     rec, why = r.clean(raw, ctx)
                     if rec is None:
                         stats[why] += 1
                         continue
+                    kept += 1
+                    kept_contentful += 1 if contentful else 0
+                    if not contentful:
+                        stats["kept_but_no_letters"] += 1
                     rec["_rule"] = rname
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
-                    kept += 1
         except Exception as e:
             stats[f"rule_error:{type(e).__name__}"] = 1
-        ok, why = _gate(kept, fetched)
+        ok, why = _gate(kept_contentful, contentful_n, fetched)
         step = {"rule": rname, "rows": fetched, "kept": kept,
-                "ratio": round(kept / fetched, 3) if fetched else 0.0,
+                "contentful": contentful_n, "kept_contentful": kept_contentful,
+                "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
+                "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
                 "addr_hint": hint_seen, "drops": dict(stats.most_common(6)),
                 "verdict": "PASS" if ok else "GATE_FAIL", "why": why,
                 "seconds": round(time.time() - t0, 1)}
         chain.append(step)
         print(f"  [{rname:16s}] 原始 {fetched:>8,} → 合规 {kept:>8,}  "
+              f"（带地址行 {contentful_n:,}，其中合规 {kept_contentful:,}）"
               f"{'✓通过' if ok else '✗丢弃这套产物'}  ({why})", flush=True)
         if ok:
             return {"ok": True, "rule": rname, "chain": chain, "gate": step,
@@ -139,6 +164,10 @@ def diagnose(sid: str, row: dict, out: dict, archive: str = ARCHIVE) -> dict:
     elif best_hint and best_hint < 0.34:
         kind = "NOT_ADDRESS"
         reason = f"本地抽查：原始字段无门牌点味（addr_hint={best_hint}）→ 源不适用"
+    elif chain and all((c.get("contentful") or 0) == 0 for c in chain):
+        kind = "NOT_ADDRESS"
+        reason = (f"本地抽查：{chain[0].get('rows', 0):,} 行里没有一行带地址内容"
+                  f"（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用")
     else:
         kind = "RULE_GAP"
         reason = ("本地抽查：有地址味但现有规则都洗不出（" +
@@ -182,7 +211,8 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
         rname = f"{r.name}@v{r.version}"
         stats: Counter = Counter()
         ctx = RuleCtx(sid, row, mapping, row.get("state", "") or "", dict())
-        fetched = kept = 0
+        kept = fetched = 0
+        contentful_n = kept_contentful = 0
         for raw in iter_rows_from_archive(arch):
             if "_read_error" in raw:
                 stats["read_error"] += 1
@@ -190,19 +220,24 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
             if limit and fetched >= limit:
                 break
             fetched += 1
+            cf = _is_contentful(raw)
+            contentful_n += 1 if cf else 0
             rec, why = r.clean(raw, ctx)
             if rec is None:
                 stats[why] += 1
                 continue
             kept += 1
-        ok, why = _gate(kept, fetched)
+            kept_contentful += 1 if cf else 0
+        ok, why = _gate(kept_contentful, contentful_n, fetched)
         table.append({"rule": rname, "rows": fetched, "kept": kept,
-                      "ratio": round(kept / fetched, 3) if fetched else 0.0,
+                      "contentful": contentful_n, "kept_contentful": kept_contentful,
+                      "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
+                      "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
                       "verdict": "PASS" if ok else "GATE_FAIL", "why": why,
                       "drops": dict(stats.most_common(6))})
-        print(f"  [{rname:16s}] 合规 {kept:>8,}/{fetched:<8,} = "
-              f"{(kept / fetched if fetched else 0):>6.1%}  {'✓' if ok else '✗'} "
-              f"丢弃原因 {dict(stats.most_common(3))}", flush=True)
+        print(f"  [{rname:16s}] 合规 {kept:>8,}/{fetched:<8,}（带地址行 {contentful_n:,}，"
+              f"其中合规 {kept_contentful:,}） {(kept_contentful / contentful_n if contentful_n else 0):>6.1%}"
+              f"  {'✓' if ok else '✗'} 丢弃原因 {dict(stats.most_common(3))}", flush=True)
     return sorted(table, key=lambda x: -x["kept"])
 
 

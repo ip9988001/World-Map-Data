@@ -1,0 +1,8 @@
+source_id,channel,chain_steps,kind,note
+us/ca/inyo,ARCGIS,2,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/co/yuma,ARCGIS,6,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/il/effingham,ARCGIS,2,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/ok/oklahoma,ARCGIS,2,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/pa/philadelphia,FILE_DOWNLOAD,2,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/wi/fond_du_lac,FILE_DOWNLOAD,33,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
+us/wi/iron,FILE_DOWNLOAD,2,chain子步骤未执行,老实现读 chain 键、OA 规范写 functions 键 → 街道空 → 整源 0 条
