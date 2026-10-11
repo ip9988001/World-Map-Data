@@ -17240,6 +17240,43 @@
   "stage": "fetch",
   "updated": "2026-10-11 12:28:05"
  },
+ "us/il/kane": {
+  "archive": {
+   "bytes": 275686446,
+   "done": false,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 190800,
+  "kept": 190624,
+  "path": "parsed/us/il/kane/mapping@v1.ndjson",
+  "ratio": 0.999,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 190751,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.9% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "kept": 190624,
+    "kept_contentful": 190624,
+    "ratio": 0.999,
+    "rows": 190800,
+    "rule": "mapping@v1",
+    "seconds": 15.7,
+    "true_addr": 189682,
+    "verdict": "PASS",
+    "why": "合规 190624/190751 = 100%（带地址行分母；真门牌号行 189,682）总行 190,800"
+   }
+  ],
+  "seconds": 138.6,
+  "source_id": "us/il/kane",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:19:29"
+ },
  "us/il/kendall": {
   "archive": {
    "bytes": 54830725,
