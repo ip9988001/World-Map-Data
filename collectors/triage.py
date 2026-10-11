@@ -136,6 +136,36 @@ def apply_evidence(kind: str, reason: str, ev: dict) -> tuple[str, str]:
     return kind, reason
 
 
+def dns_check(host: str, timeout: int = 12) -> dict:
+    """用 Cloudflare DoH（1.1.1.1）独立查一次域名，区分「域名已不存在」与「本地解析抄风」。
+
+    为何不用本机 resolver：本机 gaierror 分不清 NXDOMAIN 与本地 DNS 抽风；
+    死域名每次跑批都重撞一次，白白浪费窗口。DoH 判定 NXDOMAIN → 源坏，拉黑。
+    返回 {'status': int|None, 'answers': [...], 'verdict': 'DEAD'|'ALIVE'|'UNKNOWN'}
+    """
+    import urllib.parse
+    import urllib.request
+    out = {"host": host, "status": None, "answers": [], "verdict": "UNKNOWN"}
+    if not host:
+        return out
+    url = ("https://cloudflare-dns.com/dns-query?name=" + urllib.parse.quote(host) +
+           "&type=A")
+    try:
+        req = urllib.request.Request(url, headers={"accept": "application/dns-json"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+        out["status"] = d.get("Status")
+        out["answers"] = [a.get("data") for a in (d.get("Answer") or [])]
+    except Exception as e:
+        out["error"] = f"{type(e).__name__}: {str(e)[:100]}"
+        return out
+    if out["status"] in (2, 3):            # NXDOMAIN / SERVFAIL-with-no-answer
+        out["verdict"] = "DEAD"
+    elif out["status"] == 0 and out["answers"]:
+        out["verdict"] = "ALIVE"
+    return out
+
+
 # ── 账本 ───────────────────────────────────────────────────
 def _upsert_csv(path: str, cols: list[str], key: str, row: dict) -> None:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)

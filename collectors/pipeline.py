@@ -222,6 +222,9 @@ def main(argv=None) -> None:
     ap.add_argument("--http-timeout", type=int, default=20)
     ap.add_argument("--rules-limit", type=int, default=0, help="每源最多洗 N 行（试跑用）")
     ap.add_argument("--force-fetch", action="store_true")
+    ap.add_argument("--reclassify", action="store_true",
+                    help="不联网抓数据，只把 state 里取数失败的源复核一遍"
+                         "（DNS → DoH 判定：域名已死→拉黑；能解析→保留重试）")
     ap.add_argument("--order", choices=("list", "size", "size_desc"), default="list",
                     help="跑批顺序：list=按清单原序；size=小源先跑（预算内尽量多完成）；size_desc=大源先跑")
     a = ap.parse_args(argv)
@@ -240,11 +243,47 @@ def main(argv=None) -> None:
                         sizes[sid] = 0
     if a.sources:
         sids += [s.strip() for s in a.sources.split(",") if s.strip()]
-    if not sids:
-        raise SystemExit("给 --list-file 或 --sources")
 
     table = list(_csv.DictReader(open("data/源总表-执行序.csv", encoding="utf-8-sig")))
     idx = {r["source_id"]: i for i, r in enumerate(table)}
+
+    if a.reclassify:
+        from urllib.parse import urlparse
+
+        from .triage import blacklist_add, dns_check
+        state = load_state(a.state)
+        dead = alive = unknown = 0
+        for sid, st in state.items():
+            if st.get("done") or st.get("kind") in ("SOURCE_BROKEN", "NOT_ADDRESS"):
+                continue
+            err = str(st.get("error") or "")
+            if not any(t in err for t in ("Name or service", "No address associated",
+                                          "Errno -2", "Errno -5", "Resolution")):
+                continue
+            row = table[idx[sid]] if sid in idx else {}
+            host = urlparse(row.get("url", "")).netloc
+            ev = dns_check(host)
+            st["dns"] = ev
+            if ev["verdict"] == "DEAD":
+                st["kind"] = "SOURCE_BROKEN"
+                st["reason"] = f"域名已不存在（DoH 判定 NXDOMAIN: {host}）"
+                blacklist_add(sid, "SOURCE_BROKEN", st["reason"],
+                              json.dumps(ev, ensure_ascii=False)[:400])
+                dead += 1
+                print(f"  ☠ {sid:28s} {host} → NXDOMAIN，已拉黑")
+            elif ev["verdict"] == "ALIVE":
+                st["kind"] = "TRANSIENT"
+                st["reason"] = f"域名可解析（{ev['answers'][:1]}）但取数失败 → 下批重试"
+                alive += 1
+                print(f"  ↻ {sid:28s} {host} → 域名活着，保留重试")
+            else:
+                unknown += 1
+        save_state(state, a.state)
+        print(f"重判结果：死域名拉黑 {dead}｜域名活着待重试 {alive}｜无法判定 {unknown}")
+        return
+
+    if not sids:
+        raise SystemExit("给 --list-file 或 --sources")
     items = [{"source_id": s, "i": idx[s]} for s in sids if s in idx]
     missing = [s for s in sids if s not in idx]
     if missing:
