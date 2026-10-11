@@ -160,7 +160,16 @@ jobs:
           if ls /tmp/bronze/*.zip >/dev/null 2>&1; then
             gh release create bronze --title "原始档 bronze（按州缓存）" \
               --notes "每州一个 zip；采集前恢复、收工回存，支持规则重洗不回源" 2>/dev/null || true
-            gh release upload bronze /tmp/bronze/*.zip --clobber
+            # 多泳道并行时会同时回存同一个州（实测 HTTP 422 "already exists"）→ 必须重试，
+            # 而且失败**不阻断**本泳道（bronze 下一轮还能再存，采集本身已经完成）
+            for z in /tmp/bronze/*.zip; do
+              for i in 1 2 3; do
+                if gh release upload bronze "$z" --clobber 2>/dev/null; then break; fi
+                echo "⚠ $(basename "$z") 回存失败（常见原因：别的泳道同时在传同一个州）→ 重试 $i/3"
+                sleep $((i * 8))
+              done
+            done
+            echo "bronze 回存流程完成（失败不阻断）"
           fi
       - name: 打包本泳道产物（规则产物 + 状态 + 账本）
         if: always()
@@ -204,7 +213,7 @@ jobs:
           import glob, json
           base = json.load(open("/tmp/asm/progress/base.json", encoding="utf-8"))
           merged = dict(base)
-          for p in glob.glob("seg/**/state-*.json"):
+          for p in glob.glob("seg/**/state-*.json", recursive=True):
               try:
                   d = json.load(open(p, encoding="utf-8"))
               except Exception:
