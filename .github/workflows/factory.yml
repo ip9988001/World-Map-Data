@@ -19,9 +19,9 @@ on:
         required: false
         default: "all"
       max_seconds:
-        description: "每个泳道的秒数预算"
+        description: "每个泳道的秒数预算（默认 3300 = 55 分钟，与每小时窗口对齐）"
         required: false
-        default: "4800"
+        default: "3300"
       mode:
         description: "collect=采集；publish=只合并发布；brain=只造规则"
         required: false
@@ -80,7 +80,8 @@ jobs:
       - name: 生成泳道计划
         id: plan
         run: |
-          python -m collectors.plan_batch --lanes 16 --out out/plan.json | tail -2
+          python -m collectors.plan_batch --lanes 16 --state progress/state.json \
+            --blacklist data/源黑名单.csv --out out/plan.json | tail -3
           python3 - >> "$GITHUB_OUTPUT" <<'PY'
           import json
           p = json.load(open("out/plan.json"))
@@ -144,7 +145,7 @@ jobs:
         run: |
           python -m collectors.pipeline \
             --plan out/plan.json --lane ${{ matrix.lane }} \
-            --max-seconds "${{ github.event.inputs.max_seconds || 4800 }}" \
+            --max-seconds "${{ github.event.inputs.max_seconds || 3300 }}" \
             --per-source-max 600 \
             --state progress/state-${{ matrix.lane }}.json \
             --min-interval 1.0 --concurrency 3
@@ -301,8 +302,36 @@ jobs:
           cp /tmp/asm/progress/state.json progress/state.json
           cp -f /tmp/asm/data/*.csv data/ 2>/dev/null || true
           cp -f /tmp/asm/待造刀/*.json progress/待造刀/ 2>/dev/null || true
+          RUN_ID="${{ github.run_id }}" python3 - <<'PY'
+          # 台账（看进度曲线）+ 规则战绩（规则退役靠它）
+          import csv, json, os, time
+          from collections import defaultdict
+          st = json.load(open("/tmp/asm/progress/state.json", encoding="utf-8"))
+          rules = defaultdict(lambda: {"wins": 0, "kept": 0, "last": ""})
+          for _sid, v in st.items():
+              p = str(v.get("path") or "")
+              if not p or not v.get("done"):
+                  continue
+              rule = os.path.basename(p).replace(".ndjson", "")
+              rules[rule]["wins"] += 1
+              rules[rule]["kept"] += int(v.get("kept") or 0)
+              rules[rule]["last"] = max(rules[rule]["last"], str(v.get("updated") or ""))
+          with open("progress/规则战绩.csv", "w", encoding="utf-8", newline="") as fh:
+              w = csv.writer(fh); w.writerow(["rule", "wins", "kept", "last_seen"])
+              for r, d in sorted(rules.items(), key=lambda x: -x[1]["kept"]):
+                  w.writerow([r, d["wins"], d["kept"], d["last"]])
+          done = [v for v in st.values() if v.get("done")]
+          new = not os.path.exists("progress/台账.csv")
+          with open("progress/台账.csv", "a", encoding="utf-8", newline="") as fh:
+              w = csv.writer(fh)
+              if new:
+                  w.writerow(["at", "run_id", "sources_total", "sources_done", "kept_total"])
+              w.writerow([time.strftime("%Y-%m-%d %H:%M:%S"), os.environ.get("RUN_ID", ""),
+                          len(st), len(done), sum(int(v.get("kept") or 0) for v in done)])
+          print(f"台账已追加｜规则战绩 {len(rules)} 套")
+          PY
           git add -f progress/state.json "data/源黑名单.csv" "data/引擎路由表.csv" 2>/dev/null || true
-          git add -f progress/待造刀 2>/dev/null || true
+          git add -f progress/待造刀 progress/台账.csv progress/规则战绩.csv 2>/dev/null || true
           git commit -m "state: 采集状态回写（run ${{ github.run_id }}）" || echo "无状态变化"
           git push -f origin data
       - name: 规则产物缓存到 Release（cache-parsed，保留 5 份）
@@ -337,7 +366,7 @@ jobs:
           mkdir -p progress/待造刀 out
           # 必须用 git archive（中文路径）：ls-tree 默认会输出引号转义路径，
           # 之前的写法 git show "origin/data:$f" 全失败，只留下 7 个空文件 → brain 以为“无缺口”
-          git archive origin/data progress/待造刀 2>/dev/null | tar -x -C . 2>/dev/null || true
+          git archive origin/data progress/待造刀 progress/规则战绩.csv 2>/dev/null | tar -x -C . 2>/dev/null || true
           python3 - <<'PY'
           import glob, json
           ok = 0
@@ -378,7 +407,46 @@ jobs:
           BRAIN_MODEL: deepseek-flash
         run: |
           python -m collectors.rule_author --gap-dir progress/待造刀 --archive raw_archive \
-            --out collectors/rules/specs --max-sources 8 --budget-seconds 2100
+            --out collectors/rules/specs --max-sources 8 --budget-seconds 2100 \
+            --max-calls-per-day 60 --retire-days 14
+      - name: 剪枝待造刀清单（处理完的从 data 分支删掉 —— 清单只能不能只增不减）
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git fetch origin data --depth=1 || true
+          SHA=$(git rev-parse origin/data 2>/dev/null || echo "")
+          [ -n "$SHA" ] || { echo "无 data 分支，跳过"; exit 0; }
+          rm -rf /tmp/wtdata && git worktree add --detach -q /tmp/wtdata "$SHA"
+          python3 - <<'PY'
+          import csv, glob, json, os, re
+          handled = set()
+          for p in glob.glob("collectors/rules/specs/*.json") + glob.glob("collectors/rules/specs/rejected/*.json"):
+              handled.add(os.path.basename(p).split("__")[0])
+          bl = set()
+          if os.path.exists("data/源黑名单.csv"):
+              for r in csv.DictReader(open("data/源黑名单.csv", encoding="utf-8-sig")):
+                  if r.get("source_id"):
+                      bl.add(r["source_id"])
+          gone = 0
+          for f in glob.glob("/tmp/wtdata/progress/待造刀/*.json"):
+              try:
+                  g = json.load(open(f, encoding="utf-8"))
+              except Exception:
+                  continue
+              sid = g.get("source_id") or ""
+              slug = re.sub(r"[^a-z0-9]+", "_", sid.lower()).strip("_")
+              if slug in handled or sid in bl:
+                  os.remove(f); gone += 1
+          print("剪掉已处理清单", gone, "份")
+          PY
+          cd /tmp/wtdata
+          git add -A progress/待造刀 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "清单无变化"
+          else
+            git commit -q -m "chore(待造刀): 剪掉已处理清单（run ${{ github.run_id }}）"
+            git push origin HEAD:data || echo "推送失败（不阻断）"
+          fi
       - name: 规则自检（新规格必须能加载 + 样例通过）
         run: python -c "from collectors.rules import self_test_all; import json; print(json.dumps(self_test_all(), ensure_ascii=False, indent=1))"
       - name: 推回 main（只推规则与账本）
@@ -471,6 +539,16 @@ jobs:
             sleep 5
           done
           echo "清单推送失败（不阻断发布）"
+      - name: 留一份上一版（回滚用；prev-dataset 只保最新一版）
+        if: steps.cadence.outputs.go == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! ls out/final3/*.ndjson.gz >/dev/null 2>&1; then echo "无上一版可存（首次发布）"; exit 0; fi
+          gh release create prev-dataset --title "上一版数据集（回滚用）" \
+            --notes "每次发布前自动留一份上一版分片，只保最新一版" 2>/dev/null || true
+          gh release upload prev-dataset out/final3/*.ndjson.gz --clobber || echo "上一版回存失败（不阻断发布）"
+          gh release edit prev-dataset --notes "上一版稳定视图（对应 run ${{ github.run_id }} 发布前的那一版）" || true
       - name: 上传稳定视图（tag 复用 + --clobber）
         if: steps.cadence.outputs.go == '1'
         env:
@@ -498,3 +576,42 @@ jobs:
           gh release upload "$TAG" out/release/merged.clean.ndjson.gz --clobber
           gh release list --limit 100 --json tagName -q '.[].tagName' | grep '^full-' | sort -r | \
             tail -n +11 | while read -r t; do gh release delete "$t" -y --cleanup-tag || true; done
+
+  notify:
+    # 红叉不再靠人肉盯：有失败就开 Issue（GitHub 会给账号所有者发邮件）；恢复后自动关掉
+    needs: [plan, collect, assemble, brain, publish]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: 失败开 Issue / 恢复关 Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTS: ${{ toJson(needs) }}
+        run: |
+          BAD=$(python3 -c "
+          import json, os
+          d = json.loads(os.environ['RESULTS'])
+          bad = {k: v.get('result') for k, v in d.items() if v.get('result') in ('failure', 'cancelled')}
+          print(' '.join(f'{k}={r}' for k, r in bad.items()))")
+          echo "失败环节: ${BAD:-（无）}"
+          if [ -n "$BAD" ]; then
+            TITLE="❌ factory 失败：$BAD（run ${{ github.run_id }}）"
+            gh issue create --title "$TITLE" --body "$(printf '%s\n' \
+              "**失败环节**：$BAD" \
+              "**run**：https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              "**触发方式**：${{ github.event_name }}　**分支**：${{ github.ref_name }}" \
+              "" \
+              "排查入口：上面 run 链接 → 点红的作业 → 看最后失败步骤日志。" \
+              "常见原因：泳道超时 / bronze 回存竞态 / 校验闸门不过（不会发布，数据不会错）。" \
+              "修好后这个 Issue 会在下一次成功运行时自动关闭。")" || echo "开 Issue 失败（不阻断）"
+          else
+            for n in $(gh issue list --state open --search '❌ factory 失败 in:title' --json number -q '.[].number'); do
+              gh issue close "$n" --comment "已恢复（run ${{ github.run_id }} ✅）" || true
+            done
+            echo "本轮全部环节通过"
+          fi

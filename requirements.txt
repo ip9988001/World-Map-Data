@@ -2,3 +2,6 @@
 # pyshp：解析 .shp/.dbf —— 县级地块数据大量是 shapefile，
 #        缺它 → 摊平 0 行 → 被误判成「下载缺陷」（实测 us/ak/city_of_juneau）
 pyshp>=2.3.1
+# fiona：解析 FileGDB（.gdb 目录）—— 部分市/县只发布 .gdb
+#        装不上也不影响其它格式（代码里做了降级，并单独记 FORMAT_GAP，不再混成「源坏」）
+fiona>=1.9

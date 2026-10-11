@@ -115,6 +115,51 @@ def load_keys(path: str) -> set[str]:
     return out
 
 
+def cross_shard_check(release_dir: str, states: list[str],
+                      max_keys: int = 6_000_000) -> tuple[dict, list[str]]:
+    """跨州分片重复检查（**确定性抽样**：按分片顺序读满 max_keys 个 key 就停）。
+
+    为什么需要：key 里含州码、记录按源所在州归档；同一条地址被两个州的源都产出时
+    去重是州内做的，会变成**两个分片里的同一 key**。全量 6300 万条太吃内存，
+    这里用 8 字节哈希做抽样（抽不到不等于不存在，但能抳住批量性的问题）。
+    """
+    seen: dict[int, str] = {}
+    total = dups = 0
+    examples: list[str] = []
+    for st in states:
+        p = os.path.join(release_dir, f"{st}.ndjson.gz")
+        if not os.path.exists(p):
+            continue
+        with gzip.open(p, "rt", encoding="utf-8") as fh:
+            for line in fh:
+                if total >= max_keys:
+                    break
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    k = json.loads(line).get("key")
+                except Exception:
+                    continue
+                total += 1
+                h = int.from_bytes(hashlib.blake2b(str(k).encode(), digest_size=8).digest(), "big")
+                prev = seen.get(h)
+                if prev is None:
+                    seen[h] = st
+                elif prev != st:
+                    dups += 1
+                    if len(examples) < 5:
+                        examples.append(f"{k}（{prev} / {st}）")
+        if total >= max_keys:
+            break
+    rate = dups / total if total else 0.0
+    log = [f"抽样 {total:,} 个 key（上限 {max_keys:,}）→ 跨州重复 {dups:,} 条 = {rate:.3%}"]
+    log += [f"  例：{e}" for e in examples]
+    errs = ([] if rate <= 0.0005 else
+            [f"[跨州重复] 抽样 {total:,} 条里 {dups:,} 条出现在两个分片（{rate:.2%} > 0.05%）"])
+    return {"sampled": total, "cross_dups": dups, "rate": round(rate, 6)}, errs + log
+
+
 def provenance_check(parsed_dir: str, state_file: str, merged: str,
                      sample_sources: int) -> tuple[list[str], list[str]]:
     """已完成的源 → 其产物 key 必须都在发布全量里。"""
@@ -170,6 +215,8 @@ def main(argv=None) -> None:
     ap.add_argument("--state", default="progress/state.json")
     ap.add_argument("--min-rows", type=int, default=0, help="总行数下限（防缩水），0=不判")
     ap.add_argument("--sample-sources", type=int, default=3)
+    ap.add_argument("--cross-keys", type=int, default=6_000_000,
+                    help="跨州重复检查的抽样 key 数（0=跳过）")
     a = ap.parse_args(argv)
 
     errs: list[str] = []
@@ -206,10 +253,19 @@ def main(argv=None) -> None:
         print("③ 溯源子集：")
         for l in log:
             print(f"   {l}")
+    if a.cross_keys:
+        stats, logs = cross_shard_check(a.release, sorted((m.get("states") or {})), a.cross_keys)
+        print("④ 跨州重复（抽样）：")
+        for l in logs:
+            print(f"   {l}")
+        errs += [e for e in logs if e.startswith("[跨州重复]")]
+        out_cross = stats
     if a.min_rows and total < a.min_rows:
         errs.append(f"[缩水] 总行数 {total:,} 低于下限 {a.min_rows:,}")
 
     out = {"rows": total, "states": len(m.get("states") or {}), "errors": errs}
+    if a.cross_keys:
+        out["cross_shard"] = out_cross
     os.makedirs("out", exist_ok=True)
     json.dump(out, open("out/verify-release.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     if errs:

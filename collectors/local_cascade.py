@@ -36,6 +36,7 @@ from .normalize import parse_mapping_from_table
 from .politeness import Politeness
 from .rules._common import FULL_ADDR_RE
 from .rules import RuleCtx, order_rules, self_test_all
+from .rules._common import SUFFIX_ANY2, parse_addr_v2
 from .triage import (blacklist_add, evidence_probe, report_md, route_update,
                      write_gap_report)
 
@@ -43,13 +44,41 @@ TABLE = "data/源总表-执行序.csv"
 ARCHIVE = "raw_archive"
 PARSED = "parsed"
 GATE_MIN_KEPT = 5
-GATE_MIN_RATIO = 0.30
+GATE_MIN_RATIO = 0.30          # 老分母（带地址行）用的旧阈值，仅作兼容参考
 TRIAGE_DIR = "out/triage"
 # 「带地址内容的行」判据（阀 2 版）：光“含字母”不够（DISTRICT="laurens"、业主姓名、LAT/LNG 都会误命中），
 # 要有**地址痕迹**：一个值里同时出现「门牌号 + 后面的词」才箅（如 "1514 N US Hwy 45"、"123 MAIN ST"）。
 # 为何要算分母：大量源里存在空置地块/林地/无门牌号税档（garfield 只有四分之一的行业带真地址），
 # 拿全部行做分母会把正常源误判成「规则洗不出」。
+NUM_ONLY = re.compile(r"^\d{1,6}[A-Za-z]?$")
 ADDR_TRACE = re.compile(r"\b\d{1,6}[A-Za-z]?\s+[A-Za-z]{2,}")
+
+
+def _true_addr(raw: dict) -> bool:
+    """「真门牌号形态」判据 —— 源级闸门的**分母**（比 _is_contentful 严得多）。
+
+    为什么换分母（实测 us/wa/garfield）：旧分母“带地址行”把税单/法律描述/业主邮寄地址
+    全算成地址（83% 噪声），于是 30% 阈值既可能误杀真规则、也可能放过垃圾（v1 曾拿
+    业主邮寄列当场地地址造出 466 条错记录）。新分母只认两种真形态：
+      ① 某个值本身是完整地址（可选前置方位 + 号 + 街名），或
+      ② 行里同时有「短数字」与「街名样」两列（号/街分列的老式源）
+    """
+    vals = [str(v).strip() for k, v in raw.items()
+            if not str(k).startswith("_") and isinstance(v, str) and v.strip()]
+    for v in vals:
+        if parse_addr_v2(v):
+            return True
+    nums = {v for v in vals if NUM_ONLY.match(v)}
+    if nums:
+        for v in vals:
+            if v in nums or len(v) > 90 or not re.search(r"[A-Za-z]{2,}", v):
+                continue
+            # ③ 分列式源：必须看到**街名后缀词**才算真街名。
+            # （实测：只要求“≥两个词”会把 "STATE DEPT OF WILDLIFE" 这种也当街名，
+            #   分母被噪声抬高 → 闸门反而变松；加上后缀词后 garfield 分母 96%→73%，才是真形态）
+            if SUFFIX_ANY2.search(v):
+                return True
+    return False
 
 
 def _is_contentful(row: dict) -> bool:
@@ -82,23 +111,32 @@ def _record_ok(rec: dict, raw: dict) -> bool:
     return num in blob or num.lstrip("0") in blob
 
 
-def _gate(kept: int, contentful: int, rows: int) -> tuple[bool, str]:
+def _gate(kept: int, contentful: int, rows: int, true_n: int = 0) -> tuple[bool, str]:
+    """源级闸门（两道，各管一头）：
+
+    ① 反造数（用**严判据**的分母 true_n）：产物数量不能远超「真门牌号形态行」。
+       实测价值：us/wa/garfield 有源把**业主邮寄地址**当地址造出 466 条错记录，
+       旧闸门看不出来（分母是噪声、覆盖率还很高）；现在真形态行只有 29 条 → 466 > 29×1.5 → 当场拒。
+    ② 覆盖率（用老分母 contentful）：真规则在相当一部分行上洗不出来是正常的
+       （空置地块/无号税档，实测 us/il/effingham 只有 67% 的行能出记录）
+       → 阈值仍用 30%，避免误杀真规则。
+    """
     if rows == 0:
         return False, "0 行"
     if contentful == 0:
         return False, f"{rows:,} 行里没有一行带地址内容（源不含地址）"
-    if kept > contentful * 1.15:
-        # 凭空造数据的护栏：合规数竟然超过了带地址行数 → 规则拼错列位了
-        # （实测 us/ga/wheeler：STR 大片是 "0"，field_guess 曾把 6,570/6,570 全“猜”成有效记录）
-        return False, (f"疑似凭空造数据：合规 {kept:,} 条 > 带地址行 {contentful:,} 条"
-                       f"（阈值 115%）→ 拒绝这套产物")
+    ref, rname = (true_n, "真门牌号行") if true_n else (contentful, "带地址行")
+    if kept > ref * 1.5:
+        return False, (f"疑似凭空造数据：合规 {kept:,} 条 > {rname} {ref:,} 条×150%"
+                       f" → 拒绝这套产物")
     ratio = kept / contentful
     if kept >= GATE_MIN_KEPT and ratio >= GATE_MIN_RATIO:
-        return True, f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；总行 {rows:,}）"
+        return True, (f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；"
+                      f"真门牌号行 {true_n:,}）总行 {rows:,}")
     if kept >= 3 and ratio >= 0.8 and contentful <= 10:
         return True, f"小源放行 {kept}/{contentful}"
     return False, (f"合规 {kept}/{contentful} = {ratio:.0%}（阈 {GATE_MIN_RATIO:.0%}；"
-                   f"总行 {rows:,}，带地址 {contentful:,}）")
+                   f"总行 {rows:,}，带地址 {contentful:,}，真门牌号 {true_n:,}）")
 
 
 def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIVE,
@@ -124,7 +162,7 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
         stats: Counter = Counter()
         dst = os.path.join(dst_dir, rname + ".ndjson")
         ctx = RuleCtx(sid, row, mapping, default_state, dict())
-        fetched = kept = contentful_n = kept_contentful = 0
+        fetched = kept = contentful_n = kept_contentful = true_n = 0
         hint_seen = None
         try:
             with open(dst, "w", encoding="utf-8") as fh:
@@ -141,6 +179,8 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                         sample.append(raw)
                     contentful = _is_contentful(raw)
                     contentful_n += 1 if contentful else 0
+                    if _true_addr(raw):
+                        true_n += 1
                     if not contentful:
                         # 硬不变量：一行没有地址痕迹（号+词）就不该产出门牌点记录。
                         # 这条护栏是规则无关的 —— 它拦住了「猜错列位凭空造数据」
@@ -161,9 +201,10 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
         except Exception as e:
             stats[f"rule_error:{type(e).__name__}"] = 1
-        ok, why = _gate(kept_contentful, contentful_n, fetched)
+        ok, why = _gate(kept_contentful, contentful_n, fetched, true_n)
         step = {"rule": rname, "rows": fetched, "kept": kept,
                 "contentful": contentful_n, "kept_contentful": kept_contentful,
+                "true_addr": true_n,
                 "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
                 "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
                 "addr_hint": hint_seen, "drops": dict(stats.most_common(6)),
@@ -171,7 +212,7 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                 "seconds": round(time.time() - t0, 1)}
         chain.append(step)
         print(f"  [{rname:16s}] 原始 {fetched:>8,} → 合规 {kept:>8,}  "
-              f"（带地址行 {contentful_n:,}，其中合规 {kept_contentful:,}）"
+              f"（真门牌号行 {true_n:,}／带地址行 {contentful_n:,}，其中合规 {kept_contentful:,}）"
               f"{'✓通过' if ok else '✗丢弃这套产物'}  ({why})", flush=True)
         if ok:
             # 不立即收工：多套规则都可能通过，最后选「洗出最多」的那套（质量由闸门 + 产物级防垃圾保证）
@@ -201,6 +242,23 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
 
 
 # ── 全规则皆败 → 分诊（先本地，后回源）────────────────────
+def _missing_deps(files: list[str]) -> str:
+    """本地文件需要、但环境里没装的解析依赖（.gdb → fiona；.shp → pyshp）。"""
+    lows = [str(f).lower() for f in files]
+    miss = []
+    if any(l.endswith(".gdb") or ".gdb/" in l or ".gdb\\" in l for l in lows):
+        try:
+            import fiona  # noqa: F401
+        except ImportError:
+            miss.append("fiona(.gdb/FileGDB)")
+    if any(l.endswith(".shp") for l in lows):
+        try:
+            import shapefile  # noqa: F401
+        except ImportError:
+            miss.append("pyshp(.shp)")
+    return "、".join(miss)
+
+
 def diagnose(sid: str, row: dict, out: dict, archive: str = ARCHIVE) -> dict:
     arch = archive_dir(archive, sid)
     files = payload_files(arch)
@@ -212,6 +270,11 @@ def diagnose(sid: str, row: dict, out: dict, archive: str = ARCHIVE) -> dict:
     if not files:
         kind = "DOWNLOAD_EMPTY"
         reason = f"本地原始档为空（manifest: {man.get('error') or '未抓取'}）"
+    elif local_rows == 0 and _missing_deps(files):
+        # 缺解析依赖 ≠ 源坏 ≠ 下载坏：单独成类，装了依赖就能解（不拉黑，下一轮重试）
+        kind = "FORMAT_GAP"
+        reason = (f"本地有 {len(files)} 个文件但缺解析依赖：{_missing_deps(files)}"
+                  f" → 装依赖后再跑（不当成源坏/下载缺陷）")
     elif local_rows == 0:
         kind = "DOWNLOAD_EMPTY"
         reason = f"本地有 {len(files)} 个文件但摊不出任何行（读不出/格式怪）"
@@ -270,7 +333,7 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
         stats: Counter = Counter()
         ctx = RuleCtx(sid, row, mapping, row.get("state", "") or "", dict())
         kept = fetched = 0
-        contentful_n = kept_contentful = 0
+        contentful_n = kept_contentful = true_n = 0
         for raw in iter_rows_from_archive(arch):
             if "_read_error" in raw:
                 stats["read_error"] += 1
@@ -280,17 +343,23 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
             fetched += 1
             cf = _is_contentful(raw)
             contentful_n += 1 if cf else 0
+            if _true_addr(raw):
+                true_n += 1
             if not cf:
                 continue                     # 无地址痕迹的行不参与（同 run_rules 的硬不变量）
             rec, why = r.clean(raw, ctx)
             if rec is None:
                 stats[why] += 1
                 continue
+            if not _record_ok(rec, raw):
+                stats["junk_rejected"] += 1
+                continue
             kept += 1
             kept_contentful += 1
-        ok, why = _gate(kept_contentful, contentful_n, fetched)
+        ok, why = _gate(kept_contentful, contentful_n, fetched, true_n)
         table.append({"rule": rname, "rows": fetched, "kept": kept,
                       "contentful": contentful_n, "kept_contentful": kept_contentful,
+                      "true_addr": true_n,
                       "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
                       "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
                       "verdict": "PASS" if ok else "GATE_FAIL", "why": why,

@@ -45,6 +45,7 @@ from .triage import blacklist_add
 API = "https://api.deepseek.com/chat/completions"
 TABLE = "data/源总表-执行序.csv"
 LEDGER = "data/造规则账本.csv"
+STATS = "progress/规则战绩.csv"
 PROMPT_ROWS = 30                 # 喂给 LLM 的样本行数
 VALIDATE_ROWS = 200              # 验证闸门用的样本行数
 NUM_RE = re.compile(r"^\d{1,6}[A-Za-z]?\d?$")
@@ -105,17 +106,51 @@ def source_table() -> dict[str, dict]:
         return {r["source_id"]: r for r in csv.DictReader(fh) if r.get("source_id")}
 
 
-def sample_rows(sid: str, archive: str, limit: int = VALIDATE_ROWS) -> list[dict]:
-    """从 bronze 原始档里取真实样本（永不回源、零网络）。"""
+def sample_rows(sid: str, archive: str, limit: int = VALIDATE_ROWS,
+                url: str = "", budget_s: int = 150) -> list[dict]:
+    """取真实样本：先看本地 bronze；**bronze 里没有就直接回源抽一次**（小成本）。
+
+    为什么必须回源（实战）：缺口源进「待造刀」后 pipeline 不再重试它，而 bronze 里又恰好
+    没它的档（包头覆盖 bug）→ 死锁，谁也动不了。回源只抽前几百行，代价极小。
+    """
+    rows = _read_archive(sid, archive, limit)
+    if rows:
+        return rows
+    if url and budget_s > 0:
+        print(f"[brain] {sid} 本地无原始档 → 回源抽一次样（{budget_s}s 预算）")
+        rows = _fetch_sample(sid, url, budget_s, limit)
+    return rows
+
+
+def _read_archive(sid: str, archive: str, limit: int) -> list[dict]:
     d = archive_dir(archive, sid)
     if not os.path.isdir(d):
         return []
     out: list[dict] = []
-    for r in islice(iter_rows_from_archive(d), limit):
+    for r in islice(iter_rows_from_archive(d), limit * 3):
         if "_read_error" in r:
             continue
         out.append({k: v for k, v in r.items() if k != "_file"})
+        if len(out) >= limit:
+            break
     return out
+
+
+def _fetch_sample(sid: str, url: str, budget_s: int, limit: int) -> list[dict]:
+    from .fetch_raw import fetch_raw
+    from .politeness import Politeness
+
+    tmp = "out/brain_archive"
+    pol = Politeness(min_interval=1.0, max_concurrency=1, max_retries=1, timeout=20,
+                     log_path="out/brain_fetch.jsonl")
+    try:
+        man = fetch_raw(pol, sid, url, tmp, force=True, budget_s=budget_s)
+        print(f"[brain] 回源结果: {man.get('protocol')} {man.get('bytes', 0)/1048576:.2f}MB "
+              f"done={man.get('done')} err={man.get('error') or '-'}")
+    except Exception as e:
+        print(f"[brain] 回源失败: {type(e).__name__}: {str(e)[:150]}")
+        return []
+    return _read_archive(sid, tmp, limit)
 
 
 def collect_gaps(gap_dir: str, only: str = "") -> list[dict]:
@@ -280,6 +315,61 @@ def best_existing_ratio(gap: dict) -> float:
 
 # ─────────────────────────────────────────────────────────── 落盘
 
+def calls_today(ledger: str = LEDGER) -> int:
+    """今天已经花掉多少次 LLM 调用（按账本记的行数近似；硬额度用）。"""
+    if not os.path.exists(ledger):
+        return 0
+    today = time.strftime("%Y-%m-%d")
+    n = 0
+    try:
+        with open(ledger, encoding="utf-8-sig") as fh:
+            for row in csv.DictReader(fh):
+                if (row.get("at") or "").startswith(today) and \
+                        (row.get("action") or "") not in ("SKIP_NO_BRONZE",):
+                    n += 1
+    except Exception:
+        return 0
+    return n
+
+
+def retire_stale(out_dir: str, days: int, stats_file: str = STATS) -> list[str]:
+    """规则退役（★ 只增不改不意味着永不淘汰）：
+
+    造出来已经超过 N 天、且从未在「规则战绩」里赢过的规格 → 移到 specs/retired/。
+    战绩表由 assemble 从 state 里每源实际选中的规则聚合而来。
+    """
+    if days <= 0 or not os.path.exists(stats_file):
+        return []
+    won: set[str] = set()
+    try:
+        with open(stats_file, encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                if r.get("rule"):
+                    won.add(r["rule"])
+    except Exception:
+        return []
+    moved: list[str] = []
+    cutoff = time.time() - days * 86400
+    for p in glob.glob(os.path.join(out_dir, "*.json")):
+        try:
+            spec = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            continue
+        name = f"{spec_name(spec)}@v{int(spec.get('version') or 1)}"
+        gen = str((spec.get("_provenance") or {}).get("generated_at") or "")
+        try:
+            t = time.mktime(time.strptime(gen, "%Y-%m-%d %H:%M:%S"))
+        except Exception:
+            continue
+        if name in won or t > cutoff:
+            continue
+        d = os.path.join(out_dir, "retired")
+        os.makedirs(d, exist_ok=True)
+        os.replace(p, os.path.join(d, os.path.basename(p)))
+        moved.append(name)
+    return moved
+
+
 def slug(sid: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", sid.lower()).strip("_")
 
@@ -400,6 +490,11 @@ def main(argv=None) -> None:
     ap.add_argument("--max-sources", type=int, default=8)
     ap.add_argument("--budget-seconds", type=int, default=2400)
     ap.add_argument("--dry-run", action="store_true", help="只打印提示词，不调 LLM")
+    ap.add_argument("--max-calls-per-day", type=int, default=60,
+                    help="每天最多花多少次 LLM 调用（硬额度，账本计数）")
+    ap.add_argument("--retire-days", type=int, default=14,
+                    help="造出超过 N 天且从未赢过的规格 → 退役到 specs/retired/（0=不退役）")
+    ap.add_argument("--no-fetch", action="store_true", help="bronze 缺失时禁止回源取样")
     a = ap.parse_args(argv)
 
     key = (os.environ.get("DEEPSEEK_API_KEY") or os.environ.get("BRAIN_API_KEY") or "").strip()
@@ -409,6 +504,14 @@ def main(argv=None) -> None:
 
     table = source_table()
     bl = blacklisted_kinds()
+    moved = retire_stale(a.out, a.retire_days)
+    if moved:
+        print(f"[brain] 规则退役（{len(moved)} 套从未赢过且超过 {a.retire_days} 天）: {', '.join(moved)}")
+    used = calls_today()
+    if used >= a.max_calls_per_day:
+        print(f"[brain] 今日 LLM 调用已达额度（{used}/{a.max_calls_per_day}）→ 本轮不造规则")
+        return
+    print(f"[brain] 今日 LLM 调用 {used}/{a.max_calls_per_day}")
     gaps = collect_gaps(a.gap_dir, a.source)
     if a.source and not gaps:
         gaps = [{"source_id": a.source, "kind": "RULE_GAP", "chain": []}]
@@ -430,7 +533,9 @@ def main(argv=None) -> None:
             print(f"[brain] {sid} 跳过：{why}")
             continue
         row = table.get(sid) or {}
-        rows = sample_rows(sid, a.archive)
+        rows = sample_rows(sid, a.archive, VALIDATE_ROWS,
+                           url="" if a.no_fetch else (row.get("url") or ""),
+                           budget_s=0 if a.no_fetch else 150)
         if len(rows) < 10:
             print(f"[brain] {sid} bronze 里只有 {len(rows)} 行 → 跳过（等补采）")
             append_ledger(sid, "", "SKIP_NO_BRONZE", {"rows": len(rows)}, "", "原始档样本不足")

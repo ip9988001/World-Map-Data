@@ -21,6 +21,35 @@ CSV_EXT = (".csv", ".tsv", ".txt", ".psv")
 JSON_EXT = (".json", ".geojson", ".ndjson", ".jsonl")
 XML_EXT = (".kml", ".xml", ".gml")
 UNPACKED = set()
+GDB_SEEN: set[str] = set()
+
+
+def _gdb_root(path: str) -> str:
+    """FileGDB 是**目录**（一堆 a00000001.gdbtable）→ 找到它的根目录路径，\n    整个目录只当一次数据源（否则每个内部文件都会被当成独立表）。"""
+    low = path.lower()
+    i = low.find(".gdb")
+    return path[: i + 4] if i >= 0 else ""
+
+
+def _read_gdb(root: str):
+    """读 FileGDB（需 fiona）；没装就返回 None（上层会记为「缺解析依赖」而不是下载缺陷）。"""
+    try:
+        import fiona
+    except ImportError:
+        return None
+    try:
+        layers = fiona.listlayers(root)
+    except Exception:
+        return None
+    for lyr in layers:
+        try:
+            with fiona.open(root, layer=lyr) as src:
+                for feat in src:
+                    props = dict(feat.get("properties") or {})
+                    props.setdefault("__layer", lyr)
+                    yield props
+        except Exception:
+            continue
 
 
 def payload_files(archive: str) -> list[str]:
@@ -72,6 +101,24 @@ def iter_rows_from_archive(archive: str, max_bytes_per_file: int = 0) -> Iterato
             continue
         if max_bytes_per_file and os.path.getsize(path) > max_bytes_per_file:
             continue
+        root = _gdb_root(path)
+        if root:
+            if root in GDB_SEEN:
+                continue
+            GDB_SEEN.add(root)
+            gen = _read_gdb(root)
+            if gen is None:
+                yield {"_file": os.path.basename(root), "__layer": "",
+                       "_read_error": "MissingDependency: 需要 fiona 才能读 FileGDB(.gdb)"}
+                continue
+            try:
+                for row in gen:
+                    row.setdefault("_file", os.path.basename(root))
+                    yield row
+            except Exception as e:
+                yield {"_file": os.path.basename(root),
+                       "_read_error": f"{type(e).__name__}: {str(e)[:150]}"}
+            continue
         try:
             if low.endswith(CSV_EXT):
                 with open(path, "rb") as fh:
@@ -108,10 +155,14 @@ def iter_rows_from_archive(archive: str, max_bytes_per_file: int = 0) -> Iterato
                         yield row
             elif low.endswith(".shp"):
                 gen = _read_shapefile(path)
-                if gen:
-                    for row in gen:
-                        row.setdefault("_file", name)
-                        yield row
+                if gen is None:
+                    # 缺 pyshp 不能当成「源没数据」（实测 us/ak/city_of_juneau 被误判成下载缺陷）
+                    yield {"_file": name,
+                           "_read_error": "MissingDependency: 需要 pyshp 才能读 shapefile(.shp)"}
+                    continue
+                for row in gen:
+                    row.setdefault("_file", name)
+                    yield row
         except Exception as e:
             yield {"_file": name, "_read_error": f"{type(e).__name__}: {str(e)[:150]}"}
 

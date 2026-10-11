@@ -33,8 +33,12 @@ META_REQUESTS = 3           # 元数据 + 计数 + 余量的固定请求数
 DEFAULT_PAGE = 1800         # 兜底分页大小（服务端上限 × 0.9 的实测常见值）
 
 
-def load_sources(table: str, counts: str, exclude: str = "") -> list[dict]:
-    """合并「源总表」与「源计数」，只保留可用且未被剔除的源。"""
+def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = "") -> list[dict]:
+    """合并「源总表」与「源计数」，只保留可用且未被剔除的源。
+
+    blacklist（★ 2026-10-11 新增）：把「真坏 / 不适用」的源在**排兵阶段**就剔掉，别让队列虚胖。
+    缺口类（ENGINE_GAP / RULE_GAP）**不剔** —— 它们需要重采/重打包，要留在队列里。
+    """
     cnt: dict[str, dict] = {}
     with open(counts, encoding="utf-8-sig") as fh:
         for r in csv.DictReader(fh):
@@ -45,6 +49,23 @@ def load_sources(table: str, counts: str, exclude: str = "") -> list[dict]:
             for r in csv.DictReader(fh):
                 if r.get("source_id"):
                     skip.add(r["source_id"])
+    today = time.strftime("%Y-%m-%d")
+    n_bl = 0
+    if blacklist and os.path.exists(blacklist):
+        with open(blacklist, encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                sid = r.get("source_id") or ""
+                if not sid or sid in skip:
+                    continue
+                kind = r.get("kind") or ""
+                retest = (r.get("retest_after") or "").strip()
+                if kind in ("ENGINE_GAP", "RULE_GAP"):
+                    continue                      # 缺口源留着等造规则 / 重采
+                if retest and today < retest:
+                    skip.add(sid)
+                    n_bl += 1
+    if n_bl:
+        print(f"黑名单提前剔除 {n_bl} 个源（真坏/不适用，未到复检日）")
     out = []
     with open(table, encoding="utf-8-sig") as fh:
         for i, r in enumerate(csv.DictReader(fh)):
@@ -118,13 +139,15 @@ def main(argv=None) -> None:
     ap.add_argument("--table", default="data/源总表-执行序.csv")
     ap.add_argument("--counts", default="data/源计数全量.csv")
     ap.add_argument("--exclude", default="data/剔除源-非门牌点.csv")
+    ap.add_argument("--blacklist", default="data/源黑名单.csv",
+                    help="真坏/不适用源提前剔除（缺口类保留在队列里）")
     ap.add_argument("--lanes", type=int, default=16)
     ap.add_argument("--interval", type=float, default=MIN_INTERVAL)
     ap.add_argument("--state", default="", help="已完成状态（{source_id: {...}}），用于跳过")
     ap.add_argument("--out", default="out/plan.json")
     a = ap.parse_args(argv)
 
-    src = load_sources(a.table, a.counts, a.exclude)
+    src = load_sources(a.table, a.counts, a.exclude, a.blacklist)
     done: set[str] = set()
     if a.state and os.path.exists(a.state):
         st = json.load(open(a.state, encoding="utf-8"))
