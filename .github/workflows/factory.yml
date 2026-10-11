@@ -124,6 +124,8 @@ jobs:
           for f in 源黑名单.csv 引擎路由表.csv; do
             git show "origin/data:data/$f" > "data/$f" 2>/dev/null || true
           done
+          # 泳道状态必须继承全局状态（否则 artifact 只含本泳道几个源，assemble 会把全局削掉 —— 已踩过：223→1）
+          cp -f progress/state.json progress/state-${{ matrix.lane }}.json
       - name: 恢复原始档（bronze：按州 Release 资产，供规则重洗不回源）
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -190,26 +192,29 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: seg
-      - name: 合并状态分片（同源取最新 updated）
+      - name: 合并状态分片（以 data 分支既有状态为底，同源取 updated 最新者）
         run: |
-          mkdir -p /tmp/asm
+          mkdir -p /tmp/asm/progress
+          git fetch origin data --depth=1 || true
+          git show origin/data:progress/state.json > /tmp/asm/progress/base.json 2>/dev/null || echo '{}' > /tmp/asm/progress/base.json
           python3 - <<'PY'
-          import glob, json, os
-          new = {}
-          for p in glob.glob("seg/**/state-*.json", recursive=True):
+          import glob, json
+          base = json.load(open("/tmp/asm/progress/base.json", encoding="utf-8"))
+          merged = dict(base)
+          for p in glob.glob("seg/**/state-*.json"):
               try:
                   d = json.load(open(p, encoding="utf-8"))
               except Exception:
                   continue
               for sid, v in d.items():
-                  prev = new.get(sid)
+                  prev = merged.get(sid)
                   if prev is None or (v.get("updated") or "") >= (prev.get("updated") or ""):
-                      new[sid] = v
-          os.makedirs("/tmp/asm/progress", exist_ok=True)
-          json.dump(new, open("/tmp/asm/progress/state.json", "w", encoding="utf-8"),
+                      merged[sid] = v
+          json.dump(merged, open("/tmp/asm/progress/state.json", "w", encoding="utf-8"),
                     ensure_ascii=False, indent=1, sort_keys=True)
-          done = [v for v in new.values() if v.get("done")]
-          print(f"合并状态：{len(new)} 源｜完成 {len(done)}｜洗出 {sum(v.get('kept') or 0 for v in done):,} 条")
+          done = [v for v in merged.values() if v.get("done")]
+          print(f"合并状态：{len(merged)} 源（底稿 {len(base)}）｜完成 {len(done)}｜"
+                f"洗出 {sum(v.get('kept') or 0 for v in done):,} 条")
           PY
       - name: 合并账本（黑名单 / 路由表）
         run: |
