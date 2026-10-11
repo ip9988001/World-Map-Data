@@ -1,0 +1,96 @@
+{
+ "source_id": "us/wi/kewaunee",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 1/1 = 100%（阈 30%；总行 5,737，带地址 1）；field_guess@v2:合规 1/1 = 100%（阈 30%；总行 5,737，带地址 1）；concat_addr@v2:合规 0/1 = 0%（阈 30%；总行 5,737，带地址 1））→ 造新规则",
+ "decided_at": "2026-10-11 06:48:08",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 5737,
+   "kept": 1,
+   "contentful": 1,
+   "kept_contentful": 1,
+   "ratio": 1.0,
+   "coverage": 0.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 5736
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 1/1 = 100%（阈 30%；总行 5,737，带地址 1）",
+   "seconds": 0.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 5737,
+   "kept": 1,
+   "contentful": 1,
+   "kept_contentful": 1,
+   "ratio": 1.0,
+   "coverage": 0.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 5736
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 1/1 = 100%（阈 30%；总行 5,737，带地址 1）",
+   "seconds": 0.1
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 5737,
+   "kept": 0,
+   "contentful": 1,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "coverage": 0.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 5736,
+    "v2_no_site_column": 1
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 0/1 = 0%（阈 30%；总行 5,737，带地址 1）",
+   "seconds": 0.2
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 5737,
+   "kept": 0,
+   "contentful": 1,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "coverage": 0.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 5736,
+    "no_full_address": 1
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 0/1 = 0%（阈 30%；总行 5,737，带地址 1）",
+   "seconds": 0.2
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "HOUSE_NO": "E0438",
+   "ROADNAME": "COUNTY RD BB",
+   "Add_Number": 438,
+   "AddPrefix": "E",
+   "StreetType": null,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AddPrefix",
+  "Add_Number",
+  "HOUSE_NO",
+  "OBJECTID",
+  "ROADNAME",
+  "StreetType",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

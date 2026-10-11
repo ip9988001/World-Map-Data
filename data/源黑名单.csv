@@ -81,3 +81,7 @@ us/ne/webster,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: maps6.gisw
 us/ne/york,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: maps5.gisworkshop.com）,"{""host"": ""maps5.gisworkshop.com"", ""status"": 3, ""answers"": [], ""verdict"": ""DEAD""}",2026-10-11 12:20,2026-11-10,1
 us/ny/orange,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: ocgis.orangecountygov.com）,"{""host"": ""ocgis.orangecountygov.com"", ""status"": 3, ""answers"": [], ""verdict"": ""DEAD""}",2026-10-11 12:20,2026-11-10,1
 us/nc/columbus,SOURCE_BROKEN,取数失败：HTTPError: HTTP Error 404: Not Found,"{""url"": ""https://www2.columbusco.org/GISDATA/Addresses.zip"", ""status"": 404, ""bytes"": 0, ""content_type"": """", ""head"": ""Not Found"", ""verdict_hint"": ""SOURCE_BROKEN: 404 资源不存在""}",2026-10-11 12:51,2026-11-10,2
+us/nc/cleveland,NOT_ADDRESS,"本地抽查：41,366 行里没有一行带地址内容（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用",{},2026-10-11 07:28,2026-11-10,1
+us/va/city_of_rural_retreat,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-11 07:29,2026-11-10,1
+us/nc/city_of_king,NOT_ADDRESS,本地抽查：390 行里没有一行带地址内容（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用,{},2026-10-11 07:29,2026-11-10,1
+us/il/city_of_chicago,NOT_ADDRESS,"本地抽查：605,558 行里没有一行带地址内容（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用",{},2026-10-11 07:38,2026-11-10,1

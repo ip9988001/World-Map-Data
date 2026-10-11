@@ -1,0 +1,132 @@
+{
+ "source_id": "us/wa/clark",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；field_guess@v2:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；concat_addr@v2:合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2））→ 造新规则",
+ "decided_at": "2026-10-11 07:27:42",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 249894,
+   "kept": 2,
+   "contentful": 2,
+   "kept_contentful": 2,
+   "ratio": 1.0,
+   "coverage": 0.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 249892
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）",
+   "seconds": 4.0
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 249894,
+   "kept": 2,
+   "contentful": 2,
+   "kept_contentful": 2,
+   "ratio": 1.0,
+   "coverage": 0.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 249892
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）",
+   "seconds": 8.0
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 249894,
+   "kept": 0,
+   "contentful": 2,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "coverage": 0.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 249892,
+    "v2_no_site_column": 2
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）",
+   "seconds": 12.1
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 249894,
+   "kept": 0,
+   "contentful": 2,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "coverage": 0.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 249892,
+    "no_full_address": 2
+   },
+   "verdict": "GATE_FAIL",
+   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）",
+   "seconds": 16.1
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "SN": 986040377,
+   "HsNbr": 11011,
+   "Stype": "CT",
+   "StName": "2ND",
+   "StDir": "NE",
+   "X_Coord": 1086261.46359999,
+   "Y_Coord": 141730.76540001,
+   "Zp1": 98685,
+   "Assr_SN": "986040-377",
+   "QTile": 311341,
+   "PSN": 986040377,
+   "CAD": "CLK",
+   "HsSub": "",
+   "Building": "",
+   "Apt": "",
+   "StCity": "VANCOUVER",
+   "ModifyDate": 1479427223000,
+   "ModifyBy": "gissql",
+   "CreateDate": 1468640738000,
+   "CreateBy": "newmanp",
+   "SitusId": 218702,
+   "PrimeSitus": 1,
+   "OBJECTID": 1,
+   "PublishDt": 1790976937000,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Apt",
+  "Assr_SN",
+  "Building",
+  "CAD",
+  "CreateBy",
+  "CreateDate",
+  "HsNbr",
+  "HsSub",
+  "ModifyBy",
+  "ModifyDate",
+  "OBJECTID",
+  "PSN",
+  "PrimeSitus",
+  "PublishDt",
+  "QTile",
+  "SN",
+  "SitusId",
+  "StCity",
+  "StDir",
+  "StName",
+  "Stype",
+  "X_Coord",
+  "Y_Coord",
+  "Zp1",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
