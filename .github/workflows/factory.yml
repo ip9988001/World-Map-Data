@@ -210,6 +210,9 @@ jobs:
                   prev = merged.get(sid)
                   if prev is None or (v.get("updated") or "") >= (prev.get("updated") or ""):
                       merged[sid] = v
+          # 防缩水护栏：合并只可能变多。若比底稿少，说明有人把状态覆盖坏了 —— 拒绝写入并报错。
+          if len(merged) < len(base):
+              raise SystemExit(f"❌ 状态缩水：底稿 {len(base)} 源 → 合并后 {len(merged)} 源，拒绝写入")
           json.dump(merged, open("/tmp/asm/progress/state.json", "w", encoding="utf-8"),
                     ensure_ascii=False, indent=1, sort_keys=True)
           done = [v for v in merged.values() if v.get("done")]
