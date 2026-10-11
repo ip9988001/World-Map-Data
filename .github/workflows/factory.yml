@@ -23,7 +23,7 @@ on:
         required: false
         default: "4800"
       mode:
-        description: "collect=采集；publish=只做合并发布"
+        description: "collect=采集；publish=只合并发布；brain=只造规则"
         required: false
         default: "collect"
 
@@ -112,6 +112,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: 装依赖（pyshp：shapefile 类源，缺它→摊平 0 行→误判下载缺陷）
+        run: pip install -r requirements.txt || true
       - uses: actions/download-artifact@v4
         with:
           name: plan
@@ -172,6 +174,7 @@ jobs:
           name: seg-${{ matrix.lane }}
           path: |
             out/seg/parsed-*.tar.gz
+            out/triage/*.json
             progress/state-${{ matrix.lane }}.json
             data/源黑名单.csv
             data/引擎路由表.csv
@@ -256,6 +259,14 @@ jobs:
                   w.writeheader(); w.writerows(rt.values())
           print(f"账本合并：黑名单 {len(bl)}｜路由 {len(rt)}")
           PY
+      - name: 汇总待造刀清单（缺口源 → data 分支，供 AI 造规则）
+        run: |
+          mkdir -p /tmp/asm/待造刀
+          n=0
+          for f in $(find seg -name '待造刀-*.json' 2>/dev/null); do
+            cp -f "$f" /tmp/asm/待造刀/ 2>/dev/null && n=$((n+1)) || true
+          done
+          echo "待造刀清单 $n 份"
       - name: 合并规则产物
         run: |
           mkdir -p /tmp/asm/parsed
@@ -272,10 +283,12 @@ jobs:
             git checkout --orphan data
             git rm -rf --cached . >/dev/null 2>&1 || true
           fi
-          mkdir -p progress data
+          mkdir -p progress data progress/待造刀
           cp /tmp/asm/progress/state.json progress/state.json
           cp -f /tmp/asm/data/*.csv data/ 2>/dev/null || true
+          cp -f /tmp/asm/待造刀/*.json progress/待造刀/ 2>/dev/null || true
           git add -f progress/state.json "data/源黑名单.csv" "data/引擎路由表.csv" 2>/dev/null || true
+          git add -f progress/待造刀 2>/dev/null || true
           git commit -m "state: 采集状态回写（run ${{ github.run_id }}）" || echo "无状态变化"
           git push -f origin data
       - name: 规则产物缓存到 Release（cache-parsed，保留 5 份）
@@ -291,6 +304,78 @@ jobs:
             gh release view cache-parsed --json assets -q '.assets[].name' | sort -r | tail -n +6 | \
               while read -r n; do gh release delete-asset cache-parsed "$n" -y || true; done
           fi
+
+  brain:
+    # AI 造规则：缺口源 → 从 bronze 取真实样本 → LLM 写声明式规格 → 验证闸门 → 推 main
+    needs: assemble
+    if: always() && needs.assemble.result != 'cancelled' && (github.event_name == 'schedule' || github.event.inputs.mode == 'brain')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt || true
+      - name: 取回待造刀清单（data 分支）
+        run: |
+          git fetch origin data --depth=1 || true
+          mkdir -p progress/待造刀 out
+          for f in $(git ls-tree -r --name-only origin/data progress/待造刀 2>/dev/null || true); do
+            git show "origin/data:$f" > "progress/待造刀/$(basename "$f")" 2>/dev/null || true
+          done
+          ls progress/待造刀 2>/dev/null | wc -l
+      - name: 恢复原始档（bronze：造规则要真实样本，不回源）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STATES=$(python3 - <<'PY'
+          import glob, json
+          sts = set()
+          for f in glob.glob("progress/待造刀/*.json"):
+              try:
+                  sid = json.load(open(f, encoding="utf-8")).get("source_id", "")
+              except Exception:
+                  continue
+              if "/" in sid:
+                  sts.add(sid.split("/")[1].upper())
+          print(" ".join(sorted(sts)))
+          PY
+          )
+          echo "涉及州：$STATES"
+          mkdir -p /tmp/bronze
+          for st in $STATES; do
+            gh release download bronze -p "bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+          done
+          python scripts/bronze_assets.py restore --dir /tmp/bronze
+      - name: AI 造规则（LLM → 验证闸门 → specs/）
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          BRAIN_MODEL: deepseek-flash
+        run: |
+          python -m collectors.rule_author --gap-dir progress/待造刀 --archive raw_archive \
+            --out collectors/rules/specs --max-sources 8 --budget-seconds 2100
+      - name: 规则自检（新规格必须能加载 + 样例通过）
+        run: python -c "from collectors.rules import self_test_all; import json; print(json.dumps(self_test_all(), ensure_ascii=False, indent=1))"
+      - name: 推回 main（只推规则与账本）
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git add -A collectors/rules/specs data/造规则账本.csv 2>/dev/null || true
+          if git diff --cached --quiet; then echo "本轮无新规则"; exit 0; fi
+          git commit -m "rule: AI 造规则（run ${{ github.run_id }}）"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "推送失败"; exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: brain-report
+          path: out/brain/报告.md
+          retention-days: 14
+          if-no-files-found: ignore
 
   publish:
     needs: assemble
@@ -337,6 +422,18 @@ jobs:
         if: steps.cadence.outputs.go == '1'
         run: |
           python scripts/build_release.py || echo "（无可发布内容）"
+      - name: 取回状态（校验闸门用）
+        if: steps.cadence.outputs.go == '1'
+        run: |
+          git fetch origin data --depth=1 || true
+          mkdir -p progress parsed
+          git show origin/data:progress/state.json > progress/state.json 2>/dev/null || echo '{}' > progress/state.json
+      - name: 校验闸门（schema + 溯源 + 防缩水；不过不发）
+        if: steps.cadence.outputs.go == '1'
+        run: |
+          if [ ! -d out/release ]; then echo "无发布内容，跳过校验"; exit 0; fi
+          python scripts/verify_release.py --release out/release --parsed parsed \
+            --state progress/state.json --min-rows 20000000 --sample-sources 3
       - name: 上传稳定视图（tag 复用 + --clobber）
         if: steps.cadence.outputs.go == '1'
         env:

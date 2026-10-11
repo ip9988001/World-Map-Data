@@ -56,6 +56,8 @@ _RULE_SPECS = (
     ("mapping_v1", "RULES"),
     ("field_guess", "RULES"),
     ("concat_addr", "RULES"),
+    ("concat_addr_v2", "RULES"),   # v2：前置方位 + 右锚定剥尾 + 拒绝垃圾值
+    ("llm_spec", "RULES"),      # AI 造的声明式规则（specs/*.json，由 rule_author 产出）
 )
 
 RULES: dict[str, Rule] = {}

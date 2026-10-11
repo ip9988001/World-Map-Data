@@ -66,6 +66,22 @@ def _is_contentful(row: dict) -> bool:
     return False
 
 
+def _record_ok(rec: dict, raw: dict) -> bool:
+    """产物级防垃圾（规则无关的硬护栏，任何规则的产物都要过）：
+      ① 街名必须以字母/数字开头 —— 拦 "- RURAL UNIMPROVED" 这类把地类码当地址的产物
+         （实测 concat_addr@v1 拿 PropertyClass 造过 mass 垃圾记录）
+      ② 门牌号必须在原始行的某个值里真实出现过 —— 拦凭空造数
+    """
+    street = str(rec.get("street") or "")
+    if not street or not street[0].isalnum():
+        return False
+    num = str(rec.get("number") or "")
+    if not num:
+        return False
+    blob = " ".join(str(v) for v in raw.values() if isinstance(v, (str, int, float)))
+    return num in blob or num.lstrip("0") in blob
+
+
 def _gate(kept: int, contentful: int, rows: int) -> tuple[bool, str]:
     if rows == 0:
         return False, "0 行"
@@ -95,6 +111,7 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
     dst_dir = os.path.join(out_root, *sid.split("/"))
     os.makedirs(dst_dir, exist_ok=True)
     chain: list[dict] = []
+    passing: list[tuple[int, str, dict, str]] = []      # 已通过闸门的规则（最后选量最大的那套）
     t0 = time.time()
     sample: list[dict] = []
 
@@ -135,6 +152,9 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                     if rec is None:
                         stats[why] += 1
                         continue
+                    if not _record_ok(rec, raw):
+                        stats["junk_rejected"] += 1
+                        continue
                     kept += 1
                     kept_contentful += 1
                     rec["_rule"] = rname
@@ -154,15 +174,27 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
               f"（带地址行 {contentful_n:,}，其中合规 {kept_contentful:,}）"
               f"{'✓通过' if ok else '✗丢弃这套产物'}  ({why})", flush=True)
         if ok:
-            return {"ok": True, "rule": rname, "chain": chain, "gate": step,
-                    "kept": kept, "fetched": fetched, "path": dst,
-                    "seconds": round(time.time() - t0, 1)}
+            # 不立即收工：多套规则都可能通过，最后选「洗出最多」的那套（质量由闸门 + 产物级防垃圾保证）
+            passing.append((kept, rname, step, dst))
+            continue
         if keep_failed:
             continue
         try:
             os.remove(dst)                    # 只删规则产物，原始档不动
         except OSError:
             pass
+    if passing:
+        passing.sort(key=lambda x: (-x[0], x[1]))
+        best_n, best_rule, best_step, best_dst = passing[0]
+        for _n, rname2, _s2, dst2 in passing[1:]:
+            try:
+                os.remove(dst2)               # 落选规则的产品删掉，只留赢家
+            except OSError:
+                pass
+        print(f"  → 选中 {best_rule}（通过者中洗出最多：{best_n:,} 条）", flush=True)
+        return {"ok": True, "rule": best_rule, "chain": chain, "gate": best_step,
+                "kept": best_n, "fetched": best_step["rows"], "path": best_dst,
+                "seconds": round(time.time() - t0, 1)}
     return {"ok": False, "rule": "", "chain": chain, "gate": None,
             "sample": sample, "fetched": sum(c["rows"] for c in chain),
             "seconds": round(time.time() - t0, 1)}
