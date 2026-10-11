@@ -623,6 +623,7 @@ jobs:
           RESULTS: ${{ toJson(needs) }}
           RUN_ID: ${{ github.run_id }}
           EVENT: ${{ github.event_name }}
+          RUN_START: ${{ github.run_started_at }}
         run: |
           # 工厂成功发布是静默的（无 Issue、无邮件）—— 这行就是那个落点：
           # 每天发了多少、相对上一版缩水没有，都能在这里看见。

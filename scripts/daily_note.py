@@ -66,6 +66,19 @@ def manifest_rows(path: str) -> tuple:
         return 0, "", ""
 
 
+def parse_ts(s: str, fmt: str = "%Y-%m-%dT%H:%M:%SZ"):
+    """容错时间解析：github.run_started_at 是 ISO（…Z），manifest 是 '%Y-%m-%d %H:%M:%S'。"""
+    if not s:
+        return None
+    for f in (fmt, "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%d %H:%M:%S"):
+        try:
+            d = datetime.datetime.strptime(s.strip(), f)
+            return d if d.tzinfo else d.replace(tzinfo=datetime.timezone.utc)
+        except ValueError:
+            continue
+    return None
+
+
 def prev_release_rows(note: str) -> int:
     """从日报正文里取上一行的「数据集条数」，用来算 Δ。"""
     for ln in reversed(note.splitlines()):
@@ -88,6 +101,8 @@ def main(argv=None) -> int:
     ap.add_argument("--note", default="", help="现有日报（没有则新建，自动补表头）")
     ap.add_argument("--out", required=True, help="写到哪里")
     ap.add_argument("--run-id", default=os.environ.get("RUN_ID", "-"))
+    ap.add_argument("--run-start", default=os.environ.get("RUN_START", ""),
+                    help="本轮开始时间（github.run_started_at）：判清单是不是本轮生成的")
     ap.add_argument("--event", default=os.environ.get("EVENT", "-"))
     ap.add_argument("--results", default=os.environ.get("RESULTS", "{}"))
     a = ap.parse_args(argv)
@@ -108,18 +123,31 @@ def main(argv=None) -> int:
     led = ledger_last(a.ledger) if a.ledger else {}
     rows, sha, generated = manifest_rows(a.manifest) if a.manifest else (0, "", "")
 
-    today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     pres = (results.get("publish") or {}).get("result")
-    if pres == "success" and generated.startswith(today):
+    started = parse_ts(a.run_start)
+    gen = parse_ts(generated, "%Y-%m-%d %H:%M:%S")
+    # 本轮真发布了没？判据 = 清单是「本次运行开始之后」生成的。
+    # 只看日期会误判：publish 作业在非发布点也会成功（节拍闸门直接放行、什么都没干），
+    # 而当天早先那轮留下的清单还是今天的日期 → 假 ✅（实测 12:24 那轮就中招）。
+    fresh = bool(gen and started and gen >= started - datetime.timedelta(seconds=60))
+    if pres == "success" and fresh:
         pub = "✅"
     elif pres == "success":
-        pub = "⏭ 未到发布点"
-    elif pres == "skipped":
-        pub = "⏭ 未跑"
-    elif pres is None:
+        pub = "⏭ 未到发布点" if (started and started.hour != 11) else "⏭ 无内容可发"
+    elif pres is None or pres == "skipped":
         pub = "⏭ 未跑"
     else:
         pub = "❌"
+
+    # 窗口外的小时空转（gate 放行、collect 全跳、无失败、也没真发布）不写行：
+    # 否则每天 24 行里 23 行是噪音，真正发布那行反而被埋了。
+    if (not fresh and pub.startswith("⏭")
+            and (results.get("collect") or {}).get("result") in (None, "skipped")
+            and (results.get("assemble") or {}).get("result") in (None, "skipped")
+            and not any((results.get(k) or {}).get("result") in ("failure", "cancelled")
+                        for k in ORDER)):
+        print("（本轮窗口外空转：未采集、未发布、无失败 → 不写行）")
+        return 0
 
     if pub == "✅":
         prev = prev_release_rows(note)
