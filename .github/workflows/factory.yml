@@ -153,7 +153,8 @@ jobs:
 
   assemble:
     needs: collect
-    if: always() && needs.collect.result != 'cancelled'
+    # 必须真的跑过 collect 才合并 —— 否则 publish 模式下会把状态覆盖成空（已踩过）
+    if: always() && (needs.collect.result == 'success' || needs.collect.result == 'failure')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -260,7 +261,7 @@ jobs:
 
   publish:
     needs: assemble
-    if: always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
+    if: always() && needs.assemble.result == 'success' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
