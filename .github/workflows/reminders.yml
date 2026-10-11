@@ -31,13 +31,20 @@ jobs:
           python3 - <<'PY' > /tmp/due.txt
           import csv, datetime
           today = datetime.date.today()
-          rows = list(csv.DictReader(open("data/凭证到期.csv", encoding="utf-8-sig")))
-          for r in rows:
-              exp = datetime.date.fromisoformat((r.get("expires_on") or "").strip())
+          for r in csv.DictReader(open("data/凭证到期.csv", encoding="utf-8-sig")):
+              raw = (r.get("expires_on") or "").strip()
+              try:
+                  exp = datetime.date.fromisoformat(raw)
+              except ValueError:
+                  print(f"# 跳过（没有固定到期日）: {r.get('name','')} = {raw!r}", flush=True)
+                  continue
               days = (exp - today).days
               remind = int((r.get("remind_days") or "7").strip() or 7)
               print(f"{today.isoformat()}|{r.get('name','').strip()}|{exp}|{days}|{remind}|{(r.get('note') or '').strip()}")
           PY
+          grep -v '^#' /tmp/due.txt > /tmp/due.rows || true
+          mv /tmp/due.rows /tmp/due.txt
+          cat /tmp/due.txt
           hit=0
           while IFS='|' read -r today name exp days remind note; do
             echo "· $name：到期 $exp（剩 $days 天，提醒阈 $remind 天）"

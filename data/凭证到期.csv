@@ -1,3 +1,3 @@
 name,target,expires_on,remind_days,note
 GitHub classic PAT（账号 ip9988001）,GitHub API / gh CLI / 本机工厂脚本,2027-01-09,7,classic token（90 天有效期）；本机归集处 /root/.pi/agent/secrets/github/ip9988001-classic-pat.txt；到期即失效，所有用它的自动化会同时停摆
-DEEPSEEK_API_KEY（GitHub Actions Secret）,World-Map-Data 仓库 Secrets（brain 作业造规则）,无固定期限,7,按量计费；只在仓库 Secret 里，不入库
+DEEPSEEK_API_KEY（GitHub Actions Secret）,World-Map-Data 仓库 Secrets（brain 作业造规则）,2027-06-30,7,按量计费；到期日仅为提醒占位（换 key 时同步更新）；只在仓库 Secret 里，不入库
