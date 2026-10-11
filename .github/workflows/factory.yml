@@ -261,7 +261,8 @@ jobs:
 
   publish:
     needs: assemble
-    if: always() && needs.assemble.result == 'success' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
+    # publish 独立于 assemble：publish 模式没有 collect，assemble 会被跳过（skipped≠失败）
+    if: always() && needs.assemble.result != 'cancelled' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
