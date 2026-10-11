@@ -330,10 +330,20 @@ jobs:
         run: |
           git fetch origin data --depth=1 || true
           mkdir -p progress/待造刀 out
-          for f in $(git ls-tree -r --name-only origin/data progress/待造刀 2>/dev/null || true); do
-            git show "origin/data:$f" > "progress/待造刀/$(basename "$f")" 2>/dev/null || true
-          done
-          ls progress/待造刀 2>/dev/null | wc -l
+          # 必须用 git archive（中文路径）：ls-tree 默认会输出引号转义路径，
+          # 之前的写法 git show "origin/data:$f" 全失败，只留下 7 个空文件 → brain 以为“无缺口”
+          git archive origin/data progress/待造刀 2>/dev/null | tar -x -C . 2>/dev/null || true
+          python3 - <<'PY'
+          import glob, json
+          ok = 0
+          for f in glob.glob("progress/待造刀/*.json"):
+              try:
+                  json.load(open(f, encoding="utf-8"))
+                  ok += 1
+              except Exception:
+                  print("⚠ 读不动的清单（当空处理）:", f)
+          print("可用待造刀清单:", ok)
+          PY
       - name: 恢复原始档（bronze：造规则要真实样本，不回源）
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
