@@ -95,7 +95,9 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
             return st
 
     pref = preferred_engine(sid)
-    res = run_rules(sid, row, out_root, archive, limit=limit, preferred=pref)
+    # 级联也设墙钟上限：单源整体（下载 + 级联）不得无界膨胀，否则会吃穿泳道预算
+    res = run_rules(sid, row, out_root, archive, limit=limit, preferred=pref,
+                    cascade_seconds=max(120, int(max_seconds) - 60))
     st["rule_chain"] = [{k: v for k, v in c.items() if k != "drops"} for c in res["chain"]]
     if res["ok"]:
         st.update({"done": True, "stage": "parsed", "rule": res["rule"],
@@ -103,6 +105,13 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
                    "ratio": res["gate"]["ratio"], "path": res["path"],
                    "seconds": round(time.time() - t0, 1), "error": ""})
         route_update(sid, res["rule"], True, res["gate"]["ratio"])
+        return st
+
+    if res.get("budget_exhausted"):
+        # 级联被时间上限掐断（余下规则没试完）→ 不是「规则缺口」，下一窗口重试
+        st.update({"done": False, "stage": "parsed", "kind": "TRANSIENT",
+                   "reason": "规则级联触到单源时间上限，余下规则下一窗口再试",
+                   "seconds": round(time.time() - t0, 1), "error": ""})
         return st
 
     d = diagnose(sid, row, res, archive)

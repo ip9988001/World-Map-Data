@@ -80,8 +80,10 @@ jobs:
       - name: 生成泳道计划
         id: plan
         run: |
+          # 不要用 tail 截断：黑名单预剔数 / 可采源数是本窗口的关键证据，必须留在日志里
           python -m collectors.plan_batch --lanes 16 --state progress/state.json \
-            --blacklist data/源黑名单.csv --out out/plan.json | tail -3
+            --blacklist data/源黑名单.csv --out out/plan.json 2>&1 \
+            | grep -aE '黑名单|可采源|主机桶|最重|makespan|计划已写入' || true
           python3 - >> "$GITHUB_OUTPUT" <<'PY'
           import json
           p = json.load(open("out/plan.json"))

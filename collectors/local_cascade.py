@@ -139,9 +139,18 @@ def _gate(kept: int, contentful: int, rows: int, true_n: int = 0) -> tuple[bool,
                    f"总行 {rows:,}，带地址 {contentful:,}，真门牌号 {true_n:,}）")
 
 
+EARLY_STOP_RATIO = 0.995       # 合规率 ≥99.5% 即收工：再试其余规则的边际收益 <0.5%
+
+
 def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIVE,
-              limit: int = 0, preferred: str = "", keep_failed: bool = False) -> dict:
-    """对一个源的原始档跑规则级联。返回结果字典（含每套规则的判决链）。"""
+              limit: int = 0, preferred: str = "", keep_failed: bool = False,
+              cascade_seconds: int = 1800) -> dict:
+    """对一个源的原始档跑规则级联。返回结果字典（含每套规则的判决链）。
+
+    cascade_seconds：本源的级联墙钟上限。规则按历史胜率排序，第一套常常就是赢家；
+    不设上限时单源能吃穿整条泳道预算（实测 us/fl/lee：4 套规则各扫 71 万行共 1045s，
+    泳道 900s 预算被拉成 -400s，该泳道 23 分钟只推进 1 个源）。
+    """
     arch = archive_dir(archive, sid)
     man = load_manifest(archive, sid)
     mapping = parse_mapping_from_table(row)
@@ -153,8 +162,14 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
     t0 = time.time()
     sample: list[dict] = []
 
+    broke_by_budget = False
     for r in order_rules(row, meta=man, preferred=preferred):
         rname = f"{r.name}@v{r.version}"
+        if chain and (time.time() - t0) > cascade_seconds:
+            broke_by_budget = True
+            print(f"  [级联超时] 已跑 {time.time() - t0:.0f}s > 上限 {cascade_seconds}s，"
+                  f"不再试新规则（已通过的规则保留）", flush=True)
+            break
         try:
             r.warm(list(islice(iter_rows_from_archive(arch), 300)))   # 预热：按值形态定列
         except Exception as e:
@@ -217,6 +232,12 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
         if ok:
             # 不立即收工：多套规则都可能通过，最后选「洗出最多」的那套（质量由闸门 + 产物级防垃圾保证）
             passing.append((kept, rname, step, dst))
+            if step["ratio"] >= EARLY_STOP_RATIO and kept >= GATE_MIN_KEPT:
+                step["early_stop"] = (f"合规率 {step['ratio']:.1%} ≥ {EARLY_STOP_RATIO:.1%}，"
+                                      f"其余规则最多再多 <0.5%，直接选定省时")
+                print(f"  [早停] {rname} 合规率 {step['ratio']:.1%}，"
+                      f"再试其余规则边际收益 <0.5% → 直接选定", flush=True)
+                break
             continue
         if keep_failed:
             continue
@@ -235,9 +256,11 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
         print(f"  → 选中 {best_rule}（通过者中洗出最多：{best_n:,} 条）", flush=True)
         return {"ok": True, "rule": best_rule, "chain": chain, "gate": best_step,
                 "kept": best_n, "fetched": best_step["rows"], "path": best_dst,
+                "budget_exhausted": broke_by_budget,
                 "seconds": round(time.time() - t0, 1)}
     return {"ok": False, "rule": "", "chain": chain, "gate": None,
             "sample": sample, "fetched": sum(c["rows"] for c in chain),
+            "budget_exhausted": broke_by_budget,
             "seconds": round(time.time() - t0, 1)}
 
 
