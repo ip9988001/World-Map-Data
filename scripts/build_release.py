@@ -52,6 +52,24 @@ def collect_new() -> dict[str, list[str]]:
     return out
 
 
+def _norm_payload(payload: str) -> str:
+    """统一发布包的 schema（历史遗留格式混着很脏）：
+      · 来源统一成 `sources` 列表（老分片是单值 `source`）
+      · 剔掉内部字段 `_rule`（那是流水线自用的，不该出现在交付物里）
+    """
+    if '"_rule"' not in payload and '"sources"' in payload:
+        return payload
+    try:
+        rec = json.loads(payload)
+    except Exception:
+        return payload
+    rec.pop("_rule", None)
+    src = rec.pop("source", None)
+    if src and not rec.get("sources"):
+        rec["sources"] = [src] if isinstance(src, str) else list(src)
+    return json.dumps(rec, ensure_ascii=False, separators=(",", ":"))
+
+
 def _write_sorted_state(state: str, old_shard: str | None, new_files: list[str],
                         tmp_dir: str, out_path: str) -> tuple[int, int]:
     """写一个州的稳定分片：外部排序 + 每 key 取最高优先级。返回 (行数, 去重掉的数量)。"""
@@ -87,7 +105,7 @@ def _write_sorted_state(state: str, old_shard: str | None, new_files: list[str],
             if key == prev_key:
                 continue
             prev_key = key
-            out.write(payload)
+            out.write(_norm_payload(payload) + "\n")
             kept += 1
     os.remove(raw)
     os.remove(srt)

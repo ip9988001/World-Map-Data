@@ -57,7 +57,7 @@ jobs:
 
   plan:
     needs: gate
-    if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode != 'publish')
+    if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode == 'collect')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     outputs:
@@ -434,6 +434,19 @@ jobs:
           if [ ! -d out/release ]; then echo "无发布内容，跳过校验"; exit 0; fi
           python scripts/verify_release.py --release out/release --parsed parsed \
             --state progress/state.json --min-rows 20000000 --sample-sources 3
+      - name: 回写发布清单到 main（发布收据：行数 + sha256，供对账）
+        if: steps.cadence.outputs.go == '1'
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git add -f data/release-manifest.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "清单无变化"; exit 0; fi
+          git commit -m "release: 发布清单回写（run ${{ github.run_id }}）"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "清单推送失败（不阻断发布）"
       - name: 上传稳定视图（tag 复用 + --clobber）
         if: steps.cadence.outputs.go == '1'
         env:

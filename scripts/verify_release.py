@@ -29,7 +29,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 NUM_RE = re.compile(r"^\d{1,6}[A-Za-z]?\d?$")
 ZIP_RE = re.compile(r"^\d{5}$")
-REQUIRED = ("state", "street", "number", "key", "source")
+# 注意：发布包（稳定视图）里的来源字段是聚合后的 `sources`（列表），不是逐条的 source
+REQUIRED = ("state", "street", "number", "key", "sources")
+WL_PATH = "data/州码白名单.json"
+WHITELIST = set(json.load(open(WL_PATH, encoding="utf-8"))) if os.path.exists(WL_PATH) else set()
 
 
 def sha256(path: str) -> str:
@@ -68,7 +71,7 @@ def scan_shard(path: str, head: int = 2000, tail: int = 500):
 
 def check_schema(recs: list[dict], state: str) -> tuple[dict, list[str]]:
     st = {"sampled": len(recs), "missing": 0, "bad_number": 0, "bad_zip": 0,
-          "dup_key": 0, "wrong_shard": 0, "empty_city": 0, "empty_zip": 0}
+          "dup_key": 0, "cross_state": 0, "bad_state": 0, "empty_city": 0, "empty_zip": 0}
     errs: list[str] = []
     seen: set[str] = set()
     for r in recs:
@@ -86,9 +89,14 @@ def check_schema(recs: list[dict], state: str) -> tuple[dict, list[str]]:
         if k in seen:
             st["dup_key"] += 1
         seen.add(k)
-        if str(k or "").split("|")[0] != state:
-            st["wrong_shard"] += 1
-    for field in ("missing", "bad_number", "bad_zip", "dup_key", "wrong_shard"):
+        ks = str(k or "").split("|")[0]
+        if ks != state:
+            # 跨州地址是真实存在的（源头给的 region 就是邻州）→ 只算信息；
+            # 但州码不在白名单里就是硬错（多半是解析错位）
+            st["cross_state"] += 1
+            if WHITELIST and ks not in WHITELIST:
+                st["bad_state"] += 1
+    for field in ("missing", "bad_number", "bad_zip", "dup_key", "bad_state"):
         if st[field]:
             errs.append(f"[{state}] {field}={st[field]}")
     return st, errs
@@ -184,7 +192,8 @@ def main(argv=None) -> None:
         errs += sers
         if rows:
             print(f"   {st}: {rows:>10,} 行 抽样 {se['sampled']} 条  "
-                  f"缺字段{se['missing']} 坏号{se['bad_number']} 重复{se['dup_key']}")
+                  f"缺字段{se['missing']} 坏号{se['bad_number']} 重复{se['dup_key']}"
+                  + (f" 跨州{se['cross_state']}" if se["cross_state"] else ""))
     merged = os.path.join(a.release, "merged.clean.ndjson.gz")
     if not os.path.exists(merged):
         errs.append("[对账] merged.clean.ndjson.gz 缺失")
