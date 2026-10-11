@@ -124,6 +124,18 @@ jobs:
           for f in 源黑名单.csv 引擎路由表.csv; do
             git show "origin/data:data/$f" > "data/$f" 2>/dev/null || true
           done
+      - name: 恢复原始档（bronze：按州 Release 资产，供规则重洗不回源）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STATES=$(python scripts/bronze_assets.py states --plan out/plan.json --lane ${{ matrix.lane }})
+          echo "本泳道涉及州：$STATES"
+          mkdir -p /tmp/bronze
+          for st in $STATES; do
+            gh release download bronze -p "bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+          done
+          ls /tmp/bronze | head -5 || true
+          python scripts/bronze_assets.py restore --dir /tmp/bronze
       - name: 本泳道采集（下载 → 规则级联 → 分诊）
         run: |
           python -m collectors.pipeline \
@@ -133,6 +145,19 @@ jobs:
             --state progress/state-${{ matrix.lane }}.json \
             --min-interval 1.0 --concurrency 3
         continue-on-error: true
+      - name: 回存原始档（bronze：只存本泳道涉及的州，单州上限 400MB）
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STATES=$(python scripts/bronze_assets.py states --plan out/plan.json --lane ${{ matrix.lane }})
+          rm -rf /tmp/bronze && mkdir -p /tmp/bronze
+          python scripts/bronze_assets.py pack --states "$(echo $STATES | tr ' ' ',')" --out /tmp/bronze || true
+          if ls /tmp/bronze/*.zip >/dev/null 2>&1; then
+            gh release create bronze --title "原始档 bronze（按州缓存）" \
+              --notes "每州一个 zip；采集前恢复、收工回存，支持规则重洗不回源" 2>/dev/null || true
+            gh release upload bronze /tmp/bronze/*.zip --clobber
+          fi
       - name: 打包本泳道产物（规则产物 + 状态 + 账本）
         if: always()
         run: |
