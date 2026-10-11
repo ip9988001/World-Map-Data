@@ -149,27 +149,32 @@ jobs:
             --state progress/state-${{ matrix.lane }}.json \
             --min-interval 1.0 --concurrency 3
         continue-on-error: true
-      - name: 回存原始档（bronze：只存本泳道涉及的州，单州上限 400MB）
+      - name: 回存原始档（bronze：**并集**回存，单州上限 400MB）
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           STATES=$(python scripts/bronze_assets.py states --plan out/plan.json --lane ${{ matrix.lane }})
-          rm -rf /tmp/bronze && mkdir -p /tmp/bronze
+          # 关键：先把已存在的 zip 取回来解开再打包 —— 否则后跑完的泳道会拿“只有自己那部分源”的包
+          # 覆盖掉别的泳道已存进去的源（实测 bronze-AK.zip 只剩 4 个源、WI 只剩 1 个）
+          rm -rf /tmp/bzold /tmp/bronze && mkdir -p /tmp/bzold /tmp/bronze
+          for st in $STATES; do
+            gh release download bronze -p "bronze-$st.zip" -D /tmp/bzold --clobber 2>/dev/null || true
+          done
+          python scripts/bronze_assets.py restore --dir /tmp/bzold --archive raw_archive || true
           python scripts/bronze_assets.py pack --states "$(echo $STATES | tr ' ' ',')" --out /tmp/bronze || true
           if ls /tmp/bronze/*.zip >/dev/null 2>&1; then
             gh release create bronze --title "原始档 bronze（按州缓存）" \
-              --notes "每州一个 zip；采集前恢复、收工回存，支持规则重洗不回源" 2>/dev/null || true
-            # 多泳道并行时会同时回存同一个州（实测 HTTP 422 "already exists"）→ 必须重试，
-            # 而且失败**不阻断**本泳道（bronze 下一轮还能再存，采集本身已经完成）
+              --notes "每州一个 zip；采集前恢复、收工回存（并集），支持规则重洗不回源" 2>/dev/null || true
+            # 多泳道并行会同时回存同一个州（实测 HTTP 422 already exists）→ 重试，且失败**不阻断**
             for z in /tmp/bronze/*.zip; do
               for i in 1 2 3; do
                 if gh release upload bronze "$z" --clobber 2>/dev/null; then break; fi
-                echo "⚠ $(basename "$z") 回存失败（常见原因：别的泳道同时在传同一个州）→ 重试 $i/3"
+                echo "⚠ $(basename "$z") 回存失败（多半是别的泳道同时在传同一个州）→ 重试 $i/3"
                 sleep $((i * 8))
               done
             done
-            echo "bronze 回存流程完成（失败不阻断）"
+            echo "bronze 回存流程完成（失败不阻断本泳道）"
           fi
       - name: 打包本泳道产物（规则产物 + 状态 + 账本）
         if: always()

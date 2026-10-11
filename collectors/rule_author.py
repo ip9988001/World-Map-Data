@@ -58,11 +58,10 @@ USER = """为目标采集源写一套**声明式**解析规则（JSON），把�
 【现状】现有规则全失手：{chain}
 【可用模式】
   A. mode="columns"：号码与街名是分开的列（或可用模板把几列拼出来）
-  B. mode="single" ：整条地址塞在一列里，例如 "N 1525th St Mason IL 62443"
   B. mode="single" ：整条地址塞在一列里（支持**可选前置方位**，尾部市/州/ZIP 自动剥离）。
                      例："1514 N US Hwy 45 Mason IL 62443"、"123 N Main St, Springfield, CA 94110"
-【如果这个源根本没有门牌号】不要硬凑，直接输出：
-  {"infeasible": true, "reason": "一句话", "evidence_column": "列名"}
+【如果这个源根本没有门牌号】不要硬凑，直接输出（花括号按原样写）：
+  {infeasible_example}
   （只给街名没有号、那列是地类码/地块号/LABEL、地址全是业主邮寄地址 —— 都属于这种。
    我们会用证据复核，确认后把该源标为「不含地址」不再浪费算力。）
 【输出 JSON（严格照这个骨架，用不上的键写 ""，不许省略键）】
@@ -75,7 +74,7 @@ USER = """为目标采集源写一套**声明式**解析规则（JSON），把�
 5) 拿不准的字段写 "" —— 尤其是 city：错的市名会污染去重 key，宁缺毋滥。
 6) `match.columns_any` 必须写，用最独特的那个列名（决定这套规则只对本源类出场）。
 【样本（{n} 行，原样，值超长已截断）】
-【本地证据】{n} 行里只有 {ev_hit} 行真含「门牌号 + 街名」形态（场地地址列 {ev_ratio:.0%}；
+【本地证据】抽检 {ev_rows} 行里只有 {ev_hit} 行真含「门牌号 + 街名」形态（场地地址列 {ev_ratio:.0%}；
 若把业主邮寄/账单列也算上是 {ev_any} 行 {ev_any_ratio:.0%} —— 邮寄地址**不是**门牌点，不要用）
 {rows}
 """
@@ -92,6 +91,9 @@ SCHEMA = json.dumps({
     "unit_drop": True,
     "examples": [{"row": {"列名": "值"}, "expect": {"number": "123", "street": "MAIN ST"}}],
 }, ensure_ascii=False, indent=1)
+# 这个字面量必须在模板外拼好：直接写进 USER 会被 str.format 当成占位符
+# （实战踩过：KeyError: '"infeasible"' 直接把 brain 作业打挂）
+INFEASIBLE_EXAMPLE = '{"infeasible": true, "reason": "一句话", "evidence_column": "列名"}'
 
 
 # ─────────────────────────────────────────────────────────── 取样本
@@ -381,8 +383,9 @@ def build_prompt(sid: str, row: dict, gap: dict, rows: list[dict]) -> str:
     ev_hit, ev_ratio = true_addr_ratio(rows)
     ev_any, ev_any_ratio = true_addr_ratio(rows, site_only=False)
     return USER.format(sid=sid, state=st, url=(row or {}).get("url", ""), chain=chain,
-                       schema=SCHEMA, n=len(slim), ev_hit=ev_hit, ev_ratio=ev_ratio,
+                       schema=SCHEMA, n=len(slim), ev_rows=len(rows), ev_hit=ev_hit, ev_ratio=ev_ratio,
                        ev_any=ev_any, ev_any_ratio=ev_any_ratio,
+                       infeasible_example=INFEASIBLE_EXAMPLE,
                        rows=json.dumps(slim, ensure_ascii=False, indent=0)[:40000])
 
 
@@ -434,6 +437,13 @@ def main(argv=None) -> None:
             continue
         done += 1
         ev_hit, ev_ratio = true_addr_ratio(rows)
+        try:
+            prompt = build_prompt(sid, row, gap, rows)
+        except Exception as e:
+            # 单个源出意外不许把整个作业打挂（实战：模板占位符 KeyError → brain 直接 exit 1）
+            print(f"[brain] {sid} 提示词构造失败（跳过，不影响其它源）: {type(e).__name__}: {e}")
+            append_ledger(sid, "", "PROMPT_FAIL", {}, "", f"{type(e).__name__}: {e}")
+            continue
         prompt = build_prompt(sid, row, gap, rows)
         if a.dry_run:
             print("=" * 20, sid, "=" * 20)
@@ -468,7 +478,11 @@ def main(argv=None) -> None:
                 lines.append(msg)
                 append_ledger(sid, "", "REJECTED_INFEASIBLE", stats, model, ev[:160])
             continue
-        okv, stats, errs = validate(spec, rows, sid, best)
+        try:
+            okv, stats, errs = validate(spec, rows, sid, best)
+        except Exception as e:
+            print(f"[brain] {sid} 验证闸门抛异常（按不通过处理）: {type(e).__name__}: {e}")
+            okv, stats, errs = False, {"rows": len(rows)}, [f"validate 异常: {type(e).__name__}: {e}"]
         if okv:
             p = write_spec(spec, a.out, sid, stats, model)
             ok_n += 1
