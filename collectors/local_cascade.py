@@ -33,6 +33,7 @@ from .fetch_raw import archive_dir, fetch_raw, load_manifest
 from .flatten import iter_rows_from_archive, payload_files, peek
 from .normalize import parse_mapping_from_table
 from .politeness import Politeness
+from .rules._common import FULL_ADDR_RE
 from .rules import RuleCtx, order_rules, self_test_all
 from .triage import (blacklist_add, evidence_probe, report_md, route_update,
                      write_gap_report)
@@ -43,18 +44,24 @@ PARSED = "parsed"
 GATE_MIN_KEPT = 5
 GATE_MIN_RATIO = 0.30
 TRIAGE_DIR = "out/triage"
-# 「带地址内容的行」：至少一个字段值里有连续两个字母（数字/空/URL/纯 ID 不算）
-# 为何这样判：大量源里存在空置地块/林地/无门牌号的税档记录（如 garfield 只有 47% 的行带地址），
-# 拿全部行做分母会把正常源误判成「规则洗不出」（gate 误报），所以分母只算真正有内容的行。
-CONTENTFUL_RE = re.compile(r"[A-Za-z]{2,}")
+# 「带地址内容的行」判据（阀 2 版）：光“含字母”不够（DISTRICT="laurens"、业主姓名、LAT/LNG 都会误命中），
+# 要有**地址痕迹**：一个值里同时出现「门牌号 + 后面的词」才箅（如 "1514 N US Hwy 45"、"123 MAIN ST"）。
+# 为何要算分母：大量源里存在空置地块/林地/无门牌号税档（garfield 只有四分之一的行业带真地址），
+# 拿全部行做分母会把正常源误判成「规则洗不出」。
+ADDR_TRACE = re.compile(r"\b\d{1,6}[A-Za-z]?\s+[A-Za-z]{2,}")
 
 
 def _is_contentful(row: dict) -> bool:
-    for k, v in row.items():
-        if str(k).startswith("_"):
-            continue
-        if isinstance(v, str) and CONTENTFUL_RE.search(v):
+    vals = [v.strip() for k, v in row.items()
+            if not str(k).startswith("_") and isinstance(v, str) and v.strip()]
+    for v in vals:
+        if ADDR_TRACE.search(v) or (len(v) < 130 and FULL_ADDR_RE.match(v)):
             return True
+    # 分开的号/街两列：有短数字列 + 另一个带街名后缀的列
+    if any(re.fullmatch(r"\d{1,6}[A-Za-z]?", v) for v in vals) and \
+            any(re.search(r"[A-Za-z]{2,}\s+(st|street|ave|avenue|rd|road|dr|drive|ln|lane|blvd|way|hwy|highway|ct|court|pl|ter|circle|cir)\b",
+                          v, re.I) for v in vals):
+        return True
     return False
 
 

@@ -36,8 +36,15 @@ class ConcatAddr(Rule):
 
     def clean(self, row: dict, ctx: RuleCtx):
         keys = list(row.keys())
-        fk = self._full_key(row, keys) or (ctx.mapping.get("number") or "")
-        full = str(row.get(fk, "") or "").strip()
+        fk = self._full_key(row, keys)
+        if not fk:
+            # 源总表的映射可能是 dict/函数 spec（不可哈希）→ 只取其 field 名当保底列
+            cand = ctx.mapping.get("number")
+            if isinstance(cand, str):
+                fk = cand
+            elif isinstance(cand, dict):
+                fk = str(cand.get("field") or "")
+        full = str(row.get(fk, "") or "").strip() if fk else ""
         m = FULL_ADDR_RE.match(full)
         if not m:
             return None, "no_full_address"
