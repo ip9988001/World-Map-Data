@@ -586,7 +586,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: read
+      contents: write
       issues: write
     steps:
       - uses: actions/checkout@v4
@@ -617,3 +617,31 @@ jobs:
             done
             echo "本轮全部环节通过"
           fi
+      - name: 发布日报（每轮留一行；成功也写，只是不吵人）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTS: ${{ toJson(needs) }}
+          RUN_ID: ${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          # 工厂成功发布是静默的（无 Issue、无邮件）—— 这行就是那个落点：
+          # 每天发了多少、相对上一版缩水没有，都能在这里看见。
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git fetch origin data --depth=1 || true
+          git show origin/data:progress/台账.csv > /tmp/ledger.csv 2>/dev/null || true
+          git show origin/data:progress/发布日报.md > /tmp/note.md 2>/dev/null || true
+          python3 scripts/daily_note.py --ledger /tmp/ledger.csv \
+            --manifest data/release-manifest.json --note /tmp/note.md --out /tmp/note_new.md
+          if [ -f /tmp/note.md ] && cmp -s /tmp/note.md /tmp/note_new.md; then
+            echo "日报无变化，跳过"; exit 0
+          fi
+          git checkout -B data origin/data
+          mkdir -p progress && cp /tmp/note_new.md progress/发布日报.md
+          git add progress/发布日报.md
+          git commit -m "progress: 发布日报（run ${{ github.run_id }}）" || { echo "无变化"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin data && git push origin HEAD:data && exit 0
+            sleep 5
+          done
+          echo "日报推送失败（不阻断发布）"
