@@ -1,4 +1,57 @@
 {
+ "us/ak/city_of_juneau": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__ak__city_of_juneau.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 0.9,
+  "source_id": "us/ak/city_of_juneau",
+  "stage": "triage",
+  "updated": "2026-10-11 12:59:01"
+ },
  "us/ar/statewide": {
   "archive": {
    "bytes": 22644279,
@@ -33,5 +86,4729 @@
   "source_id": "us/ar/statewide",
   "stage": "parsed",
   "updated": "2026-10-11 05:59:24"
+ },
+ "us/ca/inyo": {
+  "archive": {
+   "bytes": 3477270,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 11353,
+  "kept": 11212,
+  "path": "parsed/us/ca/inyo/mapping@v1.ndjson",
+  "ratio": 0.988,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 11212,
+    "ratio": 0.988,
+    "rows": 11353,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "verdict": "PASS",
+    "why": "合规 11212/11353 = 99%"
+   }
+  ],
+  "seconds": 10.4,
+  "source_id": "us/ca/inyo",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:13:30"
+ },
+ "us/ca/kern": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Accela_Base/MapServer not found ', 'details': []}",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Accela_Base/MapServer not found ', 'details': []}",
+  "seconds": 1.7,
+  "source_id": "us/ca/kern",
+  "stage": "fetch",
+  "updated": "2026-10-11 03:11:15"
+ },
+ "us/ca/san_francisco": {
+  "done": true,
+  "error": "",
+  "fetched": 5000,
+  "kept": 5000,
+  "path": "parsed/us/ca/san_francisco/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 5000,
+    "ratio": 1.0,
+    "rows": 5000,
+    "rule": "mapping@v1",
+    "seconds": 3.0,
+    "verdict": "PASS",
+    "why": "合规 5000/5000 = 100%"
+   }
+  ],
+  "seconds": 3.0,
+  "source_id": "us/ca/san_francisco",
+  "stage": "parsed",
+  "updated": "2026-10-11 02:50:10"
+ },
+ "us/co/mineral": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+  "evidence": {
+   "bytes": 1184,
+   "content_type": "text/html; charset=utf-8",
+   "head": "<html lang=\"en\">\r\n<head>\r\n  <title>Home</title>\r\n  <link href='/ESRI.ArcGIS.SDS.REST.css' rel='stylesheet' type='text/css'>\r\n  <link rel='SHORTCUT ICON' href='/favicon.ico'>\r\n<meta http-equiv=\"Content",
+   "status": 200,
+   "url": "https://services1.arcgis.com/zH7gQ37AKcpvTX6d/ArcGIS/rest/services/MineralParcels_04112016/FeatureServer/0",
+   "verdict_hint": "UNSURE: 200 text/html; charset=utf-8 1184B"
+  },
+  "kind": "SOURCE_BROKEN",
+  "seconds": 0.4,
+  "source_id": "us/co/mineral",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:15:06"
+ },
+ "us/co/summit": {
+  "archive": {
+   "bytes": 36017956,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 40978,
+  "kept": 40978,
+  "path": "parsed/us/co/summit/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 40978,
+    "ratio": 1.0,
+    "rows": 40978,
+    "rule": "mapping@v1",
+    "seconds": 1.5,
+    "verdict": "PASS",
+    "why": "合规 40978/40978 = 100%"
+   }
+  ],
+  "seconds": 34.1,
+  "source_id": "us/co/summit",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:01:25"
+ },
+ "us/co/yuma": {
+  "archive": {
+   "bytes": 4592369,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 11935,
+  "kept": 4628,
+  "path": "parsed/us/co/yuma/mapping@v1.ndjson",
+  "ratio": 0.388,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 4628,
+    "ratio": 0.388,
+    "rows": 11935,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 4628/11935 = 39%"
+   }
+  ],
+  "seconds": 16.0,
+  "source_id": "us/co/yuma",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:13:41"
+ },
+ "us/ct/city_of_haddam": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.2,
+  "source_id": "us/ct/city_of_haddam",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:32:17"
+ },
+ "us/ga/appling": {
+  "archive": {
+   "bytes": 1034836,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 14602,
+  "kept": 13877,
+  "path": "parsed/us/ga/appling/mapping@v1.ndjson",
+  "ratio": 0.95,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 13877,
+    "ratio": 0.95,
+    "rows": 14602,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 13877/14602 = 95%"
+   }
+  ],
+  "seconds": 1.6,
+  "source_id": "us/ga/appling",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:09"
+ },
+ "us/ga/bacon": {
+  "archive": {
+   "bytes": 510783,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 7768,
+  "kept": 6056,
+  "path": "parsed/us/ga/bacon/mapping@v1.ndjson",
+  "ratio": 0.78,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 6056,
+    "ratio": 0.78,
+    "rows": 7768,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 6056/7768 = 78%"
+   }
+  ],
+  "seconds": 1.2,
+  "source_id": "us/ga/bacon",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:10"
+ },
+ "us/ga/brantley": {
+  "archive": {
+   "bytes": 1122135,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 16506,
+  "kept": 13824,
+  "path": "parsed/us/ga/brantley/mapping@v1.ndjson",
+  "ratio": 0.838,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 13824,
+    "ratio": 0.838,
+    "rows": 16506,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 13824/16506 = 84%"
+   }
+  ],
+  "seconds": 1.7,
+  "source_id": "us/ga/brantley",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:11"
+ },
+ "us/ga/calhoun": {
+  "archive": {
+   "bytes": 274396,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 3960,
+  "kept": 3729,
+  "path": "parsed/us/ga/calhoun/mapping@v1.ndjson",
+  "ratio": 0.942,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 3729,
+    "ratio": 0.942,
+    "rows": 3960,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 3729/3960 = 94%"
+   }
+  ],
+  "seconds": 6.4,
+  "source_id": "us/ga/calhoun",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:37"
+ },
+ "us/ga/candler": {
+  "archive": {
+   "bytes": 668164,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 9605,
+  "kept": 9381,
+  "path": "parsed/us/ga/candler/mapping@v1.ndjson",
+  "ratio": 0.977,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 9381,
+    "ratio": 0.977,
+    "rows": 9605,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 9381/9605 = 98%"
+   }
+  ],
+  "seconds": 1.7,
+  "source_id": "us/ga/candler",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:13"
+ },
+ "us/ga/clinch": {
+  "archive": {
+   "bytes": 344075,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 5453,
+  "kept": 3310,
+  "path": "parsed/us/ga/clinch/mapping@v1.ndjson",
+  "ratio": 0.607,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 3310,
+    "ratio": 0.607,
+    "rows": 5453,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 3310/5453 = 61%"
+   }
+  ],
+  "seconds": 1.3,
+  "source_id": "us/ga/clinch",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:15"
+ },
+ "us/ga/coffee": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/ga/coffee",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:03:25"
+ },
+ "us/ga/colquitt": {
+  "archive": {
+   "bytes": 1718487,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 23769,
+  "kept": 23472,
+  "path": "parsed/us/ga/colquitt/mapping@v1.ndjson",
+  "ratio": 0.988,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 23472,
+    "ratio": 0.988,
+    "rows": 23769,
+    "rule": "mapping@v1",
+    "seconds": 0.9,
+    "verdict": "PASS",
+    "why": "合规 23472/23769 = 99%"
+   }
+  ],
+  "seconds": 2.0,
+  "source_id": "us/ga/colquitt",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:16"
+ },
+ "us/ga/early": {
+  "archive": {
+   "bytes": 614045,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 9787,
+  "kept": 5313,
+  "path": "parsed/us/ga/early/mapping@v1.ndjson",
+  "ratio": 0.543,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 5313,
+    "ratio": 0.543,
+    "rows": 9787,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 5313/9787 = 54%"
+   }
+  ],
+  "seconds": 1.2,
+  "source_id": "us/ga/early",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:18"
+ },
+ "us/ga/echols": {
+  "archive": {
+   "bytes": 161025,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 2605,
+  "kept": 1316,
+  "path": "parsed/us/ga/echols/mapping@v1.ndjson",
+  "ratio": 0.505,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 1316,
+    "ratio": 0.505,
+    "rows": 2605,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 1316/2605 = 51%"
+   }
+  ],
+  "seconds": 0.9,
+  "source_id": "us/ga/echols",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:19"
+ },
+ "us/ga/heard": {
+  "archive": {
+   "bytes": 531145,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 7794,
+  "kept": 7792,
+  "path": "parsed/us/ga/heard/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 7792,
+    "ratio": 1.0,
+    "rows": 7794,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 7792/7794 = 100%"
+   }
+  ],
+  "seconds": 1.4,
+  "source_id": "us/ga/heard",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:20"
+ },
+ "us/ga/houston": {
+  "archive": {
+   "bytes": 4473542,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 63580,
+  "kept": 63555,
+  "path": "parsed/us/ga/houston/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 63555,
+    "ratio": 1.0,
+    "rows": 63580,
+    "rule": "mapping@v1",
+    "seconds": 2.3,
+    "verdict": "PASS",
+    "why": "合规 63555/63580 = 100%"
+   }
+  ],
+  "seconds": 3.8,
+  "source_id": "us/ga/houston",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:22"
+ },
+ "us/ga/jefferson": {
+  "archive": {
+   "bytes": 969275,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 13636,
+  "kept": 13492,
+  "path": "parsed/us/ga/jefferson/mapping@v1.ndjson",
+  "ratio": 0.989,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 13492,
+    "ratio": 0.989,
+    "rows": 13636,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 13492/13636 = 99%"
+   }
+  ],
+  "seconds": 1.5,
+  "source_id": "us/ga/jefferson",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:25"
+ },
+ "us/ga/johnson": {
+  "archive": {
+   "bytes": 532879,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 7507,
+  "kept": 7282,
+  "path": "parsed/us/ga/johnson/mapping@v1.ndjson",
+  "ratio": 0.97,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 7282,
+    "ratio": 0.97,
+    "rows": 7507,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 7282/7507 = 97%"
+   }
+  ],
+  "seconds": 1.2,
+  "source_id": "us/ga/johnson",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:27"
+ },
+ "us/ga/jones": {
+  "archive": {
+   "bytes": 1238932,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 18063,
+  "kept": 17939,
+  "path": "parsed/us/ga/jones/mapping@v1.ndjson",
+  "ratio": 0.993,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 17939,
+    "ratio": 0.993,
+    "rows": 18063,
+    "rule": "mapping@v1",
+    "seconds": 0.6,
+    "verdict": "PASS",
+    "why": "合规 17939/18063 = 99%"
+   }
+  ],
+  "seconds": 1.5,
+  "source_id": "us/ga/jones",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:28"
+ },
+ "us/ga/miller": {
+  "archive": {
+   "bytes": 329315,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 4731,
+  "kept": 4662,
+  "path": "parsed/us/ga/miller/mapping@v1.ndjson",
+  "ratio": 0.985,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 4662,
+    "ratio": 0.985,
+    "rows": 4731,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 4662/4731 = 99%"
+   }
+  ],
+  "seconds": 1.0,
+  "source_id": "us/ga/miller",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:30"
+ },
+ "us/ga/mitchell": {
+  "archive": {
+   "bytes": 715005,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 10092,
+  "kept": 8133,
+  "path": "parsed/us/ga/mitchell/mapping@v1.ndjson",
+  "ratio": 0.806,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 8133,
+    "ratio": 0.806,
+    "rows": 10092,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 8133/10092 = 81%"
+   }
+  ],
+  "seconds": 1.3,
+  "source_id": "us/ga/mitchell",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:31"
+ },
+ "us/ga/quitman": {
+  "archive": {
+   "bytes": 223079,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 3397,
+  "kept": 2215,
+  "path": "parsed/us/ga/quitman/mapping@v1.ndjson",
+  "ratio": 0.652,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 2215,
+    "ratio": 0.652,
+    "rows": 3397,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 2215/3397 = 65%"
+   }
+  ],
+  "seconds": 1.1,
+  "source_id": "us/ga/quitman",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:32"
+ },
+ "us/ga/seminole": {
+  "archive": {
+   "bytes": 605822,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 8267,
+  "kept": 8127,
+  "path": "parsed/us/ga/seminole/mapping@v1.ndjson",
+  "ratio": 0.983,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 8127,
+    "ratio": 0.983,
+    "rows": 8267,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 8127/8267 = 98%"
+   }
+  ],
+  "seconds": 1.3,
+  "source_id": "us/ga/seminole",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:33"
+ },
+ "us/ga/tattnall": {
+  "archive": {
+   "bytes": 1015903,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 15068,
+  "kept": 9386,
+  "path": "parsed/us/ga/tattnall/mapping@v1.ndjson",
+  "ratio": 0.623,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 9386,
+    "ratio": 0.623,
+    "rows": 15068,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "verdict": "PASS",
+    "why": "合规 9386/15068 = 62%"
+   }
+  ],
+  "seconds": 1.4,
+  "source_id": "us/ga/tattnall",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:22:34"
+ },
+ "us/ga/wheeler": {
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 6570,
+  "kept": 1764,
+  "path": "parsed/us/ga/wheeler/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "contentful": 1764,
+    "coverage": 0.268,
+    "kept": 1764,
+    "kept_contentful": 1764,
+    "ratio": 1.0,
+    "rows": 6570,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 1764/1764 = 100%（带地址行分母；总行 6,570）"
+   }
+  ],
+  "seconds": 0.2,
+  "source_id": "us/ga/wheeler",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:33:44"
+ },
+ "us/ia/adair": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ia/adair",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:17:59"
+ },
+ "us/ia/allamakee": {
+  "archive": {
+   "bytes": 4006511,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 9121,
+  "kept": 9121,
+  "path": "parsed/us/ia/allamakee/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 9121,
+    "ratio": 1.0,
+    "rows": 9121,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "verdict": "PASS",
+    "why": "合规 9121/9121 = 100%"
+   }
+  ],
+  "seconds": 10.0,
+  "source_id": "us/ia/allamakee",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:50:30"
+ },
+ "us/ia/benton": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.4,
+  "source_id": "us/ia/benton",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:33:44"
+ },
+ "us/ia/black_hawk": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__ia__black_hawk.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 1.6,
+  "source_id": "us/ia/black_hawk",
+  "stage": "triage",
+  "updated": "2026-10-11 12:34:27"
+ },
+ "us/ia/buchanan": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.4,
+  "source_id": "us/ia/buchanan",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:34:28"
+ },
+ "us/ia/buena_vista": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.2,
+  "source_id": "us/ia/buena_vista",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:35:11"
+ },
+ "us/ia/calhoun": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.1,
+  "source_id": "us/ia/calhoun",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:35:53"
+ },
+ "us/ia/carroll": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.3,
+  "source_id": "us/ia/carroll",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:36:35"
+ },
+ "us/ia/cherokee": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.4,
+  "source_id": "us/ia/cherokee",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:37:19"
+ },
+ "us/ia/clarke": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.4,
+  "source_id": "us/ia/clarke",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:38:02"
+ },
+ "us/ia/clay": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/ia/clay",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:38:45"
+ },
+ "us/ia/crawford": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.8,
+  "source_id": "us/ia/crawford",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:39:29"
+ },
+ "us/ia/decatur": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.4,
+  "source_id": "us/ia/decatur",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:40:11"
+ },
+ "us/ia/dickinson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.6,
+  "source_id": "us/ia/dickinson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:40:54"
+ },
+ "us/ia/emmet": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/ia/emmet",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:41:36"
+ },
+ "us/ia/franklin": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.8,
+  "source_id": "us/ia/franklin",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:42:19"
+ },
+ "us/ia/greene": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.5,
+  "source_id": "us/ia/greene",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:43:02"
+ },
+ "us/ia/guthrie": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.3,
+  "source_id": "us/ia/guthrie",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:43:46"
+ },
+ "us/ia/harrison": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.5,
+  "source_id": "us/ia/harrison",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:44:28"
+ },
+ "us/ia/howard": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.6,
+  "source_id": "us/ia/howard",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:45:11"
+ },
+ "us/ia/humboldt": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.6,
+  "source_id": "us/ia/humboldt",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:45:53"
+ },
+ "us/ia/ida": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/ia/ida",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:46:36"
+ },
+ "us/ia/jasper": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/ia/jasper",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:47:19"
+ },
+ "us/ia/kossuth": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/ia/kossuth",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:48:01"
+ },
+ "us/ia/lucas": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.3,
+  "source_id": "us/ia/lucas",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:48:44"
+ },
+ "us/ia/madison": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 48.0,
+  "source_id": "us/ia/madison",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:49:27"
+ },
+ "us/ia/marion": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.9,
+  "source_id": "us/ia/marion",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:50:15"
+ },
+ "us/ia/marshall": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.9,
+  "source_id": "us/ia/marshall",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:50:58"
+ },
+ "us/ia/monona": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.0,
+  "source_id": "us/ia/monona",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:51:41"
+ },
+ "us/ia/monroe": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/ia/monroe",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:52:24"
+ },
+ "us/ia/montgomery": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/ia/montgomery",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:53:07"
+ },
+ "us/ia/palo_alto": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/ia/palo_alto",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:53:50"
+ },
+ "us/ia/pocahontas": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.8,
+  "source_id": "us/ia/pocahontas",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:54:33"
+ },
+ "us/ia/sac": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.6,
+  "source_id": "us/ia/sac",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:55:15"
+ },
+ "us/ia/shelby": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.8,
+  "source_id": "us/ia/shelby",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:55:58"
+ },
+ "us/ia/sioux": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.1,
+  "source_id": "us/ia/sioux",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:56:41"
+ },
+ "us/id/adams": {
+  "archive": {
+   "bytes": 11414535,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 7634,
+  "kept": 2861,
+  "path": "parsed/us/id/adams/mapping@v1.ndjson",
+  "ratio": 0.375,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 2861,
+    "ratio": 0.375,
+    "rows": 7634,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 2861/7634 = 37%"
+   }
+  ],
+  "seconds": 11.0,
+  "source_id": "us/id/adams",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:49:35"
+ },
+ "us/id/canyon": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/id/canyon",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:07:48"
+ },
+ "us/id/franklin": {
+  "archive": {
+   "bytes": 64734690,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 10941,
+  "kept": 5663,
+  "path": "parsed/us/id/franklin/mapping@v1.ndjson",
+  "ratio": 0.518,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 5663,
+    "ratio": 0.518,
+    "rows": 10941,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 5663/10941 = 52%"
+   }
+  ],
+  "seconds": 47.0,
+  "source_id": "us/id/franklin",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:52:50"
+ },
+ "us/id/fremont": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__id__fremont.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 0.6,
+  "source_id": "us/id/fremont",
+  "stage": "triage",
+  "updated": "2026-10-11 12:57:23"
+ },
+ "us/id/jefferson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+  "kind": "TRANSIENT",
+  "seconds": 2.1,
+  "source_id": "us/id/jefferson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:27:59"
+ },
+ "us/id/statewide": {
+  "archive": {
+   "bytes": 181969611,
+   "done": false,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 709200,
+  "kept": 642450,
+  "path": "parsed/us/id/statewide/mapping@v1.ndjson",
+  "ratio": 0.906,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.0,
+    "kept": 642450,
+    "ratio": 0.906,
+    "rows": 709200,
+    "rule": "mapping@v1",
+    "seconds": 36.9,
+    "verdict": "PASS",
+    "why": "合规 642450/709200 = 91%"
+   }
+  ],
+  "seconds": 430.5,
+  "source_id": "us/id/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-11 02:59:51"
+ },
+ "us/id/teton": {
+  "archive": {
+   "bytes": 11167671,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 13259,
+  "kept": 13258,
+  "path": "parsed/us/id/teton/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 13258,
+    "ratio": 1.0,
+    "rows": 13259,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "verdict": "PASS",
+    "why": "合规 13258/13259 = 100%"
+   }
+  ],
+  "seconds": 12.4,
+  "source_id": "us/id/teton",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:55:11"
+ },
+ "us/il/christian": {
+  "archive": {
+   "bytes": 32581801,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 24347,
+  "kept": 15703,
+  "path": "parsed/us/il/christian/mapping@v1.ndjson",
+  "ratio": 0.645,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 15703,
+    "ratio": 0.645,
+    "rows": 24347,
+    "rule": "mapping@v1",
+    "seconds": 1.0,
+    "verdict": "PASS",
+    "why": "合规 15703/24347 = 64%"
+   }
+  ],
+  "seconds": 21.2,
+  "source_id": "us/il/christian",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:59:08"
+ },
+ "us/il/clark": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.7,
+  "source_id": "us/il/clark",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:01"
+ },
+ "us/il/coles": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+  "kind": "TRANSIENT",
+  "seconds": 24.6,
+  "source_id": "us/il/coles",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:04:08"
+ },
+ "us/il/cumberland": {
+  "archive": {
+   "bytes": 40875903,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 11767,
+  "kept": 5262,
+  "path": "parsed/us/il/cumberland/mapping@v1.ndjson",
+  "ratio": 0.447,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 5262,
+    "ratio": 0.447,
+    "rows": 11767,
+    "rule": "mapping@v1",
+    "seconds": 0.7,
+    "verdict": "PASS",
+    "why": "合规 5262/11767 = 45%"
+   }
+  ],
+  "seconds": 16.3,
+  "source_id": "us/il/cumberland",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:53:53"
+ },
+ "us/il/dewitt": {
+  "archive": {
+   "bytes": 7223114,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 11164,
+  "kept": 7334,
+  "path": "parsed/us/il/dewitt/mapping@v1.ndjson",
+  "ratio": 0.657,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 7334,
+    "ratio": 0.657,
+    "rows": 11164,
+    "rule": "mapping@v1",
+    "seconds": 0.6,
+    "verdict": "PASS",
+    "why": "合规 7334/11164 = 66%"
+   }
+  ],
+  "seconds": 16.4,
+  "source_id": "us/il/dewitt",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:53:37"
+ },
+ "us/il/douglas": {
+  "archive": {
+   "bytes": 23374121,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 15498,
+  "kept": 8635,
+  "path": "parsed/us/il/douglas/mapping@v1.ndjson",
+  "ratio": 0.557,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 8635,
+    "ratio": 0.557,
+    "rows": 15498,
+    "rule": "mapping@v1",
+    "seconds": 0.8,
+    "verdict": "PASS",
+    "why": "合规 8635/15498 = 56%"
+   }
+  ],
+  "seconds": 25.7,
+  "source_id": "us/il/douglas",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:55:29"
+ },
+ "us/il/effingham": {
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 23680,
+  "kept": 15780,
+  "path": "parsed/us/il/effingham/mapping@v1.ndjson",
+  "ratio": 0.666,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 15780,
+    "ratio": 0.666,
+    "rows": 23680,
+    "rule": "mapping@v1",
+    "seconds": 1.6,
+    "verdict": "PASS",
+    "why": "合规 15780/23680 = 67%"
+   }
+  ],
+  "seconds": 1.6,
+  "source_id": "us/il/effingham",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:13:57"
+ },
+ "us/il/jersey": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.8,
+  "source_id": "us/il/jersey",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:05"
+ },
+ "us/il/kendall": {
+  "archive": {
+   "bytes": 54830725,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 58839,
+  "kept": 50865,
+  "path": "parsed/us/il/kendall/mapping@v1.ndjson",
+  "ratio": 0.864,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 50865,
+    "ratio": 0.864,
+    "rows": 58839,
+    "rule": "mapping@v1",
+    "seconds": 2.7,
+    "verdict": "PASS",
+    "why": "合规 50865/58839 = 86%"
+   }
+  ],
+  "seconds": 111.4,
+  "source_id": "us/il/kendall",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:06:28"
+ },
+ "us/il/knox": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/il/knox",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:18:13"
+ },
+ "us/il/lawrence": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 4.0,
+  "source_id": "us/il/lawrence",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:09"
+ },
+ "us/il/macoupin": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/il/macoupin",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:13"
+ },
+ "us/il/mclean": {
+  "archive": {
+   "bytes": 647493,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 1800,
+  "kept": 1800,
+  "path": "parsed/us/il/mclean/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 1800,
+    "ratio": 1.0,
+    "rows": 1800,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 1800/1800 = 100%"
+   }
+  ],
+  "seconds": 5.4,
+  "source_id": "us/il/mclean",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:11:46"
+ },
+ "us/il/menard": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/il/menard",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:16"
+ },
+ "us/il/moultrie": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.8,
+  "source_id": "us/il/moultrie",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:20"
+ },
+ "us/il/putnam": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.1,
+  "source_id": "us/il/putnam",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:23"
+ },
+ "us/il/schuyler": {
+  "archive": {
+   "bytes": 18991163,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 9109,
+  "kept": 3936,
+  "path": "parsed/us/il/schuyler/mapping@v1.ndjson",
+  "ratio": 0.432,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 3936,
+    "ratio": 0.432,
+    "rows": 9109,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 3936/9109 = 43%"
+   }
+  ],
+  "seconds": 15.6,
+  "source_id": "us/il/schuyler",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:50:14"
+ },
+ "us/il/williamson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.2,
+  "source_id": "us/il/williamson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:27"
+ },
+ "us/in/adams": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.3,
+  "source_id": "us/in/adams",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:02:42"
+ },
+ "us/in/harrison": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/in/harrison",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:30"
+ },
+ "us/in/hendricks": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/in/hendricks",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:33"
+ },
+ "us/in/miami": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>",
+  "kind": "TRANSIENT",
+  "seconds": 4.2,
+  "source_id": "us/in/miami",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:36"
+ },
+ "us/ks/dickinson_county": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.2,
+  "source_id": "us/ks/dickinson_county",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:28:40"
+ },
+ "us/ks/reno_county": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.4,
+  "source_id": "us/ks/reno_county",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:19:35"
+ },
+ "us/ky/campbell": {
+  "archive": {
+   "bytes": 9984994,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 53092,
+  "kept": 52263,
+  "path": "parsed/us/ky/campbell/mapping@v1.ndjson",
+  "ratio": 0.984,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.3333333333333333,
+    "kept": 52263,
+    "ratio": 0.984,
+    "rows": 53092,
+    "rule": "mapping@v1",
+    "seconds": 1.8,
+    "verdict": "PASS",
+    "why": "合规 52263/53092 = 98%"
+   }
+  ],
+  "seconds": 40.2,
+  "source_id": "us/ky/campbell",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:12:56"
+ },
+ "us/la/lincoln": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "HTTPError: HTTP Error 522: <none>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "HTTPError: HTTP Error 522: <none>",
+  "kind": "TRANSIENT",
+  "seconds": 65.8,
+  "source_id": "us/la/lincoln",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:04:33"
+ },
+ "us/md/city_of_rockville": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/md/city_of_rockville",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:06:22"
+ },
+ "us/me/city_of_biddeford": {
+  "archive": {
+   "bytes": 10804018,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 8229,
+  "kept": 7852,
+  "path": "parsed/us/me/city_of_biddeford/mapping@v1.ndjson",
+  "ratio": 0.954,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 7852,
+    "ratio": 0.954,
+    "rows": 8229,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "verdict": "PASS",
+    "why": "合规 7852/8229 = 95%"
+   }
+  ],
+  "seconds": 12.3,
+  "source_id": "us/me/city_of_biddeford",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:50:02"
+ },
+ "us/mi/emmet": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.2,
+  "source_id": "us/mi/emmet",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:05:39"
+ },
+ "us/mi/kent": {
+  "archive": {
+   "bytes": 171162062,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 232073,
+  "kept": 232073,
+  "path": "parsed/us/mi/kent/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 232073,
+    "ratio": 1.0,
+    "rows": 232073,
+    "rule": "mapping@v1",
+    "seconds": 11.4,
+    "verdict": "PASS",
+    "why": "合规 232073/232073 = 100%"
+   }
+  ],
+  "seconds": 315.8,
+  "source_id": "us/mi/kent",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:12:38"
+ },
+ "us/mi/marquette": {
+  "archive": {
+   "bytes": 14488649,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 45674,
+  "kept": 30957,
+  "path": "parsed/us/mi/marquette/mapping@v1.ndjson",
+  "ratio": 0.678,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 30957,
+    "ratio": 0.678,
+    "rows": 45674,
+    "rule": "mapping@v1",
+    "seconds": 1.5,
+    "verdict": "PASS",
+    "why": "合规 30957/45674 = 68%"
+   }
+  ],
+  "seconds": 32.6,
+  "source_id": "us/mi/marquette",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:04:16"
+ },
+ "us/mi/mason": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__mi__mason.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 0.7,
+  "source_id": "us/mi/mason",
+  "stage": "triage",
+  "updated": "2026-10-11 12:57:24"
+ },
+ "us/mi/washtenaw": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 4,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.3,
+  "source_id": "us/mi/washtenaw",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:29:23"
+ },
+ "us/mn/koochiching": {
+  "archive": {
+   "bytes": 69481772,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 55289,
+  "kept": 54840,
+  "path": "parsed/us/mn/koochiching/field_guess@v1.ndjson",
+  "ratio": 0.992,
+  "rule": "field_guess@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 8323,
+    "ratio": 0.151,
+    "rows": 55289,
+    "rule": "mapping@v1",
+    "seconds": 1.9,
+    "verdict": "GATE_FAIL",
+    "why": "合规 8323/55289 = 15%（阈 30%）"
+   },
+   {
+    "addr_hint": 1.0,
+    "kept": 54840,
+    "ratio": 0.992,
+    "rows": 55289,
+    "rule": "field_guess@v1",
+    "seconds": 4.2,
+    "verdict": "PASS",
+    "why": "合规 54840/55289 = 99%"
+   }
+  ],
+  "seconds": 55.5,
+  "source_id": "us/mn/koochiching",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:05:32"
+ },
+ "us/mn/mahnomen": {
+  "archive": {
+   "bytes": 5925814,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 6222,
+  "kept": 2111,
+  "path": "parsed/us/mn/mahnomen/mapping@v1.ndjson",
+  "ratio": 0.339,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 2111,
+    "ratio": 0.339,
+    "rows": 6222,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 2111/6222 = 34%"
+   }
+  ],
+  "seconds": 12.4,
+  "source_id": "us/mn/mahnomen",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:49:23"
+ },
+ "us/mn/norman": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.3,
+  "source_id": "us/mn/norman",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:59:50"
+ },
+ "us/mn/pennington": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.5,
+  "source_id": "us/mn/pennington",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:00:32"
+ },
+ "us/mn/polk": {
+  "archive": {
+   "bytes": 291569,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 900,
+  "kept": 900,
+  "path": "parsed/us/mn/polk/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 900,
+    "ratio": 1.0,
+    "rows": 900,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "PASS",
+    "why": "合规 900/900 = 100%"
+   }
+  ],
+  "seconds": 4.8,
+  "source_id": "us/mn/polk",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:55:24"
+ },
+ "us/mn/red_lake": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.3,
+  "source_id": "us/mn/red_lake",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:59:02"
+ },
+ "us/mn/roseau": {
+  "archive": {
+   "bytes": 19005978,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 16011,
+  "kept": 7527,
+  "path": "parsed/us/mn/roseau/mapping@v1.ndjson",
+  "ratio": 0.47,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.6666666666666666,
+    "kept": 7527,
+    "ratio": 0.47,
+    "rows": 16011,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 7527/16011 = 47%"
+   }
+  ],
+  "seconds": 15.9,
+  "source_id": "us/mn/roseau",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:55:54"
+ },
+ "us/mn/sherburne": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.9,
+  "source_id": "us/mn/sherburne",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:07:05"
+ },
+ "us/mn/wadena": {
+  "archive": {
+   "bytes": 1130454,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 1800,
+  "kept": 1800,
+  "path": "parsed/us/mn/wadena/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 1800,
+    "ratio": 1.0,
+    "rows": 1800,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "verdict": "PASS",
+    "why": "合规 1800/1800 = 100%"
+   }
+  ],
+  "seconds": 6.4,
+  "source_id": "us/mn/wadena",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:49:46"
+ },
+ "us/mn/yellow_medicine": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error _ssl.c:975: The handshake operation timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error _ssl.c:975: The handshake operation timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.5,
+  "source_id": "us/mn/yellow_medicine",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:01:16"
+ },
+ "us/mo/jefferson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.6,
+  "source_id": "us/mo/jefferson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:20:20"
+ },
+ "us/ms/clay": {
+  "archive": {
+   "bytes": 9954689,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 13080,
+  "kept": 13069,
+  "path": "parsed/us/ms/clay/concat_addr@v1.ndjson",
+  "ratio": 0.999,
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 0,
+    "ratio": 0.0,
+    "rows": 13080,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/13080 = 0%（阈 30%）"
+   },
+   {
+    "addr_hint": 1.0,
+    "kept": 0,
+    "ratio": 0.0,
+    "rows": 13080,
+    "rule": "field_guess@v1",
+    "seconds": 0.7,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/13080 = 0%（阈 30%）"
+   },
+   {
+    "addr_hint": 1.0,
+    "kept": 13069,
+    "ratio": 0.999,
+    "rows": 13080,
+    "rule": "concat_addr@v1",
+    "seconds": 1.1,
+    "verdict": "PASS",
+    "why": "合规 13069/13080 = 100%"
+   }
+  ],
+  "seconds": 18.5,
+  "source_id": "us/ms/clay",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:54:53"
+ },
+ "us/ms/lauderdale": {
+  "done": true,
+  "error": "",
+  "fetched": 720,
+  "kept": 353,
+  "path": "parsed/us/ms/lauderdale/mapping@v1.ndjson",
+  "ratio": 0.49,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 353,
+    "ratio": 0.49,
+    "rows": 720,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "PASS",
+    "why": "合规 353/720 = 49%"
+   }
+  ],
+  "seconds": 0.0,
+  "source_id": "us/ms/lauderdale",
+  "stage": "parsed",
+  "updated": "2026-10-11 02:50:13"
+ },
+ "us/nc/alexander": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.6,
+  "source_id": "us/nc/alexander",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:20:23"
+ },
+ "us/nc/columbus": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "HTTPError: HTTP Error 404: Not Found",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "evidence": {
+   "bytes": 0,
+   "content_type": "",
+   "head": "Not Found",
+   "status": 404,
+   "url": "https://www2.columbusco.org/GISDATA/Addresses.zip",
+   "verdict_hint": "SOURCE_BROKEN: 404 资源不存在"
+  },
+  "kind": "SOURCE_BROKEN",
+  "seconds": 1.0,
+  "source_id": "us/nc/columbus",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:57:24"
+ },
+ "us/nc/polk": {
+  "archive": {
+   "bytes": 19351672,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 16878,
+  "kept": 9595,
+  "path": "parsed/us/nc/polk/mapping@v1.ndjson",
+  "ratio": 0.568,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 9595,
+    "ratio": 0.568,
+    "rows": 16878,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "verdict": "PASS",
+    "why": "合规 9595/16878 = 57%"
+   }
+  ],
+  "seconds": 28.2,
+  "source_id": "us/nc/polk",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:56:10"
+ },
+ "us/nd/city_of_grafton": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': '', 'details': ['The requested layer (layerId: 1) was not found.']}",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': '', 'details': ['The requested layer (layerId: 1) was not found.']}",
+  "evidence": {
+   "bytes": 1257,
+   "content_type": "text/html; charset=utf-8",
+   "head": "<html lang=\"en\">\r\n<head>\r\n  <title></title>\r\n  <link href='/ESRI.ArcGIS.SDS.REST.css' rel='stylesheet' type='text/css'>\r\n  <link rel='SHORTCUT ICON' href='/favicon.ico'>\r\n<meta http-equiv=\"Content-Typ",
+   "status": 200,
+   "url": "https://services6.arcgis.com/qz25vLPtpIdijprk/ArcGIS/rest/services/GraftonLandownerOnlineMap2018021/FeatureServer/1",
+   "verdict_hint": "UNSURE: 200 text/html; charset=utf-8 1257B"
+  },
+  "kind": "SOURCE_BROKEN",
+  "seconds": 0.7,
+  "source_id": "us/nd/city_of_grafton",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:17:42"
+ },
+ "us/nd/ramsey": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "TimeoutError: The read operation timed out",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "TimeoutError: The read operation timed out",
+  "kind": "TRANSIENT",
+  "seconds": 43.2,
+  "source_id": "us/nd/ramsey",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:30:05"
+ },
+ "us/nd/stutsman": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__nd__stutsman.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 0.7,
+  "source_id": "us/nd/stutsman",
+  "stage": "triage",
+  "updated": "2026-10-11 12:57:25"
+ },
+ "us/ne/antelope": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.9,
+  "source_id": "us/ne/antelope",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:10"
+ },
+ "us/ne/arthur": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.9,
+  "source_id": "us/ne/arthur",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:13"
+ },
+ "us/ne/banner": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.3,
+  "source_id": "us/ne/banner",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:16"
+ },
+ "us/ne/blaine": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/blaine",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:20"
+ },
+ "us/ne/boone": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.2,
+  "source_id": "us/ne/boone",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:23"
+ },
+ "us/ne/box_butte": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/ne/box_butte",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:26"
+ },
+ "us/ne/brown": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.7,
+  "source_id": "us/ne/brown",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:30"
+ },
+ "us/ne/buffalo": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/ne/buffalo",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:33"
+ },
+ "us/ne/burt": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.1,
+  "source_id": "us/ne/burt",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:36"
+ },
+ "us/ne/butler": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.5,
+  "source_id": "us/ne/butler",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:40"
+ },
+ "us/ne/cass": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.1,
+  "source_id": "us/ne/cass",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:43"
+ },
+ "us/ne/cedar": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/cedar",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:45"
+ },
+ "us/ne/chase": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/ne/chase",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:48"
+ },
+ "us/ne/cherry": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.8,
+  "source_id": "us/ne/cherry",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:51"
+ },
+ "us/ne/cheyenne": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.1,
+  "source_id": "us/ne/cheyenne",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:55"
+ },
+ "us/ne/clay": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/clay",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:21:58"
+ },
+ "us/ne/cuming": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ne/cuming",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:01"
+ },
+ "us/ne/custer": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.6,
+  "source_id": "us/ne/custer",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:05"
+ },
+ "us/ne/dakota": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.3,
+  "source_id": "us/ne/dakota",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:08"
+ },
+ "us/ne/dawson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/dawson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:12"
+ },
+ "us/ne/deuel": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/deuel",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:15"
+ },
+ "us/ne/fillmore": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.5,
+  "source_id": "us/ne/fillmore",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:19"
+ },
+ "us/ne/franklin": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.4,
+  "source_id": "us/ne/franklin",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:22"
+ },
+ "us/ne/frontier": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.1,
+  "source_id": "us/ne/frontier",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:27"
+ },
+ "us/ne/gage": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/gage",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:29"
+ },
+ "us/ne/garden": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.5,
+  "source_id": "us/ne/garden",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:32"
+ },
+ "us/ne/garfield": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.3,
+  "source_id": "us/ne/garfield",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:35"
+ },
+ "us/ne/gosper": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.4,
+  "source_id": "us/ne/gosper",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:39"
+ },
+ "us/ne/grant": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.6,
+  "source_id": "us/ne/grant",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:42"
+ },
+ "us/ne/greeley": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.4,
+  "source_id": "us/ne/greeley",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:45"
+ },
+ "us/ne/hamilton": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.0,
+  "source_id": "us/ne/hamilton",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:48"
+ },
+ "us/ne/harlan": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.2,
+  "source_id": "us/ne/harlan",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:52"
+ },
+ "us/ne/hayes": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.9,
+  "source_id": "us/ne/hayes",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:22:56"
+ },
+ "us/ne/hitchcock": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/hitchcock",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:00"
+ },
+ "us/ne/holt": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.6,
+  "source_id": "us/ne/holt",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:03"
+ },
+ "us/ne/hooker": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.1,
+  "source_id": "us/ne/hooker",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:06"
+ },
+ "us/ne/howard": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.1,
+  "source_id": "us/ne/howard",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:10"
+ },
+ "us/ne/johnson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.1,
+  "source_id": "us/ne/johnson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:14"
+ },
+ "us/ne/kearney": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/kearney",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:17"
+ },
+ "us/ne/keith": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.7,
+  "source_id": "us/ne/keith",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:20"
+ },
+ "us/ne/keya_paha": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/keya_paha",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:24"
+ },
+ "us/ne/kimball": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.4,
+  "source_id": "us/ne/kimball",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:27"
+ },
+ "us/ne/knox": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/knox",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:29"
+ },
+ "us/ne/logan": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.5,
+  "source_id": "us/ne/logan",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:32"
+ },
+ "us/ne/madison": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.0,
+  "source_id": "us/ne/madison",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:37"
+ },
+ "us/ne/merrick": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/merrick",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:41"
+ },
+ "us/ne/morrill": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.9,
+  "source_id": "us/ne/morrill",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:44"
+ },
+ "us/ne/nance": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.7,
+  "source_id": "us/ne/nance",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:48"
+ },
+ "us/ne/nemaha": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ne/nemaha",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:52"
+ },
+ "us/ne/nuckolls": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.0,
+  "source_id": "us/ne/nuckolls",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:55"
+ },
+ "us/ne/otoe": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.6,
+  "source_id": "us/ne/otoe",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:23:58"
+ },
+ "us/ne/pawnee": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.3,
+  "source_id": "us/ne/pawnee",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:02"
+ },
+ "us/ne/perkins": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 9.3,
+  "source_id": "us/ne/perkins",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:06"
+ },
+ "us/ne/phelps": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.3,
+  "source_id": "us/ne/phelps",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:15"
+ },
+ "us/ne/pierce": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.1,
+  "source_id": "us/ne/pierce",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:17"
+ },
+ "us/ne/platte": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.5,
+  "source_id": "us/ne/platte",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:20"
+ },
+ "us/ne/polk": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/polk",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:22"
+ },
+ "us/ne/red_willow": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ne/red_willow",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:25"
+ },
+ "us/ne/richardson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ne/richardson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:29"
+ },
+ "us/ne/rock": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.6,
+  "source_id": "us/ne/rock",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:32"
+ },
+ "us/ne/saline": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.9,
+  "source_id": "us/ne/saline",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:36"
+ },
+ "us/ne/seward": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.1,
+  "source_id": "us/ne/seward",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:40"
+ },
+ "us/ne/sheridan": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 8.3,
+  "source_id": "us/ne/sheridan",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:42"
+ },
+ "us/ne/sherman": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.3,
+  "source_id": "us/ne/sherman",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:50"
+ },
+ "us/ne/sioux": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.4,
+  "source_id": "us/ne/sioux",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:52"
+ },
+ "us/ne/stanton": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.1,
+  "source_id": "us/ne/stanton",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:24:56"
+ },
+ "us/ne/thayer": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.7,
+  "source_id": "us/ne/thayer",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:00"
+ },
+ "us/ne/thomas": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.8,
+  "source_id": "us/ne/thomas",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:04"
+ },
+ "us/ne/thurston": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 4.3,
+  "source_id": "us/ne/thurston",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:07"
+ },
+ "us/ne/valley": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.3,
+  "source_id": "us/ne/valley",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:12"
+ },
+ "us/ne/webster": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.2,
+  "source_id": "us/ne/webster",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:14"
+ },
+ "us/ne/york": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 3.3,
+  "source_id": "us/ne/york",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:17"
+ },
+ "us/nm/lincoln": {
+  "archive": {
+   "bytes": 10334569,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 22916,
+  "kept": 21088,
+  "path": "parsed/us/nm/lincoln/mapping@v1.ndjson",
+  "ratio": 0.92,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 21088,
+    "ratio": 0.92,
+    "rows": 22916,
+    "rule": "mapping@v1",
+    "seconds": 0.7,
+    "verdict": "PASS",
+    "why": "合规 21088/22916 = 92%"
+   }
+  ],
+  "seconds": 28.0,
+  "source_id": "us/nm/lincoln",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:58:05"
+ },
+ "us/ny/erie": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.3,
+  "source_id": "us/ny/erie",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:08:34"
+ },
+ "us/ny/orange": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
+  "kind": "TRANSIENT",
+  "seconds": 2.3,
+  "source_id": "us/ny/orange",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:25:20"
+ },
+ "us/oh/geauga": {
+  "archive": {
+   "bytes": 97888246,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 51487,
+  "kept": 37652,
+  "path": "parsed/us/oh/geauga/mapping@v1.ndjson",
+  "ratio": 0.731,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 37652,
+    "ratio": 0.731,
+    "rows": 51487,
+    "rule": "mapping@v1",
+    "seconds": 2.8,
+    "verdict": "PASS",
+    "why": "合规 37652/51487 = 73%"
+   }
+  ],
+  "seconds": 38.2,
+  "source_id": "us/oh/geauga",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:04:48"
+ },
+ "us/ok/acog-counties": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 3.8,
+  "source_id": "us/ok/acog-counties",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:30:48"
+ },
+ "us/or/klamath": {
+  "archive": {
+   "bytes": 206411767,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 61227,
+  "kept": 30641,
+  "path": "parsed/us/or/klamath/mapping@v1.ndjson",
+  "ratio": 0.5,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 30641,
+    "ratio": 0.5,
+    "rows": 61227,
+    "rule": "mapping@v1",
+    "seconds": 3.3,
+    "verdict": "PASS",
+    "why": "合规 30641/61227 = 50%"
+   }
+  ],
+  "seconds": 92.6,
+  "source_id": "us/or/klamath",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:08:19"
+ },
+ "us/pa/lebanon": {
+  "archive": {
+   "bytes": 783729,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 900,
+  "kept": 776,
+  "path": "parsed/us/pa/lebanon/mapping@v1.ndjson",
+  "ratio": 0.862,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 776,
+    "ratio": 0.862,
+    "rows": 900,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "PASS",
+    "why": "合规 776/900 = 86%"
+   }
+  ],
+  "seconds": 6.0,
+  "source_id": "us/pa/lebanon",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:05:26"
+ },
+ "us/pa/somerset": {
+  "archive": {
+   "bytes": 5792166,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 43761,
+  "kept": 43656,
+  "path": "parsed/us/pa/somerset/mapping@v1.ndjson",
+  "ratio": 0.998,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.3333333333333333,
+    "kept": 43656,
+    "ratio": 0.998,
+    "rows": 43761,
+    "rule": "mapping@v1",
+    "seconds": 2.1,
+    "verdict": "PASS",
+    "why": "合规 43656/43761 = 100%"
+   }
+  ],
+  "seconds": 50.7,
+  "source_id": "us/pa/somerset",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:02:41"
+ },
+ "us/ri/providence": {
+  "archive": {
+   "bytes": 47935232,
+   "done": true,
+   "error": "",
+   "protocol": "direct"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 43380,
+  "kept": 43264,
+  "path": "parsed/us/ri/providence/mapping@v1.ndjson",
+  "ratio": 0.997,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 43264,
+    "ratio": 0.997,
+    "rows": 43380,
+    "rule": "mapping@v1",
+    "seconds": 3.0,
+    "verdict": "PASS",
+    "why": "合规 43264/43380 = 100%"
+   }
+  ],
+  "seconds": 10.5,
+  "source_id": "us/ri/providence",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:48:17"
+ },
+ "us/sc/city_of_rock_hill": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.7,
+  "source_id": "us/sc/city_of_rock_hill",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:33:01"
+ },
+ "us/sc/greenville": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/sc/greenville",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:30:52"
+ },
+ "us/sc/sumter": {
+  "archive": {
+   "bytes": 12827114,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 61423,
+  "kept": 61423,
+  "path": "parsed/us/sc/sumter/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 61423,
+    "ratio": 1.0,
+    "rows": 61423,
+    "rule": "mapping@v1",
+    "seconds": 2.5,
+    "verdict": "PASS",
+    "why": "合规 61423/61423 = 100%"
+   }
+  ],
+  "seconds": 40.3,
+  "source_id": "us/sc/sumter",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:09:52"
+ },
+ "us/tn/williamson": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 3,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.5,
+  "source_id": "us/tn/williamson",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:31:35"
+ },
+ "us/tx/city_of_amarillo": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 43.1,
+  "source_id": "us/tx/city_of_amarillo",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:07:51"
+ },
+ "us/va/city_of_staunton": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.7,
+  "source_id": "us/va/city_of_staunton",
+  "stage": "fetch",
+  "updated": "2026-10-11 13:01:59"
+ },
+ "us/va/king_and_queen": {
+  "archive": {
+   "bytes": 5271306,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 7914,
+  "kept": 3839,
+  "path": "parsed/us/va/king_and_queen/mapping@v1.ndjson",
+  "ratio": 0.485,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 3839,
+    "ratio": 0.485,
+    "rows": 7914,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 3839/7914 = 49%"
+   }
+  ],
+  "seconds": 9.3,
+  "source_id": "us/va/king_and_queen",
+  "stage": "parsed",
+  "updated": "2026-10-11 03:49:53"
+ },
+ "us/wa/garfield": {
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 4205,
+  "kept": 1199,
+  "path": "parsed/us/wa/garfield/mapping@v1.ndjson",
+  "ratio": 0.343,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 3497,
+    "coverage": 0.832,
+    "kept": 1199,
+    "kept_contentful": 1199,
+    "ratio": 0.343,
+    "rows": 4205,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "verdict": "PASS",
+    "why": "合规 1199/3497 = 34%（带地址行分母；总行 4,205）"
+   }
+  ],
+  "seconds": 0.2,
+  "source_id": "us/wa/garfield",
+  "stage": "parsed",
+  "updated": "2026-10-11 12:59:02"
+ },
+ "us/wa/lewis": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.4,
+  "source_id": "us/wa/lewis",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:57:26"
+ },
+ "us/wa/pacific": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error timed out>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error timed out>",
+  "kind": "TRANSIENT",
+  "seconds": 42.8,
+  "source_id": "us/wa/pacific",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:58:08"
+ },
+ "us/wi/city_of_milwaukee": {
+  "archive": {
+   "bytes": 274875,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 900,
+  "kept": 900,
+  "path": "parsed/us/wi/city_of_milwaukee/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 900,
+    "ratio": 1.0,
+    "rows": 900,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "PASS",
+    "why": "合规 900/900 = 100%"
+   }
+  ],
+  "seconds": 30.7,
+  "source_id": "us/wi/city_of_milwaukee",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:17:54"
+ },
+ "us/wv/berkeley": {
+  "archive": {
+   "bytes": 21147540,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 63286,
+  "kept": 63286,
+  "path": "parsed/us/wv/berkeley/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "kept": 63286,
+    "ratio": 1.0,
+    "rows": 63286,
+    "rule": "mapping@v1",
+    "seconds": 2.3,
+    "verdict": "PASS",
+    "why": "合规 63286/63286 = 100%"
+   }
+  ],
+  "seconds": 74.1,
+  "source_id": "us/wv/berkeley",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:10:32"
+ },
+ "us/wy/albany": {
+  "attempts": 2,
+  "done": false,
+  "error": "",
+  "kind": "DOWNLOAD_DEFECT",
+  "reason": "[回源取证] 源里有数据但本地档为空 → 下载环节缺陷（补采，不换规则）｜DATA_PRESENT: 源有数据 → 是我们的刀不够（ENGINE_GAP），不许拉黑",
+  "report": "out/triage/分诊-us__wy__albany.json",
+  "rule_chain": [
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "mapping@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "field_guess@v2",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   },
+   {
+    "addr_hint": null,
+    "contentful": 0,
+    "coverage": 0.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 0,
+    "rule": "concat_addr@v1",
+    "seconds": 0.0,
+    "verdict": "GATE_FAIL",
+    "why": "0 行"
+   }
+  ],
+  "seconds": 1.0,
+  "source_id": "us/wy/albany",
+  "stage": "triage",
+  "updated": "2026-10-11 12:58:51"
+ },
+ "us/wy/carbon": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 4.0,
+  "source_id": "us/wy/carbon",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:58:52"
+ },
+ "us/wy/hot_springs": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+   "protocol": "direct"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:992)>",
+  "kind": "TRANSIENT",
+  "seconds": 4.5,
+  "source_id": "us/wy/hot_springs",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:58:56"
+ },
+ "us/wy/lincoln": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "RuntimeError: arcgis query error: {'code': 400, 'message': 'Pagination is not supported.', 'details': []}",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 2,
+  "done": false,
+  "error": "RuntimeError: arcgis query error: {'code': 400, 'message': 'Pagination is not supported.', 'details': []}",
+  "kind": "TRANSIENT",
+  "seconds": 5.7,
+  "source_id": "us/wy/lincoln",
+  "stage": "fetch",
+  "updated": "2026-10-11 12:59:44"
+ },
+ "us/wy/statewide": {
+  "archive": {
+   "bytes": 207298203,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 373666,
+  "kept": 266998,
+  "path": "parsed/us/wy/statewide/mapping@v1.ndjson",
+  "ratio": 0.715,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.6666666666666666,
+    "kept": 266998,
+    "ratio": 0.715,
+    "rows": 373666,
+    "rule": "mapping@v1",
+    "seconds": 12.9,
+    "verdict": "PASS",
+    "why": "合规 266998/373666 = 71%"
+   }
+  ],
+  "seconds": 213.2,
+  "source_id": "us/wy/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-11 04:18:24"
  }
 }
