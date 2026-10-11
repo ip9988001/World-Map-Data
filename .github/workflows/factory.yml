@@ -295,7 +295,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: 发布节拍闸门（每天一次整包发布，手动触发不受限）
+        id: cadence
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "手动发布，跳过节拍检查" ; echo "go=1" >> "$GITHUB_OUTPUT" ; exit 0
+          fi
+          H=$(date -u +%H)
+          if [ "$H" = "11" ]; then
+            echo "到达每日发布点（UTC 11 时 = 北京 19 时）" ; echo "go=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "非发布点（UTC $H 时）→ 本小时只采集不发布" ; echo "go=0" >> "$GITHUB_OUTPUT"
+          fi
       - name: 取回规则产物缓存（最近一份）
+        if: steps.cadence.outputs.go == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -305,6 +318,7 @@ jobs:
           if [ -n "$last" ]; then tar -xzf "$last" -C parsed; fi
           find parsed -name '*.ndjson' | wc -l
       - name: 取回旧分片（上一版稳定视图，作为合并底稿）
+        if: steps.cadence.outputs.go == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -312,9 +326,11 @@ jobs:
           gh release download v0.1.0-dataset -p '[A-Z][A-Z].ndjson.gz' -D out/final3 --clobber 2>/dev/null || true
           ls out/final3 | wc -l
       - name: 构建发布包（按 key 去重，新数据优先）
+        if: steps.cadence.outputs.go == '1'
         run: |
           python scripts/build_release.py || echo "（无可发布内容）"
       - name: 上传稳定视图（tag 复用 + --clobber）
+        if: steps.cadence.outputs.go == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -330,6 +346,7 @@ jobs:
                           "--title", f"地址数据集（{rows:,} 条真实门牌点稳定视图）"], check=False)
           PY
       - name: 完整快照（full-*，保留 10 份）
+        if: steps.cadence.outputs.go == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
