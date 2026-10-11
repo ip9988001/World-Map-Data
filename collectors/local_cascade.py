@@ -27,6 +27,7 @@ import re
 import sys
 import time
 from collections import Counter
+from itertools import islice
 
 from .engines.base import Engine
 from .fetch_raw import archive_dir, fetch_raw, load_manifest
@@ -70,6 +71,11 @@ def _gate(kept: int, contentful: int, rows: int) -> tuple[bool, str]:
         return False, "0 行"
     if contentful == 0:
         return False, f"{rows:,} 行里没有一行带地址内容（源不含地址）"
+    if kept > contentful * 1.15:
+        # 凭空造数据的护栏：合规数竟然超过了带地址行数 → 规则拼错列位了
+        # （实测 us/ga/wheeler：STR 大片是 "0"，field_guess 曾把 6,570/6,570 全“猜”成有效记录）
+        return False, (f"疑似凭空造数据：合规 {kept:,} 条 > 带地址行 {contentful:,} 条"
+                       f"（阈值 115%）→ 拒绝这套产物")
     ratio = kept / contentful
     if kept >= GATE_MIN_KEPT and ratio >= GATE_MIN_RATIO:
         return True, f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；总行 {rows:,}）"
@@ -94,6 +100,10 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
 
     for r in order_rules(row, meta=man, preferred=preferred):
         rname = f"{r.name}@v{r.version}"
+        try:
+            r.warm(list(islice(iter_rows_from_archive(arch), 300)))   # 预热：按值形态定列
+        except Exception as e:
+            print(f"  [warm] {rname} 预热失败（不致命）: {type(e).__name__}", flush=True)
         stats: Counter = Counter()
         dst = os.path.join(dst_dir, rname + ".ndjson")
         ctx = RuleCtx(sid, row, mapping, default_state, dict())
@@ -114,14 +124,19 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                         sample.append(raw)
                     contentful = _is_contentful(raw)
                     contentful_n += 1 if contentful else 0
+                    if not contentful:
+                        # 硬不变量：一行没有地址痕迹（号+词）就不该产出门牌点记录。
+                        # 这条护栏是规则无关的 —— 它拦住了「猜错列位凭空造数据」
+                        # （实测 us/il/effingham：field_guess 曾把 OBJECTID 当号、Grantee 当街，
+                        #  在 23,578 行空地址税档上凭空造出 23,577 条垃圾记录）
+                        stats["no_address_trace"] += 1
+                        continue
                     rec, why = r.clean(raw, ctx)
                     if rec is None:
                         stats[why] += 1
                         continue
                     kept += 1
-                    kept_contentful += 1 if contentful else 0
-                    if not contentful:
-                        stats["kept_but_no_letters"] += 1
+                    kept_contentful += 1
                     rec["_rule"] = rname
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
         except Exception as e:
@@ -216,6 +231,10 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
     table = []
     for r in order_rules(row):
         rname = f"{r.name}@v{r.version}"
+        try:
+            r.warm(list(islice(iter_rows_from_archive(arch), 300)))
+        except Exception:
+            pass
         stats: Counter = Counter()
         ctx = RuleCtx(sid, row, mapping, row.get("state", "") or "", dict())
         kept = fetched = 0
@@ -229,12 +248,14 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
             fetched += 1
             cf = _is_contentful(raw)
             contentful_n += 1 if cf else 0
+            if not cf:
+                continue                     # 无地址痕迹的行不参与（同 run_rules 的硬不变量）
             rec, why = r.clean(raw, ctx)
             if rec is None:
                 stats[why] += 1
                 continue
             kept += 1
-            kept_contentful += 1 if cf else 0
+            kept_contentful += 1
         ok, why = _gate(kept_contentful, contentful_n, fetched)
         table.append({"rule": rname, "rows": fetched, "kept": kept,
                       "contentful": contentful_n, "kept_contentful": kept_contentful,

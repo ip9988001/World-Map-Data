@@ -27,6 +27,10 @@ class Rule:
     def static_score(self, row: dict, meta: dict | None = None) -> float:
         return 0.0
 
+    def warm(self, rows: list[dict]) -> None:
+        """预热：跑批前给一小批样本（默认 300 行），需要“看值猜列”的规则在这里定方案。"""
+        return None
+
     def clean(self, row: dict, ctx: "RuleCtx") -> tuple[dict | None, str]:
         raise NotImplementedError
 
