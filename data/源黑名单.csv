@@ -80,3 +80,4 @@ us/ne/valley,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: maps6.giswo
 us/ne/webster,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: maps6.gisworkshop.com）,"{""host"": ""maps6.gisworkshop.com"", ""status"": 3, ""answers"": [], ""verdict"": ""DEAD""}",2026-10-11 12:20,2026-11-10,1
 us/ne/york,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: maps5.gisworkshop.com）,"{""host"": ""maps5.gisworkshop.com"", ""status"": 3, ""answers"": [], ""verdict"": ""DEAD""}",2026-10-11 12:20,2026-11-10,1
 us/ny/orange,SOURCE_BROKEN,域名已不存在（DoH 判定 NXDOMAIN: ocgis.orangecountygov.com）,"{""host"": ""ocgis.orangecountygov.com"", ""status"": 3, ""answers"": [], ""verdict"": ""DEAD""}",2026-10-11 12:20,2026-11-10,1
+us/nc/columbus,SOURCE_BROKEN,取数失败：HTTPError: HTTP Error 404: Not Found,"{""url"": ""https://www2.columbusco.org/GISDATA/Addresses.zip"", ""status"": 404, ""bytes"": 0, ""content_type"": """", ""head"": ""Not Found"", ""verdict_hint"": ""SOURCE_BROKEN: 404 资源不存在""}",2026-10-11 12:51,2026-11-10,2
