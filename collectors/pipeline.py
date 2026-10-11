@@ -210,6 +210,8 @@ def main(argv=None) -> None:
 
     ap = argparse.ArgumentParser(description="统一采集流水线（下载→规则→分诊）")
     ap.add_argument("--list-file", default="", help="CSV，含 source_id 列（风险清单/重采清单）")
+    ap.add_argument("--plan", default="", help="plan_batch 产出的泳道计划（配合 --lane）")
+    ap.add_argument("--lane", type=int, default=-1, help="只跑该泳道（与 --plan 合用）")
     ap.add_argument("--sources", default="", help="逗号分隔的 source_id")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--max-seconds", type=int, default=3600)
@@ -222,15 +224,26 @@ def main(argv=None) -> None:
     ap.add_argument("--http-timeout", type=int, default=20)
     ap.add_argument("--rules-limit", type=int, default=0, help="每源最多洗 N 行（试跑用）")
     ap.add_argument("--force-fetch", action="store_true")
+    ap.add_argument("--dry", action="store_true", help="只看结果，不写账本/状态")
     ap.add_argument("--reclassify", action="store_true",
                     help="不联网抓数据，只把 state 里取数失败的源复核一遍"
                          "（DNS → DoH 判定：域名已死→拉黑；能解析→保留重试）")
+    ap.add_argument("--recheck-blacklist", action="store_true",
+                    help="把黑名单里的「域名已不存在」条目重新复核一遍，误拉的放回来")
     ap.add_argument("--order", choices=("list", "size", "size_desc"), default="list",
                     help="跑批顺序：list=按清单原序；size=小源先跑（预算内尽量多完成）；size_desc=大源先跑")
     a = ap.parse_args(argv)
 
     sids: list[str] = []
     sizes: dict[str, int] = {}
+    plan_items: list[dict] = []
+    if a.plan:
+        plan = json.load(open(a.plan, encoding="utf-8"))
+        lanes = plan.get("lanes") or []
+        if a.lane >= 0:
+            lanes = [L for L in lanes if L.get("lane") == a.lane]
+        for L in lanes:
+            plan_items += [{"source_id": it["source_id"], "i": it["i"]} for it in L["queue"]]
     if a.list_file:
         with open(a.list_file, encoding="utf-8-sig") as fh:
             for r in _csv.DictReader(fh):
@@ -246,6 +259,47 @@ def main(argv=None) -> None:
 
     table = list(_csv.DictReader(open("data/源总表-执行序.csv", encoding="utf-8-sig")))
     idx = {r["source_id"]: i for i, r in enumerate(table)}
+    if plan_items:
+        items = [it for it in plan_items if it["source_id"] in idx]
+        for it in items:
+            it["i"] = idx[it["source_id"]]      # 以当前源总表为准重算行号
+    else:
+        items = []
+
+    if a.recheck_blacklist:
+        from urllib.parse import urlparse
+
+        from .triage import BLACKLIST, BLACKLIST as _BL, dns_check
+        rows = list(_csv.DictReader(open(_BL, encoding="utf-8-sig")))
+        table = list(_csv.DictReader(open("data/源总表-执行序.csv", encoding="utf-8-sig")))
+        url_by = {r["source_id"]: r.get("url", "") for r in table}
+        freed, kept = [], []
+        for r in rows:
+            sid = r.get("source_id", "")
+            reason = r.get("reason", "") + r.get("evidence", "")
+            if "DoH" not in reason and "NXDOMAIN" not in reason:
+                kept.append(r)
+                continue
+            host = urlparse(url_by.get(sid, "")).netloc
+            ev = dns_check(host)
+            if ev["verdict"] == "DEAD":
+                kept.append(r)
+            else:
+                freed.append((sid, ev))
+                print(f"  ↻ 放回 {sid:28s} {host} → {ev['verdict']}")
+        if not a.dry:
+            with open(_BL, "w", encoding="utf-8", newline="") as fh:
+                w = _csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+                w.writeheader()
+                w.writerows(kept)
+            st = load_state(a.state)
+            for sid, ev in freed:
+                if sid in st:
+                    st[sid]["kind"] = "TRANSIENT"
+                    st[sid]["reason"] = f"黑名单复核放回（{ev['verdict']}）"
+            save_state(st, a.state)
+        print(f"黑名单复核：放回 {len(freed)}｜维持拉黑 {len([r for r in rows]) - len(freed)}")
+        return
 
     if a.reclassify:
         from urllib.parse import urlparse
@@ -282,14 +336,17 @@ def main(argv=None) -> None:
         print(f"重判结果：死域名拉黑 {dead}｜域名活着待重试 {alive}｜无法判定 {unknown}")
         return
 
-    if not sids:
-        raise SystemExit("给 --list-file 或 --sources")
-    items = [{"source_id": s, "i": idx[s]} for s in sids if s in idx]
+    if not sids and not plan_items:
+        raise SystemExit("给 --list-file / --sources / --plan+--lane 其一")
+    if sids:
+        items = [{"source_id": s, "i": idx[s]} for s in sids if s in idx]
     missing = [s for s in sids if s not in idx]
     if missing:
         print(f"[警告] {len(missing)} 个源不在源总表里，已跳过（前 3: {missing[:3]}）", flush=True)
     if a.limit:
         items = items[: a.limit]
+    elif not items and not plan_items:
+        raise SystemExit("给 --list-file / --sources / --plan+--lane 其一")
     if a.order != "list" and sizes:
         items.sort(key=lambda it: sizes.get(it["source_id"], 0),
                    reverse=(a.order == "size_desc"))

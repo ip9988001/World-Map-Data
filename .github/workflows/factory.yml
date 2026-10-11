@@ -1,0 +1,314 @@
+name: factory（全自动数据工厂 · v2 链路）
+
+# 与旧 collect-*.yml 的区别
+#   · 旧：手动触发 + artifact 传断点 + 固定解析逻辑
+#   · 本：定时窗口 + 状态回写 data 分支 + 多套规则级联 + 稳定视图发布
+#   · 采集语义：下载(bronze) → 本地规则级联(silver) → 分诊；解析失败不重新下载
+#   · 公开仓库 standard runner 分钟数免费；单 job 上限 6h，故按泳道并行分片
+#
+# 触发：
+#   定时：每小时 :05（覆盖双窗口，非窗口时段由窗口闸门直接跳过，代价≈1 分钟）
+#   手动：gh workflow run factory.yml -f lanes=0,1 -f max_seconds=1200
+on:
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch:
+    inputs:
+      lanes:
+        description: "要跑的泳道（all 或 0,1,2）"
+        required: false
+        default: "all"
+      max_seconds:
+        description: "每个泳道的秒数预算"
+        required: false
+        default: "4800"
+      mode:
+        description: "collect=采集；publish=只做合并发布"
+        required: false
+        default: "collect"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: factory
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # 窗口闸门：北京时间 03-05 / 06-08 / 09-15(欧非) / 12-18(美加) → 换算成 UTC 小时集合
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      go: ${{ steps.check.outputs.go }}
+    steps:
+      - id: check
+        run: |
+          H=$(date -u +%H)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "手动触发，跳过窗口检查" ; echo "go=1" >> "$GITHUB_OUTPUT" ; exit 0
+          fi
+          WINDOWS="19 20 21 22 23 00 01 02 03 04 05 06 07 08 09 10"
+          if echo "$WINDOWS" | tr ' ' '\n' | grep -qx "$H"; then
+            echo "窗口内（UTC $H 时）" ; echo "go=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "窗口外（UTC $H 时），本轮跳过" ; echo "go=0" >> "$GITHUB_OUTPUT"
+          fi
+
+  plan:
+    needs: gate
+    if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode != 'publish')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      lanes: ${{ steps.plan.outputs.lanes }}
+      sources: ${{ steps.plan.outputs.sources }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 取回上次状态（data 分支）
+        run: |
+          git fetch origin data --depth=1 || true
+          mkdir -p progress data
+          git show origin/data:progress/state.json > progress/state.json 2>/dev/null || echo '{}' > progress/state.json
+          for f in 源黑名单.csv 引擎路由表.csv; do
+            git show "origin/data:data/$f" > "data/$f" 2>/dev/null || true
+          done
+          python3 -c 'import json; print("state 条目:", len(json.load(open("progress/state.json"))))'
+      - name: 生成泳道计划
+        id: plan
+        run: |
+          python -m collectors.plan_batch --lanes 16 --out out/plan.json | tail -2
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json
+          p = json.load(open("out/plan.json"))
+          sel = "${{ github.event.inputs.lanes }}".strip()
+          alive = [L["lane"] for L in p["lanes"] if L["queue"]]
+          if sel and sel not in ("all", ""):
+              want = {int(x) for x in sel.split(",") if x.strip().isdigit()}
+              alive = [l for l in alive if l in want]
+          print("lanes=" + json.dumps(alive))
+          print("sources=" + str(sum(len(L["queue"]) for L in p["lanes"] if L["lane"] in alive)))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: out/plan.json
+          retention-days: 7
+
+  collect:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        lane: ${{ fromJson(needs.plan.outputs.lanes) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: out
+      - name: 取回上次状态（data 分支）
+        run: |
+          git fetch origin data --depth=1 || true
+          mkdir -p progress data
+          git show origin/data:progress/state.json > progress/state.json 2>/dev/null || echo '{}' > progress/state.json
+          for f in 源黑名单.csv 引擎路由表.csv; do
+            git show "origin/data:data/$f" > "data/$f" 2>/dev/null || true
+          done
+      - name: 本泳道采集（下载 → 规则级联 → 分诊）
+        run: |
+          python -m collectors.pipeline \
+            --plan out/plan.json --lane ${{ matrix.lane }} \
+            --max-seconds "${{ github.event.inputs.max_seconds || 4800 }}" \
+            --per-source-max 600 \
+            --state progress/state-${{ matrix.lane }}.json \
+            --min-interval 1.0 --concurrency 3
+        continue-on-error: true
+      - name: 打包本泳道产物（规则产物 + 状态 + 账本）
+        if: always()
+        run: |
+          mkdir -p out/seg
+          tar -czf out/seg/parsed-${{ matrix.lane }}.tar.gz -C parsed . 2>/dev/null || true
+          du -sh parsed out/seg 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seg-${{ matrix.lane }}
+          path: |
+            out/seg/parsed-*.tar.gz
+            progress/state-${{ matrix.lane }}.json
+            data/源黑名单.csv
+            data/引擎路由表.csv
+          retention-days: 30
+          if-no-files-found: warn
+
+  assemble:
+    needs: collect
+    if: always() && needs.collect.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: seg
+      - name: 合并状态分片（同源取最新 updated）
+        run: |
+          mkdir -p /tmp/asm
+          python3 - <<'PY'
+          import glob, json, os
+          new = {}
+          for p in glob.glob("seg/**/state-*.json", recursive=True):
+              try:
+                  d = json.load(open(p, encoding="utf-8"))
+              except Exception:
+                  continue
+              for sid, v in d.items():
+                  prev = new.get(sid)
+                  if prev is None or (v.get("updated") or "") >= (prev.get("updated") or ""):
+                      new[sid] = v
+          os.makedirs("/tmp/asm/progress", exist_ok=True)
+          json.dump(new, open("/tmp/asm/progress/state.json", "w", encoding="utf-8"),
+                    ensure_ascii=False, indent=1, sort_keys=True)
+          done = [v for v in new.values() if v.get("done")]
+          print(f"合并状态：{len(new)} 源｜完成 {len(done)}｜洗出 {sum(v.get('kept') or 0 for v in done):,} 条")
+          PY
+      - name: 合并账本（黑名单 / 路由表）
+        run: |
+          python3 - <<'PY'
+          import csv, glob, os
+          os.makedirs("/tmp/asm/data", exist_ok=True)
+          # 黑名单：按 source_id 去重（保留条目即拉黑）
+          bl = {}
+          for p in glob.glob("seg/**/源黑名单.csv", recursive=True) + ["data/源黑名单.csv"]:
+              if not os.path.exists(p):
+                  continue
+              for r in csv.DictReader(open(p, encoding="utf-8-sig")):
+                  if r.get("source_id"):
+                      bl[r["source_id"]] = r
+          if bl:
+              cols = list(next(iter(bl.values())).keys())
+              with open("/tmp/asm/data/源黑名单.csv", "w", encoding="utf-8", newline="") as fh:
+                  w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+                  w.writeheader(); w.writerows(bl.values())
+          # 路由表：按 (source_id, engine) 取 wins/losses 最大
+          rt = {}
+          for p in glob.glob("seg/**/引擎路由表.csv", recursive=True) + ["data/引擎路由表.csv"]:
+              if not os.path.exists(p):
+                  continue
+              for r in csv.DictReader(open(p, encoding="utf-8-sig")):
+                  k = (r.get("source_id"), r.get("engine"))
+                  if not k[0]:
+                      continue
+                  cur = rt.get(k)
+                  if cur is None or int(r.get("wins") or 0) >= int(cur.get("wins") or 0):
+                      rt[k] = r
+          if rt:
+              cols = list(next(iter(rt.values())).keys())
+              with open("/tmp/asm/data/引擎路由表.csv", "w", encoding="utf-8", newline="") as fh:
+                  w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+                  w.writeheader(); w.writerows(rt.values())
+          print(f"账本合并：黑名单 {len(bl)}｜路由 {len(rt)}")
+          PY
+      - name: 合并规则产物
+        run: |
+          mkdir -p /tmp/asm/parsed
+          for f in $(find seg -name "parsed-*.tar.gz"); do [ -f "$f" ] && tar -xzf "$f" -C /tmp/asm/parsed; done
+          find /tmp/asm/parsed -name '*.ndjson' | wc -l
+      - name: 回写状态与账本到 data 分支
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git fetch origin data --depth=1 || true
+          if git show-ref --verify --quiet refs/remotes/origin/data; then
+            git checkout -B data origin/data
+          else
+            git checkout --orphan data
+            git rm -rf --cached . >/dev/null 2>&1 || true
+          fi
+          mkdir -p progress data
+          cp /tmp/asm/progress/state.json progress/state.json
+          cp -f /tmp/asm/data/*.csv data/ 2>/dev/null || true
+          git add -f progress/state.json "data/源黑名单.csv" "data/引擎路由表.csv" 2>/dev/null || true
+          git commit -m "state: 采集状态回写（run ${{ github.run_id }}）" || echo "无状态变化"
+          git push -f origin data
+      - name: 规则产物缓存到 Release（cache-parsed，保留 5 份）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STAMP=$(date -u +%Y%m%d-%H%M)
+          ( cd /tmp/asm && tar -czf parsed-$STAMP.tar.gz -C parsed . ) 2>/dev/null || true
+          if [ -s /tmp/asm/parsed-$STAMP.tar.gz ]; then
+            gh release create cache-parsed --title "规则产物缓存" \
+              --notes "各窗口 parsed 快照，保留最近 5 份" 2>/dev/null || true
+            gh release upload cache-parsed /tmp/asm/parsed-$STAMP.tar.gz --clobber
+            gh release view cache-parsed --json assets -q '.assets[].name' | sort -r | tail -n +6 | \
+              while read -r n; do gh release delete-asset cache-parsed "$n" -y || true; done
+          fi
+
+  publish:
+    needs: assemble
+    if: always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 取回规则产物缓存（最近一份）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p parsed /tmp/cache
+          gh release download cache-parsed -p '*.tar.gz' -D /tmp/cache 2>/dev/null || true
+          last=$(ls -t /tmp/cache/*.tar.gz 2>/dev/null | head -1)
+          if [ -n "$last" ]; then tar -xzf "$last" -C parsed; fi
+          find parsed -name '*.ndjson' | wc -l
+      - name: 取回旧分片（上一版稳定视图，作为合并底稿）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p out/final3
+          gh release download v0.1.0-dataset -p '[A-Z][A-Z].ndjson.gz' -D out/final3 --clobber 2>/dev/null || true
+          ls out/final3 | wc -l
+      - name: 构建发布包（按 key 去重，新数据优先）
+        run: |
+          python scripts/build_release.py || echo "（无可发布内容）"
+      - name: 上传稳定视图（tag 复用 + --clobber）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -d out/release ] || exit 0
+          gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" \
+            --notes "按州分片稳定视图；tag 永久复用，更新=删旧资产+同名重传" 2>/dev/null || true
+          for f in out/release/*.ndjson.gz; do gh release upload v0.1.0-dataset "$f" --clobber; done
+          python3 - <<'PY'
+          import json, subprocess
+          m = json.load(open("data/release-manifest.json", encoding="utf-8"))
+          rows = m.get("rows", 0)
+          subprocess.run(["gh", "release", "edit", "v0.1.0-dataset",
+                          "--title", f"地址数据集（{rows:,} 条真实门牌点稳定视图）"], check=False)
+          PY
+      - name: 完整快照（full-*，保留 10 份）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -f out/release/merged.clean.ndjson.gz ] || exit 0
+          TAG="full-$(date -u +%Y%m%d)"
+          gh release create "$TAG" --title "full 快照 $TAG" --notes "完整快照，保留最近 10 份" 2>/dev/null || true
+          gh release upload "$TAG" out/release/merged.clean.ndjson.gz --clobber
+          gh release list --limit 100 --json tagName -q '.[].tagName' | grep '^full-' | sort -r | \
+            tail -n +11 | while read -r t; do gh release delete "$t" -y --cleanup-tag || true; done

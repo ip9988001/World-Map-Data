@@ -159,10 +159,16 @@ def dns_check(host: str, timeout: int = 12) -> dict:
     except Exception as e:
         out["error"] = f"{type(e).__name__}: {str(e)[:100]}"
         return out
-    if out["status"] in (2, 3):            # NXDOMAIN / SERVFAIL-with-no-answer
+    if out["status"] == 3:                  # NXDOMAIN：域名真的不存在
         out["verdict"] = "DEAD"
     elif out["status"] == 0 and out["answers"]:
         out["verdict"] = "ALIVE"
+    # 注意：status==2 是 SERVFAIL（解析器自己没搞定），**不是**域名不存在。
+    # 曾经把它当成 DEAD → 误拉黑 78 个源（含 gis.arkansas.gov，实测它完全可用）。
+    # SERVFAIL/其它 → 保持 UNKNOWN → 重试。
+    elif out["status"] == 2:
+        out["verdict"] = "UNKNOWN"
+        out["note"] = "SERVFAIL：解析器失败，不等于域名不存在"
     return out
 
 
