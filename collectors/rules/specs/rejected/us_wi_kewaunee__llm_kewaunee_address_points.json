@@ -1,0 +1,98 @@
+{
+ "_rejected": {
+  "source_id": "us/wi/kewaunee",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 0,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-11 12:29:33"
+ },
+ "spec": {
+  "name": "kewaunee_address_points",
+  "version": 1,
+  "note": "Esri Address_Points publish the house number in numeric Add_Number plus a directional prefix AddPrefix (source HOUSE_NO = prefix+number), and the road name alone in ROADNAME, so both pieces are joined by template.",
+  "match": {
+   "columns_any": [
+    "Add_Number"
+   ],
+   "columns_all": [
+    "ROADNAME"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "Add_Number",
+   "street": "ROADNAME",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{AddPrefix}{Add_Number}",
+  "street_template": "{ROADNAME}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "HOUSE_NO": "E0438",
+     "ROADNAME": "COUNTY RD BB",
+     "Add_Number": 438,
+     "AddPrefix": "E",
+     "StreetType": null
+    },
+    "expect": {
+     "number": "E438",
+     "street": "COUNTY RD BB"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 8,
+     "HOUSE_NO": "N0151",
+     "ROADNAME": "HARPT LAKE RD",
+     "Add_Number": 151,
+     "AddPrefix": "N",
+     "StreetType": " RD"
+    },
+    "expect": {
+     "number": "N151",
+     "street": "HARPT LAKE RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 29,
+     "HOUSE_NO": "N0149",
+     "ROADNAME": "MILL LA",
+     "Add_Number": 149,
+     "AddPrefix": "N",
+     "StreetType": " LA"
+    },
+    "expect": {
+     "number": "N149",
+     "street": "MILL LA"
+    }
+   }
+  ]
+ }
+}

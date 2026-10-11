@@ -1,0 +1,108 @@
+{
+ "_rejected": {
+  "source_id": "us/ga/newton",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 S RIVER DR 实得 S RIV DR"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 0,
+   "kept": 200,
+   "kept_contentful": 0,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-11 12:28:30"
+ },
+ "spec": {
+  "name": "newton_ga_site_address",
+  "version": 1,
+  "note": "ArcGIS 门牌点图层：AddNumber 即门牌号，LSt_* 四列（前置方位/街名/类型/后置方位）拼出完整街名，无 city/zip 列可用，MSAGComm 为全县常量不作市名。",
+  "match": {
+   "columns_any": [
+    "LSt_Name",
+    "AddNumber"
+   ],
+   "columns_all": [],
+   "columns_none": [],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "AddNumber",
+   "street": "LSt_Name",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{LSt_PreDir} {LSt_Name} {LSt_Typ} {LSt_PosDir}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "NGUID": "urn:emergency:uid:gis:RCL:{DCD3CD78-240E-4EFC-8097-8FEE5B1CCE26}:ncboc.org",
+     "AddNum_Pre": "",
+     "AddNumber": 680,
+     "AddNum_Suf": "",
+     "St_Name": "LAKE",
+     "LSt_PreDir": "",
+     "LSt_Name": "LAKE",
+     "LSt_Typ": "RD",
+     "LSt_PosDir": " ",
+     "ESN": "",
+     "MSAGComm": "COVINGTON"
+    },
+    "expect": {
+     "number": "680",
+     "street": "LAKE RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 8,
+     "NGUID": "urn:emergency:uid:gis:RCL:{61E6DD75-0DD5-46EC-904F-128B00AC4BD2}:ncboc.org",
+     "AddNum_Pre": "",
+     "AddNumber": 300,
+     "AddNum_Suf": "",
+     "St_Name": "RIVER",
+     "LSt_PreDir": "S",
+     "LSt_Name": "RIVER",
+     "LSt_Typ": "DR",
+     "LSt_PosDir": " ",
+     "ESN": "",
+     "MSAGComm": "COVINGTON"
+    },
+    "expect": {
+     "number": "300",
+     "street": "S RIVER DR"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 28,
+     "NGUID": "urn:emergency:uid:gis:RCL:{40A1F647-D10D-4E07-BA5D-2060AD61704E}:ncboc.org",
+     "AddNum_Pre": "",
+     "AddNumber": 5148,
+     "AddNum_Suf": "",
+     "St_Name": "WASHINGTON",
+     "LSt_PreDir": "",
+     "LSt_Name": "WASHINGTON",
+     "LSt_Typ": "ST",
+     "LSt_PosDir": "SW",
+     "ESN": "",
+     "MSAGComm": "COVINGTON"
+    },
+    "expect": {
+     "number": "5148",
+     "street": "WASHINGTON ST SW"
+    }
+   }
+  ]
+ }
+}

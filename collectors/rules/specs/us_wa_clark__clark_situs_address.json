@@ -1,0 +1,110 @@
+{
+ "name": "us_wa_clark__clark_situs_address",
+ "version": 1,
+ "note": "ArcGIS SitusAddress 图层把门牌号(HsNbr)与街名三段(StDir/StName/Stype)拆列存放，用模板拼出完整街道，城市取 Situs 城市列。",
+ "match": {
+  "columns_any": [
+   "SitusId"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HsNbr",
+  "street": "",
+  "city": "StCity",
+  "zip": "Zp1",
+  "state": ""
+ },
+ "number_template": "{HsNbr}",
+ "street_template": "{StDir} {StName} {Stype}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "examples": [
+  {
+   "row": {
+    "SN": 15000,
+    "HsNbr": 1700,
+    "Stype": "BLVD",
+    "StName": "FOURTH PLAIN",
+    "StDir": "W",
+    "X_Coord": 1080646.758,
+    "Y_Coord": 119888.59559999,
+    "Zp1": 98660,
+    "Assr_SN": "000015-000",
+    "QTile": 211212,
+    "PSN": 15000,
+    "CAD": "VAN",
+    "HsSub": "",
+    "Building": "",
+    "Apt": "",
+    "StCity": "VANCOUVER",
+    "ModifyDate": 1292832000000,
+    "ModifyBy": "gissql_stype",
+    "CreateDate": null,
+    "CreateBy": null,
+    "SitusId": 6,
+    "PrimeSitus": 1,
+    "OBJECTID": 3,
+    "PublishDt": 1790976937000
+   },
+   "expect": {
+    "number": "1700",
+    "street": "W FOURTH PLAIN BLVD"
+   }
+  },
+  {
+   "row": {
+    "SN": 986053956,
+    "HsNbr": 133,
+    "Stype": "CT",
+    "StName": "MINIHAN",
+    "StDir": "E",
+    "X_Coord": 1090446.4136,
+    "Y_Coord": 199519.83580001,
+    "Zp1": 98629,
+    "Assr_SN": "986053-956",
+    "QTile": 411024,
+    "PSN": 986053956,
+    "CAD": "LAC",
+    "HsSub": "",
+    "Building": "",
+    "Apt": "",
+    "StCity": "LA CENTER",
+    "ModifyDate": null,
+    "ModifyBy": null,
+    "CreateDate": 1577131831000,
+    "CreateBy": "s.dollar",
+    "SitusId": 242936,
+    "PrimeSitus": 1,
+    "OBJECTID": 14,
+    "PublishDt": 1790976937000
+   },
+   "expect": {
+    "number": "133",
+    "street": "E MINIHAN CT"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/wa/clark",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-11 12:28:54",
+  "validated": {
+   "rows": 200,
+   "contentful": 0,
+   "kept": 200,
+   "kept_contentful": 0,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

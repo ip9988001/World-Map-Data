@@ -1,0 +1,154 @@
+{
+ "_rejected": {
+  "source_id": "us/de/statewide",
+  "model": "deepseek-flash",
+  "errs": [
+   "street_template 引用了不存在的列：{PREFIXDIRECTION",
+   "street_template 引用了不存在的列：{STREETNAME",
+   "street_template 引用了不存在的列：{SUFFIXTYPE",
+   "street_template 引用了不存在的列：{SUFFIXDIRECTION"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 3,
+   "kept": 200,
+   "kept_contentful": 3,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.242
+  },
+  "at": "2026-10-11 12:27:44"
+ },
+ "spec": {
+  "name": "de_statewide_road_addresses",
+  "version": 1,
+  "note": "ArcGIS REST 图层把门牌号、前置方位、街名、后缀类型/方位拆成独立列，用列模板拼接即可得到完整门牌点。",
+  "match": {
+   "columns_any": [
+    "HOUSENUMBER"
+   ],
+   "columns_all": [
+    "STREETNAME"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HOUSENUMBER",
+   "street": "STREETNAME",
+   "city": "CITY",
+   "zip": "ZIPCODE",
+   "state": "STATE"
+  },
+  "number_template": "",
+  "street_template": "{{PREFIXDIRECTION}} {{STREETNAME}} {{SUFFIXTYPE}} {{SUFFIXDIRECTION}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "HOUSENUMBER": "2719",
+     "PREFIXDIRECTION": " ",
+     "STREETNAME": "NAAMANS",
+     "SUFFIXTYPE": "RD",
+     "SUFFIXDIRECTION": " ",
+     "ZIPCODE": "19810",
+     "CITY": "WILMINGTON",
+     "STATE": "DE",
+     "COUNTY": "New Castle",
+     "COMMUNITY": "DARTMOUTH WOODS",
+     "UNIT": " ",
+     "UNITTYPE": null,
+     "UNITID": null,
+     "UPDATED": 1778902560000,
+     "ZIPID": null,
+     "CITYID": null
+    },
+    "expect": {
+     "number": "2719",
+     "street": "NAAMANS RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 6,
+     "HOUSENUMBER": "1212",
+     "PREFIXDIRECTION": "W",
+     "STREETNAME": "2ND",
+     "SUFFIXTYPE": "ST",
+     "SUFFIXDIRECTION": " ",
+     "ZIPCODE": "19805",
+     "CITY": "WILMINGTON",
+     "STATE": "DE",
+     "COUNTY": "New Castle",
+     "COMMUNITY": "WILMINGTON",
+     "UNIT": " ",
+     "UNITTYPE": null,
+     "UNITID": null,
+     "UPDATED": 1778902560000,
+     "ZIPID": null,
+     "CITYID": null
+    },
+    "expect": {
+     "number": "1212",
+     "street": "W 2ND ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 10,
+     "HOUSENUMBER": "8400",
+     "PREFIXDIRECTION": " ",
+     "STREETNAME": "GOVERNOR PRINTZ",
+     "SUFFIXTYPE": "BLVD",
+     "SUFFIXDIRECTION": " ",
+     "ZIPCODE": "19703",
+     "CITY": "CLAYMONT",
+     "STATE": "DE",
+     "COUNTY": "New Castle",
+     "COMMUNITY": "CLAYMONT",
+     "UNIT": " ",
+     "UNITTYPE": null,
+     "UNITID": null,
+     "UPDATED": 1778902560000,
+     "ZIPID": null,
+     "CITYID": null
+    },
+    "expect": {
+     "number": "8400",
+     "street": "GOVERNOR PRINTZ BLVD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 16,
+     "HOUSENUMBER": "211",
+     "PREFIXDIRECTION": " ",
+     "STREETNAME": "DEEMERS",
+     "SUFFIXTYPE": "LNDG",
+     "SUFFIXDIRECTION": " ",
+     "ZIPCODE": "19720",
+     "CITY": "NEW CASTLE",
+     "STATE": "DE",
+     "COUNTY": "New Castle",
+     "COMMUNITY": "NEW CASTLE",
+     "UNIT": " ",
+     "UNITTYPE": null,
+     "UNITID": null,
+     "UPDATED": 1778902560000,
+     "ZIPID": null,
+     "CITYID": null
+    },
+    "expect": {
+     "number": "211",
+     "street": "DEEMERS LNDG"
+    }
+   }
+  ]
+ }
+}
