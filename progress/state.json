@@ -2839,6 +2839,84 @@
   "stage": "parsed",
   "updated": "2026-10-11 07:45:20"
  },
+ "us/az/yavapai": {
+  "archive": {
+   "bytes": 100571227,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 166677,
+  "kept": 166504,
+  "path": "parsed/us/az/yavapai/mapping@v1.ndjson",
+  "ratio": 0.999,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 166643,
+    "coverage": 1.0,
+    "kept": 166504,
+    "kept_contentful": 166504,
+    "ratio": 0.999,
+    "rows": 166677,
+    "rule": "mapping@v1",
+    "seconds": 14.7,
+    "true_addr": 160685,
+    "verdict": "PASS",
+    "why": "合规 166504/166643 = 100%（带地址行分母；真门牌号行 160,685）总行 166,677"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 166643,
+    "coverage": 1.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 166677,
+    "rule": "field_guess@v2",
+    "seconds": 24.5,
+    "true_addr": 160685,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/166643 = 0%（阈 30%；总行 166,677，带地址 166,643，真门牌号 160,685）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 166643,
+    "coverage": 1.0,
+    "kept": 32135,
+    "kept_contentful": 32135,
+    "ratio": 0.193,
+    "rows": 166677,
+    "rule": "concat_addr@v2",
+    "seconds": 50.4,
+    "true_addr": 160685,
+    "verdict": "GATE_FAIL",
+    "why": "合规 32135/166643 = 19%（阈 30%；总行 166,677，带地址 166,643，真门牌号 160,685）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 166643,
+    "coverage": 1.0,
+    "kept": 166434,
+    "kept_contentful": 166434,
+    "ratio": 0.999,
+    "rows": 166677,
+    "rule": "concat_addr@v1",
+    "seconds": 66.5,
+    "true_addr": 160685,
+    "verdict": "PASS",
+    "why": "合规 166434/166643 = 100%（带地址行分母；真门牌号行 160,685）总行 166,677"
+   }
+  ],
+  "seconds": 176.0,
+  "source_id": "us/az/yavapai",
+  "stage": "parsed",
+  "updated": "2026-10-11 10:10:54"
+ },
  "us/ca/alameda": {
   "archive": {
    "bytes": 275576926,
@@ -9097,6 +9175,84 @@
   "stage": "parsed",
   "updated": "2026-10-11 07:24:59"
  },
+ "us/fl/lee": {
+  "archive": {
+   "bytes": 1057652811,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 711766,
+  "kept": 711467,
+  "path": "parsed/us/fl/lee/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 711481,
+    "coverage": 1.0,
+    "kept": 711467,
+    "kept_contentful": 711467,
+    "ratio": 1.0,
+    "rows": 711766,
+    "rule": "mapping@v1",
+    "seconds": 106.1,
+    "true_addr": 704204,
+    "verdict": "PASS",
+    "why": "合规 711467/711481 = 100%（带地址行分母；真门牌号行 704,204）总行 711,766"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 711481,
+    "coverage": 1.0,
+    "kept": 691663,
+    "kept_contentful": 691663,
+    "ratio": 0.972,
+    "rows": 711766,
+    "rule": "field_guess@v2",
+    "seconds": 218.4,
+    "true_addr": 704204,
+    "verdict": "PASS",
+    "why": "合规 691663/711481 = 97%（带地址行分母；真门牌号行 704,204）总行 711,766"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 711481,
+    "coverage": 1.0,
+    "kept": 168927,
+    "kept_contentful": 168927,
+    "ratio": 0.237,
+    "rows": 711766,
+    "rule": "concat_addr@v2",
+    "seconds": 450.9,
+    "true_addr": 704204,
+    "verdict": "GATE_FAIL",
+    "why": "合规 168927/711481 = 24%（阈 30%；总行 711,766，带地址 711,481，真门牌号 704,204）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 711481,
+    "coverage": 1.0,
+    "kept": 709908,
+    "kept_contentful": 709908,
+    "ratio": 0.998,
+    "rows": 711766,
+    "rule": "concat_addr@v1",
+    "seconds": 568.9,
+    "true_addr": 704204,
+    "verdict": "PASS",
+    "why": "合规 709908/711481 = 100%（带地址行分母；真门牌号行 704,204）总行 711,766"
+   }
+  ],
+  "seconds": 1045.3,
+  "source_id": "us/fl/lee",
+  "stage": "parsed",
+  "updated": "2026-10-11 10:11:16"
+ },
  "us/fl/martin": {
   "archive": {
    "bytes": 20609079,
@@ -9688,6 +9844,84 @@
   "source_id": "us/fl/santa_rosa",
   "stage": "parsed",
   "updated": "2026-10-11 07:11:08"
+ },
+ "us/fl/st-johns": {
+  "archive": {
+   "bytes": 98320411,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 181105,
+  "kept": 181079,
+  "path": "parsed/us/fl/st-johns/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 181080,
+    "coverage": 1.0,
+    "kept": 181079,
+    "kept_contentful": 181079,
+    "ratio": 1.0,
+    "rows": 181105,
+    "rule": "mapping@v1",
+    "seconds": 13.0,
+    "true_addr": 181083,
+    "verdict": "PASS",
+    "why": "合规 181079/181080 = 100%（带地址行分母；真门牌号行 181,083）总行 181,105"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 181080,
+    "coverage": 1.0,
+    "kept": 1011,
+    "kept_contentful": 1011,
+    "ratio": 0.006,
+    "rows": 181105,
+    "rule": "field_guess@v2",
+    "seconds": 21.1,
+    "true_addr": 181083,
+    "verdict": "GATE_FAIL",
+    "why": "合规 1011/181080 = 1%（阈 30%；总行 181,105，带地址 181,080，真门牌号 181,083）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 181080,
+    "coverage": 1.0,
+    "kept": 181069,
+    "kept_contentful": 181069,
+    "ratio": 1.0,
+    "rows": 181105,
+    "rule": "concat_addr@v2",
+    "seconds": 45.9,
+    "true_addr": 181083,
+    "verdict": "PASS",
+    "why": "合规 181069/181080 = 100%（带地址行分母；真门牌号行 181,083）总行 181,105"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 181080,
+    "coverage": 1.0,
+    "kept": 180137,
+    "kept_contentful": 180137,
+    "ratio": 0.995,
+    "rows": 181105,
+    "rule": "concat_addr@v1",
+    "seconds": 59.5,
+    "true_addr": 181083,
+    "verdict": "PASS",
+    "why": "合规 180137/181080 = 99%（带地址行分母；真门牌号行 181,083）总行 181,105"
+   }
+  ],
+  "seconds": 177.0,
+  "source_id": "us/fl/st-johns",
+  "stage": "parsed",
+  "updated": "2026-10-11 10:13:50"
  },
  "us/fl/volusia": {
   "archive": {
@@ -24867,6 +25101,84 @@
   "stage": "fetch",
   "updated": "2026-10-11 12:20:20"
  },
+ "us/mo/st_charles": {
+  "archive": {
+   "bytes": 374903381,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 198135,
+  "kept": 198133,
+  "path": "parsed/us/mo/st_charles/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 198135,
+    "coverage": 1.0,
+    "kept": 198133,
+    "kept_contentful": 198133,
+    "ratio": 1.0,
+    "rows": 198135,
+    "rule": "mapping@v1",
+    "seconds": 28.0,
+    "true_addr": 198135,
+    "verdict": "PASS",
+    "why": "合规 198133/198135 = 100%（带地址行分母；真门牌号行 198,135）总行 198,135"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 198135,
+    "coverage": 1.0,
+    "kept": 0,
+    "kept_contentful": 0,
+    "ratio": 0.0,
+    "rows": 198135,
+    "rule": "field_guess@v2",
+    "seconds": 50.6,
+    "true_addr": 198135,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/198135 = 0%（阈 30%；总行 198,135，带地址 198,135，真门牌号 198,135）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 198135,
+    "coverage": 1.0,
+    "kept": 27359,
+    "kept_contentful": 27359,
+    "ratio": 0.138,
+    "rows": 198135,
+    "rule": "concat_addr@v2",
+    "seconds": 124.1,
+    "true_addr": 198135,
+    "verdict": "GATE_FAIL",
+    "why": "合规 27359/198135 = 14%（阈 30%；总行 198,135，带地址 198,135，真门牌号 198,135）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 198135,
+    "coverage": 1.0,
+    "kept": 197527,
+    "kept_contentful": 197527,
+    "ratio": 0.997,
+    "rows": 198135,
+    "rule": "concat_addr@v1",
+    "seconds": 161.4,
+    "true_addr": 198135,
+    "verdict": "PASS",
+    "why": "合规 197527/198135 = 100%（带地址行分母；真门牌号行 198,135）总行 198,135"
+   }
+  ],
+  "seconds": 291.7,
+  "source_id": "us/mo/st_charles",
+  "stage": "parsed",
+  "updated": "2026-10-11 10:16:48"
+ },
  "us/mo/st_louis": {
   "archive": {
    "bytes": 201195762,
@@ -33524,6 +33836,84 @@
   "source_id": "us/or/malheur",
   "stage": "parsed",
   "updated": "2026-10-11 06:51:56"
+ },
+ "us/or/marion": {
+  "archive": {
+   "bytes": 129171416,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 0,
+  "done": true,
+  "error": "",
+  "fetched": 162711,
+  "kept": 162665,
+  "path": "parsed/us/or/marion/mapping@v1.ndjson",
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 162711,
+    "coverage": 1.0,
+    "kept": 162665,
+    "kept_contentful": 162665,
+    "ratio": 1.0,
+    "rows": 162711,
+    "rule": "mapping@v1",
+    "seconds": 14.9,
+    "true_addr": 150797,
+    "verdict": "PASS",
+    "why": "合规 162665/162711 = 100%（带地址行分母；真门牌号行 150,797）总行 162,711"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 162711,
+    "coverage": 1.0,
+    "kept": 123834,
+    "kept_contentful": 123834,
+    "ratio": 0.761,
+    "rows": 162711,
+    "rule": "field_guess@v2",
+    "seconds": 28.7,
+    "true_addr": 150797,
+    "verdict": "PASS",
+    "why": "合规 123834/162711 = 76%（带地址行分母；真门牌号行 150,797）总行 162,711"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 162711,
+    "coverage": 1.0,
+    "kept": 75364,
+    "kept_contentful": 75364,
+    "ratio": 0.463,
+    "rows": 162711,
+    "rule": "concat_addr@v2",
+    "seconds": 56.7,
+    "true_addr": 150797,
+    "verdict": "PASS",
+    "why": "合规 75364/162711 = 46%（带地址行分母；真门牌号行 150,797）总行 162,711"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 162711,
+    "coverage": 1.0,
+    "kept": 162498,
+    "kept_contentful": 162498,
+    "ratio": 0.999,
+    "rows": 162711,
+    "rule": "concat_addr@v1",
+    "seconds": 71.4,
+    "true_addr": 150797,
+    "verdict": "PASS",
+    "why": "合规 162498/162711 = 100%（带地址行分母；真门牌号行 150,797）总行 162,711"
+   }
+  ],
+  "seconds": 177.9,
+  "source_id": "us/or/marion",
+  "stage": "parsed",
+  "updated": "2026-10-11 10:07:56"
  },
  "us/or/multnomah": {
   "archive": {
@@ -42872,11 +43262,11 @@
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 1,
+  "attempts": 2,
   "done": false,
   "error": "",
   "kind": "RULE_GAP",
-  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；field_guess@v2:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；concat_addr@v2:合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2））→ 造新规则",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）；field_guess@v2:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）；concat_addr@v2:合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748））→ 造新规则",
   "report": "out/triage/分诊-us__wa__clark.json",
   "rule_chain": [
    {
@@ -42888,9 +43278,10 @@
     "ratio": 1.0,
     "rows": 249894,
     "rule": "mapping@v1",
-    "seconds": 4.0,
+    "seconds": 8.3,
+    "true_addr": 49748,
     "verdict": "GATE_FAIL",
-    "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）"
+    "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）"
    },
    {
     "addr_hint": 0.6666666666666666,
@@ -42901,9 +43292,10 @@
     "ratio": 1.0,
     "rows": 249894,
     "rule": "field_guess@v2",
-    "seconds": 8.0,
+    "seconds": 16.6,
+    "true_addr": 49748,
     "verdict": "GATE_FAIL",
-    "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）"
+    "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）"
    },
    {
     "addr_hint": 0.6666666666666666,
@@ -42914,9 +43306,10 @@
     "ratio": 0.0,
     "rows": 249894,
     "rule": "concat_addr@v2",
-    "seconds": 12.1,
+    "seconds": 24.9,
+    "true_addr": 49748,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）"
+    "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）"
    },
    {
     "addr_hint": 0.6666666666666666,
@@ -42927,15 +43320,16 @@
     "ratio": 0.0,
     "rows": 249894,
     "rule": "concat_addr@v1",
-    "seconds": 16.1,
+    "seconds": 33.2,
+    "true_addr": 49748,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）"
+    "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）"
    }
   ],
-  "seconds": 176.3,
+  "seconds": 194.4,
   "source_id": "us/wa/clark",
   "stage": "triage",
-  "updated": "2026-10-11 07:24:46"
+  "updated": "2026-10-11 10:08:01"
  },
  "us/wa/columbia": {
   "archive": {

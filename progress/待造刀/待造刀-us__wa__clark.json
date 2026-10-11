@@ -1,8 +1,8 @@
 {
  "source_id": "us/wa/clark",
  "kind": "RULE_GAP",
- "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；field_guess@v2:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）；concat_addr@v2:合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2））→ 造新规则",
- "decided_at": "2026-10-11 07:27:42",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）；field_guess@v2:合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）；concat_addr@v2:合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748））→ 造新规则",
+ "decided_at": "2026-10-11 10:11:16",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -10,6 +10,7 @@
    "kept": 2,
    "contentful": 2,
    "kept_contentful": 2,
+   "true_addr": 49748,
    "ratio": 1.0,
    "coverage": 0.0,
    "addr_hint": 0.6666666666666666,
@@ -17,8 +18,8 @@
     "no_address_trace": 249892
    },
    "verdict": "GATE_FAIL",
-   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）",
-   "seconds": 4.0
+   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）",
+   "seconds": 8.3
   },
   {
    "rule": "field_guess@v2",
@@ -26,6 +27,7 @@
    "kept": 2,
    "contentful": 2,
    "kept_contentful": 2,
+   "true_addr": 49748,
    "ratio": 1.0,
    "coverage": 0.0,
    "addr_hint": 0.6666666666666666,
@@ -33,8 +35,8 @@
     "no_address_trace": 249892
    },
    "verdict": "GATE_FAIL",
-   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2）",
-   "seconds": 8.0
+   "why": "合规 2/2 = 100%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）",
+   "seconds": 16.6
   },
   {
    "rule": "concat_addr@v2",
@@ -42,6 +44,7 @@
    "kept": 0,
    "contentful": 2,
    "kept_contentful": 0,
+   "true_addr": 49748,
    "ratio": 0.0,
    "coverage": 0.0,
    "addr_hint": 0.6666666666666666,
@@ -50,8 +53,8 @@
     "v2_no_site_column": 2
    },
    "verdict": "GATE_FAIL",
-   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）",
-   "seconds": 12.1
+   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）",
+   "seconds": 24.9
   },
   {
    "rule": "concat_addr@v1",
@@ -59,6 +62,7 @@
    "kept": 0,
    "contentful": 2,
    "kept_contentful": 0,
+   "true_addr": 49748,
    "ratio": 0.0,
    "coverage": 0.0,
    "addr_hint": 0.6666666666666666,
@@ -67,8 +71,8 @@
     "no_full_address": 2
    },
    "verdict": "GATE_FAIL",
-   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2）",
-   "seconds": 16.1
+   "why": "合规 0/2 = 0%（阈 30%；总行 249,894，带地址 2，真门牌号 49,748）",
+   "seconds": 33.2
   }
  ],
  "evidence": {},
