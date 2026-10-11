@@ -44,37 +44,58 @@ def sha256(path: str) -> str:
 
 
 def scan_shard(path: str, head: int = 2000, tail: int = 500):
-    """单趟扫描：行数 + 头部样本 + 尾部样本。"""
+    """单趟扫描：行数 + 空行数 + 相邻重复 + 头部/尾部样本。
+
+    ⚠ 老版本把空行静默 `continue` 掉，所以 IL 分片混着 58.2 万条空行也「校验通过」。
+    v2 把空行数吐出来当作出厂硬门（必须 0）；分片按 key 有序写出，所以相邻重复
+    与乱序也能顺带查（不吃内存）。
+    """
     rows = 0
+    blanks = 0
+    dups = 0
+    unsorted = 0
+    prev = None
     head_recs: list[dict] = []
     tail_recs: list[dict] = []
     with gzip.open(path, "rt", encoding="utf-8") as fh:
         for line in fh:
-            line = line.strip()
-            if not line:
+            if not line.strip():
+                blanks += 1
                 continue
             rows += 1
-            if len(head_recs) < head:
-                try:
-                    head_recs.append(json.loads(line))
-                except Exception:
-                    pass
-                continue
             try:
-                tail_recs.append(json.loads(line))
+                rec = json.loads(line)
             except Exception:
+                dups += 0
                 continue
+            k = rec.get("key")
+            if prev is not None:
+                if k == prev:
+                    dups += 1
+                elif str(k) < str(prev):
+                    unsorted += 1
+            prev = k
+            if len(head_recs) < head:
+                head_recs.append(rec)
+                continue
+            tail_recs.append(rec)
             if len(tail_recs) > tail:
                 del tail_recs[0]
-    return rows, head_recs + tail_recs
+    return rows, head_recs + tail_recs, blanks, dups, unsorted
 
 
 def check_schema(recs: list[dict], state: str) -> tuple[dict, list[str]]:
     st = {"sampled": len(recs), "missing": 0, "bad_number": 0, "bad_zip": 0,
-          "dup_key": 0, "cross_state": 0, "bad_state": 0, "empty_city": 0, "empty_zip": 0}
+          "dup_key": 0, "cross_state": 0, "bad_state": 0, "empty_city": 0, "empty_zip": 0,
+          "grade_c": 0}
     errs: list[str] = []
     seen: set[str] = set()
     for r in recs:
+        if r.get("_grade") == "C":
+            # C 级是「出厂就认定补不齐」的记录：只进全量数据集并自带标注，
+            # 不参与五要素完整性判定（但它的存在会被单独计数，不允许悄悄变多）
+            st["grade_c"] += 1
+            continue
         if [k for k in REQUIRED if not r.get(k)]:
             st["missing"] += 1
         if not r.get("city"):
@@ -214,6 +235,8 @@ def main(argv=None) -> None:
     ap.add_argument("--parsed", default="parsed")
     ap.add_argument("--state", default="progress/state.json")
     ap.add_argument("--min-rows", type=int, default=0, help="总行数下限（防缩水），0=不判")
+    ap.add_argument("--prev-manifest", default="", help="上一版发布清单，逐州对账（防悄无声息掉质量）")
+    ap.add_argument("--max-shrink", type=float, default=0.10, help="单州行数跌幅上限")
     ap.add_argument("--sample-sources", type=int, default=3)
     ap.add_argument("--cross-keys", type=int, default=6_000_000,
                     help="跨州重复检查的抽样 key 数（0=跳过）")
@@ -230,9 +253,15 @@ def main(argv=None) -> None:
         if not os.path.exists(p):
             errs.append(f"[对账]{st} 分片文件缺失")
             continue
-        rows, recs = scan_shard(p)
+        rows, recs, blanks, dups, unsorted = scan_shard(p)
         if rows != int(info.get("rows") or -1):
             errs.append(f"[对账]{st} 行数不符：文件 {rows} vs manifest {info.get('rows')}")
+        if blanks:
+            errs.append(f"[对账]{st} 空行 {blanks:,} 条（出厂硬门：必须 0）")
+        if dups:
+            errs.append(f"[对账]{st} 相邻重复 key {dups:,} 条（行数必须 == 唯一 key 数）")
+        if unsorted:
+            errs.append(f"[对账]{st} key 乱序 {unsorted:,} 处（分片必须按 key 有序）")
         if sha256(p) != info.get("sha256"):
             errs.append(f"[对账]{st} sha256 不符（文件被改动过）")
         se, sers = check_schema(recs, st)
@@ -241,6 +270,38 @@ def main(argv=None) -> None:
             print(f"   {st}: {rows:>10,} 行 抽样 {se['sampled']} 条  "
                   f"缺字段{se['missing']} 坏号{se['bad_number']} 重复{se['dup_key']}"
                   + (f" 跨州{se['cross_state']}" if se["cross_state"] else ""))
+    # ② 溯源与合并自检（第 11/13 步）
+    sj = os.path.join(a.release, "sources.json")
+    sinfo = m.get("sources") or {}
+    if not os.path.exists(sj):
+        errs.append("[溯源] sources.json 缺失（记录里的 source_id 无处可查，等于不可溯源）")
+    else:
+        exp = (sinfo.get("sources_json") or {}).get("sha256")
+        if exp and sha256(sj) != exp:
+            errs.append("[溯源] sources.json sha256 不符")
+        tbl = json.load(open(sj, encoding="utf-8")).get("sources") or {}
+        unk = [k for k, v in tbl.items() if v.get("license_status") == "unknown"]
+        print(f"② 溯源：{len(tbl)} 个来源｜license 缺失显式标 unknown 的 {len(unk)} 个（如实标注，不算错）")
+    if sinfo.get("orphans"):
+        errs.append(f"[溯源] 孤儿来源 {len(sinfo['orphans'])} 个不在源总表：{sinfo['orphans'][:5]}")
+    if not int(m.get("multi_source_records") or 0):
+        errs.append("[合并] 全量里多来源记录为 0 —— 跨源合并没生效（应出现并集来源）")
+    for st, info in sorted((m.get("states") or {}).items()):
+        sp = os.path.join(a.release, f"sources-{st}.json")
+        if not os.path.exists(sp):
+            errs.append(f"[溯源]{st} sources-{st}.json 缺失（州分片必须自带来源表）")
+        else:
+            cnt = len(json.load(open(sp, encoding="utf-8")).get("sources") or {})
+            exp_cnt = ((sinfo.get("per_state") or {}).get(st) or {}).get("count")
+            if exp_cnt is not None and cnt != exp_cnt:
+                errs.append(f"[溯源]{st} 来源表条数 {cnt} != 清单 {exp_cnt}")
+        mi_miss = info.get("field_missing") or {}
+        if info.get("rows"):
+            cr = (mi_miss.get("city") or 0) / info["rows"]
+            zr = (mi_miss.get("zip") or 0) / info["rows"]
+            if cr > 0.5 or zr > 0.5:
+                errs.append(f"[完整性]{st} city/zip 缺失率 {cr:.0%}/{zr:.0%} 属灾难级（>50%）")
+
     merged = os.path.join(a.release, "merged.clean.ndjson.gz")
     if not os.path.exists(merged):
         errs.append("[对账] merged.clean.ndjson.gz 缺失")
@@ -262,6 +323,28 @@ def main(argv=None) -> None:
         out_cross = stats
     if a.min_rows and total < a.min_rows:
         errs.append(f"[缩水] 总行数 {total:,} 低于下限 {a.min_rows:,}")
+    # ⑤ 与上一版逐州对账（决策：掉质量不许悄无声息）
+    prev = None
+    if a.prev_manifest and os.path.exists(a.prev_manifest):
+        try:
+            prev = json.load(open(a.prev_manifest, encoding="utf-8"))
+        except Exception:
+            prev = None
+    if prev:
+        if not str(prev.get("pipeline") or "").startswith("v2"):
+            print("⑤ 逐州对账：上一版是 v1 口径（含旧数据集底稿）→ 本次不对比（v2 首次发布）")
+        else:
+            print("⑤ 逐州对账（行数变化）：")
+            old_st = prev.get("states") or {}
+            new_st = m.get("states") or {}
+            for st in sorted(set(old_st) | set(new_st)):
+                old = int((old_st.get(st) or {}).get("rows") or 0)
+                new = int((new_st.get(st) or {}).get("rows") or 0)
+                if old and new < old * (1 - a.max_shrink):
+                    errs.append(f"[缩水]{st} {old:,} → {new:,}"
+                                f"（跌 {1 - new / old:.1%}，超阈值 {a.max_shrink:.0%}）")
+                elif old or new:
+                    print(f"   {st}: {old:,} → {new:,}")
 
     out = {"rows": total, "states": len(m.get("states") or {}), "errors": errs}
     if a.cross_keys:

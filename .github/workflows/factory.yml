@@ -504,18 +504,15 @@ jobs:
           last=$(ls -t /tmp/cache/*.tar.gz 2>/dev/null | head -1)
           if [ -n "$last" ]; then tar -xzf "$last" -C parsed; fi
           find parsed -name '*.ndjson' | wc -l
-      - name: 取回旧分片（上一版稳定视图，作为合并底稿）
-        if: steps.cadence.outputs.go == '1'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p out/final3
-          gh release download v0.1.0-dataset -p '[A-Z][A-Z].ndjson.gz' -D out/final3 --clobber 2>/dev/null || true
-          ls out/final3 | wc -l
-      - name: 构建发布包（按 key 去重，新数据优先）
+      - name: 存一份上一版清单（逐州对账用）
         if: steps.cadence.outputs.go == '1'
         run: |
-          python scripts/build_release.py || echo "（无可发布内容）"
+          cp data/release-manifest.json /tmp/prev-manifest.json 2>/dev/null || echo "首次发布，无上一版清单"
+      - name: 构建发布包（13 环节 v2：真合并 + 字典补齐 + 分级 + 出厂自检）
+        if: steps.cadence.outputs.go == '1'
+        run: |
+          # 旧数据集（final3 / 上一版底稿）一律不再参与合并——已定性为垃圾数据
+          python scripts/build_release.py --zip-dict dict/zip_city.tsv
       - name: 取回状态（校验闸门用）
         if: steps.cadence.outputs.go == '1'
         run: |
@@ -527,7 +524,8 @@ jobs:
         run: |
           if [ ! -d out/release ]; then echo "无发布内容，跳过校验"; exit 0; fi
           python scripts/verify_release.py --release out/release --parsed parsed \
-            --state progress/state.json --min-rows 20000000 --sample-sources 3
+            --state progress/state.json --prev-manifest /tmp/prev-manifest.json \
+            --max-shrink 0.10 --sample-sources 3
       - name: 回写发布清单到 main（发布收据：行数 + sha256，供对账）
         if: steps.cadence.outputs.go == '1'
         run: |
@@ -546,10 +544,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if ! ls out/final3/*.ndjson.gz >/dev/null 2>&1; then echo "无上一版可存（首次发布）"; exit 0; fi
+          mkdir -p /tmp/prev
+          gh release download v0.1.0-dataset -p '[A-Z][A-Z].ndjson.gz' -D /tmp/prev --clobber 2>/dev/null || true
+          if ! ls /tmp/prev/*.ndjson.gz >/dev/null 2>&1; then echo "无上一版可存（首次发布）"; exit 0; fi
           gh release create prev-dataset --title "上一版数据集（回滚用）" \
-            --notes "每次发布前自动留一份上一版分片，只保最新一版" 2>/dev/null || true
-          gh release upload prev-dataset out/final3/*.ndjson.gz --clobber || echo "上一版回存失败（不阻断发布）"
+            --notes "每次发布前自动留一份上一版稳定视图分片，只保最新一版" 2>/dev/null || true
+          gh release upload prev-dataset /tmp/prev/*.ndjson.gz --clobber || echo "上一版回存失败（不阻断发布）"
           gh release edit prev-dataset --notes "上一版稳定视图（对应 run ${{ github.run_id }} 发布前的那一版）" || true
       - name: 上传稳定视图（tag 复用 + --clobber）
         if: steps.cadence.outputs.go == '1'
@@ -560,6 +560,9 @@ jobs:
           gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" \
             --notes "按州分片稳定视图；tag 永久复用，更新=删旧资产+同名重传" 2>/dev/null || true
           for f in out/release/*.ndjson.gz; do gh release upload v0.1.0-dataset "$f" --clobber; done
+          for f in out/release/sources.json out/release/sources-[A-Z][A-Z].json; do
+            if [ -f "$f" ]; then gh release upload v0.1.0-dataset "$f" --clobber; fi
+          done
           python3 - <<'PY'
           import json, subprocess
           m = json.load(open("data/release-manifest.json", encoding="utf-8"))
@@ -567,6 +570,18 @@ jobs:
           subprocess.run(["gh", "release", "edit", "v0.1.0-dataset",
                           "--title", f"地址数据集（{rows:,} 条真实门牌点稳定视图）"], check=False)
           PY
+      - name: 上传站用子集（A 级：五要素齐，生成器直接取用）
+        if: steps.cadence.outputs.go == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls out/release/site/*.ndjson.gz >/dev/null 2>&1 || exit 0
+          gh release create site-view --title "站用子集（A 级：五要素齐）" \
+            --notes "供美国地址生成器直接取用；每条记录的来源与许可见 sources.json" 2>/dev/null || true
+          for f in out/release/site/*.ndjson.gz; do gh release upload site-view "$f" --clobber; done
+          for f in out/release/sources.json out/release/sources-[A-Z][A-Z].json; do
+            if [ -f "$f" ]; then gh release upload site-view "$f" --clobber; fi
+          done
       - name: 完整快照（full-*，保留 10 份）
         if: steps.cadence.outputs.go == '1'
         env:
