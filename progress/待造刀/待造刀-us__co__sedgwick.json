@@ -1,0 +1,277 @@
+{
+ "source_id": "us/co/sedgwick",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 0/2834 = 0%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）；field_guess@v2:合规 0/2834 = 0%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）；concat_addr@v2:合规 155/2834 = 5%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155））→ 造新规则",
+ "decided_at": "2026-10-12 09:27:16",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 3149,
+   "kept": 0,
+   "contentful": 2834,
+   "kept_contentful": 0,
+   "true_addr": 155,
+   "ratio": 0.0,
+   "coverage": 0.9,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 2834,
+    "no_address_trace": 315
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/2834 = 0%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）",
+   "seconds": 0.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 3149,
+   "kept": 0,
+   "contentful": 2834,
+   "kept_contentful": 0,
+   "true_addr": 155,
+   "ratio": 0.0,
+   "coverage": 0.9,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_bad_number": 2834,
+    "no_address_trace": 315
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/2834 = 0%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）",
+   "seconds": 0.3
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 3149,
+   "kept": 155,
+   "contentful": 2834,
+   "kept_contentful": 155,
+   "true_addr": 155,
+   "ratio": 0.055,
+   "coverage": 0.9,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 2679,
+    "no_address_trace": 315
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 155,
+     "zip": 155
+    },
+    "junk_rate": 0.0,
+    "per_street": 11.07,
+    "streets": 14,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 155/2834 = 5%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）",
+   "seconds": 0.7
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 3149,
+   "kept": 1528,
+   "contentful": 2834,
+   "kept_contentful": 1528,
+   "true_addr": 155,
+   "ratio": 0.539,
+   "coverage": 0.9,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_full_address": 1306,
+    "no_address_trace": 315
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 1528,
+     "zip": 1528
+    },
+    "junk_rate": 0.0,
+    "per_street": 10.69,
+    "streets": 143,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 1,528 条 > 真门牌号行 155 条×150% → 拒绝这套产物",
+   "seconds": 0.9
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 3149,
+   "kept": 0,
+   "contentful": 2834,
+   "kept_contentful": 0,
+   "true_addr": 155,
+   "ratio": 0.0,
+   "coverage": 0.9,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 2834,
+    "no_address_trace": 315
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/2834 = 0%（阈 30%；总行 3,149，带地址 2,834，真门牌号 155）",
+   "seconds": 1.0
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 3097,
+   "PIN": "90913040",
+   "Acreage": 80,
+   "Address": " ",
+   "ParcelID": 90913040,
+   "ACCOUNTNO": "R0090913040",
+   "ACCTTYPE": "Agricultural",
+   "PARCELNO": "90913040",
+   "LEGAL": "13-09-47  S2SE4",
+   "NAME1": "BRADLEY J MICHAEL REVOCABLE TRUST",
+   "NAME2": "DEBRA M MICHAEL FAMILY TRUST",
+   "STREETNO": null,
+   "PREDIRECTI": null,
+   "STREETNAME": null,
+   "STREETTYPE": null,
+   "UNITNAME": null,
+   "ADDRESS1": null,
+   "ADDRESS2": null,
+   "CITY": " ",
+   "STATECODE": "CO",
+   "ZIPCODE": 80737,
+   "SUM_VTSGNV": null,
+   "SUM_VTSG_1": null,
+   "APPRAISALT": null,
+   "Paste_Value_only_from_E__Final_": null,
+   "Shape_Length": 8045.828692704885,
+   "Shape_Area": 3601977.9843219225,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ACCOUNTNO",
+  "ACCTTYPE",
+  "ADDRESS1",
+  "ADDRESS2",
+  "APPRAISALT",
+  "Acreage",
+  "Address",
+  "CITY",
+  "LEGAL",
+  "NAME1",
+  "NAME2",
+  "OBJECTID",
+  "PARCELNO",
+  "PIN",
+  "PREDIRECTI",
+  "ParcelID",
+  "Paste_Value_only_from_E__Final_",
+  "STATECODE",
+  "STREETNAME",
+  "STREETNO",
+  "STREETTYPE",
+  "SUM_VTSGNV",
+  "SUM_VTSG_1",
+  "Shape_Area",
+  "Shape_Length",
+  "UNITNAME",
+  "ZIPCODE",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

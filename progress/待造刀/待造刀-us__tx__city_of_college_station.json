@@ -1,0 +1,270 @@
+{
+ "source_id": "us/tx/city_of_college_station",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 42,910 条 > 真门牌号行 12,185 条×150% → 拒绝这套产物；field_guess@v2:合规 0/42910 = 0%（阈 30%；总行 44,525，带地址 42,910，真门牌号 12,185）；concat_addr@v2:合规 6500/42910 = 15%（阈 30%；总行 44,525，带地址 42,910，真门牌号 12,185））→ 造新规则",
+ "decided_at": "2026-10-12 09:17:25",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 44525,
+   "kept": 42910,
+   "contentful": 42910,
+   "kept_contentful": 42910,
+   "true_addr": 12185,
+   "ratio": 1.0,
+   "coverage": 0.964,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 1615
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 42910,
+     "zip": 42910
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.19,
+    "streets": 2496,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 42,910 条 > 真门牌号行 12,185 条×150% → 拒绝这套产物",
+   "seconds": 1.5
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 44525,
+   "kept": 0,
+   "contentful": 42910,
+   "kept_contentful": 0,
+   "true_addr": 12185,
+   "ratio": 0.0,
+   "coverage": 0.964,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_no_columns": 42910,
+    "no_address_trace": 1615
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/42910 = 0%（阈 30%；总行 44,525，带地址 42,910，真门牌号 12,185）",
+   "seconds": 2.4
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 44525,
+   "kept": 6500,
+   "contentful": 42910,
+   "kept_contentful": 6500,
+   "true_addr": 12185,
+   "ratio": 0.151,
+   "coverage": 0.964,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 36410,
+    "no_address_trace": 1615
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 6362,
+     "zip": 6496
+    },
+    "junk_rate": 0.0,
+    "per_street": 24.25,
+    "streets": 268,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 6500/42910 = 15%（阈 30%；总行 44,525，带地址 42,910，真门牌号 12,185）",
+   "seconds": 5.2
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 44525,
+   "kept": 42804,
+   "contentful": 42910,
+   "kept_contentful": 42804,
+   "true_addr": 12185,
+   "ratio": 0.998,
+   "coverage": 0.964,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 1615,
+    "split_no_street": 106
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 42800,
+     "zip": 42800
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.22,
+    "streets": 2485,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 42,804 条 > 真门牌号行 12,185 条×150% → 拒绝这套产物",
+   "seconds": 6.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 44525,
+   "kept": 0,
+   "contentful": 42910,
+   "kept_contentful": 0,
+   "true_addr": 12185,
+   "ratio": 0.0,
+   "coverage": 0.964,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 42910,
+    "no_address_trace": 1615
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/42910 = 0%（阈 30%；总行 44,525，带地址 42,910，真门牌号 12,185）",
+   "seconds": 7.8
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "created_user": null,
+   "created_date": null,
+   "last_edited_user": "FIRE",
+   "last_edited_date": 1751292280000,
+   "FEATURE_TYPE": "BANK",
+   "JURISDICTION": "CS",
+   "OCCUPANT": "DON ADAM BLDG/AMERICAN MONUMENT BANK (MAIN)",
+   "FULL_ADDRESS": "1 MOMENTUM BLVD",
+   "MF_TYPE": null,
+   "BUILDING_NO": null,
+   "UNIT_LOW": null,
+   "UNIT_HIGH": null,
+   "PROJECT_NO": null,
+   "LANDUSE_TYPE": null,
+   "PROJECT_STATUS": null,
+   "LANDMARK_CLASS": "BANK/LOAN SHOP",
+   "CONTACT_NUMBER": "(979) 774-1111",
+   "Shape__Area": 45953.23046875,
+   "Shape__Length": 1244.5723621491418,
+   "GlobalID": "{F5CCB3A3-261B-4EAD-8575-90888049EB32}",
+   "FIRE_DIST": 6,
+   "CONTACT_NAME": null,
+   "SECONDARY_NUMBER": null,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "BUILDING_NO",
+  "CONTACT_NAME",
+  "CONTACT_NUMBER",
+  "FEATURE_TYPE",
+  "FIRE_DIST",
+  "FULL_ADDRESS",
+  "GlobalID",
+  "JURISDICTION",
+  "LANDMARK_CLASS",
+  "LANDUSE_TYPE",
+  "MF_TYPE",
+  "OBJECTID",
+  "OCCUPANT",
+  "PROJECT_NO",
+  "PROJECT_STATUS",
+  "SECONDARY_NUMBER",
+  "Shape__Area",
+  "Shape__Length",
+  "UNIT_HIGH",
+  "UNIT_LOW",
+  "_file",
+  "created_date",
+  "created_user",
+  "last_edited_date",
+  "last_edited_user"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

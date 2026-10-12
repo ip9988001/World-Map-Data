@@ -1,0 +1,312 @@
+{
+ "source_id": "us/tx/city_of_amarillo",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 125,767 条 > 真门牌号行 32,640 条×150% → 拒绝这套产物；field_guess@v2:合规 487/125784 = 0%（阈 30%；总行 125,790，带地址 125,784，真门牌号 32,640）；concat_addr@v2:合规 26410/125784 = 21%（阈 30%；总行 125,790，带地址 125,784，真门牌号 32,640））→ 造新规则",
+ "decided_at": "2026-10-12 08:53:52",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 125790,
+   "kept": 125767,
+   "contentful": 125784,
+   "kept_contentful": 125767,
+   "true_addr": 32640,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 17,
+    "no_address_trace": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 1,
+     "zip": 0
+    },
+    "junk_rate": 0.0001,
+    "per_street": 36.34,
+    "streets": 3461,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 125,767 条 > 真门牌号行 32,640 条×150% → 拒绝这套产物",
+   "seconds": 6.9
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 125790,
+   "kept": 487,
+   "contentful": 125784,
+   "kept_contentful": 487,
+   "true_addr": 32640,
+   "ratio": 0.004,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_bad_number": 119105,
+    "guess_street_not_text": 6192,
+    "no_address_trace": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 69.57,
+    "streets": 7,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 487/125784 = 0%（阈 30%；总行 125,790，带地址 125,784，真门牌号 32,640）",
+   "seconds": 11.2
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 125790,
+   "kept": 26410,
+   "contentful": 125784,
+   "kept_contentful": 26410,
+   "true_addr": 32640,
+   "ratio": 0.21,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 99374,
+    "no_address_trace": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 15928,
+     "zip": 26410
+    },
+    "junk_rate": 0.0,
+    "per_street": 30.6,
+    "streets": 863,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 26410/125784 = 21%（阈 30%；总行 125,790，带地址 125,784，真门牌号 32,640）",
+   "seconds": 25.3
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 125790,
+   "kept": 125554,
+   "contentful": 125784,
+   "kept_contentful": 125554,
+   "true_addr": 32640,
+   "ratio": 0.998,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 205,
+    "junk_rejected": 17,
+    "no_full_address": 8,
+    "no_address_trace": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 125554,
+     "zip": 125554
+    },
+    "junk_rate": 0.0001,
+    "per_street": 19.02,
+    "streets": 6602,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 125,554 条 > 真门牌号行 32,640 条×150% → 拒绝这套产物",
+   "seconds": 32.4
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 125790,
+   "kept": 0,
+   "contentful": 125784,
+   "kept_contentful": 0,
+   "true_addr": 32640,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 125784,
+    "no_address_trace": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/125784 = 0%（阈 30%；总行 125,790，带地址 125,784，真门牌号 32,640）",
+   "seconds": 36.6
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "MSLINK": 1997.0,
+   "FEA_MSLINK": 77.0,
+   "ADDRESS": 3502.0,
+   "APP_UNIT_ID": null,
+   "ST_DIR": null,
+   "ST_NAME": "KENSINGTON",
+   "ST_TYPE": "PL",
+   "ST_POSTDIR": null,
+   "MUN": "AMAR",
+   "COUNTY": "RAN",
+   "ZIPCODE": 79121.0,
+   "POST_CITY": "AMARILLO",
+   "DATE_MOD": 1268265600000,
+   "MODIFIER": null,
+   "COM_NME": null,
+   "VISIBLE_LABEL": "YES",
+   "GlobalID": "{A36C673D-ECEA-466F-B51C-19CA6C8AAB2E}",
+   "x": -101.93007863,
+   "y": 35.17000357,
+   "suffix": null,
+   "Country": "US",
+   "State": "TX",
+   "Tyler_ID": "AP1997",
+   "Tyler_ST_DIR": null,
+   "Tyler_ST_NAME": "KENSINGTON",
+   "Tyler_ST_TYPE": "PL",
+   "Tyler_ST_POSTDIR": null,
+   "Tyler_SUITE_SPACE_ETC": null,
+   "Tyler_CONCATENATED_ADDRESS": "3502 KENSINGTON PL",
+   "Tyler_ST_NUMBER": 3502,
+   "Tyler_UNIT_TYPE": null,
+   "Tyler_UNIT_NUMBER": null,
+   "Hold_Flag": null,
+   "Hold_Flag_Date": null,
+   "Hold_Flag_Description": null,
+   "created_user": null,
+   "created_date": null,
+   "last_edited_user": "SDE",
+   "last_edited_date": 1782251176000,
+   "UtilityBillingServicePoint": "YES",
+   "AddressType": "Basic Address",
+   "Notes": null,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDRESS",
+  "APP_UNIT_ID",
+  "AddressType",
+  "COM_NME",
+  "COUNTY",
+  "Country",
+  "DATE_MOD",
+  "FEA_MSLINK",
+  "GlobalID",
+  "Hold_Flag",
+  "Hold_Flag_Date",
+  "Hold_Flag_Description",
+  "MODIFIER",
+  "MSLINK",
+  "MUN",
+  "Notes",
+  "OBJECTID",
+  "POST_CITY",
+  "ST_DIR",
+  "ST_NAME",
+  "ST_POSTDIR",
+  "ST_TYPE",
+  "State",
+  "Tyler_CONCATENATED_ADDRESS",
+  "Tyler_ID",
+  "Tyler_ST_DIR",
+  "Tyler_ST_NAME",
+  "Tyler_ST_NUMBER",
+  "Tyler_ST_POSTDIR",
+  "Tyler_ST_TYPE",
+  "Tyler_SUITE_SPACE_ETC",
+  "Tyler_UNIT_NUMBER",
+  "Tyler_UNIT_TYPE",
+  "UtilityBillingServicePoint",
+  "VISIBLE_LABEL",
+  "ZIPCODE",
+  "_file",
+  "created_date",
+  "created_user",
+  "last_edited_date",
+  "last_edited_user",
+  "suffix",
+  "x",
+  "y"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

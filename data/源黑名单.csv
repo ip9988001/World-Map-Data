@@ -85,3 +85,12 @@ us/nc/cleveland,NOT_ADDRESS,"本地抽查：41,366 行里没有一行带地址�
 us/va/city_of_rural_retreat,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-11 07:29,2026-11-10,1
 us/nc/city_of_king,NOT_ADDRESS,本地抽查：390 行里没有一行带地址内容（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用,{},2026-10-11 07:29,2026-11-10,1
 us/il/city_of_chicago,NOT_ADDRESS,"本地抽查：605,558 行里没有一行带地址内容（全是空置地块/无门牌号税档）→ 源不含门牌点，不适用",{},2026-10-11 07:38,2026-11-10,1
+us/wv/monongalia,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:05,2026-11-11,1
+us/va/city_of_alexandria,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:21,2026-11-11,1
+us/id/nez_perce,SOURCE_BROKEN,取数失败：HTTPError: HTTP Error 403: Forbidden,"{""url"": ""https://gis.co.nezperce.id.us/arcgis/rest/services/Public/PropertyMap/MapServer/0"", ""status"": 403, ""bytes"": 0, ""content_type"": """", ""head"": ""Forbidden"", ""verdict_hint"": ""SOURCE_BROKEN: 403 需鉴权/被封""}",2026-10-12 09:30,2026-11-11,1
+us/wy/crook,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:31,2026-11-11,1
+us/md/city_of_rockville,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:04,2026-11-11,1
+us/wi/juneau,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:24,2026-11-11,1
+us/sc/charleston,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:13,2026-11-11,1
+us/ca/tehama,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-12 09:18,2026-11-11,1
+us/ak/statewide,SOURCE_BROKEN,"取数失败：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}","{""url"": ""https://services3.arcgis.com/3NvWZvRqANiCzqqd/arcgis/rest/services/NG911_Alaska_Address_gdb/FeatureServer/0"", ""status"": 200, ""bytes"": 1184, ""content_type"": ""text/html; charset=utf-8"", ""head"": ""<html lang=\""en\"">\r\n<head>\r\n  <title>Home</title>\r\n  <link href='/ESRI.ArcGIS.SDS.REST.css' rel='stylesheet' type='text/css'>\r\n  <link rel='SHORTCUT ICON' href='/favicon.ico'>\r\n<meta http-equiv=\""Content"", ""verdict_hint"": ""UNSURE: 200 text/html; charset=utf-8 1184B""}",2026-10-12 14:18,2026-11-11,1

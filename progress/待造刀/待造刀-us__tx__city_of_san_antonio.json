@@ -1,0 +1,254 @@
+{
+ "source_id": "us/tx/city_of_san_antonio",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 625,690 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物；field_guess@v2:合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）；concat_addr@v2:合规 68726/625690 = 11%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064））→ 造新规则",
+ "decided_at": "2026-10-12 09:07:35",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 625715,
+   "kept": 625690,
+   "contentful": 625690,
+   "kept_contentful": 625690,
+   "true_addr": 320064,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 625690,
+     "zip": 625690
+    },
+    "junk_rate": 0.0,
+    "per_street": 28.59,
+    "streets": 21888,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 625,690 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物",
+   "seconds": 44.7
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 625715,
+   "kept": 0,
+   "contentful": 625690,
+   "kept_contentful": 0,
+   "true_addr": 320064,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 625690,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
+   "seconds": 69.0
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 625715,
+   "kept": 68726,
+   "contentful": 625690,
+   "kept_contentful": 68726,
+   "true_addr": 320064,
+   "ratio": 0.11,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 556964,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 68158,
+     "zip": 68726
+    },
+    "junk_rate": 0.0,
+    "per_street": 41.3,
+    "streets": 1664,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 68726/625690 = 11%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
+   "seconds": 132.9
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 625715,
+   "kept": 624069,
+   "contentful": 625690,
+   "kept_contentful": 624069,
+   "true_addr": 320064,
+   "ratio": 0.997,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 1621,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 624069,
+     "zip": 624069
+    },
+    "junk_rate": 0.0,
+    "per_street": 28.58,
+    "streets": 21838,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 624,069 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物",
+   "seconds": 180.9
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 625715,
+   "kept": 0,
+   "contentful": 625690,
+   "kept_contentful": 0,
+   "true_addr": 320064,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 625690,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
+   "seconds": 209.6
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "AddrKey": 1131125,
+   "HouseNumber": 8263,
+   "StreetNameID": 94364,
+   "PreDirection": null,
+   "Name": "PHANTOM FIELD",
+   "AbbrevType": null,
+   "PostDirection": null,
+   "TownCode": "14",
+   "CouncilDist": "0",
+   "XCoord": 2031278.7,
+   "YCoord": 13736147.7,
+   "EntryDate": 1552555073000,
+   "ModifiedDate": 1552555211000,
+   "Address": "8263 PHANTOM FIELD",
+   "ExpiredDate": null,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AbbrevType",
+  "AddrKey",
+  "Address",
+  "CouncilDist",
+  "EntryDate",
+  "ExpiredDate",
+  "HouseNumber",
+  "ModifiedDate",
+  "Name",
+  "OBJECTID",
+  "PostDirection",
+  "PreDirection",
+  "StreetNameID",
+  "TownCode",
+  "XCoord",
+  "YCoord",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

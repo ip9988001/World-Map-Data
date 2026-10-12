@@ -1,0 +1,256 @@
+{
+ "source_id": "us/mo/perry",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 11,377 条 > 真门牌号行 859 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 8,606 条 > 真门牌号行 859 条×150% → 拒绝这套产物；concat_addr@v2:合规 743/11403 = 7%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859））→ 造新规则",
+ "decided_at": "2026-10-12 08:53:53",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 11403,
+   "kept": 11377,
+   "contentful": 11403,
+   "kept_contentful": 11377,
+   "true_addr": 859,
+   "ratio": 0.998,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 26
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 11377,
+     "zip": 11377
+    },
+    "junk_rate": 0.0,
+    "per_street": 13.87,
+    "streets": 820,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 11,377 条 > 真门牌号行 859 条×150% → 拒绝这套产物",
+   "seconds": 0.8
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 11403,
+   "kept": 8606,
+   "contentful": 11403,
+   "kept_contentful": 8606,
+   "true_addr": 859,
+   "ratio": 0.755,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 2771,
+    "no_street": 26
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 8606,
+     "zip": 8606
+    },
+    "junk_rate": 0.0,
+    "per_street": 14.59,
+    "streets": 590,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 8,606 条 > 真门牌号行 859 条×150% → 拒绝这套产物",
+   "seconds": 1.6
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 11403,
+   "kept": 743,
+   "contentful": 11403,
+   "kept_contentful": 743,
+   "true_addr": 859,
+   "ratio": 0.065,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 10660
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 482,
+     "zip": 743
+    },
+    "junk_rate": 0.0,
+    "per_street": 16.89,
+    "streets": 44,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 743/11403 = 7%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 2.9
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 11403,
+   "kept": 11355,
+   "contentful": 11403,
+   "kept_contentful": 11355,
+   "true_addr": 859,
+   "ratio": 0.996,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 39,
+    "junk_rejected": 9
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 11355,
+     "zip": 11355
+    },
+    "junk_rate": 0.0008,
+    "per_street": 10.36,
+    "streets": 1096,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 11,355 条 > 真门牌号行 859 条×150% → 拒绝这套产物",
+   "seconds": 3.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 11403,
+   "kept": 0,
+   "contentful": 11403,
+   "kept_contentful": 0,
+   "true_addr": 859,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 11403
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 4.3
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "Alias2": " ",
+   "PARCEL_ID": " ",
+   "Longitude": -89.9292413534,
+   "Latitude": 37.5984009928,
+   "X_Coord": 771101.4646,
+   "Y_Coord": 4165693.148,
+   "NAT_GRID": "16SBG4139565294",
+   "FullAddress": "278 ACORN LN",
+   "StructureNumber": 278,
+   "StructureNumber2": " ",
+   "Type": " ",
+   "Designation": " ",
+   "SubUnit": " ",
+   "CompositeStreet": "ACORN LN",
+   "StreetName": "ACORN",
+   "StreetType": "LN",
+   "Alias": "624",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Alias",
+  "Alias2",
+  "CompositeStreet",
+  "Designation",
+  "FullAddress",
+  "Latitude",
+  "Longitude",
+  "NAT_GRID",
+  "OBJECTID",
+  "PARCEL_ID",
+  "StreetName",
+  "StreetType",
+  "StructureNumber",
+  "StructureNumber2",
+  "SubUnit",
+  "Type",
+  "X_Coord",
+  "Y_Coord",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

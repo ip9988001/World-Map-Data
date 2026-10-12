@@ -1,0 +1,272 @@
+{
+ "source_id": "us/me/lewiston",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 13,035 条 > 真门牌号行 3,217 条×150% → 拒绝这套产物；field_guess@v2:合规 74/13040 = 1%（阈 30%；总行 13,065，带地址 13,040，真门牌号 3,217）；concat_addr@v2:合规 3184/13040 = 24%（阈 30%；总行 13,065，带地址 13,040，真门牌号 3,217））→ 造新规则",
+ "decided_at": "2026-10-12 09:16:49",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 13065,
+   "kept": 13035,
+   "contentful": 13040,
+   "kept_contentful": 13035,
+   "true_addr": 3217,
+   "ratio": 1.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 25,
+    "no_number": 5
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 13035,
+     "zip": 13035
+    },
+    "junk_rate": 0.0,
+    "per_street": 19.4,
+    "streets": 672,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 13,035 条 > 真门牌号行 3,217 条×150% → 拒绝这套产物",
+   "seconds": 0.9
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 13065,
+   "kept": 74,
+   "contentful": 13040,
+   "kept_contentful": 74,
+   "true_addr": 3217,
+   "ratio": 0.006,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 12961,
+    "no_address_trace": 25,
+    "guess_bad_number": 5
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 74,
+     "zip": 74
+    },
+    "junk_rate": 0.0,
+    "per_street": 5.29,
+    "streets": 14,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 74/13040 = 1%（阈 30%；总行 13,065，带地址 13,040，真门牌号 3,217）",
+   "seconds": 1.5
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 13065,
+   "kept": 3184,
+   "contentful": 13040,
+   "kept_contentful": 3184,
+   "true_addr": 3217,
+   "ratio": 0.244,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 9856,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 3136,
+     "zip": 3166
+    },
+    "junk_rate": 0.0,
+    "per_street": 12.02,
+    "streets": 265,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 3184/13040 = 24%（阈 30%；总行 13,065，带地址 13,040，真门牌号 3,217）",
+   "seconds": 3.1
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 13065,
+   "kept": 12904,
+   "contentful": 13040,
+   "kept_contentful": 12904,
+   "true_addr": 3217,
+   "ratio": 0.99,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 134,
+    "no_address_trace": 25,
+    "no_full_address": 1,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 12904,
+     "zip": 12904
+    },
+    "junk_rate": 0.0001,
+    "per_street": 11.94,
+    "streets": 1081,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 12,904 条 > 真门牌号行 3,217 条×150% → 拒绝这套产物",
+   "seconds": 4.0
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 13065,
+   "kept": 0,
+   "contentful": 13040,
+   "kept_contentful": 0,
+   "true_addr": 3217,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 13040,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/13040 = 0%（阈 30%；总行 13,065，带地址 13,040，真门牌号 3,217）",
+   "seconds": 4.6
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 308,
+   "TYPE": 1,
+   "LOCATION": "309 FERRY RD",
+   "DateEdit": null,
+   "UNIT": null,
+   "ADDRNO": 309,
+   "STREET": "FERRY RD",
+   "PARCELID": "RE00011241",
+   "X": 2949989.67054264,
+   "Y": 437128.2875,
+   "PID": null,
+   "PRE_DIR": null,
+   "STREET_NM": "FERRY",
+   "SUFFIX": "RD",
+   "POST_DIR": null,
+   "ADD_ID": 4,
+   "Facility_ID": "addr-4",
+   "GIS_ID": "132-4",
+   "JURISTICTION": "LEWISTON",
+   "CreationUser": null,
+   "CreationDate": null,
+   "ModifiedbyUser": "JWARD",
+   "ModifiedDate": 1692027470000,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDRNO",
+  "ADD_ID",
+  "CreationDate",
+  "CreationUser",
+  "DateEdit",
+  "Facility_ID",
+  "GIS_ID",
+  "JURISTICTION",
+  "LOCATION",
+  "ModifiedDate",
+  "ModifiedbyUser",
+  "OBJECTID",
+  "PARCELID",
+  "PID",
+  "POST_DIR",
+  "PRE_DIR",
+  "STREET",
+  "STREET_NM",
+  "SUFFIX",
+  "TYPE",
+  "UNIT",
+  "X",
+  "Y",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

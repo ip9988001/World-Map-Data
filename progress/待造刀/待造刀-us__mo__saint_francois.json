@@ -1,0 +1,252 @@
+{
+ "source_id": "us/mo/saint_francois",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 42,582 条 > 真门牌号行 3,740 条×150% → 拒绝这套产物；field_guess@v2:合规 3187/42709 = 7%（阈 30%；总行 42,709，带地址 42,709，真门牌号 3,740）；concat_addr@v2:合规 3587/42709 = 8%（阈 30%；总行 42,709，带地址 42,709，真门牌号 3,740））→ 造新规则",
+ "decided_at": "2026-10-12 08:55:25",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 42709,
+   "kept": 42582,
+   "contentful": 42709,
+   "kept_contentful": 42582,
+   "true_addr": 3740,
+   "ratio": 0.997,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 126,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 42582,
+     "zip": 42582
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.4,
+    "streets": 2447,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 42,582 条 > 真门牌号行 3,740 条×150% → 拒绝这套产物",
+   "seconds": 2.8
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 42709,
+   "kept": 3187,
+   "contentful": 42709,
+   "kept_contentful": 3187,
+   "true_addr": 3740,
+   "ratio": 0.075,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 38487,
+    "guess_bad_number": 1035
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 3187
+    },
+    "junk_rate": 0.0,
+    "per_street": 30.35,
+    "streets": 105,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 3187/42709 = 7%（阈 30%；总行 42,709，带地址 42,709，真门牌号 3,740）",
+   "seconds": 4.4
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 42709,
+   "kept": 3587,
+   "contentful": 42709,
+   "kept_contentful": 3587,
+   "true_addr": 3740,
+   "ratio": 0.084,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 39002,
+    "no_street": 120
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 3237,
+     "zip": 3587
+    },
+    "junk_rate": 0.0,
+    "per_street": 18.78,
+    "streets": 191,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 3587/42709 = 8%（阈 30%；总行 42,709，带地址 42,709，真门牌号 3,740）",
+   "seconds": 8.2
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 42709,
+   "kept": 42558,
+   "contentful": 42709,
+   "kept_contentful": 42558,
+   "true_addr": 3740,
+   "ratio": 0.996,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 150,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 42558,
+     "zip": 42558
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.41,
+    "streets": 2445,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 42,558 条 > 真门牌号行 3,740 条×150% → 拒绝这套产物",
+   "seconds": 11.1
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 42709,
+   "kept": 0,
+   "contentful": 42709,
+   "kept_contentful": 0,
+   "true_addr": 3740,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 42709
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/42709 = 0%（阈 30%；总行 42,709，带地址 42,709，真门牌号 3,740）",
+   "seconds": 12.9
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 41399,
+   "FullAddress": "1710 HIGHWAY H",
+   "StructureNumber": 1710,
+   "Type": " ",
+   "SubUnit": " ",
+   "StreetName": "HIGHWAY H",
+   "Alias": " ",
+   "Alias2": " ",
+   "Longitude": -90.4132609745,
+   "Latitude": 37.7054838323,
+   "X_Coord": -90.4132548,
+   "Y_Coord": 37.70547687,
+   "NAT_GRID": "15SYB2803476288",
+   "PARCEL_ID": "13-90-30-00-000-0022.02",
+   "DataSource": "SFC 911",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Alias",
+  "Alias2",
+  "DataSource",
+  "FullAddress",
+  "Latitude",
+  "Longitude",
+  "NAT_GRID",
+  "OBJECTID",
+  "PARCEL_ID",
+  "StreetName",
+  "StructureNumber",
+  "SubUnit",
+  "Type",
+  "X_Coord",
+  "Y_Coord",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
