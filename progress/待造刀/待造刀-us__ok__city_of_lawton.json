@@ -2,7 +2,7 @@
  "source_id": "us/ok/city_of_lawton",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 12,213 条 > 真门牌号行 1,932 条×150% → 拒绝这套产物；field_guess@v2:合规 491/12214 = 4%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）；concat_addr@v2:合规 1932/12214 = 16%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932））→ 造新规则",
- "decided_at": "2026-10-12 15:33:18",
+ "decided_at": "2026-10-12 19:45:49",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -172,6 +172,170 @@
    "seconds": 3.2
   },
   {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 15591,
+   "kept": 0,
+   "contentful": 12214,
+   "kept_contentful": 0,
+   "true_addr": 1932,
+   "ratio": 0.0,
+   "coverage": 0.783,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 12214,
+    "no_address_trace": 3377
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/12214 = 0%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）",
+   "seconds": 3.6
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 15591,
+   "kept": 0,
+   "contentful": 12214,
+   "kept_contentful": 0,
+   "true_addr": 1932,
+   "ratio": 0.0,
+   "coverage": 0.783,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 12214,
+    "no_address_trace": 3377
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/12214 = 0%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）",
+   "seconds": 4.1
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 15591,
+   "kept": 0,
+   "contentful": 12214,
+   "kept_contentful": 0,
+   "true_addr": 1932,
+   "ratio": 0.0,
+   "coverage": 0.783,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 12214,
+    "no_address_trace": 3377
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/12214 = 0%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）",
+   "seconds": 4.6
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 15591,
+   "kept": 0,
+   "contentful": 12214,
+   "kept_contentful": 0,
+   "true_addr": 1932,
+   "ratio": 0.0,
+   "coverage": 0.783,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 12214,
+    "no_address_trace": 3377
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/12214 = 0%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）",
+   "seconds": 5.1
+  },
+  {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
    "rows": 15591,
    "kept": 0,
@@ -210,7 +374,7 @@
     "contract": false
    },
    "why": "合规 0/12214 = 0%（阈 30%；总行 15,591，带地址 12,214，真门牌号 1,932）",
-   "seconds": 3.7
+   "seconds": 5.6
   }
  ],
  "evidence": {},

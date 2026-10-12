@@ -2,7 +2,7 @@
  "source_id": "us/mo/perry",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 11,377 条 > 真门牌号行 859 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 8,606 条 > 真门牌号行 859 条×150% → 拒绝这套产物；concat_addr@v2:合规 743/11403 = 7%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859））→ 造新规则",
- "decided_at": "2026-10-12 15:33:26",
+ "decided_at": "2026-10-12 19:46:04",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -167,6 +167,166 @@
    "seconds": 3.7
   },
   {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 11403,
+   "kept": 0,
+   "contentful": 11403,
+   "kept_contentful": 0,
+   "true_addr": 859,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 11403
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 4.2
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 11403,
+   "kept": 0,
+   "contentful": 11403,
+   "kept_contentful": 0,
+   "true_addr": 859,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 11403
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 4.7
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 11403,
+   "kept": 0,
+   "contentful": 11403,
+   "kept_contentful": 0,
+   "true_addr": 859,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 11403
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 5.2
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 11403,
+   "kept": 0,
+   "contentful": 11403,
+   "kept_contentful": 0,
+   "true_addr": 859,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 11403
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
+   "seconds": 5.7
+  },
+  {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
    "rows": 11403,
    "kept": 0,
@@ -204,7 +364,7 @@
     "contract": false
    },
    "why": "合规 0/11403 = 0%（阈 30%；总行 11,403，带地址 11,403，真门牌号 859）",
-   "seconds": 4.3
+   "seconds": 6.2
   }
  ],
  "evidence": {},

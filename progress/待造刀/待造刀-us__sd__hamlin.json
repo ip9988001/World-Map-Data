@@ -2,7 +2,7 @@
  "source_id": "us/sd/hamlin",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）；field_guess@v2:合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）；concat_addr@v2:合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101））→ 造新规则",
- "decided_at": "2026-10-12 15:30:39",
+ "decided_at": "2026-10-12 19:42:00",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -166,7 +166,171 @@
     "contract": false
    },
    "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
-   "seconds": 0.5
+   "seconds": 0.6
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 6383,
+   "kept": 0,
+   "contentful": 66,
+   "kept_contentful": 0,
+   "true_addr": 101,
+   "ratio": 0.0,
+   "coverage": 0.01,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 6317,
+    "no_number": 66
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
+   "seconds": 0.7
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 6383,
+   "kept": 0,
+   "contentful": 66,
+   "kept_contentful": 0,
+   "true_addr": 101,
+   "ratio": 0.0,
+   "coverage": 0.01,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 6317,
+    "no_number": 66
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
+   "seconds": 0.8
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 6383,
+   "kept": 0,
+   "contentful": 66,
+   "kept_contentful": 0,
+   "true_addr": 101,
+   "ratio": 0.0,
+   "coverage": 0.01,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 6317,
+    "no_number": 66
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
+   "seconds": 1.0
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 6383,
+   "kept": 0,
+   "contentful": 66,
+   "kept_contentful": 0,
+   "true_addr": 101,
+   "ratio": 0.0,
+   "coverage": 0.01,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 6317,
+    "no_number": 66
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
+   "seconds": 1.1
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -207,7 +371,7 @@
     "contract": false
    },
    "why": "合规 0/66 = 0%（阈 30%；总行 6,383，带地址 66，真门牌号 101）",
-   "seconds": 0.7
+   "seconds": 1.2
   }
  ],
  "evidence": {},

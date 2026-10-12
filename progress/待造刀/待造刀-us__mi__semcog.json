@@ -1,0 +1,428 @@
+{
+ "source_id": "us/mi/semcog",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 47,651 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 32,689 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物；concat_addr@v2:合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226））→ 造新规则",
+ "decided_at": "2026-10-12 19:47:59",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 153764,
+   "kept": 47651,
+   "contentful": 47652,
+   "kept_contentful": 47651,
+   "true_addr": 17226,
+   "ratio": 1.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "number_is_zip": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 47651,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 36.68,
+    "streets": 1299,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 47,651 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
+   "seconds": 6.0
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 153764,
+   "kept": 32689,
+   "contentful": 47652,
+   "kept_contentful": 32689,
+   "true_addr": 17226,
+   "ratio": 0.686,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "guess_street_not_text": 14962,
+    "number_is_zip": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 35.92,
+    "streets": 910,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 32,689 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
+   "seconds": 11.9
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "v2_no_site_column": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 19.7
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 153764,
+   "kept": 31031,
+   "contentful": 47652,
+   "kept_contentful": 31031,
+   "true_addr": 17226,
+   "ratio": 0.651,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_full_address": 16621
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 31031,
+     "zip": 31031
+    },
+    "junk_rate": 0.0,
+    "per_street": 1.1,
+    "streets": 28219,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 31,031 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
+   "seconds": 25.7
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_number": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 30.2
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_number": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 34.8
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_number": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 39.6
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_number": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 44.1
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 153764,
+   "kept": 0,
+   "contentful": 47652,
+   "kept_contentful": 0,
+   "true_addr": 17226,
+   "ratio": 0.0,
+   "coverage": 0.31,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 106112,
+    "no_number": 47652
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
+   "seconds": 48.9
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "building_id": 4132901,
+   "res_sqft": 1094,
+   "created_user": null,
+   "loadd1": 2767,
+   "globalid": "{DB70FF71-EDAB-43CB-A503-B95AE4179980}",
+   "unit1": null,
+   "parcel_id": 4122089,
+   "zipcode": 48105,
+   "last_edited_user": null,
+   "nonres_sqft": 0,
+   "housing_units": 1,
+   "year_built": 2003,
+   "street1": "SOUTH KNIGHTSBRIDGE CIR",
+   "last_edited_date": null,
+   "created_date": null,
+   "hiadd1": 0,
+   "objectid": 1,
+   "apn": "09-09-16-200-066",
+   "condo_id": 4707518,
+   "city_id": 4005,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "_file",
+  "apn",
+  "building_id",
+  "city_id",
+  "condo_id",
+  "created_date",
+  "created_user",
+  "globalid",
+  "hiadd1",
+  "housing_units",
+  "last_edited_date",
+  "last_edited_user",
+  "loadd1",
+  "nonres_sqft",
+  "objectid",
+  "parcel_id",
+  "res_sqft",
+  "street1",
+  "unit1",
+  "year_built",
+  "zipcode"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

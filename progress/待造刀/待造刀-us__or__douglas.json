@@ -2,7 +2,7 @@
  "source_id": "us/or/douglas",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）；field_guess@v2:合规 91/1378 = 7%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）；concat_addr@v2:合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418））→ 造新规则",
- "decided_at": "2026-10-12 15:36:48",
+ "decided_at": "2026-10-12 19:52:12",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -125,7 +125,7 @@
     "contract": false
    },
    "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
-   "seconds": 23.6
+   "seconds": 23.7
   },
   {
    "rule": "concat_addr@v1",
@@ -166,7 +166,171 @@
     "contract": false
    },
    "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
-   "seconds": 31.4
+   "seconds": 31.5
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 58442,
+   "kept": 0,
+   "contentful": 1378,
+   "kept_contentful": 0,
+   "true_addr": 58418,
+   "ratio": 0.0,
+   "coverage": 0.024,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 57064,
+    "no_number": 1378
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
+   "seconds": 39.3
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 58442,
+   "kept": 0,
+   "contentful": 1378,
+   "kept_contentful": 0,
+   "true_addr": 58418,
+   "ratio": 0.0,
+   "coverage": 0.024,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 57064,
+    "no_number": 1378
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
+   "seconds": 47.0
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 58442,
+   "kept": 0,
+   "contentful": 1378,
+   "kept_contentful": 0,
+   "true_addr": 58418,
+   "ratio": 0.0,
+   "coverage": 0.024,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 57064,
+    "no_number": 1378
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
+   "seconds": 54.8
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 58442,
+   "kept": 0,
+   "contentful": 1378,
+   "kept_contentful": 0,
+   "true_addr": 58418,
+   "ratio": 0.0,
+   "coverage": 0.024,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 57064,
+    "no_number": 1378
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
+   "seconds": 62.6
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -207,7 +371,7 @@
     "contract": false
    },
    "why": "合规 0/1378 = 0%（阈 30%；总行 58,442，带地址 1,378，真门牌号 58,418）",
-   "seconds": 39.2
+   "seconds": 70.4
   }
  ],
  "evidence": {},

@@ -2,7 +2,7 @@
  "source_id": "us/tx/city_of_sherman",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 19,176 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；concat_addr@v2:合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674））→ 造新规则",
- "decided_at": "2026-10-12 15:33:28",
+ "decided_at": "2026-10-12 19:46:30",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -124,7 +124,7 @@
     "contract": false
    },
    "why": "合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 3.8
+   "seconds": 3.9
   },
   {
    "rule": "concat_addr@v1",
@@ -166,7 +166,171 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 20,075 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
-   "seconds": 4.8
+   "seconds": 5.0
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 5.6
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 6.2
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 6.8
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 7.4
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -207,7 +371,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 5.5
+   "seconds": 8.1
   }
  ],
  "evidence": {},

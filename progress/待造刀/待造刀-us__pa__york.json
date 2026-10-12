@@ -2,7 +2,7 @@
  "source_id": "us/pa/york",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 191,545 条 > 真门牌号行 31,620 条×150% → 拒绝这套产物；field_guess@v2:合规 1576/191651 = 1%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）；concat_addr@v2:合规 27268/191651 = 14%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620））→ 造新规则",
- "decided_at": "2026-10-12 15:34:24",
+ "decided_at": "2026-10-12 19:54:20",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -44,7 +44,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 191,545 条 > 真门牌号行 31,620 条×150% → 拒绝这套产物",
-   "seconds": 15.5
+   "seconds": 20.0
   },
   {
    "rule": "field_guess@v2",
@@ -86,7 +86,7 @@
     "contract": false
    },
    "why": "合规 1576/191651 = 1%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
-   "seconds": 26.4
+   "seconds": 33.3
   },
   {
    "rule": "concat_addr@v2",
@@ -127,7 +127,7 @@
     "contract": false
    },
    "why": "合规 27268/191651 = 14%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
-   "seconds": 59.7
+   "seconds": 72.7
   },
   {
    "rule": "concat_addr@v1",
@@ -170,7 +170,171 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 190,575 条 > 真门牌号行 31,620 条×150% → 拒绝这套产物",
-   "seconds": 77.2
+   "seconds": 95.8
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 192164,
+   "kept": 0,
+   "contentful": 191651,
+   "kept_contentful": 0,
+   "true_addr": 31620,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 191651,
+    "no_address_trace": 513
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/191651 = 0%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
+   "seconds": 107.5
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 192164,
+   "kept": 0,
+   "contentful": 191651,
+   "kept_contentful": 0,
+   "true_addr": 31620,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 191651,
+    "no_address_trace": 513
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/191651 = 0%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
+   "seconds": 119.2
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 192164,
+   "kept": 0,
+   "contentful": 191651,
+   "kept_contentful": 0,
+   "true_addr": 31620,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 191651,
+    "no_address_trace": 513
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/191651 = 0%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
+   "seconds": 131.9
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 192164,
+   "kept": 0,
+   "contentful": 191651,
+   "kept_contentful": 0,
+   "true_addr": 31620,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 191651,
+    "no_address_trace": 513
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/191651 = 0%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
+   "seconds": 143.6
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -211,7 +375,7 @@
     "contract": false
    },
    "why": "合规 0/191651 = 0%（阈 30%；总行 192,164，带地址 191,651，真门牌号 31,620）",
-   "seconds": 87.7
+   "seconds": 156.4
   }
  ],
  "evidence": {},

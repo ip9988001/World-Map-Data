@@ -2,7 +2,7 @@
  "source_id": "us/nv/carson_city",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 28,396 条 > 真门牌号行 4,739 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 22,539 条 > 真门牌号行 4,739 条×150% → 拒绝这套产物；concat_addr@v2:合规 4727/28396 = 17%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739））→ 造新规则",
- "decided_at": "2026-10-12 15:36:51",
+ "decided_at": "2026-10-12 19:58:04",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -40,7 +40,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 28,396 条 > 真门牌号行 4,739 条×150% → 拒绝这套产物",
-   "seconds": 1.8
+   "seconds": 2.4
   },
   {
    "rule": "field_guess@v2",
@@ -80,7 +80,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 22,539 条 > 真门牌号行 4,739 条×150% → 拒绝这套产物",
-   "seconds": 3.5
+   "seconds": 4.8
   },
   {
    "rule": "concat_addr@v2",
@@ -120,7 +120,7 @@
     "contract": false
    },
    "why": "合规 4727/28396 = 17%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
-   "seconds": 6.6
+   "seconds": 8.7
   },
   {
    "rule": "concat_addr@v1",
@@ -160,7 +160,167 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 28,377 条 > 真门牌号行 4,739 条×150% → 拒绝这套产物",
-   "seconds": 8.4
+   "seconds": 11.2
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 28396,
+   "kept": 0,
+   "contentful": 28396,
+   "kept_contentful": 0,
+   "true_addr": 4739,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 28396
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/28396 = 0%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
+   "seconds": 12.8
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 28396,
+   "kept": 0,
+   "contentful": 28396,
+   "kept_contentful": 0,
+   "true_addr": 4739,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 28396
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/28396 = 0%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
+   "seconds": 14.4
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 28396,
+   "kept": 0,
+   "contentful": 28396,
+   "kept_contentful": 0,
+   "true_addr": 4739,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 28396
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/28396 = 0%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
+   "seconds": 16.1
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 28396,
+   "kept": 0,
+   "contentful": 28396,
+   "kept_contentful": 0,
+   "true_addr": 4739,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 28396
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/28396 = 0%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
+   "seconds": 17.7
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -200,7 +360,7 @@
     "contract": false
    },
    "why": "合规 0/28396 = 0%（阈 30%；总行 28,396，带地址 28,396，真门牌号 4,739）",
-   "seconds": 9.8
+   "seconds": 19.4
   }
  ],
  "evidence": {},
