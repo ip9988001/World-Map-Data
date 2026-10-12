@@ -1,0 +1,16 @@
+{
+ "attribution": "Arkansas Geographic Information Office",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 10:51:52",
+ "county": "",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -3] Temporary failure in name resolution> → 下轮重试",
+ "source_id": "us/ar/statewide",
+ "stage": "p0",
+ "state": "AR",
+ "url": "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Location/FeatureServer/14",
+ "verdict": "TRANSIENT"
+}

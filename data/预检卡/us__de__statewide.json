@@ -1,0 +1,223 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "HOUSENUMBER",
+  "state": "STATE",
+  "street": "PREFIXDIRECTION",
+  "unit": "COMMUNITY",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 10:53:05",
+ "county": "",
+ "curated_cols": {
+  "city": "CITY",
+  "state": "STATE",
+  "street": "PREFIXDIRECTION",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "HOUSENUMBER",
+  "PREFIXDIRECTION",
+  "STREETNAME",
+  "SUFFIXTYPE",
+  "SUFFIXDIRECTION",
+  "ZIPCODE",
+  "CITY",
+  "STATE",
+  "COUNTY",
+  "COMMUNITY",
+  "UNIT",
+  "UNITTYPE",
+  "UNITID",
+  "UPDATED",
+  "ZIPID",
+  "CITYID"
+ ],
+ "fields_n": 17,
+ "guessed_cols": {
+  "number": "HOUSENUMBER",
+  "unit": "COMMUNITY"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_WEAK",
+ "p1": {
+  "extremes": {
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "BEAR",
+    "最长": "DELAWARE CITY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITYID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "BEAR",
+    "最长": "CLEAR CREEK AT LEXINGTON FARMS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "New Castle",
+    "最长": "New Castle",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSENUMBER": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "2719",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREFIXDIRECTION": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 248,
+    "空率": 0.827
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "DE",
+    "最长": "DE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNAME": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "VANDYKE GREENSPRING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUFFIXDIRECTION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUFFIXTYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 3,
+    "空率": 0.01
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "BLDG",
+    "最长": "BLDG",
+    "空": 298,
+    "空率": 0.993
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UPDATED": {
+    "带特殊字符": 0,
+    "最短": "1778902560000",
+    "最长": "1778902560000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "19810",
+    "最长": "19810",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e7b151ef6be996c6",
+  "total": 532164,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 532164,
+   "full": 532164,
+   "number": 532163,
+   "state": 532164,
+   "street": 532164,
+   "zip": 532164
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 532164,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段可能是够的（**猜的**）：number=HOUSENUMBER street=PREFIXDIRECTION —— 需造刀时用样本确认",
+ "sample_hash": "e7b151ef6be996c6",
+ "site_cols": [
+  "STREETNAME"
+ ],
+ "source_id": "us/de/statewide",
+ "stage": "p0",
+ "state": "DE",
+ "url": "https://enterprise.firstmaptest.delaware.gov/arcgis/rest/services/Location/County_Roads_and_Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

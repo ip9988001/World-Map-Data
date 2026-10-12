@@ -1,0 +1,312 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_NAME",
+  "number": "ADDRESS_NUMBER",
+  "street": "STREET_PREDIRECTION_CODE",
+  "unit": "STREET_NAME_FULL_UNIT",
+  "zip": "ZIP_CODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 10:52:51",
+ "county": "Douglas County",
+ "curated_cols": {
+  "city": "POSTAL_NAME",
+  "number": "ADDRESS_NUMBER",
+  "street": "STREET_PREDIRECTION_CODE",
+  "zip": "ZIP_CODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "FID",
+  "SITUS_ADDRESS_EID",
+  "ADDRESS_ID",
+  "ADDRESS_NUMBER",
+  "ADDRESS_NUMBER_SUFFIX",
+  "UNIT_NO",
+  "BUILDING_NO",
+  "STREET_PREDIRECTION_CODE",
+  "STREET_NAME",
+  "STREET_TYPE_CODE",
+  "STREET_POSTDIRECTION_CODE",
+  "POSTAL_NAME",
+  "ZIP_CODE",
+  "ADDRESS_STATUS_CODE",
+  "ADDRESS_STATUS_DESCRIPTION",
+  "PARCEL_SPN",
+  "LEGAL_DESCR",
+  "BUSINESS_NAME",
+  "REMARK",
+  "LAND_USE",
+  "PRESENTATION_TYPE_CODE",
+  "SUBDIVISION_FILING_EID",
+  "SUBDIVISION_FILING_FULL_NAME",
+  "STREET_NAME_FULL",
+  "STREET_NAME_FULL_UNIT",
+  "ZIP_CODE_FULL",
+  "ADDRESS_USE"
+ ],
+ "fields_n": 28,
+ "guessed_cols": {
+  "unit": "STREET_NAME_FULL_UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "ADDRESSSEARCH",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://www.douglasco.gov/documents/open-data-guidelines.pdf/",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS_ID": {
+    "带特殊字符": 0,
+    "最短": "34005",
+    "最长": "2469244",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "9493",
+    "最长": "17193",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_NUMBER_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRESS_STATUS_CODE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_STATUS_DESCRIPTION": {
+    "带特殊字符": 0,
+    "最短": "RECORDED",
+    "最长": "RECORDED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_USE": {
+    "带特殊字符": 0,
+    "最短": "PARK",
+    "最长": "SINGLE-TENANCY RESIDENTIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUILDING_NO": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "C",
+    "空": 297,
+    "空率": 0.99
+   },
+   "BUSINESS_NAME": {
+    "带特殊字符": 0,
+    "最短": "HIGHLINE CANAL TRAILHEAD",
+    "最长": "SOUTH ENTRANCE TO CHATFIELD STATE PARK AND MAINTENANCE STRUCTURES",
+    "空": 297,
+    "空率": 0.99
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "6465",
+    "最长": "110262",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAND_USE": {
+    "带特殊字符": 0,
+    "最短": "OTHER",
+    "最长": "PLANNED DEVELOPMENT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LEGAL_DESCR": {
+    "带特殊字符": 6,
+    "最短": "LOT 6 SOLSTICE 4    0.166 AM/L",
+    "最长": "TR IN 7-6-68 296.33 AM/L TR IN W1/2 17-6-68 LYING WEST OF RAILROADS 102.65 AM/L ",
+    "空": 2,
+    "空率": 0.007
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_SPN": {
+    "带特殊字符": 0,
+    "最短": "222712000016",
+    "最长": "222712000016",
+    "空": 2,
+    "空率": 0.007
+   },
+   "POSTAL_NAME": {
+    "带特殊字符": 0,
+    "最短": "PARKER",
+    "最长": "LITTLETON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PRESENTATION_TYPE_CODE": {
+    "带特殊字符": 0,
+    "最短": "O",
+    "最长": "STC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REMARK": {
+    "带特殊字符": 8,
+    "最短": "RESIDENCE",
+    "最长": "WET WELL/OVERFLOW STRUCTURE, MIRABELLE/PLUM CREEK WATER & SEWER INFRASTRUCTION P",
+    "空": 1,
+    "空率": 0.003
+   },
+   "SITUS_ADDRESS_EID": {
+    "带特殊字符": 0,
+    "最短": "195746",
+    "最长": "1773694",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME": {
+    "带特殊字符": 0,
+    "最短": "WARM SUN",
+    "最长": "ROXBOROUGH PARK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME_FULL": {
+    "带特殊字符": 0,
+    "最短": "9605 WARM SUN PT",
+    "最长": "11499 ROXBOROUGH PARK RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME_FULL_UNIT": {
+    "带特殊字符": 0,
+    "最短": "9605 WARM SUN PT",
+    "最长": "11497 ROXBOROUGH PARK RD Bldg C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_POSTDIRECTION_CODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_PREDIRECTION_CODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_TYPE_CODE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "PKWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBDIVISION_FILING_EID": {
+    "带特殊字符": 0,
+    "最短": "-1",
+    "最长": "1753545",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBDIVISION_FILING_FULL_NAME": {
+    "带特殊字符": 0,
+    "最短": "SOLSTICE 4",
+    "最长": "OLDE TOWN AT PARKER 1A AMENDMENT 2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT_NO": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "80134",
+    "最长": "80134",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP_CODE_FULL": {
+    "带特殊字符": 0,
+    "最短": "PARKER 80134",
+    "最长": "LITTLETON 80125",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e4323142e15e6b09",
+  "total": 193757,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.896,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 193757,
+   "full": 193757,
+   "number": 193757,
+   "street": 20145,
+   "zip": 193757
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.896, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 SITUS_ADDRESS_EID 拆**（concat_addr）",
+  "total": 193757,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS_NUMBER street=STREET_PREDIRECTION_CODE city=POSTAL_NAME zip=ZIP_CODE",
+ "sample_hash": "e4323142e15e6b09",
+ "site_cols": [
+  "SITUS_ADDRESS_EID",
+  "ADDRESS_ID",
+  "ADDRESS_NUMBER",
+  "ADDRESS_NUMBER_SUFFIX",
+  "STREET_PREDIRECTION_CODE"
+ ],
+ "source_id": "us/co/douglas",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://services.arcgis.com/seTexOicoRXDvRsJ/arcgis/rest/services/Address/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}
