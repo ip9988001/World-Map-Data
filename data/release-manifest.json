@@ -1,44 +1,412 @@
 {
  "a_policy": "A=五要素齐且推断字段≤1（默认；字典只补空缺、标记为 zip_map）",
- "dedup_removed": 5773,
- "generated": "2026-10-12 14:19:58",
+ "dedup_removed": 9732780,
+ "generated": "2026-10-12 11:41:51",
  "grades": {
-  "A": 14225,
-  "B": 0,
+  "A": 28610184,
+  "B": 16454423,
   "C": 0
  },
  "inferred_totals": {
-  "city": 0,
-  "zip": 0
+  "city": 2609657,
+  "zip": 1274933
  },
  "legacy_used": false,
  "merged": {
-  "bytes": 107137,
-  "rows": 14225,
-  "sha256": "b34ad142a55b453acca9126cccf8236892ef96c68a31ce13eb024075536df587"
+  "bytes": 302593370,
+  "rows": 45064607,
+  "sha256": "1513b9d429078b1fd828eedebf25e5b528c67046e2729acc9feebfca02b1ec37"
  },
- "multi_source_records": 0,
+ "multi_source_records": 1365256,
  "parsed_source": "parsed",
  "pipeline": "v2/13-环节",
- "rows": 14225,
- "site_rows": 14225,
+ "rows": 45064607,
+ "site_rows": 28610184,
  "sources": {
   "orphans": [],
   "per_state": {
+   "AK": {
+    "count": 15,
+    "sha256": "7b4a101604c2f6fd536fadba29fc7b2316050258c106f282510ad5da7a8ed981"
+   },
+   "AL": {
+    "count": 17,
+    "sha256": "eda60ecdeff054641d925e09ce144cea2d8615ab962c093b34de66b57836c353"
+   },
+   "AR": {
+    "count": 6,
+    "sha256": "d74c011ca30299b77fcd966bdc36acabdec9b95b39276d9f0d947ad3357b9a77"
+   },
+   "AZ": {
+    "count": 8,
+    "sha256": "28ae3f7ed279d873d7eb273f87aed7c858468651c4ea671d1d1781e24367426d"
+   },
+   "CA": {
+    "count": 49,
+    "sha256": "d2e07482ca310104867d0a7f7b01634f342791031a4481beac0246c23e7fb831"
+   },
    "CO": {
+    "count": 23,
+    "sha256": "46c38d055c16d8ece8152ab847b33d13869338c6d9fada5a897034d06f52ca67"
+   },
+   "CT": {
+    "count": 4,
+    "sha256": "63794546e940eed01808d97ec4090d1ad13dbf8356aa1664ccc998ee0cb7658e"
+   },
+   "DC": {
     "count": 1,
-    "sha256": "937743c1fa0a9523916dfcf844bc335e91c35e74adc6090704d20b6633850692"
+    "sha256": "6fb8dbbf48ac4e54f0fea3e21c3f780b44a4ac30f96ae802f90a5fe08174a2e5"
+   },
+   "DE": {
+    "count": 2,
+    "sha256": "b1fd563cad68329358c13ed7206e8bff4e8589709ef3265fd59aa133f631d4f1"
+   },
+   "FL": {
+    "count": 28,
+    "sha256": "2ec080d02f60eaa2e4b1b94de9d9efd73af2e58c166d5820ef1f106a06578b58"
+   },
+   "GA": {
+    "count": 51,
+    "sha256": "233d7b85d78556a3028a7237a217fdb37c64047fe6a24fd9bc930378bc8622e4"
+   },
+   "HI": {
+    "count": 3,
+    "sha256": "abfa14654559f79d86b82f690b74c39f62dc4421bc0314b728aa48b63c1742e6"
+   },
+   "IA": {
+    "count": 6,
+    "sha256": "1e47da98b2c9fca665781f7886438e068563fc17cf8c9533112ca495a8b6775b"
+   },
+   "ID": {
+    "count": 6,
+    "sha256": "62d6e49f04bb51fdd2f5c27a630015958d6880e910cca2799515470d34b7a23a"
+   },
+   "IL": {
+    "count": 30,
+    "sha256": "b5190b89ce3bfc1625fa3c8c37751023e542e2c28b35b7494357e36fd10ecd15"
+   },
+   "IN": {
+    "count": 11,
+    "sha256": "10421035fac8c93e66921d91b0203b107898a9a1302d00b988def59384538f80"
+   },
+   "KS": {
+    "count": 16,
+    "sha256": "2c2a3b252c93d9e73f7f47b205c47423fe96145684216fec2e8d9bc712ef190b"
+   },
+   "KY": {
+    "count": 10,
+    "sha256": "35ff0ad39dca6cb9a65b50bb07eb489e3df00b12e39932bddc1f713968ffa4d8"
+   },
+   "LA": {
+    "count": 13,
+    "sha256": "ed45359045a9a8605663f3c9f01216c628031dd3592ea1a1dff5e262216f0235"
+   },
+   "MA": {
+    "count": 3,
+    "sha256": "69dcc4678cb25577e0fce96fd704491869e1782aab5cff18fd718fe56c60a359"
+   },
+   "MD": {
+    "count": 14,
+    "sha256": "f703d3ab66b8bea351abe8b5baa6e22317eba6ce9858e0a0cbd0f17ba1a417ff"
+   },
+   "ME": {
+    "count": 2,
+    "sha256": "f0f8e6da2456e61dd6de92de50a6d0afad7dc23321c61dff254d7243ed8b718d"
+   },
+   "MI": {
+    "count": 16,
+    "sha256": "e0471cee393a4dc43d973bb3b9828d9f13ce2e37d6d8798676bfc0337f3164c9"
+   },
+   "MN": {
+    "count": 14,
+    "sha256": "06c1289823ab80cc74f8317942347dc76ee03ee99e5560e25c26396780b4812c"
+   },
+   "MO": {
+    "count": 11,
+    "sha256": "610411114a5da69816b9affd84d3346fc3ab65fb942321700b49465902b29297"
+   },
+   "MS": {
+    "count": 11,
+    "sha256": "415e14a12ff99e7fa2babab46d62ff65938ca7de972429c6730deac148c2e441"
+   },
+   "MT": {
+    "count": 1,
+    "sha256": "a1d92619d2f307fc97b13fa8bc634e13f39650d81236422622e8cb610fb6945c"
+   },
+   "NC": {
+    "count": 19,
+    "sha256": "e963ceeb6690bd87e7d49f0251f3d0a3e3ce3cbeaa32cc3265d3597423806008"
+   },
+   "ND": {
+    "count": 11,
+    "sha256": "21e5a303a8e748953ea6aa74068ecd738c50242d512f47266e917732c156f687"
+   },
+   "NE": {
+    "count": 1,
+    "sha256": "ce39e72b78aec62432ddf918f518375bf2b876e0f296548361460205ecd2ebb6"
+   },
+   "NH": {
+    "count": 1,
+    "sha256": "0b6858e139ed7a835d99447a86cd12f70caae18dfaf26d8242211955a844338e"
+   },
+   "NJ": {
+    "count": 5,
+    "sha256": "38337e38c09c84a19356b6ee2463075936aad985d490e74c326a8cb1a9264d0e"
+   },
+   "NM": {
+    "count": 7,
+    "sha256": "62e8ed64659c959085f87cc3cd39841220b74f60ab8d41dadced713b22b640eb"
+   },
+   "NV": {
+    "count": 12,
+    "sha256": "f77472e2b82b87fa4de94095c2e579642146773f8bea3694a21a1fd0ae1d11c4"
+   },
+   "NY": {
+    "count": 10,
+    "sha256": "4e455e660449a3f904d3cffe0af240729fa08c85c57d02b99d9f8a57a9f7d491"
+   },
+   "OH": {
+    "count": 15,
+    "sha256": "bcf183975034967c3488a8a51e3dfa24395bf09b1ace0c8a264c468c365371b0"
+   },
+   "OK": {
+    "count": 4,
+    "sha256": "393c78bc07895d6aeba7c2f2a5b4f6e609e3c47f1556a1a6eab0182a5046232e"
+   },
+   "OR": {
+    "count": 22,
+    "sha256": "401fb5490fc9e885a20fe8de784a8b502af2f1730c04998aa5df75546b6897a9"
+   },
+   "PA": {
+    "count": 37,
+    "sha256": "ed49aadfcbe5806ed179196a08f3df5bc77bfe8e1d6a112ac34ce85957892a55"
+   },
+   "RI": {
+    "count": 3,
+    "sha256": "6a9f827bd9edad778a9b40bc4144561e4220aa382ba2619f1bba4ea6410b6a53"
+   },
+   "SC": {
+    "count": 17,
+    "sha256": "69f65e9b2527966c74bf7d41ecd71b44dd03dd4738fda4583a242bf0959ec093"
+   },
+   "SD": {
+    "count": 3,
+    "sha256": "3551e8fa60e4c12b45d7afde3f72f216814e4069e5374d5a6600bcb5458aa19a"
+   },
+   "TN": {
+    "count": 10,
+    "sha256": "5967109e9b3feff88dd1905fa91b910ce82f2fc064bd402095ef6b72b580cf53"
+   },
+   "TX": {
+    "count": 23,
+    "sha256": "2e17f83e79f8f26d29dde8b14ca0abdc2b1f3a763c98cc9361cb84d87c8d2c13"
+   },
+   "UT": {
+    "count": 3,
+    "sha256": "243193cacb9b181994bfc36b3b50318e3b3b4041357e0940f809ead496566239"
+   },
+   "VA": {
+    "count": 36,
+    "sha256": "f4b398bfa1562561e8b64a7a859bbc463f5f93654d7555751f843a902f98efe1"
+   },
+   "VT": {
+    "count": 1,
+    "sha256": "410d5f3343fba42613652a89883f7c75c85fd50c5727df3885682094f229f280"
+   },
+   "WA": {
+    "count": 21,
+    "sha256": "b0f61f9643d046a8d309eeabcce4e24e9f14a726074f2111a844b318961b7735"
+   },
+   "WI": {
+    "count": 16,
+    "sha256": "ed8077a6947d95baa8b46b3e7984776c61e8d5c96b2c6167c815042a702d381d"
+   },
+   "WV": {
+    "count": 45,
+    "sha256": "d63c614858fd60ed04c21179526aa11303ce953d42b8b8b67e5ccaeb27675bfa"
+   },
+   "WY": {
+    "count": 5,
+    "sha256": "e984622c8d69f8ac9578143b5c6d0757672b1d38dfd7976f4dea2b04c5849b23"
    }
   },
   "sources_json": {
-   "count": 1,
-   "sha256": "bda731d4719b2b2df2f064ae9f27f54c5a7d7addb300bc201c3fc0bb1a2e1e1d"
+   "count": 577,
+   "sha256": "95f9756ab419a5dab3ee28a9c864445d20990d8b7125871f5d1b53e4515a2f4d"
   }
  },
  "states": {
+  "AK": {
+   "blank_lines": 0,
+   "bytes": 1202691,
+   "field_missing": {
+    "city": 49741,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 49741
+   },
+   "grades": {
+    "A": 108592,
+    "B": 49741,
+    "C": 0
+   },
+   "inferred": {
+    "city": 1,
+    "zip": 2062
+   },
+   "multi_source": 59,
+   "rows": 158333,
+   "sha256": "3e21fc67c946a51de05cf02e41a400cf85cd6eb9cfe4fd7a3589b23549bb7a46",
+   "unique_keys": 158333
+  },
+  "AL": {
+   "blank_lines": 0,
+   "bytes": 5997965,
+   "field_missing": {
+    "city": 214920,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 214972
+   },
+   "grades": {
+    "A": 651500,
+    "B": 214972,
+    "C": 0
+   },
+   "inferred": {
+    "city": 414414,
+    "zip": 19767
+   },
+   "multi_source": 3765,
+   "rows": 866472,
+   "sha256": "b863dbaa1ebb7b783905519bea2e1c40bbae7e162b63a6c3bb79d10e9d0fcb18",
+   "unique_keys": 866472
+  },
+  "AR": {
+   "blank_lines": 0,
+   "bytes": 2065800,
+   "field_missing": {
+    "city": 19165,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 19178
+   },
+   "grades": {
+    "A": 295499,
+    "B": 19178,
+    "C": 0
+   },
+   "inferred": {
+    "city": 166524,
+    "zip": 3
+   },
+   "multi_source": 1,
+   "rows": 314677,
+   "sha256": "c17954b78dfa6fcb0d5f1e48891c7cee5dd7d8aacd8f7cfc6a69293983ce3083",
+   "unique_keys": 314677
+  },
+  "AZ": {
+   "blank_lines": 0,
+   "bytes": 2811251,
+   "field_missing": {
+    "city": 29148,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 29148
+   },
+   "grades": {
+    "A": 390584,
+    "B": 29148,
+    "C": 0
+   },
+   "inferred": {
+    "city": 49318,
+    "zip": 1
+   },
+   "multi_source": 1,
+   "rows": 419732,
+   "sha256": "296faf6dc9f5d510a173f75b9c1f1052c6e47dbf232ba65c1c88a86a40170956",
+   "unique_keys": 419732
+  },
+  "CA": {
+   "blank_lines": 0,
+   "bytes": 38749925,
+   "field_missing": {
+    "city": 2662557,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 2664408
+   },
+   "grades": {
+    "A": 2923357,
+    "B": 2664409,
+    "C": 0
+   },
+   "inferred": {
+    "city": 9810,
+    "zip": 42589
+   },
+   "multi_source": 150164,
+   "rows": 5587766,
+   "sha256": "bc97883d1dc2ff982397cc9756a2591a2465c998abdf8901b5f749f32cef0f57",
+   "unique_keys": 5587766
+  },
   "CO": {
    "blank_lines": 0,
-   "bytes": 107127,
+   "bytes": 7288739,
+   "field_missing": {
+    "city": 448247,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 447975
+   },
+   "grades": {
+    "A": 667158,
+    "B": 448249,
+    "C": 0
+   },
+   "inferred": {
+    "city": 12514,
+    "zip": 1172
+   },
+   "multi_source": 14659,
+   "rows": 1115407,
+   "sha256": "29a6d2093310df6baadbf21a4354347b55d517c3f8266cc62b0e64a7f7f83402",
+   "unique_keys": 1115407
+  },
+  "CT": {
+   "blank_lines": 0,
+   "bytes": 53888,
+   "field_missing": {
+    "city": 8645,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 8645
+   },
+   "grades": {
+    "A": 3,
+    "B": 8645,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 8648,
+   "sha256": "d51ba9963a2921f798947dd2f37cb325c36abf15a1ce5c3cf77813aa032015b0",
+   "unique_keys": 8648
+  },
+  "DC": {
+   "blank_lines": 0,
+   "bytes": 237,
    "field_missing": {
     "city": 0,
     "number": 0,
@@ -47,7 +415,7 @@
     "zip": 0
    },
    "grades": {
-    "A": 14225,
+    "A": 3,
     "B": 0,
     "C": 0
    },
@@ -56,9 +424,1041 @@
     "zip": 0
    },
    "multi_source": 0,
-   "rows": 14225,
-   "sha256": "16a42b647e6eb31d752cfd9fe7a479ead57b1735f7c9c775eb5906768c1e3f61",
-   "unique_keys": 14225
+   "rows": 3,
+   "sha256": "2863db010f0d039f691de7599b8770019f5e52890ec8aa81ecce431b0c673904",
+   "unique_keys": 3
+  },
+  "DE": {
+   "blank_lines": 0,
+   "bytes": 1199422,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 183309,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 183309,
+   "sha256": "d9a71441366a541e7c0afe5994b2119d395c813b975f7d8c3987f100dac20444",
+   "unique_keys": 183309
+  },
+  "FL": {
+   "blank_lines": 0,
+   "bytes": 35074048,
+   "field_missing": {
+    "city": 990710,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 1007525
+   },
+   "grades": {
+    "A": 4541981,
+    "B": 1007525,
+    "C": 0
+   },
+   "inferred": {
+    "city": 100529,
+    "zip": 310481
+   },
+   "multi_source": 8196,
+   "rows": 5549506,
+   "sha256": "f6e5edd78df9db6700642cc7a50d10c0768f4ee3ff90de3ded464183492a15d4",
+   "unique_keys": 5549506
+  },
+  "GA": {
+   "blank_lines": 0,
+   "bytes": 10057398,
+   "field_missing": {
+    "city": 479913,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 495552
+   },
+   "grades": {
+    "A": 982738,
+    "B": 495552,
+    "C": 0
+   },
+   "inferred": {
+    "city": 100351,
+    "zip": 15759
+   },
+   "multi_source": 19261,
+   "rows": 1478290,
+   "sha256": "0da0e6a6ec8aa2056385682ced94a0cf58375d6eebeb51b601e0b1a677d16432",
+   "unique_keys": 1478290
+  },
+  "HI": {
+   "blank_lines": 0,
+   "bytes": 679725,
+   "field_missing": {
+    "city": 102047,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 102047
+   },
+   "grades": {
+    "A": 2,
+    "B": 102047,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 2,
+   "rows": 102049,
+   "sha256": "2471f1c8c9b2f30c424f2e402cb9f5e333d9d1ccdd7d52f61bebb8b748197db2",
+   "unique_keys": 102049
+  },
+  "IA": {
+   "blank_lines": 0,
+   "bytes": 285687,
+   "field_missing": {
+    "city": 29613,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 29613
+   },
+   "grades": {
+    "A": 12187,
+    "B": 29613,
+    "C": 0
+   },
+   "inferred": {
+    "city": 10984,
+    "zip": 0
+   },
+   "multi_source": 8,
+   "rows": 41800,
+   "sha256": "4a3f826adfe4cdfc0a51a85b43cfa6259c30a1256aeba4ffd979545f40c3ed3f",
+   "unique_keys": 41800
+  },
+  "ID": {
+   "blank_lines": 0,
+   "bytes": 299950,
+   "field_missing": {
+    "city": 20605,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 20604
+   },
+   "grades": {
+    "A": 22593,
+    "B": 20605,
+    "C": 0
+   },
+   "inferred": {
+    "city": 18947,
+    "zip": 0
+   },
+   "multi_source": 17,
+   "rows": 43198,
+   "sha256": "08c61fc400a5bbcb541d27ef79230694db59b1da4549d784992b1a3ab771eea2",
+   "unique_keys": 43198
+  },
+  "IL": {
+   "blank_lines": 0,
+   "bytes": 8180674,
+   "field_missing": {
+    "city": 673746,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 678995
+   },
+   "grades": {
+    "A": 500627,
+    "B": 679008,
+    "C": 0
+   },
+   "inferred": {
+    "city": 124973,
+    "zip": 1088
+   },
+   "multi_source": 9210,
+   "rows": 1179635,
+   "sha256": "8d74cce327695a54eaac6c638b6a0467e4adce52b5c5855a7fdcb7d7edc18287",
+   "unique_keys": 1179635
+  },
+  "IN": {
+   "blank_lines": 0,
+   "bytes": 10784502,
+   "field_missing": {
+    "city": 870369,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 870387
+   },
+   "grades": {
+    "A": 753645,
+    "B": 870388,
+    "C": 0
+   },
+   "inferred": {
+    "city": 145422,
+    "zip": 307
+   },
+   "multi_source": 14050,
+   "rows": 1624033,
+   "sha256": "0f79c70ca01308d9342ce4b3405d6b8586a8cd017a42df0ff612bf6f552ecf0b",
+   "unique_keys": 1624033
+  },
+  "KS": {
+   "blank_lines": 0,
+   "bytes": 8002493,
+   "field_missing": {
+    "city": 104129,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 107407
+   },
+   "grades": {
+    "A": 1131702,
+    "B": 107409,
+    "C": 0
+   },
+   "inferred": {
+    "city": 75444,
+    "zip": 9626
+   },
+   "multi_source": 3451,
+   "rows": 1239111,
+   "sha256": "46986e9c3895f080a441fea2c03b29b3e2d6281ed8cc21a4a640b9a29c87d119",
+   "unique_keys": 1239111
+  },
+  "KY": {
+   "blank_lines": 0,
+   "bytes": 3259522,
+   "field_missing": {
+    "city": 19607,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 19608
+   },
+   "grades": {
+    "A": 493062,
+    "B": 19609,
+    "C": 0
+   },
+   "inferred": {
+    "city": 29592,
+    "zip": 34
+   },
+   "multi_source": 270,
+   "rows": 512671,
+   "sha256": "754eedcfcff515197f018fee24ef38486b5c41e5194e6c7ecebf04010797cafc",
+   "unique_keys": 512671
+  },
+  "LA": {
+   "blank_lines": 0,
+   "bytes": 3115933,
+   "field_missing": {
+    "city": 42892,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 47538
+   },
+   "grades": {
+    "A": 425822,
+    "B": 47538,
+    "C": 0
+   },
+   "inferred": {
+    "city": 210053,
+    "zip": 31790
+   },
+   "multi_source": 97,
+   "rows": 473360,
+   "sha256": "89184aee127aa1603601f612a2bb3c94f5744a60a3f4e067c68dad30cb9914a3",
+   "unique_keys": 473360
+  },
+  "MA": {
+   "blank_lines": 0,
+   "bytes": 291939,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 49889,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 1,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 49889,
+   "sha256": "191b1b177a21a7dac2dc7251e0880e0c297ad2848f66d79abc4fb05959b90788",
+   "unique_keys": 49889
+  },
+  "MD": {
+   "blank_lines": 0,
+   "bytes": 6578478,
+   "field_missing": {
+    "city": 399580,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 399616
+   },
+   "grades": {
+    "A": 645601,
+    "B": 399616,
+    "C": 0
+   },
+   "inferred": {
+    "city": 9,
+    "zip": 119
+   },
+   "multi_source": 253,
+   "rows": 1045217,
+   "sha256": "a5b4e4181b3c660e3ca24e2ed46f8e4dab69cdcf3938b884d5fa750e22368f94",
+   "unique_keys": 1045217
+  },
+  "ME": {
+   "blank_lines": 0,
+   "bytes": 3372776,
+   "field_missing": {
+    "city": 581985,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 581985
+   },
+   "grades": {
+    "A": 1,
+    "B": 581985,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 581986,
+   "sha256": "42fe868b41b1f0157e42e648cb5bf505222d54e37ecdc267b8eb375231178446",
+   "unique_keys": 581986
+  },
+  "MI": {
+   "blank_lines": 0,
+   "bytes": 5399726,
+   "field_missing": {
+    "city": 123642,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 123638
+   },
+   "grades": {
+    "A": 670265,
+    "B": 123646,
+    "C": 0
+   },
+   "inferred": {
+    "city": 542,
+    "zip": 31
+   },
+   "multi_source": 529,
+   "rows": 793911,
+   "sha256": "0ef6b482b29acd96364db0a34118ca2192dcc54c5a4f953990c87e8f1df3941f",
+   "unique_keys": 793911
+  },
+  "MN": {
+   "blank_lines": 0,
+   "bytes": 5526872,
+   "field_missing": {
+    "city": 15741,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 15762
+   },
+   "grades": {
+    "A": 826153,
+    "B": 15762,
+    "C": 0
+   },
+   "inferred": {
+    "city": 10,
+    "zip": 259
+   },
+   "multi_source": 15312,
+   "rows": 841915,
+   "sha256": "afb00a65edd11db54adb15e407986c7a8d9e97dd2df9ab506bccb17a06f08770",
+   "unique_keys": 841915
+  },
+  "MO": {
+   "blank_lines": 0,
+   "bytes": 5800990,
+   "field_missing": {
+    "city": 654625,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 654627
+   },
+   "grades": {
+    "A": 200647,
+    "B": 654627,
+    "C": 0
+   },
+   "inferred": {
+    "city": 2582,
+    "zip": 32
+   },
+   "multi_source": 125510,
+   "rows": 855274,
+   "sha256": "5e914c54915624af149e8a0f48e80fe8438ab450f430a66005c2b26d2add5723",
+   "unique_keys": 855274
+  },
+  "MS": {
+   "blank_lines": 0,
+   "bytes": 1461517,
+   "field_missing": {
+    "city": 71665,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 71665
+   },
+   "grades": {
+    "A": 117053,
+    "B": 71665,
+    "C": 0
+   },
+   "inferred": {
+    "city": 146,
+    "zip": 495
+   },
+   "multi_source": 332,
+   "rows": 188718,
+   "sha256": "77cf916069be6313554622d1fc3b34878365a0a71dde40db79d25edd5c6459c9",
+   "unique_keys": 188718
+  },
+  "MT": {
+   "blank_lines": 0,
+   "bytes": 407,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 5,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 5,
+   "sha256": "bbfc4e9b9ec7a17ee798923911d0aa9c6181b6cf83d446063e805cc329ea1092",
+   "unique_keys": 5
+  },
+  "NC": {
+   "blank_lines": 0,
+   "bytes": 6916593,
+   "field_missing": {
+    "city": 115237,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 117270
+   },
+   "grades": {
+    "A": 936176,
+    "B": 117271,
+    "C": 0
+   },
+   "inferred": {
+    "city": 181,
+    "zip": 519738
+   },
+   "multi_source": 345,
+   "rows": 1053447,
+   "sha256": "a7dd5856b0263d7a33391dda1e879d3de150b08016f9664fd53633dd230c5038",
+   "unique_keys": 1053447
+  },
+  "ND": {
+   "blank_lines": 0,
+   "bytes": 2913711,
+   "field_missing": {
+    "city": 331587,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 332096
+   },
+   "grades": {
+    "A": 115431,
+    "B": 332096,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 14176
+   },
+   "multi_source": 43655,
+   "rows": 447527,
+   "sha256": "521b9da850567c017324bc67d48cef4ac2e02020b2f2f2c6d71009b1de556028",
+   "unique_keys": 447527
+  },
+  "NE": {
+   "blank_lines": 0,
+   "bytes": 193,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 1,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 1,
+   "sha256": "081ce362cdb3a79cd0d779800e35709a264639e72d267e72d1c1a9a8c8b71fb8",
+   "unique_keys": 1
+  },
+  "NH": {
+   "blank_lines": 0,
+   "bytes": 5767900,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 572637,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 572637,
+   "sha256": "36eaa52fe0a7a7599501c4279b8eff2487209edd5d0c33bb0fa7687c41794ed9",
+   "unique_keys": 572637
+  },
+  "NJ": {
+   "blank_lines": 0,
+   "bytes": 352442,
+   "field_missing": {
+    "city": 62453,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 62458
+   },
+   "grades": {
+    "A": 9,
+    "B": 62458,
+    "C": 0
+   },
+   "inferred": {
+    "city": 1,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 62467,
+   "sha256": "f07e7645a358ad3c5031c79947dd7021154687e4707c7a435ebeadf1deed45b0",
+   "unique_keys": 62467
+  },
+  "NM": {
+   "blank_lines": 0,
+   "bytes": 2495831,
+   "field_missing": {
+    "city": 352460,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 352587
+   },
+   "grades": {
+    "A": 21767,
+    "B": 352587,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 18197
+   },
+   "multi_source": 156,
+   "rows": 374354,
+   "sha256": "a35817776219fa42150354746425b23ed86094f1eedfed249aaa288b63776409",
+   "unique_keys": 374354
+  },
+  "NV": {
+   "blank_lines": 0,
+   "bytes": 2848337,
+   "field_missing": {
+    "city": 88903,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 89322
+   },
+   "grades": {
+    "A": 323049,
+    "B": 90616,
+    "C": 0
+   },
+   "inferred": {
+    "city": 130797,
+    "zip": 8
+   },
+   "multi_source": 447,
+   "rows": 413665,
+   "sha256": "24228ccae4dce64c929db806a1fd67973d578069fce2c503fc79caf4f5afabcb",
+   "unique_keys": 413665
+  },
+  "NY": {
+   "blank_lines": 0,
+   "bytes": 10356848,
+   "field_missing": {
+    "city": 13,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 1
+   },
+   "grades": {
+    "A": 1723055,
+    "B": 13,
+    "C": 0
+   },
+   "inferred": {
+    "city": 568394,
+    "zip": 0
+   },
+   "multi_source": 1,
+   "rows": 1723068,
+   "sha256": "e155459636d5a194f0a13fbdbe86c23b3c51e331114b7de91128259f320b8f54",
+   "unique_keys": 1723068
+  },
+  "OH": {
+   "blank_lines": 0,
+   "bytes": 9157253,
+   "field_missing": {
+    "city": 788494,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 789331
+   },
+   "grades": {
+    "A": 610195,
+    "B": 789334,
+    "C": 0
+   },
+   "inferred": {
+    "city": 93506,
+    "zip": 721
+   },
+   "multi_source": 61870,
+   "rows": 1399529,
+   "sha256": "2ee3c866cbfd08a7531a00c110f2759ab599ff347e4762878411206916942e33",
+   "unique_keys": 1399529
+  },
+  "OK": {
+   "blank_lines": 0,
+   "bytes": 1662844,
+   "field_missing": {
+    "city": 226497,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 226497
+   },
+   "grades": {
+    "A": 6932,
+    "B": 226497,
+    "C": 0
+   },
+   "inferred": {
+    "city": 2,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 233429,
+   "sha256": "4446fd71241ef8d4e1ebd63e6447ef348579f8ca013078927e8164671e819c2f",
+   "unique_keys": 233429
+  },
+  "OR": {
+   "blank_lines": 0,
+   "bytes": 9546391,
+   "field_missing": {
+    "city": 361721,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 364773
+   },
+   "grades": {
+    "A": 962718,
+    "B": 364773,
+    "C": 0
+   },
+   "inferred": {
+    "city": 89228,
+    "zip": 81940
+   },
+   "multi_source": 101631,
+   "rows": 1327491,
+   "sha256": "822d2053da060ba457029caaab79b4b30c556cfd8379f8ce234f65f4a49cc3bd",
+   "unique_keys": 1327491
+  },
+  "PA": {
+   "blank_lines": 0,
+   "bytes": 14807810,
+   "field_missing": {
+    "city": 904407,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 964082
+   },
+   "grades": {
+    "A": 1227278,
+    "B": 964082,
+    "C": 0
+   },
+   "inferred": {
+    "city": 740,
+    "zip": 39
+   },
+   "multi_source": 22479,
+   "rows": 2191360,
+   "sha256": "022545120e5a029471a94c1545e4ceb9c88927bdad94bdb4103d5c7af9b3441a",
+   "unique_keys": 2191360
+  },
+  "RI": {
+   "blank_lines": 0,
+   "bytes": 2027283,
+   "field_missing": {
+    "city": 357427,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 357427
+   },
+   "grades": {
+    "A": 2,
+    "B": 357427,
+    "C": 0
+   },
+   "inferred": {
+    "city": 1,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 357429,
+   "sha256": "34ef3d8218ca61a97d853b3504b2611b0588e4a80f2b41aff4891bc195108a9b",
+   "unique_keys": 357429
+  },
+  "SC": {
+   "blank_lines": 0,
+   "bytes": 4935152,
+   "field_missing": {
+    "city": 325275,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 325386
+   },
+   "grades": {
+    "A": 377286,
+    "B": 325386,
+    "C": 0
+   },
+   "inferred": {
+    "city": 7,
+    "zip": 11646
+   },
+   "multi_source": 3939,
+   "rows": 702672,
+   "sha256": "a4da820b2f7108abb6a5b0418dc6f89b416562bd04f81df5ad27ad3fa0e8dbe8",
+   "unique_keys": 702672
+  },
+  "SD": {
+   "blank_lines": 0,
+   "bytes": 107291,
+   "field_missing": {
+    "city": 6088,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 6144
+   },
+   "grades": {
+    "A": 9150,
+    "B": 6144,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 15294,
+   "sha256": "43e104ae35d063273178579183534d164851e7d2050c64346bb13b3c4206e06e",
+   "unique_keys": 15294
+  },
+  "TN": {
+   "blank_lines": 0,
+   "bytes": 4825077,
+   "field_missing": {
+    "city": 53760,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 53772
+   },
+   "grades": {
+    "A": 669911,
+    "B": 53773,
+    "C": 0
+   },
+   "inferred": {
+    "city": 123774,
+    "zip": 2
+   },
+   "multi_source": 0,
+   "rows": 723684,
+   "sha256": "aacb8603a050b1fd863ab47790ce669b8b7fc63f370a20ee361df5298c385099",
+   "unique_keys": 723684
+  },
+  "TX": {
+   "blank_lines": 0,
+   "bytes": 24157843,
+   "field_missing": {
+    "city": 1324623,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 1330032
+   },
+   "grades": {
+    "A": 2139588,
+    "B": 1330032,
+    "C": 0
+   },
+   "inferred": {
+    "city": 19182,
+    "zip": 170062
+   },
+   "multi_source": 514031,
+   "rows": 3469620,
+   "sha256": "1f4b52d325661731ff45f7a3e77830a0769c8d34ced69c89863333eb39a7fc34",
+   "unique_keys": 3469620
+  },
+  "UT": {
+   "blank_lines": 0,
+   "bytes": 4980547,
+   "field_missing": {
+    "city": 750657,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 750657
+   },
+   "grades": {
+    "A": 1,
+    "B": 750657,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 6416,
+   "rows": 750658,
+   "sha256": "ef35a479c721cf9884d63986688d674dcbfb10ec73f415118a87bb51e7c269ae",
+   "unique_keys": 750658
+  },
+  "VA": {
+   "blank_lines": 0,
+   "bytes": 5205635,
+   "field_missing": {
+    "city": 122866,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 122866
+   },
+   "grades": {
+    "A": 642105,
+    "B": 122866,
+    "C": 0
+   },
+   "inferred": {
+    "city": 77569,
+    "zip": 41
+   },
+   "multi_source": 12682,
+   "rows": 764971,
+   "sha256": "f423e02fa2e5a976c30aec4c6a4b2d7e58c74c81f7d49f3ef5dbb23b8866ebff",
+   "unique_keys": 764971
+  },
+  "VT": {
+   "blank_lines": 0,
+   "bytes": 1963991,
+   "field_missing": {
+    "city": 313486,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 313486
+   },
+   "grades": {
+    "A": 0,
+    "B": 313486,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 313486,
+   "sha256": "d55ac3f4e7129293b120f79474a8f9cfe451499e4e7bb409eb6316408554439b",
+   "unique_keys": 313486
+  },
+  "WA": {
+   "blank_lines": 0,
+   "bytes": 7025426,
+   "field_missing": {
+    "city": 108253,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 108463
+   },
+   "grades": {
+    "A": 985755,
+    "B": 108463,
+    "C": 0
+   },
+   "inferred": {
+    "city": 21,
+    "zip": 256
+   },
+   "multi_source": 259,
+   "rows": 1094218,
+   "sha256": "9cd5f18e42b4c8fadd4c4a3652e40efd54bd4dd25fb44d9a574b56238c6dc02f",
+   "unique_keys": 1094218
+  },
+  "WI": {
+   "blank_lines": 0,
+   "bytes": 3629031,
+   "field_missing": {
+    "city": 172237,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 179915
+   },
+   "grades": {
+    "A": 386895,
+    "B": 179916,
+    "C": 0
+   },
+   "inferred": {
+    "city": 61,
+    "zip": 22398
+   },
+   "multi_source": 683,
+   "rows": 566811,
+   "sha256": "f71a5acd573a7c063c584dbcfd8f402d170f5e2a285502e5e63c528f6d96987f",
+   "unique_keys": 566811
+  },
+  "WV": {
+   "blank_lines": 0,
+   "bytes": 9274563,
+   "field_missing": {
+    "city": 933679,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 933707
+   },
+   "grades": {
+    "A": 306264,
+    "B": 933707,
+    "C": 0
+   },
+   "inferred": {
+    "city": 34027,
+    "zip": 94
+   },
+   "multi_source": 231472,
+   "rows": 1239971,
+   "sha256": "441aa5cafb65f6f3737d19760b05ecd5545f51141b3471e0f3a1714cba44baf2",
+   "unique_keys": 1239971
+  },
+  "WY": {
+   "blank_lines": 0,
+   "bytes": 99083,
+   "field_missing": {
+    "city": 11902,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 11902
+   },
+   "grades": {
+    "A": 1,
+    "B": 11902,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 43,
+   "rows": 11903,
+   "sha256": "827a742aacf144d13b760f85ad2aa3c2afbd63674d5597a8e40c01daa4c64b1a",
+   "unique_keys": 11903
   }
  },
  "zip_dict": "zip_city.tsv"
