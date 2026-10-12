@@ -1,306 +1,65 @@
 {
- "dedup_removed": 13365612,
- "generated": "2026-10-11 09:06:57",
- "merged": {
-  "bytes": 440700182,
-  "rows": 63036105,
-  "sha256": "705176af0cd6beb28d77dc3bf48aabcc4f20e43e9056bb7d0c7fbac633ef1e8d"
+ "a_policy": "A=五要素齐且推断字段≤1（默认；字典只补空缺、标记为 zip_map）",
+ "dedup_removed": 5773,
+ "generated": "2026-10-12 14:19:58",
+ "grades": {
+  "A": 14225,
+  "B": 0,
+  "C": 0
  },
- "rows": 63036105,
- "states": {
-  "AK": {
-   "bytes": 1194454,
-   "dedup_removed": 37533,
-   "rows": 158330,
-   "sha256": "8a50a7ed07268dd2a65023ed7158c7495b23aadfb11c4b858bb8f6ead7e7e411"
+ "inferred_totals": {
+  "city": 0,
+  "zip": 0
+ },
+ "legacy_used": false,
+ "merged": {
+  "bytes": 107137,
+  "rows": 14225,
+  "sha256": "b34ad142a55b453acca9126cccf8236892ef96c68a31ce13eb024075536df587"
+ },
+ "multi_source_records": 0,
+ "parsed_source": "parsed",
+ "pipeline": "v2/13-环节",
+ "rows": 14225,
+ "site_rows": 14225,
+ "sources": {
+  "orphans": [],
+  "per_state": {
+   "CO": {
+    "count": 1,
+    "sha256": "937743c1fa0a9523916dfcf844bc335e91c35e74adc6090704d20b6633850692"
+   }
   },
-  "AL": {
-   "bytes": 6089483,
-   "dedup_removed": 185243,
-   "rows": 866742,
-   "sha256": "1c3395353f529231072042890960764d2c2ca20ef9aab0de105effff669f77b5"
-  },
-  "AR": {
-   "bytes": 3843005,
-   "dedup_removed": 77623,
-   "rows": 539346,
-   "sha256": "89fa8116c4ed5b9dd46dba77a4f18e1c427f6d23322014e7946b083a7e19cf42"
-  },
-  "AZ": {
-   "bytes": 2976194,
-   "dedup_removed": 20887,
-   "rows": 419711,
-   "sha256": "73d62e91194d07e5453573f92c0c5b9d76a8cf6d617e9af8a69136ba1b34a552"
-  },
-  "CA": {
-   "bytes": 39499446,
-   "dedup_removed": 1207370,
-   "rows": 5601238,
-   "sha256": "551237a9433b0b36d19805f5291ca8d96487b0512e542ba95882434004ebc5dc"
-  },
-  "CO": {
-   "bytes": 8772105,
-   "dedup_removed": 220717,
-   "rows": 1296408,
-   "sha256": "c10ffc48048cac7229bf26fc32288eb8d05e8d8cc2c064f0f7fa04ac02cd9ed2"
-  },
-  "CT": {
-   "bytes": 57638,
-   "dedup_removed": 749,
-   "rows": 8559,
-   "sha256": "d435a5fb057b0af7af64c32e59a48954402aafba811552e376a23ab249aa846c"
-  },
-  "DE": {
-   "bytes": 1257930,
-   "dedup_removed": 21702,
-   "rows": 183308,
-   "sha256": "d8654bcf9527928bdb88223a8fc5a4740ceefaa2898ccca86556c4121205aa23"
-  },
-  "FL": {
-   "bytes": 36582387,
-   "dedup_removed": 1619794,
-   "rows": 5557280,
-   "sha256": "15dfe9f467d8cbe0e1c749027d7690b2def1be60ea87c94bdffa6b8df1a8e47c"
-  },
-  "GA": {
-   "bytes": 11445406,
-   "dedup_removed": 281737,
-   "rows": 1632664,
-   "sha256": "a2fa78b2c0520baef873185de6c02f1a0e5125f3f8eb64e78058de4456bf1d0f"
-  },
-  "HI": {
-   "bytes": 701013,
-   "dedup_removed": 5321,
-   "rows": 102047,
-   "sha256": "a00c7fbebe27116e80bf563ed54ab5d02fcec0c7fb056f16b129699cdc7322d8"
-  },
-  "IA": {
-   "bytes": 362779,
-   "dedup_removed": 19934,
-   "rows": 50370,
-   "sha256": "6e7c824cf9f33992a45096475dc48e231b0e13f85e0d016090acc7bec89ee406"
-  },
-  "ID": {
-   "bytes": 3782716,
-   "dedup_removed": 14720,
-   "rows": 482057,
-   "sha256": "48ea11f5ed58b9aedc93155fac79b4165a5b7e0ec7997ed9de333383cc1c48d1"
-  },
-  "IL": {
-   "bytes": 12812818,
-   "dedup_removed": 150235,
-   "rows": 1864650,
-   "sha256": "f3b1ddbacda2648b0817794e237066b292a5e87be657dc3f63303b3545278507"
-  },
-  "IN": {
-   "bytes": 28876200,
-   "dedup_removed": 653092,
-   "rows": 4076721,
-   "sha256": "d522e7987f3aa9cb9d040e90ee7bf7ebfc28d75da1b685e0cf72a7231a2d4f11"
-  },
-  "KS": {
-   "bytes": 9135101,
-   "dedup_removed": 1028876,
-   "rows": 1331786,
-   "sha256": "e5bb8fd34358117de8c78f0755a33e984e35d85546ce898e6de51590c9240f3d"
-  },
-  "KY": {
-   "bytes": 12880925,
-   "dedup_removed": 231953,
-   "rows": 1788738,
-   "sha256": "ce40921aeb06a320ba6779b4416cb73a62cd2331e8ba0915bfc138e63d141389"
-  },
-  "LA": {
-   "bytes": 3190957,
-   "dedup_removed": 34643,
-   "rows": 473370,
-   "sha256": "37e262aaa2cf634526a8cb274d307509a68fd6d64da363b115f72fefcf44487d"
-  },
-  "MA": {
-   "bytes": 310938,
-   "dedup_removed": 117393,
-   "rows": 49887,
-   "sha256": "a28ba85ae196c375670c31e4c3132e6a650dd4ea38fba22a7c8d8c0c8a875a36"
-  },
-  "MD": {
-   "bytes": 6605571,
-   "dedup_removed": 217039,
-   "rows": 1045238,
-   "sha256": "3e34ecc9d9e32a4ad875f80a76147febea446003b23b4d3b0b6a57cf2c80d461"
-  },
-  "ME": {
-   "bytes": 8546297,
-   "dedup_removed": 223512,
-   "rows": 1272389,
-   "sha256": "1d015d5c59c5648659c41865397a8ab18889df9e769369a74763a0422771d8cb"
-  },
-  "MI": {
-   "bytes": 7504766,
-   "dedup_removed": 65882,
-   "rows": 1051037,
-   "sha256": "62716a35110828792e12aeb56caf2ae998ed1707b1b8c8dcc4f0a959c3abb209"
-  },
-  "MN": {
-   "bytes": 12423155,
-   "dedup_removed": 796064,
-   "rows": 1731479,
-   "sha256": "534227426d0f3225aa34f4f68701e49df4990ec9381bb3f4e075ccd87df3aab8"
-  },
-  "MO": {
-   "bytes": 5891814,
-   "dedup_removed": 294614,
-   "rows": 855261,
-   "sha256": "1812ecf966761a57982df787721854a46edc23999343b6b149e8d1d323573928"
-  },
-  "MS": {
-   "bytes": 2797799,
-   "dedup_removed": 72564,
-   "rows": 355751,
-   "sha256": "ed28707badbdeebdf87fd686e4927a731b93bd22888c2057b152cf191095e9bc"
-  },
-  "NC": {
-   "bytes": 7194123,
-   "dedup_removed": 156040,
-   "rows": 1062460,
-   "sha256": "cbc4a74f993a24713b7114a33ae0d2db925f2fc7ec0210ae3e002beb8bff7609"
-  },
-  "ND": {
-   "bytes": 4966626,
-   "dedup_removed": 251324,
-   "rows": 724216,
-   "sha256": "49aa8cac9a73b9ff086acac17278337c1c3aec563b9fead2a9304f9f8dedb392"
-  },
-  "NE": {
-   "bytes": 1415369,
-   "dedup_removed": 0,
-   "rows": 220915,
-   "sha256": "ce7a60a751397db14a21439031bb352cfeb55b2643be9338e76b719a15a9e967"
-  },
-  "NH": {
-   "bytes": 9016850,
-   "dedup_removed": 14776,
-   "rows": 1058623,
-   "sha256": "59301b1039f2c21b57d7b2884567810d7e12ff9ea4e803bee705776e7a78ed53"
-  },
-  "NJ": {
-   "bytes": 368774,
-   "dedup_removed": 8423,
-   "rows": 62453,
-   "sha256": "c2fed5d1c1ca79a8b629ad1f6094ce213689da56ef1b59e021071b0c534b4499"
-  },
-  "NM": {
-   "bytes": 2710728,
-   "dedup_removed": 41618,
-   "rows": 393737,
-   "sha256": "56b5942ae75c7694b07e38383c4f0cf7c6f1e53b13f7366d24a6fb7fd062cf95"
-  },
-  "NV": {
-   "bytes": 2848906,
-   "dedup_removed": 139631,
-   "rows": 413894,
-   "sha256": "71ca85f6eff11211166e5b0347805a2c1b3d2860f8a4d7fcaf1f1a86bb28f40a"
-  },
-  "NY": {
-   "bytes": 10873472,
-   "dedup_removed": 421099,
-   "rows": 1723060,
-   "sha256": "06038b4b2d5048650f7bd8db6ecf36e8130a878dbd852412b4dff940d2f7261a"
-  },
-  "OH": {
-   "bytes": 40686791,
-   "dedup_removed": 785935,
-   "rows": 5937664,
-   "sha256": "204f7f3dcbb3da2cf75594c71114042a21ee9c92d245e51e6789a7822d9267d5"
-  },
-  "OK": {
-   "bytes": 4396920,
-   "dedup_removed": 107240,
-   "rows": 536627,
-   "sha256": "9ba6539de7a41df95af9dcc54d8d9efbbae444ad4138a7b2f2ae9f302fd40a33"
-  },
-  "OR": {
-   "bytes": 14696543,
-   "dedup_removed": 1118857,
-   "rows": 1839996,
-   "sha256": "a047103579ce2bae44e34b7ebc4a1866674abb5afdf895781d7003c840d215f8"
-  },
-  "PA": {
-   "bytes": 15714181,
-   "dedup_removed": 302172,
-   "rows": 2235354,
-   "sha256": "b91b6f428d86f89b41d1765c33e1987f537ee97b20e9666bc8da28bfcc5bc521"
-  },
-  "RI": {
-   "bytes": 4920735,
-   "dedup_removed": 38648,
-   "rows": 776789,
-   "sha256": "90cc65889b052d5a43894002bb0db7cebe6200fe92e36a6f6fc70d287104e659"
-  },
-  "SC": {
-   "bytes": 5465175,
-   "dedup_removed": 75274,
-   "rows": 764045,
-   "sha256": "af5e209011194ceff34c441a2d58367ca601359828fb2062d8fa01d71e448f12"
-  },
-  "SD": {
-   "bytes": 112237,
-   "dedup_removed": 598,
-   "rows": 15294,
-   "sha256": "65a185792a0b59380e84df35fb686c4619cf22d522692e12a77c101af0a59433"
-  },
-  "TN": {
-   "bytes": 4944257,
-   "dedup_removed": 52335,
-   "rows": 723665,
-   "sha256": "71320080340c609a948080acfbc38c22a7317d7138a3cc7d21b950ac7bbce391"
-  },
-  "TX": {
-   "bytes": 30875790,
-   "dedup_removed": 915256,
-   "rows": 4482474,
-   "sha256": "b7c2bbcf78dde89407e099991421a3b341cd3287cf51d170b9e4586f3a9f8eb1"
-  },
-  "UT": {
-   "bytes": 13551868,
-   "dedup_removed": 169044,
-   "rows": 1919443,
-   "sha256": "fbccf78ae9956f992002451d17cf42795573be397f6eb71bfcf58d51e98d787c"
-  },
-  "VA": {
-   "bytes": 5420074,
-   "dedup_removed": 118825,
-   "rows": 768825,
-   "sha256": "f24fac077f615aca276a334020332f8fd42b2a0a2f2fc99e71607a021a91decb"
-  },
-  "VT": {
-   "bytes": 4685752,
-   "dedup_removed": 37712,
-   "rows": 644733,
-   "sha256": "21c66d3f3cd03859a6cde6677ee0317d98fb394035de1a5280a27286da1577c9"
-  },
-  "WA": {
-   "bytes": 7439500,
-   "dedup_removed": 247477,
-   "rows": 1094207,
-   "sha256": "d3c5dc631f94150d3c6a68e233be3f88905bd4e8aa203b4ff49c96f4f98798f2"
-  },
-  "WI": {
-   "bytes": 3770741,
-   "dedup_removed": 182650,
-   "rows": 566853,
-   "sha256": "22a472fedcb22239a6b2d73ff020230ec2a1545a383638ad11146e23d46bfac3"
-  },
-  "WV": {
-   "bytes": 15329642,
-   "dedup_removed": 570994,
-   "rows": 2026407,
-   "sha256": "1c9a36a9f17188a907f620b154356bdd505ed9e96bcefcd29a3280f5f5f88b6a"
-  },
-  "WY": {
-   "bytes": 1760100,
-   "dedup_removed": 10487,
-   "rows": 250004,
-   "sha256": "3cf1f274569edd3a6881dff9e18307af7277ba938bce97b041477199f71dab7f"
+  "sources_json": {
+   "count": 1,
+   "sha256": "bda731d4719b2b2df2f064ae9f27f54c5a7d7addb300bc201c3fc0bb1a2e1e1d"
   }
- }
+ },
+ "states": {
+  "CO": {
+   "blank_lines": 0,
+   "bytes": 107127,
+   "field_missing": {
+    "city": 0,
+    "number": 0,
+    "state": 0,
+    "street": 0,
+    "zip": 0
+   },
+   "grades": {
+    "A": 14225,
+    "B": 0,
+    "C": 0
+   },
+   "inferred": {
+    "city": 0,
+    "zip": 0
+   },
+   "multi_source": 0,
+   "rows": 14225,
+   "sha256": "16a42b647e6eb31d752cfd9fe7a479ead57b1735f7c9c775eb5906768c1e3f61",
+   "unique_keys": 14225
+  }
+ },
+ "zip_dict": "zip_city.tsv"
 }

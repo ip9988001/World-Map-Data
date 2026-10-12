@@ -513,7 +513,23 @@ def main(argv=None) -> None:
           + (f"｜[应急]老分片 {a.legacy}" if a.legacy else ""), flush=True)
 
     if not new:
-        print("✗ 没有任何规则产物（parsed/ 为空）—— 不发布，也不许降级成「发个空包」")
+        # 把「为什么为空」说清楚：账本说完成、盘上没产物 → 状态与产物不一致
+        done_n = 0
+        if os.path.exists(a.state_file):
+            try:
+                _st = json.load(open(a.state_file, encoding="utf-8"))
+                done_n = sum(1 for v in _st.values()
+                             if isinstance(v, dict) and v.get("done"))
+            except Exception:
+                done_n = 0
+        hint = ""
+        if done_n:
+            hint = (f"\n⚠ 账本里有 {done_n:,} 个源标记为已完成，但产物不在盘上"
+                    f"（产物被清理/迁移过，state 未同步）。\n"
+                    f"  解法：重跑采集会识别并重采这些源 —— "
+                    f"`python3 -m collectors.pipeline --lane <泳道>`；"
+                    f"  只想看账本状态：`python3 -m collectors.pipeline --reclassify`。")
+        print("✗ 没有任何规则产物（parsed/ 为空）—— 不发布，也不许降级成「发个空包」" + hint)
         sys.exit(2)
 
     if a.dry:

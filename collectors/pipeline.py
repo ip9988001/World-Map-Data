@@ -156,13 +156,20 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
     bl = blacklisted()
     stats = {"lane_sources": len(items), "done": 0, "skipped_done": 0,
              "skipped_blacklist": 0, "skipped_exhausted": 0, "gap": 0, "errors": 0,
-             "kept": 0, "fetched": 0, "downloaded": 0}
+             "kept": 0, "fetched": 0, "downloaded": 0, "artifact_missing": 0}
     for k, item in enumerate(items, 1):
         sid = item["source_id"]
         prev = state.get(sid) or {}
         if prev.get("done"):
-            stats["skipped_done"] += 1
-            continue
+            # ponytail: 当前上限＝「账本 done + 产物 ndjson 在盘上」才算完成。
+            # 只看账本会在产物被清理/换机器后永久卡死：采集全跳过、发布又拒发空包。
+            art = prev.get("path")
+            if art and os.path.exists(art):
+                stats["skipped_done"] += 1
+                continue
+            stats["artifact_missing"] += 1
+            print(f"[{k}/{len(items)}] {sid:28s} ♻ 账本 done 但产物缺失"
+                  f"（{art or '无记录'}）→ 重采", flush=True)
         why = _skip_reason(sid, bl)
         if why:
             stats["skipped_blacklist"] += 1

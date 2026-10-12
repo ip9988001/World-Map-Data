@@ -52,6 +52,30 @@
   "stage": "triage",
   "updated": "2026-10-11 12:59:01"
  },
+ "us/ak/statewide": {
+  "archive": {
+   "bytes": 0,
+   "done": false,
+   "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+  "evidence": {
+   "bytes": 1184,
+   "content_type": "text/html; charset=utf-8",
+   "head": "<html lang=\"en\">\r\n<head>\r\n  <title>Home</title>\r\n  <link href='/ESRI.ArcGIS.SDS.REST.css' rel='stylesheet' type='text/css'>\r\n  <link rel='SHORTCUT ICON' href='/favicon.ico'>\r\n<meta http-equiv=\"Content",
+   "status": 200,
+   "url": "https://services3.arcgis.com/3NvWZvRqANiCzqqd/arcgis/rest/services/NG911_Alaska_Address_gdb/FeatureServer/0",
+   "verdict_hint": "UNSURE: 200 text/html; charset=utf-8 1184B"
+  },
+  "kind": "SOURCE_BROKEN",
+  "seconds": 0.7,
+  "source_id": "us/ak/statewide",
+  "stage": "fetch",
+  "updated": "2026-10-12 14:18:37"
+ },
  "us/ar/statewide": {
   "archive": {
    "bytes": 0,
@@ -173,27 +197,76 @@
   "attempts": 0,
   "done": true,
   "error": "",
-  "fetched": 40978,
-  "kept": 40978,
+  "fetched": 20000,
+  "grade_hint": "A",
+  "kept": 19998,
   "path": "parsed/us/co/summit/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 17.54,
+   "streets": 1140
+  },
   "ratio": 1.0,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 40978,
+    "contentful": 19998,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 19998,
+    "kept_contentful": 19998,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 17.54,
+     "streets": 1140
+    },
     "ratio": 1.0,
-    "rows": 40978,
+    "rows": 20000,
     "rule": "mapping@v1",
-    "seconds": 1.5,
+    "seconds": 2.2,
+    "true_addr": 19592,
     "verdict": "PASS",
-    "why": "合规 40978/40978 = 100%"
+    "why": "合规 19998/19998 = 100%（带地址行分母；真门牌号行 19,592）总行 20,000｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 17.54）"
    }
   ],
-  "seconds": 34.1,
+  "seconds": 36.6,
   "source_id": "us/co/summit",
   "stage": "parsed",
-  "updated": "2026-10-11 04:01:25"
+  "updated": "2026-10-12 14:19:21",
+  "verdict": "PASS"
  },
  "us/co/yuma": {
   "archive": {
