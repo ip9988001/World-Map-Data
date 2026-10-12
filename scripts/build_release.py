@@ -591,10 +591,12 @@ def main(argv=None) -> None:
     stats = write_shards(raw, a.out, site_dir, meta, z2c, c2z, cc_of)
     shutil.rmtree(tmp_dir, ignore_errors=True)
 
+    shard_of: dict[str, str] = {}      # 州 → 实际分片文件名（带国家码，别用模板重拼，改一次漏一次）
     used_by_state: dict[str, set] = {}
     for st in sorted(stats):
         shard = f"{cc_of.get(st, DEF_COUNTRY)}-{st}.ndjson.gz"   # 交付名：<国家码>-<州码>
         out_path = os.path.join(a.out, shard)
+        shard_of[st] = shard
         stt = stats[st]
         chk = audit_shard(out_path)                 # ← 写完回读，清单数字只看这里
         if chk["blank"]:
@@ -650,12 +652,16 @@ def main(argv=None) -> None:
         merged = os.path.join(a.out, "merged.clean.ndjson.gz")
         with gzip.open(merged, "wt", encoding="utf-8") as out:
             for st in sorted(stats):
-                p = os.path.join(a.out, f"{st}.ndjson.gz")
-                if os.path.exists(p):
+                p = os.path.join(a.out, shard_of.get(st, f"{st}.ndjson.gz"))
+                if not os.path.exists(p):
+                    print(f"⚠ merged 拼接：{st} 分片没找到（{p}）→ 跳过")
                     with gzip.open(p, "rt", encoding="utf-8") as src:
                         shutil.copyfileobj(src, out)
         manifest["merged"] = {"bytes": os.path.getsize(merged), "sha256": sha256(merged),
                              "rows": manifest["rows"]}
+        if os.path.getsize(merged) < 4096:      # 分片没拼进来 → 空 merged，发布出去等于骗人
+            print("✗ [出厂] merged.clean.ndjson.gz 为空/过小（分片拼接失败）—— 不发布")
+            sys.exit(2)
         print(f"合并版 merged.clean.ndjson.gz：{os.path.getsize(merged) / 1048576:.1f}MB")
 
     with open(a.manifest, "w", encoding="utf-8") as fh:

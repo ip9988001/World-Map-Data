@@ -416,7 +416,9 @@ def main(argv=None) -> None:
         errs.append("[对账] merged.clean.ndjson.gz 缺失")
     else:
         mi = m.get("merged") or {}
-        if sha256(merged) != mi.get("sha256"):
+        if os.path.getsize(merged) == 0:
+            errs.append("[对账] merged.clean.ndjson.gz 是空文件（分片没拼进来）")
+        elif sha256(merged) != mi.get("sha256"):
             errs.append("[对账] merged sha256 不符")
         log, perrs = provenance_check(a.parsed, a.state, merged, a.sample_sources)
         errs += perrs
