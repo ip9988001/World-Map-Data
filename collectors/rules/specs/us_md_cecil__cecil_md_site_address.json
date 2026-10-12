@@ -1,0 +1,145 @@
+{
+ "name": "us_md_cecil__cecil_md_site_address",
+ "version": 1,
+ "note": "ArcGIS 门牌点图层，号码在 STRT_ADD，街名由 STRT_PFX/STRT_NAME/TYP/STRT_SUF 拼出，城市用 COMMUNITY（CITY4 是 4 字符截断码不可用），无 ZIP 列故豁免。",
+ "match": {
+  "columns_any": [
+   "Site_NGUID"
+  ],
+  "columns_all": [
+   "STRT_ADD",
+   "STRT_NAME"
+  ],
+  "columns_none": [
+   "DATEADDRES"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STRT_ADD",
+  "street": "",
+  "city": "COMMUNITY",
+  "zip": "",
+  "state": "State"
+ },
+ "number_template": "",
+ "street_template": "{STRT_PFX} {STRT_NAME} {TYP} {STRT_SUF}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": true,
+  "exempt_reason": "图层无 ZIP 列，仅有 State=MD；CITY4 为 4 字符截断代码（PORT/NORT/ELKT），不可当作 ZIP 或市名使用"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "DATEADDRES": null,
+    "TYPE": "RESIDENTIAL",
+    "NAME": " ",
+    "UNIT": "A",
+    "STRT_ADD": 1440,
+    "STRT_PFX": " ",
+    "STRT_NAME": "BELVIDERE",
+    "TYP": "RD",
+    "STRT_SUF": " ",
+    "COMMUNITY": "PORT DEPOSIT",
+    "ADDRESS": "1440 BELVIDERE RD",
+    "Comment": " ",
+    "CONFIDENCE": 3,
+    "MAP": "E_5",
+    "Site_NGUID": "SITE0@911Authority_ccgov.org",
+    "Country": "US",
+    "CITY4": "PORT",
+    "State": "MD",
+    "County": "Cecil County",
+    "Inc_Muni": "Unincorporated",
+    "DiscrpAgID": "Cecil County Department of Emergency Services"
+   },
+   "expect": {
+    "number": "1440",
+    "street": "BELVIDERE RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 3,
+    "DATEADDRES": null,
+    "TYPE": "RESIDENTIAL",
+    "NAME": " ",
+    "UNIT": " ",
+    "STRT_ADD": 147,
+    "STRT_PFX": " ",
+    "STRT_NAME": "MIKE",
+    "TYP": "CT",
+    "STRT_SUF": " ",
+    "COMMUNITY": "ELKTON",
+    "ADDRESS": "147 MIKE CT",
+    "Comment": " ",
+    "CONFIDENCE": 1,
+    "MAP": "E_11",
+    "Site_NGUID": "SITE3@911Authority_ccgov.org",
+    "Country": "US",
+    "CITY4": "ELKT",
+    "State": "MD",
+    "County": "Cecil County",
+    "Inc_Muni": "Elkton",
+    "DiscrpAgID": "Cecil County Department of Emergency Services"
+   },
+   "expect": {
+    "number": "147",
+    "street": "MIKE CT"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 6,
+    "DATEADDRES": null,
+    "TYPE": "RESIDENTIAL",
+    "NAME": " ",
+    "UNIT": " ",
+    "STRT_ADD": 467,
+    "STRT_PFX": " ",
+    "STRT_NAME": "CAMP MEETING GROUND",
+    "TYP": "RD",
+    "STRT_SUF": " ",
+    "COMMUNITY": "PORT DEPOSIT",
+    "ADDRESS": "467 CAMP MEETING GROUND RD",
+    "Comment": " ",
+    "CONFIDENCE": 1,
+    "MAP": "E_5",
+    "Site_NGUID": "SITE6@911Authority_ccgov.org",
+    "Country": "US",
+    "CITY4": "PORT",
+    "State": "MD",
+    "County": "Cecil County",
+    "Inc_Muni": "Unincorporated",
+    "DiscrpAgID": "Cecil County Department of Emergency Services"
+   },
+   "expect": {
+    "number": "467",
+    "street": "CAMP MEETING GROUND RD"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/md/cecil",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-12 19:03:30",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.985
+  }
+ }
+}

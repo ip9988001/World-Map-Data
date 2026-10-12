@@ -1,0 +1,102 @@
+{
+ "name": "us_ia_wapello__wapello_site_address",
+ "version": 1,
+ "note": "门牌号与街名分列存放：HOUSENUM 是纯数字门牌，ADDRESS 是街名（含 HWY/AVE/ST/RD 等后缀），故用 columns 模式按列取数而不是解析单列。",
+ "match": {
+  "columns_any": [
+   "HOUSENUM"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HOUSENUM",
+  "street": "ADDRESS",
+  "city": "CITY",
+  "zip": "ZIP",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 5,
+    "PIN": "1208400009",
+    "HOUSENUM": "5152",
+    "ADDRESS": "ASHLAND RD",
+    "CITY": "ELDON",
+    "STATE": "IA",
+    "ZIP": "52554-0000",
+    "COUNTRY": "USA"
+   },
+   "expect": {
+    "number": "5152",
+    "street": "ASHLAND RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 18,
+    "PIN": "1215300002",
+    "HOUSENUM": "4290",
+    "ADDRESS": "HWY 16",
+    "CITY": "ELDON",
+    "STATE": "IA",
+    "ZIP": "52554-0000",
+    "COUNTRY": "USA"
+   },
+   "expect": {
+    "number": "4290",
+    "street": "HWY 16"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 1,
+    "PIN": "1210200003",
+    "HOUSENUM": "3474",
+    "ADDRESS": "CHIEF WAPELLO",
+    "CITY": "ELDON",
+    "STATE": "IA",
+    "ZIP": "52554-0000",
+    "COUNTRY": "USA"
+   },
+   "expect": {
+    "number": "3474",
+    "street": "CHIEF WAPELLO"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ia/wapello",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-12 19:01:55",
+  "validated": {
+   "rows": 200,
+   "contentful": 198,
+   "kept": 198,
+   "kept_contentful": 198,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  }
+ }
+}

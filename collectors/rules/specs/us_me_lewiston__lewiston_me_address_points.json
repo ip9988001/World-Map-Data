@@ -1,0 +1,113 @@
+{
+ "name": "us_me_lewiston__lewiston_me_address_points",
+ "version": 1,
+ "note": "ArcGIS AddressPointsNo_ID 已把门牌号与街名拆成 ADDRNO / STREET 两列，直接映射最稳；LOCATION 是同一地址的合并文本，JURISTICTION 即城市，源无 ZIP 列。",
+ "match": {
+  "columns_any": [
+   "JURISTICTION",
+   "Facility_ID"
+  ],
+  "columns_all": [
+   "ADDRNO",
+   "STREET"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADDRNO",
+  "street": "STREET",
+  "city": "JURISTICTION",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": true,
+  "exempt_reason": "源 schema 无 ZIP 列，也无州列；可用地址列仅 ADDRNO(门牌号)、STREET(街名)、LOCATION(合并地址)、JURISTICTION(城市)"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 308,
+    "TYPE": 1,
+    "LOCATION": "309 FERRY RD",
+    "UNIT": null,
+    "ADDRNO": 309,
+    "STREET": "FERRY RD",
+    "STREET_NM": "FERRY",
+    "SUFFIX": "RD",
+    "PRE_DIR": null,
+    "POST_DIR": null,
+    "JURISTICTION": "LEWISTON"
+   },
+   "expect": {
+    "number": "309",
+    "street": "FERRY RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 315,
+    "TYPE": 1,
+    "LOCATION": "1 HIDDEN VALLEY DR",
+    "UNIT": null,
+    "ADDRNO": 1,
+    "STREET": "HIDDEN VALLEY DR",
+    "STREET_NM": "HIDDEN VALLEY",
+    "SUFFIX": "DR",
+    "PRE_DIR": null,
+    "POST_DIR": null,
+    "JURISTICTION": "LEWISTON"
+   },
+   "expect": {
+    "number": "1",
+    "street": "HIDDEN VALLEY DR"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 337,
+    "TYPE": 1,
+    "LOCATION": "195 WEBSTER ST",
+    "UNIT": null,
+    "ADDRNO": 195,
+    "STREET": "WEBSTER ST",
+    "STREET_NM": "WEBSTER",
+    "SUFFIX": "ST",
+    "PRE_DIR": null,
+    "POST_DIR": null,
+    "JURISTICTION": "LEWISTON"
+   },
+   "expect": {
+    "number": "195",
+    "street": "WEBSTER ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/me/lewiston",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-12 19:03:47",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "_rejected": {
+  "source_id": "us/la/washington",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：4 条（阈 5）",
+   "合规率 2% 低于阈 30%",
+   "不如现有规则（2% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 4,
+   "kept_contentful": 4,
+   "ratio": 0.02,
+   "fabricated": 0,
+   "best_ratio": 0.998
+  },
+  "at": "2026-10-12 19:02:09"
+ },
+ "spec": {
+  "name": "washington_parish_la_site_address",
+  "version": 1,
+  "note": "该 FeatureServer 的 ADDRESS 列本身即「门牌号 + 街名」（HNUM 为同一门牌号的数值列），无城市/邮编列，故用 single 模式整列解析、剥掉 HNUM=0 的边界哨兵行。",
+  "match": {
+   "columns_any": [
+    "MSAGComm"
+   ],
+   "columns_all": [
+    "ADDRESS",
+    "HNUM"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "ADDRESS",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源几何仅含门牌点主数据，无城市/邮编列：CITY 与 PLACE 在样本中全为空串或 null，MSAGComm 只是应急服务社区名（如 SUN/BUSH）并非规范市名，故 city/zip 一律留空并豁免"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "CITY": " ",
+     "PLACE": " ",
+     "LATITUDE": 30.66567175,
+     "LONGITUDE": -89.98647405,
+     "ESN": 262,
+     "FIRE": "DISTRICT 7 BEN'S FORD",
+     "MSAGComm": "BOGALUSA",
+     "ADDRESS": "10183 GALLOWAY LN",
+     "HNUM": 10183,
+     "GlobalID": "42fc3c6f-5b09-439d-829f-d00ac1a5b479",
+     "Ward": "Ward 6",
+     "Council_District": "Council District 2"
+    },
+    "expect": {
+     "number": "10183",
+     "street": "GALLOWAY LN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 13,
+     "CITY": " ",
+     "PLACE": " ",
+     "LATITUDE": 30.66739986,
+     "LONGITUDE": -90.00187229,
+     "ESN": 251,
+     "FIRE": "DISTRICT 1 BONNER CREEK",
+     "MSAGComm": "FRANKLINTON",
+     "ADDRESS": "10208 S CHOCTAW RD",
+     "HNUM": 10208,
+     "GlobalID": "2afc6ae7-d1d9-432d-8e94-4cd9e819b47f",
+     "Ward": "Ward 1",
+     "Council_District": "Council District 2"
+    },
+    "expect": {
+     "number": "10208",
+     "street": "S CHOCTAW RD"
+    }
+   }
+  ]
+ }
+}

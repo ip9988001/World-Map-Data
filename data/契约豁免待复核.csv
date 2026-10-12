@@ -1,0 +1,3 @@
+﻿at,source_id,rule,exempt,reason,action
+2026-10-12 19:03:30,us/md/cecil,us_md_cecil__cecil_md_site_address,zip,图层无 ZIP 列，仅有 State=MD；CITY4 为 4 字符截断代码（PORT/NORT/ELKT），不可当作 ZIP 或市名使用,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
+2026-10-12 19:03:47,us/me/lewiston,us_me_lewiston__lewiston_me_address_points,zip,源 schema 无 ZIP 列，也无州列；可用地址列仅 ADDRNO(门牌号)、STREET(街名)、LOCATION(合并地址)、JURISTICTION(城市),待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行

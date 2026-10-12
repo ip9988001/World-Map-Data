@@ -1,0 +1,5 @@
+﻿source_id,city_max_miss,zip_max_miss,max_junk,exempt_city,exempt_zip,note
+us/de/kent,0.2,0.2,0.2,,,
+us/ia/wapello,0.2,0.2,0.2,,,
+us/md/cecil,0.2,0.2,0.2,,1,图层无 ZIP 列，仅有 State=MD；CITY4 为 4 字符截断代码（PORT/NORT/ELKT），不可当作 ZIP 或市名使用
+us/me/lewiston,0.2,0.2,0.2,,1,源 schema 无 ZIP 列，也无州列；可用地址列仅 ADDRNO(门牌号)、STREET(街名)、LOCATION(合并地址)、JURISTICTION(城市)

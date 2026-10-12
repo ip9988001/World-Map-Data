@@ -1,0 +1,112 @@
+{
+ "name": "us_de_kent__kent_de_addresses",
+ "version": 1,
+ "note": "ArcGIS 门牌点图层，门牌号在 SAN、街名在 Roadname（已含前置方位如 W），City/Zipcode 独立成列，Apartment 为单元号需丢弃。",
+ "match": {
+  "columns_any": [
+   "FullAddr",
+   "Roadname",
+   "SAN"
+  ],
+  "columns_all": [
+   "SAN",
+   "Roadname"
+  ],
+  "columns_none": [],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "SAN",
+  "street": "Roadname",
+  "city": "City",
+  "zip": "Zipcode",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "SAN": 216.0,
+    "PRD": " ",
+    "STN": "KING",
+    "STS": "ST",
+    "Roadname": "KING ST",
+    "Apartment": "APT B",
+    "FullAddr": "216 KING ST APT B",
+    "Address": 216.0,
+    "Zipcode": 19977.0,
+    "City": "Smyrna"
+   },
+   "expect": {
+    "number": "216",
+    "street": "KING ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 21,
+    "SAN": 2614.0,
+    "PRD": "W",
+    "STN": "DENNEYS",
+    "STS": "RD",
+    "Roadname": "W DENNEYS RD",
+    "Apartment": " ",
+    "FullAddr": "2614 W DENNEYS RD",
+    "Address": 2614.0,
+    "Zipcode": 19904.0,
+    "City": "Dover"
+   },
+   "expect": {
+    "number": "2614",
+    "street": "W DENNEYS RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 3,
+    "SAN": 14.0,
+    "PRD": " ",
+    "STN": "BURNSIDE",
+    "STS": "DR",
+    "Roadname": "BURNSIDE DR",
+    "Apartment": " ",
+    "FullAddr": "14 BURNSIDE DR",
+    "Address": 14.0,
+    "Zipcode": 19977.0,
+    "City": "Smyrna"
+   },
+   "expect": {
+    "number": "14",
+    "street": "BURNSIDE DR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/de/kent",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-12 19:01:38",
+  "validated": {
+   "rows": 200,
+   "contentful": 199,
+   "kept": 200,
+   "kept_contentful": 199,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.996
+  }
+ }
+}

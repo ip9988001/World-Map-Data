@@ -1,0 +1,103 @@
+{
+ "_rejected": {
+  "source_id": "us/co/sedgwick",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 54%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 159,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.539
+  },
+  "at": "2026-10-12 19:00:31"
+ },
+ "spec": {
+  "name": "sedgwick_parcel_situs_address",
+  "version": 1,
+  "note": "结构化门牌列(STREETNO/PREDIRECTI/STREETNAME/STREETTYPE)全为空，唯一带门牌号的场地地址在 Address 自由文本列（如 '397  COUNTY ROAD 15'），故用 single 模式整列解析并剥离空白/'UNKNOWN ADDRESS'，city/zip/state 另取列。",
+  "match": {
+   "columns_any": [
+    "Address"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "CITY",
+   "zip": "ZIPCODE",
+   "state": "STATECODE"
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "Address",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 3113,
+     "Address": "397  COUNTY ROAD 15",
+     "CITY": "SEDGWICK",
+     "STATECODE": "CO",
+     "ZIPCODE": 80749
+    },
+    "expect": {
+     "number": "397",
+     "street": "COUNTY ROAD 15"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 3116,
+     "Address": "21985  COUNTY ROAD 2",
+     "CITY": "JULESBURG",
+     "STATECODE": "CO",
+     "ZIPCODE": 80737
+    },
+    "expect": {
+     "number": "21985",
+     "street": "COUNTY ROAD 2"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 3109,
+     "Address": "168  HIGHWAY 59",
+     "CITY": "SEDGWICK",
+     "STATECODE": "CO",
+     "ZIPCODE": 80749
+    },
+    "expect": {
+     "number": "168",
+     "street": "HIGHWAY 59"
+    }
+   }
+  ]
+ }
+}
