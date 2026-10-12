@@ -46,6 +46,69 @@ PARSED = "parsed"
 GATE_MIN_KEPT = 5
 GATE_MIN_RATIO = 0.30          # 老分母（带地址行）用的旧阈值，仅作兼容参考
 TRIAGE_DIR = "out/triage"
+
+# ── 第 9 步 质量闸门：字段完整性 + 脏值率 + 源级质量契约 ─────────────
+# 铁律：**源级契约只能声明豁免/降级，绝不放宽全局硬门**（上限只能调紧，不能调松）。
+#   形态门不过 → 丢产物（GATE_FAIL，原有逻辑不动）
+#   完整性/脏值不过 → 产物**保留但降级**（永不进 A 级站用子集，release 侧按字段实际填齐情况分级），
+#   无豁免的记 FIELD_INCOMPLETE / DIRTY → 进待造刀（退回第 3 步重造 spec）
+CONTRACT_FILE = "data/源质量契约.csv"
+MAX_MISS = {"city": 0.20, "zip": 0.20}     # 缺失率上限（全局硬门＝可交付 A 级的底线）
+MAX_JUNK = 0.20                              # 脏值率上限
+DENSITY_SAMPLE = 200_000                     # 街道密度统计的采样上限（控内存）
+
+
+def load_contracts(path: str = CONTRACT_FILE) -> dict:
+    """源级契约（可缺省）。列：source_id, city_max_miss, zip_max_miss, max_junk,
+    exempt_city, exempt_zip, note。缺失率上限**只允许比全局更严**（min 取值）。"""
+    out: dict = {}
+    if not os.path.exists(path):
+        return out
+    try:
+        with open(path, encoding="utf-8-sig", newline="") as fh:
+            for r in csv.DictReader(fh):
+                sid = (r.get("source_id") or "").strip()
+                if not sid:
+                    continue
+                lim = dict(MAX_MISS)
+                for f in ("city", "zip"):
+                    v = (r.get(f + "_max_miss") or "").strip()
+                    if v:
+                        try:
+                            lim[f] = min(lim[f], float(v))   # 只能更严
+                        except ValueError:
+                            pass
+                def _flag(x):
+                    return (x or "").strip().lower() in ("1", "true", "yes", "y", "是")
+                out[sid] = {
+                    "city_max_miss": lim["city"], "zip_max_miss": lim["zip"],
+                    "max_junk": min(MAX_JUNK, float(r.get("max_junk") or MAX_JUNK) or MAX_JUNK),
+                    "exempt_city": _flag(r.get("exempt_city")),
+                    "exempt_zip": _flag(r.get("exempt_zip")),
+                    "note": (r.get("note") or "").strip(),
+                }
+    except Exception:
+        return {}
+    return out
+
+
+CONTRACTS: dict = load_contracts()
+
+
+def _quality(miss: Counter, junk: int, kept: int, streets: set, sid: str) -> dict:
+    """把一轮扫描的质量底数打包给闸门（缺失/脏值/街密度/契约阈值）。"""
+    c = CONTRACTS.get(sid) or {}
+    return {
+        "missing": {f: miss.get(f, 0) for f in ("city", "zip")},
+        "junk_rate": round(junk / (kept + junk), 4) if (kept + junk) else 0.0,
+        "per_street": round(kept / len(streets), 2) if streets else 0.0,
+        "streets": len(streets),
+        "lim": {"city": c.get("city_max_miss", MAX_MISS["city"]),
+                "zip": c.get("zip_max_miss", MAX_MISS["zip"])},
+        "max_junk": c.get("max_junk", MAX_JUNK),
+        "exempt": {"city": bool(c.get("exempt_city")), "zip": bool(c.get("exempt_zip"))},
+        "contract": bool(c),
+    }
 # 「带地址内容的行」判据（阀 2 版）：光“含字母”不够（DISTRICT="laurens"、业主姓名、LAT/LNG 都会误命中），
 # 要有**地址痕迹**：一个值里同时出现「门牌号 + 后面的词」才箅（如 "1514 N US Hwy 45"、"123 MAIN ST"）。
 # 为何要算分母：大量源里存在空置地块/林地/无门牌号税档（garfield 只有四分之一的行业带真地址），
@@ -111,8 +174,9 @@ def _record_ok(rec: dict, raw: dict) -> bool:
     return num in blob or num.lstrip("0") in blob
 
 
-def _gate(kept: int, contentful: int, rows: int, true_n: int = 0) -> tuple[bool, str]:
-    """源级闸门（两道，各管一头）：
+def _gate(kept: int, contentful: int, rows: int, true_n: int = 0,
+          q: dict | None = None) -> tuple[bool, str, dict]:
+    """源级闸门（四道，各管一头）：
 
     ① 反造数（用**严判据**的分母 true_n）：产物数量不能远超「真门牌号形态行」。
        实测价值：us/wa/garfield 有源把**业主邮寄地址**当地址造出 466 条错记录，
@@ -120,23 +184,73 @@ def _gate(kept: int, contentful: int, rows: int, true_n: int = 0) -> tuple[bool,
     ② 覆盖率（用老分母 contentful）：真规则在相当一部分行上洗不出来是正常的
        （空置地块/无号税档，实测 us/il/effingham 只有 67% 的行能出记录）
        → 阈值仍用 30%，避免误杀真规则。
+    ③ 字段完整性（第 9 步新增）：city/zip 缺失率超上限 → **降级**（产物留着，永不当 A 级交付）。
+    ④ 脏值率（第 9 步新增）：被产物级防垃圾措施拦掉的占比过高 → 降级。
+
+    返回 (ok, why, extra)。ok=True 才有产物；extra["verdict"] ∈ PASS / PASS_DOWNGRADED / GATE_FAIL。
+    铁律：源级契约只能声明豁免（exempt → 记已知降级、不再去造刀），**绝不放宽全局硬门**。
     """
+    q = q or {}
+    extra = {"verdict": "PASS", "kind": "", "missing": dict(q.get("missing") or {}),
+             "miss_rate": {}, "junk_rate": float(q.get("junk_rate") or 0.0),
+             "per_street": float(q.get("per_street") or 0.0), "grade_hint": "A",
+             "notes": [], "exempt": None}
+
+    def _fail(why: str):
+        extra["verdict"] = "GATE_FAIL"
+        extra["kind"] = "SHAPE"
+        return False, why, extra
+
     if rows == 0:
-        return False, "0 行"
+        return _fail("0 行")
     if contentful == 0:
-        return False, f"{rows:,} 行里没有一行带地址内容（源不含地址）"
+        return _fail(f"{rows:,} 行里没有一行带地址内容（源不含地址）")
     ref, rname = (true_n, "真门牌号行") if true_n else (contentful, "带地址行")
     if kept > ref * 1.5:
-        return False, (f"疑似凭空造数据：合规 {kept:,} 条 > {rname} {ref:,} 条×150%"
-                       f" → 拒绝这套产物")
+        return _fail(f"疑似凭空造数据：合规 {kept:,} 条 > {rname} {ref:,} 条×150% → 拒绝这套产物")
     ratio = kept / contentful
-    if kept >= GATE_MIN_KEPT and ratio >= GATE_MIN_RATIO:
-        return True, (f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；"
-                      f"真门牌号行 {true_n:,}）总行 {rows:,}")
-    if kept >= 3 and ratio >= 0.8 and contentful <= 10:
-        return True, f"小源放行 {kept}/{contentful}"
-    return False, (f"合规 {kept}/{contentful} = {ratio:.0%}（阈 {GATE_MIN_RATIO:.0%}；"
-                   f"总行 {rows:,}，带地址 {contentful:,}，真门牌号 {true_n:,}）")
+    shape_ok = ((kept >= GATE_MIN_KEPT and ratio >= GATE_MIN_RATIO)
+                or (kept >= 3 and ratio >= 0.8 and contentful <= 10))
+    if not shape_ok:
+        return _fail(f"合规 {kept}/{contentful} = {ratio:.0%}（阈 {GATE_MIN_RATIO:.0%}；"
+                     f"总行 {rows:,}，带地址 {contentful:,}，真门牌号 {true_n:,}）")
+    why = (f"合规 {kept}/{contentful} = {ratio:.0%}（带地址行分母；真门牌号行 {true_n:,}）总行 {rows:,}"
+           if not (kept >= 3 and ratio >= 0.8 and contentful <= 10)
+           else f"小源放行 {kept}/{contentful}")
+
+    # ③ 字段完整性
+    lim = q.get("lim") or MAX_MISS
+    exempt = q.get("exempt") or {}
+    miss = q.get("missing") or {}
+    rate = {f: (miss.get(f, 0) / kept if kept else 0.0) for f in ("city", "zip")}
+    extra["miss_rate"] = {f: round(v, 4) for f, v in rate.items()}
+    over = [f for f in ("city", "zip") if rate[f] > float(lim.get(f, MAX_MISS[f]))]
+    if over:
+        ex = all(exempt.get(f) for f in over)
+        detail = "/".join(f"{f} 缺 {rate[f]:.0%}" for f in over)
+        extra.update({"verdict": "PASS_DOWNGRADED", "kind": "INCOMPLETE",
+                      "grade_hint": "B", "exempt": ex})
+        extra["notes"].append("FIELD_INCOMPLETE")
+        if ex:
+            extra["notes"].append("CONTRACT_EXEMPT")
+            why += (f"｜完整性：{detail}（上限 {lim.get('city'):.0%}）——源级契约已声明豁免，"
+                    f"记已知降级、不再当缺陷去造刀，但仍然永不当 A 级交付")
+        else:
+            why += (f"｜完整性不过：{detail}（上限 {lim.get('city'):.0%}）→ 降级并进待造刀"
+                    f"（退回第 3 步重造 spec 把 city/zip 抠出来）")
+        return True, why, extra
+
+    # ④ 脏值率
+    if extra["junk_rate"] > float(q.get("max_junk", MAX_JUNK)):
+        extra.update({"verdict": "PASS_DOWNGRADED", "kind": "DIRTY", "grade_hint": "B"})
+        extra["notes"].append("DIRTY")
+        why += (f"｜脏值率 {extra['junk_rate']:.0%}（{extra['missing']}）超上限 "
+                f"{float(q.get('max_junk', MAX_JUNK)):.0%} → 降级")
+        return True, why, extra
+
+    why += (f"｜完整性 OK（city 缺 {rate['city']:.0%}／zip 缺 {rate['zip']:.0%}）"
+            f"｜每街门牌号 {extra['per_street']}）")
+    return True, why, extra
 
 
 EARLY_STOP_RATIO = 0.995       # 合规率 ≥99.5% 即收工：再试其余规则的边际收益 <0.5%
@@ -175,6 +289,9 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
         except Exception as e:
             print(f"  [warm] {rname} 预热失败（不致命）: {type(e).__name__}", flush=True)
         stats: Counter = Counter()
+        miss: Counter = Counter()                 # 第 9 步：字段完整性底数
+        streets: set[str] = set()                 # 第 9 步：每街门牌号密度（源质量评分用）
+        track_density = True
         dst = os.path.join(dst_dir, rname + ".ndjson")
         ctx = RuleCtx(sid, row, mapping, default_state, dict())
         fetched = kept = contentful_n = kept_contentful = true_n = 0
@@ -212,23 +329,36 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                         continue
                     kept += 1
                     kept_contentful += 1
+                    for f in ("city", "zip"):
+                        if not rec.get(f):
+                            miss[f] += 1
+                    if track_density:
+                        streets.add(rec.get("street") or "")
+                        if len(streets) > DENSITY_SAMPLE:
+                            track_density = False    # 控内存：样本够了就不再记
                     rec["_rule"] = rname
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
         except Exception as e:
             stats[f"rule_error:{type(e).__name__}"] = 1
-        ok, why = _gate(kept_contentful, contentful_n, fetched, true_n)
+        qy = _quality(miss, stats.get("junk_rejected", 0), kept_contentful, streets, sid)
+        ok, why, gate_extra = _gate(kept_contentful, contentful_n, fetched, true_n, qy)
         step = {"rule": rname, "rows": fetched, "kept": kept,
                 "contentful": contentful_n, "kept_contentful": kept_contentful,
                 "true_addr": true_n,
                 "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
                 "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
                 "addr_hint": hint_seen, "drops": dict(stats.most_common(6)),
-                "verdict": "PASS" if ok else "GATE_FAIL", "why": why,
+                "verdict": gate_extra["verdict"], "kind": gate_extra["kind"],
+                "grade_hint": gate_extra["grade_hint"], "notes": gate_extra["notes"],
+                "exempt": gate_extra.get("exempt"), "quality": qy,
+                "why": why,
                 "seconds": round(time.time() - t0, 1)}
         chain.append(step)
+        mark = {"PASS": "✓通过(A级候选)", "PASS_DOWNGRADED": "△通过但降级(不进A级)",
+                "GATE_FAIL": "✗丢弃这套产物"}.get(gate_extra["verdict"], "?")
         print(f"  [{rname:16s}] 原始 {fetched:>8,} → 合规 {kept:>8,}  "
               f"（真门牌号行 {true_n:,}／带地址行 {contentful_n:,}，其中合规 {kept_contentful:,}）"
-              f"{'✓通过' if ok else '✗丢弃这套产物'}  ({why})", flush=True)
+              f"{mark}  ({why})", flush=True)
         if ok:
             # 不立即收工：多套规则都可能通过，最后选「洗出最多」的那套（质量由闸门 + 产物级防垃圾保证）
             passing.append((kept, rname, step, dst))
@@ -253,12 +383,14 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
                 os.remove(dst2)               # 落选规则的产品删掉，只留赢家
             except OSError:
                 pass
-        print(f"  → 选中 {best_rule}（通过者中洗出最多：{best_n:,} 条）", flush=True)
+        print(f"  → 选中 {best_rule}（通过者中洗出最多：{best_n:,} 条，"
+              f"{best_step.get('grade_hint')} 级，{best_step.get('verdict')}）", flush=True)
         return {"ok": True, "rule": best_rule, "chain": chain, "gate": best_step,
                 "kept": best_n, "fetched": best_step["rows"], "path": best_dst,
+                "verdict": best_step.get("verdict"), "grade_hint": best_step.get("grade_hint"),
                 "budget_exhausted": broke_by_budget,
                 "seconds": round(time.time() - t0, 1)}
-    return {"ok": False, "rule": "", "chain": chain, "gate": None,
+    return {"ok": False, "rule": "", "chain": chain, "gate": None, "verdict": "GATE_FAIL",
             "sample": sample, "fetched": sum(c["rows"] for c in chain),
             "budget_exhausted": broke_by_budget,
             "seconds": round(time.time() - t0, 1)}
@@ -379,13 +511,13 @@ def compare_rules(sid: str, row: dict, archive: str = ARCHIVE, limit: int = 0
                 continue
             kept += 1
             kept_contentful += 1
-        ok, why = _gate(kept_contentful, contentful_n, fetched, true_n)
+        ok, why, _gx = _gate(kept_contentful, contentful_n, fetched, true_n)
         table.append({"rule": rname, "rows": fetched, "kept": kept,
                       "contentful": contentful_n, "kept_contentful": kept_contentful,
                       "true_addr": true_n,
                       "ratio": round(kept_contentful / contentful_n, 3) if contentful_n else 0.0,
                       "coverage": round(contentful_n / fetched, 3) if fetched else 0.0,
-                      "verdict": "PASS" if ok else "GATE_FAIL", "why": why,
+                      "verdict": _gx["verdict"], "why": why,
                       "drops": dict(stats.most_common(6))})
         print(f"  [{rname:16s}] 合规 {kept:>8,}/{fetched:<8,}（带地址行 {contentful_n:,}，"
               f"其中合规 {kept_contentful:,}） {(kept_contentful / contentful_n if contentful_n else 0):>6.1%}"

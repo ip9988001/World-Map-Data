@@ -204,6 +204,9 @@ def merge_group(key: str, recs: list[tuple[int, dict]], meta: dict[str, dict],
             v = v.strip() if isinstance(v, str) else str(v)
             if v:
                 rec[f] = v
+                m = r.get(f + "_src")      # 字段级溯源跟着值一起走（derived/scope_default…）
+                if m:
+                    rec[f + "_src"] = m
                 break
         rec.setdefault(f, "")
     # 来源并集（第 11 步的核心修复：不许只留第一条）

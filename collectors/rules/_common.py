@@ -27,8 +27,16 @@ FULL_ADDR_RE = re.compile(r"^\s*(\d{1,6}(?:[-/]\d+)?[A-Za-z]?)\s+(.{3,120}?)\s*$
 TAIL_RE = re.compile(r",?\s*([^,]{2,40}?)[,\s]+([A-Z]{2}|[A-Za-z ]{3,25})[,\s]+(\d{5}(?:-\d{4})?)\s*$")
 
 
-def mk_record(number, street, city, zipv, statev, source: str, default_state: str = ""):
-    """五件套 → 记录（与 normalize.to_record_ex 完全同一套闸门）。"""
+def mk_record(number, street, city, zipv, statev, source: str, default_state: str = "",
+              marks: dict | None = None):
+    """五件套 → 记录（与 normalize.to_record_ex 完全同一套闸门）。
+
+    marks：**字段级溯源**（13 环节 · 第 8 步）。只有「不是直接从源列拿到的值」才标，
+    直接采到的字段一律不标（缺省即 source），所以记录体积几乎不变：
+      · marks={"city": "derived"} → 该值是从整条地址串里剥出来的
+      · 州码回落到源总表 scope（源里根本没有州列）→ 自动标 state_src="scope_default"
+    采集值与推断值必须分开记——这是对外「可复核」的前提。
+    """
     number = norm_number(number)
     street = norm_street(street)
     if not number:
@@ -45,8 +53,14 @@ def mk_record(number, street, city, zipv, statev, source: str, default_state: st
     if zip5 and street.startswith(zip5 + " "):
         return None, "street_is_address_blob"
     key = f"{state}|{city}|{zip5}|{street}|{number}"
-    return ({"state": state, "city": city, "zip": zip5, "street": street,
-             "number": number, "key": key, "source": source}, None)
+    rec = {"state": state, "city": city, "zip": zip5, "street": street,
+           "number": number, "key": key, "source": source}
+    for f, m in (marks or {}).items():
+        if m and rec.get(f):
+            rec[f + "_src"] = m
+    if not str(statev or "").strip() and state == norm_state("", default_state):
+        rec.setdefault("state_src", "scope_default")
+    return rec, None
 
 
 def guess_keys(keys: list[str]) -> dict[str, str]:

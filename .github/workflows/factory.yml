@@ -239,6 +239,12 @@ jobs:
           print(f"合并状态：{len(merged)} 源（底稿 {len(base)}）｜完成 {len(done)}｜"
                 f"洗出 {sum(v.get('kept') or 0 for v in done):,} 条")
           PY
+      - name: 源质量档案与分档（13 环节 · 第 9 步账本）
+        run: |
+          # 从合并后的状态里算每源质量分（完整率/每街门牌号密度/产量/干净度）→ S/A/B/C
+          mkdir -p /tmp/asm/data
+          python scripts/source_quality.py --state /tmp/asm/progress/state.json \
+            --table data/源总表-执行序.csv --out /tmp/asm/data/源质量档案.csv
       - name: 合并账本（黑名单 / 路由表）
         run: |
           python3 - <<'PY'
@@ -332,7 +338,7 @@ jobs:
                           len(st), len(done), sum(int(v.get("kept") or 0) for v in done)])
           print(f"台账已追加｜规则战绩 {len(rules)} 套")
           PY
-          git add -f progress/state.json "data/源黑名单.csv" "data/引擎路由表.csv" 2>/dev/null || true
+          git add -f progress/state.json "data/源黑名单.csv" "data/引擎路由表.csv" "data/源质量档案.csv" 2>/dev/null || true
           git add -f progress/待造刀 progress/台账.csv progress/规则战绩.csv 2>/dev/null || true
           git commit -m "state: 采集状态回写（run ${{ github.run_id }}）" || echo "无状态变化"
           git push -f origin data

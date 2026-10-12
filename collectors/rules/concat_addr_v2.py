@@ -35,7 +35,10 @@ class ConcatAddrV2(Rule):
         if not parsed:
             return None, "v2_not_a_full_address"
         number, street, city, state, zip5 = parsed
-        return mk_record(number, street, city, zip5, state, ctx.source_id, ctx.default_state)
+        # 字段级溯源（第 8 步）：city/state/zip 是从整条地址串同一格里剥出来的，
+        # 不是独立列，容易剥错 → 标 derived，采集值与推断值分开记
+        return mk_record(number, street, city, zip5, state, ctx.source_id, ctx.default_state,
+                         marks={"city": "derived", "state": "derived", "zip": "derived"})
 
     def self_test(self):
         cases = [

@@ -269,15 +269,20 @@ def resolve(row: dict, spec, sep: str = " ") -> str:
 
 
 # ---------- 主入口 ----------
-def to_record_ex(row: dict, mapping: dict, source: str, default_state: str = ""):
-    """原始行 → (标准化记录, 丢弃原因)。合格记录的原因位为 None。"""
+def to_record_ex(row: dict, mapping: dict, source: str, default_state: str = "",
+                 marks: dict | None = None):
+    """原始行 → (标准化记录, 丢弃原因)。合格记录的原因位为 None。
+
+    marks：字段级溯源（13 环节 · 第 8 步）——只标「非直接采集」的值（见 rules/_common.mk_record）。
+    """
     number = norm_number(resolve(row, mapping.get("number"), sep=""))
     street = norm_street(resolve(row, mapping.get("street")))
     if not number:
         return None, "no_number"          # ← 铁律：没有门牌号，整条丢弃
     if not street:
         return None, "no_street"
-    state = norm_state(resolve(row, mapping.get("region")), default_state)
+    stv = resolve(row, mapping.get("region"))
+    state = norm_state(stv, default_state)
     if not state:
         return None, "state_invalid"
     city = norm_city(resolve(row, mapping.get("city")))
@@ -287,8 +292,14 @@ def to_record_ex(row: dict, mapping: dict, source: str, default_state: str = "")
     if zip5 and street.startswith(zip5 + " "):
         return None, "street_is_address_blob"
     key = f"{state}|{city}|{zip5}|{street}|{number}"
-    return ({"state": state, "city": city, "zip": zip5, "street": street,
-             "number": number, "key": key, "source": source}, None)
+    rec = {"state": state, "city": city, "zip": zip5, "street": street,
+           "number": number, "key": key, "source": source}
+    for f, m in (marks or {}).items():
+        if m and rec.get(f):
+            rec[f + "_src"] = m
+    if not str(stv or "").strip() and state == norm_state("", default_state):
+        rec.setdefault("state_src", "scope_default")
+    return rec, None
 
 
 def to_record(row: dict, mapping: dict, source: str, default_state: str = "") -> dict | None:

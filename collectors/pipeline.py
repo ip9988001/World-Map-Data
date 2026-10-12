@@ -103,7 +103,16 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
         st.update({"done": True, "stage": "parsed", "rule": res["rule"],
                    "kept": res["kept"], "fetched": res["fetched"],
                    "ratio": res["gate"]["ratio"], "path": res["path"],
+                   # 第 9 步质量底数（源质量档案/分档的输入）
+                   "verdict": res["gate"].get("verdict", "PASS"),
+                   "grade_hint": res["gate"].get("grade_hint", "A"),
+                   "quality": res["gate"].get("quality") or {},
                    "seconds": round(time.time() - t0, 1), "error": ""})
+        # 完整性不达标且源级契约未声明豁免 → 进待造刀（退回第 3 步重造 spec），
+        # 不算失败、也不删产物，但绝不允许当 A 级交付
+        if res["gate"].get("kind") == "INCOMPLETE" and not res["gate"].get("exempt"):
+            st["needs_rule"] = True
+            st["reason"] = res["gate"].get("why", "")[:300]
         route_update(sid, res["rule"], True, res["gate"]["ratio"])
         return st
 
