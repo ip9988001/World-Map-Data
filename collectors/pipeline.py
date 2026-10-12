@@ -237,12 +237,27 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
 
 
 def report(state: dict, top: int = 10) -> str:
-    """给状态出一份人读小报（哪些源完成、哪些缺口、哪些等造规则）。"""
+    """给状态出一份人读小报（哪些源完成、哪些缺口、哪些等造规则）。
+
+    完成数只认「账本 done **且** 产物在盘上」：账本说完成、盘上没产物的
+    记作「幽灵」并单列——产物被清理后 state 不会自己变，不显式暴露就会
+    把幽灵算成战绩（虚胖），也让发布侧和采集侧的口径对不上。
+    """
     from collections import Counter
-    kinds = Counter(v.get("kind", "ok") if not v.get("done") else "ok"
-                    for v in state.values())
-    lines = [f"共 {len(state)} 个源：完成 {kinds.get('ok', 0)}，"
-             f"{'，'.join(f'{k} {n}' for k, n in kinds.items() if k != 'ok')}"]
+    kinds: Counter = Counter()
+    ok = ghost = 0
+    for v in state.values():
+        if v.get("done"):
+            p = v.get("path")
+            if p and os.path.exists(p):
+                ok += 1
+            else:
+                ghost += 1
+            continue
+        kinds[v.get("kind", "?")] += 1
+    lines = [f"共 {len(state)} 个源：完成 {ok}"
+             + (f"（另有幽灵 {ghost}：账本 done 但产物不在盘上，跑到即自动重采）" if ghost else "")
+             + (f"，{'，'.join(f'{k} {n}' for k, n in kinds.most_common())}" if kinds else "")]
     gaps = [v for v in state.values() if v.get("kind") == "RULE_GAP"]
     if gaps:
         lines.append("待造规则的源（按丢弃原因聚合）：")

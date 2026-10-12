@@ -68,13 +68,11 @@ def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = ""
                 if retest and today < retest:
                     skip.add(sid)
                     n_bl += 1
+    n_intake = 0                          # 前置门剔除计数（P1-1；必须在 use 之前初始化）
     if n_bl:
         print(f"黑名单提前剔除 {n_bl} 个源（真坏/不适用，未到复检日）")
-    if n_intake:
-        print(f"前置门剔除 {n_intake} 个源（预检判决 REJECTED_P0/P2，不排进泳道、不烧采集预算）")
     out = []
     verdicts = load_intake_verdicts()
-    n_intake = 0
     with open(table, encoding="utf-8-sig") as fh:
         for i, r in enumerate(csv.DictReader(fh)):
             sid = r["source_id"]
@@ -102,6 +100,8 @@ def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = ""
             out.append({"i": i, "source_id": sid, "state": r.get("state", ""),
                         "priority": r.get("priority", ""), "channel": r.get("channel", ""),
                         "url": r.get("url", ""), "count": n, "page_size": ps or DEFAULT_PAGE})
+    if n_intake:
+        print(f"前置门剔除 {n_intake} 个源（预检判决 REJECTED_P0/P2，不排进泳道、不烧采集预算）")
     return out
 
 
