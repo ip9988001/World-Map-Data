@@ -83,6 +83,32 @@ def _sha256_file(path: str) -> str:
 
 
 # ── 三种取数协议：都是「全量拉取」，只是拿法不同 ────────────
+def _count_lines(path: str) -> int:
+    if not os.path.exists(path):
+        return 0
+    with open(path, "rb") as fh:
+        return sum(1 for _ in fh)
+
+
+def _integrity(man: dict, actual: int, declared: int = 0) -> dict:
+    """第 6 步 下载完整性对账：本地拿到的行数 vs 服务端声明的总数。
+
+    铁律：**不许静默 0 行**。空档 / 明显缺量必须显式标缺陷，交给分诊去补采，
+    而不是当成「采完了、只是没数据」让下游白跑一轮（还可能把好源误判成无地址）。
+    预算到点没采完（done=False）不算缺陷 —— 那是正常的续拿。
+    """
+    man["rows"] = actual
+    if actual == 0:
+        man.update({"error": (f"EMPTY_DOWNLOAD: 服务端自报 {declared:,} 条，本地拿到 0 行"
+                              if declared else "EMPTY_DOWNLOAD: 本地拿到 0 行"),
+                    "done": False, "defect": "EMPTY"})
+    elif declared and man.get("done") and actual < declared * 0.9:
+        man.update({"error": f"SHORT_DOWNLOAD: 服务端 {declared:,} 条，本地只拿到 {actual:,} 条"
+                             f"（{actual / declared:.0%}）",
+                    "done": False, "defect": "SHORT"})
+    return man
+
+
 def _direct(pol: Politeness, url: str, payload_dir: str, man: dict) -> dict:
     name = urllib.parse.urlparse(url).path.rstrip("/").split("/")[-1] or "download.bin"
     if "." not in name:
@@ -92,6 +118,8 @@ def _direct(pol: Politeness, url: str, payload_dir: str, man: dict) -> dict:
     n = pol.download_to_file(url, dest)
     man.update({"files": [{"name": name, "bytes": n, "sha256": _sha256_file(dest),
                            "url": url}], "bytes": n, "done": True})
+    if n == 0:                                   # 0 字节也算下载缺陷，不许当「采完了」
+        man.update({"error": "EMPTY_DOWNLOAD: 下载得到 0 字节", "done": False, "defect": "EMPTY"})
     return man
 
 
@@ -112,7 +140,7 @@ def _arcgis(pol: Politeness, url: str, payload_dir: str, man: dict,
                 "server_total": total, "last_oid": info.get("last_oid"),
                 "pages": info.get("pages"), "done": bool(info.get("done", True)),
                 "layer_url": meta["url"], "oid_field": meta["objectIdField"]})
-    return man
+    return _integrity(man, _count_lines(out), int(total or 0))
 
 
 def _socrata(pol: Politeness, url: str, payload_dir: str, man: dict,
@@ -160,7 +188,7 @@ def _socrata_paged(pol: Politeness, url: str, payload_dir: str, man: dict,
                            "sha256": _sha256_file(out), "url": url}],
                 "bytes": os.path.getsize(out), "rows": n, "pages": pages,
                 "next_offset": offset, "done": done})
-    return man
+    return _integrity(man, n)
 
 
 def fetch_raw(pol: Politeness, sid: str, url: str, root: str = "raw_archive",

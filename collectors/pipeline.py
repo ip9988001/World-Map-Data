@@ -82,8 +82,11 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
             err = str(man["error"])
             low = err.lower()
             kind = "TRANSIENT"
-            if any(t in low for t in ("not found", "invalid url", "http error 404",
-                                      "http error 410", "http error 403", "http error 401")):
+            if low.startswith("empty_download") or low.startswith("short_download"):
+                # 第 6 步下载完整性对账标记的缺陷：补采即可，不换规则、不拉黑
+                kind = "DOWNLOAD_DEFECT"
+            elif any(t in low for t in ("not found", "invalid url", "http error 404",
+                                        "http error 410", "http error 403", "http error 401")):
                 kind = "SOURCE_BROKEN"
             st.update({"done": False, "stage": "fetch", "kind": kind, "error": err,
                        "attempts": 1, "seconds": round(time.time() - t0, 1)})

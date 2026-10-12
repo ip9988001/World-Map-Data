@@ -31,6 +31,9 @@ from collections import defaultdict
 MIN_INTERVAL = 0.8          # 单主机最小请求间隔（秒）
 META_REQUESTS = 3           # 元数据 + 计数 + 余量的固定请求数
 DEFAULT_PAGE = 1800         # 兜底分页大小（服务端上限 × 0.9 的实测常见值）
+# 源质量档位 → 排队名次（scripts/source_quality.py 产出 data/源质量档案.csv）
+QUALITY_ARCHIVE = "data/源质量档案.csv"
+TIER_RANK = {"S": 0, "A": 1, "B": 2, "N": 3, "C": 4}
 
 
 def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = "") -> list[dict]:
@@ -106,15 +109,39 @@ def est_seconds(src: dict, interval: float = MIN_INTERVAL) -> float:
     return META_REQUESTS * interval + pages * interval
 
 
+def load_tiers(path: str = QUALITY_ARCHIVE) -> dict[str, int]:
+    """源质量档案 → 采集优先级排名（第 2 档「让好源自己浮出来」）。
+
+    实测同一批源的质量差 10 倍（AK 每街 1.48 个号、OR 15.12），好源差源一视同仁地排队
+    等于把产能浪费在刷不出地址的源上。档位由 scripts/source_quality.py 算出来。
+    S 最好、C 最差；N=未评测（老状态没质量底数），与已评测的排在一起但不歧视。
+    档案不存在时一律按 N 处理 —— **不因为缺表就改行为**。
+    """
+    out: dict[str, int] = {}
+    if not os.path.exists(path):
+        return out
+    try:
+        with open(path, encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                sid = (r.get("source_id") or "").strip()
+                if sid:
+                    out[sid] = TIER_RANK.get((r.get("tier") or "").strip().upper(), 3)
+    except Exception:
+        return out
+    return out
+
+
 def build_lanes(sources: list[dict], lanes: int, interval: float = MIN_INTERVAL) -> list[dict]:
     """LPT：按主机总耗时从大到小，依次丢给当前最闲的泳道。"""
+    tiers = load_tiers()
     by_bucket: dict[str, list[dict]] = defaultdict(list)
     for s in sources:
         by_bucket[bucket_of(s["url"])].append(s)
     buckets = []
     for h, items in by_bucket.items():
-        # 同主机内：优先级在前，其次小源在前（小源先清掉，队列尾部留大源）
-        items.sort(key=lambda x: (x["priority"], x["count"], x["source_id"]))
+        # 同主机内：优先级在前，其次质量档位（好源先采），然后小源在前
+        items.sort(key=lambda x: (x["priority"], tiers.get(x["source_id"], 3),
+                                  x["count"], x["source_id"]))
         buckets.append({"host": h, "sources": items,
                         "est_s": sum(est_seconds(x, interval) for x in items),
                         "rows": sum(x["count"] for x in items)})

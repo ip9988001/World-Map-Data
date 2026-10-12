@@ -60,6 +60,8 @@ jobs:
     if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode == 'collect')
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: write          # 预检结果要回写 main
     outputs:
       lanes: ${{ steps.plan.outputs.lanes }}
       sources: ${{ steps.plan.outputs.sources }}
@@ -77,6 +79,24 @@ jobs:
             git show "origin/data:data/$f" > "data/$f" 2>/dev/null || true
           done
           python3 -c 'import json; print("state 条目:", len(json.load(open("progress/state.json"))))'
+      - name: 源准入预检（13 环节 · 第 1/2/4 步：前置门判「采不采」）
+        run: |
+          # 只挑「没采过、没拉黑、还没预检卡」的源；不下载全量数据，6~7 秒/源
+          python scripts/source_intake.py --todo 20 --all --interval 0.6 \
+            || echo "预检有失败（不影响本窗口采集）"
+      - name: 回写预检结果（汇总 + 预检卡 + 许可待补 + 契约豁免待复核）
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git add -f data/预检汇总.csv data/预检卡 data/许可待补.csv \
+            "data/契约豁免待复核.csv" 2>/dev/null || true
+          if git diff --cached --quiet; then echo "预检无新增"; exit 0; fi
+          git commit -m "intake: 源准入预检（run ${{ github.run_id }}）"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "预检结果推送失败（不阻断采集）"
       - name: 生成泳道计划
         id: plan
         run: |
@@ -461,7 +481,8 @@ jobs:
         run: |
           git config user.name "factory-bot"
           git config user.email "factory-bot@users.noreply.github.com"
-          git add -A collectors/rules/specs data/造规则账本.csv 2>/dev/null || true
+          git add -A collectors/rules/specs data/造规则账本.csv \
+            "data/源质量契约.csv" "data/契约豁免待复核.csv" 2>/dev/null || true
           if git diff --cached --quiet; then echo "本轮无新规则"; exit 0; fi
           git commit -m "rule: AI 造规则（run ${{ github.run_id }}）"
           for i in 1 2 3; do

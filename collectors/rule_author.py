@@ -46,6 +46,9 @@ API = "https://api.deepseek.com/chat/completions"
 TABLE = "data/源总表-执行序.csv"
 LEDGER = "data/造规则账本.csv"
 STATS = "progress/规则战绩.csv"
+# 第 3 步 → 第 9 步的桥：spec 里声明的质量契约写到这里，质量闸门（local_cascade.load_contracts）读它
+CONTRACT = "data/源质量契约.csv"
+EXEMPT_REVIEW = "data/契约豁免待复核.csv"    # LLM 声明的豁免必须留痕，人可撤销
 PROMPT_ROWS = 30                 # 喂给 LLM 的样本行数
 VALIDATE_ROWS = 200              # 验证闸门用的样本行数
 NUM_RE = re.compile(r"^\d{1,6}[A-Za-z]?\d?$")
@@ -90,6 +93,9 @@ SCHEMA = json.dumps({
     "columns": {"number": "", "street": "", "city": "", "zip": "", "state": ""},
     "number_template": "", "street_template": "", "full": "", "single": "",
     "unit_drop": True,
+    "contract": {"city_max_miss": 0.2, "zip_max_miss": 0.2, "max_junk": 0.2,
+                 "exempt_city": False, "exempt_zip": False,
+                 "exempt_reason": "仅当该源**根本没有** city/zip 列时才填豁免，并写明依据列名"},
     "examples": [{"row": {"列名": "值"}, "expect": {"number": "123", "street": "MAIN ST"}}],
 }, ensure_ascii=False, indent=1)
 # 这个字面量必须在模板外拼好：直接写进 USER 会被 str.format 当成占位符
@@ -292,6 +298,29 @@ def validate(spec: dict, rows: list[dict], sid: str, best_ratio: float = 0.0
         errs.append(f"不如现有规则（{ratio:.0%} < {best_ratio:.0%}）")
     if not NUM_RE.match(str(spec_set_first_number(rule, rows) or "1")):
         errs.append("号码形态异常")
+    # 质量契约自检（第 3 步 → 第 9 步）：阈值只能比全局更严，豁免必须有依据
+    try:
+        from .local_cascade import MAX_JUNK, MAX_MISS
+    except Exception:
+        MAX_MISS, MAX_JUNK = {"city": 0.20, "zip": 0.20}, 0.20
+    c = spec.get("contract") or {}
+    if c:
+        for k, hard in (("city_max_miss", MAX_MISS["city"]),
+                        ("zip_max_miss", MAX_MISS["zip"]),
+                        ("max_junk", MAX_JUNK)):
+            v = c.get(k)
+            if v in ("", None):
+                continue
+            try:
+                fv = float(v)
+            except (TypeError, ValueError):
+                errs.append(f"契约 {k} 不是数字：{v!r}")
+                continue
+            if fv > hard:
+                errs.append(f"契约 {k}={fv} 比全局硬门 {hard} 松 —— 不许放宽全局门（只能更严）")
+        if (c.get("exempt_city") or c.get("exempt_zip")) \
+                and not str(c.get("exempt_reason") or "").strip():
+            errs.append("声明了豁免却没写 exempt_reason（豁免必须有依据）")
     return (not errs), stats, errs
 
 
@@ -429,7 +458,53 @@ def write_spec(spec: dict, out_dir: str, sid: str, stats: dict, model: str) -> s
     path = os.path.join(out_dir, f"{spec['name']}.json")
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(spec, fh, ensure_ascii=False, indent=1)
+    emit_contract(sid, spec)      # 第 3 步 → 第 9 步：把质量契约落到契约表（闸门读它）
     return path
+
+
+def emit_contract(sid: str, spec: dict) -> None:
+    """把 spec 里的质量契约写进 data/源质量契约.csv（第 9 步的质量闸门读它）。
+
+    铁律：**契约只能声明豁免/降级，绝不放宽全局硬门** ——
+      · 阈值只会取 min(全局, 声明值)（只能更严，实际 min 由 local_cascade.load_contracts 做）
+      · exempt_* 只意味着「这条我们认了、不再去造刀」；**该源的交付照样降级、永不当 A 级**
+      · 豁免要额外写进待复核表（人能撤销），不允许悄悄把闸门弄松
+    """
+    c = spec.get("contract") or {}
+    if not c:
+        return
+    ex = ",".join([x for x in (("city" if c.get("exempt_city") else ""),
+                               ("zip" if c.get("exempt_zip") else "")) if x])
+    row = {"source_id": sid,
+           "city_max_miss": c.get("city_max_miss", ""),
+           "zip_max_miss": c.get("zip_max_miss", ""),
+           "max_junk": c.get("max_junk", ""),
+           "exempt_city": "1" if c.get("exempt_city") else "",
+           "exempt_zip": "1" if c.get("exempt_zip") else "",
+           "note": str(c.get("exempt_reason") or c.get("note") or "")[:200]}
+    rows: list[dict] = []                       # 同源旧声明由新 spec 覆盖
+    if os.path.exists(CONTRACT):
+        try:
+            with open(CONTRACT, encoding="utf-8-sig", newline="") as fh:
+                rows = [r for r in csv.DictReader(fh) if r.get("source_id") != sid]
+        except Exception:
+            rows = []
+    rows.append(row)
+    os.makedirs(os.path.dirname(CONTRACT) or ".", exist_ok=True)
+    with open(CONTRACT, "w", encoding="utf-8-sig", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(row.keys()), extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+    if ex:
+        fresh = not os.path.exists(EXEMPT_REVIEW)
+        os.makedirs(os.path.dirname(EXEMPT_REVIEW) or ".", exist_ok=True)
+        with open(EXEMPT_REVIEW, "a", encoding="utf-8-sig", newline="") as fh:
+            w = csv.writer(fh)
+            if fresh:
+                w.writerow(["at", "source_id", "rule", "exempt", "reason", "action"])
+            w.writerow([time.strftime("%Y-%m-%d %H:%M:%S"), sid, spec.get("name", ""), ex,
+                        row["note"],
+                        "待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行"])
 
 
 def write_rejected(spec: dict, out_dir: str, sid: str, stats: dict, errs: list[str],
