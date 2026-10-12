@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:40:12",
+ "county": "City of Blowing Rock",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+ "source_id": "us/nc/blowing_rock",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://services5.arcgis.com/qWbsNTne6eidnUv9/ArcGIS/rest/services/BlowingRock_Parcels_201709/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

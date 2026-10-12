@@ -1,0 +1,152 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "REV_City",
+  "number": "REV_LongLabel",
+  "state": "REV_LongLabel",
+  "street": "REV_LongLabel",
+  "zip": "REV_Postal"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:37:58",
+ "county": "",
+ "curated_cols": {
+  "city": "REV_City",
+  "number": "REV_LongLabel",
+  "state": "REV_LongLabel",
+  "street": "REV_LongLabel",
+  "zip": "REV_Postal"
+ },
+ "fields": [
+  "OBJECTID",
+  "BUILD_ID",
+  "SQMETERS",
+  "LONGITUDE",
+  "LATITUDE",
+  "REV_City",
+  "REV_Postal",
+  "REV_LongLabel",
+  "NAME"
+ ],
+ "fields_n": 9,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address_Points_From_Footprints",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BUILD_ID": {
+    "带特殊字符": 0,
+    "最短": "211869",
+    "最长": "211869",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "43.554598125135",
+    "最长": "43.551737900961065",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-116.46432883472",
+    "最长": "-116.49905814845803",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "Ada",
+    "最长": "Canyon",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REV_City": {
+    "带特殊字符": 0,
+    "最短": "Nampa",
+    "最长": "Meridian",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REV_LongLabel": {
+    "带特殊字符": 300,
+    "最短": "83687, Nampa, ID, USA",
+    "最长": "Catnap Quarters, 4400 W Legacy Ln, Meridian, ID, 83642, USA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REV_Postal": {
+    "带特殊字符": 0,
+    "最短": "83687",
+    "最长": "83687",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SQMETERS": {
+    "带特殊字符": 0,
+    "最短": "61.374",
+    "最长": "182.6695",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8e643de6bc2bbb18",
+  "total": 873374,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 873374,
+   "number": 873374,
+   "state": 873374,
+   "street": 873374,
+   "zip": 873374
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",
+  "total": 873374,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=REV_LongLabel street=REV_LongLabel city=REV_City zip=REV_Postal",
+ "sample_hash": "8e643de6bc2bbb18",
+ "site_cols": [],
+ "source_id": "us/id/statewide",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://services1.arcgis.com/CNPdEkvnGl65jCX8/ArcGIS/rest/services/Address_Points_From_Footprints/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

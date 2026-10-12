@@ -7,3 +7,22 @@ us/de/statewide,DE,,https://enterprise.firstmaptest.delaware.gov/arcgis/rest/ser
 us/ia/statewide,IA,,https://data.openaddresses.io/cache/uploads/ingalls/bdc482/IOWA_911_ADDRESSES.zip,,以官方页面为准，待补
 us/de/statewide,DE,,https://enterprise.firstmaptest.delaware.gov/arcgis/rest/services/Location/County_Roads_and_Addresses/FeatureServer/0,,以官方页面为准，待补
 us/de/statewide,DE,,https://enterprise.firstmaptest.delaware.gov/arcgis/rest/services/Location/County_Roads_and_Addresses/FeatureServer/0,,以官方页面为准，待补
+us/id/statewide,ID,,https://services1.arcgis.com/CNPdEkvnGl65jCX8/ArcGIS/rest/services/Address_Points_From_Footprints/FeatureServer/0,,以官方页面为准，待补
+us/il/city_of_schaumburg,IL,,https://gisweb.ci.schaumburg.il.us/arcgis/rest/services/OpenData/AddressPointsOpenData/MapServer/0,,以官方页面为准，待补
+us/il/edgar,IL,,https://services5.arcgis.com/6VdFeKk2GI4rFk2D/arcgis/rest/services/Reach_Parcels/FeatureServer/0,https://edgar-il.bhamaps.com/,以官方页面为准，待补
+us/in/statewide,IN,,https://gisdata.in.gov/server/rest/services/Hosted/Address_Points_of_Indiana_Current/FeatureServer/0,https://www.indianamap.org/datasets/9b222d07cc164eb384a24742cbf1d274_0/explore,以官方页面为准，待补
+us/ks/statewide,KS,,https://services6.arcgis.com/7XhimSpf8B7lHIMy/arcgis/rest/services/AddressPoints_NG911_ALL_GCS/FeatureServer/0,https://hub.kansasgis.org/datasets/6df0cfed393e4fca8d6c7b500c311728_0/about,以官方页面为准，待补
+us/ky/statewide,KY,,https://services3.arcgis.com/ghsX9CKghMvyYjBU/arcgis/rest/services/Ky_911_Site_Structure_Address_Points_gdb/FeatureServer/1,https://opengisdata.ky.gov/datasets/2834b20ab27c4b599759a873e9e2b4d2_1/about,以官方页面为准，待补
+us/ky/boyd,KY,,https://data.openaddresses.io/cache/uploads/iandees/4c9049/MasterAddresses.zip,,以官方页面为准，待补
+us/ma/statewide,MA,,https://hub.arcgis.com/api/v3/datasets/c33281538f854507a90351760c3468fc_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1,https://gis.data.mass.gov/maps/a0049ad319674c439516b2df1173d8f5/about,以官方页面为准，待补
+us/md/statewide,MD,,https://geodata.md.gov/imap/rest/services/PlanningCadastre/MD_PropertyData/MapServer/0,https://data.imap.maryland.gov/datasets/maryland::maryland-property-data-parcel-points/about,以官方页面为准，待补
+us/mi/statewide,MI,,https://data.openaddresses.io/cache/uploads/iandees/2026-02-15-jtu8s/StructurePointsZip.zip,,以官方页面为准，待补
+us/mn/metrogis,MN,,ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metrogis/loc_address_points/shp_loc_address_points.zip,,以官方页面为准，待补
+us/mn/statewide,MN,,https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/loc_addresses_open/FeatureServer/0,https://gisdata.mn.gov/dataset/loc-addresses-open,以官方页面为准，待补
+us/mo/statewide,MO,,https://data.openaddresses.io/cache/uploads/iandees/2026-02-20-whw3k/MissouriAddresses_020326.gdb.zip,,以官方页面为准，待补
+us/ms/statewide-east,MS,,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/1,,以官方页面为准，待补
+us/ms/statewide-partial,MS,Mississippi Department of Environmental Quality,https://www.gisonline.ms.gov/arcgis/rest/services/MDEQ/Download/MapServer/56,,以官方页面为准，待补
+us/ms/statewide-west,MS,,https://gis.mississippi.edu/server/rest/services/Cadastral/MS_Parcels_August_2023/MapServer/0,,以官方页面为准，待补
+us/mt/statewide,MT,,https://ftpgeoinfo.msl.mt.gov/Data/Spatial/MSDI/AddressStructures/StructuresFramework_shp.zip,https://mslservices.mt.gov/Geographic_Information/Data/DataList/datalist_Details.aspx?did={E8C6A50B-EBC9-4625-93FC-B798179A8C04},以官方页面为准，待补
+us/nc/town_of_chapel_hill,NC,,https://gisweb.townofchapelhill.org/arcgis/rest/services/CorporateData/AddressPoints/MapServer/0,https://gis.townofchapelhill.org/download_data/,以官方页面为准，待补
+us/nc/blowing_rock,NC,,https://services5.arcgis.com/qWbsNTne6eidnUv9/ArcGIS/rest/services/BlowingRock_Parcels_201709/FeatureServer/0,,以官方页面为准，待补

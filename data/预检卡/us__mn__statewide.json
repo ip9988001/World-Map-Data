@@ -1,0 +1,414 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ctu_name",
+  "number": "anumberpre",
+  "state": "state_code",
+  "street": "st_pre_mod",
+  "zip": "zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:39:46",
+ "county": "",
+ "curated_cols": {
+  "city": "ctu_name",
+  "number": "anumberpre",
+  "state": "state_code",
+  "street": "st_pre_mod",
+  "zip": "zip"
+ },
+ "fields": [
+  "objectid",
+  "add_id",
+  "add_id_loc",
+  "anumberpre",
+  "anumber",
+  "anumbersuf",
+  "st_pre_mod",
+  "st_pre_dir",
+  "st_pre_typ",
+  "st_pre_sep",
+  "st_name",
+  "st_pos_typ",
+  "st_pos_dir",
+  "st_pos_mod",
+  "sub_type1",
+  "sub_id1",
+  "sub_type2",
+  "sub_id2",
+  "zip",
+  "zip4",
+  "ctu_name",
+  "ctu_id_txt",
+  "postcomm",
+  "co_code",
+  "co_name",
+  "state_code",
+  "loc_desc",
+  "landmark",
+  "residence",
+  "mailable",
+  "state_pin",
+  "place_loc",
+  "cen_geo",
+  "uni_wo_sub",
+  "longitude",
+  "latitude",
+  "usng_code",
+  "gis911poc",
+  "esn",
+  "psap_code",
+  "msag_c",
+  "verror_911",
+  "lst_predir",
+  "lst_name",
+  "lst_type",
+  "lst_posdir",
+  "status",
+  "eff_date",
+  "ret_date",
+  "source",
+  "aauthority",
+  "edit_org",
+  "edit_date",
+  "comments"
+ ],
+ "fields_n": 54,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Loc Addresses Open",
+  "objectIdField": "objectid",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "add_id": {
+    "带特殊字符": 1,
+    "最短": "845",
+    "最长": "405CED67-C32C-442C-8A0C-B86DBFAD79EC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "add_id_loc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "anumber": {
+    "带特殊字符": 0,
+    "最短": "401",
+    "最长": "61308",
+    "空": 0,
+    "空率": 0.0
+   },
+   "anumberpre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "anumbersuf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "cen_geo": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 299,
+    "空率": 0.997
+   },
+   "co_code": {
+    "带特殊字符": 0,
+    "最短": "27149",
+    "最长": "27149",
+    "空": 0,
+    "空率": 0.0
+   },
+   "co_name": {
+    "带特殊字符": 0,
+    "最短": "Stevens",
+    "最长": "Otter Tail",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ctu_id_txt": {
+    "带特殊字符": 0,
+    "最短": "66334",
+    "最长": "02397125",
+    "空": 297,
+    "空率": 0.99
+   },
+   "ctu_name": {
+    "带特殊字符": 0,
+    "最短": "Chokio",
+    "最长": "Everglade Township",
+    "空": 0,
+    "空率": 0.0
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "2339",
+    "最长": "2339",
+    "空": 0,
+    "空率": 0.0
+   },
+   "gis911poc": {
+    "带特殊字符": 0,
+    "最短": "Stevens",
+    "最长": "Otter Tail",
+    "空": 0,
+    "空率": 0.0
+   },
+   "landmark": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "latitude": {
+    "带特殊字符": 0,
+    "最短": "45.572",
+    "最长": "46.65163034",
+    "空": 0,
+    "空率": 0.0
+   },
+   "loc_desc": {
+    "带特殊字符": 5,
+    "最短": "N-ROAD",
+    "最长": "E-CO 13--PT ADDED PER JUDY DIEHL PHONE CALL--BMH",
+    "空": 129,
+    "空率": 0.43
+   },
+   "longitude": {
+    "带特殊字符": 0,
+    "最短": "-96.1588",
+    "最长": "-95.78653085",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mailable": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "place_loc": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "5",
+    "空": 3,
+    "空率": 0.01
+   },
+   "postcomm": {
+    "带特殊字符": 0,
+    "最短": "CHOKIO",
+    "最长": "ALBERTA",
+    "空": 2,
+    "空率": 0.007
+   },
+   "psap_code": {
+    "带特殊字符": 0,
+    "最短": "STEV",
+    "最长": "STEV",
+    "空": 0,
+    "空率": 0.0
+   },
+   "residence": {
+    "带特殊字符": 0,
+    "最短": "SHED",
+    "最长": "FARM SITE",
+    "空": 3,
+    "空率": 0.01
+   },
+   "st_name": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "E Scharf Ave",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_pos_dir": {
+    "带特殊字符": 0,
+    "最短": "West",
+    "最长": "South",
+    "空": 204,
+    "空率": 0.68
+   },
+   "st_pos_mod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_pos_typ": {
+    "带特殊字符": 0,
+    "最短": "Street",
+    "最长": "Street",
+    "空": 23,
+    "空率": 0.077
+   },
+   "st_pre_dir": {
+    "带特殊字符": 0,
+    "最短": "West",
+    "最长": "West",
+    "空": 277,
+    "空率": 0.923
+   },
+   "st_pre_mod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_pre_sep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_pre_typ": {
+    "带特殊字符": 0,
+    "最短": "County Road",
+    "最长": "State Highway",
+    "空": 278,
+    "空率": 0.927
+   },
+   "state_code": {
+    "带特殊字符": 0,
+    "最短": "MN",
+    "最长": "MN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "state_pin": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sub_id1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sub_id2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sub_type1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sub_type2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "uni_wo_sub": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "usng_code": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "zip": {
+    "带特殊字符": 0,
+    "最短": "56221",
+    "最长": "56221",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zip4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c6af27d63e68a816",
+  "total": 2220021,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0026,
+   "number": 1.0,
+   "state": 0.0,
+   "street": 0.9995,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 2214292,
+   "number": 3,
+   "state": 2220021,
+   "street": 1129,
+   "zip": 2220003
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 1.0, 'street': 0.9995, 'city': 0.0026, 'zip': 0.0, 'state': 0.0}）→ 全量数据证伪，拒收",
+  "total": 2220021,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=anumberpre street=st_pre_mod city=ctu_name zip=zip",
+ "sample_hash": "c6af27d63e68a816",
+ "site_cols": [],
+ "source_id": "us/mn/statewide",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/loc_addresses_open/FeatureServer/0",
+ "verdict": "REJECTED_P2"
+}

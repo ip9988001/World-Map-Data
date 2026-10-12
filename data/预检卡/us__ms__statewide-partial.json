@@ -1,0 +1,429 @@
+{
+ "attribution": "Mississippi Department of Environmental Quality",
+ "candidate_cols": {
+  "city": "SCITY",
+  "number": "SITEADD",
+  "state": "MSTATE",
+  "street": "SITEADD",
+  "unit": "MUNIT",
+  "zip": "MZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:40:01",
+ "county": "",
+ "curated_cols": {
+  "city": "SCITY",
+  "number": "SITEADD",
+  "street": "SITEADD"
+ },
+ "fields": [
+  "OBJECTID",
+  "PERMANENT_IDENTIFIER",
+  "SOURCE_FEATUREID",
+  "SOURCE_DATASETID",
+  "SOURCE_DATADESC",
+  "SOURCE_ORIGINATOR",
+  "DATA_SECURITY",
+  "DISTRIBUTION_POLICY",
+  "LOADDATE",
+  "QUALITY",
+  "SCALE",
+  "OWNER_CLASSIFICATION",
+  "STNAME",
+  "STFIPS",
+  "CNTYNAME",
+  "CNTYFIPS",
+  "SOURCEAGENT",
+  "PARNO",
+  "NPARNO",
+  "STRUCT",
+  "IMPROVVAL",
+  "LANDVAL",
+  "PARVAL",
+  "PARVALTYPE",
+  "PARUSECODE",
+  "PARUSEDESC",
+  "OWNTYPE",
+  "AREATXT",
+  "AREANO",
+  "OWNNAME",
+  "OWNFRST",
+  "OWNLAST",
+  "SUBSURFOWN",
+  "SUBOWNTYPE",
+  "MAILADD",
+  "MADDRNO",
+  "MADDSTNAME",
+  "MADDPREF",
+  "MADDSTR",
+  "MADDSTTYP",
+  "MADDSTSUF",
+  "MUNIT",
+  "MCITY",
+  "MSTATE",
+  "MZIP",
+  "SITEADD",
+  "SADDSTNAME",
+  "SADDPREF",
+  "SADDSTR",
+  "SADDSTTYP",
+  "SADDSTSUF",
+  "SUNIT",
+  "SCITY",
+  "LEGDECFULL",
+  "SOURCEDATE",
+  "SOURCEREF",
+  "REVISEDDATE",
+  "SUBCONDO",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()"
+ ],
+ "fields_n": 61,
+ "guessed_cols": {
+  "state": "MSTATE",
+  "unit": "MUNIT",
+  "zip": "MZIP"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "MDEM Land Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AREANO": {
+    "带特殊字符": 0,
+    "最短": "0.639499",
+    "最长": "123.87617492",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AREATXT": {
+    "带特殊字符": 0,
+    "最短": "1.925951231143",
+    "最长": "6.18663244601937E-02",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CNTYFIPS": {
+    "带特殊字符": 0,
+    "最短": "045",
+    "最长": "045",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CNTYNAME": {
+    "带特殊字符": 0,
+    "最短": "HANCOCK",
+    "最长": "HANCOCK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DATA_SECURITY": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "4",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DISTRIBUTION_POLICY": {
+    "带特殊字符": 0,
+    "最短": "B2",
+    "最长": "B2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "IMPROVVAL": {
+    "带特殊字符": 0,
+    "最短": "7277",
+    "最长": "137295",
+    "空": 197,
+    "空率": 0.657
+   },
+   "LANDVAL": {
+    "带特殊字符": 0,
+    "最短": "18000",
+    "最长": "18000",
+    "空": 187,
+    "空率": 0.623
+   },
+   "LOADDATE": {
+    "带特殊字符": 0,
+    "最短": "1275523200000",
+    "最长": "1275523200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MADDPREF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MADDRNO": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MADDSTNAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MADDSTR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MADDSTTYP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MAILADD": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "5677 ASH LAKE FARMS HWY 53",
+    "空": 6,
+    "空率": 0.02
+   },
+   "NPARNO": {
+    "带特殊字符": 0,
+    "最短": "280451",
+    "最长": "28045023 -0-05-006.000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNER_CLASSIFICATION": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "5",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNFRST": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OWNLAST": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OWNNAME": {
+    "带特殊字符": 18,
+    "最短": "ISKCON",
+    "最长": "INTERNATIONAL SOCIETY FOR KRISNA CONSC",
+    "空": 2,
+    "空率": 0.007
+   },
+   "OWNTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PARNO": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "023 -0-05-006.000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARUSECODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PARUSEDESC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PARVAL": {
+    "带特殊字符": 0,
+    "最短": "98377",
+    "最长": "155295",
+    "空": 186,
+    "空率": 0.62
+   },
+   "PARVALTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PERMANENT_IDENTIFIER": {
+    "带特殊字符": 0,
+    "最短": "f6cd367e-ec06-4d21-8349-b808ed1ee1ff",
+    "最长": "f6cd367e-ec06-4d21-8349-b808ed1ee1ff",
+    "空": 0,
+    "空率": 0.0
+   },
+   "QUALITY": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SCALE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCEAGENT": {
+    "带特殊字符": 0,
+    "最短": "Hancock County Information Technology",
+    "最长": "Hancock County Information Technology",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE_DATADESC": {
+    "带特殊字符": 0,
+    "最短": "2009 Hancock County",
+    "最长": "2009 Hancock County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE_DATASETID": {
+    "带特殊字符": 0,
+    "最短": "10064",
+    "最长": "10064",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE_FEATUREID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SOURCE_ORIGINATOR": {
+    "带特殊字符": 0,
+    "最短": "MDEQ",
+    "最长": "MDEQ",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STFIPS": {
+    "带特殊字符": 0,
+    "最短": "28",
+    "最长": "28",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "MS",
+    "最长": "MS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUCT": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBOWNTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUBSURFOWN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8f276be45a0f871d",
+  "total": 286865,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 286865,
+   "full": 286865,
+   "number": 286865,
+   "state": 286865,
+   "street": 286865,
+   "zip": 286865
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 286865,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SITEADD street=SITEADD city=SCITY",
+ "sample_hash": "8f276be45a0f871d",
+ "site_cols": [
+  "MADDRNO",
+  "SITEADD"
+ ],
+ "source_id": "us/ms/statewide-partial",
+ "stage": "p0",
+ "state": "MS",
+ "url": "https://www.gisonline.ms.gov/arcgis/rest/services/MDEQ/Download/MapServer/56",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,448 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SitusCity",
+  "number": "SitusAddress1",
+  "state": "SitusState",
+  "street": "SitusAddress1",
+  "unit": "MailingUnitPrefix",
+  "zip": "SitusPostalCode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:39:16",
+ "county": "Edgar County",
+ "curated_cols": {
+  "city": "SitusCity",
+  "number": "SitusAddress1",
+  "state": "SitusState",
+  "street": "SitusAddress1",
+  "zip": "SitusPostalCode"
+ },
+ "fields": [
+  "OBJECTID",
+  "Name",
+  "TWELVE_DIGIT_PIN",
+  "TaxYear",
+  "TaxingCode",
+  "SitusStreetNumber",
+  "SitusStreetNumberSuffix",
+  "SitusStreetDirPrefix",
+  "SitusStreetTypePrefix",
+  "SitusStreetName",
+  "SitusStreetTypeSuffix",
+  "SitusStreetDirSuffix",
+  "SitusUnitPrefix",
+  "SitusUnitType",
+  "SitusUnitNumber",
+  "SitusCity",
+  "SitusState",
+  "SitusPostalCode",
+  "SitusPostalPlus",
+  "SitusAddress1",
+  "SitusAddress2",
+  "Township",
+  "Range",
+  "ShortLegal",
+  "TotalAcres",
+  "NonFarmAcres",
+  "FarmAcres",
+  "TotalSquareFootage",
+  "Frontage",
+  "Depth",
+  "LotSize",
+  "StateCodeClass",
+  "PlatReference",
+  "PropertyClassDescription",
+  "SubdivisionDescription",
+  "NeighborhoodDescription",
+  "MailingCode",
+  "TIFBaseValue",
+  "Name1",
+  "Name2",
+  "CareOf",
+  "MailingStreetNumber",
+  "MailingStreetNumberSuffix",
+  "MailingStreetDirPrefix",
+  "MailingStreetTypePrefix",
+  "MailingStreetName",
+  "MailingStreetTypeSuffix",
+  "MailingStreetDirSuffix",
+  "MailingUnitPrefix",
+  "MailingUnitType",
+  "MailingUnitNumber",
+  "MailingCity",
+  "MailingState",
+  "MailingPostalCode",
+  "MailingPostalPlus",
+  "MailingAddress1",
+  "MailingAddress2",
+  "AssessmentLevelCode",
+  "NonFarmLandAssessedValue",
+  "NonFarmImprovAssessedValue",
+  "FarmLandAssessedValue",
+  "FarmImprovAssessedValue",
+  "MineralAssessedValue",
+  "TotalAssessedValue",
+  "StatementNumber",
+  "DocumentNumber",
+  "BookPage",
+  "SaleDate",
+  "NetConsideration",
+  "CertifiedMailFee",
+  "NSFFee",
+  "PublicationFee",
+  "PropertyAddress",
+  "Section_",
+  "RetiredByRecord",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 77,
+ "guessed_cols": {
+  "unit": "MailingUnitPrefix"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "REACH Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Depth": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FarmAcres": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "104.73",
+    "空": 143,
+    "空率": 0.477
+   },
+   "Frontage": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LotSize": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MailingCode": {
+    "带特殊字符": 0,
+    "最短": "TRE",
+    "最长": "PBK/DUP",
+    "空": 272,
+    "空率": 0.907
+   },
+   "Name": {
+    "带特殊字符": 0,
+    "最短": "22-01-200-001",
+    "最长": "22-01-200-001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Name1": {
+    "带特殊字符": 91,
+    "最短": "PEDCO",
+    "最长": "HODGE JEFFREY J GRANTOR TR & HODGE CAROLYN BROWN GRANTOR TR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Name2": {
+    "带特殊字符": 9,
+    "最短": "MANDI J",
+    "最长": "ROTHROCK CYNTHIA M & TENNIS CALEB J TTEES",
+    "空": 251,
+    "空率": 0.837
+   },
+   "NeighborhoodDescription": {
+    "带特殊字符": 7,
+    "最短": "202-REDMON",
+    "最长": "1001-Prairie Township & Scottland",
+    "空": 16,
+    "空率": 0.053
+   },
+   "NonFarmAcres": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1.09",
+    "空": 258,
+    "空率": 0.86
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PlatReference": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PropertyClassDescription": {
+    "带特殊字符": 0,
+    "最短": "Exempt",
+    "最长": "Farmland without Improvements",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Range": {
+    "带特殊字符": 0,
+    "最短": "12",
+    "最长": "12",
+    "空": 258,
+    "空率": 0.86
+   },
+   "ShortLegal": {
+    "带特殊字符": 177,
+    "最短": "PT NE. 68.74 A",
+    "最长": "PT FORMER RR FROM CENTERLINE OF NEWTON ST TO CENTERLINE OF JASPER ST LYING N OF ",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusAddress1": {
+    "带特殊字符": 4,
+    "最短": "OAK ST",
+    "最长": "SPRINGFIELD ST (FIRE STATION)",
+    "空": 4,
+    "空率": 0.013
+   },
+   "SitusAddress2": {
+    "带特殊字符": 296,
+    "最短": "IL  61944",
+    "最长": "EDGAR COUNTY, IL  61944",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusCity": {
+    "带特殊字符": 0,
+    "最短": "PARIS",
+    "最长": "EDGAR COUNTY",
+    "空": 4,
+    "空率": 0.013
+   },
+   "SitusPostalCode": {
+    "带特殊字符": 0,
+    "最短": "61944",
+    "最长": "61944",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusPostalPlus": {
+    "带特殊字符": 0,
+    "最短": "7670",
+    "最长": "7670",
+    "空": 289,
+    "空率": 0.963
+   },
+   "SitusState": {
+    "带特殊字符": 0,
+    "最短": "IL",
+    "最长": "IL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusStreetDirPrefix": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 288,
+    "空率": 0.96
+   },
+   "SitusStreetDirSuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusStreetName": {
+    "带特殊字符": 4,
+    "最短": "80TH",
+    "最长": "SPRINGFIELD ST (FIRE STATION)",
+    "空": 4,
+    "空率": 0.013
+   },
+   "SitusStreetNumber": {
+    "带特殊字符": 0,
+    "最短": "NO",
+    "最长": "11434",
+    "空": 223,
+    "空率": 0.743
+   },
+   "SitusStreetNumberSuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusStreetTypePrefix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusStreetTypeSuffix": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 283,
+    "空率": 0.943
+   },
+   "SitusUnitNumber": {
+    "带特殊字符": 0,
+    "最短": "204",
+    "最长": "204",
+    "空": 299,
+    "空率": 0.997
+   },
+   "SitusUnitPrefix": {
+    "带特殊字符": 0,
+    "最短": "PO",
+    "最长": "PO",
+    "空": 299,
+    "空率": 0.997
+   },
+   "SitusUnitType": {
+    "带特殊字符": 0,
+    "最短": "BOX",
+    "最长": "BOX",
+    "空": 299,
+    "空率": 0.997
+   },
+   "StateCodeClass": {
+    "带特殊字符": 0,
+    "最短": "0021",
+    "最长": "0021",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SubdivisionDescription": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TIFBaseValue": {
+    "带特殊字符": 0,
+    "最短": "51",
+    "最长": "42903",
+    "空": 291,
+    "空率": 0.97
+   },
+   "TWELVE_DIGIT_PIN": {
+    "带特殊字符": 0,
+    "最短": "06-22-01-200-001",
+    "最长": "06-22-01-200-001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TaxYear": {
+    "带特殊字符": 0,
+    "最短": "2025",
+    "最长": "2025",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TaxingCode": {
+    "带特殊字符": 0,
+    "最短": "06001",
+    "最长": "06001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TotalAcres": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "104.73",
+    "空": 117,
+    "空率": 0.39
+   },
+   "TotalSquareFootage": {
+    "带特殊字符": 0,
+    "最短": "2557",
+    "最长": "1003622.4",
+    "空": 291,
+    "空率": 0.97
+   },
+   "Township": {
+    "带特殊字符": 0,
+    "最短": "16",
+    "最长": "16",
+    "空": 258,
+    "空率": 0.86
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f4eaa8f321eab4b2",
+  "total": 18098,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0155,
+   "full": 0.0155,
+   "number": 0.0155,
+   "state": 0.0155,
+   "street": 0.0155,
+   "zip": 0.0155
+  },
+  "nonnull": {
+   "city": 17818,
+   "full": 17818,
+   "number": 17818,
+   "state": 17818,
+   "street": 17818,
+   "zip": 17818
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0155, 'street': 0.0155, 'city': 0.0155, 'zip': 0.0155, 'state': 0.0155, 'full': 0.0155}）→ 可全量采集",
+  "total": 18098,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SitusAddress1 street=SitusAddress1 city=SitusCity zip=SitusPostalCode",
+ "sample_hash": "f4eaa8f321eab4b2",
+ "site_cols": [
+  "SitusStreetNumber",
+  "SitusStreetNumberSuffix",
+  "SitusStreetDirPrefix",
+  "SitusStreetTypePrefix",
+  "SitusStreetName"
+ ],
+ "source_id": "us/il/edgar",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://services5.arcgis.com/6VdFeKk2GI4rFk2D/arcgis/rest/services/Reach_Parcels/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

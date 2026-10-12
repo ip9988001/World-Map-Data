@@ -1,0 +1,452 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "post_comm",
+  "number": "geohousenum",
+  "state": "geostate",
+  "street": "st_premod",
+  "unit": "geounittype",
+  "zip": "post_code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-12 19:39:20",
+ "county": "",
+ "curated_cols": {
+  "city": "post_comm",
+  "number": "geohousenum",
+  "state": "geostate",
+  "street": "st_premod",
+  "zip": "post_code"
+ },
+ "fields": [
+  "objectid",
+  "discrpagid",
+  "dateupdate",
+  "effective",
+  "expire",
+  "nguid",
+  "country",
+  "state",
+  "county",
+  "addcode",
+  "adddatauri",
+  "inc_muni",
+  "uninc_comm",
+  "nbrhd_comm",
+  "addnum_pre",
+  "add_number",
+  "addnum_suf",
+  "st_premod",
+  "st_predir",
+  "st_pretyp",
+  "st_presep",
+  "st_name",
+  "st_postyp",
+  "st_posdir",
+  "st_posmod",
+  "lst_predir",
+  "lst_name",
+  "lst_typ",
+  "lst_posdir",
+  "esn",
+  "msagcomm",
+  "post_comm",
+  "post_code",
+  "postcodeex",
+  "building",
+  "unit_type",
+  "unit_id",
+  "floor",
+  "room",
+  "seat",
+  "addtl_loc",
+  "landmkname",
+  "milepost",
+  "place_type",
+  "placement",
+  "longitude",
+  "latitude",
+  "elevation",
+  "geobg10",
+  "geobg20",
+  "esri_zip",
+  "esri_poname",
+  "state_parcel_id",
+  "dlgf_prop_address",
+  "dlgf_prop_address_city",
+  "dlgf_prop_address_zip",
+  "dlgf_prop_class_code",
+  "dlgf_prop_address_state",
+  "local_id",
+  "source_originator",
+  "source_featureid",
+  "loaddate",
+  "county_id",
+  "county_fips",
+  "valid_geo_address",
+  "geofulladdress",
+  "geohousenum",
+  "geopredir",
+  "geopretype",
+  "geostreetname",
+  "geostreettype",
+  "geosufdir",
+  "geounittype",
+  "geounit",
+  "geozip",
+  "geocity",
+  "geocounty",
+  "geostate",
+  "user_fld",
+  "nearest_state_parcel_id"
+ ],
+ "fields_n": 89,
+ "guessed_cols": {
+  "unit": "geounittype"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points of Indiana Current",
+  "objectIdField": "objectid",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "addcode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addtl_loc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "building": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "cnty_tax_dist_cd": {
+    "带特殊字符": 0,
+    "最短": "41038",
+    "最长": "41038",
+    "空": 1,
+    "空率": 0.003
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "Pike County",
+    "最长": "Tippecanoe County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county_id": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "41",
+    "空": 0,
+    "空率": 0.0
+   },
+   "dateupdate": {
+    "带特殊字符": 0,
+    "最短": "978307200000",
+    "最长": "-2209161600000",
+    "空": 147,
+    "空率": 0.49
+   },
+   "discrpagid": {
+    "带特殊字符": 0,
+    "最短": "co.noble.in.us",
+    "最长": "Reserved for Future Use",
+    "空": 249,
+    "空率": 0.83
+   },
+   "dlgf_prop_class_code": {
+    "带特殊字符": 0,
+    "最短": "415",
+    "最长": "415",
+    "空": 23,
+    "空率": 0.077
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "53",
+    "最长": "751",
+    "空": 239,
+    "空率": 0.797
+   },
+   "esri_zip": {
+    "带特殊字符": 0,
+    "最短": "46142",
+    "最长": "46142",
+    "空": 0,
+    "空率": 0.0
+   },
+   "expire": {
+    "带特殊字符": 0,
+    "最短": "978307200000",
+    "最长": "978307200000",
+    "空": 299,
+    "空率": 0.997
+   },
+   "geobg10": {
+    "带特殊字符": 0,
+    "最短": "180816106032",
+    "最长": "180816106032",
+    "空": 0,
+    "空率": 0.0
+   },
+   "geocounty": {
+    "带特殊字符": 0,
+    "最短": "PIKE",
+    "最长": "TIPPECANOE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "geofulladdress": {
+    "带特殊字符": 0,
+    "最短": "1302 CRAWFORD DR A",
+    "最长": "209 W UNITED STATES HIGHWAY 52 BYPASS",
+    "空": 263,
+    "空率": 0.877
+   },
+   "geohousenum": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "11715",
+    "空": 4,
+    "空率": 0.013
+   },
+   "geostate": {
+    "带特殊字符": 0,
+    "最短": "IN",
+    "最长": "IN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "geostreetname": {
+    "带特殊字符": 0,
+    "最短": "74",
+    "最长": "TOWN PARK",
+    "空": 263,
+    "空率": 0.877
+   },
+   "geounit": {
+    "带特殊字符": 0,
+    "最短": "36",
+    "最长": "318",
+    "空": 298,
+    "空率": 0.993
+   },
+   "geozip": {
+    "带特殊字符": 0,
+    "最短": "46142",
+    "最长": "46142",
+    "空": 0,
+    "空率": 0.0
+   },
+   "inc_muni": {
+    "带特殊字符": 0,
+    "最短": "Berne",
+    "最长": "North Manchester",
+    "空": 45,
+    "空率": 0.15
+   },
+   "loaddate": {
+    "带特殊字符": 0,
+    "最短": "1757030400000",
+    "最长": "1757030400000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "local_id": {
+    "带特殊字符": 4,
+    "最短": "871",
+    "最长": "{C6F70123-B901-4FCB-AAA5-A6DA4C480FCD}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "longitude": {
+    "带特殊字符": 0,
+    "最短": "-84.907341",
+    "最长": "-86.17853546",
+    "空": 0,
+    "空率": 0.0
+   },
+   "nearest_state_parcel_id": {
+    "带特殊字符": 0,
+    "最短": "410327013001000038",
+    "最长": "410327013001000038",
+    "空": 1,
+    "空率": 0.003
+   },
+   "placement": {
+    "带特殊字符": 0,
+    "最短": "Parcel",
+    "最长": "Structure",
+    "空": 285,
+    "空率": 0.95
+   },
+   "post_comm": {
+    "带特殊字符": 0,
+    "最短": "BERNE",
+    "最长": "WOLCOTTVILLE",
+    "空": 148,
+    "空率": 0.493
+   },
+   "postcodeex": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "seat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "source_featureid": {
+    "带特殊字符": 0,
+    "最短": "2291559",
+    "最长": "2291559",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_presep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "IN",
+    "最长": "IN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "tax_city": {
+    "带特殊字符": 0,
+    "最短": "BERNE CIVIL CITY",
+    "最长": "NORTH MANCHESTER CIVIL TOWN",
+    "空": 211,
+    "空率": 0.703
+   },
+   "tax_county": {
+    "带特殊字符": 0,
+    "最短": "PIKE COUNTY",
+    "最长": "TIPPECANOE COUNTY",
+    "空": 1,
+    "空率": 0.003
+   },
+   "tax_library": {
+    "带特殊字符": 0,
+    "最短": "BERNE PUBLIC LIBRARY",
+    "最长": "RICHMOND-MORRISSON-REEVES PUBLIC LIBRARY",
+    "空": 74,
+    "空率": 0.247
+   },
+   "tax_school": {
+    "带特殊字符": 0,
+    "最短": "DUNELAND SCHOOL CORPORATION",
+    "最长": "DEKALB COUNTY CENTRAL UNITED SCHOOL CORP",
+    "空": 1,
+    "空率": 0.003
+   },
+   "tax_special": {
+    "带特殊字符": 55,
+    "最短": "SHELBY COUNTY SOLID WASTE",
+    "最长": "TIPPECANOE COUNTY SOLID WASTE MGMT DIST;GREATER LAFAYETTE PUBLIC TRANSPORTATION",
+    "空": 1,
+    "空率": 0.003
+   },
+   "valid_geo_address": {
+    "带特殊字符": 0,
+    "最短": "NO",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "23ed998281419ea1",
+  "total": 3326690,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.3452,
+   "full": 0.0125,
+   "number": 0.0106,
+   "state": 0.0,
+   "street": 0.9969,
+   "zip": 0.1597
+  },
+  "nonnull": {
+   "city": 2178447,
+   "full": 3285032,
+   "number": 3291385,
+   "state": 3326690,
+   "street": 10428,
+   "zip": 2795525
+  },
+  "reason": "number/street 达标（经整条地址列 dlgf_prop_address 兜底：号/街独立列缺失），但 city 缺失率超上限（{'number': 0.0106, 'street': 0.9969, 'city': 0.3452, 'zip': 0.1597, 'state': 0.0, 'full': 0.0125}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 3326690,
+  "verdict": "CONTRACTED_DOWNGRADED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=geohousenum street=st_premod city=post_comm zip=post_code",
+ "sample_hash": "23ed998281419ea1",
+ "site_cols": [
+  "dlgf_prop_address",
+  "dlgf_prop_address_city",
+  "dlgf_prop_address_zip",
+  "dlgf_prop_address_state",
+  "valid_geo_address"
+ ],
+ "source_id": "us/in/statewide",
+ "stage": "p0",
+ "state": "IN",
+ "url": "https://gisdata.in.gov/server/rest/services/Hosted/Address_Points_of_Indiana_Current/FeatureServer/0",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}
