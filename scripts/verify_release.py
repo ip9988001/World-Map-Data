@@ -370,6 +370,8 @@ def main(argv=None) -> None:
         errs.append(f"[合并] 某州最多有 {max_src} 个来源，但全量多来源记录为 0 → 跨源合并没生效")
     else:
         print("② 合并自检：每州来源都只有 1 个 → 暂时无可合并（多来源 0 属正常）")
+    # 降级清单（不阻断发布）：完整性灾难级的州，排除出站用子集，仅留在全量分片
+    degraded: list[str] = []
     for st, info in sorted((m.get("states") or {}).items()):
         sp = os.path.join(a.release, f"sources-{st}.json")
         if not os.path.exists(sp):
@@ -384,7 +386,12 @@ def main(argv=None) -> None:
             cr = (mi_miss.get("city") or 0) / info["rows"]
             zr = (mi_miss.get("zip") or 0) / info["rows"]
             if cr > 0.5 or zr > 0.5:
-                errs.append(f"[完整性]{st} city/zip 缺失率 {cr:.0%}/{zr:.0%} 属灾难级（>50%）")
+                # 逐州降级（2026-10-12 改）：一个州缺 city/zip 不该拖垮整包——
+                # 缺五要素的记录本来就判不进 A 级、进不了站用子集（site/），
+                # 所以正确处理是「该州不进 site、只留全量分片并带 _grade 标注」，
+                # 而不是让另外 40 多个州的好数据一起陪葬。
+                degraded.append(f"[降级]{st} city/zip 缺失率 {cr:.0%}/{zr:.0%}（>50%）→ "
+                                f"不进站用子集，仅保留全量分片并带 _grade 标注")
 
     merged = os.path.join(a.release, "merged.clean.ndjson.gz")
     if not os.path.exists(merged):
@@ -430,7 +437,12 @@ def main(argv=None) -> None:
                 elif old or new:
                     print(f"   {st}: {old:,} → {new:,}")
 
-    out = {"rows": total, "states": len(m.get("states") or {}), "errors": errs}
+    n_states = len(m.get("states") or {})
+    # 底线：降级州过半 → 整体数据塌了，仍整包拦下（防「全体降级＝没有校验」）
+    if degraded and len(degraded) > max(3, n_states // 2):
+        errs.append(f"[降级] {len(degraded)}/{n_states} 个州完整性灾难级（过半）→ 整包不放行")
+    out = {"rows": total, "states": n_states, "errors": errs,
+           "degraded": degraded, "degraded_n": len(degraded)}
     if a.cross_keys:
         out["cross_shard"] = out_cross
     os.makedirs("out", exist_ok=True)
@@ -440,7 +452,16 @@ def main(argv=None) -> None:
         for e in errs[:20]:
             print("   " + e)
         sys.exit(1)
-    print(f"\n✓ 校验闸门通过：{total:,} 行 / {len(m.get('states') or {})} 州，可以发布")
+    if degraded:
+        print(f"\n⚠ 降级发布：{len(degraded)}/{n_states} 个州完整性灾难级 —— "
+              f"这些州不进站用子集（site/），只留在全量分片里并带 _grade 标注")
+        for d in degraded[:12]:
+            print("   " + d)
+        if len(degraded) > 12:
+            print(f"   …其余 {len(degraded) - 12} 个见 out/verify-release.json")
+        print(f"   其余 {n_states - len(degraded)} 个州正常发布")
+    print(f"\n✓ 校验闸门通过：{total:,} 行 / {n_states} 州，可以发布"
+          + (f"（{len(degraded)} 州降级）" if degraded else ""))
     sys.exit(0)
 
 

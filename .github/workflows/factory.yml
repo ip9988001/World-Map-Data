@@ -619,8 +619,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           [ -d out/release ] || exit 0
-          gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" \
-            --notes "按州分片稳定视图；tag 永久复用，更新=删旧资产+同名重传" 2>/dev/null || true
+          DEG=$(python3 -c "import json;print('、'.join(x.split(']')[1].split()[0] for x in (json.load(open('out/verify-release.json')).get('degraded') or [])))" 2>/dev/null || true)
+          NOTES="按州分片稳定视图；tag 永久复用，更新=删旧资产+同名重传"
+          if [ -n "$DEG" ]; then NOTES="$NOTES
+          ⚠ 完整性未达标、已排除出站用子集(site-view)、仅在本全量分片中带 _grade 标注的州：$DEG"; fi
+          gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" --notes "$NOTES" 2>/dev/null || true
+          gh release edit v0.1.0-dataset --notes "$NOTES" || true
           for f in out/release/*.ndjson.gz; do gh release upload v0.1.0-dataset "$f" --clobber; done
           for f in out/release/sources.json out/release/sources-[A-Z][A-Z].json; do
             if [ -f "$f" ]; then gh release upload v0.1.0-dataset "$f" --clobber; fi
@@ -639,7 +643,7 @@ jobs:
         run: |
           ls out/release/site/*.ndjson.gz >/dev/null 2>&1 || exit 0
           gh release create site-view --title "站用子集（A 级：五要素齐）" \
-            --notes "供美国地址生成器直接取用；每条记录的来源与许可见 sources.json" 2>/dev/null || true
+            --notes "供美国地址生成器直接取用（仅含完整性达标州）；每条记录的来源与许可见 sources.json" 2>/dev/null || true
           for f in out/release/site/*.ndjson.gz; do gh release upload site-view "$f" --clobber; done
           for f in out/release/sources.json out/release/sources-[A-Z][A-Z].json; do
             if [ -f "$f" ]; then gh release upload site-view "$f" --clobber; fi
