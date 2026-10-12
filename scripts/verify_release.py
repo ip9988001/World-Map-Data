@@ -1,7 +1,7 @@
 """发布前校验闸门 —— **不过不发**（发布链上的最后一道人写的硬门）。
 
 四层检查（成本递增，能便宜判的绝不花钱）：
-  ① 对账      manifest ↔ out/release/*.ndjson.gz（逐州行数 + sha256，全量重算）
+  ① 对账      manifest ↔ out/release/US-*.ndjson.gz（逐州行数 + sha256，全量重算）
   ② schema    每州抽头 2000 / 尾 500 条：必填、州码白名单、号码/邮编形态、key 重复、
               key 前缀必须等于分片州码（防串片）
   ③ 溯源子集  state 里已完成的源，其 parsed ndjson 的每条 key 必须出现在发布全量里
@@ -184,7 +184,7 @@ def cross_shard_check(release_dir: str, states: list[str],
     total = dups = 0
     examples: list[str] = []
     for st in states:
-        p = os.path.join(release_dir, f"{st}.ndjson.gz")
+        p = os.path.join(release_dir, f"US-{st}.ndjson.gz")
         if not os.path.exists(p):
             continue
         with gzip.open(p, "rt", encoding="utf-8") as fh:
@@ -298,7 +298,7 @@ def main(argv=None) -> None:
     total = int(m.get("rows") or 0)
     print(f"① 对账：manifest 记 {total:,} 行 / {len(m.get('states') or {})} 州分片")
     for st, info in sorted((m.get("states") or {}).items()):
-        p = os.path.join(a.release, f"{st}.ndjson.gz")
+        p = os.path.join(a.release, f"US-{st}.ndjson.gz")
         if not os.path.exists(p):
             errs.append(f"[对账]{st} 分片文件缺失")
             continue
@@ -324,7 +324,7 @@ def main(argv=None) -> None:
     if os.path.isdir(site_dir):
         print("②' 站用子集（site/）：")
         for st, info in sorted((m.get("states") or {}).items()):
-            sp = os.path.join(site_dir, f"{st}.ndjson.gz")
+            sp = os.path.join(site_dir, f"US-{st}.ndjson.gz")
             a_grade = int((info.get("grades") or {}).get("A") or 0)
             if not os.path.exists(sp):
                 if a_grade:

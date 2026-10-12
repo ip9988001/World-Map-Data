@@ -83,13 +83,14 @@
    "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
    "protocol": "arcgis_paged"
   },
-  "attempts": 1,
+  "attempts": 2,
   "done": false,
   "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
-  "seconds": 32.9,
+  "kind": "TRANSIENT",
+  "seconds": 31.7,
   "source_id": "us/ar/statewide",
   "stage": "fetch",
-  "updated": "2026-10-11 02:49:20"
+  "updated": "2026-10-12 15:53:55"
  },
  "us/ca/inyo": {
   "archive": {
@@ -98,30 +99,203 @@
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 0,
-  "done": true,
+  "attempts": 1,
+  "done": false,
   "error": "",
-  "fetched": 11353,
-  "kept": 11212,
-  "path": "parsed/us/ca/inyo/mapping@v1.ndjson",
-  "ratio": 0.988,
-  "rule": "mapping@v1",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 11,212 条 > 真门牌号行 2,609 条×150% → 拒绝这套产物；field_guess@v2:合规 0/11219 = 0%（阈 30%；总行 11,353，带地址 11,219，真门牌号 2,609）；concat_addr@v2:合规 1470/11219 = 13%（阈 30%；总行 11,353，带地址 11,219，真门牌号 2,609））→ 造新规则",
+  "report": "out/triage/分诊-us__ca__inyo.json",
   "rule_chain": [
    {
     "addr_hint": 1.0,
+    "contentful": 11219,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
     "kept": 11212,
-    "ratio": 0.988,
+    "kept_contentful": 11212,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 11212
+     },
+     "per_street": 16.04,
+     "streets": 699
+    },
+    "ratio": 0.999,
     "rows": 11353,
     "rule": "mapping@v1",
-    "seconds": 0.4,
-    "verdict": "PASS",
-    "why": "合规 11212/11353 = 99%"
+    "seconds": 0.8,
+    "true_addr": 2609,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 11,212 条 > 真门牌号行 2,609 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11219,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11353,
+    "rule": "field_guess@v2",
+    "seconds": 1.1,
+    "true_addr": 2609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11219 = 0%（阈 30%；总行 11,353，带地址 11,219，真门牌号 2,609）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11219,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1470,
+    "kept_contentful": 1470,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1442,
+      "zip": 1470
+     },
+     "per_street": 12.67,
+     "streets": 116
+    },
+    "ratio": 0.131,
+    "rows": 11353,
+    "rule": "concat_addr@v2",
+    "seconds": 2.1,
+    "true_addr": 2609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 1470/11219 = 13%（阈 30%；总行 11,353，带地址 11,219，真门牌号 2,609）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11219,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 11184,
+    "kept_contentful": 11184,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0005,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 11184,
+      "zip": 11184
+     },
+     "per_street": 5.14,
+     "streets": 2177
+    },
+    "ratio": 0.997,
+    "rows": 11353,
+    "rule": "concat_addr@v1",
+    "seconds": 2.8,
+    "true_addr": 2609,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 11,184 条 > 真门牌号行 2,609 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11219,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11353,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 3.2,
+    "true_addr": 2609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11219 = 0%（阈 30%；总行 11,353，带地址 11,219，真门牌号 2,609）"
    }
   ],
-  "seconds": 10.4,
+  "seconds": 12.7,
   "source_id": "us/ca/inyo",
-  "stage": "parsed",
-  "updated": "2026-10-11 12:13:30"
+  "stage": "triage",
+  "updated": "2026-10-12 16:21:47"
  },
  "us/ca/kern": {
   "archive": {
@@ -163,6 +337,430 @@
   "stage": "parsed",
   "updated": "2026-10-11 02:50:10"
  },
+ "us/co/douglas": {
+  "archive": {
+   "bytes": 174145772,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 193757,
+  "grade_hint": "A",
+  "kept": 191445,
+  "path": "parsed/us/co/douglas/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0119,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 27.2,
+   "streets": 7039
+  },
+  "ratio": 0.988,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 193757,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 191445,
+    "kept_contentful": 191445,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0119,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 27.2,
+     "streets": 7039
+    },
+    "ratio": 0.988,
+    "rows": 193757,
+    "rule": "mapping@v1",
+    "seconds": 19.2,
+    "true_addr": 191756,
+    "verdict": "PASS",
+    "why": "合规 191445/193757 = 99%（带地址行分母；真门牌号行 191,756）总行 193,757｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 27.2）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 193757,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 193757,
+    "rule": "field_guess@v2",
+    "seconds": 31.5,
+    "true_addr": 191756,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/193757 = 0%（阈 30%；总行 193,757，带地址 193,757，真门牌号 191,756）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 193757,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 23,
+    "kept_contentful": 23,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2,
+      "zip": 23
+     },
+     "per_street": 1.28,
+     "streets": 18
+    },
+    "ratio": 0.0,
+    "rows": 193757,
+    "rule": "concat_addr@v2",
+    "seconds": 60.8,
+    "true_addr": 191756,
+    "verdict": "GATE_FAIL",
+    "why": "合规 23/193757 = 0%（阈 30%；总行 193,757，带地址 193,757，真门牌号 191,756）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 193757,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.9% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 193489,
+    "kept_contentful": 193489,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 193489,
+      "zip": 193489
+     },
+     "per_street": 22.0,
+     "streets": 8796
+    },
+    "ratio": 0.999,
+    "rows": 193757,
+    "rule": "concat_addr@v1",
+    "seconds": 81.8,
+    "true_addr": 191756,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 193489/193757 = 100%（带地址行分母；真门牌号行 191,756）总行 193,757｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 300.3,
+  "source_id": "us/co/douglas",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:13:29",
+  "verdict": "PASS"
+ },
+ "us/co/logan": {
+  "archive": {
+   "bytes": 16676324,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 12268,
+  "grade_hint": "A",
+  "kept": 11835,
+  "path": "parsed/us/co/logan/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.017,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 6,
+    "zip": 6
+   },
+   "per_street": 16.53,
+   "streets": 716
+  },
+  "ratio": 0.982,
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 12058,
+    "coverage": 0.983,
+    "exempt": null,
+    "grade_hint": "B",
+    "kept": 8517,
+    "kept_contentful": 8517,
+    "kind": "DIRTY",
+    "notes": [
+     "DIRTY"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.2811,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 500,
+      "zip": 732
+     },
+     "per_street": 3.07,
+     "streets": 2771
+    },
+    "ratio": 0.706,
+    "rows": 12268,
+    "rule": "mapping@v1",
+    "seconds": 1.2,
+    "true_addr": 11991,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 8517/12058 = 71%（带地址行分母；真门牌号行 11,991）总行 12,268｜脏值率 28%（{'city': 500, 'zip': 732}）超上限 20% → 降级"
+   },
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 12058,
+    "coverage": 0.983,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 11680,
+    "kept_contentful": 11680,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1021,
+      "zip": 1274
+     },
+     "per_street": 188.39,
+     "streets": 62
+    },
+    "ratio": 0.969,
+    "rows": 12268,
+    "rule": "field_guess@v2",
+    "seconds": 2.5,
+    "true_addr": 11991,
+    "verdict": "PASS",
+    "why": "合规 11680/12058 = 97%（带地址行分母；真门牌号行 11,991）总行 12,268｜完整性 OK（city 缺 9%／zip 缺 11%）｜每街门牌号 188.39）"
+   },
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 12058,
+    "coverage": 0.983,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 11654,
+    "kept_contentful": 11654,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 4
+     },
+     "per_street": 16.46,
+     "streets": 708
+    },
+    "ratio": 0.966,
+    "rows": 12268,
+    "rule": "concat_addr@v2",
+    "seconds": 5.8,
+    "true_addr": 11991,
+    "verdict": "PASS",
+    "why": "合规 11654/12058 = 97%（带地址行分母；真门牌号行 11,991）总行 12,268｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 16.46）"
+   },
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 12058,
+    "coverage": 0.983,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 11835,
+    "kept_contentful": 11835,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.017,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6,
+      "zip": 6
+     },
+     "per_street": 16.53,
+     "streets": 716
+    },
+    "ratio": 0.982,
+    "rows": 12268,
+    "rule": "concat_addr@v1",
+    "seconds": 7.3,
+    "true_addr": 11991,
+    "verdict": "PASS",
+    "why": "合规 11835/12058 = 98%（带地址行分母；真门牌号行 11,991）总行 12,268｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 16.53）"
+   },
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 12058,
+    "coverage": 0.983,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 12268,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 8.1,
+    "true_addr": 11991,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/12058 = 0%（阈 30%；总行 12,268，带地址 12,058，真门牌号 11,991）"
+   }
+  ],
+  "seconds": 19.1,
+  "source_id": "us/co/logan",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:23:11",
+  "verdict": "PASS"
+ },
  "us/co/mineral": {
   "archive": {
    "bytes": 0,
@@ -186,6 +784,434 @@
   "source_id": "us/co/mineral",
   "stage": "fetch",
   "updated": "2026-10-11 12:15:06"
+ },
+ "us/co/moffat": {
+  "archive": {
+   "bytes": 7242042,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 10590,
+  "grade_hint": "A",
+  "kept": 6463,
+  "path": "parsed/us/co/moffat/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0002,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 10,
+    "zip": 10
+   },
+   "per_street": 11.52,
+   "streets": 561
+  },
+  "ratio": 0.682,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 9483,
+    "coverage": 0.895,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 6463,
+    "kept_contentful": 6463,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0002,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 10,
+      "zip": 10
+     },
+     "per_street": 11.52,
+     "streets": 561
+    },
+    "ratio": 0.682,
+    "rows": 10590,
+    "rule": "mapping@v1",
+    "seconds": 1.0,
+    "true_addr": 8100,
+    "verdict": "PASS",
+    "why": "合规 6463/9483 = 68%（带地址行分母；真门牌号行 8,100）总行 10,590｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 11.52）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 9483,
+    "coverage": 0.895,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 10590,
+    "rule": "field_guess@v2",
+    "seconds": 1.8,
+    "true_addr": 8100,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/9483 = 0%（阈 30%；总行 10,590，带地址 9,483，真门牌号 8,100）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 9483,
+    "coverage": 0.895,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1177,
+    "kept_contentful": 1177,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1113,
+      "zip": 1177
+     },
+     "per_street": 12.79,
+     "streets": 92
+    },
+    "ratio": 0.124,
+    "rows": 10590,
+    "rule": "concat_addr@v2",
+    "seconds": 3.2,
+    "true_addr": 8100,
+    "verdict": "GATE_FAIL",
+    "why": "合规 1177/9483 = 12%（阈 30%；总行 10,590，带地址 9,483，真门牌号 8,100）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 9483,
+    "coverage": 0.895,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 6394,
+    "kept_contentful": 6394,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0003,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6394,
+      "zip": 6394
+     },
+     "per_street": 11.42,
+     "streets": 560
+    },
+    "ratio": 0.674,
+    "rows": 10590,
+    "rule": "concat_addr@v1",
+    "seconds": 4.2,
+    "true_addr": 8100,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 6394/9483 = 67%（带地址行分母；真门牌号行 8,100）总行 10,590｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 9483,
+    "coverage": 0.895,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 10590,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 4.9,
+    "true_addr": 8100,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/9483 = 0%（阈 30%；总行 10,590，带地址 9,483，真门牌号 8,100）"
+   }
+  ],
+  "seconds": 15.5,
+  "source_id": "us/co/moffat",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:20:56",
+  "verdict": "PASS"
+ },
+ "us/co/sanmiguel": {
+  "archive": {
+   "bytes": 4130644,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 5039,
+  "grade_hint": "B",
+  "kept": 5031,
+  "needs_rule": true,
+  "path": "parsed/us/co/sanmiguel/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 5031,
+    "zip": 5031
+   },
+   "per_street": 8.66,
+   "streets": 581
+  },
+  "ratio": 0.998,
+  "reason": "合规 5031/5039 = 100%（带地址行分母；真门牌号行 4,984）总行 5,039｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 5039,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 4954,
+    "kept_contentful": 4954,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0169,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 4954
+     },
+     "per_street": 9.51,
+     "streets": 521
+    },
+    "ratio": 0.983,
+    "rows": 5039,
+    "rule": "mapping@v1",
+    "seconds": 0.6,
+    "true_addr": 4984,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 4954/5039 = 98%（带地址行分母；真门牌号行 4,984）总行 5,039｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 5039,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 5039,
+    "rule": "field_guess@v2",
+    "seconds": 1.0,
+    "true_addr": 4984,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/5039 = 0%（阈 30%；总行 5,039，带地址 5,039，真门牌号 4,984）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 5039,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1080,
+    "kept_contentful": 1080,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1003,
+      "zip": 1080
+     },
+     "per_street": 9.82,
+     "streets": 110
+    },
+    "ratio": 0.214,
+    "rows": 5039,
+    "rule": "concat_addr@v2",
+    "seconds": 1.7,
+    "true_addr": 4984,
+    "verdict": "GATE_FAIL",
+    "why": "合规 1080/5039 = 21%（阈 30%；总行 5,039，带地址 5,039，真门牌号 4,984）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 5039,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.8% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 5031,
+    "kept_contentful": 5031,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 5031,
+      "zip": 5031
+     },
+     "per_street": 8.66,
+     "streets": 581
+    },
+    "ratio": 0.998,
+    "rows": 5039,
+    "rule": "concat_addr@v1",
+    "seconds": 2.4,
+    "true_addr": 4984,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 5031/5039 = 100%（带地址行分母；真门牌号行 4,984）总行 5,039｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 10.1,
+  "source_id": "us/co/sanmiguel",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:18:57",
+  "verdict": "PASS_DOWNGRADED"
  },
  "us/co/summit": {
   "archive": {
@@ -279,26 +1305,224 @@
   "done": true,
   "error": "",
   "fetched": 11935,
+  "grade_hint": "A",
   "kept": 4628,
   "path": "parsed/us/co/yuma/mapping@v1.ndjson",
-  "ratio": 0.388,
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 19
+   },
+   "per_street": 10.13,
+   "streets": 457
+  },
+  "ratio": 0.389,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
+    "contentful": 11888,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
     "kept": 4628,
-    "ratio": 0.388,
+    "kept_contentful": 4628,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 19
+     },
+     "per_street": 10.13,
+     "streets": 457
+    },
+    "ratio": 0.389,
     "rows": 11935,
     "rule": "mapping@v1",
-    "seconds": 0.5,
+    "seconds": 1.1,
+    "true_addr": 10844,
     "verdict": "PASS",
-    "why": "合规 4628/11935 = 39%"
+    "why": "合规 4628/11888 = 39%（带地址行分母；真门牌号行 10,844）总行 11,935｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 10.13）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11888,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11935,
+    "rule": "field_guess@v2",
+    "seconds": 1.7,
+    "true_addr": 10844,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11888 = 0%（阈 30%；总行 11,935，带地址 11,888，真门牌号 10,844）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11888,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2975,
+    "kept_contentful": 2975,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2198,
+      "zip": 1
+     },
+     "per_street": 14.66,
+     "streets": 203
+    },
+    "ratio": 0.25,
+    "rows": 11935,
+    "rule": "concat_addr@v2",
+    "seconds": 3.0,
+    "true_addr": 10844,
+    "verdict": "GATE_FAIL",
+    "why": "合规 2975/11888 = 25%（阈 30%；总行 11,935，带地址 11,888，真门牌号 10,844）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11888,
+    "coverage": 0.996,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 6204,
+    "kept_contentful": 6204,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6204,
+      "zip": 6204
+     },
+     "per_street": 5.06,
+     "streets": 1227
+    },
+    "ratio": 0.522,
+    "rows": 11935,
+    "rule": "concat_addr@v1",
+    "seconds": 4.1,
+    "true_addr": 10844,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 6204/11888 = 52%（带地址行分母；真门牌号行 10,844）总行 11,935｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11888,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11935,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 4.8,
+    "true_addr": 10844,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11888 = 0%（阈 30%；总行 11,935，带地址 11,888，真门牌号 10,844）"
    }
   ],
-  "seconds": 16.0,
+  "seconds": 21.2,
   "source_id": "us/co/yuma",
   "stage": "parsed",
-  "updated": "2026-10-11 12:13:41"
+  "updated": "2026-10-12 16:22:50",
+  "verdict": "PASS"
  },
  "us/ct/city_of_haddam": {
   "archive": {
@@ -620,6 +1844,211 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:22:19"
  },
+ "us/ga/glascock": {
+  "archive": {
+   "bytes": 1082100,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 1,399 条 > 真门牌号行 393 条×150% → 拒绝这套产物；field_guess@v2:合规 286/2420 = 12%（阈 30%；总行 2,455，带地址 2,420，真门牌号 393）；concat_addr@v2:合规 0/2420 = 0%（阈 30%；总行 2,455，带地址 2,420，真门牌号 393））→ 造新规则",
+  "report": "out/triage/分诊-us__ga__glascock.json",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 2420,
+    "coverage": 0.986,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1399,
+    "kept_contentful": 1399,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1399,
+      "zip": 1399
+     },
+     "per_street": 8.48,
+     "streets": 165
+    },
+    "ratio": 0.578,
+    "rows": 2455,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "true_addr": 393,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 1,399 条 > 真门牌号行 393 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 2420,
+    "coverage": 0.986,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 286,
+    "kept_contentful": 286,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 276,
+      "zip": 20
+     },
+     "per_street": 15.05,
+     "streets": 19
+    },
+    "ratio": 0.118,
+    "rows": 2455,
+    "rule": "field_guess@v2",
+    "seconds": 0.3,
+    "true_addr": 393,
+    "verdict": "GATE_FAIL",
+    "why": "合规 286/2420 = 12%（阈 30%；总行 2,455，带地址 2,420，真门牌号 393）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 2420,
+    "coverage": 0.986,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 2455,
+    "rule": "concat_addr@v2",
+    "seconds": 0.5,
+    "true_addr": 393,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/2420 = 0%（阈 30%；总行 2,455，带地址 2,420，真门牌号 393）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 2420,
+    "coverage": 0.986,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2418,
+    "kept_contentful": 2418,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2418,
+      "zip": 2418
+     },
+     "per_street": 4.35,
+     "streets": 556
+    },
+    "ratio": 0.999,
+    "rows": 2455,
+    "rule": "concat_addr@v1",
+    "seconds": 0.7,
+    "true_addr": 393,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 2,418 条 > 真门牌号行 393 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 2420,
+    "coverage": 0.986,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 2455,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 0.8,
+    "true_addr": 393,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/2420 = 0%（阈 30%；总行 2,455，带地址 2,420，真门牌号 393）"
+   }
+  ],
+  "seconds": 6.5,
+  "source_id": "us/ga/glascock",
+  "stage": "triage",
+  "updated": "2026-10-12 16:18:35"
+ },
  "us/ga/heard": {
   "archive": {
    "bytes": 531145,
@@ -876,6 +2305,238 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:22:32"
  },
+ "us/ga/screven": {
+  "archive": {
+   "bytes": 7154879,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 10980,
+  "grade_hint": "B",
+  "kept": 6639,
+  "needs_rule": true,
+  "path": "parsed/us/ga/screven/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 6639,
+    "zip": 6639
+   },
+   "per_street": 14.01,
+   "streets": 474
+  },
+  "ratio": 0.609,
+  "reason": "合规 6639/10904 = 61%（带地址行分母；真门牌号行 10,611）总行 10,980｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 10904,
+    "coverage": 0.993,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 6639,
+    "kept_contentful": 6639,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6639,
+      "zip": 6639
+     },
+     "per_street": 14.01,
+     "streets": 474
+    },
+    "ratio": 0.609,
+    "rows": 10980,
+    "rule": "mapping@v1",
+    "seconds": 0.8,
+    "true_addr": 10611,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 6639/10904 = 61%（带地址行分母；真门牌号行 10,611）总行 10,980｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10904,
+    "coverage": 0.993,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 10980,
+    "rule": "field_guess@v2",
+    "seconds": 1.4,
+    "true_addr": 10611,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/10904 = 0%（阈 30%；总行 10,980，带地址 10,904，真门牌号 10,611）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10904,
+    "coverage": 0.993,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 10980,
+    "rule": "concat_addr@v2",
+    "seconds": 2.7,
+    "true_addr": 10611,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/10904 = 0%（阈 30%；总行 10,980，带地址 10,904，真门牌号 10,611）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10904,
+    "coverage": 0.993,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 541,
+    "kept_contentful": 541,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0018,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 541,
+      "zip": 541
+     },
+     "per_street": 1.29,
+     "streets": 421
+    },
+    "ratio": 0.05,
+    "rows": 10980,
+    "rule": "concat_addr@v1",
+    "seconds": 3.3,
+    "true_addr": 10611,
+    "verdict": "GATE_FAIL",
+    "why": "合规 541/10904 = 5%（阈 30%；总行 10,980，带地址 10,904，真门牌号 10,611）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10904,
+    "coverage": 0.993,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 10980,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 3.9,
+    "true_addr": 10611,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/10904 = 0%（阈 30%；总行 10,980，带地址 10,904，真门牌号 10,611）"
+   }
+  ],
+  "seconds": 13.9,
+  "source_id": "us/ga/screven",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:21:12",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/ga/seminole": {
   "archive": {
    "bytes": 605822,
@@ -908,6 +2569,211 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:22:33"
  },
+ "us/ga/talbot": {
+  "archive": {
+   "bytes": 3761645,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 2,688 条 > 真门牌号行 708 条×150% → 拒绝这套产物；field_guess@v2:合规 0/4830 = 0%（阈 30%；总行 6,652，带地址 4,830，真门牌号 708）；concat_addr@v2:合规 1/4830 = 0%（阈 30%；总行 6,652，带地址 4,830，真门牌号 708））→ 造新规则",
+  "report": "out/triage/分诊-us__ga__talbot.json",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 4830,
+    "coverage": 0.726,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2688,
+    "kept_contentful": 2688,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2688,
+      "zip": 2688
+     },
+     "per_street": 9.33,
+     "streets": 288
+    },
+    "ratio": 0.557,
+    "rows": 6652,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "true_addr": 708,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 2,688 条 > 真门牌号行 708 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4830,
+    "coverage": 0.726,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 6652,
+    "rule": "field_guess@v2",
+    "seconds": 0.6,
+    "true_addr": 708,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/4830 = 0%（阈 30%；总行 6,652，带地址 4,830，真门牌号 708）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4830,
+    "coverage": 0.726,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1,
+    "kept_contentful": 1,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1,
+      "zip": 1
+     },
+     "per_street": 1.0,
+     "streets": 1
+    },
+    "ratio": 0.0,
+    "rows": 6652,
+    "rule": "concat_addr@v2",
+    "seconds": 1.2,
+    "true_addr": 708,
+    "verdict": "GATE_FAIL",
+    "why": "合规 1/4830 = 0%（阈 30%；总行 6,652，带地址 4,830，真门牌号 708）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4830,
+    "coverage": 0.726,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 4587,
+    "kept_contentful": 4587,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 4587,
+      "zip": 4587
+     },
+     "per_street": 1.02,
+     "streets": 4517
+    },
+    "ratio": 0.95,
+    "rows": 6652,
+    "rule": "concat_addr@v1",
+    "seconds": 1.7,
+    "true_addr": 708,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 4,587 条 > 真门牌号行 708 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4830,
+    "coverage": 0.726,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 6652,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 2.0,
+    "true_addr": 708,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/4830 = 0%（阈 30%；总行 6,652，带地址 4,830，真门牌号 708）"
+   }
+  ],
+  "seconds": 9.3,
+  "source_id": "us/ga/talbot",
+  "stage": "triage",
+  "updated": "2026-10-12 16:19:28"
+ },
  "us/ga/tattnall": {
   "archive": {
    "bytes": 1015903,
@@ -939,6 +2805,445 @@
   "source_id": "us/ga/tattnall",
   "stage": "parsed",
   "updated": "2026-10-11 03:22:34"
+ },
+ "us/ga/telfair": {
+  "archive": {
+   "bytes": 4904307,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 2,938 条 > 真门牌号行 725 条×150% → 拒绝这套产物；field_guess@v2:合规 161/6682 = 2%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）；concat_addr@v2:合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725））→ 造新规则",
+  "report": "out/triage/分诊-us__ga__telfair.json",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 6682,
+    "coverage": 0.753,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2938,
+    "kept_contentful": 2938,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2938,
+      "zip": 2938
+     },
+     "per_street": 5.49,
+     "streets": 535
+    },
+    "ratio": 0.44,
+    "rows": 8871,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "true_addr": 725,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 2,938 条 > 真门牌号行 725 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6682,
+    "coverage": 0.753,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 161,
+    "kept_contentful": 161,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 161
+     },
+     "per_street": 8.94,
+     "streets": 18
+    },
+    "ratio": 0.024,
+    "rows": 8871,
+    "rule": "field_guess@v2",
+    "seconds": 0.8,
+    "true_addr": 725,
+    "verdict": "GATE_FAIL",
+    "why": "合规 161/6682 = 2%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6682,
+    "coverage": 0.753,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 8871,
+    "rule": "concat_addr@v2",
+    "seconds": 1.5,
+    "true_addr": 725,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6682,
+    "coverage": 0.753,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 4286,
+    "kept_contentful": 4286,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 4286,
+      "zip": 4286
+     },
+     "per_street": 7.52,
+     "streets": 570
+    },
+    "ratio": 0.641,
+    "rows": 8871,
+    "rule": "concat_addr@v1",
+    "seconds": 2.0,
+    "true_addr": 725,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 4,286 条 > 真门牌号行 725 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6682,
+    "coverage": 0.753,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 8871,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 2.4,
+    "true_addr": 725,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）"
+   }
+  ],
+  "seconds": 11.0,
+  "source_id": "us/ga/telfair",
+  "stage": "triage",
+  "updated": "2026-10-12 16:20:14"
+ },
+ "us/ga/union": {
+  "archive": {
+   "bytes": 17765418,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 24391,
+  "grade_hint": "B",
+  "kept": 23808,
+  "needs_rule": true,
+  "path": "parsed/us/ga/union/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0002,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 23808,
+    "zip": 23808
+   },
+   "per_street": 2.99,
+   "streets": 7957
+  },
+  "ratio": 0.979,
+  "reason": "合规 23808/24322 = 98%（带地址行分母；真门牌号行 16,966）总行 24,391｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 24322,
+    "coverage": 0.997,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 17472,
+    "kept_contentful": 17472,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 17472,
+      "zip": 17472
+     },
+     "per_street": 5.54,
+     "streets": 3156
+    },
+    "ratio": 0.718,
+    "rows": 24391,
+    "rule": "mapping@v1",
+    "seconds": 2.2,
+    "true_addr": 16966,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 17472/24322 = 72%（带地址行分母；真门牌号行 16,966）总行 24,391｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24322,
+    "coverage": 0.997,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 440,
+    "kept_contentful": 440,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 276,
+      "zip": 6
+     },
+     "per_street": 10.73,
+     "streets": 41
+    },
+    "ratio": 0.018,
+    "rows": 24391,
+    "rule": "field_guess@v2",
+    "seconds": 3.9,
+    "true_addr": 16966,
+    "verdict": "GATE_FAIL",
+    "why": "合规 440/24322 = 2%（阈 30%；总行 24,391，带地址 24,322，真门牌号 16,966）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24322,
+    "coverage": 0.997,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 24391,
+    "rule": "concat_addr@v2",
+    "seconds": 7.5,
+    "true_addr": 16966,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/24322 = 0%（阈 30%；总行 24,391，带地址 24,322，真门牌号 16,966）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24322,
+    "coverage": 0.997,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 23808,
+    "kept_contentful": 23808,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0002,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 23808,
+      "zip": 23808
+     },
+     "per_street": 2.99,
+     "streets": 7957
+    },
+    "ratio": 0.979,
+    "rows": 24391,
+    "rule": "concat_addr@v1",
+    "seconds": 10.3,
+    "true_addr": 16966,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 23808/24322 = 98%（带地址行分母；真门牌号行 16,966）总行 24,391｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24322,
+    "coverage": 0.997,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 24391,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 11.9,
+    "true_addr": 16966,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/24322 = 0%（阈 30%；总行 24,391，带地址 24,322，真门牌号 16,966）"
+   }
+  ],
+  "seconds": 31.8,
+  "source_id": "us/ga/union",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:30:02",
+  "verdict": "PASS_DOWNGRADED"
  },
  "us/ga/wheeler": {
   "attempts": 0,
@@ -1811,6 +4116,327 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:55:11"
  },
+ "us/il/bond": {
+  "archive": {
+   "bytes": 1143367,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 9310,
+  "grade_hint": "B",
+  "kept": 122,
+  "needs_rule": true,
+  "path": "parsed/us/il/bond/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 122
+   },
+   "per_street": 40.67,
+   "streets": 3
+  },
+  "ratio": 1.0,
+  "reason": "合规 122/122 = 100%（带地址行分母；真门牌号行 0）总行 9,310｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.3333333333333333,
+    "contentful": 122,
+    "coverage": 0.013,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 122,
+    "kept_contentful": 122,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 122
+     },
+     "per_street": 40.67,
+     "streets": 3
+    },
+    "ratio": 1.0,
+    "rows": 9310,
+    "rule": "mapping@v1",
+    "seconds": 0.1,
+    "true_addr": 0,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 122/122 = 100%（带地址行分母；真门牌号行 0）总行 9,310｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 8.5,
+  "source_id": "us/il/bond",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:20:48",
+  "verdict": "PASS_DOWNGRADED"
+ },
+ "us/il/bureau": {
+  "archive": {
+   "bytes": 75439786,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 27697,
+  "grade_hint": "B",
+  "kept": 20342,
+  "needs_rule": true,
+  "path": "parsed/us/il/bureau/concat_addr@v2.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0022,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 17586,
+    "zip": 13536
+   },
+   "per_street": 7.99,
+   "streets": 2547
+  },
+  "ratio": 0.741,
+  "reason": "合规 20342/27434 = 74%（带地址行分母；真门牌号行 26,328）总行 27,697｜完整性不过：city 缺 86%/zip 缺 67%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v2",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 27434,
+    "coverage": 0.991,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 15256,
+    "kept_contentful": 15256,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 12,
+      "zip": 15256
+     },
+     "per_street": 13.81,
+     "streets": 1105
+    },
+    "ratio": 0.556,
+    "rows": 27697,
+    "rule": "mapping@v1",
+    "seconds": 3.4,
+    "true_addr": 26328,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 15256/27434 = 56%（带地址行分母；真门牌号行 26,328）总行 27,697｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 27434,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 27697,
+    "rule": "field_guess@v2",
+    "seconds": 6.7,
+    "true_addr": 26328,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/27434 = 0%（阈 30%；总行 27,697，带地址 27,434，真门牌号 26,328）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 27434,
+    "coverage": 0.991,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 20342,
+    "kept_contentful": 20342,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0022,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 17586,
+      "zip": 13536
+     },
+     "per_street": 7.99,
+     "streets": 2547
+    },
+    "ratio": 0.741,
+    "rows": 27697,
+    "rule": "concat_addr@v2",
+    "seconds": 19.8,
+    "true_addr": 26328,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 20342/27434 = 74%（带地址行分母；真门牌号行 26,328）总行 27,697｜完整性不过：city 缺 86%/zip 缺 67%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 27434,
+    "coverage": 0.991,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 18342,
+    "kept_contentful": 18342,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0023,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 18333,
+      "zip": 18333
+     },
+     "per_street": 7.52,
+     "streets": 2439
+    },
+    "ratio": 0.669,
+    "rows": 27697,
+    "rule": "concat_addr@v1",
+    "seconds": 24.4,
+    "true_addr": 26328,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 18342/27434 = 67%（带地址行分母；真门牌号行 26,328）总行 27,697｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 27434,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 27697,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 27.3,
+    "true_addr": 26328,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/27434 = 0%（阈 30%；总行 27,697，带地址 27,434，真门牌号 26,328）"
+   }
+  ],
+  "seconds": 52.7,
+  "source_id": "us/il/bureau",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:30:56",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/il/christian": {
   "archive": {
    "bytes": 32581801,
@@ -1822,26 +4448,307 @@
   "done": true,
   "error": "",
   "fetched": 24347,
-  "kept": 15703,
-  "path": "parsed/us/il/christian/mapping@v1.ndjson",
-  "ratio": 0.645,
+  "grade_hint": "A",
+  "kept": 15735,
+  "path": "parsed/us/il/christian/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0001,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 78,
+    "zip": 78
+   },
+   "per_street": 13.6,
+   "streets": 1157
+  },
+  "ratio": 0.654,
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 24065,
+    "coverage": 0.988,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 15700,
+    "kept_contentful": 15700,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0002,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 15700,
+      "zip": 15700
+     },
+     "per_street": 9.57,
+     "streets": 1641
+    },
+    "ratio": 0.652,
+    "rows": 24347,
+    "rule": "mapping@v1",
+    "seconds": 2.2,
+    "true_addr": 20436,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 15700/24065 = 65%（带地址行分母；真门牌号行 20,436）总行 24,347｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24065,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 24347,
+    "rule": "field_guess@v2",
+    "seconds": 3.5,
+    "true_addr": 20436,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/24065 = 0%（阈 30%；总行 24,347，带地址 24,065，真门牌号 20,436）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24065,
+    "coverage": 0.988,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 20433,
+    "kept_contentful": 20433,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0001,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 15761,
+      "zip": 4
+     },
+     "per_street": 7.65,
+     "streets": 2670
+    },
+    "ratio": 0.849,
+    "rows": 24347,
+    "rule": "concat_addr@v2",
+    "seconds": 9.3,
+    "true_addr": 20436,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 20433/24065 = 85%（带地址行分母；真门牌号行 20,436）总行 24,347｜完整性不过：city 缺 77%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24065,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 15735,
+    "kept_contentful": 15735,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0001,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 78,
+      "zip": 78
+     },
+     "per_street": 13.6,
+     "streets": 1157
+    },
+    "ratio": 0.654,
+    "rows": 24347,
+    "rule": "concat_addr@v1",
+    "seconds": 11.8,
+    "true_addr": 20436,
+    "verdict": "PASS",
+    "why": "合规 15735/24065 = 65%（带地址行分母；真门牌号行 20,436）总行 24,347｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 13.6）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 24065,
+    "coverage": 0.988,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 24347,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 13.3,
+    "true_addr": 20436,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/24065 = 0%（阈 30%；总行 24,347，带地址 24,065，真门牌号 20,436）"
+   }
+  ],
+  "seconds": 32.1,
+  "source_id": "us/il/christian",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:29:30",
+  "verdict": "PASS"
+ },
+ "us/il/city-of-ofallon": {
+  "archive": {
+   "bytes": 24590236,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 16765,
+  "grade_hint": "A",
+  "kept": 16703,
+  "path": "parsed/us/il/city-of-ofallon/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 3
+   },
+   "per_street": 22.06,
+   "streets": 757
+  },
+  "ratio": 0.997,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 15703,
-    "ratio": 0.645,
-    "rows": 24347,
+    "contentful": 16755,
+    "coverage": 0.999,
+    "early_stop": "合规率 99.7% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 16703,
+    "kept_contentful": 16703,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 3
+     },
+     "per_street": 22.06,
+     "streets": 757
+    },
+    "ratio": 0.997,
+    "rows": 16765,
     "rule": "mapping@v1",
-    "seconds": 1.0,
+    "seconds": 2.0,
+    "true_addr": 16076,
     "verdict": "PASS",
-    "why": "合规 15703/24347 = 64%"
+    "why": "合规 16703/16755 = 100%（带地址行分母；真门牌号行 16,076）总行 16,765｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 22.06）"
    }
   ],
-  "seconds": 21.2,
-  "source_id": "us/il/christian",
+  "seconds": 24.5,
+  "source_id": "us/il/city-of-ofallon",
   "stage": "parsed",
-  "updated": "2026-10-11 03:59:08"
+  "updated": "2026-10-12 16:24:30",
+  "verdict": "PASS"
  },
  "us/il/clark": {
   "archive": {
@@ -1886,26 +4793,226 @@
   "done": true,
   "error": "",
   "fetched": 11767,
-  "kept": 5262,
-  "path": "parsed/us/il/cumberland/mapping@v1.ndjson",
-  "ratio": 0.447,
-  "rule": "mapping@v1",
+  "grade_hint": "B",
+  "kept": 11117,
+  "needs_rule": true,
+  "path": "parsed/us/il/cumberland/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 11117,
+    "zip": 11117
+   },
+   "per_street": 8.89,
+   "streets": 1251
+  },
+  "ratio": 0.953,
+  "reason": "合规 11117/11664 = 95%（带地址行分母；真门牌号行 10,818）总行 11,767｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 5262,
-    "ratio": 0.447,
+    "contentful": 11664,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 5260,
+    "kept_contentful": 5260,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0004,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 1
+     },
+     "per_street": 9.38,
+     "streets": 561
+    },
+    "ratio": 0.451,
     "rows": 11767,
     "rule": "mapping@v1",
-    "seconds": 0.7,
+    "seconds": 2.5,
+    "true_addr": 10818,
     "verdict": "PASS",
-    "why": "合规 5262/11767 = 45%"
+    "why": "合规 5260/11664 = 45%（带地址行分母；真门牌号行 10,818）总行 11,767｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 9.38）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11664,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11767,
+    "rule": "field_guess@v2",
+    "seconds": 4.8,
+    "true_addr": 10818,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11664 = 0%（阈 30%；总行 11,767，带地址 11,664，真门牌号 10,818）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11664,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 4469,
+    "kept_contentful": 4469,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2,
+      "zip": 3
+     },
+     "per_street": 9.51,
+     "streets": 470
+    },
+    "ratio": 0.383,
+    "rows": 11767,
+    "rule": "concat_addr@v2",
+    "seconds": 11.9,
+    "true_addr": 10818,
+    "verdict": "PASS",
+    "why": "合规 4469/11664 = 38%（带地址行分母；真门牌号行 10,818）总行 11,767｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 9.51）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11664,
+    "coverage": 0.991,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 11117,
+    "kept_contentful": 11117,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 11117,
+      "zip": 11117
+     },
+     "per_street": 8.89,
+     "streets": 1251
+    },
+    "ratio": 0.953,
+    "rows": 11767,
+    "rule": "concat_addr@v1",
+    "seconds": 14.6,
+    "true_addr": 10818,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 11117/11664 = 95%（带地址行分母；真门牌号行 10,818）总行 11,767｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11664,
+    "coverage": 0.991,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11767,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 16.7,
+    "true_addr": 10818,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11664 = 0%（阈 30%；总行 11,767，带地址 11,664，真门牌号 10,818）"
    }
   ],
-  "seconds": 16.3,
+  "seconds": 30.6,
   "source_id": "us/il/cumberland",
   "stage": "parsed",
-  "updated": "2026-10-11 03:53:53"
+  "updated": "2026-10-12 16:22:19",
+  "verdict": "PASS_DOWNGRADED"
  },
  "us/il/dewitt": {
   "archive": {
@@ -1918,26 +5025,222 @@
   "done": true,
   "error": "",
   "fetched": 11164,
+  "grade_hint": "A",
   "kept": 7334,
   "path": "parsed/us/il/dewitt/mapping@v1.ndjson",
-  "ratio": 0.657,
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 90
+   },
+   "per_street": 1.02,
+   "streets": 7208
+  },
+  "ratio": 0.695,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
+    "contentful": 10557,
+    "coverage": 0.946,
+    "exempt": null,
+    "grade_hint": "A",
     "kept": 7334,
-    "ratio": 0.657,
+    "kept_contentful": 7334,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 90
+     },
+     "per_street": 1.02,
+     "streets": 7208
+    },
+    "ratio": 0.695,
     "rows": 11164,
     "rule": "mapping@v1",
-    "seconds": 0.6,
+    "seconds": 1.3,
+    "true_addr": 7455,
     "verdict": "PASS",
-    "why": "合规 7334/11164 = 66%"
+    "why": "合规 7334/10557 = 69%（带地址行分母；真门牌号行 7,455）总行 11,164｜完整性 OK（city 缺 0%／zip 缺 1%）｜每街门牌号 1.02）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10557,
+    "coverage": 0.946,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11164,
+    "rule": "field_guess@v2",
+    "seconds": 2.1,
+    "true_addr": 7455,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/10557 = 0%（阈 30%；总行 11,164，带地址 10,557，真门牌号 7,455）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10557,
+    "coverage": 0.946,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2002,
+    "kept_contentful": 2002,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1998,
+      "zip": 24
+     },
+     "per_street": 4.89,
+     "streets": 409
+    },
+    "ratio": 0.19,
+    "rows": 11164,
+    "rule": "concat_addr@v2",
+    "seconds": 3.6,
+    "true_addr": 7455,
+    "verdict": "GATE_FAIL",
+    "why": "合规 2002/10557 = 19%（阈 30%；总行 11,164，带地址 10,557，真门牌号 7,455）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10557,
+    "coverage": 0.946,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 114,
+    "kept_contentful": 114,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 104,
+      "zip": 104
+     },
+     "per_street": 1.81,
+     "streets": 63
+    },
+    "ratio": 0.011,
+    "rows": 11164,
+    "rule": "concat_addr@v1",
+    "seconds": 4.4,
+    "true_addr": 7455,
+    "verdict": "GATE_FAIL",
+    "why": "合规 114/10557 = 1%（阈 30%；总行 11,164，带地址 10,557，真门牌号 7,455）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 10557,
+    "coverage": 0.946,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11164,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 5.2,
+    "true_addr": 7455,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/10557 = 0%（阈 30%；总行 11,164，带地址 10,557，真门牌号 7,455）"
    }
   ],
-  "seconds": 16.4,
+  "seconds": 20.6,
   "source_id": "us/il/dewitt",
   "stage": "parsed",
-  "updated": "2026-10-11 03:53:37"
+  "updated": "2026-10-12 16:21:26",
+  "verdict": "PASS"
  },
  "us/il/douglas": {
   "archive": {
@@ -1972,30 +5275,232 @@
   "updated": "2026-10-11 03:55:29"
  },
  "us/il/effingham": {
-  "attempts": 0,
+  "archive": {
+   "bytes": 48749376,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
   "done": true,
   "error": "",
   "fetched": 23680,
-  "kept": 15780,
+  "grade_hint": "A",
+  "kept": 15774,
   "path": "parsed/us/il/effingham/mapping@v1.ndjson",
-  "ratio": 0.666,
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0004,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 3
+   },
+   "per_street": 13.27,
+   "streets": 1189
+  },
+  "ratio": 0.669,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 15780,
-    "ratio": 0.666,
+    "contentful": 23578,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 15774,
+    "kept_contentful": 15774,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0004,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 3
+     },
+     "per_street": 13.27,
+     "streets": 1189
+    },
+    "ratio": 0.669,
     "rows": 23680,
     "rule": "mapping@v1",
-    "seconds": 1.6,
+    "seconds": 3.3,
+    "true_addr": 23418,
     "verdict": "PASS",
-    "why": "合规 15780/23680 = 67%"
+    "why": "合规 15774/23578 = 67%（带地址行分母；真门牌号行 23,418）总行 23,680｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 13.27）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 23578,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 197,
+    "kept_contentful": 197,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 197
+     },
+     "per_street": 197.0,
+     "streets": 1
+    },
+    "ratio": 0.008,
+    "rows": 23680,
+    "rule": "field_guess@v2",
+    "seconds": 5.5,
+    "true_addr": 23418,
+    "verdict": "GATE_FAIL",
+    "why": "合规 197/23578 = 1%（阈 30%；总行 23,680，带地址 23,578，真门牌号 23,418）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 23578,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 15640,
+    "kept_contentful": 15640,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 4
+     },
+     "per_street": 13.04,
+     "streets": 1199
+    },
+    "ratio": 0.663,
+    "rows": 23680,
+    "rule": "concat_addr@v2",
+    "seconds": 14.3,
+    "true_addr": 23418,
+    "verdict": "PASS",
+    "why": "合规 15640/23578 = 66%（带地址行分母；真门牌号行 23,418）总行 23,680｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 13.04）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 23578,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 93,
+    "kept_contentful": 93,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.9242,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6,
+      "zip": 6
+     },
+     "per_street": 2.51,
+     "streets": 37
+    },
+    "ratio": 0.004,
+    "rows": 23680,
+    "rule": "concat_addr@v1",
+    "seconds": 16.6,
+    "true_addr": 23418,
+    "verdict": "GATE_FAIL",
+    "why": "合规 93/23578 = 0%（阈 30%；总行 23,680，带地址 23,578，真门牌号 23,418）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 23578,
+    "coverage": 0.996,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 23680,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 18.7,
+    "true_addr": 23418,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/23578 = 0%（阈 30%；总行 23,680，带地址 23,578，真门牌号 23,418）"
    }
   ],
-  "seconds": 1.6,
+  "seconds": 48.8,
   "source_id": "us/il/effingham",
   "stage": "parsed",
-  "updated": "2026-10-11 12:13:57"
+  "updated": "2026-10-12 16:28:22",
+  "verdict": "PASS"
  },
  "us/il/jersey": {
   "archive": {
@@ -2184,26 +5689,539 @@
   "done": true,
   "error": "",
   "fetched": 9109,
-  "kept": 3936,
-  "path": "parsed/us/il/schuyler/mapping@v1.ndjson",
-  "ratio": 0.432,
+  "grade_hint": "B",
+  "kept": 8401,
+  "needs_rule": true,
+  "path": "parsed/us/il/schuyler/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0001,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 8401,
+    "zip": 8401
+   },
+   "per_street": 6.23,
+   "streets": 1348
+  },
+  "ratio": 0.95,
+  "reason": "合规 8401/8846 = 95%（带地址行分母；真门牌号行 8,609）总行 9,109｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 8846,
+    "coverage": 0.971,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 3935,
+    "kept_contentful": 3935,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0003,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 10,
+      "zip": 17
+     },
+     "per_street": 6.92,
+     "streets": 569
+    },
+    "ratio": 0.445,
+    "rows": 9109,
+    "rule": "mapping@v1",
+    "seconds": 1.6,
+    "true_addr": 8609,
+    "verdict": "PASS",
+    "why": "合规 3935/8846 = 44%（带地址行分母；真门牌号行 8,609）总行 9,109｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 6.92）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8846,
+    "coverage": 0.971,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 9109,
+    "rule": "field_guess@v2",
+    "seconds": 3.0,
+    "true_addr": 8609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/8846 = 0%（阈 30%；总行 9,109，带地址 8,846，真门牌号 8,609）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8846,
+    "coverage": 0.971,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 93,
+    "kept_contentful": 93,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 87,
+      "zip": 93
+     },
+     "per_street": 5.81,
+     "streets": 16
+    },
+    "ratio": 0.011,
+    "rows": 9109,
+    "rule": "concat_addr@v2",
+    "seconds": 6.0,
+    "true_addr": 8609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 93/8846 = 1%（阈 30%；总行 9,109，带地址 8,846，真门牌号 8,609）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8846,
+    "coverage": 0.971,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 8401,
+    "kept_contentful": 8401,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0001,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 8401,
+      "zip": 8401
+     },
+     "per_street": 6.23,
+     "streets": 1348
+    },
+    "ratio": 0.95,
+    "rows": 9109,
+    "rule": "concat_addr@v1",
+    "seconds": 7.7,
+    "true_addr": 8609,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 8401/8846 = 95%（带地址行分母；真门牌号行 8,609）总行 9,109｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8846,
+    "coverage": 0.971,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 9109,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 8.9,
+    "true_addr": 8609,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/8846 = 0%（阈 30%；总行 9,109，带地址 8,846，真门牌号 8,609）"
+   }
+  ],
+  "seconds": 23.3,
+  "source_id": "us/il/schuyler",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:20:25",
+  "verdict": "PASS_DOWNGRADED"
+ },
+ "us/il/white": {
+  "archive": {
+   "bytes": 19796089,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 20985,
+  "grade_hint": "B",
+  "kept": 18075,
+  "needs_rule": true,
+  "path": "parsed/us/il/white/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 18075,
+    "zip": 18075
+   },
+   "per_street": 11.76,
+   "streets": 1537
+  },
+  "ratio": 0.873,
+  "reason": "合规 18075/20709 = 87%（带地址行分母；真门牌号行 18,581）总行 20,985｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 20709,
+    "coverage": 0.987,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 7332,
+    "kept_contentful": 7332,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0008,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 31
+     },
+     "per_street": 10.49,
+     "streets": 699
+    },
+    "ratio": 0.354,
+    "rows": 20985,
+    "rule": "mapping@v1",
+    "seconds": 1.8,
+    "true_addr": 18581,
+    "verdict": "PASS",
+    "why": "合规 7332/20709 = 35%（带地址行分母；真门牌号行 18,581）总行 20,985｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 10.49）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20709,
+    "coverage": 0.987,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 20985,
+    "rule": "field_guess@v2",
+    "seconds": 3.2,
+    "true_addr": 18581,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20709 = 0%（阈 30%；总行 20,985，带地址 20,709，真门牌号 18,581）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20709,
+    "coverage": 0.987,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 315,
+    "kept_contentful": 315,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 312,
+      "zip": 315
+     },
+     "per_street": 10.16,
+     "streets": 31
+    },
+    "ratio": 0.015,
+    "rows": 20985,
+    "rule": "concat_addr@v2",
+    "seconds": 6.9,
+    "true_addr": 18581,
+    "verdict": "GATE_FAIL",
+    "why": "合规 315/20709 = 2%（阈 30%；总行 20,985，带地址 20,709，真门牌号 18,581）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20709,
+    "coverage": 0.987,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 18075,
+    "kept_contentful": 18075,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 18075,
+      "zip": 18075
+     },
+     "per_street": 11.76,
+     "streets": 1537
+    },
+    "ratio": 0.873,
+    "rows": 20985,
+    "rule": "concat_addr@v1",
+    "seconds": 9.0,
+    "true_addr": 18581,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 18075/20709 = 87%（带地址行分母；真门牌号行 18,581）总行 20,985｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20709,
+    "coverage": 0.987,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 20985,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 10.6,
+    "true_addr": 18581,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20709 = 0%（阈 30%；总行 20,985，带地址 20,709，真门牌号 18,581）"
+   }
+  ],
+  "seconds": 35.7,
+  "source_id": "us/il/white",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:26:29",
+  "verdict": "PASS_DOWNGRADED"
+ },
+ "us/il/whiteside": {
+  "archive": {
+   "bytes": 29991228,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 26313,
+  "grade_hint": "A",
+  "kept": 26227,
+  "path": "parsed/us/il/whiteside/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0033,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 27.55,
+   "streets": 952
+  },
+  "ratio": 0.997,
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 3936,
-    "ratio": 0.432,
-    "rows": 9109,
+    "contentful": 26313,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.7% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 26227,
+    "kept_contentful": 26227,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0033,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 27.55,
+     "streets": 952
+    },
+    "ratio": 0.997,
+    "rows": 26313,
     "rule": "mapping@v1",
-    "seconds": 0.5,
+    "seconds": 2.6,
+    "true_addr": 26133,
     "verdict": "PASS",
-    "why": "合规 3936/9109 = 43%"
+    "why": "合规 26227/26313 = 100%（带地址行分母；真门牌号行 26,133）总行 26,313｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 27.55）"
    }
   ],
-  "seconds": 15.6,
-  "source_id": "us/il/schuyler",
+  "seconds": 22.0,
+  "source_id": "us/il/whiteside",
   "stage": "parsed",
-  "updated": "2026-10-11 03:50:14"
+  "updated": "2026-10-12 16:30:34",
+  "verdict": "PASS"
  },
  "us/il/williamson": {
   "archive": {
@@ -2349,6 +6367,91 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:12:56"
  },
+ "us/ky/henderson": {
+  "archive": {
+   "bytes": 24314100,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 24178,
+  "grade_hint": "B",
+  "kept": 1539,
+  "needs_rule": true,
+  "path": "parsed/us/ky/henderson/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 1007,
+    "zip": 0
+   },
+   "per_street": 54.96,
+   "streets": 28
+  },
+  "ratio": 1.0,
+  "reason": "合规 1539/1539 = 100%（带地址行分母；真门牌号行 24,125）总行 24,178｜完整性不过：city 缺 65%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 1539,
+    "coverage": 0.064,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 1539,
+    "kept_contentful": 1539,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1007,
+      "zip": 0
+     },
+     "per_street": 54.96,
+     "streets": 28
+    },
+    "ratio": 1.0,
+    "rows": 24178,
+    "rule": "mapping@v1",
+    "seconds": 2.3,
+    "true_addr": 24125,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 1539/1539 = 100%（带地址行分母；真门牌号行 24,125）总行 24,178｜完整性不过：city 缺 65%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 18.8,
+  "source_id": "us/ky/henderson",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:29:11",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/la/lincoln": {
   "archive": {
    "bytes": 0,
@@ -2412,6 +6515,317 @@
   "source_id": "us/me/city_of_biddeford",
   "stage": "parsed",
   "updated": "2026-10-11 03:50:02"
+ },
+ "us/me/statewide": {
+  "archive": {
+   "bytes": 377861674,
+   "done": false,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 212400,
+  "grade_hint": "A",
+  "kept": 211885,
+  "path": "parsed/us/me/statewide/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0002,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 45
+   },
+   "per_street": 15.45,
+   "streets": 13712
+  },
+  "ratio": 0.998,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 212400,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.8% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 211885,
+    "kept_contentful": 211885,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0002,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 45
+     },
+     "per_street": 15.45,
+     "streets": 13712
+    },
+    "ratio": 0.998,
+    "rows": 212400,
+    "rule": "mapping@v1",
+    "seconds": 27.2,
+    "true_addr": 208528,
+    "verdict": "PASS",
+    "why": "合规 211885/212400 = 100%（带地址行分母；真门牌号行 208,528）总行 212,400｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 15.45）"
+   }
+  ],
+  "seconds": 223.2,
+  "source_id": "us/me/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:09:45",
+  "verdict": "PASS"
+ },
+ "us/mi/alcona": {
+  "archive": {
+   "bytes": 14840770,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 11741,
+  "grade_hint": "A",
+  "kept": 11026,
+  "path": "parsed/us/mi/alcona/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 2
+   },
+   "per_street": 14.86,
+   "streets": 742
+  },
+  "ratio": 0.939,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 11741,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 11026,
+    "kept_contentful": 11026,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 2
+     },
+     "per_street": 14.86,
+     "streets": 742
+    },
+    "ratio": 0.939,
+    "rows": 11741,
+    "rule": "mapping@v1",
+    "seconds": 1.4,
+    "true_addr": 11328,
+    "verdict": "PASS",
+    "why": "合规 11026/11741 = 94%（带地址行分母；真门牌号行 11,328）总行 11,741｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 14.86）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11741,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11741,
+    "rule": "field_guess@v2",
+    "seconds": 2.6,
+    "true_addr": 11328,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11741 = 0%（阈 30%；总行 11,741，带地址 11,741，真门牌号 11,328）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11741,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 871,
+    "kept_contentful": 871,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0918,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 870,
+      "zip": 871
+     },
+     "per_street": 6.36,
+     "streets": 137
+    },
+    "ratio": 0.074,
+    "rows": 11741,
+    "rule": "concat_addr@v2",
+    "seconds": 5.8,
+    "true_addr": 11328,
+    "verdict": "GATE_FAIL",
+    "why": "合规 871/11741 = 7%（阈 30%；总行 11,741，带地址 11,741，真门牌号 11,328）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11741,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 11023,
+    "kept_contentful": 11023,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0608,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 11023,
+      "zip": 11023
+     },
+     "per_street": 14.88,
+     "streets": 741
+    },
+    "ratio": 0.939,
+    "rows": 11741,
+    "rule": "concat_addr@v1",
+    "seconds": 7.5,
+    "true_addr": 11328,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 11023/11741 = 94%（带地址行分母；真门牌号行 11,328）总行 11,741｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 11741,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 11741,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 8.6,
+    "true_addr": 11328,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/11741 = 0%（阈 30%；总行 11,741，带地址 11,741，真门牌号 11,328）"
+   }
+  ],
+  "seconds": 19.7,
+  "source_id": "us/mi/alcona",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:21:59",
+  "verdict": "PASS"
  },
  "us/mi/emmet": {
   "archive": {
@@ -2561,6 +6975,172 @@
   "source_id": "us/mi/washtenaw",
   "stage": "fetch",
   "updated": "2026-10-11 12:29:23"
+ },
+ "us/mn/benton": {
+  "archive": {
+   "bytes": 24112326,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 16223,
+  "grade_hint": "A",
+  "kept": 16223,
+  "path": "parsed/us/mn/benton/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 23.41,
+   "streets": 693
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 16223,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 16223,
+    "kept_contentful": 16223,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 23.41,
+     "streets": 693
+    },
+    "ratio": 1.0,
+    "rows": 16223,
+    "rule": "mapping@v1",
+    "seconds": 2.0,
+    "true_addr": 16186,
+    "verdict": "PASS",
+    "why": "合规 16223/16223 = 100%（带地址行分母；真门牌号行 16,186）总行 16,223｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 23.41）"
+   }
+  ],
+  "seconds": 11.9,
+  "source_id": "us/mn/benton",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:24:01",
+  "verdict": "PASS"
+ },
+ "us/mn/cook": {
+  "archive": {
+   "bytes": 423317,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 6031,
+  "grade_hint": "B",
+  "kept": 6015,
+  "needs_rule": true,
+  "path": "parsed/us/mn/cook/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 6015,
+    "zip": 6015
+   },
+   "per_street": 10.09,
+   "streets": 596
+  },
+  "ratio": 1.0,
+  "reason": "合规 6015/6015 = 100%（带地址行分母；真门牌号行 5,567）总行 6,031｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 0.6666666666666666,
+    "contentful": 6015,
+    "coverage": 0.997,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 6015,
+    "kept_contentful": 6015,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6015,
+      "zip": 6015
+     },
+     "per_street": 10.09,
+     "streets": 596
+    },
+    "ratio": 1.0,
+    "rows": 6031,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "true_addr": 5567,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 6015/6015 = 100%（带地址行分母；真门牌号行 5,567）总行 6,031｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 10.1,
+  "source_id": "us/mn/cook",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:19:07",
+  "verdict": "PASS_DOWNGRADED"
  },
  "us/mn/koochiching": {
   "archive": {
@@ -2905,6 +7485,240 @@
   "stage": "parsed",
   "updated": "2026-10-11 02:50:13"
  },
+ "us/ms/yazoo": {
+  "archive": {
+   "bytes": 22030323,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 20354,
+  "grade_hint": "B",
+  "kept": 17208,
+  "needs_rule": true,
+  "path": "parsed/us/ms/yazoo/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.1497,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 17208,
+    "zip": 17208
+   },
+   "per_street": 5.1,
+   "streets": 3373
+  },
+  "ratio": 0.846,
+  "reason": "合规 17208/20345 = 85%（带地址行分母；真门牌号行 20,040）总行 20,354｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 20345,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 9386,
+    "kept_contentful": 9386,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 9386,
+      "zip": 9386
+     },
+     "per_street": 7.61,
+     "streets": 1234
+    },
+    "ratio": 0.461,
+    "rows": 20354,
+    "rule": "mapping@v1",
+    "seconds": 2.2,
+    "true_addr": 20040,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 9386/20345 = 46%（带地址行分母；真门牌号行 20,040）总行 20,354｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20345,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 20354,
+    "rule": "field_guess@v2",
+    "seconds": 4.2,
+    "true_addr": 20040,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20345 = 0%（阈 30%；总行 20,354，带地址 20,345，真门牌号 20,040）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20345,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2692,
+    "kept_contentful": 2692,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.3337,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2560,
+      "zip": 2687
+     },
+     "per_street": 5.7,
+     "streets": 472
+    },
+    "ratio": 0.132,
+    "rows": 20354,
+    "rule": "concat_addr@v2",
+    "seconds": 8.8,
+    "true_addr": 20040,
+    "verdict": "GATE_FAIL",
+    "why": "合规 2692/20345 = 13%（阈 30%；总行 20,354，带地址 20,345，真门牌号 20,040）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20345,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 17208,
+    "kept_contentful": 17208,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.1497,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 17208,
+      "zip": 17208
+     },
+     "per_street": 5.1,
+     "streets": 3373
+    },
+    "ratio": 0.846,
+    "rows": 20354,
+    "rule": "concat_addr@v1",
+    "seconds": 11.5,
+    "true_addr": 20040,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 17208/20345 = 85%（带地址行分母；真门牌号行 20,040）总行 20,354｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20345,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 20354,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 13.5,
+    "true_addr": 20040,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20345 = 0%（阈 30%；总行 20,354，带地址 20,345，真门牌号 20,040）"
+   }
+  ],
+  "seconds": 32.2,
+  "source_id": "us/ms/yazoo",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:25:12",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/nc/alexander": {
   "archive": {
    "bytes": 0,
@@ -2977,6 +7791,87 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:56:10"
  },
+ "us/nd/bottineau": {
+  "archive": {
+   "bytes": 1712599,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 6252,
+  "grade_hint": "A",
+  "kept": 6248,
+  "path": "parsed/us/nd/bottineau/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 13.38,
+   "streets": 467
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 6248,
+    "coverage": 0.999,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 6248,
+    "kept_contentful": 6248,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 13.38,
+     "streets": 467
+    },
+    "ratio": 1.0,
+    "rows": 6252,
+    "rule": "mapping@v1",
+    "seconds": 0.5,
+    "true_addr": 5878,
+    "verdict": "PASS",
+    "why": "合规 6248/6248 = 100%（带地址行分母；真门牌号行 5,878）总行 6,252｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 13.38）"
+   }
+  ],
+  "seconds": 10.4,
+  "source_id": "us/nd/bottineau",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:19:17",
+  "verdict": "PASS"
+ },
  "us/nd/city_of_grafton": {
   "archive": {
    "bytes": 0,
@@ -3001,6 +7896,238 @@
   "stage": "fetch",
   "updated": "2026-10-11 12:17:42"
  },
+ "us/nd/golden_valley": {
+  "archive": {
+   "bytes": 1595523,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 1370,
+  "grade_hint": "A",
+  "kept": 1344,
+  "path": "parsed/us/nd/golden_valley/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0007,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 8.56,
+   "streets": 157
+  },
+  "ratio": 0.981,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 1370,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 1344,
+    "kept_contentful": 1344,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0007,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 8.56,
+     "streets": 157
+    },
+    "ratio": 0.981,
+    "rows": 1370,
+    "rule": "mapping@v1",
+    "seconds": 0.2,
+    "true_addr": 961,
+    "verdict": "PASS",
+    "why": "合规 1344/1370 = 98%（带地址行分母；真门牌号行 961）总行 1,370｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 8.56）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 1370,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 145,
+    "kept_contentful": 145,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 145,
+      "zip": 145
+     },
+     "per_street": 24.17,
+     "streets": 6
+    },
+    "ratio": 0.106,
+    "rows": 1370,
+    "rule": "field_guess@v2",
+    "seconds": 0.4,
+    "true_addr": 961,
+    "verdict": "GATE_FAIL",
+    "why": "合规 145/1370 = 11%（阈 30%；总行 1,370，带地址 1,370，真门牌号 961）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 1370,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 806,
+    "kept_contentful": 806,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0159,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 803,
+      "zip": 806
+     },
+     "per_street": 13.0,
+     "streets": 62
+    },
+    "ratio": 0.588,
+    "rows": 1370,
+    "rule": "concat_addr@v2",
+    "seconds": 0.8,
+    "true_addr": 961,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 806/1370 = 59%（带地址行分母；真门牌号行 961）总行 1,370｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 1370,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 1345,
+    "kept_contentful": 1345,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0182,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1345,
+      "zip": 1345
+     },
+     "per_street": 8.51,
+     "streets": 158
+    },
+    "ratio": 0.982,
+    "rows": 1370,
+    "rule": "concat_addr@v1",
+    "seconds": 0.9,
+    "true_addr": 961,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 1345/1370 = 98%（带地址行分母；真门牌号行 961）总行 1,370｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 1370,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 1370,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 1.1,
+    "true_addr": 961,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/1370 = 0%（阈 30%；总行 1,370，带地址 1,370，真门牌号 961）"
+   }
+  ],
+  "seconds": 5.7,
+  "source_id": "us/nd/golden_valley",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:18:29",
+  "verdict": "PASS"
+ },
  "us/nd/ramsey": {
   "archive": {
    "bytes": 0,
@@ -3016,6 +8143,325 @@
   "source_id": "us/nd/ramsey",
   "stage": "fetch",
   "updated": "2026-10-11 12:30:05"
+ },
+ "us/nd/rolette": {
+  "archive": {
+   "bytes": 1275732,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 4429,
+  "grade_hint": "B",
+  "kept": 4371,
+  "needs_rule": true,
+  "path": "parsed/us/nd/rolette/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 4371,
+    "zip": 4371
+   },
+   "per_street": 6.28,
+   "streets": 696
+  },
+  "ratio": 0.988,
+  "reason": "合规 4371/4425 = 99%（带地址行分母；真门牌号行 4,245）总行 4,429｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 4425,
+    "coverage": 0.999,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 4334,
+    "kept_contentful": 4334,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2,
+      "zip": 4334
+     },
+     "per_street": 6.26,
+     "streets": 692
+    },
+    "ratio": 0.979,
+    "rows": 4429,
+    "rule": "mapping@v1",
+    "seconds": 0.3,
+    "true_addr": 4245,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 4334/4425 = 98%（带地址行分母；真门牌号行 4,245）总行 4,429｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4425,
+    "coverage": 0.999,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 4286,
+    "kept_contentful": 4286,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 228,
+      "zip": 4286
+     },
+     "per_street": 6.26,
+     "streets": 685
+    },
+    "ratio": 0.969,
+    "rows": 4429,
+    "rule": "field_guess@v2",
+    "seconds": 0.7,
+    "true_addr": 4245,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 4286/4425 = 97%（带地址行分母；真门牌号行 4,245）总行 4,429｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4425,
+    "coverage": 0.999,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 1583,
+    "kept_contentful": 1583,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1579,
+      "zip": 1583
+     },
+     "per_street": 7.4,
+     "streets": 214
+    },
+    "ratio": 0.358,
+    "rows": 4429,
+    "rule": "concat_addr@v2",
+    "seconds": 1.0,
+    "true_addr": 4245,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 1583/4425 = 36%（带地址行分母；真门牌号行 4,245）总行 4,429｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4425,
+    "coverage": 0.999,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 4371,
+    "kept_contentful": 4371,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 4371,
+      "zip": 4371
+     },
+     "per_street": 6.28,
+     "streets": 696
+    },
+    "ratio": 0.988,
+    "rows": 4429,
+    "rule": "concat_addr@v1",
+    "seconds": 1.4,
+    "true_addr": 4245,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 4371/4425 = 99%（带地址行分母；真门牌号行 4,245）总行 4,429｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 4425,
+    "coverage": 0.999,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 4429,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 1.6,
+    "true_addr": 4245,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/4425 = 0%（阈 30%；总行 4,429，带地址 4,425，真门牌号 4,245）"
+   }
+  ],
+  "seconds": 9.2,
+  "source_id": "us/nd/rolette",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:18:48",
+  "verdict": "PASS_DOWNGRADED"
+ },
+ "us/nd/statewide": {
+  "archive": {
+   "bytes": 486958867,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 438067,
+  "grade_hint": "A",
+  "kept": 436977,
+  "path": "parsed/us/nd/statewide/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 1
+   },
+   "per_street": 40.49,
+   "streets": 10793
+  },
+  "ratio": 0.998,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 438067,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.8% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 436977,
+    "kept_contentful": 436977,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 1
+     },
+     "per_street": 40.49,
+     "streets": 10793
+    },
+    "ratio": 0.998,
+    "rows": 438067,
+    "rule": "mapping@v1",
+    "seconds": 58.5,
+    "true_addr": 432956,
+    "verdict": "PASS",
+    "why": "合规 436977/438067 = 100%（带地址行分母；真门牌号行 432,956）总行 438,067｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 40.49）"
+   }
+  ],
+  "seconds": 387.6,
+  "source_id": "us/nd/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:03:18",
+  "verdict": "PASS"
  },
  "us/nd/stutsman": {
   "attempts": 2,
@@ -4229,30 +9675,435 @@
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 0,
+  "attempts": 1,
+  "done": false,
+  "error": "",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,224 条 > 真门牌号行 2,481 条×150% → 拒绝这套产物；field_guess@v2:合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）；concat_addr@v2:合规 2232/20232 = 11%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481））→ 造新规则",
+  "report": "out/triage/分诊-us__nm__lincoln.json",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 20232,
+    "coverage": 0.883,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 20224,
+    "kept_contentful": 20224,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 20224,
+      "zip": 20224
+     },
+     "per_street": 1.06,
+     "streets": 19118
+    },
+    "ratio": 1.0,
+    "rows": 22916,
+    "rule": "mapping@v1",
+    "seconds": 1.4,
+    "true_addr": 2481,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 20,224 条 > 真门牌号行 2,481 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20232,
+    "coverage": 0.883,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 22916,
+    "rule": "field_guess@v2",
+    "seconds": 2.1,
+    "true_addr": 2481,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20232,
+    "coverage": 0.883,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 2232,
+    "kept_contentful": 2232,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 2229,
+      "zip": 2232
+     },
+     "per_street": 9.96,
+     "streets": 224
+    },
+    "ratio": 0.11,
+    "rows": 22916,
+    "rule": "concat_addr@v2",
+    "seconds": 4.1,
+    "true_addr": 2481,
+    "verdict": "GATE_FAIL",
+    "why": "合规 2232/20232 = 11%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20232,
+    "coverage": 0.883,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 20207,
+    "kept_contentful": 20207,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 20207,
+      "zip": 20207
+     },
+     "per_street": 13.08,
+     "streets": 1545
+    },
+    "ratio": 0.999,
+    "rows": 22916,
+    "rule": "concat_addr@v1",
+    "seconds": 5.5,
+    "true_addr": 2481,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 20,207 条 > 真门牌号行 2,481 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 20232,
+    "coverage": 0.883,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 22916,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 6.3,
+    "true_addr": 2481,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）"
+   }
+  ],
+  "seconds": 33.1,
+  "source_id": "us/nm/lincoln",
+  "stage": "triage",
+  "updated": "2026-10-12 16:27:49"
+ },
+ "us/nv/lander": {
+  "archive": {
+   "bytes": 4794385,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
   "done": true,
   "error": "",
-  "fetched": 22916,
-  "kept": 21088,
-  "path": "parsed/us/nm/lincoln/mapping@v1.ndjson",
-  "ratio": 0.92,
+  "fetched": 7851,
+  "grade_hint": "B",
+  "kept": 3752,
+  "needs_rule": true,
+  "path": "parsed/us/nv/lander/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.4582,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 3752,
+    "zip": 3752
+   },
+   "per_street": 10.25,
+   "streets": 366
+  },
+  "ratio": 0.495,
+  "reason": "合规 3752/7586 = 49%（带地址行分母；真门牌号行 6,230）总行 7,851｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
   "rule": "mapping@v1",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "kept": 21088,
-    "ratio": 0.92,
-    "rows": 22916,
+    "contentful": 7586,
+    "coverage": 0.966,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 3752,
+    "kept_contentful": 3752,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.4582,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 3752,
+      "zip": 3752
+     },
+     "per_street": 10.25,
+     "streets": 366
+    },
+    "ratio": 0.495,
+    "rows": 7851,
     "rule": "mapping@v1",
-    "seconds": 0.7,
-    "verdict": "PASS",
-    "why": "合规 21088/22916 = 92%"
+    "seconds": 0.8,
+    "true_addr": 6230,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 3752/7586 = 49%（带地址行分母；真门牌号行 6,230）总行 7,851｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 7586,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 7851,
+    "rule": "field_guess@v2",
+    "seconds": 1.3,
+    "true_addr": 6230,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/7586 = 0%（阈 30%；总行 7,851，带地址 7,586，真门牌号 6,230）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 7586,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 235,
+    "kept_contentful": 235,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.3597,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 179,
+      "zip": 235
+     },
+     "per_street": 6.03,
+     "streets": 39
+    },
+    "ratio": 0.031,
+    "rows": 7851,
+    "rule": "concat_addr@v2",
+    "seconds": 2.6,
+    "true_addr": 6230,
+    "verdict": "GATE_FAIL",
+    "why": "合规 235/7586 = 3%（阈 30%；总行 7,851，带地址 7,586，真门牌号 6,230）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 7586,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 985,
+    "kept_contentful": 985,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.5246,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 812,
+      "zip": 812
+     },
+     "per_street": 3.46,
+     "streets": 285
+    },
+    "ratio": 0.13,
+    "rows": 7851,
+    "rule": "concat_addr@v1",
+    "seconds": 3.3,
+    "true_addr": 6230,
+    "verdict": "GATE_FAIL",
+    "why": "合规 985/7586 = 13%（阈 30%；总行 7,851，带地址 7,586，真门牌号 6,230）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 7586,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 7851,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 3.9,
+    "true_addr": 6230,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/7586 = 0%（阈 30%；总行 7,851，带地址 7,586，真门牌号 6,230）"
    }
   ],
-  "seconds": 28.0,
-  "source_id": "us/nm/lincoln",
+  "seconds": 15.7,
+  "source_id": "us/nv/lander",
   "stage": "parsed",
-  "updated": "2026-10-11 03:58:05"
+  "updated": "2026-10-12 16:19:45",
+  "verdict": "PASS_DOWNGRADED"
  },
  "us/ny/erie": {
   "archive": {
@@ -4318,6 +10169,323 @@
   "stage": "parsed",
   "updated": "2026-10-11 04:04:48"
  },
+ "us/oh/henry": {
+  "archive": {
+   "bytes": 29247093,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 14621,
+  "grade_hint": "A",
+  "kept": 14559,
+  "path": "parsed/us/oh/henry/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0042,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 25.02,
+   "streets": 582
+  },
+  "ratio": 0.996,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 14621,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.6% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 14559,
+    "kept_contentful": 14559,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0042,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 25.02,
+     "streets": 582
+    },
+    "ratio": 0.996,
+    "rows": 14621,
+    "rule": "mapping@v1",
+    "seconds": 3.1,
+    "true_addr": 14621,
+    "verdict": "PASS",
+    "why": "合规 14559/14621 = 100%（带地址行分母；真门牌号行 14,621）总行 14,621｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 25.02）"
+   }
+  ],
+  "seconds": 31.1,
+  "source_id": "us/oh/henry",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:23:30",
+  "verdict": "PASS"
+ },
+ "us/oh/statewide": {
+  "archive": {
+   "bytes": 82323675,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 97137,
+  "grade_hint": "B",
+  "kept": 96183,
+  "needs_rule": true,
+  "path": "parsed/us/oh/statewide/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 51609,
+    "zip": 3
+   },
+   "per_street": 32.76,
+   "streets": 2936
+  },
+  "ratio": 0.99,
+  "reason": "合规 96183/97136 = 99%（带地址行分母；真门牌号行 96,166）总行 97,137｜完整性不过：city 缺 54%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 97136,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 96183,
+    "kept_contentful": 96183,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 51609,
+      "zip": 3
+     },
+     "per_street": 32.76,
+     "streets": 2936
+    },
+    "ratio": 0.99,
+    "rows": 97137,
+    "rule": "mapping@v1",
+    "seconds": 9.4,
+    "true_addr": 96166,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 96183/97136 = 99%（带地址行分母；真门牌号行 96,166）总行 97,137｜完整性不过：city 缺 54%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 97136,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 97137,
+    "rule": "field_guess@v2",
+    "seconds": 15.6,
+    "true_addr": 96166,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/97136 = 0%（阈 30%；总行 97,137，带地址 97,136，真门牌号 96,166）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 97136,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 62997,
+    "kept_contentful": 62997,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0041,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 59573,
+      "zip": 62997
+     },
+     "per_street": 16.51,
+     "streets": 3816
+    },
+    "ratio": 0.649,
+    "rows": 97137,
+    "rule": "concat_addr@v2",
+    "seconds": 36.8,
+    "true_addr": 96166,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 62997/97136 = 65%（带地址行分母；真门牌号行 96,166）总行 97,137｜完整性不过：city 缺 95%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 97136,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 95593,
+    "kept_contentful": 95593,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0033,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 95593,
+      "zip": 95593
+     },
+     "per_street": 16.19,
+     "streets": 5906
+    },
+    "ratio": 0.984,
+    "rows": 97137,
+    "rule": "concat_addr@v1",
+    "seconds": 49.3,
+    "true_addr": 96166,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 95593/97136 = 98%（带地址行分母；真门牌号行 96,166）总行 97,137｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 97136,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 97137,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 55.5,
+    "true_addr": 96166,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/97136 = 0%（阈 30%；总行 97,137，带地址 97,136，真门牌号 96,166）"
+   }
+  ],
+  "seconds": 216.5,
+  "source_id": "us/oh/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:31:48",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/ok/acog-counties": {
   "archive": {
    "bytes": 0,
@@ -4366,6 +10534,91 @@
   "stage": "parsed",
   "updated": "2026-10-11 04:08:19"
  },
+ "us/or/wallowa": {
+  "archive": {
+   "bytes": 2132629,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 4288,
+  "grade_hint": "B",
+  "kept": 4288,
+  "needs_rule": true,
+  "path": "parsed/us/or/wallowa/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 4288
+   },
+   "per_street": 10.54,
+   "streets": 407
+  },
+  "ratio": 1.0,
+  "reason": "合规 4288/4288 = 100%（带地址行分母；真门牌号行 4,285）总行 4,288｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 4288,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 4288,
+    "kept_contentful": 4288,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 4288
+     },
+     "per_street": 10.54,
+     "streets": 407
+    },
+    "ratio": 1.0,
+    "rows": 4288,
+    "rule": "mapping@v1",
+    "seconds": 0.4,
+    "true_addr": 4285,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 4288/4288 = 100%（带地址行分母；真门牌号行 4,285）总行 4,288｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   }
+  ],
+  "seconds": 6.4,
+  "source_id": "us/or/wallowa",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:18:41",
+  "verdict": "PASS_DOWNGRADED"
+ },
  "us/pa/lebanon": {
   "archive": {
    "bytes": 783729,
@@ -4398,6 +10651,87 @@
   "stage": "parsed",
   "updated": "2026-10-11 04:05:26"
  },
+ "us/pa/perry": {
+  "archive": {
+   "bytes": 38055421,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 21144,
+  "grade_hint": "A",
+  "kept": 21132,
+  "path": "parsed/us/pa/perry/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 17.31,
+   "streets": 1221
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 21135,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 21132,
+    "kept_contentful": 21132,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 17.31,
+     "streets": 1221
+    },
+    "ratio": 1.0,
+    "rows": 21144,
+    "rule": "mapping@v1",
+    "seconds": 3.4,
+    "true_addr": 20941,
+    "verdict": "PASS",
+    "why": "合规 21132/21135 = 100%（带地址行分母；真门牌号行 20,941）总行 21,144｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 17.31）"
+   }
+  ],
+  "seconds": 21.2,
+  "source_id": "us/pa/perry",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:27:05",
+  "verdict": "PASS"
+ },
  "us/pa/somerset": {
   "archive": {
    "bytes": 5792166,
@@ -4429,6 +10763,321 @@
   "source_id": "us/pa/somerset",
   "stage": "parsed",
   "updated": "2026-10-11 04:02:41"
+ },
+ "us/pa/sullivan": {
+  "archive": {
+   "bytes": 3956597,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 8692,
+  "grade_hint": "B",
+  "kept": 6039,
+  "needs_rule": true,
+  "path": "parsed/us/pa/sullivan/concat_addr@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0007,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 6039,
+    "zip": 6039
+   },
+   "per_street": 5.68,
+   "streets": 1064
+  },
+  "ratio": 0.719,
+  "reason": "合规 6039/8400 = 72%（带地址行分母；真门牌号行 8,439）总行 8,692｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）",
+  "rule": "concat_addr@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 8400,
+    "coverage": 0.966,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 5996,
+    "kept_contentful": 5996,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 5996,
+      "zip": 5996
+     },
+     "per_street": 6.82,
+     "streets": 879
+    },
+    "ratio": 0.714,
+    "rows": 8692,
+    "rule": "mapping@v1",
+    "seconds": 0.7,
+    "true_addr": 8439,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 5996/8400 = 71%（带地址行分母；真门牌号行 8,439）总行 8,692｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8400,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 491,
+    "kept_contentful": 491,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 491,
+      "zip": 122
+     },
+     "per_street": 1.01,
+     "streets": 488
+    },
+    "ratio": 0.058,
+    "rows": 8692,
+    "rule": "field_guess@v2",
+    "seconds": 1.3,
+    "true_addr": 8439,
+    "verdict": "GATE_FAIL",
+    "why": "合规 491/8400 = 6%（阈 30%；总行 8,692，带地址 8,400，真门牌号 8,439）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8400,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 823,
+    "kept_contentful": 823,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 727,
+      "zip": 823
+     },
+     "per_street": 8.76,
+     "streets": 94
+    },
+    "ratio": 0.098,
+    "rows": 8692,
+    "rule": "concat_addr@v2",
+    "seconds": 2.2,
+    "true_addr": 8439,
+    "verdict": "GATE_FAIL",
+    "why": "合规 823/8400 = 10%（阈 30%；总行 8,692，带地址 8,400，真门牌号 8,439）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8400,
+    "coverage": 0.966,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 6039,
+    "kept_contentful": 6039,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0007,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 6039,
+      "zip": 6039
+     },
+     "per_street": 5.68,
+     "streets": 1064
+    },
+    "ratio": 0.719,
+    "rows": 8692,
+    "rule": "concat_addr@v1",
+    "seconds": 3.1,
+    "true_addr": 8439,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 6039/8400 = 72%（带地址行分母；真门牌号行 8,439）总行 8,692｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 8400,
+    "coverage": 0.966,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 8692,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 3.6,
+    "true_addr": 8439,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/8400 = 0%（阈 30%；总行 8,692，带地址 8,400，真门牌号 8,439）"
+   }
+  ],
+  "seconds": 13.3,
+  "source_id": "us/pa/sullivan",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:20:00",
+  "verdict": "PASS_DOWNGRADED"
+ },
+ "us/pa/wyoming": {
+  "archive": {
+   "bytes": 19181833,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 18137,
+  "grade_hint": "A",
+  "kept": 18056,
+  "path": "parsed/us/pa/wyoming/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0044,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 1,
+    "zip": 1
+   },
+   "per_street": 11.31,
+   "streets": 1596
+  },
+  "ratio": 0.996,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 18136,
+    "coverage": 1.0,
+    "early_stop": "合规率 99.6% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 18056,
+    "kept_contentful": 18056,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0044,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1,
+      "zip": 1
+     },
+     "per_street": 11.31,
+     "streets": 1596
+    },
+    "ratio": 0.996,
+    "rows": 18137,
+    "rule": "mapping@v1",
+    "seconds": 2.6,
+    "true_addr": 16398,
+    "verdict": "PASS",
+    "why": "合规 18056/18136 = 100%（带地址行分母；真门牌号行 16,398）总行 18,137｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 11.31）"
+   }
+  ],
+  "seconds": 17.6,
+  "source_id": "us/pa/wyoming",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:24:55",
+  "verdict": "PASS"
  },
  "us/ri/providence": {
   "archive": {
@@ -4574,6 +11223,87 @@
   "stage": "fetch",
   "updated": "2026-10-11 13:01:59"
  },
+ "us/va/isle_of_wight": {
+  "archive": {
+   "bytes": 15297193,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 20630,
+  "grade_hint": "A",
+  "kept": 20628,
+  "path": "parsed/us/va/isle_of_wight/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 17.39,
+   "streets": 1186
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 20629,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 20628,
+    "kept_contentful": 20628,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 17.39,
+     "streets": 1186
+    },
+    "ratio": 1.0,
+    "rows": 20630,
+    "rule": "mapping@v1",
+    "seconds": 1.8,
+    "true_addr": 19542,
+    "verdict": "PASS",
+    "why": "合规 20628/20629 = 100%（带地址行分母；真门牌号行 19,542）总行 20,630｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 17.39）"
+   }
+  ],
+  "seconds": 17.2,
+  "source_id": "us/va/isle_of_wight",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:25:44",
+  "verdict": "PASS"
+ },
  "us/va/king_and_queen": {
   "archive": {
    "bytes": 5271306,
@@ -4606,6 +11336,524 @@
   "stage": "parsed",
   "updated": "2026-10-11 03:49:53"
  },
+ "us/va/louisa": {
+  "archive": {
+   "bytes": 7822049,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": false,
+  "error": "",
+  "kind": "RULE_GAP",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 22,547 条 > 真门牌号行 757 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 21,472 条 > 真门牌号行 757 条×150% → 拒绝这套产物；concat_addr@v2:合规 757/22547 = 3%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757））→ 造新规则",
+  "report": "out/triage/分诊-us__va__louisa.json",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 22547,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 22547,
+    "kept_contentful": 22547,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 22547,
+      "zip": 22547
+     },
+     "per_street": 18.39,
+     "streets": 1226
+    },
+    "ratio": 1.0,
+    "rows": 22548,
+    "rule": "mapping@v1",
+    "seconds": 1.5,
+    "true_addr": 757,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 22,547 条 > 真门牌号行 757 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 22547,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 21472,
+    "kept_contentful": 21472,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 21472
+     },
+     "per_street": 18.8,
+     "streets": 1142
+    },
+    "ratio": 0.952,
+    "rows": 22548,
+    "rule": "field_guess@v2",
+    "seconds": 3.1,
+    "true_addr": 757,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 21,472 条 > 真门牌号行 757 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 22547,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 757,
+    "kept_contentful": 757,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 729,
+      "zip": 757
+     },
+     "per_street": 9.96,
+     "streets": 76
+    },
+    "ratio": 0.034,
+    "rows": 22548,
+    "rule": "concat_addr@v2",
+    "seconds": 5.0,
+    "true_addr": 757,
+    "verdict": "GATE_FAIL",
+    "why": "合规 757/22547 = 3%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 22547,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 22538,
+    "kept_contentful": 22538,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 22538,
+      "zip": 22538
+     },
+     "per_street": 14.26,
+     "streets": 1581
+    },
+    "ratio": 1.0,
+    "rows": 22548,
+    "rule": "concat_addr@v1",
+    "seconds": 6.7,
+    "true_addr": 757,
+    "verdict": "GATE_FAIL",
+    "why": "疑似凭空造数据：合规 22,538 条 > 真门牌号行 757 条×150% → 拒绝这套产物"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 22547,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 22548,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 7.6,
+    "true_addr": 757,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）"
+   }
+  ],
+  "seconds": 23.0,
+  "source_id": "us/va/louisa",
+  "stage": "triage",
+  "updated": "2026-10-12 16:27:26"
+ },
+ "us/va/lunenburg": {
+  "archive": {
+   "bytes": 7290381,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 6791,
+  "grade_hint": "A",
+  "kept": 6791,
+  "path": "parsed/us/va/lunenburg/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 16.52,
+   "streets": 411
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 6791,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 6791,
+    "kept_contentful": 6791,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 16.52,
+     "streets": 411
+    },
+    "ratio": 1.0,
+    "rows": 6791,
+    "rule": "mapping@v1",
+    "seconds": 0.7,
+    "true_addr": 6781,
+    "verdict": "PASS",
+    "why": "合规 6791/6791 = 100%（带地址行分母；真门牌号行 6,781）总行 6,791｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 16.52）"
+   }
+  ],
+  "seconds": 7.8,
+  "source_id": "us/va/lunenburg",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:19:37",
+  "verdict": "PASS"
+ },
+ "us/vt/statewide": {
+  "archive": {
+   "bytes": 390108789,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 353161,
+  "grade_hint": "A",
+  "kept": 333758,
+  "path": "parsed/us/vt/statewide/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 0,
+    "zip": 0
+   },
+   "per_street": 18.07,
+   "streets": 18471
+  },
+  "ratio": 0.945,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 353161,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 333758,
+    "kept_contentful": 333758,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 18.07,
+     "streets": 18471
+    },
+    "ratio": 0.945,
+    "rows": 353161,
+    "rule": "mapping@v1",
+    "seconds": 39.7,
+    "true_addr": 341796,
+    "verdict": "PASS",
+    "why": "合规 333758/353161 = 95%（带地址行分母；真门牌号行 341,796）总行 353,161｜完整性 OK（city 缺 0%／zip 缺 0%）｜每街门牌号 18.07）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 353161,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 353161,
+    "rule": "field_guess@v2",
+    "seconds": 67.5,
+    "true_addr": 341796,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/353161 = 0%（阈 30%；总行 353,161，带地址 353,161，真门牌号 341,796）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 353161,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 321300,
+    "kept_contentful": 321300,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0549,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 247046,
+      "zip": 298445
+     },
+     "per_street": 18.09,
+     "streets": 17766
+    },
+    "ratio": 0.91,
+    "rows": 353161,
+    "rule": "concat_addr@v2",
+    "seconds": 156.6,
+    "true_addr": 341796,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 321300/353161 = 91%（带地址行分母；真门牌号行 341,796）总行 353,161｜完整性不过：city 缺 77%/zip 缺 93%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 353161,
+    "coverage": 1.0,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 331887,
+    "kept_contentful": 331887,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.055,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 331887,
+      "zip": 331887
+     },
+     "per_street": 17.6,
+     "streets": 18862
+    },
+    "ratio": 0.94,
+    "rows": 353161,
+    "rule": "concat_addr@v1",
+    "seconds": 199.0,
+    "true_addr": 341796,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 331887/353161 = 94%（带地址行分母；真门牌号行 341,796）总行 353,161｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 353161,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 353161,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 227.3,
+    "true_addr": 341796,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/353161 = 0%（阈 30%；总行 353,161，带地址 353,161，真门牌号 341,796）"
+   }
+  ],
+  "seconds": 530.8,
+  "source_id": "us/vt/statewide",
+  "stage": "parsed",
+  "updated": "2026-10-12 15:54:27",
+  "verdict": "PASS"
+ },
  "us/wa/garfield": {
   "attempts": 0,
   "done": true,
@@ -4634,6 +11882,87 @@
   "source_id": "us/wa/garfield",
   "stage": "parsed",
   "updated": "2026-10-11 12:59:02"
+ },
+ "us/wa/kittitas": {
+  "archive": {
+   "bytes": 20237501,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 20775,
+  "grade_hint": "A",
+  "kept": 20775,
+  "path": "parsed/us/wa/kittitas/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 21,
+    "zip": 329
+   },
+   "per_street": 15.73,
+   "streets": 1321
+  },
+  "ratio": 1.0,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 20775,
+    "coverage": 1.0,
+    "early_stop": "合规率 100.0% ≥ 99.5%，其余规则最多再多 <0.5%，直接选定省时",
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 20775,
+    "kept_contentful": 20775,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 21,
+      "zip": 329
+     },
+     "per_street": 15.73,
+     "streets": 1321
+    },
+    "ratio": 1.0,
+    "rows": 20775,
+    "rule": "mapping@v1",
+    "seconds": 2.0,
+    "true_addr": 20576,
+    "verdict": "PASS",
+    "why": "合规 20775/20775 = 100%（带地址行分母；真门牌号行 20,576）总行 20,775｜完整性 OK（city 缺 0%／zip 缺 2%）｜每街门牌号 15.73）"
+   }
+  ],
+  "seconds": 27.4,
+  "source_id": "us/wa/kittitas",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:26:02",
+  "verdict": "PASS"
  },
  "us/wa/lewis": {
   "archive": {
@@ -4698,6 +12027,236 @@
   "source_id": "us/wi/city_of_milwaukee",
   "stage": "parsed",
   "updated": "2026-10-11 04:17:54"
+ },
+ "us/wi/clark": {
+  "archive": {
+   "bytes": 8583848,
+   "done": true,
+   "error": "",
+   "protocol": "arcgis_paged"
+  },
+  "attempts": 1,
+  "done": true,
+  "error": "",
+  "fetched": 16569,
+  "grade_hint": "A",
+  "kept": 6477,
+  "path": "parsed/us/wi/clark/mapping@v1.ndjson",
+  "quality": {
+   "contract": false,
+   "exempt": {
+    "city": false,
+    "zip": false
+   },
+   "junk_rate": 0.0,
+   "lim": {
+    "city": 0.2,
+    "zip": 0.2
+   },
+   "max_junk": 0.2,
+   "missing": {
+    "city": 1,
+    "zip": 467
+   },
+   "per_street": 13.25,
+   "streets": 489
+  },
+  "ratio": 0.986,
+  "rule": "mapping@v1",
+  "rule_chain": [
+   {
+    "addr_hint": 1.0,
+    "contentful": 6570,
+    "coverage": 0.397,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 6477,
+    "kept_contentful": 6477,
+    "kind": "",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 1,
+      "zip": 467
+     },
+     "per_street": 13.25,
+     "streets": 489
+    },
+    "ratio": 0.986,
+    "rows": 16569,
+    "rule": "mapping@v1",
+    "seconds": 0.9,
+    "true_addr": 6388,
+    "verdict": "PASS",
+    "why": "合规 6477/6570 = 99%（带地址行分母；真门牌号行 6,388）总行 16,569｜完整性 OK（city 缺 0%／zip 缺 7%）｜每街门牌号 13.25）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6570,
+    "coverage": 0.397,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 4,
+    "kept_contentful": 4,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 4
+     },
+     "per_street": 1.33,
+     "streets": 3
+    },
+    "ratio": 0.001,
+    "rows": 16569,
+    "rule": "field_guess@v2",
+    "seconds": 1.5,
+    "true_addr": 6388,
+    "verdict": "GATE_FAIL",
+    "why": "合规 4/6570 = 0%（阈 30%；总行 16,569，带地址 6,570，真门牌号 6,388）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6570,
+    "coverage": 0.397,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 829,
+    "kept_contentful": 829,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 683,
+      "zip": 829
+     },
+     "per_street": 3.3,
+     "streets": 251
+    },
+    "ratio": 0.126,
+    "rows": 16569,
+    "rule": "concat_addr@v2",
+    "seconds": 2.7,
+    "true_addr": 6388,
+    "verdict": "GATE_FAIL",
+    "why": "合规 829/6570 = 13%（阈 30%；总行 16,569，带地址 6,570，真门牌号 6,388）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6570,
+    "coverage": 0.397,
+    "exempt": false,
+    "grade_hint": "B",
+    "kept": 5504,
+    "kept_contentful": 5504,
+    "kind": "INCOMPLETE",
+    "notes": [
+     "FIELD_INCOMPLETE"
+    ],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0002,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 5504,
+      "zip": 5504
+     },
+     "per_street": 8.85,
+     "streets": 622
+    },
+    "ratio": 0.838,
+    "rows": 16569,
+    "rule": "concat_addr@v1",
+    "seconds": 3.5,
+    "true_addr": 6388,
+    "verdict": "PASS_DOWNGRADED",
+    "why": "合规 5504/6570 = 84%（带地址行分母；真门牌号行 6,388）总行 16,569｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 6570,
+    "coverage": 0.397,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": false,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 16569,
+    "rule": "llm_us_wa_clark_clark_situs_address@v1",
+    "seconds": 4.3,
+    "true_addr": 6388,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/6570 = 0%（阈 30%；总行 16,569，带地址 6,570，真门牌号 6,388）"
+   }
+  ],
+  "seconds": 17.2,
+  "source_id": "us/wi/clark",
+  "stage": "parsed",
+  "updated": "2026-10-12 16:24:13",
+  "verdict": "PASS"
  },
  "us/wv/berkeley": {
   "archive": {

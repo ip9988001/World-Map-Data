@@ -1,0 +1,65 @@
+name: 一次性资产改名（补 US- 国家代号前缀）
+
+# 用途：把已有的按州分片资产生成带国家代号的新名，先传新名、成功后再删旧名。
+# 例：AK.ndjson.gz → US-AK.ndjson.gz ｜ bronze-AK.zip → US-bronze-AK.zip
+# 只做一次；跑完可删除本文件。sources-*.json / merged.clean.* 不动。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [v0.1.0-dataset, bronze]
+    steps:
+      - name: 逐个改名（先传新名 → 校验 → 删旧名）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ matrix.tag }}
+        run: |
+          set -uo pipefail
+          mkdir -p /tmp/a
+          gh release view "$TAG" --json assets -q '.assets[].name' | sort | while read -r n; do
+            case "$n" in
+              US-*) echo "已是新名，跳过：$n"; continue ;;
+              [A-Z][A-Z].ndjson.gz)  new="US-$n" ;;
+              bronze-[A-Z][A-Z].zip) new="US-$n" ;;
+              *) echo "不在改名范围，跳过：$n"; continue ;;
+            esac
+            echo "── $n  ⇒  $new"
+            rm -rf /tmp/a && mkdir -p /tmp/a
+            if ! gh release download "$TAG" -p "$n" -D /tmp/a --clobber; then
+              echo "!! 下载失败，跳过（旧名保持不动）：$n"; continue
+            fi
+            mv "/tmp/a/$n" "/tmp/a/$new"
+            old_sz=$(stat -c %s "/tmp/a/$new")
+            ok=0
+            for i in 1 2 3; do
+              if gh release upload "$TAG" "/tmp/a/$new" --clobber; then ok=1; break; fi
+              sleep 10
+            done
+            [ "$ok" = 1 ] || { echo "!! 上传失败，跳过删除：$new"; continue; }
+            up_sz=$(gh release view "$TAG" --json assets \
+              -q ".assets[] | select(.name==\"$new\") | .size")
+            if [ "$up_sz" = "$old_sz" ]; then
+              gh release delete-asset "$TAG" "$n" -y && echo "   旧名已删：$n"
+            else
+              echo "!! 新名大小不符（本地 $old_sz / 远端 $up_sz）→ 不删旧名，人工核查：$new"
+            fi
+          done
+      - name: 结果清单
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ matrix.tag }}
+        run: |
+          gh release view "$TAG" --json assets -q '.assets[].name' | sort > /tmp/names.txt
+          echo "资产数：$(wc -l < /tmp/names.txt)"
+          head -5 /tmp/names.txt; echo "..."; tail -3 /tmp/names.txt
+          echo "未加前缀的残留：$(grep -cv '^US-' /tmp/names.txt || true)"
+          grep -v '^US-' /tmp/names.txt || true

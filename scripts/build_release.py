@@ -378,8 +378,8 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
                                   "inferred": {"city": 0, "zip": 0}})
         if st not in writers:
             writers[st] = [
-                gzip.open(os.path.join(out_dir, f"{st}.ndjson.gz"), "wt", encoding="utf-8"),
-                gzip.open(os.path.join(site_dir, f"{st}.ndjson.gz"), "wt", encoding="utf-8"),
+                gzip.open(os.path.join(out_dir, f"US-{st}.ndjson.gz"), "wt", encoding="utf-8"),
+                gzip.open(os.path.join(site_dir, f"US-{st}.ndjson.gz"), "wt", encoding="utf-8"),
             ]
         full, site = writers[st]
         rec = merge_group(cur_key, group, meta)
@@ -502,7 +502,10 @@ def main(argv=None) -> None:
     global STRICT_A
     STRICT_A = bool(a.strict_a)
 
-    legacy_shards = {os.path.basename(p).split(".")[0]: p
+    def _st_of(p: str) -> str:      # 兼容 AK.ndjson.gz / US-AK.ndjson.gz 两种历史命名
+        return os.path.basename(p).split(".")[0].split("-")[-1].upper()
+
+    legacy_shards = {_st_of(p): p
                      for p in glob.glob(os.path.join(a.legacy, "*.ndjson.gz"))} if a.legacy else {}
     new = collect_new(a.parsed)
     meta = load_source_meta(a.sources_csv)
@@ -571,7 +574,7 @@ def main(argv=None) -> None:
 
     used_by_state: dict[str, set] = {}
     for st in sorted(stats):
-        out_path = os.path.join(a.out, f"{st}.ndjson.gz")
+        out_path = os.path.join(a.out, f"US-{st}.ndjson.gz")          # 交付名带国家代号
         stt = stats[st]
         chk = audit_shard(out_path)                 # ← 写完回读，清单数字只看这里
         if chk["blank"]:

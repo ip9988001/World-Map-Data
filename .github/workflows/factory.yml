@@ -167,7 +167,7 @@ jobs:
           echo "本泳道涉及州：$STATES"
           mkdir -p /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
           done
           ls /tmp/bronze | head -5 || true
           python scripts/bronze_assets.py restore --dir /tmp/bronze
@@ -192,10 +192,10 @@ jobs:
         run: |
           STATES=$(python scripts/bronze_assets.py states --plan out/plan.json --lane ${{ matrix.lane }})
           # 关键：先把已存在的 zip 取回来解开再打包 —— 否则后跑完的泳道会拿“只有自己那部分源”的包
-          # 覆盖掉别的泳道已存进去的源（实测 bronze-AK.zip 只剩 4 个源、WI 只剩 1 个）
+          # 覆盖掉别的泳道已存进去的源（实测 US-bronze-AK.zip 只剩 4 个源、WI 只剩 1 个）
           rm -rf /tmp/bzold /tmp/bronze && mkdir -p /tmp/bzold /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "bronze-$st.zip" -D /tmp/bzold --clobber 2>/dev/null || true
+            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bzold --clobber 2>/dev/null || true
           done
           python scripts/bronze_assets.py restore --dir /tmp/bzold --archive raw_archive || true
           python scripts/bronze_assets.py pack --states "$(echo $STATES | tr ' ' ',')" --out /tmp/bronze || true
@@ -461,7 +461,7 @@ jobs:
           echo "涉及州：$STATES"
           mkdir -p /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
           done
           python scripts/bronze_assets.py restore --dir /tmp/bronze
       - name: AI 造规则（LLM → 验证闸门 → specs/）
@@ -607,7 +607,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p /tmp/prev
-          gh release download v0.1.0-dataset -p '[A-Z][A-Z].ndjson.gz' -D /tmp/prev --clobber 2>/dev/null || true
+          gh release download v0.1.0-dataset -p 'US-[A-Z][A-Z].ndjson.gz' -D /tmp/prev --clobber 2>/dev/null || true
           if ! ls /tmp/prev/*.ndjson.gz >/dev/null 2>&1; then echo "无上一版可存（首次发布）"; exit 0; fi
           gh release create prev-dataset --title "上一版数据集（回滚用）" \
             --notes "每次发布前自动留一份上一版稳定视图分片，只保最新一版" 2>/dev/null || true

@@ -7,7 +7,7 @@
 
 用法：
   python scripts/bronze_assets.py states --plan out/plan.json --lane 3     # 该泳道涉及的州
-  python scripts/bronze_assets.py pack   --states OH,TX --out /tmp/bronze  # 打包（跳过大文件）
+  python scripts/bronze_assets.py pack   --states OH,TX --out /tmp/bronze  # 打包 US-bronze-<ST>.zip（跳过大文件）
   python scripts/bronze_assets.py restore --dir /tmp/bronze --archive raw_archive
 """
 from __future__ import annotations
@@ -47,7 +47,7 @@ def pack(states: list[str], out_dir: str, archive: str = ARCHIVE) -> list[str]:
         src = os.path.join(archive, "us", st.lower())
         if not os.path.isdir(src):
             continue
-        dst = os.path.join(out_dir, f"bronze-{st}.zip")
+        dst = os.path.join(out_dir, f"US-bronze-{st}.zip")   # 资产名带国家代号，便于多国扩展
         with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
             for base, _dirs, files in os.walk(src):
                 for f in files:
@@ -67,7 +67,7 @@ def restore(src_dir: str, archive: str = ARCHIVE) -> int:
     n = 0
     os.makedirs(archive, exist_ok=True)
     for f in sorted(os.listdir(src_dir)) if os.path.isdir(src_dir) else []:
-        if not f.startswith("bronze-") or not f.endswith(".zip"):
+        if not f.endswith(".zip") or not ("bronze-" in f):   # 兼容 bronze-AK.zip 与 US-bronze-AK.zip
             continue
         path = os.path.join(src_dir, f)
         try:
