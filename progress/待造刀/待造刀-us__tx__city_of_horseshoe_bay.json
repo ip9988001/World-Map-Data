@@ -2,7 +2,7 @@
  "source_id": "us/tx/city_of_horseshoe_bay",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 4,999 条 > 真门牌号行 2,148 条×150% → 拒绝这套产物；field_guess@v2:合规 210/4999 = 4%（阈 30%；总行 4,999，带地址 4,999，真门牌号 2,148）；concat_addr@v2:合规 414/4999 = 8%（阈 30%；总行 4,999，带地址 4,999，真门牌号 2,148））→ 造新规则",
- "decided_at": "2026-10-12 08:43:22",
+ "decided_at": "2026-10-12 10:17:25",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -40,7 +40,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 4,999 条 > 真门牌号行 2,148 条×150% → 拒绝这套产物",
-   "seconds": 0.6
+   "seconds": 0.5
   },
   {
    "rule": "field_guess@v2",
@@ -80,7 +80,7 @@
     "contract": false
    },
    "why": "合规 210/4999 = 4%（阈 30%；总行 4,999，带地址 4,999，真门牌号 2,148）",
-   "seconds": 1.2
+   "seconds": 1.0
   },
   {
    "rule": "concat_addr@v2",
@@ -120,7 +120,7 @@
     "contract": false
    },
    "why": "合规 414/4999 = 8%（阈 30%；总行 4,999，带地址 4,999，真门牌号 2,148）",
-   "seconds": 2.3
+   "seconds": 1.9
   },
   {
    "rule": "concat_addr@v1",
@@ -158,7 +158,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 4,999 条 > 真门牌号行 2,148 条×150% → 拒绝这套产物",
-   "seconds": 3.0
+   "seconds": 2.5
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -198,7 +198,7 @@
     "contract": false
    },
    "why": "合规 0/4999 = 0%（阈 30%；总行 4,999，带地址 4,999，真门牌号 2,148）",
-   "seconds": 3.5
+   "seconds": 2.9
   }
  ],
  "evidence": {},

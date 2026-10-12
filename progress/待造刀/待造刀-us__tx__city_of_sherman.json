@@ -1,0 +1,277 @@
+{
+ "source_id": "us/tx/city_of_sherman",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 19,176 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；concat_addr@v2:合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674））→ 造新规则",
+ "decided_at": "2026-10-12 10:17:26",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 20170,
+   "kept": 20169,
+   "contentful": 20169,
+   "kept_contentful": 20169,
+   "true_addr": 5674,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 25.86,
+    "streets": 780,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
+   "seconds": 1.6
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 20170,
+   "kept": 19176,
+   "contentful": 20169,
+   "kept_contentful": 19176,
+   "true_addr": 5674,
+   "ratio": 0.951,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "guess_street_not_text": 993,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 19158
+    },
+    "junk_rate": 0.0,
+    "per_street": 1475.08,
+    "streets": 13,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 19,176 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
+   "seconds": 3.3
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 20170,
+   "kept": 3129,
+   "contentful": 20169,
+   "kept_contentful": 3129,
+   "true_addr": 5674,
+   "ratio": 0.155,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "v2_no_site_column": 17040,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 3127,
+     "zip": 3129
+    },
+    "junk_rate": 0.0,
+    "per_street": 24.07,
+    "streets": 130,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 6.1
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 20170,
+   "kept": 20075,
+   "contentful": 20169,
+   "kept_contentful": 20075,
+   "true_addr": 5674,
+   "ratio": 0.995,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "split_no_street": 93,
+    "no_address_trace": 1,
+    "no_full_address": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 20075,
+     "zip": 20075
+    },
+    "junk_rate": 0.0,
+    "per_street": 25.74,
+    "streets": 780,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 20,075 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
+   "seconds": 7.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 8.9
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 38,
+   "ADD_NUMBER": 2103,
+   "ADD_PRE": "N",
+   "ADD_PRE_TY": " ",
+   "ADD_NAME": "WOODS",
+   "ADD_TYPE": "ST",
+   "ADD_SUF": " ",
+   "ADD_FULLNA": "2103 N WOODS ST",
+   "ADD_UNIT": " ",
+   "ADD_HIST_A": " ",
+   "RR_ADD": " ",
+   "ALIAS_ADD": "",
+   "STRUCT_TYP": " ",
+   "DATE_CREAT": 1320796800000,
+   "ZIP5": 75092,
+   "POSTAL_COM": "SHERMAN",
+   "CITY_CODE": "SHER",
+   "EnerGOV_ID": 2011,
+   "UBA_ACCOUNT": "303-0380",
+   "TYPE": "MAIN",
+   "SWU_CLASS": "RES2",
+   "IA_AREA": 0,
+   "DATE_UPDATED": 1512000000000,
+   "SWF_UNITS": 0,
+   "POINT_X": 2540290.5228065,
+   "POINT_Y": 7290458.34526607,
+   "PROP_ID": 156363,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADD_FULLNA",
+  "ADD_HIST_A",
+  "ADD_NAME",
+  "ADD_NUMBER",
+  "ADD_PRE",
+  "ADD_PRE_TY",
+  "ADD_SUF",
+  "ADD_TYPE",
+  "ADD_UNIT",
+  "ALIAS_ADD",
+  "CITY_CODE",
+  "DATE_CREAT",
+  "DATE_UPDATED",
+  "EnerGOV_ID",
+  "IA_AREA",
+  "OBJECTID",
+  "POINT_X",
+  "POINT_Y",
+  "POSTAL_COM",
+  "PROP_ID",
+  "RR_ADD",
+  "STRUCT_TYP",
+  "SWF_UNITS",
+  "SWU_CLASS",
+  "TYPE",
+  "UBA_ACCOUNT",
+  "ZIP5",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

@@ -2,7 +2,7 @@
  "source_id": "us/ia/wapello",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 15,851 条 > 真门牌号行 6,788 条×150% → 拒绝这套产物；field_guess@v2:合规 0/15861 = 0%（阈 30%；总行 15,894，带地址 15,861，真门牌号 6,788）；concat_addr@v2:合规 196/15861 = 1%（阈 30%；总行 15,894，带地址 15,861，真门牌号 6,788））→ 造新规则",
- "decided_at": "2026-10-12 09:05:26",
+ "decided_at": "2026-10-12 10:16:01",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -43,7 +43,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 15,851 条 > 真门牌号行 6,788 条×150% → 拒绝这套产物",
-   "seconds": 3.3
+   "seconds": 2.4
   },
   {
    "rule": "field_guess@v2",
@@ -84,7 +84,7 @@
     "contract": false
    },
    "why": "合规 0/15861 = 0%（阈 30%；总行 15,894，带地址 15,861，真门牌号 6,788）",
-   "seconds": 6.1
+   "seconds": 4.3
   },
   {
    "rule": "concat_addr@v2",
@@ -126,7 +126,7 @@
     "contract": false
    },
    "why": "合规 196/15861 = 1%（阈 30%；总行 15,894，带地址 15,861，真门牌号 6,788）",
-   "seconds": 15.2
+   "seconds": 10.8
   },
   {
    "rule": "concat_addr@v1",
@@ -169,7 +169,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 15,818 条 > 真门牌号行 6,788 条×150% → 拒绝这套产物",
-   "seconds": 18.9
+   "seconds": 13.3
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -210,7 +210,7 @@
     "contract": false
    },
    "why": "合规 0/15861 = 0%（阈 30%；总行 15,894，带地址 15,861，真门牌号 6,788）",
-   "seconds": 21.5
+   "seconds": 15.1
   }
  ],
  "evidence": {},

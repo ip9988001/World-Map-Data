@@ -2,7 +2,7 @@
  "source_id": "us/ga/newton",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 1/1 = 100%（阈 30%；总行 51,175，带地址 1，真门牌号 0）；field_guess@v2:合规 1/1 = 100%（阈 30%；总行 51,175，带地址 1，真门牌号 0）；concat_addr@v2:合规 0/1 = 0%（阈 30%；总行 51,175，带地址 1，真门牌号 0））→ 造新规则",
- "decided_at": "2026-10-12 08:42:57",
+ "decided_at": "2026-10-12 10:14:29",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -82,7 +82,7 @@
     "contract": false
    },
    "why": "合规 1/1 = 100%（阈 30%；总行 51,175，带地址 1，真门牌号 0）",
-   "seconds": 2.1
+   "seconds": 2.0
   },
   {
    "rule": "concat_addr@v2",
@@ -123,7 +123,7 @@
     "contract": false
    },
    "why": "合规 0/1 = 0%（阈 30%；总行 51,175，带地址 1，真门牌号 0）",
-   "seconds": 3.2
+   "seconds": 2.9
   },
   {
    "rule": "concat_addr@v1",
@@ -163,7 +163,7 @@
     "contract": false
    },
    "why": "合规 1/1 = 100%（阈 30%；总行 51,175，带地址 1，真门牌号 0）",
-   "seconds": 4.3
+   "seconds": 3.9
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -204,7 +204,7 @@
     "contract": false
    },
    "why": "合规 0/1 = 0%（阈 30%；总行 51,175，带地址 1，真门牌号 0）",
-   "seconds": 5.4
+   "seconds": 4.9
   }
  ],
  "evidence": {},
