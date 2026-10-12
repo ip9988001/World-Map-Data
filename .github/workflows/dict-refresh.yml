@@ -1,0 +1,38 @@
+name: dict-refresh（标准化字典层 · 月度刷新）
+
+# 13 环节 · 第 12 步的保鲜机制：上游 GeoNames 漂移时，重跑即得新版，
+# dict/README.md 里的 sha256 跟着变，字典的「版本指纹」永远对得上。
+on:
+  schedule:
+    - cron: "0 4 1 * *"        # 每月 1 号 UTC 04:00
+  workflow_dispatch:            # 也能手动触发（上游紧急变更时）
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dict-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 重新生成字典（ZIP ↔ city ↔ state ↔ county ↔ county_fips）
+        run: python3 scripts/build_zip_dict.py
+
+      - name: 有变化才回写 main
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "factory-bot@users.noreply.github.com"
+          git add -f dict/
+          if git diff --cached --quiet; then echo "字典无变化，跳过提交"; exit 0; fi
+          git commit -m "dict: 标准化字典层月度刷新（$(date -u +%Y-%m-%d)）"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          echo "字典推送失败"; exit 1

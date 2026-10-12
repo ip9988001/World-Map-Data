@@ -284,8 +284,15 @@ def main(argv=None) -> None:
         print(f"② 溯源：{len(tbl)} 个来源｜license 缺失显式标 unknown 的 {len(unk)} 个（如实标注，不算错）")
     if sinfo.get("orphans"):
         errs.append(f"[溯源] 孤儿来源 {len(sinfo['orphans'])} 个不在源总表：{sinfo['orphans'][:5]}")
-    if not int(m.get("multi_source_records") or 0):
-        errs.append("[合并] 全量里多来源记录为 0 —— 跨源合并没生效（应出现并集来源）")
+    multi = int(m.get("multi_source_records") or 0)
+    max_src = max([int((v or {}).get("count") or 0)
+                   for v in (sinfo.get("per_state") or {}).values()] or [0])
+    if multi:
+        print(f"② 合并自检：多来源记录 {multi:,} 条（单州最多 {max_src} 个来源）")
+    elif max_src >= 2:
+        errs.append(f"[合并] 某州最多有 {max_src} 个来源，但全量多来源记录为 0 → 跨源合并没生效")
+    else:
+        print("② 合并自检：每州来源都只有 1 个 → 暂时无可合并（多来源 0 属正常）")
     for st, info in sorted((m.get("states") or {}).items()):
         sp = os.path.join(a.release, f"sources-{st}.json")
         if not os.path.exists(sp):
