@@ -26,6 +26,10 @@ on:
         description: "collect=采集；publish=只合并发布；brain=只造规则"
         required: false
         default: "collect"
+      rebuild:
+        description: "true=先全量重洗（从 bronze 重建全部产物）再发布 —— 治「发布缩水」，一次 1~2 小时"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -57,7 +61,7 @@ jobs:
 
   plan:
     needs: gate
-    if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode == 'collect')
+    if: needs.gate.outputs.go == '1' && (github.event_name == 'schedule' || github.event.inputs.mode == 'collect' || github.event.inputs.rebuild == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -101,7 +105,11 @@ jobs:
         id: plan
         run: |
           # 不要用 tail 截断：黑名单预剔数 / 可采源数是本窗口的关键证据，必须留在日志里
-          python -m collectors.plan_batch --lanes 16 --state progress/state.json \
+          STATE_ARG="--state progress/state.json"
+          # rebuild=true：不传 --state —— 全部源都要进泳道。发布要的是「全部源的产物」，
+          # 而账本的 done 只代表当时采过（产物会被 cache 轮转删掉）。
+          if [ "${{ github.event.inputs.rebuild }}" = "true" ]; then STATE_ARG=""; fi
+          python -m collectors.plan_batch --lanes 16 $STATE_ARG \
             --blacklist data/源黑名单.csv --out out/plan.json 2>&1 \
             | grep -aE '黑名单|可采源|主机桶|最重|makespan|计划已写入' || true
           python3 - >> "$GITHUB_OUTPUT" <<'PY'
@@ -165,15 +173,20 @@ jobs:
           python scripts/bronze_assets.py restore --dir /tmp/bronze
       - name: 本泳道采集（下载 → 规则级联 → 分诊）
         run: |
+          REBUILD=""
+          # rebuild=true：全量重洗 —— 忽略账本 done、只吃本地 bronze 原始档、绝不联网。
+          if [ "${{ github.event.inputs.rebuild }}" = "true" ]; then REBUILD="--rebuild"; fi
           python -m collectors.pipeline \
             --plan out/plan.json --lane ${{ matrix.lane }} \
+            $REBUILD \
             --max-seconds "${{ github.event.inputs.max_seconds || 3300 }}" \
             --per-source-max 600 \
             --state progress/state-${{ matrix.lane }}.json \
             --min-interval 1.0 --concurrency 3
         continue-on-error: true
       - name: 回存原始档（bronze：**并集**回存，单州上限 400MB）
-        if: always()
+        # rebuild 模式不联网、不会产生新档 → 跳过回存，省掉 16 泳道同时向同一 release 推 2.4GB
+        if: always() && github.event.inputs.rebuild != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -508,7 +521,7 @@ jobs:
   publish:
     needs: assemble
     # publish 独立于 assemble：publish 模式没有 collect，assemble 会被跳过（skipped≠失败）
-    if: always() && needs.assemble.result != 'cancelled' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish')
+    if: always() && needs.assemble.result != 'cancelled' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish' || github.event.inputs.rebuild == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

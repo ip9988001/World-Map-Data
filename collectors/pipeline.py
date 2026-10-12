@@ -63,13 +63,24 @@ def _skip_reason(sid: str, bl: dict) -> str:
 
 def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archive",
                 out_root: str = "parsed", limit: int = 0, force_fetch: bool = False,
-                max_seconds: int = 900) -> dict:
-    """单源一条线：原始档 → 规则级联 → （全败才）分诊。返回状态条目。"""
+                max_seconds: int = 900, rebuild: bool = False) -> dict:
+    """单源一条线：原始档 → 规则级联 → （全败才）分诊。返回状态条目。
+
+    rebuild=True（发布侧的全量重洗）：**只用本地已有原始档重跑规则，绝不联网**。
+    本地没完整档 → 直接跳过并如实记账（NO_ARCHIVE），不下载、不拉黑。
+    为什么需要它：发布要的是「全部源」的产物，而账本 done 只代表当时采过 ——
+    产物会被 cache 轮转删掉，只有 bronze（按州原始档、只增不删）是可靠底座。
+    """
     t0 = time.time()
     st: dict = {"source_id": sid, "updated": time.strftime("%Y-%m-%d %H:%M:%S")}
 
     local_files = payload_files(archive_dir(archive, sid))
     man = load_manifest(archive, sid)
+    if rebuild and not (local_files and man.get("done")):
+        st.update({"done": False, "stage": "rebuild_skip", "kind": "NO_ARCHIVE",
+                   "error": "重洗模式：本地没有完整原始档，跳过（不联网、不拉黑）",
+                   "seconds": round(time.time() - t0, 1)})
+        return st
     if force_fetch or not local_files or not man.get("done"):
         man = fetch_raw(pol, sid, row["url"], archive, force=force_fetch,
                         budget_s=max(60, max_seconds - 30))
@@ -149,7 +160,8 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
 def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness,
               archive: str = "raw_archive", out_root: str = "parsed",
               max_seconds: int = 960, limit: int = 0, state_path: str = STATE,
-              force_fetch: bool = False, per_source_max: int = 420) -> dict:
+              force_fetch: bool = False, per_source_max: int = 420,
+              rebuild: bool = False) -> dict:
     """跑一条队列（一个泳道的一段），到点自停；逐源落盘。"""
     t0 = time.time()
     effective = max_seconds - (TAIL_RESERVE if max_seconds > 180 else 0)
@@ -160,7 +172,7 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
     for k, item in enumerate(items, 1):
         sid = item["source_id"]
         prev = state.get(sid) or {}
-        if prev.get("done"):
+        if prev.get("done") and not rebuild:
             # ponytail: 当前上限＝「账本 done + 产物 ndjson 在盘上」才算完成。
             # 只看账本会在产物被清理/换机器后永久卡死：采集全跳过、发布又拒发空包。
             art = prev.get("path")
@@ -204,7 +216,7 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
             stats["downloaded"] += 1
         try:
             st = collect_one(pol, sid, row, archive, out_root, limit=limit,
-                             force_fetch=force_fetch,
+                             force_fetch=force_fetch, rebuild=rebuild,
                              max_seconds=int(min(remain, per_source_max)) or per_source_max)
         except Exception as e:
             st = {"source_id": sid, "done": False, "stage": "crashed",
@@ -287,6 +299,9 @@ def main(argv=None) -> None:
     ap.add_argument("--http-timeout", type=int, default=20)
     ap.add_argument("--rules-limit", type=int, default=0, help="每源最多洗 N 行（试跑用）")
     ap.add_argument("--force-fetch", action="store_true")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="全量重洗（发布用）：忽略账本 done、只吃本地原始档、绝不联网；"
+                         "本地没档的源跳过并记账 NO_ARCHIVE")
     ap.add_argument("--dry", action="store_true", help="只看结果，不写账本/状态")
     ap.add_argument("--reclassify", action="store_true",
                     help="不联网抓数据，只把 state 里取数失败的源复核一遍"
@@ -423,7 +438,7 @@ def main(argv=None) -> None:
     stats = run_queue(items, table, state, pol, archive=a.archive, out_root=a.parsed,
                       max_seconds=a.max_seconds, limit=a.rules_limit,
                       state_path=a.state, force_fetch=a.force_fetch,
-                      per_source_max=a.per_source_max)
+                      per_source_max=a.per_source_max, rebuild=a.rebuild)
     print(json.dumps(stats, ensure_ascii=False), flush=True)
     print(report(state))
 
