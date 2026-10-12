@@ -2,7 +2,7 @@
  "source_id": "us/nv/humboldt",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 8,989 条 > 真门牌号行 1,828 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 8,989 条 > 真门牌号行 1,828 条×150% → 拒绝这套产物；field_guess@v2:合规 0/8989 = 0%（阈 30%；总行 8,998，带地址 8,989，真门牌号 1,828））→ 造新规则",
- "decided_at": "2026-10-12 10:14:42",
+ "decided_at": "2026-10-12 15:31:38",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -42,7 +42,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 8,989 条 > 真门牌号行 1,828 条×150% → 拒绝这套产物",
-   "seconds": 0.8
+   "seconds": 0.5
   },
   {
    "rule": "mapping@v1",
@@ -82,7 +82,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 8,989 条 > 真门牌号行 1,828 条×150% → 拒绝这套产物",
-   "seconds": 1.5
+   "seconds": 0.8
   },
   {
    "rule": "field_guess@v2",
@@ -123,7 +123,7 @@
     "contract": false
    },
    "why": "合规 0/8989 = 0%（阈 30%；总行 8,998，带地址 8,989，真门牌号 1,828）",
-   "seconds": 1.8
+   "seconds": 1.1
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -164,7 +164,7 @@
     "contract": false
    },
    "why": "合规 0/8989 = 0%（阈 30%；总行 8,998，带地址 8,989，真门牌号 1,828）",
-   "seconds": 2.2
+   "seconds": 1.4
   }
  ],
  "evidence": {},

@@ -212,7 +212,7 @@ us/ct/city_of_hamden,CT,,,1,mapping@v1,16518,0.999,,,0.0,21.42,PASS_DOWNGRADED,B
 us/ct/city_of_hartford,CT,City of Hartford,0937000,1,mapping@v1,42666,0.999,,,0.0,72.19,PASS_DOWNGRADED,B,60.0,B,"合规 42666/42703 = 100%（带地址行分母；真门牌号行 42,703）总行 42,703｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/ct/city_of_new_britain,CT,New Britain city,0950370,1,mapping@v1,18708,1.0,,,0.0,30.37,PASS_DOWNGRADED,B,60.0,B,"合规 18708/18708 = 100%（带地址行分母；真门牌号行 18,621）总行 18,708｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/ct/city_of_new_haven,CT,New Haven city,0952000,1,mapping@v1,42090,1.0,,,0.0,59.53,PASS,A,60.0,B,
-us/ct/city_of_norwalk,CT,,,1,field_guess@v2,29195,1.0,,,0.0,5839.0,PASS,A,60.0,B,
+us/ct/city_of_norwalk,CT,,,1,field_guess@v2,28628,0.981,,,0.0,24.72,PASS,A,60.0,B,
 us/ct/city_of_plainfield,CT,Windham,0901559980,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/ct/city_of_stonington,CT,New London County,0973770,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/ct/city_of_stratford,CT,,,1,mapping@v1,370,1.0,,,0.0,23.12,PASS_DOWNGRADED,B,41.5,C,"合规 370/370 = 100%（带地址行分母；真门牌号行 20,543）总行 20,804｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
@@ -892,7 +892,7 @@ us/ne/sheridan,NE,Sheridan,31161,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/sherman,NE,Sherman,31163,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/sioux,NE,Sioux,31165,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/stanton,NE,Stanton,31167,0,,0,,,,,,,,,X,TRANSIENT
-us/ne/statewide,NE,,31,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
+us/ne/statewide,NE,,31,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 0/782089 = 0%（阈 30%；总行 878,424，带地址 782,089，真门牌号 858,771）；field_guess@v2:合规 31302/782089"
 us/ne/thayer,NE,Thayer,31169,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/thomas,NE,Thomas,31171,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/thurston,NE,Thurston,31173,0,,0,,,,,,,,,X,TRANSIENT
@@ -900,7 +900,7 @@ us/ne/valley,NE,Valley,31175,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/webster,NE,Webster,31181,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/york,NE,York,31185,0,,0,,,,,,,,,X,TRANSIENT
 us/nh/city_of_nashua,NH,City of Nashua,3350260,0,,0,,,,,,,,,X,NO_ARCHIVE
-us/nh/statewide,NH,,33,1,field_guess@v2,539339,0.917,,,0.0,2.7,PASS,A,43.4,C,
+us/nh/statewide,NH,,33,1,field_guess@v2,587413,0.999,,,0.0,2.94,PASS,A,44.2,C,
 us/nj/bergen,NJ,Bergen,34003,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/nj/monmouth,NJ,Monmouth,34025,1,mapping@v1,264780,1.0,,,0.0,32.19,PASS,A,60.0,B,
 us/nj/sussex,NJ,Sussex,34037,0,,0,,,,,,,,,X,NO_ARCHIVE

@@ -2,7 +2,7 @@
  "source_id": "us/vt/city_of_burlington",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 8,155 条 > 真门牌号行 2,173 条×150% → 拒绝这套产物；field_guess@v2:合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）；concat_addr@v2:合规 2145/8284 = 26%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173））→ 造新规则",
- "decided_at": "2026-10-12 10:24:25",
+ "decided_at": "2026-10-12 15:34:46",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -43,7 +43,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 8,155 条 > 真门牌号行 2,173 条×150% → 拒绝这套产物",
-   "seconds": 0.7
+   "seconds": 0.3
   },
   {
    "rule": "field_guess@v2",
@@ -84,7 +84,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 1.1
+   "seconds": 0.5
   },
   {
    "rule": "concat_addr@v2",
@@ -126,7 +126,7 @@
     "contract": false
    },
    "why": "合规 2145/8284 = 26%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 2.5
+   "seconds": 1.2
   },
   {
    "rule": "concat_addr@v1",
@@ -168,7 +168,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 8,183 条 > 真门牌号行 2,173 条×150% → 拒绝这套产物",
-   "seconds": 3.2
+   "seconds": 1.6
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -209,7 +209,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 3.7
+   "seconds": 1.8
   }
  ],
  "evidence": {},

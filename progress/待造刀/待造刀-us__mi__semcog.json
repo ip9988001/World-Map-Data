@@ -2,7 +2,7 @@
  "source_id": "us/mi/semcog",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 47,651 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 32,689 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物；concat_addr@v2:合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226））→ 造新规则",
- "decided_at": "2026-10-12 10:18:47",
+ "decided_at": "2026-10-12 15:33:35",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -43,7 +43,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 47,651 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
-   "seconds": 5.1
+   "seconds": 4.9
   },
   {
    "rule": "field_guess@v2",
@@ -85,7 +85,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 32,689 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
-   "seconds": 10.1
+   "seconds": 9.8
   },
   {
    "rule": "concat_addr@v2",
@@ -126,7 +126,7 @@
     "contract": false
    },
    "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
-   "seconds": 17.4
+   "seconds": 16.7
   },
   {
    "rule": "concat_addr@v1",
@@ -167,7 +167,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 31,031 条 > 真门牌号行 17,226 条×150% → 拒绝这套产物",
-   "seconds": 22.6
+   "seconds": 21.7
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -208,7 +208,7 @@
     "contract": false
    },
    "why": "合规 0/47652 = 0%（阈 30%；总行 153,764，带地址 47,652，真门牌号 17,226）",
-   "seconds": 26.9
+   "seconds": 25.9
   }
  ],
  "evidence": {},
