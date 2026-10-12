@@ -19,10 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
+      - uses: actions/checkout@v4
       - name: 逐个改名（先传新名 → 校验 → 删旧名）
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ inputs.tag }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -uo pipefail
           mkdir -p /tmp/a
@@ -58,6 +60,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ inputs.tag }}
+          GH_REPO: ${{ github.repository }}
         run: |
           gh release view "$TAG" --json assets -q '.assets[].name' | sort > /tmp/names.txt
           echo "资产数：$(wc -l < /tmp/names.txt)"
