@@ -650,19 +650,25 @@ def main(argv=None) -> None:
     # 合并版放在硬门**之后**：不过门就不应该浪费磁盘和时间去拼全量单文件（P1-5 附带）
     if not a.no_merged:
         merged = os.path.join(a.out, "merged.clean.ndjson.gz")
+        merged_parts = 0
         with gzip.open(merged, "wt", encoding="utf-8") as out:
             for st in sorted(stats):
                 p = os.path.join(a.out, shard_of.get(st, f"{st}.ndjson.gz"))
                 if not os.path.exists(p):
                     print(f"⚠ merged 拼接：{st} 分片没找到（{p}）→ 跳过")
-                    with gzip.open(p, "rt", encoding="utf-8") as src:
-                        shutil.copyfileobj(src, out)
+                    continue
+                with gzip.open(p, "rt", encoding="utf-8") as src:
+                    shutil.copyfileobj(src, out)
+                merged_parts += 1
         manifest["merged"] = {"bytes": os.path.getsize(merged), "sha256": sha256(merged),
                              "rows": manifest["rows"]}
-        if os.path.getsize(merged) < 4096:      # 分片没拼进来 → 空 merged，发布出去等于骗人
-            print("✗ [出厂] merged.clean.ndjson.gz 为空/过小（分片拼接失败）—— 不发布")
+        # 硬判据：拼接的分片数必须等于分片总数（比按字节判更准，小样本也不会误报）
+        if merged_parts != len(stats) or os.path.getsize(merged) == 0:
+            print(f"✗ [出厂] merged 拼接不完整：只拼进 {merged_parts}/{len(stats)} 个分片"
+                  f"（{os.path.getsize(merged)} 字节）—— 不发布")
             sys.exit(2)
-        print(f"合并版 merged.clean.ndjson.gz：{os.path.getsize(merged) / 1048576:.1f}MB")
+        print(f"合并版 merged.clean.ndjson.gz：{os.path.getsize(merged) / 1048576:.1f}MB"
+              f"（{merged_parts}/{len(stats)} 个分片）")
 
     with open(a.manifest, "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=1, sort_keys=True)
