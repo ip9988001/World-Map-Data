@@ -474,7 +474,7 @@ def main(argv=None) -> None:
         sys.exit(1)
     if degraded:
         print(f"\n⚠ 降级发布：{len(degraded)}/{n_states} 个州完整性灾难级 —— "
-              f"这些州不进站用子集（site/），只留在全量分片里并带 _grade 标注")
+              f"这些州 city/zip 缺失过半（数据源本身不全）—— 站用子集里只留其五要素齐的 A 级记录")
         for d in degraded[:12]:
             print("   " + d)
         if len(degraded) > 12:

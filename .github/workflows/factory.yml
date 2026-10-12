@@ -624,7 +624,7 @@ jobs:
           NOTES="$NOTES
           命名规则：文件名一律带国家代号 —— 全量分片 <国家码>-<州码>.ndjson.gz（例 US-AK.ndjson.gz、UK-ENG.ndjson.gz，国家码取自数据目录）；原始档 bronze 同规则 <国家码>-bronze-<州码>.zip"
           if [ -n "$DEG" ]; then NOTES="$NOTES
-          ⚠ 完整性未达标、已排除出站用子集(site-view)、仅在本全量分片中带 _grade 标注的州：$DEG"; fi
+          ⚠ 完整性偏低（city/zip 缺失过半）的州，站用子集里只保留其五要素齐的 A 级记录，出站建议抽样核对：$DEG"; fi
           gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" --notes "$NOTES" 2>/dev/null || true
           gh release edit v0.1.0-dataset --notes "$NOTES" || true
           for f in out/release/*.ndjson.gz; do gh release upload v0.1.0-dataset "$f" --clobber; done
