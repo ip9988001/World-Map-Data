@@ -52,6 +52,7 @@ ZIP_DICT = "dict/zip_city.tsv"
 CORE_FIELDS = ("number", "street", "city", "state", "zip")
 NEW_PRIO = 2          # 新采集（规则产物）
 LEGACY_PRIO = 1       # 应急回放的老分片
+STRICT_A = False      # A 级是否要求零推断字段（--strict-a 打开）
 
 
 # ────────────────────────── 小工具 ──────────────────────────
@@ -96,6 +97,7 @@ def load_source_meta(path: str) -> dict[str, dict]:
             if not sid:
                 continue
             lic = (row.get("license") or "").strip()
+            geo = (row.get("geoid") or "").strip()
             meta[sid] = {
                 "attribution": (row.get("attribution") or "").strip(),
                 "url": (row.get("url") or "").strip(),
@@ -104,7 +106,10 @@ def load_source_meta(path: str) -> dict[str, dict]:
                 "license_status": "ok" if lic else "unknown",   # 空许可不许假装有
                 "state": (row.get("state") or "").strip(),
                 "county": (row.get("county") or "").strip(),
-                "geoid": (row.get("geoid") or "").strip(),
+                "geoid": geo,
+                # P1-3：全州性源的 geoid 存的是**州** FIPS（实测 us/ak/statewide geoid="02"），
+                # 直接当县 FIPS 写进交付物 → 5 位县码字段里出现 2 位州码，下游按 FIPS 关联必错
+                "county_fips": geo if len(geo) == 5 else "",
                 "scope": (row.get("scope") or "").strip(),
                 "layer": (row.get("layer") or "").strip(),
                 "protocol": (row.get("protocol") or "").strip(),
@@ -159,7 +164,7 @@ def load_zip_dict(path: str):
             z = re.sub(r"\D", "", (row.get(c_zip) or ""))[:5] if c_zip else ""
             if len(z) != 5:
                 continue
-            city = (row.get(c_city) or "").strip() if c_city else ""
+            city = (row.get(c_city) or "").strip().upper() if c_city else ""   # 与 norm_city 同口径（全大写）
             st = (row.get(c_st) or "").strip().upper() if c_st else ""
             co = (row.get(c_co) or "").strip() if c_co else ""
             fips = (row.get(c_fips) or "").strip() if c_fips else ""
@@ -201,18 +206,36 @@ def merge_group(key: str, recs: list[tuple[int, dict]], meta: dict[str, dict]) -
     # ⚠ 只认**同州**的源元信息：跨源合并后 sources 是排序过的，第一个可能属于别州，
     #    拿它的县名当本记录的县会造出「县名与 county_fips 对不上」的错值。
     st_now = rec.get("state") or ""
-    for sid in rec["sources"]:
-        m = meta.get(sid) or {}
-        if st_now and (m.get("state") or "").upper() not in ("", st_now):
-            continue
-        if m.get("county"):
-            rec["county"] = m["county"]
-            rec["county_src"] = "source_meta"
-            if m.get("geoid"):
-                rec["county_fips"] = m["geoid"]
-            break
-        if m.get("geoid") and not rec.get("county_fips"):
-            rec["county_fips"] = m["geoid"]
+    # ① 采集值优先（P1-3）：产物本来就带 county/county_fips 的，绝不被推断值顶替
+    for _prio, r in ordered:
+        if not rec.get("county") and (r.get("county") or "").strip():
+            rec["county"] = str(r["county"]).strip()
+            if r.get("county_src"):
+                rec["county_src"] = r["county_src"]
+        if not rec.get("county_fips") and (r.get("county_fips") or "").strip():
+            rec["county_fips"] = str(r["county_fips"]).strip()
+    # ② 源总表兜底：只在本记录还没有 county 时才填（否则会覆盖采集值）。
+    #    注：故意让「源自己的 county」优先于 ZIP 字典 —— 县级源是它自己那片地的官方数据，
+    #    比 ZIP 反查更权威；全州性源 county 为空，自然会落到字典（z2c）去补。
+    if not rec.get("county"):
+        for sid in rec["sources"]:
+            m = meta.get(sid) or {}
+            if st_now and (m.get("state") or "").upper() not in ("", st_now):
+                continue
+            if m.get("county"):
+                rec["county"] = m["county"]
+                rec["county_src"] = "source_meta"
+                if m.get("county_fips") and not rec.get("county_fips"):
+                    rec["county_fips"] = m["county_fips"]
+                break
+    if not rec.get("county_fips"):
+        for sid in rec["sources"]:
+            m = meta.get(sid) or {}
+            if st_now and (m.get("state") or "").upper() not in ("", st_now):
+                continue
+            if m.get("county_fips"):
+                rec["county_fips"] = m["county_fips"]
+                break
     return rec
 
 
@@ -241,7 +264,8 @@ def fill_and_grade(rec: dict, z2c: dict, c2z: dict) -> str:
                 rec["county_src"] = "zip_map"
             if not rec.get("county_fips") and d.get("county_fips"):
                 rec["county_fips"] = d["county_fips"]
-    if all(rec.get(f) for f in CORE_FIELDS):
+    inferred = sum(1 for f in ("city", "zip") if rec.get(f + "_src") == "zip_map")
+    if all(rec.get(f) for f in CORE_FIELDS) and (inferred == 0 if STRICT_A else inferred <= 1):
         return "A"
     if rec.get("number") and rec.get("street") and rec.get("state"):
         return "B"
@@ -250,8 +274,39 @@ def fill_and_grade(rec: dict, z2c: dict, c2z: dict) -> str:
 
 # ────────────────────────── 全局排序 + 分片（第 11/13 步） ──────────────────────────
 
+def canon_key(rec: dict, z2c: dict, c2z: dict) -> str:
+    """入全局表**之前**先用字典把 city/zip 补上，再用补齐后的值重算 key。
+
+    ⚠ 自审发现的一条（外部审查也没抓到）：key 是用「原始 city/zip」拼的，而字典补齐发生在
+    分组**之后**。于是同一条街同一个门牌会有两个 key —— A 源带 city（`CA|BISHOP|93514|OAK ST|9`）、
+    B 源不带（`CA||93514|OAK ST|9`）；补完 city 后两条五要素都齐、都判 A，
+    **site/ 站用子集里就出现同址两条记录**，而现有所有检查（唯一 key、跨州重复）都看不见它。
+    在入口就补齐 + 重算 key，这两条会合并成一条（sources 并集）。
+    只动 city/zip（county 在合并阶段按同州源元信息处理）。
+    """
+    st = str(rec.get("state") or "").strip().upper()
+    # 城市统一大写（与 norm_city 同口径）：字典地名与源里地名的大小写不同会让**同一个门牌**
+    # 落成两个 key，反而把「同址重复」又变出来。分区大小写 = 去重失效，不能容忍。
+    city0 = str(rec.get("city") or "").strip()
+    if city0 and city0 != city0.upper():
+        rec["city"] = city0.upper()
+    if not str(rec.get("zip") or "").strip() and city0 and st:
+        z = c2z.get((st, city0.upper()))
+        if z:
+            rec["zip"] = z
+            rec["zip_src"] = "zip_map"
+    z = str(rec.get("zip") or "").strip()
+    if z and not str(rec.get("city") or "").strip():
+        d = z2c.get(z)
+        if d and d.get("city") and (not d.get("state") or d["state"] == st):
+            rec["city"] = str(d["city"]).upper()
+            rec["city_src"] = "zip_map"
+    return (f"{st}|{rec.get('city') or ''}|{rec.get('zip') or ''}"
+            f"|{rec.get('street') or ''}|{rec.get('number') or ''}")
+
+
 def build_global_tsv(new: dict[str, list[str]], legacy_shards: dict[str, str],
-                     tmp_dir: str) -> tuple[str, dict]:
+                     tmp_dir: str, z2c: dict, c2z: dict) -> tuple[str, dict]:
     """所有记录写成一张全局表（key / prio / json），供全局排序。
 
     key 以「州|城市|邮编|街|号」开头 → 全局按 key 排序后，同一个州的记录天然连成一段，
@@ -259,25 +314,28 @@ def build_global_tsv(new: dict[str, list[str]], legacy_shards: dict[str, str],
     """
     raw = os.path.join(tmp_dir, "all.tsv")
     st_cnt = {"in": 0, "no_key": 0, "bad_json": 0}
+
+    def emit(fh, rec: dict, prio: int) -> None:
+        if not (rec.get("number") and rec.get("street") and rec.get("state")):
+            st_cnt["no_key"] += 1        # 三要素都不齐 → 无法作为地址去重，宁可挡下来
+            return
+        k = canon_key(rec, z2c, c2z)
+        fh.write(f"{k}\t{prio}\t"
+                 f"{json.dumps(rec, ensure_ascii=False, separators=(',', ':'))}\n")
+        st_cnt["in"] += 1
+
     with open(raw, "w", encoding="utf-8") as fh:
         for _st, files in sorted(new.items()):
-            for p in files:
+            for p in sorted(files):          # 文件名也排序：输入顺序确定，输出才可复现
                 with open(p, encoding="utf-8") as src:
                     for line in src:
                         line = line.strip()
                         if not line:
                             continue
                         try:
-                            rec = json.loads(line)
+                            emit(fh, json.loads(line), NEW_PRIO)
                         except Exception:
                             st_cnt["bad_json"] += 1
-                            continue
-                        k = rec.get("key")
-                        if not k:
-                            st_cnt["no_key"] += 1        # 没 key 就没法去重，宁可挡下来
-                            continue
-                        fh.write(f"{k}\t{NEW_PRIO}\t{line}\n")
-                        st_cnt["in"] += 1
         for _st, p in sorted(legacy_shards.items()):
             if not os.path.exists(p):
                 continue
@@ -287,16 +345,9 @@ def build_global_tsv(new: dict[str, list[str]], legacy_shards: dict[str, str],
                     if not line:
                         continue
                     try:
-                        rec = json.loads(line)
+                        emit(fh, json.loads(line), LEGACY_PRIO)
                     except Exception:
                         st_cnt["bad_json"] += 1
-                        continue
-                    k = rec.get("key")
-                    if not k:
-                        st_cnt["no_key"] += 1
-                        continue
-                    fh.write(f"{k}\t{LEGACY_PRIO}\t{line}\n")
-                    st_cnt["in"] += 1
     return raw, st_cnt
 
 
@@ -305,7 +356,10 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
     """全局排序 → 按 key 的州边读边落分片（全量 + 站用子集）。返回每州统计。"""
     srt = raw + ".sorted"
     env = dict(os.environ, LC_ALL="C")     # 按字节序排：与 Python 比较一致，可复现
-    subprocess.run(["sort", "-t\t", "-k1,1", "-S", "192M", "-T", os.path.dirname(raw),
+    # `-s`（stable）必不可少：默认的 sort **不保证稳定**，同一个 key 下多条记录的相对顺序
+    # 会变 → 合并时「取第一条非空值」跟着变 → 同输入两次构建的 sha256 不一致（实测踩到）。
+    # 加上 -s 之后：输入顺序（目录名排序 + 文件名排序）决定一切 → 完全可复现。
+    subprocess.run(["sort", "-s", "-t\t", "-k1,1", "-S", "192M", "-T", os.path.dirname(raw),
                     "-o", srt, raw], check=True, env=env)
 
     stats: dict[str, dict] = {}
@@ -320,7 +374,8 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
             return
         st = cur_state
         s = stats.setdefault(st, {"keys": 0, "input_records": 0, "merged_away": 0,
-                                  "grades": {"A": 0, "B": 0, "C": 0}, "multi_source": 0})
+                                  "grades": {"A": 0, "B": 0, "C": 0}, "multi_source": 0,
+                                  "inferred": {"city": 0, "zip": 0}})
         if st not in writers:
             writers[st] = [
                 gzip.open(os.path.join(out_dir, f"{st}.ndjson.gz"), "wt", encoding="utf-8"),
@@ -333,6 +388,9 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
         s["input_records"] += len(group)
         s["merged_away"] += len(group) - 1
         s["grades"][g] += 1
+        for f in ("city", "zip"):       # 可审计事实：这个州有多少条是字典推出来的（口径不是嘴上说的）
+            if rec.get(f + "_src") == "zip_map":
+                s["inferred"][f] += 1
         if len(rec["sources"]) > 1:
             s["multi_source"] += 1
         if g != "A":
@@ -402,7 +460,7 @@ def build_sources_tables(meta: dict, used_by_state: dict[str, set], out_dir: str
     def entry(sid):
         m = dict(meta.get(sid) or {})
         m["source_id"] = sid
-        m["fetched_at"] = state_meta.get(sid, "")
+        m["fetched_at"] = state_meta.get(sid) or "unknown"   # 与 license 同口径：没有就如实写 unknown
         return m
 
     all_used = set().union(*used_by_state.values()) if used_by_state else set()
@@ -436,9 +494,13 @@ def main(argv=None) -> None:
     ap.add_argument("--sources-csv", default=SOURCE_TABLE)
     ap.add_argument("--state-file", default=STATE_FILE)
     ap.add_argument("--zip-dict", default=ZIP_DICT)
+    ap.add_argument("--strict-a", action="store_true",
+                    help="A 级要求零推断字段（默认允许最多 1 个 zip_map）")
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--no-merged", action="store_true")
     a = ap.parse_args(argv)
+    global STRICT_A
+    STRICT_A = bool(a.strict_a)
 
     legacy_shards = {os.path.basename(p).split(".")[0]: p
                      for p in glob.glob(os.path.join(a.legacy, "*.ndjson.gz"))} if a.legacy else {}
@@ -476,10 +538,13 @@ def main(argv=None) -> None:
                 "zip_dict": os.path.basename(a.zip_dict) if z2c else None,
                 "states": {}, "rows": 0, "site_rows": 0,
                 "dedup_removed": 0, "multi_source_records": 0,
+                "a_policy": ("A=五要素齐且推断字段为 0（--strict-a）" if STRICT_A
+                             else "A=五要素齐且推断字段≤1（默认；字典只补空缺、标记为 zip_map）"),
+                "inferred_totals": {"city": 0, "zip": 0},
                 "grades": {"A": 0, "B": 0, "C": 0}, "sources": {}}
     hard: list[str] = []
 
-    raw, in_cnt = build_global_tsv(new, legacy_shards, tmp_dir)
+    raw, in_cnt = build_global_tsv(new, legacy_shards, tmp_dir, z2c, c2z)
     if in_cnt["bad_json"]:
         hard.append(f"[输入] 坏 JSON {in_cnt['bad_json']:,} 条")
     if in_cnt["no_key"]:
@@ -507,8 +572,11 @@ def main(argv=None) -> None:
             "rows": chk["rows"], "unique_keys": chk["unique"], "blank_lines": chk["blank"],
             "bytes": os.path.getsize(out_path), "sha256": sha256(out_path),
             "grades": stt["grades"], "multi_source": stt["multi_source"],
+            "inferred": stt["inferred"],
             "field_missing": chk["missing"],
         }
+        for f in ("city", "zip"):
+            manifest["inferred_totals"][f] += stt["inferred"][f]
         manifest["rows"] += chk["rows"]
         manifest["site_rows"] += stt["grades"]["A"]
         manifest["dedup_removed"] += stt["merged_away"]
@@ -531,29 +599,33 @@ def main(argv=None) -> None:
     if orph:
         hard.append(f"[溯源] 孤儿来源 {len(orph)} 个（不在源总表）：{orph[:5]}")
 
-    merged = os.path.join(a.out, "merged.clean.ndjson.gz")
-    with gzip.open(merged, "wt", encoding="utf-8") as out:
-        for st in sorted(stats):
-            p = os.path.join(a.out, f"{st}.ndjson.gz")
-            if os.path.exists(p):
-                with gzip.open(p, "rt", encoding="utf-8") as src:
-                    shutil.copyfileobj(src, out)
-    manifest["merged"] = {"bytes": os.path.getsize(merged), "sha256": sha256(merged),
-                         "rows": manifest["rows"]}
-    print(f"合并版 merged.clean.ndjson.gz：{os.path.getsize(merged) / 1048576:.1f}MB")
-
     if hard:
         print("\n✗ 出厂硬门不放行（不写清单、不发布）：")
         for e in hard[:20]:
             print("   " + e)
         sys.exit(2)
 
+    # 合并版放在硬门**之后**：不过门就不应该浪费磁盘和时间去拼全量单文件（P1-5 附带）
+    if not a.no_merged:
+        merged = os.path.join(a.out, "merged.clean.ndjson.gz")
+        with gzip.open(merged, "wt", encoding="utf-8") as out:
+            for st in sorted(stats):
+                p = os.path.join(a.out, f"{st}.ndjson.gz")
+                if os.path.exists(p):
+                    with gzip.open(p, "rt", encoding="utf-8") as src:
+                        shutil.copyfileobj(src, out)
+        manifest["merged"] = {"bytes": os.path.getsize(merged), "sha256": sha256(merged),
+                             "rows": manifest["rows"]}
+        print(f"合并版 merged.clean.ndjson.gz：{os.path.getsize(merged) / 1048576:.1f}MB")
+
     with open(a.manifest, "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, ensure_ascii=False, indent=1, sort_keys=True)
+    inf = manifest["inferred_totals"]
     print(f"发布清单：{a.manifest}｜合计 {manifest['rows']:,} 行"
           f"｜站用子集(A) {manifest['site_rows']:,} 行"
           f"（{len(stats)} 个州分片）"
-          f"｜多来源记录 {manifest['multi_source_records']:,}")
+          f"｜多来源记录 {manifest['multi_source_records']:,}"
+          f"｜推断字段 city {inf['city']:,} / zip {inf['zip']:,}")
 
 
 if __name__ == "__main__":

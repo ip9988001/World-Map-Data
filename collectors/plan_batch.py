@@ -31,6 +31,7 @@ from collections import defaultdict
 MIN_INTERVAL = 0.8          # 单主机最小请求间隔（秒）
 META_REQUESTS = 3           # 元数据 + 计数 + 余量的固定请求数
 DEFAULT_PAGE = 1800         # 兜底分页大小（服务端上限 × 0.9 的实测常见值）
+INTAKE_SUMMARY = "data/预检汇总.csv"    # 前置门判决表（scripts/source_intake.py 产出）
 # 源质量档位 → 排队名次（scripts/source_quality.py 产出 data/源质量档案.csv）
 QUALITY_ARCHIVE = "data/源质量档案.csv"
 TIER_RANK = {"S": 0, "A": 1, "B": 2, "N": 3, "C": 4}
@@ -69,11 +70,20 @@ def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = ""
                     n_bl += 1
     if n_bl:
         print(f"黑名单提前剔除 {n_bl} 个源（真坏/不适用，未到复检日）")
+    if n_intake:
+        print(f"前置门剔除 {n_intake} 个源（预检判决 REJECTED_P0/P2，不排进泳道、不烧采集预算）")
     out = []
+    verdicts = load_intake_verdicts()
+    n_intake = 0
     with open(table, encoding="utf-8-sig") as fh:
         for i, r in enumerate(csv.DictReader(fh)):
             sid = r["source_id"]
             if sid in skip:
+                continue
+            if (verdicts.get(sid) or "").startswith("REJECTED_"):
+                # 前置门已经判过「采不采」：这里的源别再排进泳道（漏放不可逆，宁可拒）
+                skip.add(sid)
+                n_intake += 1
                 continue
             c = cnt.get(sid)
             if not c or c.get("status") != "OK":
@@ -92,6 +102,28 @@ def load_sources(table: str, counts: str, exclude: str = "", blacklist: str = ""
             out.append({"i": i, "source_id": sid, "state": r.get("state", ""),
                         "priority": r.get("priority", ""), "channel": r.get("channel", ""),
                         "url": r.get("url", ""), "count": n, "page_size": ps or DEFAULT_PAGE})
+    return out
+
+
+def load_intake_verdicts(path: str = INTAKE_SUMMARY) -> dict[str, str]:
+    """前置门（13 环节 · 第 1/2/4 步）的判决表 → {source_id: verdict}。
+
+    P1-1 修复：前置门原来只「记录」不「判」—— 预检卡/汇总表在仓库里躺着，
+    排兵阶段从不读它，于是 REJECTED_P0 / REJECTED_P2 的源照样排进泳道烧预算，
+    跑到分诊再撞一次南墙。这里把它接上。
+    TRANSIENT（网络抖动）与 NEEDS_DOWNLOAD（文件型、还没下过）**不剔** —— 那不是拒收。
+    """
+    out: dict[str, str] = {}
+    if not os.path.exists(path):
+        return out
+    try:
+        with open(path, encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                sid = (r.get("source_id") or "").strip()
+                if sid:
+                    out[sid] = (r.get("verdict") or "").strip().upper()
+    except Exception as e:
+        print(f"⚠ 预检汇总读不出来（{type(e).__name__}），本窗口不做前置门剔除")
     return out
 
 

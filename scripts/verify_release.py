@@ -32,7 +32,34 @@ ZIP_RE = re.compile(r"^\d{5}$")
 # 注意：发布包（稳定视图）里的来源字段是聚合后的 `sources`（列表），不是逐条的 source
 REQUIRED = ("state", "street", "number", "key", "sources")
 WL_PATH = "data/州码白名单.json"
-WHITELIST = set(json.load(open(WL_PATH, encoding="utf-8"))) if os.path.exists(WL_PATH) else set()
+# 与发布侧用同一把尺子：build_release 在入全局表前会用字典补 city/zip 并**重算 key**
+# （修「同址双 key」），所以溯源检查也必须用同一个 canon_key，否则会误报「发布丢数据」。
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_Z2C: dict = {}
+_C2Z: dict = {}
+try:
+    from build_release import canon_key, load_zip_dict      # noqa: E402
+except Exception:                                          # 极端情况下不因此让整个闸门失效
+    def canon_key(rec, z2c, c2z):
+        return str(rec.get("key") or "")
+
+    def load_zip_dict(path):
+        return {}, {}
+# P1-4 修复：白名单文件根本不在仓库里 → WHITELIST 恒为空 → `if WHITELIST and ...` 恒假 →
+# 「州码不在白名单＝解析错位」这道硬门**从来没生效过**。改成内置代码常量（单一事实来源），
+# 外部文件若存在再覆盖它（允许临时收窄，但不允许因为缺文件而防线消失）。
+try:
+    from collectors.normalize import STATE_CODES as _BUILTIN_STATES
+    WHITELIST = set(_BUILTIN_STATES)
+except Exception:                                    # 万一 import 不通也不许静默失效
+    WHITELIST = set(("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN "
+                     "MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA "
+                     "WV WI WY PR VI GU AS MP").split())
+if os.path.exists(WL_PATH):
+    try:
+        WHITELIST = set(json.load(open(WL_PATH, encoding="utf-8")))
+    except Exception:
+        print(f"⚠ {WL_PATH} 存在但读不出来，用内置州码表")
 
 
 def sha256(path: str) -> str:
@@ -92,9 +119,18 @@ def check_schema(recs: list[dict], state: str) -> tuple[dict, list[str]]:
     seen: set[str] = set()
     for r in recs:
         if r.get("_grade") == "C":
-            # C 级是「出厂就认定补不齐」的记录：只进全量数据集并自带标注，
-            # 不参与五要素完整性判定（但它的存在会被单独计数，不允许悄悄变多）
+            # C 级只豁免「五要素完整性」那一项；key 重复 / 州码白名单**不豁免**（P1-4）——
+            # 否则坏州码记录只要被打成 C 就能整片躲过校验。
             st["grade_c"] += 1
+            k = r.get("key")
+            if k in seen:
+                st["dup_key"] += 1
+            seen.add(k)
+            ks = str(k or "").split("|")[0]
+            if ks != state:
+                st["cross_state"] += 1
+                if WHITELIST and ks not in WHITELIST:
+                    st["bad_state"] += 1
             continue
         if [k for k in REQUIRED if not r.get(k)]:
             st["missing"] += 1
@@ -203,8 +239,17 @@ def provenance_check(parsed_dir: str, state_file: str, merged: str,
         pdir = os.path.join(parsed_dir, *sid.split("/"))
         ks: set[str] = set()
         for f in sorted(os.listdir(pdir)):
-            if f.endswith(".ndjson"):
-                ks |= load_keys(os.path.join(pdir, f))
+            if not f.endswith(".ndjson"):
+                continue
+            with open(os.path.join(pdir, f), encoding="utf-8") as pfh:
+                for line in pfh:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        ks.add(canon_key(json.loads(line), _Z2C, _C2Z))
+                    except Exception:
+                        continue
         if ks:
             want[sid] = ks
     hit = {sid: 0 for sid in want}
@@ -214,7 +259,7 @@ def provenance_check(parsed_dir: str, state_file: str, merged: str,
             if not line:
                 continue
             try:
-                k = json.loads(line).get("key")
+                k = canon_key(json.loads(line), _Z2C, _C2Z)
             except Exception:
                 continue
             for sid, ks in want.items():
@@ -234,6 +279,8 @@ def main(argv=None) -> None:
     ap.add_argument("--manifest", default="data/release-manifest.json")
     ap.add_argument("--parsed", default="parsed")
     ap.add_argument("--state", default="progress/state.json")
+    ap.add_argument("--zip-dict", default="dict/zip_city.tsv",
+                    help="与发布侧同一份字典（溯源 key 重算用）")
     ap.add_argument("--min-rows", type=int, default=0, help="总行数下限（防缩水），0=不判")
     ap.add_argument("--prev-manifest", default="", help="上一版发布清单，逐州对账（防悄无声息掉质量）")
     ap.add_argument("--max-shrink", type=float, default=0.10, help="单州行数跌幅上限")
@@ -241,6 +288,8 @@ def main(argv=None) -> None:
     ap.add_argument("--cross-keys", type=int, default=6_000_000,
                     help="跨州重复检查的抽样 key 数（0=跳过）")
     a = ap.parse_args(argv)
+    global _Z2C, _C2Z
+    _Z2C, _C2Z = load_zip_dict(a.zip_dict)
 
     errs: list[str] = []
     if not os.path.exists(a.manifest):
@@ -270,6 +319,34 @@ def main(argv=None) -> None:
             print(f"   {st}: {rows:>10,} 行 抽样 {se['sampled']} 条  "
                   f"缺字段{se['missing']} 坏号{se['bad_number']} 重复{se['dup_key']}"
                   + (f" 跨州{se['cross_state']}" if se["cross_state"] else ""))
+    # ④ 站用子集（site/）也必须过闸 —— P1-4：这是**对外直接取用**的产物，原来一条都不查
+    site_dir = os.path.join(a.release, "site")
+    if os.path.isdir(site_dir):
+        print("②' 站用子集（site/）：")
+        for st, info in sorted((m.get("states") or {}).items()):
+            sp = os.path.join(site_dir, f"{st}.ndjson.gz")
+            a_grade = int((info.get("grades") or {}).get("A") or 0)
+            if not os.path.exists(sp):
+                if a_grade:
+                    errs.append(f"[site]{st} 声明 {a_grade:,} 条 A 级却没有 site 分片")
+                continue
+            srows, srecs, sblanks, sdups, sunsorted = scan_shard(sp)
+            if sblanks:
+                errs.append(f"[site]{st} 空行 {sblanks:,} 条")
+            if sdups:
+                errs.append(f"[site]{st} 相邻重复 key {sdups:,} 条")
+            if sunsorted:
+                errs.append(f"[site]{st} key 乱序 {sunsorted:,} 处")
+            if srows != a_grade:
+                errs.append(f"[site]{st} 行数 {srows:,} != 清单里的 A 级数 {a_grade:,}")
+            sse, sers = check_schema(srecs, st)
+            errs += [f"[site]{e}" for e in sers]
+            print(f"   {st}: {srows:>10,} 行 抽样 {sse['sampled']} 条  缺字段{sse['missing']} "
+                  f"坏号{sse['bad_number']} 重复{sse['dup_key']}")
+    elif any(int((i.get("grades") or {}).get("A") or 0)
+             for i in (m.get("states") or {}).values()):
+        errs.append("[site] 清单里有 A 级记录，但根本没有 site/ 目录")
+
     # ② 溯源与合并自检（第 11/13 步）
     sj = os.path.join(a.release, "sources.json")
     sinfo = m.get("sources") or {}

@@ -320,6 +320,13 @@ jobs:
           git config user.name "factory-bot"
           git config user.email "factory-bot@users.noreply.github.com"
           git fetch origin data --depth=1 || true
+          # P1-7 护栅：远端有 data 分支但本地没取到（fetch 失败）时，禁止走 orphan 重建 ——
+          # 否则后面的 push -f 会把整条状态历史换成只含本次提交的孤儿分支。
+          if [ -n "$(git ls-remote --heads origin data 2>/dev/null)" ] && \
+             ! git show-ref --verify --quiet refs/remotes/origin/data; then
+            echo "❌ 远端存在 data 分支但本地没取到（fetch 失败）—— 拒绝 orphan 重建，宁可本窗口不回写"
+            exit 1
+          fi
           if git show-ref --verify --quiet refs/remotes/origin/data; then
             git checkout -B data origin/data
           else

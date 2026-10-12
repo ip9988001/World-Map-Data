@@ -162,10 +162,14 @@ def _socrata_paged(pol: Politeness, url: str, payload_dir: str, man: dict,
     out = os.path.join(payload_dir, "records.ndjson")
     q = urllib.parse.urlparse(url)
     base_params = dict(urllib.parse.parse_qsl(q.query))
-    offset, n, pages = 0, 0, 0
+    # P1-6 修复：真正支持续拿。旧写法固定 `offset=0` + `open(out, "w")`，
+    # 预算到点后下一窗口会从 0 重下已得部分 —— manifest 里写着 next_offset 但没人读。
+    offset = int(man.get("next_offset") or 0)
+    n = int(man.get("rows") or 0)
+    pages = 0
     deadline = time.monotonic() + budget_s
     done = True
-    with open(out, "w", encoding="utf-8") as fh:
+    with open(out, "a" if offset else "w", encoding="utf-8") as fh:
         while time.monotonic() < deadline:
             p = dict(base_params)
             p["$limit"] = str(page)
@@ -210,7 +214,11 @@ def fetch_raw(pol: Politeness, sid: str, url: str, root: str = "raw_archive",
             man = _socrata(pol, url, payload_dir, man, budget_s=budget_s)
         else:
             man = _direct(pol, url, payload_dir, man)
-        man["error"] = ""
+        if not man.get("defect"):
+            # P0-1 修复：_integrity 标的下载缺陷（EMPTY/SHORT）绝不允许被成功路径抹掉，
+            # 否则 pipeline 只看 error → 漏判缺陷 → 90% 的部分档案照常过闸、
+            # state 记 done → 下一窗口跳过 → **缺的那部分永远不补**。
+            man["error"] = ""
     except Exception as e:
         man.update({"error": f"{type(e).__name__}: {str(e)[:300]}", "done": False})
     man["seconds"] = round(time.time() - t0, 1)

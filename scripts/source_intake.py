@@ -46,8 +46,13 @@ SAMPLE_DIR = "out/samples"
 LICENSE_TODO = "data/许可待补.csv"
 
 CORE = ("number", "street", "city", "zip", "state")
-MAX_MISS = {"city": 0.20, "zip": 0.20}      # 与第 9 步的全局硬门同一口径
-MIN_KEEP = 0.80                            # number/street 必须有这么多行洗得出来
+# 阈值只有一处事实来源：直接用第 9 步闸门的常量（P2：常量多处定义、口径会漂移）
+try:
+    from collectors.local_cascade import MAX_JUNK, MAX_MISS      # noqa: F401
+except Exception:                                    # 极端情况下的兜底，保持与闸门同值
+    MAX_MISS = {"city": 0.20, "zip": 0.20}
+    MAX_JUNK = 0.20
+MIN_KEEP = 0.80                            # number/street 非空率要求（前置门自己的口径）
 SPECIAL = re.compile(r"[^A-Za-z0-9 .#\-/]")
 SUMMARY_COLS = ["source_id", "state", "county", "channel", "protocol", "p0", "p1", "p2",
                 "verdict", "fields_n", "cols", "total", "city_miss", "zip_miss",

@@ -58,6 +58,13 @@ def _col_stats(rows: list[dict]) -> dict[str, dict]:
         nonblank = [v for v in vals if v]
         n = len(nonblank) or 1
         lens = sorted(len(v) for v in nonblank) or [0]
+        nums: list[int] = []
+        for v in nonblank:
+            if NUM_RE.match(v):
+                try:
+                    nums.append(int(re.sub(r"\D", "", v) or 0))
+                except ValueError:
+                    pass
         out[k] = {
             "fill": len(nonblank) / max(len(rows), 1),
             "num": sum(1 for v in nonblank if NUM_RE.match(v)) / n,
@@ -71,6 +78,11 @@ def _col_stats(rows: list[dict]) -> dict[str, dict]:
             "median_len": median(lens) if nonblank else 0,
             "distinct": len(set(nonblank)) / n,
             "badkey": bool(BAD_KEY.search(k)),
+            # 值域统计（P0-2 修复用）：光看“长得像数字”拦不住年份列 / 房型列
+            "min_num": min(nums) if nums else 0,
+            "median_num": median(sorted(nums)) if nums else 0,
+            "num_distinct": len(set(nums)),
+            "num_range": (max(nums) - min(nums)) if nums else 0,
         }
     return out
 
@@ -103,8 +115,22 @@ def plan_columns(rows: list[dict]) -> dict[str, str]:
     excl_id = {plan["zip"], plan["state"]} | set(full_cols)
 
     def ok_number(s):
-        return (s["num"] >= 0.30 and s["median_len"] <= 6
-                and not (s["distinct"] >= 0.98 and s["median_len"] <= 7))   # 每行都不同→序号列
+        if not (s["num"] >= 0.30 and s["median_len"] <= 6):
+            return False
+        if s["distinct"] >= 0.98 and s["median_len"] <= 7:      # 每行都不同→序号列
+            return False
+        # —— P0-2 修复：**值域常识**。上面两条只看形态，实测放行了 YEAR_BUILT：
+        #    「1998」既是数字、中位长 4、取值也不够“每行不同”（年份就那么二十几个）→ 被选成门牌号列。
+        #    门牌号的真特征不是“长得像数字”，是**值域**：从 1 起、分布广、不是年份段、不是小分类。
+        if s["min_num"] < 1:
+            return False                                        # 含 0 的列不是门牌号
+        if 1700 <= s["median_num"] <= 2200 and s["num_distinct"] <= 120:
+            return False                                        # 年份列（YEAR_BUILT / 建成年份）
+        if s["num_distinct"] <= 12 and s["num_range"] <= 20:
+            return False                                        # 小分类列（BEDROOMS / 楼层 / 状态码）
+        if s["num_range"] <= 1 and s["num_distinct"] <= 1:
+            return False                                        # 常量列
+        return True
 
     plan["number"] = best("num", ok_number, excl_id)
     # ④ 街列：必须是“像街名”的列（后缀或「号+词」），所有已定列都要排除

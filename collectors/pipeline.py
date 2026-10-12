@@ -27,6 +27,7 @@ from .triage import (blacklist_add, blacklisted, preferred_engine, report_md,
 STATE = "progress/state.json"
 MIN_SOURCE_TIME = 45          # 剩余预算低于此值不再开新源
 TAIL_RESERVE = 60
+MAX_ATTEMPTS = 8             # 连续**无进展**的下载尝试上限（P1-6）
 
 
 def load_state(path: str = STATE) -> dict:
@@ -74,15 +75,19 @@ def collect_one(pol: Politeness, sid: str, row: dict, archive: str = "raw_archiv
                         budget_s=max(60, max_seconds - 30))
         st["archive"] = {"protocol": man.get("protocol"), "bytes": man.get("bytes", 0),
                          "done": man.get("done"), "error": man.get("error", "")}
-        if man.get("error"):
+        if man.get("error") or man.get("defect"):
             # 取数失败也要分诊（否则死源每次跑批都要再撞一次）：
             #   上游自报 not found / Invalid URL / 4xx → 源坏，拉黑
             #   DNS/SSL/超时 → TRANSIENT，下批重试（不拉黑）
+            #   EMPTY/SHORT（第 6 步完整性对账）→ DOWNLOAD_DEFECT，补采
             from .triage import evidence_probe
-            err = str(man["error"])
+            err = str(man.get("error") or "")
             low = err.lower()
             kind = "TRANSIENT"
-            if low.startswith("empty_download") or low.startswith("short_download"):
+            if man.get("defect"):
+                kind = "DOWNLOAD_DEFECT"
+                err = err or f"{man['defect']}_DOWNLOAD: 下载不完整（defect={man['defect']}）"
+            elif low.startswith("empty_download") or low.startswith("short_download"):
                 # 第 6 步下载完整性对账标记的缺陷：补采即可，不换规则、不拉黑
                 kind = "DOWNLOAD_DEFECT"
             elif any(t in low for t in ("not found", "invalid url", "http error 404",
@@ -150,8 +155,8 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
     effective = max_seconds - (TAIL_RESERVE if max_seconds > 180 else 0)
     bl = blacklisted()
     stats = {"lane_sources": len(items), "done": 0, "skipped_done": 0,
-             "skipped_blacklist": 0, "gap": 0, "errors": 0, "kept": 0, "fetched": 0,
-             "downloaded": 0}
+             "skipped_blacklist": 0, "skipped_exhausted": 0, "gap": 0, "errors": 0,
+             "kept": 0, "fetched": 0, "downloaded": 0}
     for k, item in enumerate(items, 1):
         sid = item["source_id"]
         prev = state.get(sid) or {}
@@ -162,6 +167,17 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
         if why:
             stats["skipped_blacklist"] += 1
             print(f"[{k}/{len(items)}] {sid:28s} ⏭ {why}", flush=True)
+            continue
+        # 重试上限（P1-6）：只惩罚「连续无进展的**下载**失败」——
+        # 一个永远 0 字节/永远 DNS 失败的源，不许每窗口都来烧一遍预算。
+        # 只对「本地档案也没下完」的源生效：解析阶段的重试（RULE_GAP 等）不受影响，
+        # 慢但一直在长的源也不算（有进展就会重置计数，见下面的 grew 分支）。
+        if (int(prev.get("attempts") or 0) >= MAX_ATTEMPTS and not prev.get("done")
+                and not (prev.get("archive") or {}).get("done")):
+            stats["skipped_exhausted"] += 1
+            print(f"[{k}/{len(items)}] {sid:28s} ⏭ 已连续 {prev['attempts']} 次没进展"
+                  f"（{prev.get('kind') or '?'}），挂起等人工：清掉 attempts 或被拉黑后才会再采",
+                  flush=True)
             continue
         remain = effective - (time.time() - t0)
         if (stats["done"] + stats["gap"] + stats["errors"] or k > 1) and remain < MIN_SOURCE_TIME:
@@ -188,6 +204,10 @@ def run_queue(items: list[dict], table: list[dict], state: dict, pol: Politeness
                   "error": f"{type(e).__name__}: {str(e)[:250]}",
                   "attempts": int(prev.get("attempts") or 0) + 1}
         st["attempts"] = int(prev.get("attempts") or 0) + (0 if st.get("done") else 1)
+        # 有进展（原始档字节数变多）就不算「连续失败」：慢但一直在长的源不能被上限误杀
+        if (int((st.get("archive") or {}).get("bytes") or 0)
+                > int((prev.get("archive") or {}).get("bytes") or 0)):
+            st["attempts"] = 1
         state[sid] = st
         save_state(state, state_path)
         if st.get("done"):

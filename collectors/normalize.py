@@ -74,11 +74,22 @@ def norm_zip(z) -> str:
 
 
 def norm_number(n) -> str:
-    s = re.sub(r"\s+", "", str(n or "").upper())
+    """门牌号规整。
+
+    ⚠ 修复（外部审查 P2）：旧写法先把空白全去掉再截前导数字，
+    「820 1/2」（美国真实存在的半号地址）会被洗成「8201」—— 号错一位，而且
+    「8201」在原始值里通常找不到 → 反而被反造数门拦下，源白白丢掉这条。
+    现在：先按整串匹配 → 带分数尾的剥掉尾巴 → 最后才退化成截前导数字。
+    """
+    raw = str(n or "").upper().strip()
+    s = re.sub(r"\s+", "", raw)
     m = re.match(r"^(\d+)([A-Z]?)$", s)
     if m:
         return m.group(1) + m.group(2)
-    m = re.match(r"^(\d+)", s)
+    m = re.match(r"^(\d+)[\s\-]+\d+\s*/\s*\d+", raw)   # 820 1/2 · 820-1/2
+    if m:
+        return m.group(1)
+    m = re.match(r"^(\d+)", raw)
     return m.group(1) if m else ""
 
 

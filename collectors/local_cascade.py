@@ -65,30 +65,59 @@ def load_contracts(path: str = CONTRACT_FILE) -> dict:
     if not os.path.exists(path):
         return out
     try:
-        with open(path, encoding="utf-8-sig", newline="") as fh:
-            for r in csv.DictReader(fh):
-                sid = (r.get("source_id") or "").strip()
-                if not sid:
-                    continue
-                lim = dict(MAX_MISS)
-                for f in ("city", "zip"):
-                    v = (r.get(f + "_max_miss") or "").strip()
-                    if v:
-                        try:
-                            lim[f] = min(lim[f], float(v))   # 只能更严
-                        except ValueError:
-                            pass
-                def _flag(x):
-                    return (x or "").strip().lower() in ("1", "true", "yes", "y", "是")
-                out[sid] = {
-                    "city_max_miss": lim["city"], "zip_max_miss": lim["zip"],
-                    "max_junk": min(MAX_JUNK, float(r.get("max_junk") or MAX_JUNK) or MAX_JUNK),
-                    "exempt_city": _flag(r.get("exempt_city")),
-                    "exempt_zip": _flag(r.get("exempt_zip")),
-                    "note": (r.get("note") or "").strip(),
-                }
-    except Exception:
-        return {}
+        with open(path, encoding="utf-8-sig") as fh:
+            text = fh.read()
+        lines = [ln for ln in text.splitlines() if ln.strip()]
+        if not lines:
+            return {}
+        # P1-2 修复：引号没闭合的坏行会被 csv **悄悄和下一行合并** →
+        # 整行契约消失、毫无告警（实测：坏行后面那行有效契约一起没了）。
+        # 改成按行处理：引号成不了对的整行丢掉并告警，其余行照常解析。
+        # （这张表不允许跳行字段，所以按行切是安全的；坏行只会牺牲它自己，不再吃掉下一行。）
+        head = [h.strip() for h in next(csv.reader([lines[0]]))]
+        good: list[str] = []
+        for lineno, ln in enumerate(lines[1:], 2):
+            if ln.count('"') % 2:
+                print(f"⚠ 契约表 {path} 第 {lineno} 行引号没成对 → 丢弃该行"
+                      f"（不丢它就会把下一行契约一并吃掉）", file=sys.stderr)
+                continue
+            good.append(ln)
+        for ln in good:
+            vals = next(csv.reader([ln]))
+            if len(vals) != len(head):
+                print(f"⚠ 契约表 {path} 行字段数 {len(vals)} != 表头 {len(head)} → 跳过：{ln[:60]}",
+                      file=sys.stderr)
+                continue
+            r = dict(zip(head, vals))
+            sid = (r.get("source_id") or "").strip()
+            if not sid:
+                continue
+            lim = dict(MAX_MISS)
+            for f in ("city", "zip"):
+                v = (r.get(f + "_max_miss") or "").strip()
+                if v:
+                    try:
+                        lim[f] = min(lim[f], float(v))   # 只能更严
+                    except ValueError:
+                        pass
+            def _flag(x):
+                return (x or "").strip().lower() in ("1", "true", "yes", "y", "是")
+            out[sid] = {
+                "city_max_miss": lim["city"], "zip_max_miss": lim["zip"],
+                # P1-2 修复：旧写法 `float(x or MAX_JUNK) or MAX_JUNK` 会被 0 短路 ——
+                # 声明「最严」的 max_junk=0 反而被解开成全局默认，铁律被字面打破。
+                # 这里照抄 city/zip 的写法：空才用默认，非空就 min。
+                "max_junk": (lambda v: min(MAX_JUNK, float(v)) if v.strip() else MAX_JUNK)(
+                    str(r.get("max_junk") or "")),
+                "exempt_city": _flag(r.get("exempt_city")),
+                "exempt_zip": _flag(r.get("exempt_zip")),
+                "note": (r.get("note") or "").strip(),
+            }
+    except Exception as e:
+        # P1-2 修复：整表读不动时不许静默退回全局默认（那等于豁免与更严阈值同时消失）
+        print(f"⚠ 契约表 {path} 读不出来（{type(e).__name__}: {e}）→ 本轮全部按全局默认阈值判，"
+              f"且**豁免声明失效**，请检查文件", file=sys.stderr)
+        return {"_load_error": f"{type(e).__name__}: {e}"}
     return out
 
 
@@ -158,20 +187,39 @@ def _is_contentful(row: dict) -> bool:
     return False
 
 
+def _num_in_blob(num: str, blob: str) -> bool:
+    """号必须作为**独立的一段数字**出现在原始值里（P0-2 修复）。
+
+    旧写法 `num in blob` 是子串匹配，会把「号=3」命中到「1998」里；
+    旧写法 `num.lstrip("0") in blob` 更糟：号 =「0」时 lstrip 得空串，`"" in blob` 恒真 → 白放行。
+    这里改成词边界扫描（不用正则，逐条记录调用，省开销）。
+    """
+    for cand in ({num, num.lstrip("0")} - {""}):
+        i = blob.find(cand)
+        while i >= 0:
+            before = blob[i - 1] if i > 0 else ""
+            j = i + len(cand)
+            after = blob[j] if j < len(blob) else ""
+            if not before.isdigit() and not after.isdigit():
+                return True
+            i = blob.find(cand, i + 1)
+    return False
+
+
 def _record_ok(rec: dict, raw: dict) -> bool:
     """产物级防垃圾（规则无关的硬护栏，任何规则的产物都要过）：
       ① 街名必须以字母/数字开头 —— 拦 "- RURAL UNIMPROVED" 这类把地类码当地址的产物
          （实测 concat_addr@v1 拿 PropertyClass 造过 mass 垃圾记录）
-      ② 门牌号必须在原始行的某个值里真实出现过 —— 拦凭空造数
+      ② 门牌号必须在原始行的某个值里真实出现过（**独立成段**，不是子串）—— 拦凭空造数与错列
     """
     street = str(rec.get("street") or "")
     if not street or not street[0].isalnum():
         return False
-    num = str(rec.get("number") or "")
-    if not num:
-        return False
+    num = str(rec.get("number") or "").strip()
+    if not num or not num.strip("0"):
+        return False                     # 「0」「00」不是门牌号
     blob = " ".join(str(v) for v in raw.values() if isinstance(v, (str, int, float)))
-    return num in blob or num.lstrip("0") in blob
+    return _num_in_blob(num, blob)
 
 
 def _gate(kept: int, contentful: int, rows: int, true_n: int = 0,
@@ -378,6 +426,18 @@ def run_rules(sid: str, row: dict, out_root: str = PARSED, archive: str = ARCHIV
     if passing:
         passing.sort(key=lambda x: (-x[0], x[1]))
         best_n, best_rule, best_step, best_dst = passing[0]
+        # —— P0-2 修复：降级产物只有在「赢一倍以上」时才允许压过合格产物。
+        # 错列规则往往 ratio≈100%（它不丢行），而真规则在含空置地块的源上只有 40~70%，
+        # 原来只按「洗出最多」选 → 垃圾规则会挤掉真规则并落盘。合格者过半即优先。
+        if best_step.get("verdict") != "PASS":
+            ok_on = [p for p in passing
+                     if p[2].get("verdict") == "PASS" and p[0] >= best_n * 0.5]
+            if ok_on:
+                lost, lost_rule = best_n, best_rule
+                best_n, best_rule, best_step, best_dst = sorted(
+                    ok_on, key=lambda x: (-x[0], x[1]))[0]
+                print(f"  [选规则] {lost_rule} 是降级产物（{lost:,} 条），"
+                      f"改用合格产物 {best_rule}（{best_n:,} 条）", flush=True)
         for _n, rname2, _s2, dst2 in passing[1:]:
             try:
                 os.remove(dst2)               # 落选规则的产品删掉，只留赢家

@@ -495,6 +495,15 @@ def emit_contract(sid: str, spec: dict) -> None:
         w = csv.DictWriter(fh, fieldnames=list(row.keys()), extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
+    # P1-2 修复：写完回读，行数不符就报警（不让坏行静静吃掉契约）
+    try:
+        with open(CONTRACT, encoding="utf-8-sig", newline="") as fh:
+            back = [r for r in csv.reader(fh) if any(str(v).strip() for v in r)]
+        if len(back) - 1 != len(rows):
+            print(f"⚠ 契约表回读行数不符：写入 {len(rows)} 行，读回 {max(0, len(back) - 1)} 行"
+                  f"（{CONTRACT} 可能有行被吃掉）")
+    except Exception as e:
+        print(f"⚠ 契约表回读失败：{type(e).__name__}: {e}")
     if ex:
         fresh = not os.path.exists(EXEMPT_REVIEW)
         os.makedirs(os.path.dirname(EXEMPT_REVIEW) or ".", exist_ok=True)
@@ -624,7 +633,7 @@ def main(argv=None) -> None:
             print(f"[brain] {sid} 提示词构造失败（跳过，不影响其它源）: {type(e).__name__}: {e}")
             append_ledger(sid, "", "PROMPT_FAIL", {}, "", f"{type(e).__name__}: {e}")
             continue
-        prompt = build_prompt(sid, row, gap, rows)
+        # 提示词已在上面 try 里构造过（构造失败就 continue 了），这里不再重调一次
         if a.dry_run:
             print("=" * 20, sid, "=" * 20)
             print(prompt)
