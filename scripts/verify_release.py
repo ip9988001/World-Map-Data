@@ -73,7 +73,9 @@ except Exception:                                    # 万一 import 不通也�
                      "WV WI WY PR VI GU AS MP").split())
 if os.path.exists(WL_PATH):
     try:
-        WHITELIST = set(json.load(open(WL_PATH, encoding="utf-8")))
+        _wl = json.load(open(WL_PATH, encoding="utf-8"))
+        # 兼容两种写法：州码列表 ["AK","TX"] 或按国家分组 {"US":[...],"UK":[...]}
+        WHITELIST = set(_wl) if isinstance(_wl, list) else {c for v in _wl.values() for c in v}
     except Exception:
         print(f"⚠ {WL_PATH} 存在但读不出来，用内置州码表")
 

@@ -71,7 +71,8 @@ def sha256(path: str) -> str:
 def key_state(key: str) -> str:
     """key 的第一段就是州码；不合法则归 ZZ（可见地暴露出来，而不是悄悄丢）。"""
     st = (key or "").split("|", 1)[0].strip().upper()
-    return st if len(st) == 2 and st.isalpha() else "ZZ"
+    # 州码长度不写死 2 位：US 是 AK/TX，英国区域码是 ENG/SCT/NIR（3 位）
+    return st if 2 <= len(st) <= 3 and st.isalpha() else "ZZ"
 
 
 # ────────────────────────── 输入采集 ──────────────────────────
