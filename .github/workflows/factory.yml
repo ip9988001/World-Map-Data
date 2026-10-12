@@ -331,7 +331,7 @@ jobs:
         run: |
           mkdir -p /tmp/asm/parsed /tmp/prev
           gh release download cache-parsed -p '*.tar.gz' -D /tmp/prev 2>/dev/null || true
-          last=$(ls -t /tmp/prev/*.tar.gz 2>/dev/null | head -1)
+          last=$(ls -1 /tmp/prev/*.tar.gz 2>/dev/null | sort | tail -1)   # 按文件名(含时间戳)取最新：mtime=下载顺序≠新旧（曾因此丢底座）
           if [ -n "$last" ]; then
             echo "接续上一份累积快照: $last"
             tar -xzf "$last" -C /tmp/asm/parsed
@@ -563,7 +563,7 @@ jobs:
         run: |
           mkdir -p parsed /tmp/cache
           gh release download cache-parsed -p '*.tar.gz' -D /tmp/cache 2>/dev/null || true
-          last=$(ls -t /tmp/cache/*.tar.gz 2>/dev/null | head -1)
+          last=$(ls -1 /tmp/cache/*.tar.gz 2>/dev/null | sort | tail -1)   # 同上：文件名排序才是时间序
           if [ -n "$last" ]; then tar -xzf "$last" -C parsed; fi
           find parsed -name '*.ndjson' | wc -l
       - name: 存一份上一版清单（逐州对账用）
