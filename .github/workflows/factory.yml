@@ -323,6 +323,21 @@ jobs:
             cp -f "$f" /tmp/asm/待造刀/ 2>/dev/null && n=$((n+1)) || true
           done
           echo "待造刀清单 $n 份"
+      - name: 取回上一份累积产物（让 cache-parsed 每份快照都是「累积全量」）
+        # 为什么：publish 取 cache-parsed 最近一份当整个数据集用；若那份是「本窗口增量」，
+        # 发布必然缩水（实测 0/642/13/1/311MB）。这里先把上一份解开当底座，本窗口产物再叠上去。
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/asm/parsed /tmp/prev
+          gh release download cache-parsed -p '*.tar.gz' -D /tmp/prev 2>/dev/null || true
+          last=$(ls -t /tmp/prev/*.tar.gz 2>/dev/null | head -1)
+          if [ -n "$last" ]; then
+            echo "接续上一份累积快照: $last"
+            tar -xzf "$last" -C /tmp/asm/parsed
+          else
+            echo "没有上一份累积快照，本窗口从零累积"
+          fi
       - name: 合并规则产物
         run: |
           mkdir -p /tmp/asm/parsed
