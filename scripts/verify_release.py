@@ -1,7 +1,7 @@
 """发布前校验闸门 —— **不过不发**（发布链上的最后一道人写的硬门）。
 
 四层检查（成本递增，能便宜判的绝不花钱）：
-  ① 对账      manifest ↔ out/release/US-*.ndjson.gz（逐州行数 + sha256，全量重算）
+  ① 对账      manifest ↔ out/release/<国家码>-<州码>.ndjson.gz（逐州行数 + sha256，全量重算）
   ② schema    每州抽头 2000 / 尾 500 条：必填、州码白名单、号码/邮编形态、key 重复、
               key 前缀必须等于分片州码（防串片）
   ③ 溯源子集  state 里已完成的源，其 parsed ndjson 的每条 key 必须出现在发布全量里
@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import argparse
+import glob
 import gzip
 import hashlib
 import json
@@ -28,6 +29,21 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 NUM_RE = re.compile(r"^\d{1,6}[A-Za-z]?\d?$")
+
+
+def find_shard(dir_: str, st: str, info: dict | None = None) -> str:
+    """定位某州分片：**以 manifest 记的 file 字段为准**（形如 US-AK.ndjson.gz / UK-ENG.ndjson.gz）。
+
+    manifest 没有 file（老清单）时按通配回退 —— 国家码来自数据目录，不写死 US。
+    """
+    f = (info or {}).get("file")
+    if f and os.path.exists(os.path.join(dir_, f)):
+        return os.path.join(dir_, f)
+    for pat in (f"*-{st}.ndjson.gz", f"{st}.ndjson.gz"):
+        hits = sorted(glob.glob(os.path.join(dir_, pat)))
+        if hits:
+            return hits[0]
+    return os.path.join(dir_, f or f"{st}.ndjson.gz")
 ZIP_RE = re.compile(r"^\d{5}$")
 # 注意：发布包（稳定视图）里的来源字段是聚合后的 `sources`（列表），不是逐条的 source
 REQUIRED = ("state", "street", "number", "key", "sources")
@@ -184,7 +200,7 @@ def cross_shard_check(release_dir: str, states: list[str],
     total = dups = 0
     examples: list[str] = []
     for st in states:
-        p = os.path.join(release_dir, f"US-{st}.ndjson.gz")
+        p = find_shard(release_dir, st)
         if not os.path.exists(p):
             continue
         with gzip.open(p, "rt", encoding="utf-8") as fh:
@@ -298,7 +314,7 @@ def main(argv=None) -> None:
     total = int(m.get("rows") or 0)
     print(f"① 对账：manifest 记 {total:,} 行 / {len(m.get('states') or {})} 州分片")
     for st, info in sorted((m.get("states") or {}).items()):
-        p = os.path.join(a.release, f"US-{st}.ndjson.gz")
+        p = find_shard(a.release, st, info)
         if not os.path.exists(p):
             errs.append(f"[对账]{st} 分片文件缺失")
             continue
@@ -324,7 +340,7 @@ def main(argv=None) -> None:
     if os.path.isdir(site_dir):
         print("②' 站用子集（site/）：")
         for st, info in sorted((m.get("states") or {}).items()):
-            sp = os.path.join(site_dir, f"US-{st}.ndjson.gz")
+            sp = find_shard(site_dir, st, info)
             a_grade = int((info.get("grades") or {}).get("A") or 0)
             if not os.path.exists(sp):
                 if a_grade:

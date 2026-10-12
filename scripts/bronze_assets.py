@@ -34,20 +34,43 @@ def states_from_plan(plan_path: str, lane: int | None) -> list[str]:
     return out
 
 
+def state_dir(st: str, archive: str = ARCHIVE) -> tuple[str, str]:
+    """在 `raw_archive/<国家码>/<州码>/` 下找这个州 → (国家码, 路径)。
+
+    国家码从归档目录结构读，不写死 —— 多国数据自然落成 UK-bronze-ENG.zip / US-bronze-AK.zip。
+    """
+    if not os.path.isdir(archive):
+        return "", ""
+    for cc in sorted(os.listdir(archive)):
+        if not (2 <= len(cc) <= 3 and cc.isalpha()):
+            continue
+        p = os.path.join(archive, cc, st.lower())
+        if os.path.isdir(p):
+            return cc.upper(), p
+    return "", ""
+
+
 def bronze_states(archive: str = ARCHIVE) -> list[str]:
-    root = os.path.join(archive, "us")
-    return sorted(d.upper() for d in os.listdir(root)
-                  if os.path.isdir(os.path.join(root, d))) if os.path.isdir(root) else []
+    """本地归档里已有的全部州码（遍历所有国家目录）。"""
+    out: set[str] = set()
+    if os.path.isdir(archive):
+        for cc in sorted(os.listdir(archive)):
+            root = os.path.join(archive, cc)
+            if not (2 <= len(cc) <= 3 and cc.isalpha()) or not os.path.isdir(root):
+                continue
+            out |= {d.upper() for d in os.listdir(root)
+                    if os.path.isdir(os.path.join(root, d))}
+    return sorted(out)
 
 
 def pack(states: list[str], out_dir: str, archive: str = ARCHIVE) -> list[str]:
     os.makedirs(out_dir, exist_ok=True)
     made = []
     for st in states:
-        src = os.path.join(archive, "us", st.lower())
-        if not os.path.isdir(src):
+        cc, src = state_dir(st, archive)
+        if not src:
             continue
-        dst = os.path.join(out_dir, f"US-bronze-{st}.zip")   # 资产名带国家代号，便于多国扩展
+        dst = os.path.join(out_dir, f"{cc}-bronze-{st.upper()}.zip")   # 资产名带国家代号
         with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
             for base, _dirs, files in os.walk(src):
                 for f in files:

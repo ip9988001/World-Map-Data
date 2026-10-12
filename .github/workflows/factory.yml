@@ -167,7 +167,7 @@ jobs:
           echo "本泳道涉及州：$STATES"
           mkdir -p /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+            gh release download bronze -p "*-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
           done
           ls /tmp/bronze | head -5 || true
           python scripts/bronze_assets.py restore --dir /tmp/bronze
@@ -195,7 +195,7 @@ jobs:
           # 覆盖掉别的泳道已存进去的源（实测 US-bronze-AK.zip 只剩 4 个源、WI 只剩 1 个）
           rm -rf /tmp/bzold /tmp/bronze && mkdir -p /tmp/bzold /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bzold --clobber 2>/dev/null || true
+            gh release download bronze -p "*-bronze-$st.zip" -D /tmp/bzold --clobber 2>/dev/null || true
           done
           python scripts/bronze_assets.py restore --dir /tmp/bzold --archive raw_archive || true
           python scripts/bronze_assets.py pack --states "$(echo $STATES | tr ' ' ',')" --out /tmp/bronze || true
@@ -461,7 +461,7 @@ jobs:
           echo "涉及州：$STATES"
           mkdir -p /tmp/bronze
           for st in $STATES; do
-            gh release download bronze -p "US-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
+            gh release download bronze -p "*-bronze-$st.zip" -D /tmp/bronze --clobber 2>/dev/null || true
           done
           python scripts/bronze_assets.py restore --dir /tmp/bronze
       - name: AI 造规则（LLM → 验证闸门 → specs/）
@@ -607,7 +607,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p /tmp/prev
-          gh release download v0.1.0-dataset -p 'US-[A-Z][A-Z].ndjson.gz' -D /tmp/prev --clobber 2>/dev/null || true
+          gh release download v0.1.0-dataset -p '*-[A-Z][A-Z].ndjson.gz' -D /tmp/prev --clobber 2>/dev/null || true
           if ! ls /tmp/prev/*.ndjson.gz >/dev/null 2>&1; then echo "无上一版可存（首次发布）"; exit 0; fi
           gh release create prev-dataset --title "上一版数据集（回滚用）" \
             --notes "每次发布前自动留一份上一版稳定视图分片，只保最新一版" 2>/dev/null || true
@@ -622,7 +622,7 @@ jobs:
           DEG=$(python3 -c "import json;print('、'.join(x.split(']')[1].split()[0] for x in (json.load(open('out/verify-release.json')).get('degraded') or [])))" 2>/dev/null || true)
           NOTES="按州分片稳定视图；tag 永久复用，更新=删旧资产+同名重传"
           NOTES="$NOTES
-          命名规则：文件名一律带国家代号 —— 全量分片 US-<州两字母>.ndjson.gz（例 US-AK.ndjson.gz）；原始档 bronze 同规则 US-bronze-<州两字母>.zip"
+          命名规则：文件名一律带国家代号 —— 全量分片 <国家码>-<州码>.ndjson.gz（例 US-AK.ndjson.gz、UK-ENG.ndjson.gz，国家码取自数据目录）；原始档 bronze 同规则 <国家码>-bronze-<州码>.zip"
           if [ -n "$DEG" ]; then NOTES="$NOTES
           ⚠ 完整性未达标、已排除出站用子集(site-view)、仅在本全量分片中带 _grade 标注的州：$DEG"; fi
           gh release create v0.1.0-dataset --title "地址数据集（稳定视图）" --notes "$NOTES" 2>/dev/null || true
@@ -645,12 +645,12 @@ jobs:
         run: |
           ls out/release/site/*.ndjson.gz >/dev/null 2>&1 || exit 0
           gh release create site-view --title "站用子集（A 级：五要素齐）" \
-            --notes "供美国地址生成器直接取用（仅含完整性达标州）；文件名 US-<州两字母>.ndjson.gz（例 US-AK.ndjson.gz）；每条记录的来源与许可见 sources.json" 2>/dev/null || true
+            --notes "供美国地址生成器直接取用（仅含完整性达标州）；文件名 <国家码>-<州码>.ndjson.gz（例 US-AK.ndjson.gz）；每条记录的来源与许可见 sources.json" 2>/dev/null || true
           for f in out/release/site/*.ndjson.gz; do gh release upload site-view "$f" --clobber; done
           for f in out/release/sources.json out/release/sources-[A-Z][A-Z].json; do
             if [ -f "$f" ]; then gh release upload site-view "$f" --clobber; fi
           done
-      - name: 清理旧命名资产（分片名统一带 US- 前缀，一次性自洁）
+      - name: 清理旧命名资产（分片名统一带国家码前缀，一次性自洁）
         if: steps.cadence.outputs.go == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

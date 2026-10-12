@@ -41,8 +41,11 @@ import re
 import shutil
 import subprocess
 import sys
+import re
 import time
 
+COUNTRY_RE = re.compile(r"^[a-z]{2,3}$")   # 目录首段=国家码（us / uk / de …）
+DEF_COUNTRY = "US"          # 目录里读不到国家码时的回退（--country 覆盖）
 NEW_DIR = "parsed"
 OUT_DIR = "out/release"
 MANIFEST = "data/release-manifest.json"
@@ -73,16 +76,24 @@ def key_state(key: str) -> str:
 
 # ────────────────────────── 输入采集 ──────────────────────────
 
-def collect_new(root: str = NEW_DIR) -> dict[str, list[str]]:
-    """{州目录: [规则产物 ndjson 路径]}（州目录只用于遍历，落分片看 key）"""
+def collect_new(root: str = NEW_DIR) -> tuple[dict[str, list[str]], dict[str, str]]:
+    """({州码: [规则产物 ndjson]}, {州码: 国家码})。
+
+    国家码**不写死**：从目录结构 `parsed/<国家码>/<州码>/…` 读出来 → 同一个仓库里
+    混放 us / uk / de 的源，也会各自落成 `<国家码>-<州码>.ndjson.gz`（US-AK / UK-ENG …）。
+    州目录只用于遍历，最终落哪个分片看记录里的 state 字段。
+    """
     out: dict[str, list[str]] = {}
+    cc: dict[str, str] = {}
     for path in glob.glob(os.path.join(root, "**", "*.ndjson"), recursive=True):
         rel = os.path.relpath(path, root).replace("\\", "/")
         parts = rel.split("/")
-        if len(parts) < 3 or parts[0] != "us":
+        if len(parts) < 3 or not COUNTRY_RE.match(parts[0]):
             continue
-        out.setdefault(parts[1].upper(), []).append(path)
-    return out
+        st = parts[1].upper()
+        out.setdefault(st, []).append(path)
+        cc.setdefault(st, parts[0].upper())     # 同州多国时取先出现的（异常情况，另有人查）
+    return out, cc
 
 
 def load_source_meta(path: str) -> dict[str, dict]:
@@ -352,7 +363,7 @@ def build_global_tsv(new: dict[str, list[str]], legacy_shards: dict[str, str],
 
 
 def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
-                 z2c: dict, c2z: dict) -> dict:
+                 z2c: dict, c2z: dict, cc_of: dict[str, str]) -> dict:
     """全局排序 → 按 key 的州边读边落分片（全量 + 站用子集）。返回每州统计。"""
     srt = raw + ".sorted"
     env = dict(os.environ, LC_ALL="C")     # 按字节序排：与 Python 比较一致，可复现
@@ -378,8 +389,10 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
                                   "inferred": {"city": 0, "zip": 0}})
         if st not in writers:
             writers[st] = [
-                gzip.open(os.path.join(out_dir, f"US-{st}.ndjson.gz"), "wt", encoding="utf-8"),
-                gzip.open(os.path.join(site_dir, f"US-{st}.ndjson.gz"), "wt", encoding="utf-8"),
+                gzip.open(os.path.join(out_dir, f"{cc_of.get(st, DEF_COUNTRY)}-{st}.ndjson.gz"),
+                          "wt", encoding="utf-8"),
+                gzip.open(os.path.join(site_dir, f"{cc_of.get(st, DEF_COUNTRY)}-{st}.ndjson.gz"),
+                          "wt", encoding="utf-8"),
             ]
         full, site = writers[st]
         rec = merge_group(cur_key, group, meta)
@@ -494,24 +507,29 @@ def main(argv=None) -> None:
     ap.add_argument("--sources-csv", default=SOURCE_TABLE)
     ap.add_argument("--state-file", default=STATE_FILE)
     ap.add_argument("--zip-dict", default=ZIP_DICT)
+    ap.add_argument("--country", default="US",
+                    help="源目录里读不到国家码时的回退（默认 US）")
     ap.add_argument("--strict-a", action="store_true",
                     help="A 级要求零推断字段（默认允许最多 1 个 zip_map）")
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--no-merged", action="store_true")
     a = ap.parse_args(argv)
-    global STRICT_A
+    global STRICT_A, DEF_COUNTRY
     STRICT_A = bool(a.strict_a)
+    DEF_COUNTRY = a.country.upper()
 
     def _st_of(p: str) -> str:      # 兼容 AK.ndjson.gz / US-AK.ndjson.gz 两种历史命名
         return os.path.basename(p).split(".")[0].split("-")[-1].upper()
 
     legacy_shards = {_st_of(p): p
                      for p in glob.glob(os.path.join(a.legacy, "*.ndjson.gz"))} if a.legacy else {}
-    new = collect_new(a.parsed)
+    new, cc_of = collect_new(a.parsed)
+    for _s in new:                       # 目录没带国家码的州 → 用 --country 兜底
+        cc_of.setdefault(_s, a.country.upper())
     meta = load_source_meta(a.sources_csv)
     state_meta = load_state_meta(a.state_file)
     z2c, c2z = load_zip_dict(a.zip_dict)
-    print(f"规则产物目录数 {len(new)}｜源总表 {len(meta)} 个｜ZIP 字典 {len(z2c):,} 条"
+    print(f"规则产物目录数 {len(new)}｜国家 {sorted(set(cc_of.values()))}｜源总表 {len(meta)} 个｜ZIP 字典 {len(z2c):,} 条"
           f"{'（未加载：不做任何推断）' if not z2c else ''}"
           + (f"｜[应急]老分片 {a.legacy}" if a.legacy else ""), flush=True)
 
@@ -569,12 +587,13 @@ def main(argv=None) -> None:
     if in_cnt["no_key"]:
         hard.append(f"[输入] 无 key 记录 {in_cnt['no_key']:,} 条（无法去重，已剔除）")
     print(f"输入 {in_cnt['in']:,} 条 → 全局按 key 排序…", flush=True)
-    stats = write_shards(raw, a.out, site_dir, meta, z2c, c2z)
+    stats = write_shards(raw, a.out, site_dir, meta, z2c, c2z, cc_of)
     shutil.rmtree(tmp_dir, ignore_errors=True)
 
     used_by_state: dict[str, set] = {}
     for st in sorted(stats):
-        out_path = os.path.join(a.out, f"US-{st}.ndjson.gz")          # 交付名带国家代号
+        shard = f"{cc_of.get(st, DEF_COUNTRY)}-{st}.ndjson.gz"   # 交付名：<国家码>-<州码>
+        out_path = os.path.join(a.out, shard)
         stt = stats[st]
         chk = audit_shard(out_path)                 # ← 写完回读，清单数字只看这里
         if chk["blank"]:
@@ -588,6 +607,7 @@ def main(argv=None) -> None:
         if chk["rows"] == 0:
             hard.append(f"[出厂]{st} 分片为空")
         manifest["states"][st] = {
+            "country": cc_of.get(st, DEF_COUNTRY), "file": shard,
             "rows": chk["rows"], "unique_keys": chk["unique"], "blank_lines": chk["blank"],
             "bytes": os.path.getsize(out_path), "sha256": sha256(out_path),
             "grades": stt["grades"], "multi_source": stt["multi_source"],
