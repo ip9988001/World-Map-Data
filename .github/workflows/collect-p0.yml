@@ -109,22 +109,15 @@ jobs:
           pattern: norm-*
           merge-multiple: true
 
-      - name: 合并去重（外部排序，内存恒定）+ 按州切片
+      # ⛔ 2026-10-12：本步原先调用 collectors/merge_stream.py，已彻底剔除。
+      # 该工具假设「输入已按整行排序 + key 是 JSON 首字段」——假设脆弱，破坏后会
+      # **静默错误合并**（同地址留多条且不报错）。文件已移入 legacy/collectors/，
+      # 合并统一走 scripts/build_release.py 的 TSV 契约（TAB 三列 key/prio/json + `sort -s`）。
+      - name: 【已废弃】合并去重（原 merge_stream 路径）
         run: |
-          set -o pipefail
-          df -h / | tail -1
-          mkdir -p out/merged
-          : > /tmp/all.ndjson
-          for f in $(find in -name 'normalized*.ndjson.gz' | sort); do gzip -dc "$f" >> /tmp/all.ndjson; done
-          for f in $(find in -name 'normalized*.ndjson' | sort); do cat "$f" >> /tmp/all.ndjson; done
-          wc -l /tmp/all.ndjson
-          LC_ALL=C sort -S 3G -T /tmp --parallel=2 /tmp/all.ndjson \
-            | python -m collectors.merge_stream - \
-                --out out/merged/merged.ndjson.gz \
-                --split-dir out/merged/by_state \
-                --report out/merged/merge_report.json
-          rm -f /tmp/all.ndjson
-          ls -la out/merged; du -sh out/merged/*
+          echo "✗ 本步已废弃：collectors/merge_stream.py 已移入 legacy/，不再有任何调用点。"
+          echo "  合并请走：python3 scripts/build_release.py --parsed parsed"
+          exit 1
 
       - name: 上传合并结果
         uses: actions/upload-artifact@v4
