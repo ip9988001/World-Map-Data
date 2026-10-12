@@ -403,6 +403,17 @@ jobs:
         run: |
           STAMP=$(date -u +%Y%m%d-%H%M)
           ( cd /tmp/asm && tar -czf parsed-$STAMP.tar.gz -C parsed . ) 2>/dev/null || true
+          # 底座「只增不减」硬校验：曾因取错底座导致快照 642MB→311MB→253MB 逐级缩水，
+          # 下游 publish 拿着残缺快照构建，被防缩水闸门拦下（连拦 3 次）。这里宁可不让它上传。
+          NEW_N=$(find /tmp/asm/parsed -name '*.ndjson' | wc -l)
+          OLD_TGZ=$(ls -1 /tmp/prev/*.tar.gz 2>/dev/null | sort | tail -1)
+          OLD_N=0
+          if [ -n "$OLD_TGZ" ]; then OLD_N=$(tar -tzf "$OLD_TGZ" 2>/dev/null | grep -c '\.ndjson$' || true); fi
+          echo "累积快照体检：上一份 $OLD_N 个 ndjson → 本次 $NEW_N 个"
+          if [ "$OLD_N" -gt 0 ] && [ "$NEW_N" -lt "$OLD_N" ]; then
+            echo "✗ 累积快照缩水（$OLD_N → $NEW_N 个 ndjson），拒绝上传：发布底座不允许比上一份小"
+            exit 1
+          fi
           if [ -s /tmp/asm/parsed-$STAMP.tar.gz ]; then
             gh release create cache-parsed --title "规则产物缓存" \
               --notes "各窗口 parsed 快照，保留最近 5 份" 2>/dev/null || true
@@ -566,6 +577,20 @@ jobs:
           last=$(ls -1 /tmp/cache/*.tar.gz 2>/dev/null | sort | tail -1)   # 同上：文件名排序才是时间序
           if [ -n "$last" ]; then tar -xzf "$last" -C parsed; fi
           find parsed -name '*.ndjson' | wc -l
+          # 输入体检：快照明显偏小就提前红，别等 40 分钟构建完才被闸门拦
+          python3 - <<'PYIN'
+          import glob, json
+          n = len(glob.glob('parsed/**/*.ndjson', recursive=True))
+          prev = 0
+          try:
+              m = json.load(open('data/release-manifest.json', encoding='utf-8'))
+              prev = int((m.get('sources') or {}).get('count') or 0)
+          except Exception:
+              pass
+          print(f"输入快照体检：{n} 个 ndjson 文件｜上一版发布内源数 {prev}")
+          if prev and n < prev * 0.5:
+              raise SystemExit(f"✗ 输入快照严重偏小（{n} 个文件 < 上一版源数 {prev} 的一半），拒绝构建")
+          PYIN
       - name: 存一份上一版清单（逐州对账用）
         if: steps.cadence.outputs.go == '1'
         run: |

@@ -44,6 +44,8 @@ import sys
 import re
 import time
 
+from quality_gate import check as quality_check, describe as quality_describe
+
 COUNTRY_RE = re.compile(r"^[a-z]{2,3}$")   # 目录首段=国家码（us / uk / de …）
 DEF_COUNTRY = "US"          # 目录里读不到国家码时的回退（--country 覆盖）
 NEW_DIR = "parsed"
@@ -276,6 +278,12 @@ def fill_and_grade(rec: dict, z2c: dict, c2z: dict) -> str:
                 rec["county_src"] = "zip_map"
             if not rec.get("county_fips") and d.get("county_fips"):
                 rec["county_fips"] = d["county_fips"]
+    # 形态闸门（单一事实来源 quality_gate）：门牌重复/城市残片/邮编非法 → D 级
+    # D 级不进站用子集（site/），只留在全量分片并带 _grade 标注，可审计、可事后修正。
+    _ok, _why = quality_check(rec)
+    if not _ok:
+        rec["_reject"] = _why
+        return "D"
     inferred = sum(1 for f in ("city", "zip") if rec.get(f + "_src") == "zip_map")
     if all(rec.get(f) for f in CORE_FIELDS) and (inferred == 0 if STRICT_A else inferred <= 1):
         return "A"
@@ -386,7 +394,7 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
             return
         st = cur_state
         s = stats.setdefault(st, {"keys": 0, "input_records": 0, "merged_away": 0,
-                                  "grades": {"A": 0, "B": 0, "C": 0}, "multi_source": 0,
+                                  "grades": {"A": 0, "B": 0, "C": 0, "D": 0}, "multi_source": 0, "reject": {},
                                   "inferred": {"city": 0, "zip": 0}})
         if st not in writers:
             writers[st] = [
@@ -402,6 +410,9 @@ def write_shards(raw: str, out_dir: str, site_dir: str, meta: dict,
         s["input_records"] += len(group)
         s["merged_away"] += len(group) - 1
         s["grades"][g] += 1
+        if g == "D":                       # 记账不合格原因，便于按州定位坏源
+            _r = rec.pop("_reject", "unknown")
+            s["reject"][_r] = s["reject"].get(_r, 0) + 1
         for f in ("city", "zip"):       # 可审计事实：这个州有多少条是字典推出来的（口径不是嘴上说的）
             if rec.get(f + "_src") == "zip_map":
                 s["inferred"][f] += 1
@@ -579,7 +590,7 @@ def main(argv=None) -> None:
                 "a_policy": ("A=五要素齐且推断字段为 0（--strict-a）" if STRICT_A
                              else "A=五要素齐且推断字段≤1（默认；字典只补空缺、标记为 zip_map）"),
                 "inferred_totals": {"city": 0, "zip": 0},
-                "grades": {"A": 0, "B": 0, "C": 0}, "sources": {}}
+                "grades": {"A": 0, "B": 0, "C": 0, "D": 0}, "rejects": {}, "sources": {}}
     hard: list[str] = []
 
     raw, in_cnt = build_global_tsv(new, legacy_shards, tmp_dir, z2c, c2z)
@@ -624,7 +635,9 @@ def main(argv=None) -> None:
         manifest["dedup_removed"] += stt["merged_away"]
         manifest["multi_source_records"] += stt["multi_source"]
         for g, n in stt["grades"].items():
-            manifest["grades"][g] += n
+            manifest["grades"][g] = manifest["grades"].get(g, 0) + n
+        for _why, _n in (stt.get("reject") or {}).items():
+            manifest["rejects"][_why] = manifest["rejects"].get(_why, 0) + _n
         used_by_state[st] = set()
         with gzip.open(out_path, "rt", encoding="utf-8") as fh:
             for line in fh:
@@ -633,6 +646,7 @@ def main(argv=None) -> None:
                         used_by_state[st].add(s)
         print(f"  {st}: {chk['rows']:,} 行（唯一 key {chk['unique']:,}｜空行 {chk['blank']}）"
               f"  A {stt['grades']['A']:,} / B {stt['grades']['B']:,} / C {stt['grades']['C']:,}"
+              f" / D {stt['grades'].get('D', 0):,}"
               f"｜多来源 {stt['multi_source']:,}｜并入去重 {stt['merged_away']:,}", flush=True)
 
     # 溯源引用表（含孤儿检测：不在源总表里的 source_id）
@@ -648,6 +662,11 @@ def main(argv=None) -> None:
         sys.exit(2)
 
     # 合并版放在硬门**之后**：不过门就不应该浪费磁盘和时间去拼全量单文件（P1-5 附带）
+    if manifest["grades"].get("D"):
+        _top = sorted((manifest.get("rejects") or {}).items(), key=lambda kv: -kv[1])[:5]
+        _txt = "｜".join(f"{quality_describe(k)} {v:,}" for k, v in _top)
+        print(f"⚠ 形态不合格 {manifest['grades']['D']:,} 条已判 D（不进站用子集）：{_txt}")
+
     if not a.no_merged:
         merged = os.path.join(a.out, "merged.clean.ndjson.gz")
         merged_parts = 0

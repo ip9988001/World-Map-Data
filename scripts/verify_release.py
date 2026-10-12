@@ -132,11 +132,11 @@ def scan_shard(path: str, head: int = 2000, tail: int = 500):
 def check_schema(recs: list[dict], state: str) -> tuple[dict, list[str]]:
     st = {"sampled": len(recs), "missing": 0, "bad_number": 0, "bad_zip": 0,
           "dup_key": 0, "cross_state": 0, "bad_state": 0, "empty_city": 0, "empty_zip": 0,
-          "grade_c": 0}
+          "grade_c": 0, "grade_d": 0}
     errs: list[str] = []
     seen: set[str] = set()
     for r in recs:
-        if r.get("_grade") == "C":
+        if r.get("_grade") in ("C", "D"):     # D = 形态不合格（门牌重复/城市残片等），同样豁免完整性检查
             # C 级只豁免「五要素完整性」那一项；key 重复 / 州码白名单**不豁免**（P1-4）——
             # 否则坏州码记录只要被打成 C 就能整片躲过校验。
             st["grade_c"] += 1
