@@ -1,0 +1,125 @@
+{
+ "name": "us_fl_volusia__volusia_fl_site_address",
+ "version": 1,
+ "note": "ArcGIS 站点地址图层把门牌号(HOUSE_NUM)、前置方位(PRE_DIR)、街名(STREET_NAME)、类型后缀(STREET_TYPE)、后置方位(POST_DIR)拆成五列，用模板拼回完整街道即可；注意小部分行把末词误存进 STREET_TYPE（如 STREET_NAME=DRAGONFLY, STREET_TYPE=RUN），模板顺序拼装可自然还原。",
+ "match": {
+  "columns_any": [
+   "HOUSE_NUM",
+   "STREET_NAME",
+   "ADDRESS"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   "PID"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HOUSE_NUM",
+  "street": "",
+  "city": "CITYNAME",
+  "zip": "ZIP",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "{PRE_DIR} {STREET_NAME} {STREET_TYPE} {POST_DIR}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.05,
+  "zip_max_miss": 0.05,
+  "max_junk": 0.05,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": "源内自带 CITYNAME 与 ZIP 列，无需豁免；忽略 CITY_ABBRV（缩写会污染去重 key）"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "PID": "030400000020",
+    "UNIT": null,
+    "HOUSE_NUM": 1620,
+    "PRE_DIR": null,
+    "STREET_NAME": "LAKE HARNEY",
+    "STREET_TYPE": "RD",
+    "POST_DIR": null,
+    "CITY_ABBRV": "OST",
+    "CITYNAME": "OSTEEN",
+    "ZIP": 32764,
+    "TYPE": 10,
+    "ADDRESS": "1620 LAKE HARNEY RD"
+   },
+   "expect": {
+    "number": "1620",
+    "street": "LAKE HARNEY RD",
+    "city": "OSTEEN",
+    "zip": "32764"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 14,
+    "PID": "032202010050",
+    "UNIT": null,
+    "HOUSE_NUM": 10220,
+    "PRE_DIR": null,
+    "STREET_NAME": "DRAGONFLY",
+    "STREET_TYPE": "RUN",
+    "POST_DIR": null,
+    "CITY_ABBRV": "MIM",
+    "CITYNAME": "MIMS",
+    "ZIP": 32754,
+    "TYPE": 10,
+    "ADDRESS": "10220 DRAGONFLY RUN"
+   },
+   "expect": {
+    "number": "10220",
+    "street": "DRAGONFLY RUN",
+    "city": "MIMS",
+    "zip": "32754"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 19,
+    "PID": "421705000050",
+    "UNIT": null,
+    "HOUSE_NUM": 1,
+    "PRE_DIR": null,
+    "STREET_NAME": "STONEQUARRY",
+    "STREET_TYPE": "TR",
+    "POST_DIR": null,
+    "CITY_ABBRV": "OB",
+    "CITYNAME": "ORMOND BEACH",
+    "ZIP": 32174,
+    "TYPE": 10,
+    "ADDRESS": "1 STONEQUARRY TR"
+   },
+   "expect": {
+    "number": "1",
+    "street": "STONEQUARRY TR",
+    "city": "ORMOND BEACH",
+    "zip": "32174"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/fl/volusia",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 02:39:35",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

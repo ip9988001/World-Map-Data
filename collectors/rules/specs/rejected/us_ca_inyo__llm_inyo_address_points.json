@@ -1,0 +1,125 @@
+{
+ "_rejected": {
+  "source_id": "us/ca/inyo",
+  "model": "deepseek-flash",
+  "errs": [
+   "single 列不存在：{FULL_ADDR}",
+   "example1 洗不出（spec_empty_single）",
+   "example2 洗不出（spec_empty_single）",
+   "example3 洗不出（spec_empty_single）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-13 02:36:00"
+ },
+ "spec": {
+  "name": "inyo_address_points",
+  "version": 1,
+  "note": "FULL_ADDR 是完整门牌串（号+街名），ST_NUM 为独立号列，TOWN 为城市；用 single 模式解析 FULL_ADDR 并把 TOWN 作城市，无 ZIP 列故豁免 zip",
+  "match": {
+   "columns_any": [
+    "FULL_ADDR"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "TOWN",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "{FULL_ADDR}",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源中无 zip/zipcode 列，仅有 OBJECTID/ST_NUM/UNIT2/FULL_ADDR/TOWN/created_user/created_date/last_edited_user/last_edited_date/GlobalID/Incorporated"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 88974,
+     "ST_NUM": 110,
+     "UNIT2": null,
+     "FULL_ADDR": "110 PIPER ST",
+     "TOWN": "BIG PINE",
+     "created_user": "InyoCounty",
+     "created_date": 1791795949666,
+     "last_edited_user": "InyoCounty",
+     "last_edited_date": 1791795949666,
+     "GlobalID": "fa85316c-0a22-4a2b-8299-ae4e395c25d6",
+     "Incorporated": "No"
+    },
+    "expect": {
+     "number": "110",
+     "street": "PIPER ST",
+     "city": "BIG PINE"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 88975,
+     "ST_NUM": 151,
+     "UNIT2": null,
+     "FULL_ADDR": "151 N RICHARDS ST",
+     "TOWN": "BIG PINE",
+     "created_user": "InyoCounty",
+     "created_date": 1791795949666,
+     "last_edited_user": "InyoCounty",
+     "last_edited_date": 1791795949666,
+     "GlobalID": "1adfd11f-f805-4c53-ab06-bf2c1bfc8744",
+     "Incorporated": "No"
+    },
+    "expect": {
+     "number": "151",
+     "street": "N RICHARDS ST",
+     "city": "BIG PINE"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 89003,
+     "ST_NUM": 501,
+     "UNIT2": null,
+     "FULL_ADDR": "501 N RICHARDS ST",
+     "TOWN": "BIG PINE",
+     "created_user": "InyoCounty",
+     "created_date": 1791795949666,
+     "last_edited_user": "InyoCounty",
+     "last_edited_date": 1791795949666,
+     "GlobalID": "4845332d-47f6-4b14-9ff2-eaa7371d168d",
+     "Incorporated": "No"
+    },
+    "expect": {
+     "number": "501",
+     "street": "N RICHARDS ST",
+     "city": "BIG PINE"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "_rejected": {
+  "source_id": "us/ca/alpine",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 29% 低于阈 30%",
+   "不如现有规则（29% < 100%）",
+   "契约 city_max_miss=0.25 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 158,
+   "kept": 46,
+   "kept_contentful": 46,
+   "ratio": 0.291,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-13 02:35:27"
+ },
+ "spec": {
+  "name": "alpine_county_situs_address",
+  "version": 1,
+  "note": "门牌号与街名同处 Situs 单列（如 '255 SUNRISE TRL'），适用 single 模式；SITUSCITY 把市与州并写成 'Markleeville CA' 且源内无 ZIP 列，故 zip 豁免、city 直取 SITUSCITY 以免拆错。",
+  "match": {
+   "columns_any": [
+    "Situs"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "SITUSCITY",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "Situs",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.25,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源中无任何 ZIP/ZIPCODE 列（仅有 Situs 与 SITUSCITY 两列地址信息），故 zip 豁免；city 由 SITUSCITY 提供故不豁免。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "Situs": "255 SUNRISE TRL",
+     "SITUSCITY": "Markleeville CA"
+    },
+    "expect": {
+     "number": "255",
+     "street": "SUNRISE TRL"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 27,
+     "Situs": "20865 HWY 88",
+     "SITUSCITY": "Markleeville CA"
+    },
+    "expect": {
+     "number": "20865",
+     "street": "HWY 88"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 18,
+     "Situs": "2155 CARSON RIVER RD",
+     "SITUSCITY": "Markleeville CA"
+    },
+    "expect": {
+     "number": "2155",
+     "street": "CARSON RIVER RD"
+    }
+   }
+  ]
+ }
+}

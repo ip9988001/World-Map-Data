@@ -1,0 +1,112 @@
+{
+ "name": "us_ga_dougherty__dougherty_address_point",
+ "version": 1,
+ "note": "门牌号与街名分量列齐全（STNUM/STDIR/STNAME/STSUF），且另有已拼好 ADDRESS 列；用 columns 模式按分量拼接最稳，源内无 city/zip 列故豁免。",
+ "match": {
+  "columns_any": [
+   "STNUM",
+   "STNAME",
+   "STSUF"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STNUM",
+  "street": "",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "{STDIR} {STNAME} {STSUF}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "源字段中无 city / zip / state 列；CityCode 值形如 CNTY 为区域代码（非市名），不能当 city 使用，故豁免。"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "PARCEL_NUM": "00128/00001/002",
+    "STNUM": 2521,
+    "SUBADD": " ",
+    "STDIR": " ",
+    "STNAME": "CORDELE",
+    "STSUF": "RD",
+    "ADDRESS": "2521 CORDELE RD",
+    "AssignDate": -2209939200000,
+    "Source": "Parcels",
+    "AptType": null,
+    "UnitType": null,
+    "Comments": null,
+    "CityCode": "CNTY",
+    "created_user": "jkendall8",
+    "created_date": 1777553665277,
+    "last_edited_user": "jkendall8",
+    "last_edited_date": 1777553665277,
+    "UnitName": null,
+    "GlobalID": "5c7f10ef-6be3-4db5-a957-574e52118052"
+   },
+   "expect": {
+    "number": "2521",
+    "street": "CORDELE RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 17,
+    "PARCEL_NUM": "00126/00001/1BB",
+    "STNUM": 2817,
+    "SUBADD": " ",
+    "STDIR": " ",
+    "STNAME": "KIRKSEY",
+    "STSUF": "RD",
+    "ADDRESS": "2817 KIRKSEY RD",
+    "AssignDate": -2209939200000,
+    "Source": "Parcels",
+    "AptType": null,
+    "UnitType": null,
+    "Comments": null,
+    "CityCode": "CNTY",
+    "created_user": "jkendall8",
+    "created_date": 1777553665277,
+    "last_edited_user": "jkendall8",
+    "last_edited_date": 1777553665277,
+    "UnitName": null,
+    "GlobalID": "a8242c3f-1fae-4ae7-938f-bc844abe774a"
+   },
+   "expect": {
+    "number": "2817",
+    "street": "KIRKSEY RD"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ga/dougherty",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 02:40:15",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

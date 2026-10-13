@@ -1,0 +1,125 @@
+{
+ "name": "us_ca_city_of_santa_cruz__santa_cruz_parcel_address",
+ "version": 1,
+ "note": "该 ArcGIS FeatureServer 直接把门牌号(STNUM)与街名(STNAME)拆成独立列，无需字符串解析；ZIP5 是干净的 5 位邮编列，但 city 仅混在 SiteAdd2 里，无法可靠拆分故留空。",
+ "match": {
+  "columns_any": [
+   "STNUM",
+   "STNAME",
+   "SiteAdd2"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STNUM",
+  "street": "STNAME",
+  "city": "",
+  "zip": "ZIP5",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": false,
+  "exempt_reason": "源中无独立 city 列，城市名只以 'SANTA CRUZ,  CA  95062-2529' 形式混在 SiteAdd2 里（且含 CAPITOLA/SOQUEL/PARADISE PARK 等不同地名），拆分易污染去重 key，故仅取 ZIP5 作邮编，city 留空"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "STNAME": "EDMUND LN",
+    "STSUFFIX": " ",
+    "STNUM": 2052,
+    "APT": " ",
+    "NOMAIL": "",
+    "ZIP5": 95010,
+    "ZIP4": 0,
+    "APN": "034-412-62",
+    "APNNODASH": "03441262",
+    "SUBParcel": "03441262",
+    "Address": "2052 EDMUND LN",
+    "SiteAdd2": "CAPITOLA,  CA  95010-2529",
+    "SCCityLMT": "No",
+    "EPLUNID": "ADR-000001"
+   },
+   "expect": {
+    "number": "2052",
+    "street": "EDMUND LN"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 8,
+    "STNAME": "24TH AVE",
+    "STSUFFIX": " ",
+    "STNUM": 805,
+    "APT": "#E",
+    "NOMAIL": "",
+    "ZIP5": 95062,
+    "ZIP4": 0,
+    "APN": "028-071-16",
+    "APNNODASH": "02807116",
+    "SUBParcel": "02807116",
+    "Address": "805 24TH AVE #E",
+    "SiteAdd2": "SANTA CRUZ,  CA  95062-4222",
+    "SCCityLMT": "No",
+    "EPLUNID": "ADR-000013"
+   },
+   "expect": {
+    "number": "805",
+    "street": "24TH AVE"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 10,
+    "STNAME": "ST BERNARD ST",
+    "STSUFFIX": " ",
+    "STNUM": 194,
+    "APT": " ",
+    "NOMAIL": "",
+    "ZIP5": 95060,
+    "ZIP4": 0,
+    "APN": "061-292-18",
+    "APNNODASH": "06129218",
+    "SUBParcel": "06129218",
+    "Address": "194 ST BERNARD ST",
+    "SiteAdd2": "PARADISE PARK,  CA  95060",
+    "SCCityLMT": "No",
+    "EPLUNID": "ADR-000015"
+   },
+   "expect": {
+    "number": "194",
+    "street": "ST BERNARD ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ca/city_of_santa_cruz",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 02:35:40",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  }
+ }
+}

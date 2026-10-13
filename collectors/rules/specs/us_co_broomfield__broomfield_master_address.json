@@ -1,0 +1,111 @@
+{
+ "name": "us_co_broomfield__broomfield_master_address",
+ "version": 1,
+ "note": "ArcGIS REST 门牌点图层，号码与街名分量各自成列（ADDRESS_NUMBER + STREET_* 族），用模板拼街名即可拿到 100% 的门牌号+街名，city/state/zip 同表可用。",
+ "match": {
+  "columns_any": [
+   "FULL_ADDRESS",
+   "STREET_NAME",
+   "ADDRESS_NUMBER"
+  ],
+  "columns_all": [
+   "ADDRESS_NUMBER",
+   "STREET_NAME"
+  ],
+  "columns_none": [
+   "PARCEL_PIN"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADDRESS_NUMBER",
+  "street": "STREET_NAME",
+  "city": "CITY",
+  "zip": "ZIPCODE",
+  "state": "STATE"
+ },
+ "number_template": "{ADDRESS_NUMBER}{ADDRESS_NUMBER_SUFFIX}",
+ "street_template": "{STREET_PREDIRECTIONAL} {STREET_PRETYPE} {STREET_NAME} {STREET_POSTTYPE} {STREET_POSTDIRECTIONAL}",
+ "full": "FULL_ADDRESS",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "FULL_ADDRESS": "11600 WADSWORTH PKWY",
+    "ADDRESS_NUMBER": 11600,
+    "STREET_PREDIRECTIONAL": null,
+    "STREET_PRETYPE": null,
+    "STREET_NAME": "WADSWORTH",
+    "STREET_POSTTYPE": "PKWY",
+    "STREET_POSTDIRECTIONAL": null,
+    "CITY": "BROOMFIELD",
+    "STATE": "CO",
+    "ZIPCODE": 80021
+   },
+   "expect": {
+    "number": "11600",
+    "street": "WADSWORTH PKWY"
+   }
+  },
+  {
+   "row": {
+    "FULL_ADDRESS": "12400 W 112TH AVE",
+    "ADDRESS_NUMBER": 12400,
+    "STREET_PREDIRECTIONAL": "W",
+    "STREET_PRETYPE": null,
+    "STREET_NAME": "112TH",
+    "STREET_POSTTYPE": "AVE",
+    "STREET_POSTDIRECTIONAL": null,
+    "CITY": "BROOMFIELD",
+    "STATE": "CO",
+    "ZIPCODE": 80021
+   },
+   "expect": {
+    "number": "12400",
+    "street": "W 112TH AVE"
+   }
+  },
+  {
+   "row": {
+    "FULL_ADDRESS": "4917 BUFFALO GRASS LOOP",
+    "ADDRESS_NUMBER": 4917,
+    "STREET_PREDIRECTIONAL": null,
+    "STREET_PRETYPE": null,
+    "STREET_NAME": "BUFFALO GRASS",
+    "STREET_POSTTYPE": "LOOP",
+    "STREET_POSTDIRECTIONAL": null,
+    "CITY": "BROOMFIELD",
+    "STATE": "CO",
+    "ZIPCODE": 80023
+   },
+   "expect": {
+    "number": "4917",
+    "street": "BUFFALO GRASS LOOP"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/co/broomfield",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 02:36:46",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

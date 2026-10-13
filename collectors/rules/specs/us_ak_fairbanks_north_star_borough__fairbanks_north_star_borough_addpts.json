@@ -1,0 +1,105 @@
+{
+ "name": "us_ak_fairbanks_north_star_borough__fairbanks_north_star_borough_addpts",
+ "version": 1,
+ "note": "该 FeatureServer 自带 HSE_NUMB(门牌号) 与 FULL_STREET(拼好的街名)，直接用 columns 模式取两列最稳；PLACE_NAME/ZIPCODE 全为空，故豁免 city/zip。",
+ "match": {
+  "columns_any": [
+   "FULL_STREET",
+   "HSE_NUMB"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HSE_NUMB",
+  "street": "FULL_STREET",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "源中无可用城市列（PLACE_NAME 全为 null）也无邮编列（ZIPCODE 全为 null），仅有 FECC_COMM 社区码 FAIR，非城市名，故豁免"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 15,
+    "ADD_ID": 40891,
+    "HSE_NUMB": 6301,
+    "SNAME": "OLD AIRPORT",
+    "SNAM_POSTYPE": "RD",
+    "FULL_STREET": "OLD AIRPORT RD",
+    "FULL_ADDRESS": "6301 OLD AIRPORT RD",
+    "ZIPCODE": null
+   },
+   "expect": {
+    "number": "6301",
+    "street": "OLD AIRPORT RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 30,
+    "ADD_ID": 21738,
+    "HSE_NUMB": 210,
+    "SNAME": "CLARKSON",
+    "SNAM_POSTYPE": "DR",
+    "FULL_STREET": "CLARKSON DR",
+    "FULL_ADDRESS": "210 CLARKSON DR",
+    "ZIPCODE": null
+   },
+   "expect": {
+    "number": "210",
+    "street": "CLARKSON DR"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 20,
+    "ADD_ID": 40887,
+    "HSE_NUMB": 505,
+    "SNAME": "ILLINOIS",
+    "SNAM_POSTYPE": "ST",
+    "FULL_STREET": "ILLINOIS ST",
+    "SUB_ADD_TYPE": "UNIT",
+    "SUB_ADD_ID": "4",
+    "FULL_ADDRESS": "505 ILLINOIS ST Unit 4",
+    "ZIPCODE": null
+   },
+   "expect": {
+    "number": "505",
+    "street": "ILLINOIS ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ak/fairbanks_north_star_borough",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 02:35:08",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

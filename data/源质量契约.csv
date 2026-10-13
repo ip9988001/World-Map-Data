@@ -3,3 +3,8 @@ us/de/kent,0.2,0.2,0.2,,,
 us/ia/wapello,0.2,0.2,0.2,,,
 us/md/cecil,0.2,0.2,0.2,,1,图层无 ZIP 列，仅有 State=MD；CITY4 为 4 字符截断代码（PORT/NORT/ELKT），不可当作 ZIP 或市名使用
 us/me/lewiston,0.2,0.2,0.2,,1,源 schema 无 ZIP 列，也无州列；可用地址列仅 ADDRNO(门牌号)、STREET(街名)、LOCATION(合并地址)、JURISTICTION(城市)
+us/ak/fairbanks_north_star_borough,0.2,0.2,0.2,1,1,源中无可用城市列（PLACE_NAME 全为 null）也无邮编列（ZIPCODE 全为 null），仅有 FECC_COMM 社区码 FAIR，非城市名，故豁免
+us/ca/city_of_santa_cruz,0.2,0.2,0.2,1,,"源中无独立 city 列，城市名只以 'SANTA CRUZ,  CA  95062-2529' 形式混在 SiteAdd2 里（且含 CAPITOLA/SOQUEL/PARADISE PARK 等不同地名），拆分易污染去重 key，故仅取 ZIP5 作邮编，city 留空"
+us/co/broomfield,0.2,0.2,0.2,,,
+us/fl/volusia,0.05,0.05,0.05,,,源内自带 CITYNAME 与 ZIP 列，无需豁免；忽略 CITY_ABBRV（缩写会污染去重 key）
+us/ga/dougherty,0.2,0.2,0.2,1,1,源字段中无 city / zip / state 列；CityCode 值形如 CNTY 为区域代码（非市名），不能当 city 使用，故豁免。
