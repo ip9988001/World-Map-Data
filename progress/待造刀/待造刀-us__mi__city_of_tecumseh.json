@@ -2,7 +2,7 @@
  "source_id": "us/mi/city_of_tecumseh",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 3,633 条 > 真门牌号行 293 条×150% → 拒绝这套产物；field_guess@v2:合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）；concat_addr@v2:合规 129/3643 = 4%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293））→ 造新规则",
- "decided_at": "2026-10-13 02:12:39",
+ "decided_at": "2026-10-13 09:27:53",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -170,7 +170,7 @@
    "seconds": 1.1
   },
   {
-   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
    "rows": 3707,
    "kept": 0,
    "contentful": 3643,
@@ -211,7 +211,7 @@
    "seconds": 1.2
   },
   {
-   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
    "rows": 3707,
    "kept": 0,
    "contentful": 3643,
@@ -252,7 +252,7 @@
    "seconds": 1.4
   },
   {
-   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
    "rows": 3707,
    "kept": 0,
    "contentful": 3643,
@@ -293,7 +293,7 @@
    "seconds": 1.6
   },
   {
-   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
    "rows": 3707,
    "kept": 0,
    "contentful": 3643,
@@ -334,7 +334,7 @@
    "seconds": 1.8
   },
   {
-   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
    "rows": 3707,
    "kept": 0,
    "contentful": 3643,
@@ -373,6 +373,211 @@
    },
    "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
    "seconds": 2.0
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 3707,
+   "kept": 0,
+   "contentful": 3643,
+   "kept_contentful": 0,
+   "true_addr": 293,
+   "ratio": 0.0,
+   "coverage": 0.983,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 3643,
+    "no_address_trace": 64
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
+   "seconds": 2.2
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 3707,
+   "kept": 0,
+   "contentful": 3643,
+   "kept_contentful": 0,
+   "true_addr": 293,
+   "ratio": 0.0,
+   "coverage": 0.983,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 3643,
+    "no_address_trace": 64
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
+   "seconds": 2.3
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 3707,
+   "kept": 0,
+   "contentful": 3643,
+   "kept_contentful": 0,
+   "true_addr": 293,
+   "ratio": 0.0,
+   "coverage": 0.983,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 3643,
+    "no_address_trace": 64
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
+   "seconds": 2.5
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 3707,
+   "kept": 0,
+   "contentful": 3643,
+   "kept_contentful": 0,
+   "true_addr": 293,
+   "ratio": 0.0,
+   "coverage": 0.983,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 3643,
+    "no_address_trace": 64
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
+   "seconds": 2.7
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 3707,
+   "kept": 0,
+   "contentful": 3643,
+   "kept_contentful": 0,
+   "true_addr": 293,
+   "ratio": 0.0,
+   "coverage": 0.983,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 3643,
+    "no_address_trace": 64
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/3643 = 0%（阈 30%；总行 3,707，带地址 3,643，真门牌号 293）",
+   "seconds": 2.9
   }
  ],
  "evidence": {},

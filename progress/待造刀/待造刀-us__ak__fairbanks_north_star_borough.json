@@ -1,0 +1,635 @@
+{
+ "source_id": "us/ak/fairbanks_north_star_borough",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 36,500 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 35,554 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物；concat_addr@v2:合规 9796/36500 = 27%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412））→ 造新规则",
+ "decided_at": "2026-10-13 09:27:14",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 36501,
+   "kept": 36500,
+   "contentful": 36500,
+   "kept_contentful": 36500,
+   "true_addr": 11412,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 36500,
+     "zip": 36500
+    },
+    "junk_rate": 0.0,
+    "per_street": 12.6,
+    "streets": 2896,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 36,500 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物",
+   "seconds": 1.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 36501,
+   "kept": 35554,
+   "contentful": 36500,
+   "kept_contentful": 35554,
+   "true_addr": 11412,
+   "ratio": 0.974,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 946,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 35051,
+     "zip": 35554
+    },
+    "junk_rate": 0.0,
+    "per_street": 12.68,
+    "streets": 2804,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 35,554 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物",
+   "seconds": 2.3
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 36501,
+   "kept": 9796,
+   "contentful": 36500,
+   "kept_contentful": 9796,
+   "true_addr": 11412,
+   "ratio": 0.268,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 26704,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 9736,
+     "zip": 9796
+    },
+    "junk_rate": 0.0,
+    "per_street": 14.84,
+    "streets": 660,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 9796/36500 = 27%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 4.5
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 36501,
+   "kept": 36107,
+   "contentful": 36500,
+   "kept_contentful": 36107,
+   "true_addr": 11412,
+   "ratio": 0.989,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 393,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 36107,
+     "zip": 36107
+    },
+    "junk_rate": 0.0,
+    "per_street": 11.75,
+    "streets": 3072,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 36,107 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物",
+   "seconds": 5.7
+  },
+  {
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
+   "rows": 36501,
+   "kept": 36500,
+   "contentful": 36500,
+   "kept_contentful": 36500,
+   "true_addr": 11412,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 36500,
+     "zip": 36500
+    },
+    "junk_rate": 0.0,
+    "per_street": 12.62,
+    "streets": 2892,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 36,500 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物",
+   "seconds": 6.9
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 7.5
+  },
+  {
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 26704,
+    "no_street": 9796,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 8.5
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 9.2
+  },
+  {
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 10.0
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 10.7
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 11.3
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 12.1
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 12.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 36501,
+   "kept": 0,
+   "contentful": 36500,
+   "kept_contentful": 0,
+   "true_addr": 11412,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 36500,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": true,
+     "zip": true
+    },
+    "contract": true
+   },
+   "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
+   "seconds": 13.5
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "ADD_ID": 40973,
+   "HSE_NUMB": 2058,
+   "SNAM_PREMOD": null,
+   "SNAM_PREDIR": null,
+   "SNAME": "LAKEVIEW TERRACE 2",
+   "SNAM_POSTYPE": "RD",
+   "SNAM_POSDIR": null,
+   "SNAM_POSMOD": null,
+   "FULL_STREET": "LAKEVIEW TERRACE 2 RD",
+   "SUB_ADD_TYPE": null,
+   "SUB_ADD_ID": null,
+   "FULL_ADDRESS": "2058 LAKEVIEW TERRACE 2 RD",
+   "PLACE_NAME": null,
+   "FECC_COMM": "FAIR",
+   "ZIPCODE": null,
+   "ADD_TYPE": "ADDBLD",
+   "NOTES": null,
+   "STATUS": "ACTIVE",
+   "MOD_DATE": 1336521600000,
+   "GIS_ID": null,
+   "GlobalID": "2301e6b8-fa81-4c34-b946-4fcef0884f22",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADD_ID",
+  "ADD_TYPE",
+  "FECC_COMM",
+  "FULL_ADDRESS",
+  "FULL_STREET",
+  "GIS_ID",
+  "GlobalID",
+  "HSE_NUMB",
+  "MOD_DATE",
+  "NOTES",
+  "OBJECTID",
+  "PLACE_NAME",
+  "SNAME",
+  "SNAM_POSDIR",
+  "SNAM_POSMOD",
+  "SNAM_POSTYPE",
+  "SNAM_PREDIR",
+  "SNAM_PREMOD",
+  "STATUS",
+  "SUB_ADD_ID",
+  "SUB_ADD_TYPE",
+  "ZIPCODE",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

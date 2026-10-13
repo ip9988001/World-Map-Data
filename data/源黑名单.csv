@@ -99,3 +99,4 @@ us/wv/roane,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0
 us/in/porter,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-13 02:07,2026-11-12,1
 us/pa/venango,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-13 01:34,2026-11-12,1
 us/ca/colusa,NOT_ADDRESS,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用,{},2026-10-13 01:26,2026-11-12,1
+us/wi/marathon,SOURCE_BROKEN,"取数失败：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service parcel_info/MapServer not found ', 'details': []}","{""url"": ""https://gis2.co.marathon.wi.us/arcgis/rest/services/parcel_info/MapServer/5"", ""status"": 404, ""bytes"": 0, ""content_type"": """", ""head"": ""Not Found"", ""verdict_hint"": ""SOURCE_BROKEN: 404 资源不存在""}",2026-10-13 09:45,2026-11-12,1

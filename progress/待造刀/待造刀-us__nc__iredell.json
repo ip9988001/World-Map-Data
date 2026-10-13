@@ -2,7 +2,7 @@
  "source_id": "us/nc/iredell",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 117,598 条 > 真门牌号行 58,587 条×150% → 拒绝这套产物；field_guess@v2:合规 902/117618 = 1%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）；concat_addr@v2:合规 16443/117618 = 14%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587））→ 造新规则",
- "decided_at": "2026-10-13 02:09:59",
+ "decided_at": "2026-10-13 09:44:24",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -43,7 +43,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 117,598 条 > 真门牌号行 58,587 条×150% → 拒绝这套产物",
-   "seconds": 6.5
+   "seconds": 10.5
   },
   {
    "rule": "field_guess@v2",
@@ -84,7 +84,7 @@
     "contract": false
    },
    "why": "合规 902/117618 = 1%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 11.1
+   "seconds": 17.1
   },
   {
    "rule": "concat_addr@v2",
@@ -125,7 +125,7 @@
     "contract": false
    },
    "why": "合规 16443/117618 = 14%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 23.8
+   "seconds": 35.2
   },
   {
    "rule": "concat_addr@v1",
@@ -167,7 +167,130 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 116,503 条 > 真门牌号行 58,587 条×150% → 拒绝这套产物",
-   "seconds": 30.4
+   "seconds": 45.8
+  },
+  {
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
+   "rows": 118504,
+   "kept": 0,
+   "contentful": 117618,
+   "kept_contentful": 0,
+   "true_addr": 58587,
+   "ratio": 0.0,
+   "coverage": 0.993,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 117618,
+    "no_address_trace": 886
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
+   "seconds": 51.7
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 118504,
+   "kept": 0,
+   "contentful": 117618,
+   "kept_contentful": 0,
+   "true_addr": 58587,
+   "ratio": 0.0,
+   "coverage": 0.993,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 117618,
+    "no_address_trace": 886
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
+   "seconds": 57.6
+  },
+  {
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
+   "rows": 118504,
+   "kept": 0,
+   "contentful": 117618,
+   "kept_contentful": 0,
+   "true_addr": 58587,
+   "ratio": 0.0,
+   "coverage": 0.993,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 117618,
+    "no_address_trace": 886
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
+   "seconds": 64.6
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -208,7 +331,89 @@
     "contract": false
    },
    "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 34.5
+   "seconds": 70.5
+  },
+  {
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
+   "rows": 118504,
+   "kept": 0,
+   "contentful": 117618,
+   "kept_contentful": 0,
+   "true_addr": 58587,
+   "ratio": 0.0,
+   "coverage": 0.993,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 117618,
+    "no_address_trace": 886
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
+   "seconds": 76.9
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 118504,
+   "kept": 0,
+   "contentful": 117618,
+   "kept_contentful": 0,
+   "true_addr": 58587,
+   "ratio": 0.0,
+   "coverage": 0.993,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 117618,
+    "no_address_trace": 886
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
+   "seconds": 83.2
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -249,7 +454,7 @@
     "contract": false
    },
    "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 38.5
+   "seconds": 89.1
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -290,7 +495,7 @@
     "contract": false
    },
    "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 42.9
+   "seconds": 95.6
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -331,7 +536,7 @@
     "contract": false
    },
    "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 46.9
+   "seconds": 101.5
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -372,7 +577,7 @@
     "contract": false
    },
    "why": "合规 0/117618 = 0%（阈 30%；总行 118,504，带地址 117,618，真门牌号 58,587）",
-   "seconds": 51.4
+   "seconds": 108.1
   }
  ],
  "evidence": {},

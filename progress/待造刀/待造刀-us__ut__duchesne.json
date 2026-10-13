@@ -2,7 +2,7 @@
  "source_id": "us/ut/duchesne",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 9,775 条 > 真门牌号行 3,241 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 9,775 条 > 真门牌号行 3,241 条×150% → 拒绝这套产物；field_guess@v2:合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241））→ 造新规则",
- "decided_at": "2026-10-13 02:05:41",
+ "decided_at": "2026-10-13 09:45:41",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -42,7 +42,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 9,775 条 > 真门牌号行 3,241 条×150% → 拒绝这套产物",
-   "seconds": 1.7
+   "seconds": 2.1
   },
   {
    "rule": "mapping@v1",
@@ -82,7 +82,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 9,775 条 > 真门牌号行 3,241 条×150% → 拒绝这套产物",
-   "seconds": 3.3
+   "seconds": 4.1
   },
   {
    "rule": "field_guess@v2",
@@ -123,7 +123,130 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 4.7
+   "seconds": 5.9
+  },
+  {
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
+   "rows": 32354,
+   "kept": 0,
+   "contentful": 9775,
+   "kept_contentful": 0,
+   "true_addr": 3241,
+   "ratio": 0.0,
+   "coverage": 0.302,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 22579,
+    "no_number": 9775
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
+   "seconds": 7.6
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 32354,
+   "kept": 0,
+   "contentful": 9775,
+   "kept_contentful": 0,
+   "true_addr": 3241,
+   "ratio": 0.0,
+   "coverage": 0.302,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 22579,
+    "no_number": 9775
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
+   "seconds": 9.4
+  },
+  {
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
+   "rows": 32354,
+   "kept": 0,
+   "contentful": 9775,
+   "kept_contentful": 0,
+   "true_addr": 3241,
+   "ratio": 0.0,
+   "coverage": 0.302,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 22579,
+    "no_number": 9775
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
+   "seconds": 11.2
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -164,7 +287,89 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 6.1
+   "seconds": 13.0
+  },
+  {
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
+   "rows": 32354,
+   "kept": 0,
+   "contentful": 9775,
+   "kept_contentful": 0,
+   "true_addr": 3241,
+   "ratio": 0.0,
+   "coverage": 0.302,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 22579,
+    "no_number": 9775
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
+   "seconds": 14.8
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 32354,
+   "kept": 0,
+   "contentful": 9775,
+   "kept_contentful": 0,
+   "true_addr": 3241,
+   "ratio": 0.0,
+   "coverage": 0.302,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 22579,
+    "no_number": 9775
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
+   "seconds": 16.6
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -205,7 +410,7 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 7.5
+   "seconds": 18.3
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -246,7 +451,7 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 9.0
+   "seconds": 20.1
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -287,7 +492,7 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 10.4
+   "seconds": 21.9
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -328,7 +533,7 @@
     "contract": false
    },
    "why": "合规 0/9775 = 0%（阈 30%；总行 32,354，带地址 9,775，真门牌号 3,241）",
-   "seconds": 11.8
+   "seconds": 23.7
   }
  ],
  "evidence": {},
