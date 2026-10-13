@@ -1,0 +1,307 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Postal_City",
+  "number": "Address_Number",
+  "state": "State",
+  "street": "Prefix_Type",
+  "unit": "Unit_Indicator",
+  "zip": "Zip_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:31",
+ "county": "Sacramento",
+ "curated_cols": {
+  "city": "Postal_City",
+  "number": "Address_Number",
+  "state": "State",
+  "street": "Prefix_Type",
+  "zip": "Zip_Code"
+ },
+ "fields": [
+  "OBJECTID",
+  "Address_ID",
+  "Jurisdiction",
+  "Address_Number",
+  "Address_Number_Suffix",
+  "Prefix_Type",
+  "Pre_Directional",
+  "Street_Name",
+  "Street_Suffix",
+  "Post_Directional",
+  "Unit_Indicator",
+  "Unit_Number",
+  "Postal_City",
+  "Zip_Code",
+  "Zip4",
+  "State",
+  "Address_Line_1",
+  "Address_Line_2",
+  "Full_Street",
+  "Centerline_ID",
+  "USPS_Deliverable",
+  "State_Plane_X",
+  "State_Plane_Y",
+  "Longitude_X",
+  "Latitude_Y",
+  "Input_DateTime",
+  "Last_Update_DateTime"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {
+  "unit": "Unit_Indicator"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Address_ID": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "583788",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Line_1": {
+    "带特殊字符": 0,
+    "最短": "915 N B ST",
+    "最长": "601 CANNERY AVE # 202",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Line_2": {
+    "带特殊字符": 300,
+    "最短": "SACRAMENTO, CA 95811",
+    "最长": "SACRAMENTO, CA 95811-0107",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Number": {
+    "带特殊字符": 0,
+    "最短": "225",
+    "最长": "225",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Number_Suffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Centerline_ID": {
+    "带特殊字符": 0,
+    "最短": "27214",
+    "最长": "27214",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Full_Street": {
+    "带特殊字符": 0,
+    "最短": "N B ST",
+    "最长": "TOWNSHIP NINE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Input_DateTime": {
+    "带特殊字符": 0,
+    "最短": "1122015600000",
+    "最长": "1122015600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Jurisdiction": {
+    "带特殊字符": 0,
+    "最短": "SACRAMENTO",
+    "最长": "SACRAMENTO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Last_Update_DateTime": {
+    "带特殊字符": 0,
+    "最短": "1490029884000",
+    "最长": "1490029884000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Latitude_Y": {
+    "带特殊字符": 0,
+    "最短": "38.598269087003",
+    "最长": "38.594804305992085",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Longitude_X": {
+    "带特殊字符": 0,
+    "最短": "-121.490919723467",
+    "最长": "-121.50533360815587",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Directional": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Postal_City": {
+    "带特殊字符": 0,
+    "最短": "SACRAMENTO",
+    "最长": "SACRAMENTO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Pre_Directional": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 233,
+    "空率": 0.777
+   },
+   "Prefix_Type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "CA",
+    "最长": "CA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State_Plane_X": {
+    "带特殊字符": 0,
+    "最短": "6707212.2399",
+    "最长": "6703045.975267",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State_Plane_Y": {
+    "带特殊字符": 0,
+    "最短": "1980136.5699",
+    "最长": "1980330.630536",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Name": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "TOWNSHIP NINE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Suffix": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "USPS_Deliverable": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit_Indicator": {
+    "带特殊字符": 0,
+    "最短": "#",
+    "最长": "BLDG",
+    "空": 94,
+    "空率": 0.313
+   },
+   "Unit_Number": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "202",
+    "空": 94,
+    "空率": 0.313
+   },
+   "Zip4": {
+    "带特殊字符": 0,
+    "最短": "0107",
+    "最长": "0107",
+    "空": 37,
+    "空率": 0.123
+   },
+   "Zip_Code": {
+    "带特殊字符": 0,
+    "最短": "95811",
+    "最长": "95811",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "523166c8c687b75b",
+  "total": 710777,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 710777,
+   "full": 710777,
+   "number": 710777,
+   "state": 710777,
+   "street": 710777,
+   "zip": 710777
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 710777,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Address_Number street=Prefix_Type city=Postal_City zip=Zip_Code",
+ "sample_hash": "523166c8c687b75b",
+ "site_cols": [
+  "Address_ID",
+  "Address_Number",
+  "Address_Number_Suffix",
+  "Street_Name",
+  "Street_Suffix"
+ ],
+ "source_id": "us/ca/sacramento",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://services1.arcgis.com/5NARefyPVtAeuJPU/ArcGIS/rest/services/Address/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

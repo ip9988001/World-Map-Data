@@ -1,0 +1,309 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "STREETNO",
+  "state": "STATECODE",
+  "street": "PREDIRECTI",
+  "unit": "UNITNAME",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:11",
+ "county": "Sedgwick",
+ "curated_cols": {
+  "number": "STREETNO",
+  "street": "PREDIRECTI"
+ },
+ "fields": [
+  "Shape",
+  "OBJECTID",
+  "PIN",
+  "Acreage",
+  "Address",
+  "ParcelID",
+  "ACCOUNTNO",
+  "ACCTTYPE",
+  "PARCELNO",
+  "LEGAL",
+  "NAME1",
+  "NAME2",
+  "STREETNO",
+  "PREDIRECTI",
+  "STREETNAME",
+  "STREETTYPE",
+  "UNITNAME",
+  "ADDRESS1",
+  "ADDRESS2",
+  "CITY",
+  "STATECODE",
+  "ZIPCODE",
+  "SUM_VTSGNV",
+  "SUM_VTSG_1",
+  "APPRAISALT",
+  "Paste_Value_only_from_E__Final_",
+  "Shape_Length",
+  "Shape_Area"
+ ],
+ "fields_n": 28,
+ "guessed_cols": {
+  "city": "CITY",
+  "state": "STATECODE",
+  "unit": "UNITNAME",
+  "zip": "ZIPCODE"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACCOUNTNO": {
+    "带特殊字符": 0,
+    "最短": "R0090913040",
+    "最长": "R0090913040",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ACCTTYPE": {
+    "带特殊字符": 0,
+    "最短": "Exempt",
+    "最长": "Agricultural",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRESS2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "APPRAISALT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Acreage": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "155.15",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "168  HIGHWAY 59",
+    "最长": "17500  COUNTY ROAD 2.5",
+    "空": 248,
+    "空率": 0.827
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "OVID",
+    "最长": "JULESBURG",
+    "空": 252,
+    "空率": 0.84
+   },
+   "LEGAL": {
+    "带特殊字符": 31,
+    "最短": "16-09-45",
+    "最长": "10-09-47 S2    MB 650 ACRE FT    2.75 ACRE PERMANENT EASEMENT TO MOUNTAIN TOWER ",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME1": {
+    "带特殊字符": 33,
+    "最短": "RRL LLC",
+    "最长": "PROTTSMAN BARBARA K TRUSTEE OF THE BARBARA K PROTTSMAN TRUST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME2": {
+    "带特殊字符": 2,
+    "最短": "ZWIRN NANCY",
+    "最长": "MARY K REICHELT & CAROLYN D ROSS TRUSTEES",
+    "空": 202,
+    "空率": 0.673
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "3097",
+    "最长": "3097",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELNO": {
+    "带特殊字符": 0,
+    "最短": "90913040",
+    "最长": "90913040",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "90913040",
+    "最长": "90913040",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREDIRECTI": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ParcelID": {
+    "带特殊字符": 0,
+    "最短": "90913040",
+    "最长": "90913040",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Paste_Value_only_from_E__Final_": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATECODE": {
+    "带特殊字符": 0,
+    "最短": "CO",
+    "最长": "CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREETNO": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREETTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUM_VTSGNV": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUM_VTSG_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "7023685.049957",
+    "最长": "3601977.9843219225",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Length": {
+    "带特殊字符": 0,
+    "最短": "16149.95582973",
+    "最长": "1643.9340914305735",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITNAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "80737",
+    "最长": "80737",
+    "空": 96,
+    "空率": 0.32
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c04589c5ea28b807",
+  "total": 3149,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 1.0,
+   "state": 0.0,
+   "street": 1.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 3149,
+   "full": 3149,
+   "number": 0,
+   "state": 3149,
+   "street": 0,
+   "zip": 3149
+  },
+  "reason": "契约全项通过（缺失率 {'number': 1.0, 'street': 1.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 Address 拆**（concat_addr）",
+  "total": 3149,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STREETNO street=PREDIRECTI",
+ "sample_hash": "c04589c5ea28b807",
+ "site_cols": [
+  "Address",
+  "STREETNO",
+  "STREETNAME",
+  "STREETTYPE",
+  "ADDRESS1"
+ ],
+ "source_id": "us/co/sedgwick",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://gis.colorado.gov/public/rest/services/OIT/SedgwickCounty/MapServer/3",
+ "verdict": "CONTRACTED"
+}

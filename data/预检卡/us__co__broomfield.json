@@ -1,0 +1,412 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRESS_NUMBER",
+  "state": "STATE",
+  "street": "STREET_PREDIRECTIONAL",
+  "unit": "COMPOSITE_UNIT_IDENTIFIER",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:58",
+ "county": "Broomfield",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDRESS_NUMBER",
+  "street": "STREET_PREDIRECTIONAL",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "GIS_ID",
+  "ADDRESS_TYPE",
+  "FEATURE_TYPE",
+  "POSITIONED_METHOD",
+  "LIFECYCLE_STATUS",
+  "PARCEL_SITUS",
+  "ROTATION",
+  "POINT_X",
+  "POINT_Y",
+  "LONGITUDE",
+  "LATITUDE",
+  "FULL_ADDRESS",
+  "ADDRESS_NUMBER_PREFIX",
+  "ADDRESS_NUMBER",
+  "ADDRESS_THRU_NUMBER",
+  "ADDRESS_NUMBER_SUFFIX",
+  "STREET_PREMODIFIER",
+  "STREET_PREDIRECTIONAL",
+  "STREET_PRETYPE",
+  "STREET_NAME",
+  "STREET_POSTTYPE",
+  "STREET_POSTDIRECTIONAL",
+  "STREET_POSTMODIFIER",
+  "BUILDING_TYPE",
+  "BUILDING_IDENTIFIER",
+  "FLOOR_TYPE",
+  "FLOOR_IDENTIFIER",
+  "UNIT_TYPE",
+  "UNIT_IDENTIFIER",
+  "CONCATENATE_UNIT",
+  "COMPOSITE_UNIT_TYPE",
+  "COMPOSITE_UNIT_IDENTIFIER",
+  "FULL_UNIT",
+  "CITY",
+  "STATE",
+  "ZIPCODE",
+  "ZIPPLUS4",
+  "PARCEL_PIN",
+  "LAST_UPDATE"
+ ],
+ "fields_n": 40,
+ "guessed_cols": {
+  "state": "STATE",
+  "unit": "COMPOSITE_UNIT_IDENTIFIER"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "11600",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_NUMBER_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRESS_NUMBER_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRESS_THRU_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "1590",
+    "最长": "1590",
+    "空": 297,
+    "空率": 0.99
+   },
+   "ADDRESS_TYPE": {
+    "带特殊字符": 0,
+    "最短": "Address",
+    "最长": "Address",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUILDING_IDENTIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "BROOMFIELD",
+    "最长": "BROOMFIELD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMPOSITE_UNIT_IDENTIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMPOSITE_UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CONCATENATE_UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FEATURE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "Sign",
+    "最长": "Temporary Structure",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FLOOR_IDENTIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLOOR_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "1 PARK ST",
+    "最长": "15035 SILVER FEATHER CIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "53",
+    "最长": "113486",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAST_UPDATE": {
+    "带特殊字符": 0,
+    "最短": "1769016147000",
+    "最长": "1769016147000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "39.97081",
+    "最长": "39.90735954",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LIFECYCLE_STATUS": {
+    "带特殊字符": 0,
+    "最短": "Active",
+    "最长": "Active",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-105.04809",
+    "最长": "-105.09595661",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_PIN": {
+    "带特殊字符": 0,
+    "最短": "171703121004",
+    "最长": "171703121004",
+    "空": 10,
+    "空率": 0.033
+   },
+   "PARCEL_SITUS": {
+    "带特殊字符": 0,
+    "最短": "TRUE",
+    "最长": "FALSE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "3113347.5797458",
+    "最长": "3112840.21691538",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "1206107.2977379",
+    "最长": "1209358.70068389",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSITIONED_METHOD": {
+    "带特殊字符": 0,
+    "最短": "GPS",
+    "最长": "Building Footprint",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROTATION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "CO",
+    "最长": "CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME": {
+    "带特殊字符": 0,
+    "最短": "1ST",
+    "最长": "STATE HIGHWAY 128",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_POSTDIRECTIONAL": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 296,
+    "空率": 0.987
+   },
+   "STREET_POSTMODIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_POSTTYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "PKWY",
+    "空": 37,
+    "空率": 0.123
+   },
+   "STREET_PREDIRECTIONAL": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 286,
+    "空率": 0.953
+   },
+   "STREET_PREMODIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_PRETYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNIT_IDENTIFIER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "80021",
+    "最长": "80021",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPPLUS4": {
+    "带特殊字符": 0,
+    "最短": "2495",
+    "最长": "2495",
+    "空": 299,
+    "空率": 0.997
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b159bdde4333e26d",
+  "total": 50996,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.8016,
+   "zip": 0.0005
+  },
+  "nonnull": {
+   "city": 50996,
+   "full": 50996,
+   "number": 50996,
+   "state": 50996,
+   "street": 10117,
+   "zip": 50970
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.8016, 'city': 0.0, 'zip': 0.0005, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESS_TYPE 拆**（concat_addr）",
+  "total": 50996,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS_NUMBER street=STREET_PREDIRECTIONAL city=CITY zip=ZIPCODE",
+ "sample_hash": "b159bdde4333e26d",
+ "site_cols": [
+  "ADDRESS_TYPE",
+  "PARCEL_SITUS",
+  "FULL_ADDRESS",
+  "ADDRESS_NUMBER_PREFIX",
+  "ADDRESS_NUMBER"
+ ],
+ "source_id": "us/co/broomfield",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://services1.arcgis.com/vXSRPZbyyOmH9pek/arcgis/rest/services/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

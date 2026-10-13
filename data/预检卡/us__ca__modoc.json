@@ -1,0 +1,16 @@
+{
+ "attribution": "Modoc County",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:31",
+ "county": "Modoc",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",
+ "source_id": "us/ca/modoc",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://services6.arcgis.com/MIuDOWgDqUpHjCEg/arcgis/rest/services/REACH_Parcels/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

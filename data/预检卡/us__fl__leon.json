@@ -1,0 +1,420 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_TOWN",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "PREFIX",
+  "unit": "HANSEN_STRUNIT",
+  "zip": "ZIPCD"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:43",
+ "county": "Leon",
+ "curated_cols": {
+  "city": "POSTAL_TOWN",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "PREFIX",
+  "zip": "ZIPCD"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "ADDRID",
+  "STREET_ID",
+  "NAME_ID",
+  "TAXID",
+  "ADDPNTTYP",
+  "STATUS",
+  "HOUSENUM",
+  "ST_ADDRHLF",
+  "UNITTYPE",
+  "UNITID",
+  "PREFIX",
+  "NAME",
+  "TYPE",
+  "SUFFIX",
+  "POSTAL_TOWN",
+  "STATE",
+  "ZIPCD",
+  "ADDRRANGE",
+  "ALTUNITTYPE",
+  "ALTUNITID",
+  "FLOOR",
+  "SITEADDR",
+  "JURISDICTION",
+  "PLACENAME",
+  "SITEASSET",
+  "CHGTYP",
+  "CHGDTE",
+  "NOTICERECPT",
+  "NOTICEDTE",
+  "COMMENTS",
+  "POSTED",
+  "USNGCOORD",
+  "ADDRKEY",
+  "HANSEN_STNBR",
+  "HANSEN_STRUNIT",
+  "POINT_X",
+  "POINT_Y",
+  "LONGITUDE",
+  "LATITUDE",
+  "SIDE",
+  "FULL_HOUSE",
+  "WHOLE_ADDRESS",
+  "CREATEDDATE",
+  "CREATE_USER",
+  "LASTUPDATE",
+  "CW_ASSET",
+  "PARENT_PIN"
+ ],
+ "fields_n": 49,
+ "guessed_cols": {
+  "unit": "HANSEN_STRUNIT"
+ },
+ "layer": {
+  "maxRecordCount": 50000,
+  "name": "Site Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDPNTTYP": {
+    "带特殊字符": 0,
+    "最短": "SITE",
+    "最长": "SITE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRID": {
+    "带特殊字符": 0,
+    "最短": "145",
+    "最长": "145",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRKEY": {
+    "带特殊字符": 0,
+    "最短": "316119",
+    "最长": "316119",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRRANGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTUNITID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ALTUNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "BLDG",
+    "最长": "BLDG",
+    "空": 299,
+    "空率": 0.997
+   },
+   "CHGDTE": {
+    "带特殊字符": 0,
+    "最短": "1307923200000",
+    "最长": "1307923200000",
+    "空": 299,
+    "空率": 0.997
+   },
+   "CHGTYP": {
+    "带特殊字符": 0,
+    "最短": "Verification",
+    "最长": "Notification of Address",
+    "空": 245,
+    "空率": 0.817
+   },
+   "COMMENTS": {
+    "带特殊字符": 178,
+    "最短": "PTADDR:MH",
+    "最长": "LB2400036 REPLACEMENT MH PERMIT, 2.9.2024 1ST M.H LEFT SIDE OF BUTTERFLY ROAD",
+    "空": 118,
+    "空率": 0.393
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 224,
+    "空率": 0.747
+   },
+   "HANSEN_STNBR": {
+    "带特殊字符": 0,
+    "最短": "611",
+    "最长": "12599",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HANSEN_STRUNIT": {
+    "带特殊字符": 0,
+    "最短": "D",
+    "最长": "1-11",
+    "空": 138,
+    "空率": 0.46
+   },
+   "HOUSENUM": {
+    "带特殊字符": 0,
+    "最短": "611",
+    "最长": "12599",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JURISDICTION": {
+    "带特殊字符": 0,
+    "最短": "Leon County",
+    "最长": "Leon County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "30.3148121",
+    "最长": "30.324120100000002",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-84.326748",
+    "最长": "-84.25170601",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "DAWS",
+    "最长": "CARRIAGE MANOR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME_ID": {
+    "带特殊字符": 0,
+    "最短": "777",
+    "最长": "4403",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NOTICEDTE": {
+    "带特殊字符": 0,
+    "最短": "927244800000",
+    "最长": "1582243200000",
+    "空": 204,
+    "空率": 0.68
+   },
+   "NOTICERECPT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLACENAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "2047791.074755",
+    "最长": "2046845.21337573",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "521951.130918",
+    "最长": "478467.30302369",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_TOWN": {
+    "带特殊字符": 0,
+    "最短": "Tallahassee",
+    "最长": "Tallahassee",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTED": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PREFIX": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 285,
+    "空率": 0.95
+   },
+   "SITEADDR": {
+    "带特殊字符": 0,
+    "最短": "541 PALM CT",
+    "最长": "3050 CARRIAGE MANOR CIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITEASSET": {
+    "带特殊字符": 0,
+    "最短": "Telecomm",
+    "最长": "Residential",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "FL",
+    "最长": "FL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "Vacant",
+    "最长": "Current",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_ID": {
+    "带特殊字符": 0,
+    "最短": "9385",
+    "最长": "12108",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_ADDRHLF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 232,
+    "空率": 0.773
+   },
+   "TAXID": {
+    "带特殊字符": 0,
+    "最短": "3317200450000",
+    "最长": "3317200450000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "LOOP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "D",
+    "最长": "310",
+    "空": 112,
+    "空率": 0.373
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "APT",
+    "空": 112,
+    "空率": 0.373
+   },
+   "USNGCOORD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCD": {
+    "带特殊字符": 0,
+    "最短": "32305",
+    "最长": "32305",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c4259b3efbfa3d2a",
+  "total": 155771,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 155771,
+   "full": 155771,
+   "number": 155771,
+   "state": 155771,
+   "street": 155771,
+   "zip": 155771
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 155771,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSENUM street=PREFIX city=POSTAL_TOWN zip=ZIPCD",
+ "sample_hash": "c4259b3efbfa3d2a",
+ "site_cols": [
+  "ADDRID",
+  "STREET_ID",
+  "ST_ADDRHLF",
+  "ADDRRANGE",
+  "SITEADDR"
+ ],
+ "source_id": "us/fl/leon",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://intervector.leoncountyfl.gov/intervector/rest/services/MapServices/TLC_OverlaySiteAddressPoints_D_WM/MapServer/0",
+ "verdict": "CONTRACTED"
+}

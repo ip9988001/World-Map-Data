@@ -1,0 +1,245 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Community",
+  "number": "Number",
+  "street": "STREET",
+  "unit": "Community",
+  "zip": "ZIP_CODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:31",
+ "county": "Desoto",
+ "curated_cols": {
+  "city": "Community",
+  "number": "Number",
+  "street": "STREET",
+  "zip": "ZIP_CODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "Unit",
+  "STREET",
+  "ST_MD",
+  "ST_DIR",
+  "Community",
+  "Number",
+  "Name",
+  "Suffix",
+  "POINT_X",
+  "POINT_Y",
+  "Notes",
+  "ZIP_CODE",
+  "ADDRESS",
+  "OID_",
+  "Shape",
+  "GlobalID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date"
+ ],
+ "fields_n": 21,
+ "guessed_cols": {
+  "unit": "Community"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Point Labels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "259 BAY ST",
+    "最长": "8096 SW GOLDEN GLADE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Community": {
+    "带特殊字符": 0,
+    "最短": "ARCADIA",
+    "最长": "ARCADIA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{5317268F-7BD7-469E-B45A-15C4D29D23A2}",
+    "最长": "{5317268F-7BD7-469E-B45A-15C4D29D23A2}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Name": {
+    "带特殊字符": 0,
+    "最短": "BAY",
+    "最长": "COUNTY ROAD 661A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Notes": {
+    "带特殊字符": 2,
+    "最短": "Duplex - Unit facing N Manatee Ave",
+    "最长": "10/03/19 - Existing address assignment to be used on north side of duplex",
+    "空": 296,
+    "空率": 0.987
+   },
+   "Number": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "4131/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OID_": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "-81.863407",
+    "最长": "-81.85780453",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "27.218933",
+    "最长": "27.21844346",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "BAY ST",
+    "最长": "SW GOLDEN GLADE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_DIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "NW",
+    "空": 100,
+    "空率": 0.333
+   },
+   "ST_MD": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 6,
+    "空率": 0.02
+   },
+   "Suffix": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 6,
+    "空率": 0.02
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "34266",
+    "最长": "34266",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "0d5853e15b9929d8",
+  "total": 16505,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 16505,
+   "full": 16505,
+   "number": 16505,
+   "street": 16505,
+   "zip": 16505
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 16505,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Number street=STREET city=Community zip=ZIP_CODE",
+ "sample_hash": "0d5853e15b9929d8",
+ "site_cols": [
+  "STREET",
+  "ADDRESS"
+ ],
+ "source_id": "us/fl/desoto",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://skyview.hornershifrin.com/Geocortex/Essentials/REST/sites/DeSotoCoFL/map/mapservices/5/rest/services/x/MapServer/0",
+ "verdict": "CONTRACTED"
+}

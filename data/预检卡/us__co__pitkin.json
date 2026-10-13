@@ -1,0 +1,396 @@
+{
+ "attribution": "Pitkin County",
+ "candidate_cols": {
+  "number": "street_nu",
+  "street": "name",
+  "unit": "unit_range",
+  "zip": "zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:06",
+ "county": "Pitkin",
+ "curated_cols": {
+  "number": "street_nu",
+  "street": "name",
+  "zip": "zip"
+ },
+ "fields": [
+  "objectid",
+  "street_nu",
+  "address",
+  "jurisdiction",
+  "status",
+  "shape",
+  "bldg_name",
+  "unit_range",
+  "complex",
+  "note",
+  "source",
+  "unit_count",
+  "x_coord",
+  "y_coord",
+  "zip_area",
+  "name",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "flag",
+  "verifiedaddress",
+  "predir",
+  "pretype",
+  "streetname",
+  "streettype",
+  "spillmantext",
+  "esn",
+  "addresstype",
+  "export911",
+  "labelsize",
+  "labelangle",
+  "unit_nu",
+  "zip",
+  "sages_nopin",
+  "change_notes",
+  "creationdate",
+  "creator",
+  "editdate",
+  "editor"
+ ],
+ "fields_n": 40,
+ "guessed_cols": {
+  "unit": "unit_range"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Number",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "address": {
+    "带特殊字符": 0,
+    "最短": "30 ELK LN",
+    "最长": "100 CHAIR MOUNTAIN DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addresstype": {
+    "带特殊字符": 0,
+    "最短": "unit",
+    "最长": "master multiunit",
+    "空": 142,
+    "空率": 0.473
+   },
+   "bldg_name": {
+    "带特殊字符": 1,
+    "最短": "E",
+    "最长": "REDSTONE HISTORICAL SOCIETY",
+    "空": 253,
+    "空率": 0.843
+   },
+   "change_notes": {
+    "带特殊字符": 0,
+    "最短": "Spatial Move",
+    "最长": "Attribute Update",
+    "空": 263,
+    "空率": 0.877
+   },
+   "complex": {
+    "带特殊字符": 0,
+    "最短": "Lone Pine",
+    "最长": "Marthinsson-Nostdahl Condos",
+    "空": 241,
+    "空率": 0.803
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "creationdate": {
+    "带特殊字符": 0,
+    "最短": "1791195462000",
+    "最长": "1791195462000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "creator": {
+    "带特殊字符": 0,
+    "最短": "PitkinCountyCO",
+    "最长": "PitkinCountyCO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "editdate": {
+    "带特殊字符": 0,
+    "最短": "1791195462000",
+    "最长": "1791195462000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "editor": {
+    "带特殊字符": 0,
+    "最短": "PitkinCountyCO",
+    "最长": "PitkinCountyCO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "230",
+    "最长": "230",
+    "空": 0,
+    "空率": 0.0
+   },
+   "export911": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "flag": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 267,
+    "空率": 0.89
+   },
+   "jurisdiction": {
+    "带特殊字符": 0,
+    "最短": "ASPEN",
+    "最长": "PITKIN COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "labelangle": {
+    "带特殊字符": 0,
+    "最短": "30",
+    "最长": "280",
+    "空": 295,
+    "空率": 0.983
+   },
+   "labelsize": {
+    "带特殊字符": 0,
+    "最短": "sub",
+    "最长": "nest",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1707330570000",
+    "最长": "1707330570000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "LAUREN.USSERY",
+    "最长": "LAUREN.USSERY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "name": {
+    "带特殊字符": 0,
+    "最短": "ELK LN",
+    "最长": "REDSTONE CASTLE LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "note": {
+    "带特殊字符": 1,
+    "最短": "cdu",
+    "最长": "3 biz units, 27 eh units with same address",
+    "空": 263,
+    "空率": 0.877
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "predir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 280,
+    "空率": 0.933
+   },
+   "pretype": {
+    "带特殊字符": 0,
+    "最短": "HWY",
+    "最长": "HWY",
+    "空": 299,
+    "空率": 0.997
+   },
+   "sages_nopin": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "No",
+    "空": 0,
+    "空率": 0.0
+   },
+   "source": {
+    "带特殊字符": 0,
+    "最短": "PH fall 2007",
+    "最长": "historic designation list",
+    "空": 161,
+    "空率": 0.537
+   },
+   "spillmantext": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "status": {
+    "带特殊字符": 0,
+    "最短": "verified",
+    "最长": "non-conforming",
+    "空": 0,
+    "空率": 0.0
+   },
+   "street_nu": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "18679",
+    "空": 0,
+    "空率": 0.0
+   },
+   "streetname": {
+    "带特殊字符": 0,
+    "最短": "ELK",
+    "最长": "REDSTONE CASTLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "streettype": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "BLVD",
+    "空": 1,
+    "空率": 0.003
+   },
+   "unit_count": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "30",
+    "空": 243,
+    "空率": 0.81
+   },
+   "unit_nu": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unit_range": {
+    "带特殊字符": 2,
+    "最短": "A-C",
+    "最长": "1A-2C, 101-203, A-D",
+    "空": 264,
+    "空率": 0.88
+   },
+   "verifiedaddress": {
+    "带特殊字符": 0,
+    "最短": "no",
+    "最长": "yes",
+    "空": 141,
+    "空率": 0.47
+   },
+   "x_coord": {
+    "带特殊字符": 0,
+    "最短": "-106.810155",
+    "最长": "-106.85411154",
+    "空": 0,
+    "空率": 0.0
+   },
+   "y_coord": {
+    "带特殊字符": 0,
+    "最短": "39.183071",
+    "最长": "39.18264885",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zip": {
+    "带特殊字符": 0,
+    "最短": "81611",
+    "最长": "81611",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zip_area": {
+    "带特殊字符": 0,
+    "最短": "asp",
+    "最长": "asp",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "99e75e5d372561b4",
+  "total": 9926,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "full": 9926,
+   "number": 9926,
+   "street": 9926,
+   "zip": 9926
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 9926,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=street_nu street=name zip=zip",
+ "sample_hash": "99e75e5d372561b4",
+ "site_cols": [
+  "street_nu",
+  "address",
+  "verifiedaddress",
+  "streetname",
+  "streettype"
+ ],
+ "source_id": "us/co/pitkin",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://maps.pitkincounty.com/arcgis/rest/services/Hosted/Address_Number/MapServer/2",
+ "verdict": "CONTRACTED"
+}

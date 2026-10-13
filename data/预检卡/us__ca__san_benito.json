@@ -1,0 +1,353 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CSZ",
+  "number": "ADDRESS",
+  "state": "State",
+  "street": "PREDIR",
+  "unit": "UNIT",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:36",
+ "county": "San Benito",
+ "curated_cols": {
+  "city": "CSZ",
+  "number": "ADDRESS",
+  "street": "PREDIR",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "APN",
+  "ADDRESS",
+  "PREDIR",
+  "STNAME",
+  "TYPE",
+  "UNIT",
+  "CITY",
+  "ZIPCODE",
+  "STNA_FULL",
+  "Source",
+  "Status",
+  "RevDate",
+  "RevBy",
+  "Comments",
+  "StNameID",
+  "AddressID",
+  "FullAdd",
+  "OBJECTID_1",
+  "GlobalID",
+  "Shape",
+  "State",
+  "Comment",
+  "SCR911",
+  "RS",
+  "RSadd",
+  "CSZ",
+  "Precinct",
+  "CeTract",
+  "CeBlock",
+  "CeBlockG",
+  "Resident",
+  "Type1",
+  "BOS"
+ ],
+ "fields_n": 33,
+ "guessed_cols": {
+  "state": "State",
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "16052",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APN": {
+    "带特殊字符": 0,
+    "最短": "NO APN",
+    "最长": "0181300040",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddressID": {
+    "带特殊字符": 0,
+    "最短": "17457",
+    "最长": "17457",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BOS": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "KC",
+    "最长": "SJB",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CSZ": {
+    "带特殊字符": 0,
+    "最短": "AROMAS CA 95004",
+    "最长": "SAN JUAN BAUTISTA CA 95045",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CeBlock": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CeBlockG": {
+    "带特殊字符": 0,
+    "最短": "2005",
+    "最长": "2005",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CeTract": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "5.02",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Comment": {
+    "带特殊字符": 1,
+    "最短": "APN ADDED",
+    "最长": "REPLACE 1003 SANTA ANA VALLEY WITH 155 RODEO DR",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Comments": {
+    "带特殊字符": 1,
+    "最短": "APN ADDED",
+    "最长": "REPLACE 1003 SANTA ANA VALLEY WITH 155 RODEO DR",
+    "空": 1,
+    "空率": 0.003
+   },
+   "EVZ": {
+    "带特殊字符": 0,
+    "最短": "SBC-C039",
+    "最长": "SBC-C039",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FullAdd": {
+    "带特殊字符": 7,
+    "最短": "34 POLK ST",
+    "最长": "102 SAN JUAN HOLLISTER HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{DD42DCA9-5B59-4153-B198-D83D6C7D19F9}",
+    "最长": "{DD42DCA9-5B59-4153-B198-D83D6C7D19F9}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREDIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 298,
+    "空率": 0.993
+   },
+   "Precinct": {
+    "带特殊字符": 0,
+    "最短": "JRkrXFZBAI937unFQEHA",
+    "最长": "JRkrXFZBAI937unFQEHA",
+    "空": 299,
+    "空率": 0.997
+   },
+   "RS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RSadd": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Resident": {
+    "带特殊字符": 0,
+    "最短": "CURRENT RESIDENT",
+    "最长": "CURRENT RESIDENT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RevBy": {
+    "带特殊字符": 0,
+    "最短": "RANCHIETA",
+    "最长": "RANCHIETA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RevDate": {
+    "带特殊字符": 0,
+    "最短": "1790000904000",
+    "最长": "1790000904000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SCR911": {
+    "带特殊字符": 0,
+    "最短": "SBC-C039",
+    "最长": "SBC-C039",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "LINE",
+    "最长": "SAN JUAN HOLLISTER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNA_FULL": {
+    "带特殊字符": 0,
+    "最短": "LINE ST",
+    "最长": "SAN JUAN HOLLISTER HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Source": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StNameID": {
+    "带特殊字符": 0,
+    "最短": "27",
+    "最长": "1052",
+    "空": 2,
+    "空率": 0.007
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "CA",
+    "最长": "CA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Status": {
+    "带特殊字符": 0,
+    "最短": "ACTIVE",
+    "最长": "TENTATIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Type1": {
+    "带特殊字符": 0,
+    "最短": "PARK",
+    "最长": "AGRICULTURE",
+    "空": 17,
+    "空率": 0.057
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "101",
+    "空": 293,
+    "空率": 0.977
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "95045",
+    "最长": "95045",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "ed907320b7e983ae",
+  "total": 23786,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0006,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.2471,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 23772,
+   "full": 23786,
+   "number": 23786,
+   "state": 23786,
+   "street": 17909,
+   "zip": 23786
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.2471, 'city': 0.0006, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESS 拆**（concat_addr）",
+  "total": 23786,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=PREDIR city=CSZ zip=ZIPCODE",
+ "sample_hash": "ed907320b7e983ae",
+ "site_cols": [
+  "ADDRESS",
+  "AddressID"
+ ],
+ "source_id": "us/ca/san_benito",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://gisweb.cosb.us/arcgis/rest/services/Parcels/MapServer/0",
+ "verdict": "CONTRACTED"
+}

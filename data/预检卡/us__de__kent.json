@@ -1,0 +1,333 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "Address",
+  "street": "Roadname",
+  "unit": "Apartment",
+  "zip": "Zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:19",
+ "county": "Kent",
+ "curated_cols": {
+  "city": "City",
+  "number": "Address",
+  "street": "Roadname",
+  "zip": "Zipcode"
+ },
+ "fields": [
+  "OBJECTID",
+  "CID",
+  "SIN",
+  "SAN",
+  "PRD",
+  "STN",
+  "STS",
+  "POD",
+  "ESN",
+  "MCN",
+  "STY",
+  "LRS",
+  "SOD",
+  "DLU",
+  "Roadname",
+  "Apartment",
+  "FullAddr",
+  "Address",
+  "SAD",
+  "Zipcode",
+  "Zip_Name",
+  "Community",
+  "City",
+  "FeaCode",
+  "C1_EXCEPTION",
+  "CREATION_DATE",
+  "MODIFY_DATE",
+  "CREATION_USER",
+  "MODIFY_USER",
+  "Notes",
+  "True_Address"
+ ],
+ "fields_n": 31,
+ "guessed_cols": {
+  "unit": "Apartment"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "4.0",
+    "最长": "3937.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Apartment": {
+    "带特殊字符": 0,
+    "最短": "APT B",
+    "最长": "STE 103",
+    "空": 254,
+    "空率": 0.847
+   },
+   "C1_EXCEPTION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CREATION_DATE": {
+    "带特殊字符": 0,
+    "最短": "1460974719000",
+    "最长": "1460974719000",
+    "空": 296,
+    "空率": 0.987
+   },
+   "CREATION_USER": {
+    "带特殊字符": 0,
+    "最短": "bcosta",
+    "最长": "bcosta",
+    "空": 296,
+    "空率": 0.987
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "Dover",
+    "最长": "Camden Wyoming",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Community": {
+    "带特殊字符": 0,
+    "最短": "Dover",
+    "最长": "VILLAGES OF NOBLES POND - PHASE 1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DLU": {
+    "带特殊字符": 0,
+    "最短": "20121113.0",
+    "最长": "20121113.0",
+    "空": 256,
+    "空率": 0.853
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "2.0",
+    "最长": "2.0",
+    "空": 298,
+    "空率": 0.993
+   },
+   "FeaCode": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 124,
+    "空率": 0.413
+   },
+   "FullAddr": {
+    "带特殊字符": 0,
+    "最短": "99 IVY LN",
+    "最长": "3937 SEVEN HICKORIES RD APT B",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LRS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MCN": {
+    "带特殊字符": 0,
+    "最短": "WATERS EDGE",
+    "最长": "VILLAGES OF NOBLES POND - PHASE 1",
+    "空": 278,
+    "空率": 0.927
+   },
+   "MODIFY_DATE": {
+    "带特殊字符": 0,
+    "最短": "1613735141000",
+    "最长": "1613735141000",
+    "空": 55,
+    "空率": 0.183
+   },
+   "MODIFY_USER": {
+    "带特殊字符": 0,
+    "最短": "bcosta",
+    "最长": "mkinnaman",
+    "空": 55,
+    "空率": 0.183
+   },
+   "Notes": {
+    "带特殊字符": 0,
+    "最短": "changed from 802 per owners request",
+    "最长": "changed from 802 per owners request",
+    "空": 299,
+    "空率": 0.997
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRD": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "NE",
+    "空": 213,
+    "空率": 0.71
+   },
+   "Roadname": {
+    "带特殊字符": 0,
+    "最短": "BAY RD",
+    "最长": "MILFORD-HARRINGTON HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SAD": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "103",
+    "空": 253,
+    "空率": 0.843
+   },
+   "SAN": {
+    "带特殊字符": 0,
+    "最短": "4.0",
+    "最长": "3937.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SIN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SOD": {
+    "带特殊字符": 44,
+    "最短": "Kent County, DE",
+    "最长": "Kent County, DE",
+    "空": 256,
+    "空率": 0.853
+   },
+   "STN": {
+    "带特殊字符": 0,
+    "最短": "BAY",
+    "最长": "MILFORD HARRINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STS": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STY": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "True_Address": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Zip_Name": {
+    "带特殊字符": 0,
+    "最短": "Dover",
+    "最长": "Camden Wyoming",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zipcode": {
+    "带特殊字符": 0,
+    "最短": "19977.0",
+    "最长": "19977.0",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c77b5aca83080e44",
+  "total": 87180,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0458,
+   "full": 0.0,
+   "number": 0.0076,
+   "street": 0.0,
+   "zip": 0.0027
+  },
+  "nonnull": {
+   "city": 83189,
+   "full": 87178,
+   "number": 86516,
+   "street": 87178,
+   "zip": 86941
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0076, 'street': 0.0, 'city': 0.0458, 'zip': 0.0027, 'full': 0.0}）→ 可全量采集",
+  "total": 87180,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Address street=Roadname city=City zip=Zipcode",
+ "sample_hash": "c77b5aca83080e44",
+ "site_cols": [
+  "FullAddr",
+  "Address",
+  "True_Address"
+ ],
+ "source_id": "us/de/kent",
+ "stage": "p0",
+ "state": "DE",
+ "url": "https://gis.kentcountyde.gov/server/rest/services/EmergencyManagement/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

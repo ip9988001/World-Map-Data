@@ -1,0 +1,265 @@
+{
+ "attribution": "Miami-Dade County",
+ "candidate_cols": {
+  "city": "MAILING_MUNIC",
+  "number": "HSE_NUM",
+  "state": "State",
+  "street": "PRE_DIR",
+  "unit": "BLDG",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:56",
+ "county": "Miami-Dade",
+ "curated_cols": {
+  "city": "MAILING_MUNIC",
+  "number": "HSE_NUM",
+  "state": "State",
+  "street": "PRE_DIR",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESSID",
+  "FOLIO",
+  "point_x",
+  "point_y",
+  "HSE_NUM",
+  "PRE_DIR",
+  "ST_NAME",
+  "ST_TYPE",
+  "SUF_DIR",
+  "ZIP",
+  "PLUS4",
+  "MUNIC",
+  "MAILING_MUNIC",
+  "SNAME",
+  "subaddressid",
+  "PARENT_FOLIO",
+  "BLDG",
+  "UNIT",
+  "EnerGov",
+  "State",
+  "GlobalID"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {
+  "unit": "BLDG"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "GeoAddressWCondo",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://gis-mdc.opendata.arcgis.com/pages/open-data-policy",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESSID": {
+    "带特殊字符": 0,
+    "最短": "713",
+    "最长": "149248",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BLDG": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "EnerGov": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FOLIO": {
+    "带特殊字符": 0,
+    "最短": "0131120140810",
+    "最长": "0131120140810",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "35a7083d-eeed-43e2-8fd1-ca1bc15300cc",
+    "最长": "35a7083d-eeed-43e2-8fd1-ca1bc15300cc",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HSE_NUM": {
+    "带特殊字符": 0,
+    "最短": "36",
+    "最长": "15810",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_MUNIC": {
+    "带特殊字符": 0,
+    "最短": "MIAMI",
+    "最长": "NORTH BAY VILLAGE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNIC": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "34",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARENT_FOLIO": {
+    "带特殊字符": 0,
+    "最短": "0131120140810",
+    "最长": "0131120140810",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLUS4": {
+    "带特殊字符": 0,
+    "最短": "900",
+    "最长": "3545",
+    "空": 39,
+    "空率": 0.13
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SW",
+    "空": 86,
+    "空率": 0.287
+   },
+   "SNAME": {
+    "带特殊字符": 0,
+    "最短": "55 SE 6TH ST",
+    "最长": "16445  JIMMY BUFFETT MEMORIAL AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "JIMMY BUFFETT MEMORIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "CSWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUF_DIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 299,
+    "空率": 0.997
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "S40129",
+    "空": 158,
+    "空率": 0.527
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "33150",
+    "最长": "33150",
+    "空": 0,
+    "空率": 0.0
+   },
+   "point_x": {
+    "带特殊字符": 0,
+    "最短": "933625.437593",
+    "最长": "920391.37505907",
+    "空": 0,
+    "空率": 0.0
+   },
+   "point_y": {
+    "带特殊字符": 0,
+    "最短": "554828.312455",
+    "最长": "550041.43746678",
+    "空": 0,
+    "空率": 0.0
+   },
+   "subaddressid": {
+    "带特殊字符": 0,
+    "最短": "170",
+    "最长": "102935",
+    "空": 165,
+    "空率": 0.55
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8919c731c50ea4e7",
+  "total": 1163721,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 1.0,
+   "street": 0.2563,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 1163720,
+   "full": 1163720,
+   "number": 1163720,
+   "state": 0,
+   "street": 865445,
+   "zip": 1163717
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.2563, 'city': 0.0, 'zip': 0.0, 'state': 1.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESSID 拆**（concat_addr）",
+  "total": 1163721,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HSE_NUM street=PRE_DIR city=MAILING_MUNIC zip=ZIP",
+ "sample_hash": "8919c731c50ea4e7",
+ "site_cols": [
+  "ADDRESSID",
+  "subaddressid"
+ ],
+ "source_id": "us/fl/miami-dade",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/ArcGIS/rest/services/GeoAddressWCondo_gdb/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

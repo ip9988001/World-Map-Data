@@ -1,0 +1,333 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY_USPS",
+  "number": "HOUSENUM",
+  "street": "RDLABEL_USPS",
+  "unit": "UNIT_TYPE",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:37",
+ "county": "Indian River",
+ "curated_cols": {
+  "city": "CITY_USPS",
+  "number": "HOUSENUM",
+  "street": "RDLABEL_USPS",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADPNT_FID",
+  "DEV_STATUS",
+  "ADDRESS",
+  "ADDRESS_USPS",
+  "HOUSENUM",
+  "PREDIR",
+  "NAME",
+  "TYPE",
+  "TYPE_USPS",
+  "SUFFIX",
+  "UNIT_TYPE",
+  "APT_UNIT",
+  "CITY_USPS",
+  "ZIP5",
+  "DISTRICT",
+  "RDLABEL_USPS",
+  "PURPOSE",
+  "LOCAT_DESC",
+  "SUBAD_DESC",
+  "COMMON_NME",
+  "VENUE",
+  "E911_ESN",
+  "JOINID",
+  "JOINID_ALTNAME",
+  "LABEL_CLASS",
+  "GOOGLEMAP",
+  "PICTOMETRY",
+  "LATITUDE",
+  "LONGITUDE",
+  "Shape",
+  "USNG"
+ ],
+ "fields_n": 32,
+ "guessed_cols": {
+  "unit": "UNIT_TYPE"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "901 BAY RD",
+    "最长": "2155 SEMINOLE SHORES LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_USPS": {
+    "带特殊字符": 0,
+    "最短": "941 4TH ST",
+    "最长": "1250 W SOUTHWINDS BLVD APT 216",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADPNT_FID": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1370",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APT_UNIT": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "G214",
+    "空": 151,
+    "空率": 0.503
+   },
+   "CITY_USPS": {
+    "带特殊字符": 0,
+    "最短": "VERO BEACH",
+    "最长": "VERO BEACH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMON_NME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DEV_STATUS": {
+    "带特殊字符": 0,
+    "最短": "U",
+    "最长": "D - MF",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DISTRICT": {
+    "带特殊字符": 0,
+    "最短": "COUNTY",
+    "最长": "COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "E911_ESN": {
+    "带特殊字符": 0,
+    "最短": "240",
+    "最长": "240",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GOOGLEMAP": {
+    "带特殊字符": 300,
+    "最短": "https://www.google.com/maps/search/?api=",
+    "最长": "https://maps.google.com/?q=27.5840844855279,-80.3378473368499&ll=27.584084485527",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSENUM": {
+    "带特殊字符": 0,
+    "最短": "935",
+    "最长": "2125",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JOINID": {
+    "带特殊字符": 0,
+    "最短": "14",
+    "最长": "14",
+    "空": 295,
+    "空率": 0.983
+   },
+   "JOINID_ALTNAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LABEL_CLASS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 298,
+    "空率": 0.993
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "27.584258",
+    "最长": "27.58299973",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOCAT_DESC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-80.33785",
+    "最长": "-80.33150385",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "BAY",
+    "最长": "SEMINOLE SHORES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PICTOMETRY": {
+    "带特殊字符": 300,
+    "最短": "http://explorer.pictometry.com/index.php",
+    "最长": "http://explorer.pictometry.com/index.php?lat=27.5840844855279&lon=-80.3378473368",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREDIR": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 265,
+    "空率": 0.883
+   },
+   "PURPOSE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RDLABEL_USPS": {
+    "带特殊字符": 0,
+    "最短": "BAY RD",
+    "最长": "SEMINOLE SHORES LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBAD_DESC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "SW",
+    "空": 293,
+    "空率": 0.977
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "POINT",
+    "空": 11,
+    "空率": 0.037
+   },
+   "TYPE_USPS": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 11,
+    "空率": 0.037
+   },
+   "UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "APT",
+    "空": 151,
+    "空率": 0.503
+   },
+   "USNG": {
+    "带特殊字符": 0,
+    "最短": "17R NL 65980 51189",
+    "最长": "17R NL 65980 51189",
+    "空": 0,
+    "空率": 0.0
+   },
+   "VENUE": {
+    "带特殊字符": 0,
+    "最短": "IRC",
+    "最长": "IRC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "32963",
+    "最长": "32963",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "86d87d0d4fb5b6c5",
+  "total": 112218,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 112218,
+   "full": 112218,
+   "number": 112218,
+   "street": 112218,
+   "zip": 112218
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 112218,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSENUM street=RDLABEL_USPS city=CITY_USPS zip=ZIP5",
+ "sample_hash": "86d87d0d4fb5b6c5",
+ "site_cols": [
+  "ADDRESS",
+  "ADDRESS_USPS"
+ ],
+ "source_id": "us/fl/indian_river",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://gisportal.ircgov.com/server3/rest/services/Addressing/IRC_Address_Points_woLabels_MS/MapServer/0",
+ "verdict": "CONTRACTED"
+}

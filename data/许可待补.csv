@@ -60,3 +60,21 @@ us/al/pickens,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Pickens/Ma
 us/al/shelby,AL,Shelby County,https://maps.shelbyal.com/gisserver/rest/services/CaptureServices/AddressNumbersCapture/MapServer/0,https://maps.shelbyal.com/html5/,以官方页面为准，待补
 us/al/washington,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Washington/MapServer/0,,以官方页面为准，待补
 us/ar/ouachita,AR,,https://www.efsedge.com/arcgis/rest/services/Ouachita_County/Ouachita_Vector/MapServer/5,,以官方页面为准，待补
+us/ca/alpine,CA,Alpine County,https://services1.arcgis.com/9z9tEfqo0TExR9C8/arcgis/rest/services/AlpineCountyParcels_22_23_PublicUpdate/FeatureServer/0,,以官方页面为准，待补
+us/ca/inyo,CA,,https://services.arcgis.com/0jRlQ17Qmni5zEMr/arcgis/rest/services/Address_Points/FeatureServer/0,https://gisdata.inyo.gov/,以官方页面为准，待补
+us/ca/modoc,CA,Modoc County,https://services6.arcgis.com/MIuDOWgDqUpHjCEg/arcgis/rest/services/REACH_Parcels/FeatureServer/0,,以官方页面为准，待补
+us/ca/san_benito,CA,,https://gisweb.cosb.us/arcgis/rest/services/Parcels/MapServer/0,https://cosb.maps.arcgis.com/home/item.html?id=f7dd7210ee114965aeeac18e9886daec,以官方页面为准，待补
+us/ca/sonoma,CA,Sonoma County,https://socogis.sonomacounty.ca.gov/map/rest/services/BASEPublic/Addresses_Public/MapServer/0,https://gis-sonomacounty.hub.arcgis.com/datasets/sonomacounty::addresses/about,以官方页面为准，待补
+us/co/arapahoe,CO,Arapahoe County,https://gis.arapahoegov.com/arcgis/rest/services/OpenDataService/FeatureServer/4,https://gis.arapahoegov.com/ArapaMAP/,以官方页面为准，待补
+us/co/broomfield,CO,,https://services1.arcgis.com/vXSRPZbyyOmH9pek/arcgis/rest/services/Addresses/FeatureServer/0,,以官方页面为准，待补
+us/co/clear_creek,CO,,https://map.co.clear-creek.co.us/arcgis2/rest/services/ClearCreek/address/MapServer/0,,以官方页面为准，待补
+us/co/conejos,CO,,https://services1.arcgis.com/zH7gQ37AKcpvTX6d/ArcGIS/rest/services/ConejosParcels/FeatureServer/0,,以官方页面为准，待补
+us/co/grand,CO,,https://gis.co.grand.co.us:6443/arcgis/rest/services/Property/AddressPntsCARTO/MapServer/0,,以官方页面为准，待补
+us/co/pitkin,CO,Pitkin County,https://maps.pitkincounty.com/arcgis/rest/services/Hosted/Address_Number/MapServer/2,https://pitkin-county-open-data-pitkincounty.hub.arcgis.com/datasets/55eee0fe06be40bbad78017e29e3cc4b_0/explore,以官方页面为准，待补
+us/co/sedgwick,CO,,https://gis.colorado.gov/public/rest/services/OIT/SedgwickCounty/MapServer/3,,以官方页面为准，待补
+us/co/teller,CO,,https://tcweb.co.teller.co.us/arcgis/rest/services/Addrs/MapServer/0,,以官方页面为准，待补
+us/de/kent,DE,,https://gis.kentcountyde.gov/server/rest/services/EmergencyManagement/Addresses/FeatureServer/0,https://gis-kentcountyde.hub.arcgis.com/datasets/2e07af1c427d4787b0d30548069a1230_0/about,以官方页面为准，待补
+us/fl/clay,FL,Clay County,https://maps.claycountygov.com:6443/arcgis/rest/services/SiteAddresses/MapServer/0,https://ccpao.com/certified-data/,以官方页面为准，待补
+us/fl/desoto,FL,,https://skyview.hornershifrin.com/Geocortex/Essentials/REST/sites/DeSotoCoFL/map/mapservices/5/rest/services/x/MapServer/0,https://skyview.hornershifrin.com/DesotoCoFL/,以官方页面为准，待补
+us/fl/indian_river,FL,,https://gisportal.ircgov.com/server3/rest/services/Addressing/IRC_Address_Points_woLabels_MS/MapServer/0,,以官方页面为准，待补
+us/fl/leon,FL,,https://intervector.leoncountyfl.gov/intervector/rest/services/MapServices/TLC_OverlaySiteAddressPoints_D_WM/MapServer/0,https://geodata-tlcgis.opendata.arcgis.com/datasets/tlcgis::site-address-points-tallahassee-leon-county/about,以官方页面为准，待补

@@ -1,0 +1,233 @@
+{
+ "attribution": "Arapahoe County",
+ "candidate_cols": {
+  "city": "City_State",
+  "number": "Number",
+  "state": "City_State",
+  "street": "Pre_Direction",
+  "unit": "BUILDING_TYPE",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:52",
+ "county": "Arapahoe",
+ "curated_cols": {
+  "city": "City_State",
+  "number": "Number",
+  "street": "Pre_Direction",
+  "zip": "Zip"
+ },
+ "fields": [
+  "OBJECTID",
+  "Parcel_ID",
+  "Number",
+  "Pre_Direction",
+  "Street_Name",
+  "Street_Type",
+  "Suffix_Direction",
+  "Unit",
+  "Full_Address",
+  "Bldg_Type",
+  "Living_Units",
+  "Comment",
+  "City_State",
+  "Zip",
+  "UNIT_TYPE",
+  "BUILDING",
+  "BUILDING_TYPE",
+  "GlobalID"
+ ],
+ "fields_n": 18,
+ "guessed_cols": {
+  "state": "City_State",
+  "unit": "BUILDING_TYPE"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING_TYPE": {
+    "带特殊字符": 0,
+    "最短": "Industrial",
+    "最长": "Industrial",
+    "空": 259,
+    "空率": 0.863
+   },
+   "Bldg_Type": {
+    "带特殊字符": 1,
+    "最短": "SCHOOL",
+    "最长": "UNIMPROVED CONTIGUOUS RESIDENTIAL SITE",
+    "空": 19,
+    "空率": 0.063
+   },
+   "City_State": {
+    "带特殊字符": 0,
+    "最短": "AURORA",
+    "最长": "CENTENNIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Comment": {
+    "带特殊字符": 7,
+    "最短": "<Null>",
+    "最长": "27394-41441-075",
+    "空": 288,
+    "空率": 0.96
+   },
+   "Full_Address": {
+    "带特殊字符": 0,
+    "最短": "426 NORFOLK ST",
+    "最长": "10111 INVERNESS MAIN ST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{3E1201CD-84F7-4864-BB9D-B3263B14B43E}",
+    "最长": "{3E1201CD-84F7-4864-BB9D-B3263B14B43E}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Living_Units": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "93",
+    "空": 98,
+    "空率": 0.327
+   },
+   "Number": {
+    "带特殊字符": 0,
+    "最短": "352",
+    "最长": "13543",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Parcel_ID": {
+    "带特殊字符": 0,
+    "最短": "2075-24-4-29-029",
+    "最长": "2075-24-4-29-029",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Pre_Direction": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 11,
+    "空率": 0.037
+   },
+   "Street_Name": {
+    "带特殊字符": 0,
+    "最短": "7TH",
+    "最长": "INVERNESS MAIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Type": {
+    "带特殊字符": 0,
+    "最短": "PL",
+    "最长": "AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Suffix_Direction": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "APT",
+    "空": 299,
+    "空率": 0.997
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "74",
+    "最长": "BLD A",
+    "空": 156,
+    "空率": 0.52
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "80120",
+    "最长": "80111-2445",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f20d9d3e8e41abf2",
+  "total": 290761,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0039,
+   "full": 0.0002,
+   "number": 0.002,
+   "state": 0.0039,
+   "street": 0.0681,
+   "zip": 0.0046
+  },
+  "nonnull": {
+   "city": 289629,
+   "full": 290710,
+   "number": 290184,
+   "state": 289629,
+   "street": 270953,
+   "zip": 289434
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.002, 'street': 0.0681, 'city': 0.0039, 'zip': 0.0046, 'state': 0.0039, 'full': 0.0002}）→ 可全量采集",
+  "total": 290761,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Number street=Pre_Direction city=City_State zip=Zip",
+ "sample_hash": "f20d9d3e8e41abf2",
+ "site_cols": [
+  "Street_Name",
+  "Street_Type",
+  "Full_Address"
+ ],
+ "source_id": "us/co/arapahoe",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://gis.arapahoegov.com/arcgis/rest/services/OpenDataService/FeatureServer/4",
+ "verdict": "CONTRACTED"
+}

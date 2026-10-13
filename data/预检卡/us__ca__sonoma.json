@@ -1,0 +1,264 @@
+{
+ "attribution": "Sonoma County",
+ "candidate_cols": {
+  "city": "City",
+  "number": "Num",
+  "street": "PreDir",
+  "unit": "Unit",
+  "zip": "ZipCode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:48",
+ "county": "Sonoma",
+ "curated_cols": {
+  "city": "City",
+  "number": "Num",
+  "street": "PreDir",
+  "zip": "ZipCode"
+ },
+ "fields": [
+  "ObjectID",
+  "Num",
+  "NumExt",
+  "PreDir",
+  "Name",
+  "Type",
+  "SufDir",
+  "Unit",
+  "City",
+  "ZipCode",
+  "Mun",
+  "Label",
+  "CityType",
+  "SOI",
+  "UGB",
+  "SupNum",
+  "Supervisor",
+  "URL",
+  "XCoord",
+  "YCoord",
+  "Lat",
+  "Long",
+  "last_edited_date",
+  "Shape"
+ ],
+ "fields_n": 24,
+ "guessed_cols": {
+  "unit": "Unit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses Public",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "City": {
+    "带特殊字符": 0,
+    "最短": "Cloverdale",
+    "最长": "Guerneville",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CityType": {
+    "带特殊字符": 0,
+    "最短": "Incorporated",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Label": {
+    "带特殊字符": 0,
+    "最短": "10 4th St",
+    "最长": "4200 Stewarts Point Skaggs Springs Rd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Lat": {
+    "带特殊字符": 0,
+    "最短": "38.63925442",
+    "最长": "38.8193652274",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Long": {
+    "带特殊字符": 0,
+    "最短": "-123.017898",
+    "最长": "-123.0059231226",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Mun": {
+    "带特殊字符": 0,
+    "最短": "CL",
+    "最长": "CLO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Name": {
+    "带特殊字符": 0,
+    "最短": "1st",
+    "最长": "Stewarts Point Skaggs Springs",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Num": {
+    "带特殊字符": 0,
+    "最短": "61",
+    "最长": "31205",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NumExt": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ObjectID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PreDir": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 271,
+    "空率": 0.903
+   },
+   "SOI": {
+    "带特殊字符": 0,
+    "最短": "Cloverdale",
+    "最长": "Cloverdale",
+    "空": 74,
+    "空率": 0.247
+   },
+   "SufDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SupNum": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "4",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Supervisor": {
+    "带特殊字符": 0,
+    "最短": "James Gore",
+    "最长": "Rebecca Hermosillo",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Type": {
+    "带特殊字符": 0,
+    "最短": "Rd",
+    "最长": "Blvd",
+    "空": 18,
+    "空率": 0.06
+   },
+   "UGB": {
+    "带特殊字符": 0,
+    "最短": "Cloverdale",
+    "最长": "Cloverdale",
+    "空": 74,
+    "空率": 0.247
+   },
+   "URL": {
+    "带特殊字符": 300,
+    "最短": "https://sonomacounty.ca.gov/Board-of-Sup",
+    "最长": "https://sonomacounty.ca.gov/Board-of-Supervisors/District-4/",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "1/2",
+    "空": 158,
+    "空率": 0.527
+   },
+   "XCoord": {
+    "带特殊字符": 0,
+    "最短": "6271313.0001516",
+    "最长": "6269882.79828756",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YCoord": {
+    "带特殊字符": 0,
+    "最短": "2010125.0000806",
+    "最长": "2061861.90808947",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZipCode": {
+    "带特殊字符": 0,
+    "最短": "95425",
+    "最长": "95425",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1791907422000",
+    "最长": "1791907422000",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b095ed6b3335aa21",
+  "total": 239975,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "street": 0.9591,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 239975,
+   "number": 239975,
+   "street": 9823,
+   "zip": 239975
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.0, 'street': 0.9591, 'city': 0.0, 'zip': 0.0}）→ 全量数据证伪，拒收",
+  "total": 239975,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Num street=PreDir city=City zip=ZipCode",
+ "sample_hash": "b095ed6b3335aa21",
+ "site_cols": [],
+ "source_id": "us/ca/sonoma",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://socogis.sonomacounty.ca.gov/map/rest/services/BASEPublic/Addresses_Public/MapServer/0",
+ "verdict": "REJECTED_P2"
+}

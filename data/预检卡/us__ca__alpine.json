@@ -1,0 +1,180 @@
+{
+ "attribution": "Alpine County",
+ "candidate_cols": {
+  "city": "SITUSCITY",
+  "number": "Situs",
+  "state": "SITUSCITY",
+  "street": "Situs",
+  "unit": "USFS_Unit"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:38:21",
+ "county": "Alpine",
+ "curated_cols": {
+  "city": "SITUSCITY",
+  "number": "Situs",
+  "state": "SITUSCITY",
+  "street": "Situs"
+ },
+ "fields": [
+  "OBJECTID",
+  "FULLAPN",
+  "APN",
+  "USFS_Unit",
+  "APN10",
+  "GIS_Acres",
+  "GlobalID",
+  "Short_Term_Rentals",
+  "Situs",
+  "SITUSCITY",
+  "SQFT",
+  "ACRE"
+ ],
+ "fields_n": 12,
+ "guessed_cols": {
+  "unit": "USFS_Unit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "AlpineCountyParcels_Internal22_23",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACRE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "249.84",
+    "空": 1,
+    "空率": 0.003
+   },
+   "APN": {
+    "带特殊字符": 0,
+    "最短": "001340021",
+    "最长": "001340021",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APN10": {
+    "带特殊字符": 0,
+    "最短": "1340021000",
+    "最长": "1340021000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLAPN": {
+    "带特殊字符": 0,
+    "最短": "001340021000",
+    "最长": "001340021000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_Acres": {
+    "带特殊字符": 0,
+    "最短": "1.85156619058172",
+    "最长": "0.27706723594639754",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "5d799120-1351-4e40-8516-61f6052a9b94",
+    "最长": "5d799120-1351-4e40-8516-61f6052a9b94",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITUSCITY": {
+    "带特殊字符": 0,
+    "最短": "Bear Valley CA",
+    "最长": "Markleeville CA 96120",
+    "空": 54,
+    "空率": 0.18
+   },
+   "SQFT": {
+    "带特殊字符": 0,
+    "最短": "6970",
+    "最长": "15681600",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Short_Term_Rentals": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 296,
+    "空率": 0.987
+   },
+   "Situs": {
+    "带特殊字符": 0,
+    "最短": "7 CEDAR LN",
+    "最长": "290 OLD PONY EXPESS TRL",
+    "空": 54,
+    "空率": 0.18
+   },
+   "USFS_Unit": {
+    "带特殊字符": 0,
+    "最短": "Humboldt-Toiyabe",
+    "最长": "Humboldt-Toiyabe",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "258feec559985ab9",
+  "total": 3051,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.3061,
+   "full": 0.3061,
+   "number": 0.3061,
+   "state": 0.3061,
+   "street": 0.3061
+  },
+  "nonnull": {
+   "city": 2117,
+   "full": 2117,
+   "number": 2117,
+   "state": 2117,
+   "street": 2117
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.3061, 'street': 0.3061, 'city': 0.3061, 'state': 0.3061, 'full': 0.3061}）→ 全量数据证伪，拒收",
+  "total": 3051,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Situs street=Situs city=SITUSCITY",
+ "sample_hash": "258feec559985ab9",
+ "site_cols": [
+  "Situs",
+  "SITUSCITY"
+ ],
+ "source_id": "us/ca/alpine",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://services1.arcgis.com/9z9tEfqo0TExR9C8/arcgis/rest/services/AlpineCountyParcels_22_23_PublicUpdate/FeatureServer/0",
+ "verdict": "REJECTED_P2"
+}

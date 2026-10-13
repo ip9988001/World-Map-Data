@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:02",
+ "county": "Clear Creek",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f → 下轮重试",
+ "source_id": "us/co/clear_creek",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://map.co.clear-creek.co.us/arcgis2/rest/services/ClearCreek/address/MapServer/0",
+ "verdict": "TRANSIENT"
+}

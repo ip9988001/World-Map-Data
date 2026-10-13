@@ -1,0 +1,226 @@
+{
+ "attribution": "Clay County",
+ "candidate_cols": {
+  "city": "Community",
+  "number": "House",
+  "state": "State",
+  "street": "PreDir",
+  "unit": "Community",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 22:39:24",
+ "county": "Clay",
+ "curated_cols": {
+  "city": "Community",
+  "number": "House",
+  "street": "PreDir",
+  "zip": "Zip"
+ },
+ "fields": [
+  "OBJECTID",
+  "House",
+  "Half",
+  "Unit",
+  "UnitType",
+  "PreDir",
+  "StreetName",
+  "StreetType",
+  "SuffixDir",
+  "Community",
+  "State",
+  "Zip",
+  "DwellingType",
+  "VacancyCode",
+  "Source",
+  "WholeAddress",
+  "Shape",
+  "Confidential"
+ ],
+ "fields_n": 18,
+ "guessed_cols": {
+  "state": "State",
+  "unit": "Community"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address_Site",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Community": {
+    "带特殊字符": 0,
+    "最短": "ORANGE PARK",
+    "最长": "GREEN COVE SPRINGS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Confidential": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "No",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DwellingType": {
+    "带特殊字符": 0,
+    "最短": "RES",
+    "最长": "RES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Half": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "House": {
+    "带特殊字符": 0,
+    "最短": "999",
+    "最长": "3365",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1209",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Source": {
+    "带特殊字符": 0,
+    "最短": "VER",
+    "最长": "ORTHO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "FL",
+    "最长": "FL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "MAPLE",
+    "最长": "LIVE OAK HOLLOW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SuffixDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "VacancyCode": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "B",
+    "空": 0,
+    "空率": 0.0
+   },
+   "WholeAddress": {
+    "带特殊字符": 0,
+    "最短": "1050 Maple Ln",
+    "最长": "3451 LIVE OAK HOLLOW DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "32043",
+    "最长": "32043",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "81b63188d4488273",
+  "total": 91969,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 91969,
+   "full": 91969,
+   "number": 91969,
+   "state": 91969,
+   "street": 91969,
+   "zip": 91969
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 91969,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=House street=PreDir city=Community zip=Zip",
+ "sample_hash": "81b63188d4488273",
+ "site_cols": [
+  "StreetName",
+  "StreetType",
+  "WholeAddress"
+ ],
+ "source_id": "us/fl/clay",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://maps.claycountygov.com:6443/arcgis/rest/services/SiteAddresses/MapServer/0",
+ "verdict": "CONTRACTED"
+}
