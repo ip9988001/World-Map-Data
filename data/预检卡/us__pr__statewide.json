@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "CSV_DIRECT",
+ "checked_at": "2026-10-13 01:18:21",
+ "county": "",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/pr/statewide",
+ "stage": "p0",
+ "state": "PR",
+ "url": "https://data.pr.gov/api/views/h9md-ic24/rows.csv?accessType=DOWNLOAD",
+ "verdict": "NEEDS_DOWNLOAD"
+}

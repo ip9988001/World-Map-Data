@@ -1,0 +1,423 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Place_Type",
+  "number": "Add_Number",
+  "street": "LSt_Name",
+  "unit": "FloorIndex",
+  "zip": "PostCodeEx"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:16:14",
+ "county": "",
+ "curated_cols": {},
+ "fields": [
+  "OBJECTID",
+  "DiscrpAgID",
+  "DateUpdate",
+  "Effective",
+  "Expire",
+  "NGUID",
+  "Country",
+  "A1",
+  "A2",
+  "AddCode",
+  "A3",
+  "A4",
+  "A5",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "AddNum_Cmp",
+  "DistMarker",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name",
+  "St_PosTyp",
+  "St_PosMod",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Typ",
+  "LSt_PosDir",
+  "ESN",
+  "MSAGComm",
+  "LCountyID",
+  "Post_Comm",
+  "Post_Code",
+  "PostCodeEx",
+  "Site",
+  "SubSite",
+  "Structure",
+  "Floor",
+  "FloorIndex",
+  "Wing",
+  "Unit",
+  "UnitPreTyp",
+  "UnitValue",
+  "Section",
+  "Row",
+  "Room",
+  "Seat",
+  "LocMarker",
+  "Addtl_Loc",
+  "AddDataURI",
+  "Place_Type",
+  "Placement",
+  "intrado_agency_id",
+  "Longitude",
+  "Latitude",
+  "Elevation",
+  "Altitude",
+  "Height",
+  "Full_St_Nm"
+ ],
+ "fields_n": 60,
+ "guessed_cols": {
+  "city": "Place_Type",
+  "number": "Add_Number",
+  "street": "LSt_Name",
+  "unit": "FloorIndex",
+  "zip": "PostCodeEx"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_WEAK",
+ "p1": {
+  "extremes": {
+   "A1": {
+    "带特殊字符": 0,
+    "最短": "NE",
+    "最长": "NE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A2": {
+    "带特殊字符": 0,
+    "最短": "SC",
+    "最长": "Scotts Bluff County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A3": {
+    "带特殊字符": 0,
+    "最短": "DIX",
+    "最长": "BUFFALO COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "A5": {
+    "带特殊字符": 0,
+    "最短": "Avante",
+    "最长": "BRUHN ACRES ON WEST MILITARY",
+    "空": 237,
+    "空率": 0.79
+   },
+   "AddCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Cmp": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "12924",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "10",
+    "最长": "12924",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 5,
+    "空率": 0.017
+   },
+   "DateUpdate": {
+    "带特殊字符": 0,
+    "最短": "1710470670000",
+    "最长": "1710470670000",
+    "空": 9,
+    "空率": 0.03
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "DCGIS",
+    "最长": "holtcounty.nebraska.gov",
+    "空": 9,
+    "空率": 0.03
+   },
+   "DistMarker": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "01121",
+    "空": 95,
+    "空率": 0.317
+   },
+   "Effective": {
+    "带特殊字符": 0,
+    "最短": "1567214937000",
+    "最长": "1567214937000",
+    "空": 261,
+    "空率": 0.87
+   },
+   "Expire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FloorIndex": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LCountyID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "O",
+    "最长": "COUNTY ROAD 157",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 291,
+    "空率": 0.97
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SW",
+    "空": 188,
+    "空率": 0.627
+   },
+   "LSt_Typ": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 16,
+    "空率": 0.053
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "DIX",
+    "最长": "BUFFALO COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NGUID": {
+    "带特殊字符": 228,
+    "最短": "679",
+    "最长": "urn:emergency:uid:gis:SSAP:{5B379C37-C5A1-4FDE-B07A-085E5C55AF91}:morrillcountyn",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PostCodeEx": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "68505",
+    "最长": "68505",
+    "空": 170,
+    "空率": 0.567
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "EAGLE",
+    "最长": "PLATTSMOUTH",
+    "空": 242,
+    "空率": 0.807
+   },
+   "Site": {
+    "带特殊字符": 10,
+    "最短": "<Null>",
+    "最长": "Petersen & Michelsen Hardware Co",
+    "空": 286,
+    "空率": 0.953
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "O",
+    "最长": "COUNTY ROAD P39",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "Boulevard",
+    "空": 16,
+    "空率": 0.053
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "South",
+    "空": 188,
+    "空率": 0.627
+   },
+   "St_PreMod": {
+    "带特殊字符": 9,
+    "最短": "<Null>",
+    "最长": "<Null>",
+    "空": 291,
+    "空率": 0.97
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "Road",
+    "最长": "United States Highway",
+    "空": 291,
+    "空率": 0.97
+   },
+   "Structure": {
+    "带特殊字符": 0,
+    "最短": "0.0000",
+    "最长": "0.0000",
+    "空": 291,
+    "空率": 0.97
+   },
+   "SubSite": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "9869d5f48585a36a",
+  "total": 878424,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.3312,
+   "full": 0.8326,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.9759
+  },
+  "nonnull": {
+   "city": 587471,
+   "full": 147056,
+   "number": 878424,
+   "street": 878424,
+   "zip": 21135
+  },
+  "reason": "number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 0.3312, 'zip': 0.9759, 'full': 0.8326}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 878424,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段可能是够的（**猜的**）：number=Add_Number street=LSt_Name —— 需造刀时用样本确认",
+ "sample_hash": "9869d5f48585a36a",
+ "site_cols": [
+  "Site",
+  "SubSite"
+ ],
+ "source_id": "us/ne/statewide",
+ "stage": "p0",
+ "state": "NE",
+ "url": "https://gis.ne.gov/Enterprise/rest/services/Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

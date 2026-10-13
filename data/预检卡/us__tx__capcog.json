@@ -1,0 +1,435 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Post_Comm",
+  "number": "AddNum_Pre",
+  "street": "St_PreMod",
+  "unit": "FloorIndex",
+  "zip": "Post_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:19:34",
+ "county": "",
+ "curated_cols": {
+  "city": "Post_Comm",
+  "number": "AddNum_Pre",
+  "street": "St_PreMod",
+  "zip": "Post_Code"
+ },
+ "fields": [
+  "OBJECTID",
+  "DiscrpAgID",
+  "DateUpdate",
+  "Effective",
+  "Expire",
+  "NGUID",
+  "Country",
+  "A1",
+  "A2",
+  "AddCode",
+  "A3",
+  "A4",
+  "A5",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "AddNum_Cmp",
+  "DistMarker",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name",
+  "St_PosTyp",
+  "St_PosDir",
+  "St_PosMod",
+  "Dir_Travel",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Typ",
+  "LSt_PosDir",
+  "ESN",
+  "MSAGComm",
+  "LCountyID",
+  "Post_Comm",
+  "Post_Code",
+  "PostCodeEx",
+  "Site",
+  "SubSite",
+  "Structure",
+  "Floor",
+  "FloorIndex",
+  "Wing",
+  "Unit",
+  "UnitPreTyp",
+  "UnitValue",
+  "Section",
+  "Row",
+  "Room",
+  "Seat",
+  "LocMarker",
+  "Addtl_Loc",
+  "AddDataURI",
+  "Place_Type",
+  "Placement",
+  "Longitude",
+  "Latitude",
+  "Elevation",
+  "Altitude",
+  "Height",
+  "ST_ALIAS",
+  "FULL_NAME",
+  "FULL_ADDR",
+  "NOTES",
+  "GC_Exception",
+  "EGDMS_Exception",
+  "ESNNUM",
+  "POINT_X",
+  "POINT_Y",
+  "POINT_Z"
+ ],
+ "fields_n": 70,
+ "guessed_cols": {
+  "unit": "FloorIndex"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "capcog_address_points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://regional-open-data-capcog.opendata.arcgis.com/datasets/CAPCOG::regional-address-points",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "A1": {
+    "带特殊字符": 0,
+    "最短": "TX",
+    "最长": "TX",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A2": {
+    "带特殊字符": 0,
+    "最短": "Williamson",
+    "最长": "Williamson",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A3": {
+    "带特殊字符": 0,
+    "最短": "Weir",
+    "最长": "Williamson County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "A4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "A5": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Cmp": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "13420",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "13420",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DateUpdate": {
+    "带特殊字符": 0,
+    "最短": "1791295804000",
+    "最长": "1791295804000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Dir_Travel": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "Williamson",
+    "最长": "Williamson",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DistMarker": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "00433",
+    "最长": "00433",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Effective": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Expire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LCountyID": {
+    "带特殊字符": 0,
+    "最短": "491",
+    "最长": "491",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "1ST",
+    "最长": "LITTLE GABRIEL RIVER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 279,
+    "空率": 0.93
+   },
+   "LSt_Typ": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "SPUR",
+    "空": 78,
+    "空率": 0.26
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "HUTTO",
+    "最长": "LIBERTY HILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NGUID": {
+    "带特殊字符": 300,
+    "最短": "urn:emergency:uid:gis:SSAP:2B6721EBE7C7F",
+    "最长": "urn:emergency:uid:gis:SSAP:2B6721EBE7C7F969:wilcotx.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PostCodeEx": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "78665",
+    "最长": "78665",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "Hutto",
+    "最长": "Liberty Hill",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Site": {
+    "带特殊字符": 1,
+    "最短": "B",
+    "最长": "Txu Jarrell Switch",
+    "空": 292,
+    "空率": 0.973
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "29",
+    "最长": "Little Gabriel River",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "Way",
+    "最长": "Boulevard",
+    "空": 78,
+    "空率": 0.26
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "West",
+    "最长": "North",
+    "空": 279,
+    "空率": 0.93
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "County Road",
+    "最长": "United States Highway",
+    "空": 230,
+    "空率": 0.767
+   },
+   "Structure": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SubSite": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "2841e25691e7821b",
+  "total": 1123045,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.9097,
+   "number": 0.8895,
+   "street": 0.8897,
+   "zip": 0.0001
+  },
+  "nonnull": {
+   "city": 1123042,
+   "full": 101433,
+   "number": 124048,
+   "street": 123832,
+   "zip": 1122987
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.8895, 'street': 0.8897, 'city': 0.0, 'zip': 0.0001, 'full': 0.9097}）→ 全量数据证伪，拒收",
+  "total": 1123045,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AddNum_Pre street=St_PreMod city=Post_Comm zip=Post_Code",
+ "sample_hash": "2841e25691e7821b",
+ "site_cols": [
+  "Site",
+  "SubSite",
+  "FULL_ADDR"
+ ],
+ "source_id": "us/tx/capcog",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://services5.arcgis.com/8DjE4f6iFLArDhsU/ArcGIS/rest/services/Regional_Address_Points/FeatureServer/0",
+ "verdict": "REJECTED_P2"
+}

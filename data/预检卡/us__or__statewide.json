@@ -1,0 +1,428 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Post_Comm",
+  "number": "ADDRESS_NUMBER_FULL",
+  "state": "State",
+  "street": "St_PreMod",
+  "unit": "BUILDING_ID",
+  "zip": "Post_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:17:59",
+ "county": "",
+ "curated_cols": {
+  "city": "Post_Comm",
+  "number": "ADDRESS_NUMBER_FULL",
+  "state": "State",
+  "street": "St_PreMod",
+  "zip": "Post_Code"
+ },
+ "fields": [
+  "ADDRESS_FULL",
+  "ADDRESS_NUMBER_FULL",
+  "Add_Number",
+  "AddNum_Pre",
+  "AddNum_Suf",
+  "STREET_NAME_FULL",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name",
+  "St_PosTyp",
+  "St_PosDir",
+  "St_PosMod",
+  "SUBADDRESS_FULL",
+  "SUBADDRESS_TYPE",
+  "SUBADDRESS_NUMBER",
+  "Unit",
+  "Building",
+  "Floor",
+  "Room",
+  "Seat",
+  "Addtl_Loc",
+  "BUILDING_ID",
+  "PARCEL_ID",
+  "Post_Comm",
+  "Post_Code",
+  "PostCodeEx",
+  "Inc_Muni",
+  "Uninc_Comm",
+  "Nbrhd_Comm",
+  "County",
+  "State",
+  "Country",
+  "OBJECTID",
+  "Longitude",
+  "Latitude",
+  "Elevation",
+  "Placement",
+  "MAIL",
+  "RESIDENTIAL",
+  "STAGE",
+  "Place_Type",
+  "LandmkName",
+  "AddDataURI",
+  "DateUpdate",
+  "Effective",
+  "Expire",
+  "DiscrpAgID",
+  "NGUID",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Typ",
+  "LSt_PosDir",
+  "MSAGComm",
+  "ESN",
+  "Milepost"
+ ],
+ "fields_n": 57,
+ "guessed_cols": {
+  "unit": "BUILDING_ID"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "OregonAddressPoints",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS_FULL": {
+    "带特殊字符": 0,
+    "最短": "86 V Street",
+    "最长": "1075 Southwest 170th Avenue BLDG 2 FL 5 #509",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_NUMBER_FULL": {
+    "带特殊字符": 0,
+    "最短": "66",
+    "最长": "12745",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "66",
+    "最长": "12745",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Addtl_Loc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Building": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "18",
+    "空": 297,
+    "空率": 0.99
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "Polk County",
+    "最长": "Washington County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Elevation": {
+    "带特殊字符": 0,
+    "最短": "1390",
+    "最长": "1390",
+    "空": 293,
+    "空率": 0.977
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 269,
+    "空率": 0.897
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "Bend",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Latitude": {
+    "带特殊字符": 0,
+    "最短": "442334",
+    "最长": "-123.87537384",
+    "空": 168,
+    "空率": 0.56
+   },
+   "Longitude": {
+    "带特殊字符": 0,
+    "最短": "7494808",
+    "最长": "-123.15392303",
+    "空": 168,
+    "空率": 0.56
+   },
+   "MAIL": {
+    "带特殊字符": 0,
+    "最短": "UNVERIFIED",
+    "最长": "UNVERIFIED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Nbrhd_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Placement": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "Placed on Map",
+    "空": 257,
+    "空率": 0.857
+   },
+   "PostCodeEx": {
+    "带特殊字符": 0,
+    "最短": "1536",
+    "最长": "1536",
+    "空": 273,
+    "空率": 0.91
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "97123",
+    "最长": "97123",
+    "空": 6,
+    "空率": 0.02
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "Bend",
+    "最长": "Milton-Freewater",
+    "空": 40,
+    "空率": 0.133
+   },
+   "Room": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_NAME_FULL": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "Payette Trail #970",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBADDRESS_FULL": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "BLDG 2 FL 5 #509",
+    "空": 218,
+    "空率": 0.727
+   },
+   "SUBADDRESS_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "C132",
+    "空": 218,
+    "空率": 0.727
+   },
+   "SUBADDRESS_TYPE": {
+    "带特殊字符": 0,
+    "最短": "#",
+    "最长": "Apartment",
+    "空": 218,
+    "空率": 0.727
+   },
+   "Seat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "Payette Trail #970",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "East",
+    "最长": "Northeast",
+    "空": 262,
+    "空率": 0.873
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "Way",
+    "最长": "Boulevard",
+    "空": 17,
+    "空率": 0.057
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "East",
+    "最长": "Southeast",
+    "空": 144,
+    "空率": 0.48
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "Highway",
+    "最长": "Highway",
+    "空": 285,
+    "空率": 0.95
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "OR",
+    "最长": "OR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Uninc_Comm": {
+    "带特殊字符": 0,
+    "最短": "Grants Pass",
+    "最长": "Unincorporated",
+    "空": 290,
+    "空率": 0.967
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "Apartment 47",
+    "空": 237,
+    "空率": 0.79
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "de34c974c7ca2855",
+  "total": 1942377,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 1942377,
+   "full": 1942377,
+   "number": 1942377,
+   "state": 1942377,
+   "street": 1942377,
+   "zip": 1942377
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 1942377,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS_NUMBER_FULL street=St_PreMod city=Post_Comm zip=Post_Code",
+ "sample_hash": "de34c974c7ca2855",
+ "site_cols": [
+  "ADDRESS_FULL",
+  "ADDRESS_NUMBER_FULL",
+  "STREET_NAME_FULL",
+  "SUBADDRESS_FULL",
+  "SUBADDRESS_TYPE"
+ ],
+ "source_id": "us/or/statewide",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://services8.arcgis.com/8PAo5HGmvRMlF2eU/arcgis/rest/services/Oregon_Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

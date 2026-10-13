@@ -1,0 +1,415 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPALI",
+  "number": "ADDRNUM",
+  "street": "DIRECTION",
+  "unit": "ALTUNITTYP",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:20:28",
+ "county": "Town of Warrenton",
+ "curated_cols": {
+  "city": "MUNICIPALI",
+  "number": "ADDRNUM",
+  "street": "DIRECTION",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "FID",
+  "SITEADDID",
+  "ADDPTKEY",
+  "PREADDRNUM",
+  "ADDRNUMSUF",
+  "ADDRNUM",
+  "ADDRRANGE",
+  "UNITTYPE",
+  "UNITID",
+  "ALTUNITTYP",
+  "ALTUNITID",
+  "DIRECTION",
+  "PLAINST",
+  "POSTDIRECT",
+  "STTYPE",
+  "FULLNAME",
+  "FULLADDR",
+  "PLACENAME",
+  "MUNICIPALI",
+  "ADDRESSDAT",
+  "OLDADDRESS",
+  "CITY",
+  "SOURCE",
+  "ESN",
+  "PSAP",
+  "MSAG",
+  "USNGCOORD",
+  "ADDRCLASS",
+  "POINTTYPE",
+  "CAPTUREMET",
+  "STATUS",
+  "LASTUPDATE",
+  "LASTEDITOR",
+  "GlobalID",
+  "COUNTY_DES",
+  "ZIPCODE",
+  "STRUCTURET",
+  "INCORPORAT",
+  "COUNTY",
+  "POSTDIRE_1",
+  "POSTTYPE",
+  "CREATION_D",
+  "CREATION_U",
+  "MODIFY_DAT",
+  "MODIFY_USE",
+  "C1_EXCEPTI",
+  "RES_TOW_BO",
+  "RES_TOW_SE"
+ ],
+ "fields_n": 48,
+ "guessed_cols": {
+  "unit": "ALTUNITTYP"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Warrenton_Municipality_Address_Points",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDPTKEY": {
+    "带特殊字符": 0,
+    "最短": "ADD-2180",
+    "最长": "ADD-2180",
+    "空": 298,
+    "空率": 0.993
+   },
+   "ADDRCLASS": {
+    "带特殊字符": 0,
+    "最短": "790",
+    "最长": "790",
+    "空": 298,
+    "空率": 0.993
+   },
+   "ADDRESSDAT": {
+    "带特殊字符": 0,
+    "最短": "3/1/04",
+    "最长": "06-22-17   19930210",
+    "空": 30,
+    "空率": 0.1
+   },
+   "ADDRNUM": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "8387",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRNUMSUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRRANGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTUNITID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTUNITTYP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CAPTUREMET": {
+    "带特殊字符": 0,
+    "最短": "Placed on Map",
+    "最长": "Placed on Map",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "WNT",
+    "最长": "WNT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "Fauquier",
+    "最长": "Fauquier",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY_DES": {
+    "带特殊字符": 0,
+    "最短": "HIGHLAND",
+    "最长": "PER KELLY MACHEN 07-26-2",
+    "空": 293,
+    "空率": 0.977
+   },
+   "DIRECTION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "98 BRENDA CT",
+    "最长": "5000 BROAD RUN CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "CRAY DR",
+    "最长": "BROAD RUN CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{99803DB5-E87D-4F0B-8453-21F6108EF3BF}",
+    "最长": "{99803DB5-E87D-4F0B-8453-21F6108EF3BF}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INCORPORAT": {
+    "带特殊字符": 0,
+    "最短": "Warrenton",
+    "最长": "Warrenton",
+    "空": 198,
+    "空率": 0.66
+   },
+   "LASTEDITOR": {
+    "带特殊字符": 300,
+    "最短": "FAUQUIER_COUNTY\\enniss",
+    "最长": "FAUQUIER_COUNTY\\enniss",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LASTUPDATE": {
+    "带特殊字符": 0,
+    "最短": "1698192000000",
+    "最长": "1698192000000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSAG": {
+    "带特殊字符": 0,
+    "最短": "WARRENTON",
+    "最长": "AMISSVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNICIPALI": {
+    "带特殊字符": 0,
+    "最短": "WARRENTON",
+    "最长": "WARRENTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OLDADDRESS": {
+    "带特殊字符": 1,
+    "最短": "BOX 63",
+    "最长": "NEW YORK GUARDIAN MORTGAGE CO",
+    "空": 126,
+    "空率": 0.42
+   },
+   "PLACENAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PLAINST": {
+    "带特殊字符": 0,
+    "最短": "CRAY",
+    "最长": "BROAD RUN CHURCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINTTYPE": {
+    "带特殊字符": 0,
+    "最短": "Building",
+    "最长": "Building",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTDIRECT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POSTDIRE_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PREADDRNUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PSAP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SITEADDID": {
+    "带特殊字符": 0,
+    "最短": "14",
+    "最长": "SID-2382",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "MAINT",
+    "最长": "9-1-1 Questionnaire",
+    "空": 5,
+    "空率": 0.017
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "Current",
+    "最长": "Current",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUCTURET": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "CHRCH",
+    "空": 278,
+    "空率": 0.927
+   },
+   "STTYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "PATH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 295,
+    "空率": 0.983
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "BLDG",
+    "最长": "BLDG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "USNGCOORD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "20186",
+    "最长": "20186",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "dcd81a6d5f24d662",
+  "total": 13799,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 13799,
+   "full": 13799,
+   "number": 13799,
+   "street": 13799,
+   "zip": 13799
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 13799,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRNUM street=DIRECTION city=MUNICIPALI zip=ZIPCODE",
+ "sample_hash": "dcd81a6d5f24d662",
+ "site_cols": [
+  "SITEADDID",
+  "PREADDRNUM",
+  "ADDRNUMSUF",
+  "ADDRNUM",
+  "ADDRRANGE"
+ ],
+ "source_id": "us/va/warrenton",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://services3.arcgis.com/7Q2bdSYWSeUYx2U5/arcgis/rest/services/Warrenton_Municipality_Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

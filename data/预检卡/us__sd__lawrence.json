@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:19:34",
+ "county": "Lawrence County",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': None, 'details': []}",
+ "source_id": "us/sd/lawrence",
+ "stage": "p0",
+ "state": "SD",
+ "url": "https://www.1stdistrict.org/arcgis/rest/services/Lawrence/lawrencemapnet/FeatureServer/1",
+ "verdict": "REJECTED_P0"
+}

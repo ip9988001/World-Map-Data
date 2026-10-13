@@ -1,0 +1,410 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNI",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "ST_PREFIX",
+  "unit": "UNITEXTRA",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:17:54",
+ "county": "",
+ "curated_cols": {
+  "city": "MUNI",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "ST_PREFIX",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "FEATUREID",
+  "ROADTYPE",
+  "ROADNUMBER",
+  "HOUSENUM",
+  "UNITNUM",
+  "HNRANGE",
+  "UNITEXTRA",
+  "BUILDING",
+  "FLOOR",
+  "ST_PREFIX",
+  "ST_NAME",
+  "ST_TYPE",
+  "ST_SUFFIX",
+  "ST_SUFFIX2",
+  "MUNI",
+  "ALTPREFIX",
+  "ALTNAME",
+  "ALTTYPE",
+  "ALTSUFFIX",
+  "ALTSUFFIX2",
+  "SUBDIV",
+  "VILLAGE",
+  "SIDE",
+  "ABSSIDE",
+  "STRUC_TYPE",
+  "SOURCE",
+  "COMMENT",
+  "FIELDNOTE",
+  "STATE",
+  "COUNTY",
+  "LSN",
+  "ALSN",
+  "LHN",
+  "NLFIDNEW",
+  "ZIPCODE",
+  "USPS_CITY",
+  "SEGID",
+  "TSSEGID",
+  "PT_LEN",
+  "MPVAL",
+  "FIPSCODE",
+  "COMM",
+  "X",
+  "Y",
+  "DATEMODIFI",
+  "Shape"
+ ],
+ "fields_n": 47,
+ "guessed_cols": {
+  "unit": "UNITEXTRA"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ABSSIDE": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ALSN": {
+    "带特殊字符": 0,
+    "最短": "0 US RTE 422",
+    "最长": "1247 1/2 US RTE 422",
+    "空": 147,
+    "空率": 0.49
+   },
+   "ALTNAME": {
+    "带特殊字符": 0,
+    "最短": "US RTE 422",
+    "最长": "US RTE 422",
+    "空": 147,
+    "空率": 0.49
+   },
+   "ALTPREFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTSUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTSUFFIX2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMMENT": {
+    "带特殊字符": 26,
+    "最短": "SHELL",
+    "最长": "STATE FARM INSURANCE - CRANSTON INSURANCE AGENCY",
+    "空": 190,
+    "空率": 0.633
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "TRU",
+    "最长": "TRU",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FEATUREID": {
+    "带特殊字符": 0,
+    "最短": "200007",
+    "最长": "200007",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIELDNOTE": {
+    "带特殊字符": 1,
+    "最短": "PER PHONE CALL",
+    "最长": "PER OWNER OF BOTH PROPERTIES",
+    "空": 296,
+    "空率": 0.987
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 299,
+    "空率": 0.997
+   },
+   "HNRANGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HOUSENUM": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1803",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LHN": {
+    "带特殊字符": 3,
+    "最短": "0",
+    "最长": "1247 1/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSN": {
+    "带特殊字符": 3,
+    "最短": "0 S STATE ST",
+    "最长": "245 7~12 LAWRENCE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNI": {
+    "带特殊字符": 0,
+    "最短": "GIRARD",
+    "最长": "GIRARD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NLFIDNEW": {
+    "带特殊字符": 300,
+    "最短": "STRUUS00422**C",
+    "最长": "STRUUS00422**C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PT_LEN": {
+    "带特殊字符": 0,
+    "最短": "51.3",
+    "最长": "1174.415",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNUMBER": {
+    "带特殊字符": 0,
+    "最短": "422",
+    "最长": "422",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADTYPE": {
+    "带特殊字符": 0,
+    "最短": "U",
+    "最长": "U",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SEGID": {
+    "带特殊字符": 0,
+    "最短": "42830.0",
+    "最长": "108990.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SIDE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 153,
+    "空率": 0.51
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 235,
+    "空率": 0.783
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "OH",
+    "最长": "OH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUC_TYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "CHURCHILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 83,
+    "空率": 0.277
+   },
+   "ST_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_SUFFIX2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBDIV": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TSSEGID": {
+    "带特殊字符": 0,
+    "最短": "42830.0",
+    "最长": "108990.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITEXTRA": {
+    "带特殊字符": 0,
+    "最短": "STE A",
+    "最长": "STE A",
+    "空": 299,
+    "空率": 0.997
+   },
+   "UNITNUM": {
+    "带特殊字符": 3,
+    "最短": "A",
+    "最长": "7~12",
+    "空": 285,
+    "空率": 0.95
+   },
+   "USPS_CITY": {
+    "带特殊字符": 0,
+    "最短": "GIRARD",
+    "最长": "GIRARD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "VILLAGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "44420",
+    "最长": "44420",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a4a8b8c4555b91e4",
+  "total": 97137,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 97137,
+   "number": 97137,
+   "state": 97137,
+   "street": 97137,
+   "zip": 97137
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",
+  "total": 97137,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSENUM street=ST_PREFIX city=MUNI zip=ZIPCODE",
+ "sample_hash": "a4a8b8c4555b91e4",
+ "site_cols": [],
+ "source_id": "us/oh/statewide",
+ "stage": "p0",
+ "state": "OH",
+ "url": "https://webgis.co.trumbull.oh.us/gisserver/rest/services/Maps/DDTI/MapServer/0",
+ "verdict": "CONTRACTED"
+}

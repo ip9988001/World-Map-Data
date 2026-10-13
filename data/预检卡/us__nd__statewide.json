@@ -1,0 +1,422 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Post_Comm",
+  "number": "Add_Number",
+  "state": "State",
+  "street": "St_PreDir",
+  "unit": "Building",
+  "zip": "Post_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 01:16:05",
+ "county": "",
+ "curated_cols": {
+  "city": "Post_Comm",
+  "number": "Add_Number",
+  "state": "State",
+  "street": "St_PreDir",
+  "zip": "Post_Code"
+ },
+ "fields": [
+  "OBJECTID",
+  "DiscrpAgID",
+  "DateUpdate",
+  "Effective",
+  "Expire",
+  "Site_NGUID",
+  "Country",
+  "State",
+  "County",
+  "AddCode",
+  "AddDataURI",
+  "Inc_Muni",
+  "Uninc_Comm",
+  "Nbrhd_Comm",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name",
+  "St_PosTyp",
+  "St_PosDir",
+  "St_PosMod",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Type",
+  "LSt_PosDir",
+  "ESN",
+  "MSAGComm",
+  "Post_Comm",
+  "Post_Code",
+  "Post_Code4",
+  "Building",
+  "Floor",
+  "Unit",
+  "Room",
+  "Seat",
+  "Addtl_Loc",
+  "LandmkName",
+  "Mile_Post",
+  "Place_Type",
+  "Placement",
+  "Long",
+  "Lat",
+  "Elev",
+  "LOCAL_ID",
+  "ADDRESS",
+  "SOURCE",
+  "ACCURACY",
+  "NOTES",
+  "MSAG_ADD",
+  "OBJECTID_1"
+ ],
+ "fields_n": 54,
+ "guessed_cols": {
+  "unit": "Building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "DBO_SiteStructureAddressPoints",
+  "objectIdField": "OBJECTID_1",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddDataURI": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "1/2",
+    "空": 297,
+    "空率": 0.99
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "11477",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Addtl_Loc": {
+    "带特殊字符": 1,
+    "最短": "7",
+    "最长": "LOT ELBOW, CABIN",
+    "空": 274,
+    "空率": 0.913
+   },
+   "Building": {
+    "带特殊字符": 0,
+    "最短": "Building B",
+    "最长": "Building B",
+    "空": 299,
+    "空率": 0.997
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "DUNN COUNTY",
+    "最长": "GRAND FORKS COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DateUpdate": {
+    "带特殊字符": 0,
+    "最短": "1724675251000",
+    "最长": "1724675251000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "intrado.com",
+    "最长": "intrado.com",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "3610",
+    "最长": "3610",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Effective": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Expire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "MYLO",
+    "最长": "UNINCORPORATED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "1B",
+    "最长": "SANDSTONE POINT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "NE",
+    "空": 142,
+    "空率": 0.473
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_Type": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "LOOP",
+    "空": 102,
+    "空率": 0.34
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "MYLO",
+    "最长": "DUNN CENTER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Nbrhd_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "58761",
+    "最长": "58761",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Code4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "MYLO",
+    "最长": "DUNN CENTER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Room": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Seat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Site_NGUID": {
+    "带特殊字符": 300,
+    "最短": "{94887F0A-B3BB-4367-8415-74CED1878D62}",
+    "最长": "{94887F0A-B3BB-4367-8415-74CED1878D62}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "SANDSTONE POINT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "NE",
+    "空": 142,
+    "空率": 0.473
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "LOOP",
+    "空": 102,
+    "空率": 0.34
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "HIGHWAY",
+    "最长": "COUNTY ROAD",
+    "空": 199,
+    "空率": 0.663
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "ND",
+    "最长": "ND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Uninc_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "Lot 7",
+    "最长": "Apartment 10A",
+    "空": 281,
+    "空率": 0.937
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "9dd6f4bbc306c19d",
+  "total": 438083,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 438083,
+   "full": 438083,
+   "number": 438083,
+   "state": 438083,
+   "street": 438073,
+   "zip": 438083
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 438083,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=St_PreDir city=Post_Comm zip=Post_Code",
+ "sample_hash": "9dd6f4bbc306c19d",
+ "site_cols": [
+  "Site_NGUID",
+  "ADDRESS"
+ ],
+ "source_id": "us/nd/statewide",
+ "stage": "p0",
+ "state": "ND",
+ "url": "https://services1.arcgis.com/GOcSXpzwBHyk2nog/arcgis/rest/services/NDGISHUBSiteStructureAddressPoints/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

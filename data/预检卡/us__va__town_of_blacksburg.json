@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-13 01:20:28",
+ "county": "Town of Blacksburg",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/va/town_of_blacksburg",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://s3.amazonaws.com/Blacksburg_Va/GIS_Updates/8_15_2022/Addresses.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

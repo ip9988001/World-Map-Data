@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-13 01:16:20",
+ "county": "",
+ "license": "https://gstore.unm.edu/apps/rgis/datasets/8850b25e-e495-46b5-952d-0fa1fa129ada/metadata/FGDC-STD-001-1998.html",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/nm/statewide",
+ "stage": "p0",
+ "state": "NM",
+ "url": "https://gstore.unm.edu/apps/rgis/datasets/8850b25e-e495-46b5-952d-0fa1fa129ada/NM911_Address_202608.original.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}
