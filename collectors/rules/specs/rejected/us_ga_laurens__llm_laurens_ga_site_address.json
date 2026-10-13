@@ -1,0 +1,168 @@
+{
+ "_rejected": {
+  "source_id": "us/ga/laurens",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 N HIGHWAY 319 实得 N HWY 319"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-13 10:40:39"
+ },
+ "spec": {
+  "name": "laurens_ga_site_address",
+  "version": 1,
+  "note": "HOUSE_NUMB/STREET_NAM are separate honest component columns (site addresses), so build street from PREFIX_DIR+STREET_NAM+STREET_TYP+SUFFIX_DIR instead of parsing the 12%-hit single-column form.",
+  "match": {
+   "columns_any": [
+    "HOUSE_NUMB",
+    "STREET_NAM"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HOUSE_NUMB",
+   "street": "",
+   "city": "ZONE_VENUE",
+   "zip": "ZIP_CODE",
+   "state": "ST"
+  },
+  "number_template": "{HOUSE_NUMB}",
+  "street_template": "{PREFIX_DIR} {STREET_NAM} {STREET_TYP} {SUFFIX_DIR}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "FID": 1,
+     "STATUS": "M",
+     "SCORE": 100,
+     "MATCH_TYPE": "A",
+     "SIDE": "R",
+     "MATCH_ADDR": "979 BRANTLEY RD",
+     "ARC_STREET": "979 BRANTLEY RD",
+     "TYPE": "RESIDENCE",
+     "PHONE": "I4782752878",
+     "HOUSE_NUMB": 979,
+     "STREET_NAM": "BRANTLEY",
+     "SUBDIVISIO": " ",
+     "ESN": "135 - BREWTON LOVETT",
+     "ZONE_VENUE": "EAST DUBLIN",
+     "ST": "GA",
+     "CUSTOMER": "BARFIELD, TERRY",
+     "TELCO": "BELSO",
+     "GEOCODE_AD": "979 BRANTLEY RD",
+     "DESCRIPTIO": " ",
+     "ADR_FRAC": " ",
+     "PREFIX_DIR": " ",
+     "STREET_TYP": "RD",
+     "SUFFIX_DIR": " ",
+     "ZIP_CODE": 31027,
+     "JOIN_ID": 0,
+     "OBJECTID": 8.4879840734e-314,
+     "UNIT": " ",
+     "CreatedDat": 1524614400000
+    },
+    "expect": {
+     "number": "979",
+     "street": "BRANTLEY RD"
+    }
+   },
+   {
+    "row": {
+     "FID": 5,
+     "STATUS": "M",
+     "SCORE": 100,
+     "MATCH_TYPE": "A",
+     "SIDE": "R",
+     "MATCH_ADDR": "1563 N HWY 319",
+     "ARC_STREET": "1563 N HIGHWAY 319",
+     "TYPE": "RESIDENCE",
+     "PHONE": " ",
+     "HOUSE_NUMB": 1563,
+     "STREET_NAM": "HIGHWAY 319",
+     "SUBDIVISIO": " ",
+     "ESN": "135 - BREWTON LOVETT",
+     "ZONE_VENUE": "EAST DUBLIN",
+     "ST": "GA",
+     "CUSTOMER": "BARFOOT, ALAN",
+     "TELCO": " ",
+     "GEOCODE_AD": "1563 N HIGHWAY 319",
+     "DESCRIPTIO": "GATED DRIVE TO BARN",
+     "ADR_FRAC": " ",
+     "PREFIX_DIR": "N",
+     "STREET_TYP": " ",
+     "SUFFIX_DIR": " ",
+     "ZIP_CODE": 31027,
+     "JOIN_ID": 0,
+     "OBJECTID": 8.4879840754e-314,
+     "UNIT": " ",
+     "CreatedDat": 1524614400000
+    },
+    "expect": {
+     "number": "1563",
+     "street": "N HIGHWAY 319"
+    }
+   },
+   {
+    "row": {
+     "FID": 11,
+     "STATUS": "M",
+     "SCORE": 100,
+     "MATCH_TYPE": "A",
+     "SIDE": "R",
+     "MATCH_ADDR": "205 W GAINES ST",
+     "ARC_STREET": "205 W GAINES ST",
+     "TYPE": "BUSINESS",
+     "PHONE": "I4782723567",
+     "HOUSE_NUMB": 205,
+     "STREET_NAM": "GAINES",
+     "SUBDIVISIO": " ",
+     "ESN": "145 - DUBLIN",
+     "ZONE_VENUE": "DUBLIN",
+     "ST": "GA",
+     "CUSTOMER": "BARGAIN HUNTER",
+     "TELCO": "BELSO",
+     "GEOCODE_AD": "205 W GAINES ST",
+     "DESCRIPTIO": " ",
+     "ADR_FRAC": " ",
+     "PREFIX_DIR": "W",
+     "STREET_TYP": "ST",
+     "SUFFIX_DIR": " ",
+     "ZIP_CODE": 31021,
+     "JOIN_ID": 0,
+     "OBJECTID": 8.4879840784e-314,
+     "UNIT": " ",
+     "CreatedDat": 1524614400000
+    },
+    "expect": {
+     "number": "205",
+     "street": "W GAINES ST"
+    }
+   }
+  ]
+ }
+}

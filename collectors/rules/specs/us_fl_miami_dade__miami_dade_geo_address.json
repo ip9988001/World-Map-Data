@@ -1,0 +1,146 @@
+{
+ "name": "us_fl_miami_dade__miami_dade_geo_address",
+ "version": 1,
+ "note": "源是 ArcGIS 门牌点图层，门牌号在 HSE_NUM、街名由 PRE_DIR+ST_NAME+ST_TYPE 三段分列组成，ZIP 独立成列、城市取 MAILING_MUNIC，因此用 columns 模式加模板拼接，而不是把整条 SNAME 当单列地址。",
+ "match": {
+  "columns_any": [
+   "HSE_NUM",
+   "SNAME"
+  ],
+  "columns_all": [
+   "ST_NAME",
+   "ST_TYPE"
+  ],
+  "columns_none": [
+   "UNIT"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HSE_NUM",
+  "street": "",
+  "city": "MAILING_MUNIC",
+  "zip": "ZIP",
+  "state": ""
+ },
+ "number_template": "{HSE_NUM}",
+ "street_template": "{PRE_DIR} {ST_NAME} {ST_TYPE}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "ADDRESSID": 149248,
+    "FOLIO": "0131120140810",
+    "point_x": 920391.37505907,
+    "point_y": 550041.43746678,
+    "HSE_NUM": 7553,
+    "PRE_DIR": "N",
+    "ST_NAME": "MIAMI",
+    "ST_TYPE": "AVE",
+    "SUF_DIR": null,
+    "ZIP": 33150,
+    "PLUS4": 3545,
+    "MUNIC": 1,
+    "MAILING_MUNIC": "MIAMI",
+    "SNAME": "7553 N MIAMI AVE ",
+    "subaddressid": null,
+    "PARENT_FOLIO": "0131120140810",
+    "BLDG": null,
+    "UNIT": "",
+    "EnerGov": null,
+    "State": null,
+    "GlobalID": "35a7083d-eeed-43e2-8fd1-ca1bc15300cc"
+   },
+   "expect": {
+    "number": "7553",
+    "street": "N MIAMI AVE"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 12,
+    "ADDRESSID": 256995,
+    "FOLIO": "0341080071210",
+    "point_x": 900948.68743674,
+    "point_y": 517381.34368145,
+    "HSE_NUM": 36,
+    "PRE_DIR": null,
+    "ST_NAME": "MAJORCA",
+    "ST_TYPE": "AVE",
+    "SUF_DIR": null,
+    "ZIP": 33134,
+    "PLUS4": 4651,
+    "MUNIC": 3,
+    "MAILING_MUNIC": "CORAL GABLES",
+    "SNAME": "36  MAJORCA AVE ",
+    "subaddressid": null,
+    "PARENT_FOLIO": "0341080071210",
+    "BLDG": null,
+    "UNIT": "",
+    "EnerGov": null,
+    "State": null,
+    "GlobalID": "a7d1293b-e9eb-4d2f-9f75-c665a6a8da7f"
+   },
+   "expect": {
+    "number": "36",
+    "street": "MAJORCA AVE"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 19,
+    "ADDRESSID": 890566,
+    "FOLIO": "1079160201240",
+    "point_x": 844730.5445101,
+    "point_y": 412199.2050334,
+    "HSE_NUM": 407,
+    "PRE_DIR": "SE",
+    "ST_NAME": "32ND",
+    "ST_TYPE": "TER",
+    "SUF_DIR": null,
+    "ZIP": 33033,
+    "PLUS4": 0,
+    "MUNIC": 10,
+    "MAILING_MUNIC": "HOMESTEAD",
+    "SNAME": "407 SE 32ND TER ",
+    "subaddressid": null,
+    "PARENT_FOLIO": "1079160201240",
+    "BLDG": null,
+    "UNIT": "",
+    "EnerGov": null,
+    "State": null,
+    "GlobalID": "1286e561-5051-4a2a-afc7-bb499645b559"
+   },
+   "expect": {
+    "number": "407",
+    "street": "SE 32ND TER"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/fl/miami-dade",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 10:40:09",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

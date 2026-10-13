@@ -1,0 +1,142 @@
+{
+ "_rejected": {
+  "source_id": "us/ga/telfair",
+  "model": "deepseek-flash",
+  "errs": [
+   "契约 city_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）",
+   "契约 zip_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 141,
+   "kept": 134,
+   "kept_contentful": 94,
+   "ratio": 0.667,
+   "fabricated": 0,
+   "best_ratio": 0.641
+  },
+  "at": "2026-10-13 10:41:16"
+ },
+ "spec": {
+  "name": "telfair_house_no_road",
+  "version": 1,
+  "note": "HOUSE_NO 是真实门牌号，街名由 Road + Rd_Type 拼成；Neighborhood 是地块分区/社区注释（含 'County - unincorporated'）不是市名，故 city/state/zip 全部留空。",
+  "match": {
+   "columns_any": [
+    "HOUSE_NO"
+   ],
+   "columns_all": [
+    "Road",
+    "Rd_Type"
+   ],
+   "columns_none": [
+    "Owner"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HOUSE_NO",
+   "street": "Road",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{HOUSE_NO}",
+  "street_template": "{Road} {Rd_Type}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 1.0,
+   "zip_max_miss": 1.0,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源中无 city/zip/state 列；Neighborhood 为地块分区标签（值含 'Scotland'、'County - unincorporated'、'Comm-Warehouse' 等），非城市名，不可写入 city。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "REALKEY": 6777,
+     "PIN": "S00200 066",
+     "Owner": "OLIVER LUCIOUS III                      ",
+     "HOUSE_NO": 44,
+     "Road": "BRANCH                   ",
+     "Rd_Type": "ST  ",
+     "Homestead": "S0   ",
+     "CUV_Year": "    ",
+     "Acres": 0,
+     "Class": "R",
+     "LEGAL_DESC": "PB 18H 42-43                     (S4-1-1B)   ",
+     "Neighborhood": "Scotland                                          ",
+     "Subdivision": "                                        ",
+     "LAND_TYPE": 1,
+     "ACC": 0,
+     "DESIRE": "NULL",
+     "Shape__Area": 2605.30859375,
+     "Shape__Length": 216.13563099564146
+    },
+    "expect": {
+     "number": "44",
+     "street": "BRANCH ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 11,
+     "REALKEY": 2782,
+     "PIN": "087 00 003",
+     "Owner": "STAPLETON WILLARD JEFFREY               ",
+     "HOUSE_NO": 762,
+     "Road": "FISHING CREEK            ",
+     "Rd_Type": "RD  ",
+     "Homestead": "S0   ",
+     "CUV_Year": "    ",
+     "Acres": 2,
+     "Class": "R",
+     "LEGAL_DESC": "M/H   16P 806-07  (7-13-68-2)                ",
+     "Neighborhood": "County - unincorporated                           ",
+     "Subdivision": "                                        ",
+     "LAND_TYPE": 3,
+     "ACC": 3,
+     "DESIRE": "C",
+     "Shape__Area": 13679.546875,
+     "Shape__Length": 530.3632876737681
+    },
+    "expect": {
+     "number": "762",
+     "street": "FISHING CREEK RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 30,
+     "REALKEY": 6737,
+     "PIN": "S00200 026",
+     "Owner": "ASHLEY LEON                             ",
+     "HOUSE_NO": 939,
+     "Road": "MAIN                     ",
+     "Rd_Type": "ST  ",
+     "Homestead": "S0   ",
+     "CUV_Year": "    ",
+     "Acres": 0,
+     "Class": "R",
+     "LEGAL_DESC": "H/L 6P 718                           (S2-1-4)",
+     "Neighborhood": "Scotland                                          ",
+     "Subdivision": "                                        ",
+     "LAND_TYPE": 1,
+     "ACC": 0,
+     "DESIRE": "NULL",
+     "Shape__Area": 3748.970703125,
+     "Shape__Length": 286.0004782296475
+    },
+    "expect": {
+     "number": "939",
+     "street": "MAIN ST"
+    }
+   }
+  ]
+ }
+}

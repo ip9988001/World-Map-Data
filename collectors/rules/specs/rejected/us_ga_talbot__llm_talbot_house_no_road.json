@@ -1,0 +1,141 @@
+{
+ "_rejected": {
+  "source_id": "us/ga/talbot",
+  "model": "deepseek-flash",
+  "errs": [
+   "不如现有规则（72% < 95%）",
+   "契约 max_junk=0.5 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 144,
+   "kept_contentful": 144,
+   "ratio": 0.72,
+   "fabricated": 0,
+   "best_ratio": 0.95
+  },
+  "at": "2026-10-13 10:40:58"
+ },
+ "spec": {
+  "name": "talbot_house_no_road",
+  "version": 1,
+  "note": "GA Talbot 县地块表把门牌号放在 HOUSE_NO（整型，0 表示无门牌号），街名放在 Road，街名类型后缀放在 Rd_Type；三者直接拼 columns 模式即可，无需 single。",
+  "match": {
+   "columns_any": [
+    "House_NO",
+    "HOUSE_NO"
+   ],
+   "columns_all": "",
+   "columns_none": "",
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HOUSE_NO",
+   "street": "Road",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{HOUSE_NO}",
+  "street_template": "{Road} {Rd_Type}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.0,
+   "zip_max_miss": 0.0,
+   "max_junk": 0.5,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "本服务字段仅有 HOUSE_NO / Road / Rd_Type（另有 Parcel_No / Owner / Acres / Class 等地籍属性），不存在 city、zip、state 任何列，故豁免市/邮编缺失检查；州别 GA 由 us/ga/talbot 源自身确定。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "Parcel_No": "005 00301",
+     "Realkey": 3103,
+     "Owner": "PREVATT VICTOR                          ",
+     "HOUSE_NO": 1938,
+     "Road": "BOX SPRINGS              ",
+     "Rd_Type": "ROAD",
+     "LEGAL_DESC": "10TH LD LL 193                               ",
+     "Homestead": "S1   ",
+     "CUV_Year": "    ",
+     "Acres": 1058.12,
+     "Class": "J",
+     "ACC": 1,
+     "DESIRE": "C",
+     "LAND_TYPE": 3,
+     "PREV_VAL": 1747891,
+     "CURR_VAL": 2068893,
+     "TAXDISTRIC": 1,
+     "NEIGHBHOOD": "RL500+",
+     "SUBD_NAME": "                                        "
+    },
+    "expect": {
+     "number": "1938",
+     "street": "BOX SPRINGS ROAD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 18,
+     "Parcel_No": "005 00319",
+     "Realkey": 141,
+     "Owner": "ADAMS WILLIAM ZACK  & DAVID CHARLES     ",
+     "HOUSE_NO": 47,
+     "Road": "WAVERLY HALL             ",
+     "Rd_Type": "ROAD",
+     "LEGAL_DESC": "17TH LD  LL 152 TRACT 1                      ",
+     "Homestead": "S0   ",
+     "CUV_Year": "    ",
+     "Acres": 5.66,
+     "Class": "R",
+     "ACC": 1,
+     "DESIRE": "C",
+     "LAND_TYPE": 1,
+     "PREV_VAL": 32111,
+     "CURR_VAL": 36441,
+     "TAXDISTRIC": 1,
+     "NEIGHBHOOD": "ResU5 ",
+     "SUBD_NAME": "                                        "
+    },
+    "expect": {
+     "number": "47",
+     "street": "WAVERLY HALL ROAD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 30,
+     "Parcel_No": "005 00324  A",
+     "Realkey": 111,
+     "Owner": "MATHIS JOHN WESLEY &                    ",
+     "HOUSE_NO": 436,
+     "Road": "BOX SPRINGS              ",
+     "Rd_Type": "ROAD",
+     "LEGAL_DESC": "10TH LD LL 151                               ",
+     "Homestead": "S1   ",
+     "CUV_Year": "    ",
+     "Acres": 1,
+     "Class": "R",
+     "ACC": 2,
+     "DESIRE": "C",
+     "LAND_TYPE": 1,
+     "PREV_VAL": 77252,
+     "CURR_VAL": 92242,
+     "TAXDISTRIC": 1,
+     "NEIGHBHOOD": "TALBOT",
+     "SUBD_NAME": "                                        "
+    },
+    "expect": {
+     "number": "436",
+     "street": "BOX SPRINGS ROAD"
+    }
+   }
+  ]
+ }
+}

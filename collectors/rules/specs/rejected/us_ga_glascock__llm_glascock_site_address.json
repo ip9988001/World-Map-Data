@@ -1,0 +1,152 @@
+{
+ "_rejected": {
+  "source_id": "us/ga/glascock",
+  "model": "deepseek-flash",
+  "errs": [
+   "不如现有规则（64% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 128,
+   "kept_contentful": 128,
+   "ratio": 0.64,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-13 10:40:25"
+ },
+ "spec": {
+  "name": "glascock_site_address",
+  "version": 1,
+  "note": "门牌号在 House_No 数值列、街名拆成 Road + Rd_Type 两列，用模板拼接即可；无 city/zip 列，故豁免。",
+  "match": {
+   "columns_any": [
+    "House_No"
+   ],
+   "columns_all": [
+    "Road",
+    "Rd_Type"
+   ],
+   "columns_none": [
+    "LEGAL_DESC",
+    "PIN",
+    "Owner"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "House_No",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{House_No}",
+  "street_template": "{Road} {Rd_Type}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源为 Glascock 县地块/地址图层，字段只有 House_No/Road/Rd_Type/PIN/Owner/LEGAL_DESC/Acres 等，无任何 city 或 zip 列"
+  },
+  "examples": [
+   {
+    "row": {
+     "FID": 1,
+     "Realkey": 1,
+     "PIN": "001    001",
+     "Owner": "PULLIAM LUMBER CO INC",
+     "House_No": 7761,
+     "Road": "MURRAY",
+     "Rd_Type": "RD",
+     "LEGAL_DESC": "518.30 AC JOHNSON & NELSON TR CONS",
+     "Homestead": "S0",
+     "CUV_Year": "2026",
+     "Acres": 518.3,
+     "Class": "V",
+     "ACC": 2,
+     "DESIRE": "C",
+     "LAND_TYPE": 3,
+     "Neighborho": "NULL",
+     "Subdivisio": " ",
+     "PREV_VAL": 433201,
+     "CURR_VAL": 1212977,
+     "Land_Val": 1212977,
+     "Shape__Area": 2966406.82421875,
+     "Shape__Length": 14719.736908591993
+    },
+    "expect": {
+     "number": "7761",
+     "street": "MURRAY RD"
+    }
+   },
+   {
+    "row": {
+     "FID": 4,
+     "Realkey": 3,
+     "PIN": "001    003",
+     "Owner": "LANDRUM JEANNE",
+     "House_No": 7526,
+     "Road": "COUNTY LINE",
+     "Rd_Type": "RD",
+     "LEGAL_DESC": "2.00 ACRES",
+     "Homestead": "S0",
+     "CUV_Year": " ",
+     "Acres": 2,
+     "Class": "R",
+     "ACC": 2,
+     "DESIRE": "C",
+     "LAND_TYPE": 3,
+     "Neighborho": "NULL",
+     "Subdivisio": " ",
+     "PREV_VAL": 83461,
+     "CURR_VAL": 91423,
+     "Land_Val": 7343,
+     "Shape__Area": 11732.2109375,
+     "Shape__Length": 431.3983188517419
+    },
+    "expect": {
+     "number": "7526",
+     "street": "COUNTY LINE RD"
+    }
+   },
+   {
+    "row": {
+     "FID": 5,
+     "Realkey": 4,
+     "PIN": "002    001",
+     "Owner": "MERRITT JEFF",
+     "House_No": 10693,
+     "Road": "HWY 123",
+     "Rd_Type": " ",
+     "LEGAL_DESC": "3.46 AC PARCEL B PB 2023/32",
+     "Homestead": "S1",
+     "CUV_Year": "2021",
+     "Acres": 3.46,
+     "Class": "V",
+     "ACC": 1,
+     "DESIRE": "C",
+     "LAND_TYPE": 3,
+     "Neighborho": "NULL",
+     "Subdivisio": " ",
+     "PREV_VAL": 116657,
+     "CURR_VAL": 130603,
+     "Land_Val": 19846,
+     "Shape__Area": 20091.13671875,
+     "Shape__Length": 836.8556466378197
+    },
+    "expect": {
+     "number": "10693",
+     "street": "HWY 123"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "_rejected": {
+  "source_id": "us/il/woodford",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "合规率 4% 低于阈 30%",
+   "不如现有规则（4% < 100%）",
+   "契约 city_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）",
+   "契约 zip_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 8,
+   "kept_contentful": 8,
+   "ratio": 0.04,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-13 10:41:26"
+ },
+ "spec": {
+  "name": "woodford_address_points",
+  "version": 1,
+  "note": "Address 单列已是完整的『门牌号 + 街名』（如 '57 DANVERS RD'），且无 city/zip 列，用 single 模式整列解析，避免 columns 模式把号重复拼进街名。",
+  "match": {
+   "columns_any": [
+    "Address"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "Address",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 1.0,
+   "zip_max_miss": 1.0,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "该 FeatureServer 图层仅含 OBJECTID / Add_Number / Address / GlobalID 四个字段，没有任何 city 或 zip 列，故豁免"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "Add_Number": 57,
+     "Address": "57 DANVERS RD",
+     "GlobalID": "e4e01768-44ae-49e2-a218-b1f8e5a6a9a5"
+    },
+    "expect": {
+     "number": "57",
+     "street": "DANVERS RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 2,
+     "Add_Number": 50,
+     "Address": "50 COUNTY ROAD 2000 E",
+     "GlobalID": "cfdde79a-f2b9-4eca-9f34-197d4e000b08"
+    },
+    "expect": {
+     "number": "50",
+     "street": "COUNTY ROAD 2000 E"
+    }
+   }
+  ]
+ }
+}
