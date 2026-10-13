@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:20:11",
+ "county": "DeKalb",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Dekalb_Public_ISV/MapServer not started ', 'details': []}",
+ "source_id": "us/al/dekalb",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://al28portal.kcsgis.com/al28server/rest/services/Dekalb_Public_ISV/MapServer/48",
+ "verdict": "REJECTED_P0"
+}

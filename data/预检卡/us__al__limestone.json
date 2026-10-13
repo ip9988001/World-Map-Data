@@ -1,0 +1,419 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MunicipalityCode",
+  "number": "PropertyAddr1",
+  "state": "PropertyState",
+  "street": "PropertyAddr1",
+  "zip": "PropertyZip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:20:12",
+ "county": "Limestone",
+ "curated_cols": {
+  "number": "PropertyAddr1",
+  "street": "PropertyAddr1"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "ParcelNo",
+  "CALC_ACRE",
+  "RecordYear",
+  "OwnerName",
+  "OwnerName2",
+  "MailAddress1",
+  "MailAddress2",
+  "MailCity",
+  "MailState",
+  "MailZip",
+  "Neighborhood",
+  "AssessmentClass",
+  "SubDiv1",
+  "SubDiv2",
+  "Book1",
+  "Book2",
+  "Page1",
+  "Page2",
+  "Lot1",
+  "Lot2",
+  "Block1",
+  "Block2",
+  "MunicipalityCode",
+  "PropertyAddr1",
+  "PropertyCity",
+  "PropertyState",
+  "PropertyZip",
+  "ForestAcreage",
+  "TotalLandValue",
+  "TotalImpValue",
+  "TotalValue",
+  "PID",
+  "OBJECTID_1",
+  "CreatedByRecord",
+  "RetiredByRecord",
+  "last_edited_user",
+  "last_edited_date",
+  "last_edited_user1",
+  "last_edited_date1",
+  "StatedArea",
+  "Join_Count_Acreage",
+  "Join_Count_Lot",
+  "TextString_Acreage",
+  "TextString_Lot",
+  "TIFDist",
+  "FOCDE",
+  "Shape.STArea()",
+  "Shape.STLength()"
+ ],
+ "fields_n": 50,
+ "guessed_cols": {
+  "city": "MunicipalityCode",
+  "state": "PropertyState",
+  "zip": "PropertyZip"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AssessmentClass": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 103,
+    "空率": 0.343
+   },
+   "Block1": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 293,
+    "空率": 0.977
+   },
+   "Block2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Book1": {
+    "带特殊字符": 0,
+    "最短": "J",
+    "最长": "000000",
+    "空": 142,
+    "空率": 0.473
+   },
+   "Book2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CALC_ACRE": {
+    "带特殊字符": 0,
+    "最短": "3e-08",
+    "最长": "160.91692425",
+    "空": 62,
+    "空率": 0.207
+   },
+   "CreatedByRecord": {
+    "带特殊字符": 206,
+    "最短": "{E453F140-BF66-4DE9-AC15-DF635AAFAB46}",
+    "最长": "{E453F140-BF66-4DE9-AC15-DF635AAFAB46}",
+    "空": 94,
+    "空率": 0.313
+   },
+   "ForestAcreage": {
+    "带特殊字符": 0,
+    "最短": "8.0",
+    "最长": "19.01",
+    "空": 286,
+    "空率": 0.953
+   },
+   "Lot1": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "TR 5",
+    "空": 129,
+    "空率": 0.43
+   },
+   "Lot2": {
+    "带特殊字符": 0,
+    "最短": "TRB",
+    "最长": "TRB",
+    "空": 299,
+    "空率": 0.997
+   },
+   "MailAddress1": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 1012",
+    "最长": "1803 WINDOVER PL SW APT #4",
+    "空": 103,
+    "空率": 0.343
+   },
+   "MailAddress2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MailCity": {
+    "带特殊字符": 0,
+    "最短": "TONEY",
+    "最长": "OWENS CROSS ROADS",
+    "空": 103,
+    "空率": 0.343
+   },
+   "MailState": {
+    "带特殊字符": 0,
+    "最短": "AL",
+    "最长": "AL",
+    "空": 103,
+    "空率": 0.343
+   },
+   "MailZip": {
+    "带特殊字符": 0,
+    "最短": "35620",
+    "最长": "35620",
+    "空": 103,
+    "空率": 0.343
+   },
+   "MunicipalityCode": {
+    "带特殊字符": 0,
+    "最短": "01",
+    "最长": "01",
+    "空": 103,
+    "空率": 0.343
+   },
+   "Neighborhood": {
+    "带特殊字符": 0,
+    "最短": "ELK RIVER",
+    "最长": "Northwest Limestone County",
+    "空": 103,
+    "空率": 0.343
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "72798",
+    "最长": "107985",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OwnerName": {
+    "带特殊字符": 94,
+    "最短": "MOSS KALA",
+    "最长": "THOMAS EDWARD REAID LIVING TRUST - REAID THOMAS EDWARD, TRUSTEE",
+    "空": 103,
+    "空率": 0.343
+   },
+   "OwnerName2": {
+    "带特殊字符": 10,
+    "最短": "ROLAND",
+    "最长": "C/O HASTINGS SHELLY RENEE & HASTINGS ANDREW TYLER",
+    "空": 283,
+    "空率": 0.943
+   },
+   "PID": {
+    "带特殊字符": 0,
+    "最短": "0603080000022001",
+    "最长": "0603080000022001",
+    "空": 103,
+    "空率": 0.343
+   },
+   "Page1": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "000000",
+    "空": 143,
+    "空率": 0.477
+   },
+   "Page2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ParcelNo": {
+    "带特殊字符": 0,
+    "最短": "06 03 08 0 000 022.001",
+    "最长": "06 03 08 0 000 022.001",
+    "空": 103,
+    "空率": 0.343
+   },
+   "PropertyAddr1": {
+    "带特殊字符": 0,
+    "最短": "HWY 99",
+    "最长": "12965 ELK RIVER MILLS RD NW",
+    "空": 116,
+    "空率": 0.387
+   },
+   "PropertyCity": {
+    "带特殊字符": 0,
+    "最短": "ATHENS",
+    "最长": "ELKMONT 35620",
+    "空": 168,
+    "空率": 0.56
+   },
+   "PropertyState": {
+    "带特殊字符": 0,
+    "最短": "AL",
+    "最长": "AL",
+    "空": 203,
+    "空率": 0.677
+   },
+   "PropertyZip": {
+    "带特殊字符": 0,
+    "最短": "35620",
+    "最长": "35620",
+    "空": 205,
+    "空率": 0.683
+   },
+   "RecordYear": {
+    "带特殊字符": 0,
+    "最短": "2026",
+    "最长": "2026",
+    "空": 103,
+    "空率": 0.343
+   },
+   "RetiredByRecord": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SubDiv1": {
+    "带特殊字符": 0,
+    "最短": "UNKNOWN",
+    "最长": "WALLACE HEIGHTS ESTATES",
+    "空": 117,
+    "空率": 0.39
+   },
+   "SubDiv2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TotalImpValue": {
+    "带特殊字符": 0,
+    "最短": "5700.0",
+    "最长": "1299400.0",
+    "空": 155,
+    "空率": 0.517
+   },
+   "TotalLandValue": {
+    "带特殊字符": 0,
+    "最短": "9200.0",
+    "最长": "1204400.0",
+    "空": 104,
+    "空率": 0.347
+   },
+   "TotalValue": {
+    "带特殊字符": 0,
+    "最短": "8600.0",
+    "最长": "1288900.0",
+    "空": 104,
+    "空率": 0.347
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1717811084000",
+    "最长": "1717811084000",
+    "空": 206,
+    "空率": 0.687
+   },
+   "last_edited_date1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "KeetGIS",
+    "最长": "PAULETTE.COCKRELL",
+    "空": 206,
+    "空率": 0.687
+   },
+   "last_edited_user1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "935d29a2e4383d97",
+  "total": 68415,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0352,
+   "full": 0.0352,
+   "number": 0.0352,
+   "state": 0.0352,
+   "street": 0.0352,
+   "zip": 0.0352
+  },
+  "nonnull": {
+   "city": 66009,
+   "full": 66009,
+   "number": 66009,
+   "state": 66009,
+   "street": 66009,
+   "zip": 66009
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0352, 'street': 0.0352, 'city': 0.0352, 'zip': 0.0352, 'state': 0.0352, 'full': 0.0352}）→ 可全量采集",
+  "total": 68415,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=PropertyAddr1 street=PropertyAddr1",
+ "sample_hash": "935d29a2e4383d97",
+ "site_cols": [
+  "MailAddress1",
+  "MailAddress2",
+  "PropertyAddr1",
+  "PropertyCity",
+  "PropertyState"
+ ],
+ "source_id": "us/al/limestone",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://gis.limestonecounty-al.gov/arcgis/rest/services/Limestone_Public_ISV_ReMap/MapServer/103",
+ "verdict": "CONTRACTED"
+}

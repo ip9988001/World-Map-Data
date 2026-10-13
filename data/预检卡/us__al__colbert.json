@@ -1,0 +1,439 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "state": "StatedArea",
+  "street": "SitusAddName",
+  "zip": "MailZip1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:20:01",
+ "county": "Colbert",
+ "curated_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "street": "SitusAddName"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "CreatedByRecord",
+  "RetiredByRecord",
+  "StatedArea",
+  "Acreage_TextString",
+  "Created_Date",
+  "Modified_Date",
+  "OBJECTID",
+  "PARCEL_NO",
+  "GIS_Acres",
+  "PIN",
+  "PPIN",
+  "PARCELID",
+  "ParcelID_GISlink",
+  "Owner",
+  "MailAdd1",
+  "MailAdd2",
+  "MailAdd3",
+  "MailCity",
+  "MailState",
+  "MailZip1",
+  "MailZip2",
+  "TTV",
+  "TAV",
+  "TimberAcres",
+  "UserValue",
+  "TaxDist",
+  "FLAG1",
+  "FLAG2",
+  "FLAG3",
+  "FLAG4",
+  "FLAG5",
+  "FLAG6",
+  "SitusAddID",
+  "SitusAddName",
+  "SitusAddNumber",
+  "SitusAddCity",
+  "ImpDescrip",
+  "PropertyClass",
+  "PropertySubClass",
+  "SubLot",
+  "SubBlock",
+  "PreviousOwner",
+  "DeededAcres",
+  "CalcAcres",
+  "PIN_PID",
+  "Neighborhood",
+  "NeighborhoodSub",
+  "LegalDescription",
+  "TaxYearDue",
+  "TotalTaxDue",
+  "CImpValue",
+  "CLandValue",
+  "pcliID",
+  "DeedBook",
+  "DeedPage",
+  "DeedRecorded",
+  "DeedSigned",
+  "acctNum",
+  "exemption",
+  "ZoningCode",
+  "ZoningDesc",
+  "HasCurrentUse",
+  "CurrentUseValue",
+  "Section",
+  "Township",
+  "Range",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()"
+ ],
+ "fields_n": 70,
+ "guessed_cols": {
+  "state": "StatedArea",
+  "zip": "MailZip1"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Acreage_TextString": {
+    "带特殊字符": 26,
+    "最短": "6 Ac",
+    "最长": "273.9 Ac(c)",
+    "空": 253,
+    "空率": 0.843
+   },
+   "CreatedByRecord": {
+    "带特殊字符": 300,
+    "最短": "{2523AD1A-1DA0-40F4-AD09-1BFF582C6D1A}",
+    "最长": "{2523AD1A-1DA0-40F4-AD09-1BFF582C6D1A}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Created_Date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG5": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG6": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_Acres": {
+    "带特殊字符": 0,
+    "最短": "2.91278",
+    "最长": "270.27712902",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ImpDescrip": {
+    "带特殊字符": 300,
+    "最短": ",",
+    "最长": "Res/Com, Paving, Paving, Wall, Utility, Paving, Other",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd1": {
+    "带特殊字符": 1,
+    "最短": "P O BOX D",
+    "最长": "139 COX CREEK PARKWAY S #321",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd2": {
+    "带特殊字符": 0,
+    "最短": "STE G",
+    "最长": "2929 ARCH STREET SUITE 2600",
+    "空": 287,
+    "空率": 0.957
+   },
+   "MailAdd3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MailCity": {
+    "带特殊字符": 0,
+    "最短": "IUKA",
+    "最长": "MUSCLE SHOALS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailState": {
+    "带特殊字符": 0,
+    "最短": "TN",
+    "最长": "TN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailZip1": {
+    "带特殊字符": 0,
+    "最短": "38017",
+    "最长": "38017",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailZip2": {
+    "带特殊字符": 0,
+    "最短": "-",
+    "最长": "1093",
+    "空": 128,
+    "空率": 0.427
+   },
+   "Modified_Date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "3563",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 119,
+    "最短": "A&O LLC",
+    "最长": "JEFFERY J & MARCIA B SHEA JOINT REVOCABLE TRUST AND SHEA JEFFERY J TRUSTEE AND S",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "0207250001023000",
+    "最长": "0707353002010000U1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_NO": {
+    "带特殊字符": 0,
+    "最短": "0207250001023000",
+    "最长": "0207250001023000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "990",
+    "最长": "49754",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PPIN": {
+    "带特殊字符": 0,
+    "最短": "990.0",
+    "最长": "49754.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ParcelID_GISlink": {
+    "带特殊字符": 0,
+    "最短": "0707353002010000U",
+    "最长": "02 07 25 0 001 023.000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PropertyClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PropertySubClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RetiredByRecord": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddCity": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddName": {
+    "带特殊字符": 0,
+    "最短": "BROADWAY",
+    "最长": "BUCHANNAN PENINSULA ROAD",
+    "空": 129,
+    "空率": 0.43
+   },
+   "SitusAddNumber": {
+    "带特殊字符": 0,
+    "最短": "60",
+    "最长": "21234",
+    "空": 129,
+    "空率": 0.43
+   },
+   "StatedArea": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TAV": {
+    "带特殊字符": 0,
+    "最短": "80",
+    "最长": "208700",
+    "空": 1,
+    "空率": 0.003
+   },
+   "TTV": {
+    "带特殊字符": 0,
+    "最短": "900.0",
+    "最长": "1043500.0",
+    "空": 1,
+    "空率": 0.003
+   },
+   "TaxDist": {
+    "带特殊字符": 0,
+    "最短": "02",
+    "最长": "02",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TimberAcres": {
+    "带特殊字符": 0,
+    "最短": "9.0",
+    "最长": "223.0",
+    "空": 276,
+    "空率": 0.92
+   },
+   "UserValue": {
+    "带特殊字符": 0,
+    "最短": "2220",
+    "最长": "111872",
+    "空": 282,
+    "空率": 0.94
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "0c2287b0bb0443db",
+  "total": 43311,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 1.0,
+   "full": 1.0,
+   "number": 0.0151,
+   "state": 0.9944,
+   "street": 0.0094,
+   "zip": 0.0035
+  },
+  "nonnull": {
+   "city": 0,
+   "full": 0,
+   "number": 42658,
+   "state": 241,
+   "street": 42905,
+   "zip": 43158
+  },
+  "reason": "number/street 达标，但 city 缺失率超上限（{'number': 0.0151, 'street': 0.0094, 'city': 1.0, 'zip': 0.0035, 'state': 0.9944, 'full': 1.0}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 43311,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SitusAddNumber street=SitusAddName city=SitusAddCity",
+ "sample_hash": "0c2287b0bb0443db",
+ "site_cols": [
+  "SitusAddID",
+  "SitusAddName",
+  "SitusAddNumber",
+  "SitusAddCity",
+  "PropertyClass"
+ ],
+ "source_id": "us/al/colbert",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://al20portal.kcsgis.com/al20server/rest/services/Internal/Colbert_Public_ISV/MapServer/43",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

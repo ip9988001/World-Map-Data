@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-13 09:18:41",
+ "county": "",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/wa/statewide",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://files.slack.com/files-pri/T029HV94T-F06GLTZQ1U6/download/site_address_points_oct2023.zip?pub_secret=ad47d7aa18",
+ "verdict": "NEEDS_DOWNLOAD"
+}

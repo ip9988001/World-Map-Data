@@ -1,0 +1,436 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "state": "StatedArea",
+  "street": "SitusAddName",
+  "zip": "MailZip1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:18:53",
+ "county": "Baldwin",
+ "curated_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "street": "SitusAddName"
+ },
+ "fields": [
+  "OBJECTID",
+  "PIN",
+  "PINPAD",
+  "PID",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "CalcAcre",
+  "pcliID",
+  "PPIN",
+  "PARCELID",
+  "Owner",
+  "MailAdd1",
+  "MailAdd2",
+  "MailAdd3",
+  "MailCity",
+  "MailState",
+  "MailZip1",
+  "MailZip2",
+  "TTV",
+  "TAV",
+  "TimberAcres",
+  "UserValue",
+  "TaxDist",
+  "FLAG1",
+  "FLAG2",
+  "FLAG3",
+  "FLAG4",
+  "FLAG5",
+  "FLAG6",
+  "SitusAddID",
+  "SitusAddName",
+  "SitusAddNumber",
+  "SitusAddCity",
+  "ImpDescrip",
+  "PropertyClass",
+  "PropertySubClass",
+  "SubLot",
+  "SubBlock",
+  "PreviousOwner",
+  "DeededAcres",
+  "CalcAcres",
+  "PIN_PID",
+  "Neighborhood",
+  "NeighborhoodSub",
+  "Subdivision",
+  "LegalDescription",
+  "TaxYearDue",
+  "TotalTaxDue",
+  "CImpValue",
+  "CLandValue",
+  "DeedBook",
+  "DeedPage",
+  "DeedRecorded",
+  "DeedSigned",
+  "acctNum",
+  "exemption",
+  "AssessedRate",
+  "SubdivisionCode",
+  "ZoningCode",
+  "ZoningDesc",
+  "HasCurrentUse",
+  "CurrentUseValue",
+  "StatedArea",
+  "AcreageAnno",
+  "SubType",
+  "IsSeed"
+ ],
+ "fields_n": 67,
+ "guessed_cols": {
+  "state": "StatedArea",
+  "zip": "MailZip1"
+ },
+ "layer": {
+  "maxRecordCount": 25000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "CalcAcre": {
+    "带特殊字符": 0,
+    "最短": "1.0",
+    "最长": "146.89",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DeededAcres": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG5": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG6": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ImpDescrip": {
+    "带特殊字符": 300,
+    "最短": ",",
+    "最长": "Res/Com, Paving, Paving, Paving, Fence, Paving, Other, Dock/",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd1": {
+    "带特殊字符": 3,
+    "最短": "PO BOX 10",
+    "最长": "11100 WHITEHOUSE FORK ROAD EXT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd2": {
+    "带特殊字符": 0,
+    "最短": "APT 2",
+    "最长": "STE 12-BALDWIN COUNTY ADMIN BL",
+    "空": 294,
+    "空率": 0.98
+   },
+   "MailAdd3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MailCity": {
+    "带特殊字符": 0,
+    "最短": "MAUK",
+    "最长": "DAYTONA BEACH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailState": {
+    "带特殊字符": 0,
+    "最短": "AL",
+    "最长": "AL",
+    "空": 1,
+    "空率": 0.003
+   },
+   "MailZip1": {
+    "带特殊字符": 0,
+    "最短": "36567",
+    "最长": "36567",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailZip2": {
+    "带特殊字符": 0,
+    "最短": "-",
+    "最长": "9454",
+    "空": 108,
+    "空率": 0.36
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 192,
+    "最短": "ASA LLC",
+    "最长": "MCCORD DOROTHY ANN AND TERRELL RUBY NEAL AND ANDREWS HENRY LEE AND ANDREWS BARBA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "3506130000006002",
+    "最长": "3506130000006002",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PID": {
+    "带特殊字符": 0,
+    "最短": "05-35-06-13-0-000-006.002",
+    "最长": "05-35-06-13-0-000-006.002",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "92",
+    "最长": "248138",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PINPAD": {
+    "带特殊字符": 0,
+    "最短": "006697",
+    "最长": "006697",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PPIN": {
+    "带特殊字符": 0,
+    "最短": "92.0",
+    "最长": "248138.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PreviousOwner": {
+    "带特殊字符": 195,
+    "最短": "ASA LLC",
+    "最长": "ALMAROAD, LESTER COVELL AND ALMAROAD, LA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PropertyClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PropertySubClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Shape.STArea()": {
+    "带特殊字符": 0,
+    "最短": "5640.333292",
+    "最长": "441056.739958955",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape.STLength()": {
+    "带特殊字符": 0,
+    "最短": "221.428911878643",
+    "最长": "299.06410510345364",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusAddCity": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddName": {
+    "带特殊字符": 1,
+    "最短": "ELM ST",
+    "最长": "STAGECOACH CMRCL PK CIR",
+    "空": 14,
+    "空率": 0.047
+   },
+   "SitusAddNumber": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "32210",
+    "空": 68,
+    "空率": 0.227
+   },
+   "SubBlock": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "PH 1",
+    "空": 164,
+    "空率": 0.547
+   },
+   "SubLot": {
+    "带特殊字符": 6,
+    "最短": "5",
+    "最长": "38-40",
+    "空": 136,
+    "空率": 0.453
+   },
+   "TAV": {
+    "带特殊字符": 0,
+    "最短": "100",
+    "最长": "1107460",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TTV": {
+    "带特殊字符": 0,
+    "最短": "500.0",
+    "最长": "2535000.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TaxDist": {
+    "带特殊字符": 0,
+    "最短": "144",
+    "最长": "02HR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TimberAcres": {
+    "带特殊字符": 0,
+    "最短": "7.6",
+    "最长": "146.0",
+    "空": 288,
+    "空率": 0.96
+   },
+   "UserValue": {
+    "带特殊字符": 0,
+    "最短": "4849",
+    "最长": "49654",
+    "空": 290,
+    "空率": 0.967
+   },
+   "pcliID": {
+    "带特殊字符": 0,
+    "最短": "5599857",
+    "最长": "5599857",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "06e11e0e102f80c6",
+  "total": 162227,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 1.0,
+   "full": 1.0,
+   "number": 0.0161,
+   "state": 0.9964,
+   "street": 0.0045,
+   "zip": 0.0002
+  },
+  "nonnull": {
+   "city": 0,
+   "full": 0,
+   "number": 159612,
+   "state": 590,
+   "street": 161500,
+   "zip": 162187
+  },
+  "reason": "number/street 达标，但 city 缺失率超上限（{'number': 0.0161, 'street': 0.0045, 'city': 1.0, 'zip': 0.0002, 'state': 0.9964, 'full': 1.0}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 162227,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SitusAddNumber street=SitusAddName city=SitusAddCity",
+ "sample_hash": "06e11e0e102f80c6",
+ "site_cols": [
+  "SitusAddID",
+  "SitusAddName",
+  "SitusAddNumber",
+  "SitusAddCity",
+  "PropertyClass"
+ ],
+ "source_id": "us/al/baldwin",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://web6.kcsgis.com/kcsgis/rest/services/Baldwin/AL05_GAMAWeb/MapServer/31",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

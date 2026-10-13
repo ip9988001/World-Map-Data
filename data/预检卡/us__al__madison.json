@@ -1,0 +1,189 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "addrnum",
+  "street": "rdname",
+  "unit": "unitid"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:20:21",
+ "county": "Madison",
+ "curated_cols": {
+  "number": "addrnum",
+  "street": "rdname"
+ },
+ "fields": [
+  "OBJECTID",
+  "addressptid",
+  "addrnum",
+  "unitid",
+  "rdname",
+  "fulladdr",
+  "status",
+  "globalid",
+  "mcwd",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "pin"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {
+  "unit": "unitid"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Incorporated_Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "2115",
+    "最长": "66320",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addressptid": {
+    "带特殊字符": 0,
+    "最短": "ADD-4868",
+    "最长": "ADD-121787",
+    "空": 109,
+    "空率": 0.363
+   },
+   "addrnum": {
+    "带特殊字符": 0,
+    "最短": "615",
+    "最长": "28111",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1682093283000",
+    "最长": "1682093283000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "admin",
+    "最长": "bholt1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fulladdr": {
+    "带特殊字符": 3,
+    "最短": "237WADE",
+    "最长": "1030GRANDEVIEWCLUBHOUSE",
+    "空": 104,
+    "空率": 0.347
+   },
+   "globalid": {
+    "带特殊字符": 0,
+    "最短": "438c18d7-6ac7-4ec4-a205-4b58fb75941a",
+    "最长": "438c18d7-6ac7-4ec4-a205-4b58fb75941a",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1715111859000",
+    "最长": "1715111859000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "admin",
+    "最长": "bholt1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mcwd": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 190,
+    "空率": 0.633
+   },
+   "pin": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "rdname": {
+    "带特殊字符": 3,
+    "最短": "JOY",
+    "最长": "WILLIAMS & BROAD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "status": {
+    "带特殊字符": 0,
+    "最短": "Current",
+    "最长": "Current",
+    "空": 189,
+    "空率": 0.63
+   },
+   "unitid": {
+    "带特殊字符": 0,
+    "最短": "F/H",
+    "最长": "PHON EQUIP",
+    "空": 176,
+    "空率": 0.587
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "d697157f8fd8af75",
+  "total": 162226,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.9987,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 206,
+   "number": 162223,
+   "street": 162222
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.9987}）→ 可全量采集",
+  "total": 162226,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addrnum street=rdname（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "d697157f8fd8af75",
+ "site_cols": [
+  "addressptid",
+  "addrnum",
+  "fulladdr"
+ ],
+ "source_id": "us/al/madison",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://services3.arcgis.com/x30BNDiAn8ea61Vv/ArcGIS/rest/services/Incorporated_Addresses_view/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

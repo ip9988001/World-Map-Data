@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:23:51",
+ "county": "Ouachita",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：JSONDecodeError: Expecting value: line 2 column 1 (char 2)",
+ "source_id": "us/ar/ouachita",
+ "stage": "p0",
+ "state": "AR",
+ "url": "https://www.efsedge.com/arcgis/rest/services/Ouachita_County/Ouachita_Vector/MapServer/5",
+ "verdict": "REJECTED_P0"
+}

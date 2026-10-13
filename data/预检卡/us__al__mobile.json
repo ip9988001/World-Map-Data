@@ -1,0 +1,436 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "addrnum",
+  "state": "stateabbreviation",
+  "street": "fullname",
+  "unit": "secondaltunittype",
+  "zip": "Zip_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:21:32",
+ "county": "Mobile",
+ "curated_cols": {
+  "city": "City",
+  "number": "addrnum",
+  "street": "fullname",
+  "zip": "Zip_Code"
+ },
+ "fields": [
+  "OBJECTID",
+  "status",
+  "pointtype",
+  "fulladdr",
+  "addrnum",
+  "preaddrnum",
+  "fullname",
+  "addrnumsuf",
+  "unittype",
+  "unitid",
+  "City",
+  "county",
+  "stateabbreviation",
+  "Zip_Code",
+  "municipality",
+  "JURIS",
+  "addrrange",
+  "IN_MS4",
+  "B_CREEK_WS",
+  "FIRM_DATE",
+  "FREEBOARD",
+  "FREEBOARD_18",
+  "FLOOD_P10",
+  "FLOOD_P18",
+  "FLOODWAY10",
+  "FLOODWAY18",
+  "FLOOD_ZN10",
+  "FLOOD_ZN18",
+  "BFE_10",
+  "BFE_18",
+  "Notes",
+  "siteaddid",
+  "addressptid",
+  "country",
+  "placename",
+  "altunittype",
+  "altunitid",
+  "secondaltunittype",
+  "secondaltunitid",
+  "thirdaltunittype",
+  "thirdaltunitid",
+  "fourthaltunittype",
+  "fourthaltunitid",
+  "SUB_NUM",
+  "LOT_NUM_1",
+  "SUB_LOT",
+  "BLOCK_NUM",
+  "FAM_DIV",
+  "FD_OWNER",
+  "addrclass",
+  "esn",
+  "msag",
+  "rclnguid",
+  "discrpagid",
+  "usngcoord",
+  "X",
+  "Y",
+  "capturemeth",
+  "VALIDATIONSTATUS",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "AssignDate",
+  "GlobalID"
+ ],
+ "fields_n": 65,
+ "guessed_cols": {
+  "state": "stateabbreviation",
+  "unit": "secondaltunittype"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Site Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BFE_10": {
+    "带特殊字符": 0,
+    "最短": "9.0",
+    "最长": "110.0",
+    "空": 136,
+    "空率": 0.453
+   },
+   "BFE_18": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "116",
+    "空": 128,
+    "空率": 0.427
+   },
+   "B_CREEK_WS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 264,
+    "空率": 0.88
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "AXIS",
+    "最长": "BAYOU LA BATRE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIRM_DATE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLOODWAY10": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 290,
+    "空率": 0.967
+   },
+   "FLOODWAY18": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 279,
+    "空率": 0.93
+   },
+   "FLOOD_P10": {
+    "带特殊字符": 0,
+    "最短": "0625K",
+    "最长": "0659 K",
+    "空": 7,
+    "空率": 0.023
+   },
+   "FLOOD_P18": {
+    "带特殊字符": 0,
+    "最短": "0651L",
+    "最长": "0651L",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FLOOD_ZN10": {
+    "带特殊字符": 0,
+    "最短": "X",
+    "最长": "X SHADED",
+    "空": 7,
+    "空率": 0.023
+   },
+   "FLOOD_ZN18": {
+    "带特殊字符": 0,
+    "最短": "X",
+    "最长": "X SHADED",
+    "空": 75,
+    "空率": 0.25
+   },
+   "FREEBOARD": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 144,
+    "空率": 0.48
+   },
+   "FREEBOARD_18": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 110,
+    "空率": 0.367
+   },
+   "IN_MS4": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 213,
+    "空率": 0.71
+   },
+   "JURIS": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "12",
+    "空": 216,
+    "空率": 0.72
+   },
+   "Notes": {
+    "带特殊字符": 2,
+    "最短": "ADDRESS CORRECTION",
+    "最长": "JURISDICTION CHANGED FROM SARALAND TO COUNTY AS PER RESOLUTION BY SARALAND",
+    "空": 290,
+    "空率": 0.967
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip_Code": {
+    "带特殊字符": 0,
+    "最短": "36619",
+    "最长": "36619",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addressptid": {
+    "带特殊字符": 0,
+    "最短": "ADD-1515",
+    "最长": "ADD-1515",
+    "空": 297,
+    "空率": 0.99
+   },
+   "addrnum": {
+    "带特殊字符": 0,
+    "最短": "430",
+    "最长": "12618",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addrnumsuf": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 273,
+    "空率": 0.91
+   },
+   "addrrange": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "altunitid": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "altunittype": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "Mobile",
+    "最长": "Mobile",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fulladdr": {
+    "带特殊字符": 0,
+    "最短": "4304 BAY RD",
+    "最长": "11650 IRVINGTON BAYOU-LA-BATRE HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fullname": {
+    "带特殊字符": 0,
+    "最短": "BAY RD",
+    "最长": "IRVINGTON BAYOU-LA-BATRE HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "municipality": {
+    "带特殊字符": 0,
+    "最短": "County",
+    "最长": "Industrial Park",
+    "空": 0,
+    "空率": 0.0
+   },
+   "placename": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "pointtype": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 5,
+    "空率": 0.017
+   },
+   "preaddrnum": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "secondaltunitid": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "secondaltunittype": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "siteaddid": {
+    "带特殊字符": 0,
+    "最短": "SID-79255",
+    "最长": "SID-79255",
+    "空": 295,
+    "空率": 0.983
+   },
+   "stateabbreviation": {
+    "带特殊字符": 0,
+    "最短": "AL",
+    "最长": "AL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "status": {
+    "带特殊字符": 0,
+    "最短": "Current",
+    "最长": "Current",
+    "空": 0,
+    "空率": 0.0
+   },
+   "thirdaltunittype": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unitid": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unittype": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "4767323430350569",
+  "total": 80161,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0001,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 80152,
+   "full": 80160,
+   "number": 80161,
+   "state": 80161,
+   "street": 80161,
+   "zip": 80159
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0001, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 80161,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addrnum street=fullname city=City zip=Zip_Code",
+ "sample_hash": "4767323430350569",
+ "site_cols": [
+  "fulladdr",
+  "addrnum",
+  "preaddrnum",
+  "addrnumsuf",
+  "addrrange"
+ ],
+ "source_id": "us/al/mobile",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://gis.mobilecountyal.gov/server/rest/services/Development/FeatureServer/11",
+ "verdict": "CONTRACTED"
+}

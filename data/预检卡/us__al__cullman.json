@@ -1,0 +1,438 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "state": "MailState",
+  "street": "SitusAddName",
+  "zip": "MailZip1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:20:06",
+ "county": "Cullman",
+ "curated_cols": {
+  "city": "SitusAddCity",
+  "number": "SitusAddNumber",
+  "street": "SitusAddName"
+ },
+ "fields": [
+  "OBJECTID",
+  "PARCELID",
+  "PIN",
+  "Owner",
+  "MailAdd1",
+  "MailAdd2",
+  "MailAdd3",
+  "MailCity",
+  "MailState",
+  "MailZip1",
+  "MailZip2",
+  "PreviousOwner",
+  "Neighborhood",
+  "PropertyClass",
+  "PropertySubClass",
+  "TimberAcres",
+  "UserValue",
+  "TaxDist",
+  "FLAG1",
+  "FLAG2",
+  "FLAG3",
+  "FLAG4",
+  "FLAG5",
+  "FLAG6",
+  "SitusAddID",
+  "SitusAddNumber",
+  "SitusAddName",
+  "SitusAddCity",
+  "ImpDescrip",
+  "SubLot",
+  "SubBlock",
+  "DeededAcres",
+  "Shape",
+  "CalcAcres",
+  "PIN_PID",
+  "NeighborhoodSub",
+  "LegalDescription",
+  "TaxYearDue",
+  "TotalTaxDue",
+  "CImpValue",
+  "CLandValue",
+  "TTV",
+  "TAV",
+  "Join_Count",
+  "TARGET_FID",
+  "OID_1",
+  "Subdivision",
+  "DeedBook",
+  "DeedPage",
+  "DeedRecorded",
+  "DeedSigned",
+  "Join_Count_1",
+  "TARGET_FID_1",
+  "ORIG_FID",
+  "STR",
+  "Section_",
+  "Township",
+  "Range",
+  "POINT_X",
+  "POINT_Y",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "Parcel_Label",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "GlobalID",
+  "PIN_Text"
+ ],
+ "fields_n": 69,
+ "guessed_cols": {
+  "state": "MailState",
+  "zip": "MailZip1"
+ },
+ "layer": {
+  "maxRecordCount": 100000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "CImpValue": {
+    "带特殊字符": 0,
+    "最短": "7100.0",
+    "最长": "1037400.0",
+    "空": 86,
+    "空率": 0.287
+   },
+   "CLandValue": {
+    "带特殊字符": 0,
+    "最短": "155.0",
+    "最长": "1064700.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CalcAcres": {
+    "带特殊字符": 0,
+    "最短": "2.7",
+    "最长": "15.51",
+    "空": 95,
+    "空率": 0.317
+   },
+   "DeededAcres": {
+    "带特殊字符": 0,
+    "最短": "1.1",
+    "最长": "0.57",
+    "空": 282,
+    "空率": 0.94
+   },
+   "FLAG1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG5": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLAG6": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ImpDescrip": {
+    "带特殊字符": 300,
+    "最短": ",",
+    "最长": "Res/Com, Paving, Canopy, Canopy, Utility, Utility, Paving",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LegalDescription": {
+    "带特殊字符": 200,
+    "最短": "SE4 OF NE4",
+    "最长": "12 AC(C)- SW 1/4 SW 1/4 LYING W OF 646' CONTOUR BRINDLEY CRK (TAX DEED) LESS: BE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd1": {
+    "带特殊字符": 0,
+    "最短": "RT 1",
+    "最长": "2 PERIMETER PARK S STE 510E",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailAdd2": {
+    "带特殊字符": 0,
+    "最短": "STE 800",
+    "最长": "SUITE 200",
+    "空": 296,
+    "空率": 0.987
+   },
+   "MailAdd3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MailCity": {
+    "带特殊字符": 0,
+    "最短": "EVA",
+    "最长": "VESTAVIA HLS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailState": {
+    "带特殊字符": 0,
+    "最短": "AL",
+    "最长": "AL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailZip1": {
+    "带特殊字符": 0,
+    "最短": "35179",
+    "最长": "35179",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailZip2": {
+    "带特殊字符": 0,
+    "最短": "-",
+    "最长": "7819",
+    "空": 129,
+    "空率": 0.43
+   },
+   "Neighborhood": {
+    "带特殊字符": 0,
+    "最短": "URBAN",
+    "最长": "COMMERCIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NeighborhoodSub": {
+    "带特殊字符": 0,
+    "最短": "URBAN",
+    "最长": "COMMERCIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "4867364",
+    "最长": "4867364",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 160,
+    "最短": "DRAKE, TOM",
+    "最长": "HARDIN GREG (LE) AND HARDIN AUDREY (LE) AND KELLER ALEXANDRA (REM) AND HARDIN AS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "0906230001008001",
+    "最长": "0906230001008001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "56.0",
+    "最长": "200640.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN_PID": {
+    "带特殊字符": 300,
+    "最短": "56.00000000, 0802030000035000",
+    "最长": "200640.00000000, 0307360001021001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PreviousOwner": {
+    "带特殊字符": 161,
+    "最短": "DRAKE, TOM",
+    "最长": "WILLIAMS, JOHNNIE R & CAROLYN (LE) AND W",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PropertyClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PropertySubClass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddCity": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SitusAddName": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "KENTUCKY AVE NE HANCEVILLE",
+    "空": 27,
+    "空率": 0.09
+   },
+   "SitusAddNumber": {
+    "带特殊字符": 0,
+    "最短": "87",
+    "最长": "18293",
+    "空": 89,
+    "空率": 0.297
+   },
+   "SubBlock": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "004",
+    "空": 279,
+    "空率": 0.93
+   },
+   "SubLot": {
+    "带特殊字符": 1,
+    "最短": "1",
+    "最长": "1 THR",
+    "空": 228,
+    "空率": 0.76
+   },
+   "TaxDist": {
+    "带特殊字符": 0,
+    "最短": "01",
+    "最长": "01",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TaxYearDue": {
+    "带特殊字符": 0,
+    "最短": "2027",
+    "最长": "2027",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TimberAcres": {
+    "带特殊字符": 0,
+    "最短": "2.0",
+    "最长": "19.85",
+    "空": 275,
+    "空率": 0.917
+   },
+   "TotalTaxDue": {
+    "带特殊字符": 0,
+    "最短": "3.9",
+    "最长": "26513.41",
+    "空": 54,
+    "空率": 0.18
+   },
+   "UserValue": {
+    "带特殊字符": 0,
+    "最短": "958",
+    "最长": "22512",
+    "空": 266,
+    "空率": 0.887
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "cf46caafdebeb06d",
+  "total": 60405,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 60405,
+   "full": 60405,
+   "number": 60405,
+   "state": 60405,
+   "street": 60405,
+   "zip": 60405
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 60405,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SitusAddNumber street=SitusAddName city=SitusAddCity",
+ "sample_hash": "cf46caafdebeb06d",
+ "site_cols": [
+  "PropertyClass",
+  "PropertySubClass",
+  "SitusAddID",
+  "SitusAddNumber",
+  "SitusAddName"
+ ],
+ "source_id": "us/al/cullman",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://web5.kcsgis.com/kcsgis/rest/services/Cullman/iWorQ/MapServer/3",
+ "verdict": "CONTRACTED"
+}

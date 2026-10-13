@@ -41,3 +41,22 @@ us/tn/statewide,TN,,https://tnmap.tn.gov/NG911/TN_NG911.zip,https://tnmap.tn.gov
 us/va/statewide,VA,,https://gismaps.vdem.virginia.gov/arcgis/rest/services/VA_Base_Layers/VA_Address_Points/FeatureServer/0,https://vgin.vdem.virginia.gov/datasets/virginia-address-points/about,以官方页面为准，待补
 us/va/town_of_blacksburg,VA,,https://s3.amazonaws.com/Blacksburg_Va/GIS_Updates/8_15_2022/Addresses.zip,https://sites.google.com/vt.edu/townofblacksburggisdata/home#h.p_VGh2hnVV1Ubi,以官方页面为准，待补
 us/va/warrenton,VA,,https://services3.arcgis.com/7Q2bdSYWSeUYx2U5/arcgis/rest/services/Warrenton_Municipality_Address_Points/FeatureServer/0,https://www.arcgis.com/home/item.html?id=0aea88cc41f04b0ea2fa6b845a5dee45,以官方页面为准，待补
+us/wa/statewide,WA,,https://files.slack.com/files-pri/T029HV94T-F06GLTZQ1U6/download/site_address_points_oct2023.zip?pub_secret=ad47d7aa18,,以官方页面为准，待补
+us/wi/statewide,WI,,https://services3.arcgis.com/n6uYoouQZW75n5WI/arcgis/rest/services/Wisconsin_Statewide_Parcels/FeatureServer/0,https://www.sco.wisc.edu/parcels/data/,以官方页面为准，待补
+us/ak/north_slope_borough,AK,,https://gis-public.north-slope.org/server/rest/services/Enhancements2022/NSB_Buildings_DH1/MapServer/13,https://gis-public.north-slope.org/portal/home/item.html?id=b548d518c8fe42d8b8b0709d95b52508,以官方页面为准，待补
+us/al/baldwin,AL,,https://web6.kcsgis.com/kcsgis/rest/services/Baldwin/AL05_GAMAWeb/MapServer/31,,以官方页面为准，待补
+us/al/bibb,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Bibb/MapServer/0,,以官方页面为准，待补
+us/al/colbert,AL,,https://al20portal.kcsgis.com/al20server/rest/services/Internal/Colbert_Public_ISV/MapServer/43,https://revenuecommissioner.com/gis-mapping/,以官方页面为准，待补
+us/al/cullman,AL,,https://web5.kcsgis.com/kcsgis/rest/services/Cullman/iWorQ/MapServer/3,,以官方页面为准，待补
+us/al/dekalb,AL,,https://al28portal.kcsgis.com/al28server/rest/services/Dekalb_Public_ISV/MapServer/48,,以官方页面为准，待补
+us/al/limestone,AL,,https://gis.limestonecounty-al.gov/arcgis/rest/services/Limestone_Public_ISV_ReMap/MapServer/103,https://www.limestonecounty-al.gov/Departments/Revenue-Commission,以官方页面为准，待补
+us/al/macon,AL,,https://web5.kcsgis.com/kcsgis/rest/services/Macon/Public/MapServer/48,,以官方页面为准，待补
+us/al/madison,AL,,https://services3.arcgis.com/x30BNDiAn8ea61Vv/ArcGIS/rest/services/City_View_Addresses_view/FeatureServer/0,https://www.madisoncountyal.gov/departments/public-works/gis,以官方页面为准，待补
+us/al/madison,AL,,https://services3.arcgis.com/x30BNDiAn8ea61Vv/ArcGIS/rest/services/Incorporated_Addresses_view/FeatureServer/0,https://www.madisoncountyal.gov/departments/public-works/gis,以官方页面为准，待补
+us/al/marengo,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Marengo/MapServer/0,,以官方页面为准，待补
+us/al/marshall,AL,,https://web2.kcsgis.com/kcsgis/rest/services/Marshall/AL50_VAM_FS/MapServer/1,,以官方页面为准，待补
+us/al/mobile,AL,,https://gis.mobilecountyal.gov/server/rest/services/Development/FeatureServer/11,https://www.mobilecountyal.gov/departments/gis/,以官方页面为准，待补
+us/al/pickens,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Pickens/MapServer/0,,以官方页面为准，待补
+us/al/shelby,AL,Shelby County,https://maps.shelbyal.com/gisserver/rest/services/CaptureServices/AddressNumbersCapture/MapServer/0,https://maps.shelbyal.com/html5/,以官方页面为准，待补
+us/al/washington,AL,,https://146.148.59.120/arcgis/rest/services/Parcels/Washington/MapServer/0,,以官方页面为准，待补
+us/ar/ouachita,AR,,https://www.efsedge.com/arcgis/rest/services/Ouachita_County/Ouachita_Vector/MapServer/5,,以官方页面为准，待补

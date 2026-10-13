@@ -1,0 +1,257 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "GIS_ProdTable_LTD_Location_City",
+  "number": "GIS_ProdTable_LTD_Building_Number",
+  "street": "GIS_ProdTable_LTD_Street_Name",
+  "unit": "GIS_ProdTable_LTD_Building_Number"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:18:45",
+ "county": "North Slope Borough",
+ "curated_cols": {
+  "city": "GIS_ProdTable_LTD_Location_City",
+  "number": "GIS_ProdTable_LTD_Building_Number",
+  "street": "GIS_ProdTable_LTD_Street_Name"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "Shape_Length",
+  "Shape_Area",
+  "GIS_ProdTable_LTD_OBJECTID",
+  "GIS_ProdTable_LTD_Parcel_ID",
+  "GIS_ProdTable_LTD_Building_Number",
+  "GIS_ProdTable_LTD_Street_Name",
+  "GIS_ProdTable_LTD_Location_City",
+  "GIS_ProdTable_LTD_LUCDesc",
+  "GIS_ProdTable_LTD_OwnerTypeDesc",
+  "GIS_ProdTable_LTD_Last_Name",
+  "GIS_ProdTable_LTD_First_Name",
+  "GIS_ProdTable_LTD_Legal_Description",
+  "GIS_ProdTable_LTD_ZoningCodeDesc",
+  "GIS_ProdTable_LTD_Units",
+  "GIS_ProdTable_LTD_ExtTypeDesc",
+  "GIS_ProdTable_LTD_Pin_Card_Linked",
+  "GIS_ProdTable_LTD_Current_SF",
+  "GIS_ProdTable_LTD_Finished_Area",
+  "PinCardNo",
+  "ShortName",
+  "Structure"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "GIS_ProdTable_LTD_Building_Number"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Structures",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "GIS_ProdTable_LTD_Building_Number": {
+    "带特殊字符": 0,
+    "最短": "32",
+    "最长": "1/2022 - U",
+    "空": 1,
+    "空率": 0.003
+   },
+   "GIS_ProdTable_LTD_Current_SF": {
+    "带特殊字符": 265,
+    "最短": "0.00 sqft",
+    "最长": "22,651,200.00 sqft",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_ExtTypeDesc": {
+    "带特殊字符": 0,
+    "最短": "MOTELS",
+    "最长": "RESIDENTIAL/SINGLE/1.5ST VILLAGE",
+    "空": 5,
+    "空率": 0.017
+   },
+   "GIS_ProdTable_LTD_Finished_Area": {
+    "带特殊字符": 195,
+    "最短": "0.00 Sqft",
+    "最长": "17,040.00 Sqft",
+    "空": 7,
+    "空率": 0.023
+   },
+   "GIS_ProdTable_LTD_First_Name": {
+    "带特殊字符": 27,
+    "最短": "ADA",
+    "最长": "ESTATE OF MICHAEL RICKY",
+    "空": 106,
+    "空率": 0.353
+   },
+   "GIS_ProdTable_LTD_LUCDesc": {
+    "带特殊字符": 5,
+    "最短": "Church",
+    "最长": "Mixed Use - Commercial/Residential",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Last_Name": {
+    "带特殊字符": 0,
+    "最短": "EKAK",
+    "最长": "NORTH SLOPE BOROUGH -FORECLOSE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Legal_Description": {
+    "带特殊字符": 59,
+    "最短": "TNST AIN PLAT 76-3 BLK 10A  576",
+    "最长": "TNST AIN USS 4418 BLK 10  1728,1726,1724,1722,1720,567,1710  ALAK HIGHSCHOOL & I",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Location_City": {
+    "带特殊字符": 0,
+    "最短": "ANAKTUVUK",
+    "最长": "WAINWRIGHT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "3849",
+    "最长": "3849",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_OwnerTypeDesc": {
+    "带特殊字符": 0,
+    "最短": "Lessee",
+    "最长": "Village Corporation/Incorporated Companies",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Parcel_ID": {
+    "带特殊字符": 0,
+    "最短": "R-002-071-10",
+    "最长": "R-002-071-10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Pin_Card_Linked": {
+    "带特殊字符": 0,
+    "最短": "R-002-071-10-1",
+    "最长": "R-002-071-10-1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Street_Name": {
+    "带特殊字符": 0,
+    "最短": "KUK ROAD",
+    "最长": "SUMMER STREET EXTENSION",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ProdTable_LTD_Units": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "16",
+    "空": 71,
+    "空率": 0.237
+   },
+   "GIS_ProdTable_LTD_ZoningCodeDesc": {
+    "带特殊字符": 0,
+    "最短": "Village Dist",
+    "最长": "Village Dist",
+    "空": 6,
+    "空率": 0.02
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PinCardNo": {
+    "带特殊字符": 0,
+    "最短": "R-002-071-10-1",
+    "最长": "R-002-071-10-1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "130.44330983528",
+    "最长": "150.57211206007563",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Length": {
+    "带特殊字符": 0,
+    "最短": "50.891868470978",
+    "最长": "32.168063480500756",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ShortName": {
+    "带特殊字符": 8,
+    "最短": "PSO",
+    "最长": "Elementary & High School",
+    "空": 238,
+    "空率": 0.793
+   },
+   "Structure": {
+    "带特殊字符": 0,
+    "最短": "B-Public",
+    "最长": "B-Residential",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "766b619da4cf1cd3",
+  "total": 2707,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0218,
+   "full": 0.0218,
+   "number": 0.0236,
+   "street": 0.0218
+  },
+  "nonnull": {
+   "city": 2648,
+   "full": 2648,
+   "number": 2643,
+   "street": 2648
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0236, 'street': 0.0218, 'city': 0.0218, 'full': 0.0218}）→ 可全量采集",
+  "total": 2707,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=GIS_ProdTable_LTD_Building_Number street=GIS_ProdTable_LTD_Street_Name city=GIS_ProdTable_LTD_Location_City",
+ "sample_hash": "766b619da4cf1cd3",
+ "site_cols": [
+  "GIS_ProdTable_LTD_Street_Name",
+  "GIS_ProdTable_LTD_Location_City"
+ ],
+ "source_id": "us/ak/north_slope_borough",
+ "stage": "p0",
+ "state": "AK",
+ "url": "https://gis-public.north-slope.org/server/rest/services/Enhancements2022/NSB_Buildings_DH1/MapServer/13",
+ "verdict": "CONTRACTED"
+}

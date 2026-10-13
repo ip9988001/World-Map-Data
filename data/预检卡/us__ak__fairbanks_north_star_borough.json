@@ -1,0 +1,258 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "PLACE_NAME",
+  "number": "HSE_NUMB",
+  "street": "FULL_STREET",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-13 09:18:41",
+ "county": "Fairbanks North Star",
+ "curated_cols": {
+  "number": "HSE_NUMB",
+  "street": "FULL_STREET",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADD_ID",
+  "HSE_NUMB",
+  "SNAM_PREMOD",
+  "SNAM_PREDIR",
+  "SNAME",
+  "SNAM_POSTYPE",
+  "SNAM_POSDIR",
+  "SNAM_POSMOD",
+  "FULL_STREET",
+  "SUB_ADD_TYPE",
+  "SUB_ADD_ID",
+  "FULL_ADDRESS",
+  "PLACE_NAME",
+  "FECC_COMM",
+  "ZIPCODE",
+  "ADD_TYPE",
+  "NOTES",
+  "STATUS",
+  "MOD_DATE",
+  "GIS_ID",
+  "GlobalID"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {
+  "city": "PLACE_NAME"
+ },
+ "layer": {
+  "maxRecordCount": 10000,
+  "name": "ADDRESS_VALID_POINTS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "Unknown",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADD_ID": {
+    "带特殊字符": 0,
+    "最短": "41",
+    "最长": "40973",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "CoF",
+    "最长": "BLDRELATE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FECC_COMM": {
+    "带特殊字符": 0,
+    "最短": "FAIR",
+    "最长": "FAIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 1,
+    "最短": "120 INA ST",
+    "最长": "2058 LAKEVIEW TERRACE 2 RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_STREET": {
+    "带特殊字符": 1,
+    "最短": "INA ST",
+    "最长": "LAKEVIEW TERRACE 2 RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "2301e6b8-fa81-4c34-b946-4fcef0884f22",
+    "最长": "2301e6b8-fa81-4c34-b946-4fcef0884f22",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HSE_NUMB": {
+    "带特殊字符": 0,
+    "最短": "79",
+    "最长": "2058",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MOD_DATE": {
+    "带特殊字符": 0,
+    "最短": "1336521600000",
+    "最长": "1336521600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NOTES": {
+    "带特殊字符": 14,
+    "最短": "VAC",
+    "最长": "Imported from .dwg file supplied by UAF, Facility Services - June 2014, readdres",
+    "空": 205,
+    "空率": 0.683
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "102",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLACE_NAME": {
+    "带特殊字符": 12,
+    "最短": "PIERCE PARK",
+    "最长": "BIOSCIENCE RESEARCH AND DIAGNOSTIC, BLDG 919",
+    "空": 284,
+    "空率": 0.947
+   },
+   "SNAME": {
+    "带特殊字符": 1,
+    "最短": "INA",
+    "最长": "LAKEVIEW TERRACE 2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SNAM_POSDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SNAM_POSMOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SNAM_POSTYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "EXPY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SNAM_PREDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 299,
+    "空率": 0.997
+   },
+   "SNAM_PREMOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "ACTIVE",
+    "最长": "ACTIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUB_ADD_ID": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "79-5",
+    "空": 263,
+    "空率": 0.877
+   },
+   "SUB_ADD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "CABIN",
+    "空": 263,
+    "空率": 0.877
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "df230749dc98ea5a",
+  "total": 36501,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.986,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 1.0
+  },
+  "nonnull": {
+   "city": 512,
+   "full": 36501,
+   "number": 36501,
+   "street": 36501,
+   "zip": 0
+  },
+  "reason": "number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 0.986, 'zip': 1.0, 'full': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 36501,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HSE_NUMB street=FULL_STREET zip=ZIPCODE",
+ "sample_hash": "df230749dc98ea5a",
+ "site_cols": [
+  "FULL_STREET",
+  "FULL_ADDRESS"
+ ],
+ "source_id": "us/ak/fairbanks_north_star_borough",
+ "stage": "p0",
+ "state": "AK",
+ "url": "https://services.arcgis.com/f4rR7WnIfGBdVYFd/arcgis/rest/services/Valid_Address_Points_FNSB/FeatureServer/0",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}
