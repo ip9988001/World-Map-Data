@@ -1,0 +1,422 @@
+{
+ "source_id": "us/nv/storey",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 4,068 条 > 真门牌号行 573 条×150% → 拒绝这套产物；field_guess@v2:合规 205/4078 = 5%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）；concat_addr@v2:合规 465/4078 = 11%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573））→ 造新规则",
+ "decided_at": "2026-10-13 01:33:42",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 4080,
+   "kept": 4068,
+   "contentful": 4078,
+   "kept_contentful": 4068,
+   "true_addr": 573,
+   "ratio": 0.998,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 10,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 15.59,
+    "streets": 261,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 4,068 条 > 真门牌号行 573 条×150% → 拒绝这套产物",
+   "seconds": 0.3
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 4080,
+   "kept": 205,
+   "contentful": 4078,
+   "kept_contentful": 205,
+   "true_addr": 573,
+   "ratio": 0.05,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 3862,
+    "guess_bad_number": 11,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 51.25,
+    "streets": 4,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 205/4078 = 5%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 0.5
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 4080,
+   "kept": 465,
+   "contentful": 4078,
+   "kept_contentful": 465,
+   "true_addr": 573,
+   "ratio": 0.114,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 3613,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 260,
+     "zip": 465
+    },
+    "junk_rate": 0.0,
+    "per_street": 22.14,
+    "streets": 21,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 465/4078 = 11%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 0.8
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 4080,
+   "kept": 4061,
+   "contentful": 4078,
+   "kept_contentful": 4061,
+   "true_addr": 573,
+   "ratio": 0.996,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_full_address": 17,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 4061,
+     "zip": 4061
+    },
+    "junk_rate": 0.0,
+    "per_street": 11.1,
+    "streets": 366,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 4,061 条 > 真门牌号行 573 条×150% → 拒绝这套产物",
+   "seconds": 1.2
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 4080,
+   "kept": 0,
+   "contentful": 4078,
+   "kept_contentful": 0,
+   "true_addr": 573,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 4078,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/4078 = 0%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 1.3
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 4080,
+   "kept": 0,
+   "contentful": 4078,
+   "kept_contentful": 0,
+   "true_addr": 573,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 4078,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/4078 = 0%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 1.5
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 4080,
+   "kept": 0,
+   "contentful": 4078,
+   "kept_contentful": 0,
+   "true_addr": 573,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 4078,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/4078 = 0%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 1.7
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 4080,
+   "kept": 0,
+   "contentful": 4078,
+   "kept_contentful": 0,
+   "true_addr": 573,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 4078,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/4078 = 0%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 1.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 4080,
+   "kept": 0,
+   "contentful": 4078,
+   "kept_contentful": 0,
+   "true_addr": 573,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 4078,
+    "no_address_trace": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/4078 = 0%（阈 30%；总行 4,080，带地址 4,078，真门牌号 573）",
+   "seconds": 2.0
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 6858,
+   "STR_NUMB": 1341,
+   "STR_UNIT": null,
+   "STR_PREFIX": null,
+   "STR_NAME": "BONANZA",
+   "STR_TYPE": "RD",
+   "STR_SUFFIX": null,
+   "COMMENTS": null,
+   "CREATED_DATE": 1490227200000,
+   "LAST_UPDATED": 1517961600000,
+   "LAST_EDITOR": "MForrest",
+   "LABEL": "1341 BONANZA RD",
+   "GIS": null,
+   "ZIP": 89521,
+   "CITY": "RENO",
+   "STATE": "NV",
+   "GlobalID": "7c2a4065-2f36-4a6d-a41b-591474877af9",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "CITY",
+  "COMMENTS",
+  "CREATED_DATE",
+  "GIS",
+  "GlobalID",
+  "LABEL",
+  "LAST_EDITOR",
+  "LAST_UPDATED",
+  "OBJECTID",
+  "STATE",
+  "STR_NAME",
+  "STR_NUMB",
+  "STR_PREFIX",
+  "STR_SUFFIX",
+  "STR_TYPE",
+  "STR_UNIT",
+  "ZIP",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

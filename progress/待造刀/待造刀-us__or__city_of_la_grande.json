@@ -1,0 +1,406 @@
+{
+ "source_id": "us/or/city_of_la_grande",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 6,293 条 > 真门牌号行 132 条×150% → 拒绝这套产物；field_guess@v2:合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）；concat_addr@v2:合规 132/6297 = 2%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132））→ 造新规则",
+ "decided_at": "2026-10-13 01:46:17",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 6314,
+   "kept": 6293,
+   "contentful": 6297,
+   "kept_contentful": 6293,
+   "true_addr": 132,
+   "ratio": 0.999,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 17,
+    "no_street": 2,
+    "no_number": 1,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 6293,
+     "zip": 6293
+    },
+    "junk_rate": 0.0002,
+    "per_street": 19.85,
+    "streets": 317,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 6,293 条 > 真门牌号行 132 条×150% → 拒绝这套产物",
+   "seconds": 0.4
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_no_columns": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 0.5
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 6314,
+   "kept": 132,
+   "contentful": 6297,
+   "kept_contentful": 132,
+   "true_addr": 132,
+   "ratio": 0.021,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 6165,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 127,
+     "zip": 132
+    },
+    "junk_rate": 0.0,
+    "per_street": 6.95,
+    "streets": 19,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 132/6297 = 2%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 0.9
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 6314,
+   "kept": 6283,
+   "contentful": 6297,
+   "kept_contentful": 6283,
+   "true_addr": 132,
+   "ratio": 0.998,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 17,
+    "split_no_street": 12,
+    "no_full_address": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 6283,
+     "zip": 6283
+    },
+    "junk_rate": 0.0,
+    "per_street": 20.47,
+    "streets": 307,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 6,283 条 > 真门牌号行 132 条×150% → 拒绝这套产物",
+   "seconds": 1.2
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 1.4
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 1.6
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 1.9
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 2.0
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 2.2
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 6059,
+   "MAPTAXLOT": "02S38E31DC02800",
+   "PARENTTAXLOT": null,
+   "ADDRESS": "303 DIVISION AV",
+   "NONCONFORM": null,
+   "NONCONFNOTES": null,
+   "NOTES": null,
+   "GlobalID": "cff97d8f-97d6-40df-a3b3-e917b1337a27",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDRESS",
+  "GlobalID",
+  "MAPTAXLOT",
+  "NONCONFNOTES",
+  "NONCONFORM",
+  "NOTES",
+  "OBJECTID",
+  "PARENTTAXLOT",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

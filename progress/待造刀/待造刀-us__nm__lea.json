@@ -1,0 +1,358 @@
+{
+ "source_id": "us/nm/lea",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 22,582 条 > 真门牌号行 2,324 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 22,582 条 > 真门牌号行 2,324 条×150% → 拒绝这套产物；field_guess@v2:合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324））→ 造新规则",
+ "decided_at": "2026-10-13 02:01:49",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 22697,
+   "kept": 22582,
+   "contentful": 22582,
+   "kept_contentful": 22582,
+   "true_addr": 2324,
+   "ratio": 1.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 22582,
+     "zip": 22582
+    },
+    "junk_rate": 0.0,
+    "per_street": 14.13,
+    "streets": 1598,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 22,582 条 > 真门牌号行 2,324 条×150% → 拒绝这套产物",
+   "seconds": 0.7
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 22697,
+   "kept": 22582,
+   "contentful": 22582,
+   "kept_contentful": 22582,
+   "true_addr": 2324,
+   "ratio": 1.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 22582,
+     "zip": 22582
+    },
+    "junk_rate": 0.0,
+    "per_street": 28.09,
+    "streets": 804,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 22,582 条 > 真门牌号行 2,324 条×150% → 拒绝这套产物",
+   "seconds": 1.4
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "guess_no_columns": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 1.7
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 2.0
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 2.3
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 2.7
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 3.0
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 22697,
+   "kept": 0,
+   "contentful": 22582,
+   "kept_contentful": 0,
+   "true_addr": 2324,
+   "ratio": 0.0,
+   "coverage": 0.995,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 22582,
+    "no_address_trace": 115
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/22582 = 0%（阈 30%；总行 22,697，带地址 22,582，真门牌号 2,324）",
+   "seconds": 3.4
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "ADDNO": 309,
+   "PRD": "W",
+   "STNAME": "WOODFIN",
+   "POSDIR": " ",
+   "STTYPE": "DR",
+   "LABEL": "309 W WOODFIN DR",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDNO",
+  "LABEL",
+  "OBJECTID",
+  "POSDIR",
+  "PRD",
+  "STNAME",
+  "STTYPE",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

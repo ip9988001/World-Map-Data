@@ -1,0 +1,412 @@
+{
+ "source_id": "us/ca/alpine",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 1,710 条 > 真门牌号行 147 条×150% → 拒绝这套产物；field_guess@v2:合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）；concat_addr@v2:合规 147/1711 = 9%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147））→ 造新规则",
+ "decided_at": "2026-10-13 01:58:18",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 3051,
+   "kept": 1710,
+   "contentful": 1711,
+   "kept_contentful": 1710,
+   "true_addr": 147,
+   "ratio": 0.999,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 1340,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 1,
+     "zip": 1710
+    },
+    "junk_rate": 0.0006,
+    "per_street": 14.13,
+    "streets": 121,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 1,710 条 > 真门牌号行 147 条×150% → 拒绝这套产物",
+   "seconds": 0.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "guess_no_columns": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.2
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 3051,
+   "kept": 147,
+   "contentful": 1711,
+   "kept_contentful": 147,
+   "true_addr": 147,
+   "ratio": 0.086,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "v2_no_site_column": 1564,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 147,
+     "zip": 147
+    },
+    "junk_rate": 0.0,
+    "per_street": 8.65,
+    "streets": 17,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 147/1711 = 9%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.3
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 3051,
+   "kept": 1708,
+   "contentful": 1711,
+   "kept_contentful": 1708,
+   "true_addr": 147,
+   "ratio": 0.998,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_address_trace": 1340,
+    "no_full_address": 2,
+    "junk_rejected": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 1708,
+     "zip": 1708
+    },
+    "junk_rate": 0.0006,
+    "per_street": 4.82,
+    "streets": 354,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 1,708 条 > 真门牌号行 147 条×150% → 拒绝这套产物",
+   "seconds": 0.4
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_number": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.5
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_number": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.6
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_number": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.7
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_number": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.7
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 3051,
+   "kept": 0,
+   "contentful": 1711,
+   "kept_contentful": 0,
+   "true_addr": 147,
+   "ratio": 0.0,
+   "coverage": 0.561,
+   "addr_hint": 0.0,
+   "drops": {
+    "no_number": 1711,
+    "no_address_trace": 1340
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/1711 = 0%（阈 30%；总行 3,051，带地址 1,711，真门牌号 147）",
+   "seconds": 0.8
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "FULLAPN": "001340021000",
+   "APN": "001340021",
+   "USFS_Unit": "Humboldt-Toiyabe",
+   "APN10": "1340021000",
+   "GIS_Acres": 4.503067058029647,
+   "GlobalID": "5d799120-1351-4e40-8516-61f6052a9b94",
+   "Short_Term_Rentals": null,
+   "Situs": "255 SUNRISE TRL",
+   "SITUSCITY": "Markleeville CA",
+   "SQFT": 216493,
+   "ACRE": 4.97,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ACRE",
+  "APN",
+  "APN10",
+  "FULLAPN",
+  "GIS_Acres",
+  "GlobalID",
+  "OBJECTID",
+  "SITUSCITY",
+  "SQFT",
+  "Short_Term_Rentals",
+  "Situs",
+  "USFS_Unit",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

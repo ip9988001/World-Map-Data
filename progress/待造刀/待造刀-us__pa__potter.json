@@ -1,0 +1,403 @@
+{
+ "source_id": "us/pa/potter",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 13,483 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 13,507 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物；field_guess@v2:合规 1050/14121 = 7%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162））→ 造新规则",
+ "decided_at": "2026-10-13 01:50:11",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 14129,
+   "kept": 13483,
+   "contentful": 14121,
+   "kept_contentful": 13483,
+   "true_addr": 2162,
+   "ratio": 0.955,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 614,
+    "no_full_address": 15,
+    "split_no_street": 9,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 13483,
+     "zip": 13483
+    },
+    "junk_rate": 0.0436,
+    "per_street": 12.14,
+    "streets": 1111,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 13,483 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物",
+   "seconds": 0.7
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 14129,
+   "kept": 13507,
+   "contentful": 14121,
+   "kept_contentful": 13507,
+   "true_addr": 2162,
+   "ratio": 0.957,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 614,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 13507
+    },
+    "junk_rate": 0.0,
+    "per_street": 12.2,
+    "streets": 1107,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 13,507 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物",
+   "seconds": 1.3
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 14129,
+   "kept": 1050,
+   "contentful": 14121,
+   "kept_contentful": 1050,
+   "true_addr": 2162,
+   "ratio": 0.074,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 12457,
+    "guess_bad_number": 614,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 1050
+    },
+    "junk_rate": 0.0,
+    "per_street": 31.82,
+    "streets": 33,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 1050/14121 = 7%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 1.7
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 2.0
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 2.4
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 2.7
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 3.1
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 3.5
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "FID": 1,
+   "OBJECTID_1": 1,
+   "TYPE": "GWL",
+   "STRU_NUM": 0,
+   "HSENUMBER": 68,
+   "PREFIXDIR": " ",
+   "STREETNAME": "HORTON RUN",
+   "STREETSUF": "RD",
+   "POSTDIR": " ",
+   "LOCATION": " ",
+   "STREET": "HORTON RUN RD",
+   "STRUMUNI": "WHARTON TWP",
+   "OBJECTID": 0,
+   "SOURCE": " ",
+   "ADDEXT": " ",
+   "KEEP": " ",
+   "EDIT": 0,
+   "PRIVATERD_": " ",
+   "GasWell": "YES",
+   "Status": " ",
+   "GlobalID": "{095E7FD5-B9BF-48E5-AA7F-3356823A11C1}",
+   "GlobalID_2": "9167e095-3e3a-4e18-adf7-9f62ec80f28a",
+   "CreationDate": 1436368456034,
+   "Creator": "whunt",
+   "EditDate": 1436368456034,
+   "Editor": "whunt",
+   "App_Search": "68 HORTON RUN RD",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDEXT",
+  "App_Search",
+  "CreationDate",
+  "Creator",
+  "EDIT",
+  "EditDate",
+  "Editor",
+  "FID",
+  "GasWell",
+  "GlobalID",
+  "GlobalID_2",
+  "HSENUMBER",
+  "KEEP",
+  "LOCATION",
+  "OBJECTID",
+  "OBJECTID_1",
+  "POSTDIR",
+  "PREFIXDIR",
+  "PRIVATERD_",
+  "SOURCE",
+  "STREET",
+  "STREETNAME",
+  "STREETSUF",
+  "STRUMUNI",
+  "STRU_NUM",
+  "Status",
+  "TYPE",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

@@ -1,0 +1,468 @@
+{
+ "source_id": "us/nv/white_pine",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 6,622 条 > 真门牌号行 2,522 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 5,020 条 > 真门牌号行 2,522 条×150% → 拒绝这套产物；field_guess@v2:合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522））→ 造新规则",
+ "decided_at": "2026-10-13 01:34:50",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 7765,
+   "kept": 6622,
+   "contentful": 7736,
+   "kept_contentful": 6622,
+   "true_addr": 2522,
+   "ratio": 0.856,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 1079,
+    "split_no_street": 35,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 6622,
+     "zip": 6622
+    },
+    "junk_rate": 0.1401,
+    "per_street": 4.67,
+    "streets": 1418,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 6,622 条 > 真门牌号行 2,522 条×150% → 拒绝这套产物",
+   "seconds": 0.8
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 7765,
+   "kept": 5020,
+   "contentful": 7736,
+   "kept_contentful": 5020,
+   "true_addr": 2522,
+   "ratio": 0.649,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 2651,
+    "junk_rejected": 65,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 5020,
+     "zip": 5020
+    },
+    "junk_rate": 0.0128,
+    "per_street": 9.56,
+    "streets": 525,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 5,020 条 > 真门牌号行 2,522 条×150% → 拒绝这套产物",
+   "seconds": 1.4
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_bad_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 2.0
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 2.4
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 2.9
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 3.4
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 3.9
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 7765,
+   "kept": 0,
+   "contentful": 7736,
+   "kept_contentful": 0,
+   "true_addr": 2522,
+   "ratio": 0.0,
+   "coverage": 0.996,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 7736,
+    "no_address_trace": 29
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/7736 = 0%（阈 30%；总行 7,765，带地址 7,736，真门牌号 2,522）",
+   "seconds": 4.4
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "GIS_LOWPARCELID": "01309301",
+   "GIS_Parcel_Number": "01309301",
+   "GIS_STATEDAREA": "60.42",
+   "GIS_LGLSTARTDT": "",
+   "GIS_LASTUPDATE": "",
+   "GIS_DeedAcres": 60.54,
+   "GIS_ALTPin": 1309301,
+   "TSC_Parcel_Number": 1309301,
+   "TSC_Land_Use_Code": 600,
+   "TSC_exempt_property_class": "",
+   "Z1": "O-5",
+   "Z2": "",
+   "Z3": "",
+   "Z4": "",
+   "TSC_Subdivision": "",
+   "TSC_legal_name": "CARTER - GRIFFIN INC",
+   "TSC_assess_name": "CARTER - GRIFFIN INC",
+   "TSC_address1": "BOX 9",
+   "TSC_address2": "",
+   "TSC_mcity": "LUND, NV",
+   "TSC_mzip": "89317-    ",
+   "Loc1": 0,
+   "Dir": "",
+   "street_name": "",
+   "unit": "",
+   "TSC_Acreage": 60.54,
+   "TSC_Total_Square_Feet": 0,
+   "total_dwunits": 0,
+   "total_nondwunits": 1,
+   "improv_value": 0,
+   "TSC_land_value": 11538,
+   "TSC_net_assessed_value": 11538,
+   "ResSqFt": 0,
+   "GarSqFt": 0,
+   "basemtsqft": 0,
+   "finbase": 0,
+   "gar_detach": 0,
+   "wells": 0,
+   "septic": 0,
+   "pools": 0,
+   "spas": null,
+   "taxid": 1,
+   "TSC_Property_Name": "",
+   "TSC_Site_Address": "0 ",
+   "TSC_Owner1_Address": "BOX 9  LUND, NV 89317-",
+   "SHAPE__Area": 404070.6171875,
+   "SHAPE__Length": 2588.6291781845903,
+   "stories": 1,
+   "year_of_construction": 2009,
+   "last_year_assessed": 2027,
+   "deed_number": 329089,
+   "res_sqft": null,
+   "reappraisal_year": null,
+   "tax_district": 54,
+   "master_plan_code": null,
+   "TV_improvement": 0,
+   "TV_land": 32965,
+   "TV_net": 32965,
+   "neighborhood": "054 - RANCHES",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Dir",
+  "GIS_ALTPin",
+  "GIS_DeedAcres",
+  "GIS_LASTUPDATE",
+  "GIS_LGLSTARTDT",
+  "GIS_LOWPARCELID",
+  "GIS_Parcel_Number",
+  "GIS_STATEDAREA",
+  "GarSqFt",
+  "Loc1",
+  "OBJECTID",
+  "ResSqFt",
+  "SHAPE__Area",
+  "SHAPE__Length",
+  "TSC_Acreage",
+  "TSC_Land_Use_Code",
+  "TSC_Owner1_Address",
+  "TSC_Parcel_Number",
+  "TSC_Property_Name",
+  "TSC_Site_Address",
+  "TSC_Subdivision",
+  "TSC_Total_Square_Feet",
+  "TSC_address1",
+  "TSC_address2",
+  "TSC_assess_name",
+  "TSC_exempt_property_class",
+  "TSC_land_value",
+  "TSC_legal_name",
+  "TSC_mcity",
+  "TSC_mzip",
+  "TSC_net_assessed_value",
+  "TV_improvement",
+  "TV_land",
+  "TV_net",
+  "Z1",
+  "Z2",
+  "Z3",
+  "Z4",
+  "_file",
+  "basemtsqft",
+  "deed_number",
+  "finbase",
+  "gar_detach",
+  "improv_value",
+  "last_year_assessed",
+  "master_plan_code",
+  "neighborhood",
+  "pools",
+  "reappraisal_year",
+  "res_sqft",
+  "septic",
+  "spas",
+  "stories",
+  "street_name",
+  "tax_district",
+  "taxid",
+  "total_dwunits",
+  "total_nondwunits",
+  "unit",
+  "wells",
+  "year_of_construction"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

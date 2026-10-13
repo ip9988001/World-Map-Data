@@ -1,0 +1,360 @@
+{
+ "source_id": "us/nc/alleghany",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 9,725 条 > 真门牌号行 849 条×150% → 拒绝这套产物；mapping@v1:合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）；field_guess@v2:合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849））→ 造新规则",
+ "decided_at": "2026-10-13 02:10:06",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 9731,
+   "kept": 9725,
+   "contentful": 9730,
+   "kept_contentful": 9725,
+   "true_addr": 849,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 5,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 9725,
+     "zip": 9725
+    },
+    "junk_rate": 0.0,
+    "per_street": 6.62,
+    "streets": 1469,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 9,725 条 > 真门牌号行 849 条×150% → 拒绝这套产物",
+   "seconds": 0.7
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 1.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_no_columns": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 1.4
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 1.7
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 2.1
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 2.5
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 2.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 9731,
+   "kept": 0,
+   "contentful": 9730,
+   "kept_contentful": 0,
+   "true_addr": 849,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9730,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9730 = 0%（阈 30%；总行 9,731，带地址 9,730，真门牌号 849）",
+   "seconds": 3.3
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "LOC_911": "12760 NC HWY 18 N",
+   "Add_Number": 12760,
+   "MSAGComm": "Ennice",
+   "Unit": "APARTMENT B",
+   "LSt_FullName": "NC HWY 18 N",
+   "LSt_FullAddress": "12760 NC HWY 18 N APARTMENT B",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Add_Number",
+  "LOC_911",
+  "LSt_FullAddress",
+  "LSt_FullName",
+  "MSAGComm",
+  "OBJECTID",
+  "Unit",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
