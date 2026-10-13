@@ -1,0 +1,149 @@
+{
+ "_rejected": {
+  "source_id": "us/mi/marquette",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "example4 洗不出（no_number）",
+   "合规率 12% 低于阈 30%",
+   "不如现有规则（12% < 91%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 153,
+   "kept": 19,
+   "kept_contentful": 19,
+   "ratio": 0.124,
+   "fabricated": 0,
+   "best_ratio": 0.909
+  },
+  "at": "2026-10-13 17:35:00"
+ },
+ "spec": {
+  "name": "marquette_parcel_address",
+  "version": 1,
+  "note": "saddstr 常被截断（如 '4TH'/'CO RD'），只有 address 列含完整『门牌号+街名』，故按 single 模式从 address 拆号，city/szip/state2 直接取列。",
+  "match": {
+   "columns_any": [
+    "saddstr",
+    "ll_uuid"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "city",
+   "zip": "szip",
+   "state": "state2"
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "address",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "FID": 3,
+     "address": "315 KANTER ST",
+     "saddstr": "KANTER",
+     "city": "negaunee",
+     "county": "marquette",
+     "state2": "MI",
+     "szip": "49866-1633",
+     "ll_address": 2,
+     "ll_uuid": "00050cd5-141b-401b-bc4c-c5ef68454e4f",
+     "UseClass": "Res",
+     "Cust": 0,
+     "Shape__Area": 6.92139110469725e-08,
+     "Shape__Length": 0.0011325556744661935
+    },
+    "expect": {
+     "number": "315",
+     "street": "KANTER ST"
+    }
+   },
+   {
+    "row": {
+     "FID": 15,
+     "address": "314 W BARNUM ST",
+     "saddstr": "BARNUM",
+     "city": "ishpeming",
+     "county": "marquette",
+     "state2": "MI",
+     "szip": "49849-1917",
+     "ll_address": 1,
+     "ll_uuid": "001589ce-017f-4717-9735-e7af5c4a76b9",
+     "UseClass": "Res",
+     "Cust": 0,
+     "Shape__Area": 4.992216418031603e-08,
+     "Shape__Length": 0.0010133833430937488
+    },
+    "expect": {
+     "number": "314",
+     "street": "W BARNUM ST"
+    }
+   },
+   {
+    "row": {
+     "FID": 5,
+     "address": "600 US HIGHWAY 41",
+     "saddstr": "US HIGHWAY 41",
+     "city": "negaunee",
+     "county": "marquette",
+     "state2": "MI",
+     "szip": "49866-1017",
+     "ll_address": 2,
+     "ll_uuid": "0006a739-0ba3-4912-b8b4-d67d56ec8b03",
+     "UseClass": "Comm",
+     "Cust": 0,
+     "Shape__Area": 1.6691615201125387e-07,
+     "Shape__Length": 0.001718077026380981
+    },
+    "expect": {
+     "number": "600",
+     "street": "US HIGHWAY 41"
+    }
+   },
+   {
+    "row": {
+     "FID": 27,
+     "address": "25 BIRCH LN",
+     "saddstr": "BIRCH",
+     "city": "ely",
+     "county": "marquette",
+     "state2": "MI",
+     "szip": "49849-9359",
+     "ll_address": 1,
+     "ll_uuid": "00221ecd-6e89-4741-bdac-695aa42fd1cb",
+     "UseClass": "Res",
+     "Cust": 0,
+     "Shape__Area": 2.359340669499943e-07,
+     "Shape__Length": 0.0020107106112982626
+    },
+    "expect": {
+     "number": "25",
+     "street": "BIRCH LN"
+    }
+   }
+  ]
+ }
+}

@@ -9,3 +9,4 @@ us/co/broomfield,0.2,0.2,0.2,,,
 us/fl/volusia,0.05,0.05,0.05,,,源内自带 CITYNAME 与 ZIP 列，无需豁免；忽略 CITY_ABBRV（缩写会污染去重 key）
 us/ga/dougherty,0.2,0.2,0.2,1,1,源字段中无 city / zip / state 列；CityCode 值形如 CNTY 为区域代码（非市名），不能当 city 使用，故豁免。
 us/fl/miami-dade,0.2,0.2,0.2,,,
+us/ky/shelby,0.2,0.2,0.2,,,

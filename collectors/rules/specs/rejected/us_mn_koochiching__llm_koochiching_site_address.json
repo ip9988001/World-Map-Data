@@ -1,0 +1,89 @@
+{
+ "_rejected": {
+  "source_id": "us/mn/koochiching",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 97%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 194,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.967
+  },
+  "at": "2026-10-13 17:36:06"
+ },
+ "spec": {
+  "name": "koochiching_site_address",
+  "version": 1,
+  "note": "只有 ADDR_1 是地块场地地址（含门牌号），其余 OWNADR1/2/3 是业主邮寄地址不能用；该列稀疏但真实，故用 single 模式只取该列。",
+  "match": {
+   "columns_any": [
+    "ADDR_1"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "CITY",
+   "zip": "ZIP_CODE_5",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "ADDR_1",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 12,
+     "PARCEL_ID": "71-018-41000",
+     "ADDR_1": "12005 TOWN ROAD 129",
+     "CITY": "BAUDETTE",
+     "ZIP_CODE_5": 56623
+    },
+    "expect": {
+     "number": "12005",
+     "street": "TOWN ROAD 129"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 21,
+     "PARCEL_ID": "98-036-00220",
+     "ADDR_1": "3660 HIGHWAY 11 E",
+     "CITY": "INT'L FALLS, MN",
+     "ZIP_CODE_5": 56649
+    },
+    "expect": {
+     "number": "3660",
+     "street": "HIGHWAY 11 E"
+    }
+   }
+  ]
+ }
+}

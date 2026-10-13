@@ -1,0 +1,138 @@
+{
+ "_rejected": {
+  "source_id": "us/mo/perry",
+  "model": "deepseek-flash",
+  "errs": [
+   "full 列不存在：{StructureNumber} {CompositeStreet}"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.998
+  },
+  "at": "2026-10-13 17:36:13"
+ },
+ "spec": {
+  "name": "perry_co_centerline_site_address",
+  "version": 1,
+  "note": "门牌号与街名分列存在（StructureNumber + CompositeStreet/StreetName+StreetType），直接用 columns 模式拼接即可，无需从 FullAddress 反解。",
+  "match": {
+   "columns_any": [
+    "CompositeStreet",
+    "FullAddress"
+   ],
+   "columns_all": [
+    "StructureNumber"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "StructureNumber",
+   "street": "CompositeStreet",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{StructureNumber}",
+  "street_template": "{StreetName} {StreetType}",
+  "full": "{StructureNumber} {CompositeStreet}",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "该图层字段中没有 city / ZIP 列（仅有 FullAddress、StructureNumber、CompositeStreet、StreetName、StreetType、Alias、PARCEL_ID、经纬度等，Alias 为空或零星数字不可作 ZIP），故豁免 city/zip；state 固定为 MO。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "Alias2": " ",
+     "PARCEL_ID": " ",
+     "Longitude": -89.9292413534,
+     "Latitude": 37.5984009928,
+     "X_Coord": 771101.4646,
+     "Y_Coord": 4165693.148,
+     "NAT_GRID": "16SBG4139565294",
+     "FullAddress": "278 ACORN LN",
+     "StructureNumber": 278,
+     "StructureNumber2": " ",
+     "Type": " ",
+     "Designation": " ",
+     "SubUnit": " ",
+     "CompositeStreet": "ACORN LN",
+     "StreetName": "ACORN",
+     "StreetType": "LN",
+     "Alias": "624"
+    },
+    "expect": {
+     "number": "278",
+     "street": "ACORN LN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 2,
+     "Alias2": " ",
+     "PARCEL_ID": "76-10-8.0-034-000-000-011.00000",
+     "Longitude": -89.8049886502,
+     "Latitude": 37.6892788562,
+     "X_Coord": 781730.0855,
+     "Y_Coord": 4176146.0607,
+     "NAT_GRID": "16SBG5266975044",
+     "FullAddress": "17 AMBER LN",
+     "StructureNumber": 17,
+     "StructureNumber2": " ",
+     "Type": " ",
+     "Designation": " ",
+     "SubUnit": " ",
+     "CompositeStreet": "AMBER LN",
+     "StreetName": "AMBER",
+     "StreetType": "LN",
+     "Alias": " "
+    },
+    "expect": {
+     "number": "17",
+     "street": "AMBER LN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 19,
+     "Alias2": " ",
+     "PARCEL_ID": "76-15-3.0-008-002-004-015.00000",
+     "Longitude": -90.0646535267,
+     "Latitude": 37.6662410919,
+     "X_Coord": 758908.1371,
+     "Y_Coord": 4172839.4715,
+     "NAT_GRID": "15SYB5890872839",
+     "FullAddress": "6065 ANCHOR PT",
+     "StructureNumber": 6065,
+     "StructureNumber2": " ",
+     "Type": " ",
+     "Designation": " ",
+     "SubUnit": " ",
+     "CompositeStreet": "ANCHOR PT",
+     "StreetName": "ANCHOR",
+     "StreetType": "PT",
+     "Alias": " "
+    },
+    "expect": {
+     "number": "6065",
+     "street": "ANCHOR PT"
+    }
+   }
+  ]
+ }
+}

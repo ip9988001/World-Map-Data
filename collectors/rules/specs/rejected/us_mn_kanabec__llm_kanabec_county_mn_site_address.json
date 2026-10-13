@@ -1,0 +1,101 @@
+{
+ "_rejected": {
+  "source_id": "us/mn/kanabec",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 3% 低于阈 30%",
+   "不如现有规则（3% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 184,
+   "kept": 5,
+   "kept_contentful": 5,
+   "ratio": 0.027,
+   "fabricated": 0,
+   "best_ratio": 0.996
+  },
+  "at": "2026-10-13 17:35:15"
+ },
+ "spec": {
+  "name": "kanabec_county_mn_site_address",
+  "version": 1,
+  "note": "只有 SiteAddress/ADDRESS 是真正的场地门牌地址列（整条含门牌号+街名），用 single 模式解析；SiteCityStZip 是 'CITY, MN ZIP' 合并串且 DEEDZIP/Owner* 均为业主邮寄信息，故 city/zip 留空并豁免。",
+  "match": {
+   "columns_any": [
+    "SiteAddress"
+   ],
+   "columns_all": [
+    "SiteCityStZip"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "SiteAddress",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "无独立干净城市列：SiteCityStZip 是 'CITY, MN  ZIP' 合并串（如 'BRAHAM, MN  55006'）非纯城市列；DEEDZIP/OwnerCityStZip/DEEDADDR* 均为业主邮寄或账单地址（如 OWENSBORO KY 42301），不能当场地邮编，故 city/zip 全部留空。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "PIN": "00020.00200.00",
+     "SiteAddress": "605 PHEASANT RUN",
+     "SiteCityStZip": "BRAHAM, MN  55006",
+     "ADDRESS": "605 PHEASANT RUN"
+    },
+    "expect": {
+     "number": "605",
+     "street": "PHEASANT RUN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 7,
+     "PIN": "00020.00230.00",
+     "SiteAddress": "910 421 AVE NE",
+     "SiteCityStZip": "BRAHAM, MN  55006",
+     "ADDRESS": "910 421 AVE NE"
+    },
+    "expect": {
+     "number": "910",
+     "street": "421 AVE NE"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 23,
+     "PIN": "00021.00545.00",
+     "SiteAddress": "405 ROSABELLE CT",
+     "SiteCityStZip": "GRASSTON, MN  55030",
+     "ADDRESS": "405 ROSABELLE CT"
+    },
+    "expect": {
+     "number": "405",
+     "street": "ROSABELLE CT"
+    }
+   }
+  ]
+ }
+}

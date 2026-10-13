@@ -1,0 +1,98 @@
+{
+ "name": "us_ky_shelby__shelby_ky_addpts",
+ "version": 1,
+ "note": "ArcGIS REST 地址点图层，门牌号与街名分列（ADD_NUMBER + STREET_DIR/STR_NAME/STREET_TYP），城市列 COMMUNITY，邮编列 ZIP，故用 columns 模式拼装。",
+ "match": {
+  "columns_any": [
+   "ADD_NUMBER",
+   "STR_NAME",
+   "OR_STREET"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADD_NUMBER",
+  "street": "",
+  "city": "COMMUNITY",
+  "zip": "ZIP",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "{STREET_DIR} {STR_NAME} {STREET_TYP}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "ADD_NUMBER": 128,
+    "STREET_DIR": " ",
+    "STR_NAME": "SHELLYS",
+    "STREET_TYP": "PL",
+    "FULL_NAME": "128 SHELLYS PL",
+    "ZIP": 40065,
+    "fulladdcal": "128 SHELLYS PL",
+    "stplsuf": "SHELLYS PL",
+    "st_wzip": "SHELLYS PL 40065",
+    "COMMUNITY": "SHELBYVILLE",
+    "Add_suffix": " ",
+    "OR_STREET": "SHELLYS PL"
+   },
+   "expect": {
+    "number": "128",
+    "street": "SHELLYS PL"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 15,
+    "ADD_NUMBER": 2822,
+    "STREET_DIR": " ",
+    "STR_NAME": "BRASSFIELD",
+    "STREET_TYP": "CIR",
+    "FULL_NAME": "2822 BRASSFIELD CIR",
+    "ZIP": 40065,
+    "fulladdcal": "2822 BRASSFIELD CIR",
+    "stplsuf": "BRASSFIELD CIR",
+    "st_wzip": "BRASSFIELD CIR 40065",
+    "COMMUNITY": "SHELBYVILLE",
+    "Add_suffix": " ",
+    "OR_STREET": "BRASSFIELD CIR"
+   },
+   "expect": {
+    "number": "2822",
+    "street": "BRASSFIELD CIR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ky/shelby",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 17:34:18",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

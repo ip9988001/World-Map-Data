@@ -1,0 +1,134 @@
+{
+ "_rejected": {
+  "source_id": "us/mi/city_of_tecumseh",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 4% 低于阈 30%",
+   "不如现有规则（4% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 7,
+   "kept_contentful": 7,
+   "ratio": 0.035,
+   "fabricated": 0,
+   "best_ratio": 0.997
+  },
+  "at": "2026-10-13 17:34:45"
+ },
+ "spec": {
+  "name": "tecumseh_parcel_site_address",
+  "version": 1,
+  "note": "Address 列本身就是完整的『门牌号 + 街名』球场地址（如 4587 MACON RD），用 single 模式解析即可；Owner_Addr/Owner_city/Owner_stat/Owner_zip 是业主邮寄地址与邮寄市州，不是地块门牌点，一律不采用。",
+  "match": {
+   "columns_any": [
+    "Address",
+    "Street_no",
+    "Parcel_No"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    "Owner_Addr"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "Address",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源内不存在地块自身的 city/zip 列；仅有 Owner_city / Owner_stat / Owner_zip（业主邮寄市州邮编），样本中 FID23 业主为 BOYNTON BEACH/FL/0，与地块所在 TECUMSEH/MI/49286 不一致，用它会污染去重 key，故豁免。"
+  },
+  "examples": [
+   {
+    "row": {
+     "FID": 1,
+     "PARCEL_ID": "XT0-320-0410-00",
+     "ACRES": 1.88,
+     "Shape_Area": 82000.0683349,
+     "Parcel_No": "XT0-320-0410-00",
+     "Address": "4587 MACON RD",
+     "Owner_Name": "ANDREW, WILLIAM G &",
+     "Owner_Addr": "4587 MACON RD",
+     "Owner_city": "TECUMSEH",
+     "Owner_stat": "MI",
+     "Owner_zip": 49286,
+     "Class": 401,
+     "SEV": 41900,
+     "Taxable": 27332,
+     "Street_no": 4587
+    },
+    "expect": {
+     "number": "4587",
+     "street": "MACON RD"
+    }
+   },
+   {
+    "row": {
+     "FID": 8,
+     "PARCEL_ID": "XT0-636-0010-00",
+     "ACRES": 0.42,
+     "Shape_Area": 18317.7957925,
+     "Parcel_No": "XT0-636-0010-00",
+     "Address": "925 N UNION ST",
+     "Owner_Name": "MC CREEDY TRUST, ESTHER A",
+     "Owner_Addr": "925 N UNION ST",
+     "Owner_city": "TECUMSEH",
+     "Owner_stat": "MI",
+     "Owner_zip": 49286,
+     "Class": 401,
+     "SEV": 106200,
+     "Taxable": 102807,
+     "Street_no": 925
+    },
+    "expect": {
+     "number": "925",
+     "street": "N UNION ST"
+    }
+   },
+   {
+    "row": {
+     "FID": 16,
+     "PARCEL_ID": "XT0-645-0620-00",
+     "ACRES": 0.43,
+     "Shape_Area": 18559.114704,
+     "Parcel_No": "XT0-645-0620-00",
+     "Address": "907 RIVER ACRES DR",
+     "Owner_Name": "BRINDAMOUR, KIM",
+     "Owner_Addr": "907 RIVER ACRES DR",
+     "Owner_city": "TECUMSEH",
+     "Owner_stat": "MI",
+     "Owner_zip": 49286,
+     "Class": 401,
+     "SEV": 58300,
+     "Taxable": 58300,
+     "Street_no": 907
+    },
+    "expect": {
+     "number": "907",
+     "street": "RIVER ACRES DR"
+    }
+   }
+  ]
+ }
+}

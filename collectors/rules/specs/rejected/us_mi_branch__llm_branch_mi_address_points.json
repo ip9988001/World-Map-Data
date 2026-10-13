@@ -1,0 +1,103 @@
+{
+ "_rejected": {
+  "source_id": "us/mi/branch",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）",
+   "契约 city_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）",
+   "契约 zip_max_miss=1.0 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-13 17:34:26"
+ },
+ "spec": {
+  "name": "branch_mi_address_points",
+  "version": 1,
+  "note": "整条门牌地址已在单一列 ADDRESS（如 '295 W STATE ST'），NUMBER 列恒为 0、CITY 列仅 'CCTY'/'COL' 之类内部缩写，故走 single 模式并从 ADDRESS 拆号/街，city 留空避免污染去重 key。",
+  "match": {
+   "columns_any": [
+    "ADDRESS"
+   ],
+   "columns_all": [
+    "ADDRESS"
+   ],
+   "columns_none": [
+    "ADDRESS0"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "ADDRESS",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 1.0,
+   "zip_max_miss": 1.0,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源无 ZIP 列，可用列仅为 OBJECTID/ADDRESS/APT/LATITUDE/LONGITUDE/CITY/NUMBER/PARCEL_ID/ESN/ADDRESS0/NOTES；CITY 列虽存在但取值均为 'CCTY'/'COL' 等非真实市名，故不提取 city。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "ADDRESS": "295 W STATE ST",
+     "APT": "HOME",
+     "LATITUDE": 41.95603,
+     "LONGITUDE": -85.0143,
+     "CITY": "CCTY",
+     "NUMBER": 0,
+     "PARCEL_ID": " ",
+     "ESN": 860,
+     "ADDRESS0": "NO CHANGE",
+     "NOTES": " "
+    },
+    "expect": {
+     "number": "295",
+     "street": "W STATE ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 22,
+     "ADDRESS": "50 W STATE ST",
+     "APT": "HOME",
+     "LATITUDE": 41.95648,
+     "LONGITUDE": -85.00314,
+     "CITY": "COL",
+     "NUMBER": 0,
+     "PARCEL_ID": " ",
+     "ESN": 802,
+     "ADDRESS0": "NO CHANGE",
+     "NOTES": " "
+    },
+    "expect": {
+     "number": "50",
+     "street": "W STATE ST"
+    }
+   }
+  ]
+ }
+}
