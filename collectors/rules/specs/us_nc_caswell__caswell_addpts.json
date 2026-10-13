@@ -1,0 +1,96 @@
+{
+ "name": "us_nc_caswell__caswell_addpts",
+ "version": 1,
+ "note": "ArcGIS 地址点图层：门牌号在 Add_Number，完整街名（含方位/类型后缀）在 STFULLNAME；无 city/zip/state 列，故豁免。",
+ "match": {
+  "columns_any": [
+   "SHORTADDR"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Add_Number",
+  "street": "STFULLNAME",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "样本列仅有 OBJECTID/Add_Number/AddNum_Suf/LSt_PreDir/LSt_Name/LSt_Type/LSt_PosDir/UID/STRUCTYPE/SHORTADDR/STFULLNAME/NewNumber/Account，无任何 city、zip、state 列"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "Add_Number": 646,
+    "AddNum_Suf": "",
+    "LSt_PreDir": "",
+    "LSt_Name": "KIMBRO",
+    "LSt_Type": "RD",
+    "LSt_PosDir": "",
+    "UID": 2,
+    "STRUCTYPE": "SFR",
+    "SHORTADDR": "646 KIMBRO RD",
+    "STFULLNAME": "KIMBRO RD",
+    "NewNumber": "0082.00.00.0003.0000",
+    "Account": "0082000000030000"
+   },
+   "expect": {
+    "number": "646",
+    "street": "KIMBRO RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 10,
+    "Add_Number": 152,
+    "AddNum_Suf": "",
+    "LSt_PreDir": "",
+    "LSt_Name": "NC HWY 62",
+    "LSt_Type": "",
+    "LSt_PosDir": "N",
+    "UID": 11,
+    "STRUCTYPE": "SFR",
+    "SHORTADDR": "152 NC HWY 62 N",
+    "STFULLNAME": "NC HWY 62 N",
+    "NewNumber": "0082.00.00.0042.0000",
+    "Account": "0082000000420000"
+   },
+   "expect": {
+    "number": "152",
+    "street": "NC HWY 62 N"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/nc/caswell",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 23:53:42",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

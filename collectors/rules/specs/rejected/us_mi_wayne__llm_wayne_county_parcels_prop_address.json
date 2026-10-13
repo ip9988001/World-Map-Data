@@ -1,0 +1,93 @@
+{
+ "_rejected": {
+  "source_id": "us/mi/wayne",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 197,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-13 23:52:56"
+ },
+ "spec": {
+  "name": "wayne_county_parcels_prop_address",
+  "version": 1,
+  "note": "propstreetcombined 已经是「门牌号 + 街名」单列格式，city/state/zip 各有独立列，故用 single 模式并直接取列做辅助字段。",
+  "match": {
+   "columns_any": [
+    "propstreetcombined"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "propcity",
+   "zip": "propzip",
+   "state": "propstate"
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "propstreetcombined",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 768055,
+     "ownername1": "BEYDOUN, HASSAN",
+     "propstreetcombined": "25351 FORD RD",
+     "propcity": "DEARBORN",
+     "propstate": "MI",
+     "propzip": "48128",
+     "packedParcelNumber": "32091712600100"
+    },
+    "expect": {
+     "number": "25351",
+     "street": "FORD RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 768056,
+     "ownername1": "ALJBOURY, SAAD",
+     "propstreetcombined": "2222 N GULLEY",
+     "propcity": "DEARBORN",
+     "propstate": "MI",
+     "propzip": "48128",
+     "packedParcelNumber": "32091712600200"
+    },
+    "expect": {
+     "number": "2222",
+     "street": "N GULLEY"
+    }
+   }
+  ]
+ }
+}

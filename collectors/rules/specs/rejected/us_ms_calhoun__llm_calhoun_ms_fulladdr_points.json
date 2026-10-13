@@ -1,0 +1,137 @@
+{
+ "_rejected": {
+  "source_id": "us/ms/calhoun",
+  "model": "deepseek-flash",
+  "errs": [
+   "single 列不存在：{FullAddr}",
+   "example1 洗不出（spec_empty_single）",
+   "example2 洗不出（spec_empty_single）",
+   "example3 洗不出（spec_empty_single）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 99%）",
+   "契约 zip_max_miss=0.95 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 182,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.986
+  },
+  "at": "2026-10-13 23:53:28"
+ },
+ "spec": {
+  "name": "calhoun_ms_fulladdr_points",
+  "version": 1,
+  "note": "FullAddr 已是「门牌号 + 可选前置方位 + 街名」的完整串（如 '235 HASTING ST'、'208 E JOHNSON AVE'），直接整条解析最稳；City/State/Zipcode 用独立列补，Zipcode 在本源绝大多数行为空。",
+  "match": {
+   "columns_any": [
+    "NGUID_ADD",
+    "MSAGComm",
+    "FullAddr"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "City",
+   "zip": "Zipcode",
+   "state": "State"
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "{FullAddr}",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.95,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "FID": 1,
+     "OBJECTID": 8806,
+     "NGUID_ADD": " ",
+     "FullAddr": "235 HASTING ST",
+     "FullName": "HASTING ST",
+     "Label": "235",
+     "Address": 235,
+     "PreDir": " ",
+     "Street": " ",
+     "StreetType": "ST",
+     "Country": "US",
+     "State": "MS",
+     "County": "CALHOUN",
+     "City": "BRUCE",
+     "Zipcode": " "
+    },
+    "expect": {
+     "number": "235",
+     "street": "HASTING ST"
+    }
+   },
+   {
+    "row": {
+     "FID": 14,
+     "OBJECTID": 9613,
+     "NGUID_ADD": " ",
+     "FullAddr": "208 E JOHNSON AVE",
+     "FullName": "JOHNSON AVE",
+     "Label": "208 (BUILDING 3)",
+     "Address": 208,
+     "PreDir": "East",
+     "Street": " ",
+     "StreetType": " ",
+     "Country": "US",
+     "State": "MS",
+     "County": "CALHOUN",
+     "City": "CALHOUN CITY",
+     "Zipcode": "38916"
+    },
+    "expect": {
+     "number": "208",
+     "street": "E JOHNSON AVE"
+    }
+   },
+   {
+    "row": {
+     "FID": 16,
+     "OBJECTID": 8820,
+     "NGUID_ADD": " ",
+     "FullAddr": "209 JIMMY BECKLY DR",
+     "FullName": "JIMMY BECKLY DR",
+     "Label": "209",
+     "Address": 209,
+     "PreDir": " ",
+     "Street": " ",
+     "StreetType": "DR",
+     "Country": "US",
+     "State": "MS",
+     "County": "CALHOUN",
+     "City": "BRUCE",
+     "Zipcode": " "
+    },
+    "expect": {
+     "number": "209",
+     "street": "JIMMY BECKLY DR"
+    }
+   }
+  ]
+ }
+}

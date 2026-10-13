@@ -1,0 +1,143 @@
+{
+ "_rejected": {
+  "source_id": "us/nc/iredell",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 E PLAZA DR 实得 E PLZ DR"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-13 23:53:47"
+ },
+ "spec": {
+  "name": "iredell_street_addresses",
+  "version": 1,
+  "note": "St_Number + (PreDir) St_Name St_Type (PostDir) 已按门牌点规范化分列，直接模板拼接，不用 FullAddr 以免带 Unit；POCity/Zipcode 为点位所属城市与邮编，可信。",
+  "match": {
+   "columns_any": [
+    "St_Number"
+   ],
+   "columns_all": [
+    "St_Name"
+   ],
+   "columns_none": [
+    "Old_Add"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "St_Number",
+   "street": "Street",
+   "city": "POCity",
+   "zip": "Zipcode",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{PreDir} {St_Name} {St_Type} {PostDir}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "FullAddr": "132 LAKEWIND DR",
+     "St_Number": 132,
+     "St_NumSuffix": "",
+     "PreDir": "",
+     "St_Name": "LAKEWIND",
+     "St_Type": "DR",
+     "PostDir": "",
+     "Bldg_Type": null,
+     "Bldg_Num": null,
+     "Floor": null,
+     "UnitType": null,
+     "Unit": null,
+     "POCity": "MOORESVILLE",
+     "Zipcode": 28115,
+     "Street": "LAKEWIND DR",
+     "Old_Add": "RT 10 BOX 913",
+     "Comment": null,
+     "Location": null,
+     "Add_Use": "RES",
+     "Effective_Status": "ACTIVE",
+     "Ent_Type": "EST",
+     "Ent_By": "ADD",
+     "Ent_Date": 1262736000000,
+     "Upd_By": "KMW",
+     "Upd_Date": 1262736000000,
+     "Permit": null,
+     "CO_Date": null,
+     "RuleID_1": 9,
+     "UniqueID": "ADD1",
+     "Anomoly": null,
+     "AnomolyComment": null,
+     "X_Coord": 1474304.52273493,
+     "Y_Coord": 666909.90318991
+    },
+    "expect": {
+     "number": "132",
+     "street": "LAKEWIND DR"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 10,
+     "FullAddr": "552 E PLAZA DR",
+     "St_Number": 552,
+     "St_NumSuffix": "",
+     "PreDir": "E",
+     "St_Name": "PLAZA",
+     "St_Type": "DR",
+     "PostDir": "",
+     "Bldg_Type": null,
+     "Bldg_Num": null,
+     "Floor": null,
+     "UnitType": null,
+     "Unit": null,
+     "POCity": "MOORESVILLE",
+     "Zipcode": 28115,
+     "Street": "E PLAZA DR",
+     "Old_Add": "FIRST UNION BANK",
+     "Comment": "WACHOVIA",
+     "Location": null,
+     "Add_Use": "NON",
+     "Effective_Status": "ACTIVE",
+     "Ent_Type": "EST",
+     "Ent_By": "ADD",
+     "Ent_Date": 1263168000000,
+     "Upd_By": "KMW",
+     "Upd_Date": 1263168000000,
+     "Permit": null,
+     "CO_Date": null,
+     "RuleID_1": 8,
+     "UniqueID": "ADD10",
+     "Anomoly": null,
+     "AnomolyComment": null,
+     "X_Coord": 1461556.74109106,
+     "Y_Coord": 678172.93116841
+    },
+    "expect": {
+     "number": "552",
+     "street": "E PLAZA DR"
+    }
+   }
+  ]
+ }
+}

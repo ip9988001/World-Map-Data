@@ -38,3 +38,11 @@ at,source_id,rule,action,rows,contentful,kept,kept_contentful,ratio,model,note
 2026-10-13 17:35:15,us/mn/kanabec,llm_kanabec_county_mn_site_address,REJECTED,200,184,5,5,0.027,deepseek-flash,example2 洗不出（no_number）｜example3 洗不出（no_number）｜合规率 3% 低于阈 30%｜不如现有规则（3% < 100%）
 2026-10-13 17:36:06,us/mn/koochiching,llm_koochiching_site_address,REJECTED,200,194,0,0,0.0,deepseek-flash,example1 洗不出（no_number）｜example2 洗不出（no_number）｜洗出太少：0 条（阈 5）｜合规率 0% 低于阈 30%｜不如现有规则（0% < 97%）
 2026-10-13 17:36:13,us/mo/perry,llm_perry_co_centerline_site_address,REJECTED,200,200,200,200,1.0,deepseek-flash,full 列不存在：{StructureNumber} {CompositeStreet}
+2026-10-13 23:52:50,us/ak/city_of_bethel,,NOT_ADDRESS,200,0,0,0,0,deepseek-flash,"样本 200 行，真门牌号形态 0 行（0.0%）｜LLM 自述：该源仅有 Address_Primary 列存放纯门牌号（如 ""391""、""421 A""），没有任何街名列，Address_Secondary 仅为单元后缀，无法构成门牌号+街名形态｜证据列：Address_Primary"
+2026-10-13 23:52:52,us/ia/lyon,,NOT_ADDRESS,200,0,0,0,0,deepseek-flash,样本 200 行，真门牌号形态 0 行（0.0%）｜LLM 自述：该图层是地块/分区多边形（含 Shape_Length/Shape_Area/QTR_ADD），NAME 列全为分区名（如 WUBBENA 1ST ADD、HOLY NAME CHURCH），无任何门牌号+街名｜证据列：NAME
+2026-10-13 23:52:56,us/mi/wayne,llm_wayne_county_parcels_prop_address,REJECTED,200,197,0,0,0.0,deepseek-flash,example1 洗不出（no_number）｜example2 洗不出（no_number）｜洗出太少：0 条（阈 5）｜合规率 0% 低于阈 30%｜不如现有规则（0% < 100%）
+2026-10-13 23:53:02,us/mo/saint_francois,llm_saint_francois_911_full_address,REJECTED,200,200,0,0,0.0,deepseek-flash,example1 洗不出（no_number）｜example2 洗不出（no_number）｜洗出太少：0 条（阈 5）｜合规率 0% 低于阈 30%｜不如现有规则（0% < 100%）
+2026-10-13 23:53:28,us/ms/calhoun,llm_calhoun_ms_fulladdr_points,REJECTED,200,182,0,0,0.0,deepseek-flash,single 列不存在：{FullAddr}｜example1 洗不出（spec_empty_single）｜example2 洗不出（spec_empty_single）｜example3 洗不出（spec_empty_single）｜洗出太少：0 条（阈 5）｜合规率 0% 低于阈 30%｜不如现有规则（0% < 
+2026-10-13 23:53:34,us/nc/alleghany,llm_alleghany_nc_site_address,ACCEPTED,200,200,200,200,1.0,deepseek-flash,ArcGIS 源自带独立的门牌号列 Add_Number 与街道名列 LSt_FullName，直接按列拼装最稳，不需从 LOC_911 单列里猜。
+2026-10-13 23:53:42,us/nc/caswell,llm_caswell_addpts,ACCEPTED,200,200,200,200,1.0,deepseek-flash,ArcGIS 地址点图层：门牌号在 Add_Number，完整街名（含方位/类型后缀）在 STFULLNAME；无 city/zip/state 列，故豁免。
+2026-10-13 23:53:47,us/nc/iredell,llm_iredell_street_addresses,REJECTED,200,200,200,200,1.0,deepseek-flash,example2 街名不符：期望 E PLAZA DR 实得 E PLZ DR

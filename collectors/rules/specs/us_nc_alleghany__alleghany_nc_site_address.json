@@ -1,0 +1,100 @@
+{
+ "name": "us_nc_alleghany__alleghany_nc_site_address",
+ "version": 1,
+ "note": "ArcGIS 源自带独立的门牌号列 Add_Number 与街道名列 LSt_FullName，直接按列拼装最稳，不需从 LOC_911 单列里猜。",
+ "match": {
+  "columns_any": [
+   "LSt_FullName",
+   "Add_Number"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Add_Number",
+  "street": "LSt_FullName",
+  "city": "MSAGComm",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": true,
+  "exempt_reason": "该源无任何 ZIP 列（可用列仅 OBJECTID/LOC_911/Add_Number/MSAGComm/Unit/LSt_FullName/LSt_FullAddress），故豁免 zip"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "LOC_911": "12760 NC HWY 18 N",
+    "Add_Number": 12760,
+    "MSAGComm": "Ennice",
+    "Unit": "APARTMENT B",
+    "LSt_FullName": "NC HWY 18 N",
+    "LSt_FullAddress": "12760 NC HWY 18 N APARTMENT B"
+   },
+   "expect": {
+    "number": "12760",
+    "street": "NC HWY 18 N"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 3,
+    "LOC_911": "2463 US HWY 221",
+    "Add_Number": 2463,
+    "MSAGComm": "Sparta",
+    "Unit": "APARTMENT 5",
+    "LSt_FullName": "US HWY 221",
+    "LSt_FullAddress": "2463 US HWY 221 APARTMENT 5"
+   },
+   "expect": {
+    "number": "2463",
+    "street": "US HWY 221"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 7,
+    "LOC_911": "248 DOCTORS ST",
+    "Add_Number": 248,
+    "MSAGComm": "Sparta",
+    "Unit": "SUITE A",
+    "LSt_FullName": "DOCTORS ST",
+    "LSt_FullAddress": "248 DOCTORS ST SUITE A"
+   },
+   "expect": {
+    "number": "248",
+    "street": "DOCTORS ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/nc/alleghany",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-13 23:53:34",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  }
+ }
+}

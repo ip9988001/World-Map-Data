@@ -1,0 +1,87 @@
+{
+ "_rejected": {
+  "source_id": "us/mo/saint_francois",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.997
+  },
+  "at": "2026-10-13 23:53:02"
+ },
+ "spec": {
+  "name": "saint_francois_911_full_address",
+  "version": 1,
+  "note": "样本里 FullAddress 已是「门牌号 + 街名」完整形态（如 1710 HIGHWAY H），且 StreetName 列丢了类型后缀（BRANDES 而 FullAddress 是 BRANDES LN），故用 single 模式直接解析 FullAddress，避免后缀丢失。",
+  "match": {
+   "columns_any": [
+    "FullAddress"
+   ],
+   "columns_all": [],
+   "columns_none": [],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "FullAddress",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "本源只有 FullAddress/StructureNumber/StreetName/PARCEL_ID/NAT_GRID 等列，不存在任何 city 或 ZIP 列，故豁免"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 41399,
+     "FullAddress": "1710 HIGHWAY H",
+     "StructureNumber": 1710,
+     "StreetName": "HIGHWAY H",
+     "Type": " ",
+     "SubUnit": " "
+    },
+    "expect": {
+     "number": "1710",
+     "street": "HIGHWAY H"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 41413,
+     "FullAddress": "4965 BRANDES LN",
+     "StructureNumber": 4965,
+     "StreetName": "BRANDES",
+     "Type": " ",
+     "SubUnit": " "
+    },
+    "expect": {
+     "number": "4965",
+     "street": "BRANDES LN"
+    }
+   }
+  ]
+ }
+}
