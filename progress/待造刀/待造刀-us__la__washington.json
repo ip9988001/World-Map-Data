@@ -1,0 +1,704 @@
+{
+ "source_id": "us/la/washington",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 19,513 条 > 真门牌号行 364 条×150% → 拒绝这套产物；field_guess@v2:合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）；concat_addr@v2:合规 361/19550 = 2%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364））→ 造新规则",
+ "decided_at": "2026-10-13 22:48:35",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 19589,
+   "kept": 19513,
+   "contentful": 19550,
+   "kept_contentful": 19513,
+   "true_addr": 364,
+   "ratio": 0.998,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 39,
+    "no_number": 31,
+    "no_street": 6
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 11,
+     "zip": 19513
+    },
+    "junk_rate": 0.0,
+    "per_street": 10.01,
+    "streets": 1949,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 19,513 条 > 真门牌号行 364 条×150% → 拒绝这套产物",
+   "seconds": 0.9
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_no_columns": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 1.3
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 19589,
+   "kept": 361,
+   "contentful": 19550,
+   "kept_contentful": 361,
+   "true_addr": 364,
+   "ratio": 0.018,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 19186,
+    "no_address_trace": 39,
+    "junk_rejected": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 330,
+     "zip": 361
+    },
+    "junk_rate": 0.0082,
+    "per_street": 4.1,
+    "streets": 88,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 361/19550 = 2%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 2.3
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 19589,
+   "kept": 19497,
+   "contentful": 19550,
+   "kept_contentful": 19497,
+   "true_addr": 364,
+   "ratio": 0.997,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 39,
+    "no_full_address": 29,
+    "split_no_street": 21,
+    "junk_rejected": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 19497,
+     "zip": 19497
+    },
+    "junk_rate": 0.0002,
+    "per_street": 10.02,
+    "streets": 1945,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 19,497 条 > 真门牌号行 364 条×150% → 拒绝这套产物",
+   "seconds": 3.2
+  },
+  {
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 3.7
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 4.2
+  },
+  {
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 4.7
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 5.2
+  },
+  {
+   "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 5.7
+  },
+  {
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 6.2
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 6.8
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 7.3
+  },
+  {
+   "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 7.8
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 8.3
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 8.8
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 19589,
+   "kept": 0,
+   "contentful": 19550,
+   "kept_contentful": 0,
+   "true_addr": 364,
+   "ratio": 0.0,
+   "coverage": 0.998,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 19550,
+    "no_address_trace": 39
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/19550 = 0%（阈 30%；总行 19,589，带地址 19,550，真门牌号 364）",
+   "seconds": 9.3
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "CITY": " ",
+   "PLACE": " ",
+   "LATITUDE": 30.66567175,
+   "LONGITUDE": -89.98647405,
+   "ESN": 262,
+   "FIRE": "DISTRICT 7 BEN'S FORD",
+   "MSAGComm": "BOGALUSA",
+   "ADDRESS": "10183 GALLOWAY LN",
+   "HNUM": 10183,
+   "GlobalID": "42fc3c6f-5b09-439d-829f-d00ac1a5b479",
+   "Ward": "Ward 6",
+   "Council_District": "Council District 2",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDRESS",
+  "CITY",
+  "Council_District",
+  "ESN",
+  "FIRE",
+  "GlobalID",
+  "HNUM",
+  "LATITUDE",
+  "LONGITUDE",
+  "MSAGComm",
+  "OBJECTID",
+  "PLACE",
+  "Ward",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}

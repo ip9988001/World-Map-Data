@@ -2,7 +2,7 @@
  "source_id": "us/vt/city_of_burlington",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 8,155 条 > 真门牌号行 2,173 条×150% → 拒绝这套产物；field_guess@v2:合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）；concat_addr@v2:合规 2145/8284 = 26%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173））→ 造新规则",
- "decided_at": "2026-10-13 10:03:55",
+ "decided_at": "2026-10-13 22:49:26",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -335,6 +335,47 @@
    "seconds": 4.9
   },
   {
+   "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
+   "rows": 8562,
+   "kept": 0,
+   "contentful": 8284,
+   "kept_contentful": 0,
+   "true_addr": 2173,
+   "ratio": 0.0,
+   "coverage": 0.968,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 8284,
+    "no_address_trace": 278
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
+   "seconds": 5.5
+  },
+  {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
    "rows": 8562,
    "kept": 0,
@@ -373,7 +414,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 5.3
+   "seconds": 5.9
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -414,7 +455,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 5.8
+   "seconds": 6.4
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -455,7 +496,48 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 6.2
+   "seconds": 6.8
+  },
+  {
+   "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
+   "rows": 8562,
+   "kept": 0,
+   "contentful": 8284,
+   "kept_contentful": 0,
+   "true_addr": 2173,
+   "ratio": 0.0,
+   "coverage": 0.968,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 8284,
+    "no_address_trace": 278
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
+   "seconds": 7.2
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -496,7 +578,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 6.6
+   "seconds": 7.7
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -537,7 +619,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 7.1
+   "seconds": 8.1
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -578,7 +660,7 @@
     "contract": false
    },
    "why": "合规 0/8284 = 0%（阈 30%；总行 8,562，带地址 8,284，真门牌号 2,173）",
-   "seconds": 7.5
+   "seconds": 8.5
   }
  ],
  "evidence": {},

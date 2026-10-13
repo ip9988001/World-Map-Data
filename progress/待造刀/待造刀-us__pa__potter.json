@@ -2,7 +2,7 @@
  "source_id": "us/pa/potter",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 13,483 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 13,507 条 > 真门牌号行 2,162 条×150% → 拒绝这套产物；field_guess@v2:合规 1050/14121 = 7%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162））→ 造新规则",
- "decided_at": "2026-10-13 09:25:50",
+ "decided_at": "2026-10-13 22:53:32",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -251,7 +251,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 5.6
+   "seconds": 5.7
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -292,7 +292,48 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 6.3
+   "seconds": 6.4
+  },
+  {
+   "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 7.2
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
@@ -333,7 +374,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 7.1
+   "seconds": 7.9
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -374,7 +415,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 7.9
+   "seconds": 8.7
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -415,7 +456,48 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 8.6
+   "seconds": 9.4
+  },
+  {
+   "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
+   "rows": 14129,
+   "kept": 0,
+   "contentful": 14121,
+   "kept_contentful": 0,
+   "true_addr": 2162,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 14121,
+    "no_address_trace": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
+   "seconds": 10.2
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -456,7 +538,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 9.4
+   "seconds": 11.0
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -497,7 +579,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 10.1
+   "seconds": 11.7
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -538,7 +620,7 @@
     "contract": false
    },
    "why": "合规 0/14121 = 0%（阈 30%；总行 14,129，带地址 14,121，真门牌号 2,162）",
-   "seconds": 10.9
+   "seconds": 12.5
   }
  ],
  "evidence": {},

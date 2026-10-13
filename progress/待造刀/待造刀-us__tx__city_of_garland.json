@@ -1,20 +1,22 @@
 {
  "source_id": "us/tx/city_of_garland",
  "kind": "RULE_GAP",
- "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 74,128 条 > 真门牌号行 6,133 条×150% → 拒绝这套产物；field_guess@v2:合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）；concat_addr@v2:合规 5918/74128 = 8%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133））→ 造新规则",
- "decided_at": "2026-10-13 09:51:05",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 74,127 条 > 真门牌号行 6,132 条×150% → 拒绝这套产物；field_guess@v2:合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）；concat_addr@v2:合规 5917/74127 = 8%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132））→ 造新规则",
+ "decided_at": "2026-10-13 22:48:24",
  "chain": [
   {
    "rule": "mapping@v1",
-   "rows": 74128,
-   "kept": 74128,
-   "contentful": 74128,
-   "kept_contentful": 74128,
-   "true_addr": 6133,
+   "rows": 74176,
+   "kept": 74127,
+   "contentful": 74127,
+   "kept_contentful": 74127,
+   "true_addr": 6132,
    "ratio": 1.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
-   "drops": {},
+   "drops": {
+    "no_address_trace": 49
+   },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
    "grade_hint": "A",
@@ -39,21 +41,22 @@
     },
     "contract": false
    },
-   "why": "疑似凭空造数据：合规 74,128 条 > 真门牌号行 6,133 条×150% → 拒绝这套产物",
-   "seconds": 5.4
+   "why": "疑似凭空造数据：合规 74,127 条 > 真门牌号行 6,132 条×150% → 拒绝这套产物",
+   "seconds": 5.6
   },
   {
    "rule": "field_guess@v2",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "guess_street_not_text": 74128
+    "guess_street_not_text": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -79,21 +82,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 8.4
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 8.7
   },
   {
    "rule": "concat_addr@v2",
-   "rows": 74128,
-   "kept": 5918,
-   "contentful": 74128,
-   "kept_contentful": 5918,
-   "true_addr": 6133,
+   "rows": 74176,
+   "kept": 5917,
+   "contentful": 74127,
+   "kept_contentful": 5917,
+   "true_addr": 6132,
    "ratio": 0.08,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "v2_no_site_column": 68210
+    "v2_no_site_column": 68210,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -102,11 +106,11 @@
    "exempt": null,
    "quality": {
     "missing": {
-     "city": 5759,
-     "zip": 5918
+     "city": 5758,
+     "zip": 5917
     },
     "junk_rate": 0.0,
-    "per_street": 20.99,
+    "per_street": 20.98,
     "streets": 282,
     "lim": {
      "city": 0.2,
@@ -119,21 +123,22 @@
     },
     "contract": false
    },
-   "why": "合规 5918/74128 = 8%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 16.3
+   "why": "合规 5917/74127 = 8%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 16.7
   },
   {
    "rule": "concat_addr@v1",
-   "rows": 74128,
-   "kept": 74074,
-   "contentful": 74128,
-   "kept_contentful": 74074,
-   "true_addr": 6133,
+   "rows": 74176,
+   "kept": 74073,
+   "contentful": 74127,
+   "kept_contentful": 74073,
+   "true_addr": 6132,
    "ratio": 0.999,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "split_no_street": 54
+    "split_no_street": 54,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -142,8 +147,8 @@
    "exempt": null,
    "quality": {
     "missing": {
-     "city": 74074,
-     "zip": 74074
+     "city": 74073,
+     "zip": 74073
     },
     "junk_rate": 0.0,
     "per_street": 29.95,
@@ -159,21 +164,22 @@
     },
     "contract": false
    },
-   "why": "疑似凭空造数据：合规 74,074 条 > 真门牌号行 6,133 条×150% → 拒绝这套产物",
-   "seconds": 22.2
+   "why": "疑似凭空造数据：合规 74,073 条 > 真门牌号行 6,132 条×150% → 拒绝这套产物",
+   "seconds": 22.8
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -199,21 +205,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 25.3
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 25.9
   },
   {
    "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -239,22 +246,23 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 28.3
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 29.0
   },
   {
    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
     "no_number": 68210,
-    "no_street": 5918
+    "no_street": 5917,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -280,21 +288,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 32.7
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 33.4
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -320,21 +329,63 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 35.7
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 36.6
+  },
+  {
+   "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
+   "rows": 74176,
+   "kept": 0,
+   "contentful": 74127,
+   "kept_contentful": 0,
+   "true_addr": 6132,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 74127,
+    "no_address_trace": 49
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 40.1
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -360,21 +411,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 39.1
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 43.6
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -400,21 +452,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 42.4
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 47.0
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -440,21 +493,63 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 45.5
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 50.1
+  },
+  {
+   "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
+   "rows": 74176,
+   "kept": 0,
+   "contentful": 74127,
+   "kept_contentful": 0,
+   "true_addr": 6132,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 74127,
+    "no_address_trace": 49
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 53.6
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -480,21 +575,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 48.9
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 57.1
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -520,21 +616,22 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 51.9
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 60.2
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
-   "rows": 74128,
+   "rows": 74176,
    "kept": 0,
-   "contentful": 74128,
+   "contentful": 74127,
    "kept_contentful": 0,
-   "true_addr": 6133,
+   "true_addr": 6132,
    "ratio": 0.0,
-   "coverage": 1.0,
+   "coverage": 0.999,
    "addr_hint": 1.0,
    "drops": {
-    "no_number": 74128
+    "no_number": 74127,
+    "no_address_trace": 49
    },
    "verdict": "GATE_FAIL",
    "kind": "SHAPE",
@@ -560,8 +657,8 @@
     },
     "contract": false
    },
-   "why": "合规 0/74128 = 0%（阈 30%；总行 74,128，带地址 74,128，真门牌号 6,133）",
-   "seconds": 55.4
+   "why": "合规 0/74127 = 0%（阈 30%；总行 74,176，带地址 74,127，真门牌号 6,132）",
+   "seconds": 63.7
   }
  ],
  "evidence": {},

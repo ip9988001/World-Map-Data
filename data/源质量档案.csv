@@ -75,14 +75,14 @@ us/ca/calaveras,CA,Calaveras,06009,1,mapping@v1,39376,0.999,,,0.0,17.44,PASS_DOW
 us/ca/city_of_anaheim,CA,City of Anaheim,0602000,1,mapping@v1,166750,0.982,,,0.0051,50.23,PASS,A,59.9,B,
 us/ca/city_of_bakersfield,CA,City of Bakersfield,0603526,1,mapping@v1,136764,0.999,,,0.0009,25.15,PASS,A,60.0,B,
 us/ca/city_of_bishop,CA,,,1,mapping@v1,2739,1.0,,,0.0,40.28,PASS_DOWNGRADED,B,51.0,B,"合规 2739/2740 = 100%（带地址行分母；真门牌号行 2,730）总行 2,741｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip "
-us/ca/city_of_burbank,CA,,,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/ca/city_of_burbank,CA,,,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/ca/city_of_carson,CA,City of Carson,0611530,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/ca/city_of_culver_city,CA,,,1,mapping@v1,23922,0.98,,,0.0192,82.49,PASS,A,59.7,B,
 us/ca/city_of_cupertino,CA,City of Cupertino,0617610,1,mapping@v1,25793,0.999,,,0.0,23.3,PASS,A,60.0,B,
 us/ca/city_of_cupertino2,CA,City of Cupertino,0617610,1,mapping@v1,8599,0.979,,,0.0,390.86,PASS,A,60.0,B,
 us/ca/city_of_elk_grove,CA,Sacramento,0622020,1,mapping@v1,69615,0.999,,,0.0,24.41,PASS,A,60.0,B,
 us/ca/city_of_eureka,CA,,,0,,0,,,,,,,,,X,TRANSIENT
-us/ca/city_of_fullerton,CA,Orange,06059,0,,0,,,,,,,,,X,TRANSIENT
+us/ca/city_of_fullerton,CA,Orange,06059,1,mapping@v1,58159,0.989,,,0.0004,40.9,PASS,A,60.0,B,
 us/ca/city_of_hayward,CA,Alameda,0633000,1,mapping@v1,82329,1.0,,,0.0,37.37,PASS,A,60.0,B,
 us/ca/city_of_hermosa_beach,CA,,,1,mapping@v1,11025,0.986,,,0.0141,77.64,PASS,A,59.8,B,
 us/ca/city_of_huntington_beach,CA,Orange,06059,1,mapping@v1,96886,1.0,,,0.0,35.27,PASS,A,60.0,B,
@@ -133,7 +133,7 @@ us/ca/nevada,CA,Nevada,06057,1,mapping@v1,64427,0.997,,,0.0,16.45,PASS,A,60.0,B,
 us/ca/orange,CA,Orange,06059,1,concat_addr@v1,456763,0.999,,,0.0,8.32,PASS_DOWNGRADED,B,60.0,B,"合规 456763/457200 = 100%（带地址行分母；真门牌号行 372,333）总行 457,200｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 c"
 us/ca/placer,CA,Placer,06061,1,field_guess@v2,223079,1.0,,,0.0,1.19,PASS,A,38.7,C,
 us/ca/riverside,CA,Riverside,06065,1,mapping@v1,801792,0.93,,,0.0,20.31,PASS,A,60.0,B,
-us/ca/sacramento,CA,Sacramento,06067,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/ca/sacramento,CA,Sacramento,06067,1,mapping@v1,709470,0.998,,,0.0018,36.8,PASS,A,60.0,B,
 us/ca/san_benito,CA,San Benito,06069,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/ca/san_bernardino,CA,San Bernardino,06071,1,mapping@v1,401398,1.0,,,0.0,23.05,PASS,A,60.0,B,
 us/ca/san_diego,CA,San Diego,06073,1,concat_addr@v1,910798,1.0,,,0.0,4.55,PASS_DOWNGRADED,B,49.2,C,"合规 910798/910800 = 100%（带地址行分母；真门牌号行 806,457）总行 910,800｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 c"
@@ -169,7 +169,7 @@ us/co/city_of_centennial,CO,City of Centennial,0812815,1,mapping@v1,49338,1.0,,,
 us/co/city_of_commerce_city,CO,City of Commerce City,0816495,1,mapping@v1,35501,1.0,,,0.0,61.42,PASS,A,60.0,B,
 us/co/city_of_erie,CO,City of Erie,0824950,1,mapping@v1,18610,1.0,,,0.0,23.98,PASS,A,60.0,B,
 us/co/city_of_fort_collins,CO,City of Fort Collins,0827425,0,,0,,,,,,,,,X,NO_ARCHIVE
-us/co/city_of_frederick,CO,Weld,0828360,0,,0,,,,,,,,,X,TRANSIENT
+us/co/city_of_frederick,CO,Weld,0828360,1,mapping@v1,9148,1.0,,,0.0,20.19,PASS,A,60.0,B,
 us/co/city_of_greeley,CO,City of Greeley,0832155,1,mapping@v1,48171,0.999,,,0.0004,48.41,PASS,A,60.0,B,
 us/co/city_of_littleton,CO,City of Littleton,0845255,1,mapping@v1,71643,1.0,,,0.0,40.23,PASS,A,60.0,B,
 us/co/city_of_loveland,CO,City of Loveland,0846465,1,mapping@v1,49967,1.0,,,0.0,26.99,PASS,A,60.0,B,
@@ -240,10 +240,10 @@ us/fl/city_of_key_biscayne,FL,Key Biscayne,1236300,1,mapping@v1,1550,0.996,,,0.0
 us/fl/city_of_lakeland,FL,Lakeland,1238250,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/fl/city_of_miami,FL,Miami-Dade,1245000,1,mapping@v1,211522,1.0,,,0.0,219.88,PASS_DOWNGRADED,B,60.0,B,"合规 211522/211527 = 100%（带地址行分母；真门牌号行 211,275）总行 211,527｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来"
 us/fl/city_of_west_palm_beach,FL,Palm Beach,1276600,1,mapping@v1,45363,1.0,,,0.0,46.43,PASS,A,60.0,B,
-us/fl/clay,FL,Clay,12019,0,,0,,,,,,,,,X,TRANSIENT
+us/fl/clay,FL,Clay,12019,1,concat_addr@v2,33701,0.366,,,0.0,8.38,PASS_DOWNGRADED,B,60.0,B,"合规 33701/91969 = 37%（带地址行分母；真门牌号行 34,050）总行 91,969｜完整性不过：city 缺 95%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zi"
 us/fl/collier,FL,Collier,12021,1,mapping@v1,297956,1.0,,,0.0,53.79,PASS_DOWNGRADED,B,60.0,B,"合规 297956/297956 = 100%（带地址行分母；真门牌号行 295,091）总行 297,956｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/fl/columbia,FL,Columbia,12023,1,mapping@v1,36729,1.0,,,0.0,12.67,PASS,A,60.0,B,
-us/fl/desoto,FL,Desoto,12027,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/fl/desoto,FL,Desoto,12027,1,mapping@v1,16442,0.996,,,0.0,16.78,PASS,A,60.0,B,
 us/fl/duval,FL,Duval,12031,1,mapping@v1,672318,1.0,,,0.0,43.35,PASS,A,60.0,B,
 us/fl/flagler,FL,Flagler,12035,1,mapping@v1,94575,1.0,,,0.0,31.52,PASS,A,60.0,B,
 us/fl/hardee,FL,Hardee,12049,1,concat_addr@v1,14462,0.985,,,0.0,17.47,PASS_DOWNGRADED,B,60.0,B,"合规 14462/14686 = 98%（带地址行分母；真门牌号行 14,184）总行 14,686｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
@@ -256,10 +256,10 @@ us/fl/lee,FL,Lee,12071,1,mapping@v1,711467,1.0,,,0.0,56.4,PASS,A,60.0,B,
 us/fl/leon,FL,Leon,12073,0,,0,,,,,,,,,X,TRANSIENT
 us/fl/manatee,FL,Manatee,12081,1,mapping@v1,302868,1.0,,,0.0,53.57,PASS,A,60.0,B,
 us/fl/martin,FL,Martin,12085,1,mapping@v1,5080,1.0,,,0.0,25.79,PASS,A,60.0,B,
-us/fl/miami-dade,FL,Miami-Dade,12086,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 910,797 条 > 真门牌号行 562,373 条×150% → 拒绝这套产物；field_guess@v2:合规 11702/910797 = 1%（阈"
+us/fl/miami-dade,FL,Miami-Dade,12086,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
 us/fl/nassau,FL,Nassau,12089,1,mapping@v1,54324,1.0,,,0.0,16.77,PASS,A,60.0,B,
 us/fl/orange,FL,Orange,12095,1,field_guess@v2,471851,0.66,,,0.0,28.35,PASS,A,60.0,B,
-us/fl/palm_beach,FL,Palm Beach,12099,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/fl/palm_beach,FL,Palm Beach,12099,1,mapping@v1,37649,1.0,,,0.0,23.43,PASS,A,60.0,B,
 us/fl/pasco,FL,Pasco,12101,1,mapping@v1,363255,1.0,,,0.0,30.26,PASS,A,60.0,B,
 us/fl/pinellas,FL,Pinellas,12103,1,mapping@v1,456289,1.0,,,0.0,51.4,PASS,A,60.0,B,
 us/fl/polk,FL,Polk,12105,1,mapping@v1,417630,0.811,,,0.0,30.51,PASS,A,60.0,B,
@@ -269,7 +269,7 @@ us/fl/sarasota,FL,Sarasota,12115,1,mapping@v1,334022,1.0,,,0.0,35.38,PASS,A,60.0
 us/fl/st-johns,FL,St. Johns,12109,1,mapping@v1,181079,1.0,,,0.0,28.92,PASS,A,60.0,B,
 us/fl/st-lucie,FL,St. Lucie,12111,1,mapping@v1,209712,1.0,,,0.0,37.11,PASS,A,60.0,B,
 us/fl/sumter,FL,Sumter,12119,1,mapping@v1,114314,1.0,,,0.0,21.54,PASS,A,60.0,B,
-us/fl/volusia,FL,Volusia,12127,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 277,535 条 > 真门牌号行 39,516 条×150% → 拒绝这套产物；field_guess@v2:合规 4168/277537 = 2%（阈 3"
+us/fl/volusia,FL,Volusia,12127,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 277,537 条 > 真门牌号行 39,516 条×150% → 拒绝这套产物；field_guess@v2:合规 4168/277539 = 2%（阈 3"
 us/fl/walton,FL,Walton,12131,1,mapping@v1,70626,0.663,,,0.0,17.39,PASS,A,60.0,B,
 us/ga/appling,GA,Appling,13001,1,mapping@v1,13877,0.95,,,,,,,,N,
 us/ga/atkinson,GA,Atkinson,13003,1,mapping@v1,6731,0.92,,,0.0003,10.42,PASS,A,60.0,B,
@@ -314,7 +314,7 @@ us/ga/crisp,GA,Crisp,13181,1,mapping@v1,11036,1.0,,,0.0001,18.93,PASS_DOWNGRADED
 us/ga/dawson,GA,Dawson,13085,1,mapping@v1,23564,1.0,,,0.0,14.93,PASS_DOWNGRADED,B,60.0,B,"合规 23564/23568 = 100%（带地址行分母；真门牌号行 21,981）总行 23,601｜完整性不过：zip 缺 77%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/ga/decatur,GA,Decatur,13087,1,mapping@v1,14978,0.999,,,0.0,14.02,PASS,A,60.0,B,
 us/ga/dekalb,GA,Dekalb,13089,1,mapping@v1,388022,0.998,,,0.0,39.22,PASS,A,60.0,B,
-us/ga/dougherty,GA,Dougherty,13095,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 41,016 条 > 真门牌号行 2,020 条×150% → 拒绝这套产物；field_guess@v2:合规 0/41035 = 0%（阈 30%；总行 "
+us/ga/dougherty,GA,Dougherty,13095,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 41,018 条 > 真门牌号行 2,020 条×150% → 拒绝这套产物；field_guess@v2:合规 0/41037 = 0%（阈 30%；总行 "
 us/ga/douglas,GA,Douglas,13097,1,mapping@v1,51775,0.93,,,0.0,19.01,PASS,A,60.0,B,
 us/ga/early,GA,Early,13099,1,mapping@v1,5313,0.543,,,,,,,,N,
 us/ga/echols,GA,Echols,13101,1,mapping@v1,1316,0.505,,,,,,,,N,
@@ -471,7 +471,7 @@ us/il/city_of_evanston,IL,Cook,1724582,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/il/city_of_naperville,IL,City of Naperville,1751622,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/il/city_of_rochelle,IL,City of Rochelle,1765247,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/il/clark,IL,Clark,17023,0,,0,,,,,,,,,X,TRANSIENT
-us/il/coles,IL,Coles,17029,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/il/coles,IL,Coles,17029,0,,0,,,,,,,,,X,TRANSIENT
 us/il/cook,IL,Cook,17031,1,mapping@v1,84542,1.0,,,0.0,16.95,PASS,A,60.0,B,
 us/il/cumberland,IL,Cumberland,17035,1,concat_addr@v1,11117,0.953,,,0.0,8.89,PASS_DOWNGRADED,B,60.0,B,"合规 11117/11664 = 95%（带地址行分母；真门牌号行 10,818）总行 11,767｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
 us/il/dekalb,IL,DeKalb,17037,1,concat_addr@v1,39941,0.994,,,0.0005,21.29,PASS_DOWNGRADED,B,60.0,B,"合规 39941/40164 = 99%（带地址行分母；真门牌号行 39,490）总行 40,166｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
@@ -486,14 +486,14 @@ us/il/greene,IL,Greene,17061,1,concat_addr@v1,7362,0.997,,,0.0001,13.56,PASS_DOW
 us/il/henry,IL,Henry,17073,1,concat_addr@v1,25529,0.812,,,0.0,14.99,PASS_DOWNGRADED,B,60.0,B,"合规 25529/31423 = 81%（带地址行分母；真门牌号行 30,737）总行 31,697｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
 us/il/jersey,IL,Jersey,17083,0,,0,,,,,,,,,X,TRANSIENT
 us/il/kane,IL,Kane,17089,1,mapping@v1,218336,0.992,,,0.0079,34.56,PASS,A,59.9,B,
-us/il/kankakee,IL,Kankakee,17091,0,,0,,,,,,,,,X,TRANSIENT
+us/il/kankakee,IL,Kankakee,17091,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/il/kendall,IL,Kendall,17093,1,mapping@v1,50565,0.864,,,0.0059,18.62,PASS,A,59.9,B,
 us/il/knox,IL,Knox,17095,0,,0,,,,,,,,,X,TRANSIENT
 us/il/lake,IL,Lake,17097,1,mapping@v1,1130,1.0,,,0.0,10.09,PASS,A,44.5,C,
 us/il/lasalle,IL,LaSalle,17099,1,mapping@v1,58623,0.999,,,0.0,12.73,PASS_DOWNGRADED,B,60.0,B,"合规 58623/58677 = 100%（带地址行分母；真门牌号行 54,195）总行 58,677｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/il/lawrence,IL,Lawrence,17101,0,,0,,,,,,,,,X,TRANSIENT
 us/il/lee,IL,Lee,17103,1,mapping@v1,15656,1.0,,,0.0,17.05,PASS,A,60.0,B,
-us/il/logan,IL,Logan,17107,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/il/logan,IL,Logan,17107,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/il/macon,IL,Macon,17115,1,concat_addr@v1,64015,0.997,,,0.0,23.17,PASS_DOWNGRADED,B,60.0,B,"合规 64015/64190 = 100%（带地址行分母；真门牌号行 62,883）总行 64,194｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/il/macoupin,IL,Macoupin,17117,0,,0,,,,,,,,,X,TRANSIENT
 us/il/mcdonough,IL,McDonough,17109,1,concat_addr@v1,15377,0.999,,,0.0,16.94,PASS_DOWNGRADED,B,60.0,B,"合规 15377/15393 = 100%（带地址行分母；真门牌号行 15,324）总行 15,736｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
@@ -649,7 +649,7 @@ us/mi/semcog,MI,"Livingston, Macomb, Monroe, Oakland, Saint Clair, Washtenaw, Wa
 us/mi/st_clair,MI,St. Clair,26147,1,mapping@v1,77885,0.998,,,0.0,38.46,PASS,A,60.0,B,
 us/mi/troy,MI,City of Troy,2680700,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/mi/washtenaw,MI,Washtenaw,26161,0,,0,,,,,,,,,X,TRANSIENT
-us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物；field_guess@v2:合规 0/449285 = 0%（阈 30%；"
 us/mn/aitkin,MN,Aitkin,27001,1,mapping@v1,16204,0.924,,,0.0,18.19,PASS,A,60.0,B,
 us/mn/anoka,MN,Anoka,27003,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/mn/beltrami,MN,Beltrami,27007,1,mapping@v1,20671,1.0,,,0.0,10.15,PASS,A,60.0,B,
@@ -787,7 +787,7 @@ us/nc/durham,NC,Durham,37063,1,mapping@v1,178198,1.0,,,0.0,31.65,PASS,A,60.0,B,
 us/nc/forsyth,NC,Forsyth,37067,1,mapping@v1,207062,1.0,,,0.0,24.46,PASS_DOWNGRADED,B,60.0,B,"合规 207062/207063 = 100%（带地址行分母；真门牌号行 205,582）总行 207,063｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来"
 us/nc/franklin,NC,Franklin,37069,1,concat_addr@v1,43936,0.997,,,0.0001,13.61,PASS_DOWNGRADED,B,60.0,B,"合规 43936/44069 = 100%（带地址行分母；真门牌号行 43,716）总行 44,070｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/nc/guilford,NC,Guilford,37081,1,mapping@v1,357641,1.0,,,0.0,33.1,PASS,A,60.0,B,
-us/nc/harnett,NC,Harnett,37085,0,,0,,,,,,,,,X,TRANSIENT
+us/nc/harnett,NC,Harnett,37085,1,mapping@v1,84698,1.0,,,0.0,20.11,PASS,A,60.0,B,
 us/nc/iredell,NC,Iredell,37097,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 117,598 条 > 真门牌号行 58,587 条×150% → 拒绝这套产物；field_guess@v2:合规 902/117618 = 1%（阈 30"
 us/nc/lenoir,NC,Lenoir,37107,1,mapping@v1,30741,0.995,,,0.0,16.9,PASS,A,60.0,B,
 us/nc/madison,NC,Madison,37115,1,concat_addr@v1,18734,1.0,,,0.0,6.55,PASS_DOWNGRADED,B,55.5,B,"合规 18734/18734 = 100%（带地址行分母；真门牌号行 18,214）总行 18,734｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
@@ -813,7 +813,7 @@ us/nd/city_of_grafton,ND,Grafton,3831820,0,,0,,,,,,,,,X,SOURCE_BROKEN
 us/nd/city_of_grand_forks,ND,Grand Forks,3832060,1,concat_addr@v1,19749,1.0,,,0.0,13.25,PASS_DOWNGRADED,B,60.0,B,"合规 19749/19751 = 100%（带地址行分母；真门牌号行 19,751）总行 19,751｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/nd/dickinson,ND,Stark,3819620,1,concat_addr@v1,9062,0.907,,,0.0015,11.31,PASS_DOWNGRADED,B,60.0,B,"合规 9062/9987 = 91%（带地址行分母；真门牌号行 10,101）总行 10,621｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip"
 us/nd/golden_valley,ND,Golden Valley,38033,1,mapping@v1,1344,0.981,,,0.0007,8.56,PASS,A,45.4,C,
-us/nd/mckenzie_county,ND,McKenzie,38053,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/nd/mckenzie_county,ND,McKenzie,38053,1,mapping@v1,13328,1.0,,,0.0,20.26,PASS,A,60.0,B,
 us/nd/morton,ND,Morton,38059,1,concat_addr@v1,15320,0.999,,,0.0007,19.2,PASS_DOWNGRADED,B,60.0,B,"合规 15320/15330 = 100%（带地址行分母；真门牌号行 15,101）总行 15,330｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/nd/ramsey,ND,Ramsey,38071,0,,0,,,,,,,,,X,TRANSIENT
 us/nd/richland,ND,Richland,38077,1,mapping@v1,8126,0.999,,,0.0011,19.39,PASS,A,60.0,B,
@@ -901,7 +901,7 @@ us/ne/webster,NE,Webster,31181,0,,0,,,,,,,,,X,TRANSIENT
 us/ne/york,NE,York,31185,0,,0,,,,,,,,,X,TRANSIENT
 us/nh/city_of_nashua,NH,City of Nashua,3350260,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/nh/statewide,NH,,33,1,field_guess@v2,539339,0.917,,,0.0,2.7,PASS,A,43.4,C,
-us/nj/bergen,NJ,Bergen,34003,0,,0,,,,,,,,,X,TRANSIENT
+us/nj/bergen,NJ,Bergen,34003,1,llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1,274531,0.915,,,0.0026,40.32,PASS_DOWNGRADED,B,60.0,B,"合规 274531/300075 = 91%（带地址行分母；真门牌号行 284,586）总行 300,083｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 ci"
 us/nj/monmouth,NJ,Monmouth,34025,1,mapping@v1,264780,1.0,,,0.0,32.19,PASS,A,60.0,B,
 us/nj/sussex,NJ,Sussex,34037,1,concat_addr@v1,70876,0.995,,,0.0,20.72,PASS_DOWNGRADED,B,60.0,B,"合规 70876/71215 = 100%（带地址行分母；真门牌号行 69,240）总行 71,218｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/nm/albuquerque,NM,Bernalillo,3502000,1,mapping@v1,257610,1.0,,,0.0,26.69,PASS_DOWNGRADED,B,60.0,B,"合规 257610/257610 = 100%（带地址行分母；真门牌号行 242,815）总行 257,610｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 c"
@@ -1044,7 +1044,7 @@ us/pa/franklin,PA,Franklin,42055,1,mapping@v1,72323,0.99,,,0.0018,29.05,PASS,A,6
 us/pa/greene,PA,Greene,42059,1,concat_addr@v1,15490,0.6,,,0.0,12.07,PASS_DOWNGRADED,B,60.0,B,"合规 15490/25801 = 60%（带地址行分母；真门牌号行 25,526）总行 26,712｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
 us/pa/huntingdon,PA,Huntingdon,42061,1,mapping@v1,25283,1.0,,,0.0,10.66,PASS_DOWNGRADED,B,60.0,B,"合规 25283/25283 = 100%（带地址行分母；真门牌号行 25,002）总行 25,284｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/pa/indiana,PA,Indiana,42063,1,concat_addr@v1,41491,0.968,,,0.0,8.6,PASS_DOWNGRADED,B,60.0,B,"合规 41491/42871 = 97%（带地址行分母；真门牌号行 43,062）总行 43,993｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
-us/pa/juniata,PA,Juniata,42067,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/pa/juniata,PA,Juniata,42067,1,mapping@v1,13357,0.998,,,0.0,9.14,PASS,A,60.0,B,
 us/pa/lackawanna,PA,Lackawanna,42069,1,mapping@v1,93203,0.996,,,0.0,25.29,PASS,A,60.0,B,
 us/pa/lancaster,PA,Lancaster,42071,1,concat_addr@v1,227673,0.995,,,0.0,27.64,PASS_DOWNGRADED,B,60.0,B,"合规 227673/228916 = 99%（带地址行分母；真门牌号行 225,576）总行 228,916｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 ci"
 us/pa/lawrence,PA,Lawrence,42073,1,mapping@v1,40130,1.0,,,0.0,17.82,PASS_DOWNGRADED,B,60.0,B,"合规 40130/40130 = 100%（带地址行分母；真门牌号行 39,740）总行 40,133｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
@@ -1076,7 +1076,7 @@ us/ri/city_of_cranston,RI,Providence,4419180,1,mapping@v1,29308,0.899,,,0.0,21.1
 us/ri/providence,RI,City of Providence,4459000,1,mapping@v1,43264,0.997,,,,,,,,N,
 us/ri/statewide,RI,,44,1,mapping@v1,394105,0.94,,,0.0,28.12,PASS,A,60.0,B,
 us/sc/beaufort,SC,Beaufort,45013,1,concat_addr@v1,151180,0.994,,,0.0044,23.99,PASS_DOWNGRADED,B,59.9,B,"合规 151180/152163 = 99%（带地址行分母；真门牌号行 140,472）总行 152,185｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 ci"
-us/sc/berkeley,SC,Berkeley,45015,0,,0,,,,,,,,,X,TRANSIENT
+us/sc/berkeley,SC,Berkeley,45015,1,mapping@v1,149363,1.0,,,0.0,13.91,PASS,A,60.0,B,
 us/sc/calhoun,SC,Calhoun,45017,1,mapping@v1,8477,0.896,,,0.0007,9.07,PASS,A,60.0,B,
 us/sc/charleston,SC,Charleston,45019,0,,0,,,,,,,,,X,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用
 us/sc/city_of_charleston,SC,City of Charleston,4513330,1,mapping@v1,57908,1.0,,,0.0,20.76,PASS,A,60.0,B,
@@ -1089,7 +1089,7 @@ us/sc/colleton,SC,Colleton,45029,1,concat_addr@v1,27955,0.999,,,0.0001,11.54,PAS
 us/sc/darlington,SC,Darlington,45031,1,concat_addr@v2,35146,1.0,,,0.0,13.88,PASS,A,60.0,B,
 us/sc/dorchester,SC,Dorchester,45035,0,,0,,,,,,,,,X,TRANSIENT
 us/sc/florence,SC,Florence,45041,1,mapping@v1,76743,1.0,,,0.0,20.69,PASS,A,60.0,B,
-us/sc/georgetown,SC,Georgetown,45043,0,,0,,,,,,,,,X,TRANSIENT
+us/sc/georgetown,SC,Georgetown,45043,1,mapping@v1,40804,0.999,,,0.0,14.13,PASS,A,60.0,B,
 us/sc/greenville,SC,Greenville,45045,0,,0,,,,,,,,,X,TRANSIENT
 us/sc/greenwood,SC,Greenwood,45047,1,mapping@v1,43249,0.998,,,0.0024,22.47,PASS_DOWNGRADED,B,60.0,B,"合规 43249/43353 = 100%（带地址行分母；真门牌号行 42,141）总行 43,353｜完整性不过：city 缺 42%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/sc/hampton,SC,Hampton,45049,1,mapping@v1,11707,1.0,,,0.0,12.72,PASS_DOWNGRADED,B,60.0,B,"合规 11707/11707 = 100%（带地址行分母；真门牌号行 10,470）总行 12,470｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
@@ -1166,14 +1166,14 @@ us/tx/city_of_abilene,TX,Taylor,4801000,1,concat_addr@v1,76127,0.999,,,0.0,19.91
 us/tx/city_of_alvin,TX,Brazoria,4802272,1,mapping@v1,26,0.963,,,0.0,1.13,PASS_DOWNGRADED,B,18.6,C,"合规 26/27 = 96%（带地址行分母；真门牌号行 9,375）总行 9,939｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/tx/city_of_amarillo,TX,Potter County,4803000,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 125,767 条 > 真门牌号行 32,640 条×150% → 拒绝这套产物；field_guess@v2:合规 487/125784 = 0%（阈 30"
 us/tx/city_of_beaumont,TX,City of Beaumont,4807000,1,mapping@v1,49556,0.999,,,0.0,27.78,PASS_DOWNGRADED,B,60.0,B,"合规 49556/49592 = 100%（带地址行分母；真门牌号行 48,803）总行 57,169｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
-us/tx/city_of_bryan,TX,Brazos,4810912,0,,0,,,,,,,,,X,TRANSIENT
+us/tx/city_of_bryan,TX,Brazos,4810912,1,mapping@v1,48990,1.0,,,0.0,31.85,PASS,A,60.0,B,
 us/tx/city_of_carrollton,TX,City of Carrollton,4813024,1,mapping@v1,37749,1.0,,,0.0,24.83,PASS_DOWNGRADED,B,60.0,B,"合规 37749/37749 = 100%（带地址行分母；真门牌号行 35,609）总行 37,749｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/tx/city_of_cedar_park,TX,Williamson,4813552,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 30,935 条 > 真门牌号行 7,283 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 23,276 条 > 真门牌"
 us/tx/city_of_college_station,TX,College Station,4815976,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 42,910 条 > 真门牌号行 12,185 条×150% → 拒绝这套产物；field_guess@v2:合规 0/42910 = 0%（阈 30%；总行"
 us/tx/city_of_colleyville,TX,City of Colleyville,4815988,1,mapping@v1,33,1.0,,,0.0,3.3,PASS_DOWNGRADED,B,25.4,C,"合规 33/33 = 100%（带地址行分母；真门牌号行 9,956）总行 11,430｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来"
 us/tx/city_of_dallas,TX,Dallas,,1,mapping@v1,56741,0.999,,,0.0008,58.44,PASS_DOWNGRADED,B,60.0,B,"合规 56741/56789 = 100%（带地址行分母；真门牌号行 66,957）总行 86,042｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/tx/city_of_flower_mound,TX,Denton/Tarrant,4826232,1,mapping@v1,29226,1.0,,,0.0,16.86,PASS_DOWNGRADED,B,60.0,B,"合规 29226/29226 = 100%（带地址行分母；真门牌号行 28,929）总行 29,226｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
-us/tx/city_of_garland,TX,City of Garland,4829000,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 74,128 条 > 真门牌号行 6,133 条×150% → 拒绝这套产物；field_guess@v2:合规 0/74128 = 0%（阈 30%；总行 "
+us/tx/city_of_garland,TX,City of Garland,4829000,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 74,127 条 > 真门牌号行 6,132 条×150% → 拒绝这套产物；field_guess@v2:合规 0/74127 = 0%（阈 30%；总行 "
 us/tx/city_of_horseshoe_bay,TX,City of Horseshoe Bay,4834862,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 4,999 条 > 真门牌号行 2,148 条×150% → 拒绝这套产物；field_guess@v2:合规 210/4999 = 4%（阈 30%；总行 "
 us/tx/city_of_houston,TX,City of Houston,4835000,1,mapping@v1,908488,0.999,,,0.0005,20.11,PASS,A,60.0,B,
 us/tx/city_of_hurst,TX,City of Hurst,4835576,1,mapping@v1,18313,1.0,,,0.0,39.38,PASS_DOWNGRADED,B,60.0,B,"合规 18313/18313 = 100%（带地址行分母；真门牌号行 18,241）总行 18,313｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
@@ -1232,7 +1232,7 @@ us/va/campbell,VA,Campbell,51031,1,mapping@v1,28187,1.0,,,0.0,18.13,PASS,A,60.0,
 us/va/city_of_alexandria,VA,City of Alexandria,51510,0,,0,,,,,,,,,X,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用
 us/va/city_of_chesapeake,VA,City of Chesapeake,51550,1,mapping@v1,110310,1.0,,,0.0,24.58,PASS,A,60.0,B,
 us/va/city_of_danville,VA,City of Danville,5121344,1,mapping@v1,23587,1.0,,,0.0,23.99,PASS,A,60.0,B,
-us/va/city_of_emporia,VA,City of Emporia,51595,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/va/city_of_emporia,VA,City of Emporia,51595,1,mapping@v1,2770,1.0,,,0.0,16.1,PASS_DOWNGRADED,B,51.1,B,"合规 2770/2770 = 100%（带地址行分母；真门牌号行 2,762）总行 2,770｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/va/city_of_falls_church,VA,City of Falls Church,5127200,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/va/city_of_lexington,VA,City of Lexington,51678,0,,0,,,,,,,,,X,NO_ARCHIVE
 us/va/city_of_lynchburg,VA,,,1,mapping@v1,35580,1.0,,,0.0,28.28,PASS,A,60.0,B,
@@ -1244,7 +1244,7 @@ us/va/city_of_rural_retreat,VA,City of Rural Retreat,5169456,0,,0,,,,,,,,,X,本�
 us/va/city_of_salem,VA,City of Salem,51775,1,mapping@v1,14183,1.0,,,0.0,26.31,PASS,A,60.0,B,
 us/va/city_of_staunton,VA,City of Staunton,51790,1,mapping@v1,11892,1.0,,,0.0,10.87,PASS_DOWNGRADED,B,60.0,B,"合规 11892/11894 = 100%（带地址行分母；真门牌号行 11,857）总行 11,894｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/va/city_of_williamsburg,VA,City of Williamsburg,51830,0,,0,,,,,,,,,X,NO_ARCHIVE
-us/va/city_of_winchester,VA,City of Winchester,51840,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/va/city_of_winchester,VA,City of Winchester,51840,1,mapping@v1,16728,1.0,,,0.0,38.28,PASS,A,60.0,B,
 us/va/clarke,VA,Clarke,51043,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（field_guess@v2:疑似凭空造数据：合规 7,529 条 > 真门牌号行 817 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 7,529 条 > 真门牌号行 8"
 us/va/essex,VA,Essex,51057,1,mapping@v1,7432,1.0,,,0.0,15.2,PASS,A,60.0,B,
 us/va/fairfax,VA,Fairfax,51059,1,mapping@v1,377727,1.0,,,0.0,26.48,PASS,A,60.0,B,
@@ -1339,7 +1339,7 @@ us/wi/eau_claire,WI,Eau Claire,55035,1,concat_addr@v1,52957,0.969,,,0.0,20.78,PA
 us/wi/grant,WI,Grant,55043,1,mapping@v1,22090,0.995,,,0.0014,13.9,PASS_DOWNGRADED,B,60.0,B,"合规 22090/22199 = 100%（带地址行分母；真门牌号行 20,612）总行 24,634｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/wi/green_lake,WI,Green Lake,55047,1,concat_addr@v1,4872,0.428,,,0.0,16.35,PASS_DOWNGRADED,B,59.5,B,"合规 4872/11378 = 43%（带地址行分母；真门牌号行 11,563）总行 12,199｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zi"
 us/wi/jackson,WI,Jackson,55053,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 3228/11681 = 28%（阈 30%；总行 11,771，带地址 11,681，真门牌号 11,769）；field_guess@v2:合规 213/11681 = "
-us/wi/jefferson,WI,Jefferson,55055,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/wi/jefferson,WI,Jefferson,55055,0,,0,,,,,,,,,X,TRANSIENT
 us/wi/juneau,WI,Juneau,55057,0,,0,,,,,,,,,X,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用
 us/wi/kenosha,WI,Kenosha,55059,1,mapping@v1,60810,1.0,,,0.0,59.79,PASS,A,60.0,B,
 us/wi/kewaunee,WI,Kewaunee,55061,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 1/1 = 100%（阈 30%；总行 5,737，带地址 1，真门牌号 1）；field_guess@v2:合规 1/1 = 100%（阈 30%；总行 5,737，带地址"
@@ -1353,9 +1353,9 @@ us/wi/oconto,WI,Oconto,55083,1,mapping@v1,27163,1.0,,,0.0,13.62,PASS_DOWNGRADED,
 us/wi/outagamie,WI,Outagamie,55087,1,mapping@v1,16955,0.683,,,0.0,22.43,PASS,A,60.0,B,
 us/wi/ozaukee,WI,Ozaukee,55089,1,mapping@v1,33036,0.85,,,0.0012,21.27,PASS,A,60.0,B,
 us/wi/pierce,WI,Pierce,55093,1,mapping@v1,10641,0.511,,,0.0,21.28,PASS,A,60.0,B,
-us/wi/portage,WI,Portage,55097,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/wi/portage,WI,Portage,55097,1,mapping@v1,37726,1.0,,,0.0001,24.12,PASS,A,60.0,B,
 us/wi/racine,WI,Racine,55101,1,concat_addr@v1,82032,0.991,,,0.0,16.74,PASS_DOWNGRADED,B,60.0,B,"合规 82032/82745 = 99%（带地址行分母；真门牌号行 81,549）总行 84,684｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
-us/wi/richland,WI,Richland,55103,0,,0,,,,,,,,,X,NO_ARCHIVE
+us/wi/richland,WI,Richland,55103,1,mapping@v1,9607,1.0,,,0.0,8.88,PASS_DOWNGRADED,B,60.0,B,"合规 9607/9607 = 100%（带地址行分母；真门牌号行 9,514）总行 9,609｜完整性不过：zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/wi/rock,WI,Rock,55105,1,mapping@v1,68955,1.0,,,0.0,23.22,PASS,A,60.0,B,
 us/wi/sauk,WI,Sauk,55111,1,mapping@v1,30307,0.625,,,0.0,38.22,PASS,A,60.0,B,
 us/wi/shawano,WI,Shawano,55113,1,mapping@v1,9053,0.411,,,0.0,19.77,PASS_DOWNGRADED,B,60.0,B,"合规 9053/22032 = 41%（带地址行分母；真门牌号行 21,766）总行 25,599｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
