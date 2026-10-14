@@ -649,7 +649,7 @@ us/mi/semcog,MI,"Livingston, Macomb, Monroe, Oakland, Saint Clair, Washtenaw, Wa
 us/mi/st_clair,MI,St. Clair,26147,1,mapping@v1,77885,0.998,,,0.0,38.46,PASS,A,60.0,B,
 us/mi/troy,MI,City of Troy,2680700,1,mapping@v1,33106,1.0,,,0.0,26.87,PASS,A,60.0,B,
 us/mi/washtenaw,MI,Washtenaw,26161,0,,0,,,,,,,,,X,TRANSIENT
-us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 438,250 条 > 真门牌号行 46,123 条×150% → 拒绝这套产物；field_guess@v2:合规 0/438848 = 0%（阈 30%；"
+us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物；field_guess@v2:合规 0/449285 = 0%（阈 30%；"
 us/mn/aitkin,MN,Aitkin,27001,1,mapping@v1,16204,0.924,,,0.0,18.19,PASS,A,60.0,B,
 us/mn/anoka,MN,Anoka,27003,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/mn/beltrami,MN,Beltrami,27007,1,mapping@v1,20671,1.0,,,0.0,10.15,PASS,A,60.0,B,
@@ -800,7 +800,7 @@ us/nc/rockingham,NC,Rockingham,37157,0,,0,,,,,,,,,X,"本地抽查：有地址味
 us/nc/rowan,NC,Rowan,37159,1,mapping@v1,78041,1.0,,,0.0,18.93,PASS_DOWNGRADED,B,60.0,B,"合规 78041/78056 = 100%（带地址行分母；真门牌号行 77,504）总行 78,061｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/nc/rutherford,NC,Rutherford,37161,1,mapping@v1,40788,1.0,,,0.0002,13.83,PASS,A,60.0,B,
 us/nc/transylvania,NC,Transylvania,37175,1,concat_addr@v1,23713,0.881,,,0.0,2.97,PASS_DOWNGRADED,B,44.3,C,"合规 23713/26904 = 88%（带地址行分母；真门牌号行 26,662）总行 29,172｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
-us/nc/wake,NC,Wake,37183,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 527,570 条 > 真门牌号行 90,196 条×150% → 拒绝这套产物；field_guess@v2:合规 0/527570 = 0%（阈 30%；"
+us/nc/wake,NC,Wake,37183,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
 us/nc/warren,NC,Warren,37185,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 15,781 条 > 真门牌号行 1,724 条×150% → 拒绝这套产物；field_guess@v2:合规 0/15790 = 0%（阈 30%；总行 "
 us/nc/wilson,NC,Wilson,37195,1,mapping@v1,53105,0.999,,,0.0,30.26,PASS_DOWNGRADED,B,60.0,B,"合规 53105/53147 = 100%（带地址行分母；真门牌号行 50,620）总行 53,147｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/nc/yancey,NC,Yancey,37199,1,concat_addr@v1,15865,0.999,,,0.0,9.14,PASS_DOWNGRADED,B,60.0,B,"合规 15865/15878 = 100%（带地址行分母；真门牌号行 15,604）总行 15,878｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
@@ -1191,8 +1191,8 @@ us/tx/city_of_pearland,TX,City of Pearland,4856348,1,mapping@v1,46475,1.0,,,0.0,
 us/tx/city_of_pflugerville,TX,City of Pflugerville,4857176,1,mapping@v1,43091,0.997,,,0.0002,28.48,PASS_DOWNGRADED,B,60.0,B,"合规 43091/43242 = 100%（带地址行分母；真门牌号行 42,046）总行 43,271｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/tx/city_of_plano,TX,Collin,48085,1,mapping@v1,90657,1.0,,,0.0003,24.02,PASS,A,60.0,B,
 us/tx/city_of_rosenberg,TX,Fort Bend,4863284,1,mapping@v1,22154,0.996,,,0.0044,34.56,PASS_DOWNGRADED,B,59.9,B,"合规 22154/22253 = 100%（带地址行分母；真门牌号行 21,753）总行 22,253｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
-us/tx/city_of_round_rock,TX,City of Round Rock,4863500,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 345,861 条 > 真门牌号行 176,973 条×150% → 拒绝这套产物；mapping@v1:合规 0/400475 = 0%（阈 30%"
-us/tx/city_of_san_antonio,TX,City of San Antonio,4865000,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 625,690 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物；field_guess@v2:合规 0/625690 = 0%（阈 30%"
+us/tx/city_of_round_rock,TX,City of Round Rock,4863500,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
+us/tx/city_of_san_antonio,TX,City of San Antonio,4865000,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
 us/tx/city_of_sherman,TX,Grayson,4867496,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 19,176 条 > 真门牌"
 us/tx/city_of_sugar_land,TX,Fort Bend,4870808,1,mapping@v1,106192,1.0,,,0.0,19.04,PASS,A,60.0,B,
 us/tx/city_of_temple,TX,Bell,4872176,1,mapping@v1,57119,1.0,,,0.0,29.04,PASS_DOWNGRADED,B,60.0,B,"合规 57119/57120 = 100%（带地址行分母；真门牌号行 55,974）总行 57,120｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
@@ -1338,7 +1338,7 @@ us/wi/douglas,WI,Douglas,55031,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/wi/eau_claire,WI,Eau Claire,55035,1,concat_addr@v1,52957,0.969,,,0.0,20.78,PASS_DOWNGRADED,B,60.0,B,"合规 52957/54627 = 97%（带地址行分母；真门牌号行 54,520）总行 54,669｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
 us/wi/grant,WI,Grant,55043,1,mapping@v1,22090,0.995,,,0.0014,13.9,PASS_DOWNGRADED,B,60.0,B,"合规 22090/22199 = 100%（带地址行分母；真门牌号行 20,612）总行 24,634｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/wi/green_lake,WI,Green Lake,55047,1,concat_addr@v1,4872,0.428,,,0.0,16.35,PASS_DOWNGRADED,B,59.5,B,"合规 4872/11378 = 43%（带地址行分母；真门牌号行 11,563）总行 12,199｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zi"
-us/wi/jackson,WI,Jackson,55053,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 3228/11681 = 28%（阈 30%；总行 11,771，带地址 11,681，真门牌号 11,769）；field_guess@v2:合规 213/11681 = "
+us/wi/jackson,WI,Jackson,55053,1,llm_us_pa_york_york_pa_address_points@v1,11681,1.0,,,0.0,11.21,PASS_DOWNGRADED,B,60.0,B,"合规 11681/11681 = 100%（带地址行分母；真门牌号行 11,769）总行 11,771｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"
 us/wi/jefferson,WI,Jefferson,55055,1,mapping@v1,39216,0.975,,,0.025,21.9,PASS,A,59.6,B,
 us/wi/juneau,WI,Juneau,55057,0,,0,,,,,,,,,X,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用
 us/wi/kenosha,WI,Kenosha,55059,1,mapping@v1,60810,1.0,,,0.0,59.79,PASS,A,60.0,B,
