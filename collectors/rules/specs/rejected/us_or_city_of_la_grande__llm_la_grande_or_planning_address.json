@@ -1,0 +1,112 @@
+{
+ "_rejected": {
+  "source_id": "us/or/city_of_la_grande",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "洗出太少：4 条（阈 5）",
+   "合规率 2% 低于阈 30%",
+   "不如现有规则（2% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 4,
+   "kept_contentful": 4,
+   "ratio": 0.02,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-14 13:38:22"
+ },
+ "spec": {
+  "name": "la_grande_or_planning_address",
+  "version": 1,
+  "note": "ADDRESS 列里已是完整『门牌号 + 街名』字符串，用 single 模式整列解析并剥离尾部市/州/ZIP 即可，无需拼接。",
+  "match": {
+   "columns_any": [
+    "ADDRESS"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "ADDRESS",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "该源仅有 OBJECTID/MAPTAXLOT/PARENTTAXLOT/ADDRESS/NONCONFORM/NONCONFNOTES/NOTES/GlobalID 列，不存在任何 city/zip/state 列可引用"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 6059,
+     "MAPTAXLOT": "02S38E31DC02800",
+     "PARENTTAXLOT": null,
+     "ADDRESS": "303 DIVISION AV",
+     "NONCONFORM": null,
+     "NONCONFNOTES": null,
+     "NOTES": null,
+     "GlobalID": "cff97d8f-97d6-40df-a3b3-e917b1337a27"
+    },
+    "expect": {
+     "number": "303",
+     "street": "DIVISION AV"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 6060,
+     "MAPTAXLOT": "02S38E1602300",
+     "PARENTTAXLOT": null,
+     "ADDRESS": "64090 MT GLEN RD",
+     "NONCONFORM": null,
+     "NONCONFNOTES": null,
+     "NOTES": null,
+     "GlobalID": "7d33ed24-a8cb-44d6-a6cb-9ea53a3987dd"
+    },
+    "expect": {
+     "number": "64090",
+     "street": "MT GLEN RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 6079,
+     "MAPTAXLOT": "02S38E3203600",
+     "PARENTTAXLOT": null,
+     "ADDRESS": "62208 MT GLEN RD",
+     "NONCONFORM": null,
+     "NONCONFNOTES": null,
+     "NOTES": null,
+     "GlobalID": "6193ea38-2a95-4bd7-b42a-092176018ca6"
+    },
+    "expect": {
+     "number": "62208",
+     "street": "MT GLEN RD"
+    }
+   }
+  ]
+ }
+}

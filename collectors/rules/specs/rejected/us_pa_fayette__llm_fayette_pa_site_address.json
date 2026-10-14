@@ -1,0 +1,150 @@
+{
+ "_rejected": {
+  "source_id": "us/pa/fayette",
+  "model": "deepseek-flash",
+  "errs": [
+   "street_template 引用了不存在的列：{LSt_Name",
+   "street_template 引用了不存在的列：{LSt_Type",
+   "example2 街名不符：期望 SCHOOL HOUSE RD 实得 SCH HOUSE RD"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-14 13:39:50"
+ },
+ "spec": {
+  "name": "fayette_pa_site_address",
+  "version": 1,
+  "note": "NG911 站点地址表：门牌号在 Add_Number，街名由 LSt_Name + LSt_Type（同义大写）拼出；Post_Comm/Post_Code/Post_Code4 抽样全空且 Inc_Muni/MSAGComm 只是乡镇/社区名，故 city/zip 一律不采集，避免污染去重 key。",
+  "match": {
+   "columns_any": [
+    "Site_NGUID"
+   ],
+   "columns_all": [],
+   "columns_none": [],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "Add_Number",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": "State"
+  },
+  "number_template": "",
+  "street_template": "{{LSt_Name}} {{LSt_Type}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "抽样 30 行中 Post_Comm / Post_Code / Post_Code4 全部为空占位，源内没有可用邮编；Inc_Muni（如 NORTH UNION TOWNSHIP）、MSAGComm/MCN（如 NORTH UNION）是乡镇/社区名而非 USPS 邮寄城市，故 city/zip 均不采集。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID_1": 1,
+     "OBJECTID": 68225,
+     "FCODE": 2000,
+     "SAN": 139,
+     "SAN_SUF": " ",
+     "STN": "HILL",
+     "STS": "ST",
+     "MCN": "NORTH UNION",
+     "FULL_ADDRE": "139 HILL ST",
+     "Site_NGUID": "SSAP7971@fcema.org",
+     "Country": "US",
+     "State": "PA",
+     "Inc_Muni": "NORTH UNION TOWNSHIP",
+     "Add_Number": 139,
+     "St_Name": "Hill",
+     "St_PosTyp": "Street",
+     "LSt_Name": "HILL",
+     "LSt_Type": "ST",
+     "MSAGComm": "NORTH UNION",
+     "Post_Comm": " ",
+     "Post_Code": " ",
+     "Post_Code4": " ",
+     "County": "Fayette County"
+    },
+    "expect": {
+     "number": "139",
+     "street": "HILL ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID_1": 2,
+     "OBJECTID": 68226,
+     "FCODE": 2000,
+     "SAN": 136,
+     "SAN_SUF": " ",
+     "STN": "SCHOOL HOUSE",
+     "STS": "RD",
+     "MCN": "NORTH UNION",
+     "FULL_ADDRE": "136 SCHOOL HOUSE RD",
+     "Site_NGUID": "SSAP18168@fcema.org",
+     "Country": "US",
+     "State": "PA",
+     "Inc_Muni": "NORTH UNION TOWNSHIP",
+     "Add_Number": 136,
+     "St_Name": "School House",
+     "St_PosTyp": "Road",
+     "LSt_Name": "SCHOOL HOUSE",
+     "LSt_Type": "RD",
+     "MSAGComm": "NORTH UNION",
+     "Post_Comm": " ",
+     "Post_Code": " ",
+     "Post_Code4": " ",
+     "County": "Fayette County"
+    },
+    "expect": {
+     "number": "136",
+     "street": "SCHOOL HOUSE RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID_1": 14,
+     "OBJECTID": 68238,
+     "FCODE": 2000,
+     "SAN": 544,
+     "SAN_SUF": " ",
+     "STN": "OLD PITTSBURGH",
+     "STS": "RD",
+     "MCN": "NORTH UNION",
+     "FULL_ADDRE": "544 OLD PITTSBURGH RD",
+     "Site_NGUID": "SSAP12725@fcema.org",
+     "Country": "US",
+     "State": "PA",
+     "Inc_Muni": "NORTH UNION TOWNSHIP",
+     "Add_Number": 544,
+     "St_Name": "Old Pittsburgh",
+     "St_PosTyp": "Road",
+     "LSt_Name": "OLD PITTSBURGH",
+     "LSt_Type": "RD",
+     "MSAGComm": "NORTH UNION",
+     "Post_Comm": " ",
+     "Post_Code": " ",
+     "Post_Code4": " ",
+     "County": "Fayette County"
+    },
+    "expect": {
+     "number": "544",
+     "street": "OLD PITTSBURGH RD"
+    }
+   }
+  ]
+ }
+}

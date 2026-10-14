@@ -1,0 +1,130 @@
+{
+ "name": "us_or_city_of_newberg__newberg_addresses",
+ "version": 1,
+ "note": "ArcGIS 门牌点要素类，门牌号与街名分量分散在 stnum/stprefix/stname/sttype 列，用模板拼接；unit 分量在 fulladd/tempadd 里，必须丢弃。",
+ "match": {
+  "columns_any": [
+   "stnum"
+  ],
+  "columns_all": [
+   "stname",
+   "sttype"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "stnum",
+  "street": "",
+  "city": "city",
+  "zip": "Zip",
+  "state": ""
+ },
+ "number_template": "{stnum}",
+ "street_template": "{stprefix} {stname} {sttype}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 134945,
+    "stnum": 300,
+    "stprefix": "S",
+    "sttype": "RD",
+    "stname": "EVEREST",
+    "tempadd": "300 S EVEREST RD 37",
+    "unittype": "unit",
+    "unitnum": "37",
+    "incity": "yes",
+    "city": "Newberg",
+    "fulladd": "300 S EVEREST RD UNIT 37",
+    "GlobalID": "f0bc48b3-90a1-4144-8c2b-328225f74077",
+    "stsuffix": null,
+    "InUGB": "no",
+    "InURA": "no",
+    "Add_ID": "Add00376",
+    "Zip": 97132
+   },
+   "expect": {
+    "number": "300",
+    "street": "S EVEREST RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 134947,
+    "stnum": 2880,
+    "stprefix": "E",
+    "sttype": "ST",
+    "stname": "HAYES",
+    "tempadd": "2880 E HAYES ST",
+    "unittype": null,
+    "unitnum": null,
+    "incity": "yes",
+    "city": "Newberg",
+    "fulladd": "2880 E HAYES ST",
+    "GlobalID": "1b5e96f4-7f77-4a90-ad2b-de88a3255fec",
+    "stsuffix": null,
+    "InUGB": "no",
+    "InURA": "no",
+    "Add_ID": "Add00378",
+    "Zip": 97132
+   },
+   "expect": {
+    "number": "2880",
+    "street": "E HAYES ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 134974,
+    "stnum": 2301,
+    "stprefix": "E",
+    "sttype": "ST",
+    "stname": "SECOND",
+    "tempadd": "2301 E SECOND ST 105",
+    "unittype": "apt",
+    "unitnum": "105",
+    "incity": "yes",
+    "city": "Newberg",
+    "fulladd": "2301 E SECOND ST APT 105",
+    "GlobalID": "e159d9e2-5932-4a62-8031-8e1a0df6887a",
+    "stsuffix": null,
+    "InUGB": "no",
+    "InURA": "no",
+    "Add_ID": "Add00406",
+    "Zip": 97132
+   },
+   "expect": {
+    "number": "2301",
+    "street": "E SECOND ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/or/city_of_newberg",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 13:38:39",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

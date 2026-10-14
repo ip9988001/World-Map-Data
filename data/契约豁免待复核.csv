@@ -8,3 +8,4 @@
 2026-10-13 23:53:42,us/nc/caswell,us_nc_caswell__caswell_addpts,"city,zip",样本列仅有 OBJECTID/Add_Number/AddNum_Suf/LSt_PreDir/LSt_Name/LSt_Type/LSt_PosDir/UID/STRUCTYPE/SHORTADDR/STFULLNAME/NewNumber/Account，无任何 city、zip、state 列,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
 2026-10-14 08:29:27,us/nv/carson_city,us_nv_carson_city__carson_city_nv_addpts,"city,zip",该源字段仅 OBJECTID/StrName/StrDir/StrNumb/Unit/Address/Notes/Updated/GlobalID/created_user/created_date/last_edited_user/last_edited_date/Str_Concat/Adr_Concat/USPS，不存在 city / state / zip 列，地址要素仅由 StrNumb,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
 2026-10-14 08:29:33,us/nv/humboldt,us_nv_humboldt__humboldt_nv_site_address_points,"city,zip",该源仅有 Label/ST_NUM/ST_* 地址组件列与地图页码，无任何 city/state/zip 列可引用,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
+2026-10-14 13:38:13,us/ok/city_of_lawton,us_ok_city_of_lawton__city_of_lawton_address_points,"city,zip",无 city/zip 列；Community 列值为 COMANCHE/FAXON 等社区/郊区名，非城市名，按规矩宁缺毋滥不写入 city,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行

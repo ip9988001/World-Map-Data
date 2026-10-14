@@ -1,0 +1,94 @@
+{
+ "name": "us_ok_city_of_lawton__city_of_lawton_address_points",
+ "version": 1,
+ "note": "ArcGIS REST 门牌点图层，号码在 StructNo，街名由 PreDir/St_Name/St_Type/SufDir 四列拼出；无 city/zip 列，Community 是社区名不是城市名，故留空豁免。",
+ "match": {
+  "columns_any": [
+   "St_Name"
+  ],
+  "columns_all": [
+   "StructNo"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "StructNo",
+  "street": "",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "{StructNo}",
+ "street_template": "{PreDir} {St_Name} {St_Type} {SufDir}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "无 city/zip 列；Community 列值为 COMANCHE/FAXON 等社区/郊区名，非城市名，按规矩宁缺毋滥不写入 city"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "Address": "17293 SW BISHOP RD",
+    "StructNo": 17293,
+    "StructNoSu": " ",
+    "PreDir": "SW",
+    "St_Name": "BISHOP",
+    "St_Type": "RD",
+    "SufDir": " ",
+    "ESN": " ",
+    "Community": "COMANCHE",
+    "EID": 113000001,
+    "GlobalID": "197625cd-154f-40c7-b557-e8199c0197d0"
+   },
+   "expect": {
+    "number": "17293",
+    "street": "SW BISHOP RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 3,
+    "Address": "704 8TH ST",
+    "StructNo": 704,
+    "StructNoSu": " ",
+    "PreDir": " ",
+    "St_Name": "8TH",
+    "St_Type": "ST",
+    "SufDir": " ",
+    "ESN": " ",
+    "Community": "FAXON",
+    "EID": 113000003,
+    "GlobalID": "6a6dfa38-44f0-4a30-8394-6f3b3ec4f2eb"
+   },
+   "expect": {
+    "number": "704",
+    "street": "8TH ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ok/city_of_lawton",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 13:38:13",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

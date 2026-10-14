@@ -1,0 +1,101 @@
+{
+ "_rejected": {
+  "source_id": "us/or/city_of_unity",
+  "model": "deepseek-flash",
+  "errs": [
+   "example3 街名不符：期望 WEST FORK LN 实得 W FORK LN",
+   "不如现有规则（46% < 99%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 159,
+   "kept": 95,
+   "kept_contentful": 73,
+   "ratio": 0.459,
+   "fabricated": 0,
+   "best_ratio": 0.992
+  },
+  "at": "2026-10-14 13:38:58"
+ },
+ "spec": {
+  "name": "unity_parcels_situs_address",
+  "version": 1,
+  "note": "地块图层的场地地址拆在 HSENO/DIRECTN/STRDNAME/STTYPE 四列（HSENO=0 表示无号），ADDLINE_1/ADDLINE_2/CITYSTATE/ZIP 是业主邮寄地址，一律不采用，故 city/zip 输出空并申请豁免。",
+  "match": {
+   "columns_any": [
+    "HSENO",
+    "STRDNAME",
+    "STTYPE"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HSENO",
+   "street": "STRDNAME",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{HSENO}",
+  "street_template": "{DIRECTN} {STRDNAME} {STTYPE}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "CITYSTATE/ZIP 描述的是业主邮寄地址（如 OBJECTID 2 场地地址在 Unity 附近、CITYSTATE 却是 RIVERSIDE, OR），与地块门牌点无关，故 city/zip 留空；场地地址列 HSENO/DIRECTN/STRDNAME/STTYPE 中不含市名与邮编。"
+  },
+  "examples": [
+   {
+    "row": {
+     "HSENO": 31622,
+     "HSEEXT": " ",
+     "DIRECTN": " ",
+     "STRDNAME": "MUNN",
+     "STTYPE": "RD"
+    },
+    "expect": {
+     "number": "31622",
+     "street": "MUNN RD"
+    }
+   },
+   {
+    "row": {
+     "HSENO": 32211,
+     "HSEEXT": " ",
+     "DIRECTN": " ",
+     "STRDNAME": "HWY 26",
+     "STTYPE": " "
+    },
+    "expect": {
+     "number": "32211",
+     "street": "HWY 26"
+    }
+   },
+   {
+    "row": {
+     "HSENO": 10359,
+     "HSEEXT": " ",
+     "DIRECTN": " ",
+     "STRDNAME": "WEST FORK",
+     "STTYPE": "LN"
+    },
+    "expect": {
+     "number": "10359",
+     "street": "WEST FORK LN"
+    }
+   }
+  ]
+ }
+}

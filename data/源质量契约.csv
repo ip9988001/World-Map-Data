@@ -18,3 +18,5 @@ us/nv/carson_city,0.2,0.2,0.2,1,1,该源字段仅 OBJECTID/StrName/StrDir/StrNum
 us/nv/humboldt,0.2,0.2,0.2,1,1,该源仅有 Label/ST_NUM/ST_* 地址组件列与地图页码，无任何 city/state/zip 列可引用
 us/nv/storey,0.2,0.2,0.2,,,
 us/oh/seneca,0.2,0.2,0.2,,,
+us/ok/city_of_lawton,0.2,0.2,0.2,1,1,无 city/zip 列；Community 列值为 COMANCHE/FAXON 等社区/郊区名，非城市名，按规矩宁缺毋滥不写入 city
+us/or/city_of_newberg,0.2,0.2,0.2,,,

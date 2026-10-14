@@ -1,0 +1,191 @@
+{
+ "_rejected": {
+  "source_id": "us/or/city_of_lebanon",
+  "model": "deepseek-flash",
+  "errs": [
+   "number_template 引用了不存在的列：{NUMBER",
+   "street_template 引用了不存在的列：{PRE_DIR",
+   "street_template 引用了不存在的列：{STR_NAME",
+   "street_template 引用了不存在的列：{STR_TYPE",
+   "street_template 引用了不存在的列：{SUF_DIR",
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.998
+  },
+  "at": "2026-10-14 13:38:29"
+ },
+ "spec": {
+  "name": "lebanon_or_civic_situs",
+  "version": 1,
+  "note": "ArcGIS Civic 门牌点：NUMBER/STR_NAME 等结构化列齐全，用模板拼上 PRE_DIR/STR_TYPE/SUF_DIR，SITUS 作校验，city/zip 用同源 CITY/ZIP5。",
+  "match": {
+   "columns_any": [
+    "SITUS",
+    "STR_NAME"
+   ],
+   "columns_all": [
+    "NUMBER",
+    "STR_NAME"
+   ],
+   "columns_none": [
+    "PREVIOUSADDRESS"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "NUMBER",
+   "street": "STR_NAME",
+   "city": "CITY",
+   "zip": "ZIP5",
+   "state": "ST"
+  },
+  "number_template": "{{NUMBER}}",
+  "street_template": "{{PRE_DIR}} {{STR_NAME}} {{STR_TYPE}} {{SUF_DIR}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 3,
+     "ADDRESSID": 3,
+     "NUMBER": 911,
+     "SUB_NUM": null,
+     "PRE_DIR": "W",
+     "PRE_TYPE": null,
+     "STR_NAME": "AIRPORT",
+     "STR_TYPE": "RD",
+     "SUF_DIR": null,
+     "UNITTYPE": null,
+     "UNIT_NUM": null,
+     "SITUS": "911 W AIRPORT RD",
+     "CITY": "LEBANON",
+     "ST": "OR",
+     "ZIP5": 97355,
+     "ZIP4": null,
+     "PREVIOUSADDRESS": "911 S AIRPORT RD",
+     "MAPTAXLOT": "12S02W15BD01000",
+     "ASSR_NUM": 204640,
+     "DATEMADE": 1308096000000,
+     "BUSINESS": null,
+     "TYPE": "NRES",
+     "STATUS": "Exists & Active",
+     "DOCPATH": "YES",
+     "ACCELAPATH": null,
+     "GlobalID": "df891a39-0ee2-4379-b8ac-5c99d73c2714",
+     "INCITYLIMITS": 1,
+     "MULTIFAMILY": 0,
+     "DOORS": 0,
+     "NOTES": "COMMERCIAL",
+     "CUSTOMERID": null,
+     "SBTYPE": null,
+     "ACCOUNTID": null
+    },
+    "expect": {
+     "number": "911",
+     "street": "W AIRPORT RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 11,
+     "ADDRESSID": 11,
+     "NUMBER": 40,
+     "SUB_NUM": null,
+     "PRE_DIR": "N",
+     "PRE_TYPE": null,
+     "STR_NAME": "2ND",
+     "STR_TYPE": "ST",
+     "SUF_DIR": null,
+     "UNITTYPE": "UNIT",
+     "UNIT_NUM": "100",
+     "SITUS": "40 N 2ND ST UNIT 100",
+     "CITY": "LEBANON",
+     "ST": "OR",
+     "ZIP5": 97355,
+     "ZIP4": null,
+     "PREVIOUSADDRESS": "50 N 2ND ST",
+     "MAPTAXLOT": "12S02W10AA04700",
+     "ASSR_NUM": 171674,
+     "DATEMADE": 1248739200000,
+     "BUSINESS": null,
+     "TYPE": "NRES",
+     "STATUS": "Exists & Active",
+     "DOCPATH": "YES",
+     "ACCELAPATH": null,
+     "GlobalID": "648eef26-f01c-4f35-bedd-62cf27f01342",
+     "INCITYLIMITS": 1,
+     "MULTIFAMILY": 0,
+     "DOORS": 0,
+     "NOTES": "JUSTICE CENTER",
+     "CUSTOMERID": null,
+     "SBTYPE": null,
+     "ACCOUNTID": null
+    },
+    "expect": {
+     "number": "40",
+     "street": "N 2ND ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 4,
+     "ADDRESSID": 4,
+     "NUMBER": 1680,
+     "SUB_NUM": null,
+     "PRE_DIR": "S",
+     "PRE_TYPE": null,
+     "STR_NAME": "9TH",
+     "STR_TYPE": "ST",
+     "SUF_DIR": null,
+     "UNITTYPE": null,
+     "UNIT_NUM": null,
+     "SITUS": "1680 S 9TH ST",
+     "CITY": "LEBANON",
+     "ST": "OR",
+     "ZIP5": 97355,
+     "ZIP4": null,
+     "PREVIOUSADDRESS": "1680 S 9TH ST",
+     "MAPTAXLOT": "12S02W15BD01100",
+     "ASSR_NUM": 204657,
+     "DATEMADE": 1102896000000,
+     "BUSINESS": null,
+     "TYPE": "RES",
+     "STATUS": "Exists & Active",
+     "DOCPATH": null,
+     "ACCELAPATH": null,
+     "GlobalID": "de3e0bb1-2377-4ec1-b129-8c608c7699b3",
+     "INCITYLIMITS": 0,
+     "MULTIFAMILY": 0,
+     "DOORS": 1,
+     "NOTES": "SF",
+     "CUSTOMERID": null,
+     "SBTYPE": null,
+     "ACCOUNTID": null
+    },
+    "expect": {
+     "number": "1680",
+     "street": "S 9TH ST"
+    }
+   }
+  ]
+ }
+}
