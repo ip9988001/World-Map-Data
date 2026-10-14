@@ -1,0 +1,133 @@
+{
+ "_rejected": {
+  "source_id": "us/tx/city_of_mckinney",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "洗出太少：4 条（阈 5）",
+   "合规率 2% 低于阈 30%",
+   "不如现有规则（2% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 4,
+   "kept_contentful": 4,
+   "ratio": 0.02,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 23:14:14"
+ },
+ "spec": {
+  "name": "mckinney_situs_add_single",
+  "version": 1,
+  "note": "门牌号与街名同处 SitusAdd 一列（'1101 OLD MILL RD' 形态），用 single 模式整列解析并自动切号/剥楼栋后缀，City 为真实市名列。",
+  "match": {
+   "columns_any": [
+    "SitusAdd"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "City",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "SitusAdd",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源仅含 SitusAdd/City 列，无任何 ZIP/PostalCode 列，邮编不可得"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1829,
+     "TAX_ID": "R-6558-R00-0761-1",
+     "Add_Unit": null,
+     "UnitType": "MISC",
+     "SitusAdd": "1101 OLD MILL RD",
+     "Subd_Name": "LEGACY-DEMOED STRUCTURE",
+     "City": "MCKINNEY",
+     "Add_Building": null,
+     "GlobalID": "{7E69C77E-7A2B-48F3-95E8-D7AC9890658C}",
+     "AssetID": "AD.M0001829",
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": null,
+     "last_edited_date": null
+    },
+    "expect": {
+     "number": "1101",
+     "street": "OLD MILL RD",
+     "city": "MCKINNEY"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 3973,
+     "TAX_ID": "R-0889-006-0100-1",
+     "Add_Unit": null,
+     "UnitType": "MISC",
+     "SitusAdd": "1311 HAMILTON ST",
+     "Subd_Name": "GERRISH",
+     "City": "MCKINNEY",
+     "Add_Building": null,
+     "GlobalID": "{D36124A1-F322-4C76-806E-265DB8942C7A}",
+     "AssetID": "AD.M0003973",
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "TFALLIS",
+     "last_edited_date": 1714416770000
+    },
+    "expect": {
+     "number": "1311",
+     "street": "HAMILTON ST",
+     "city": "MCKINNEY"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 11519,
+     "TAX_ID": "R-1985-000-0010-1",
+     "Add_Unit": null,
+     "UnitType": "BLDG",
+     "SitusAdd": "900 S TENNESSEE ST BLDG 1",
+     "Subd_Name": "TOWN PARK",
+     "City": "MCKINNEY",
+     "Add_Building": "1",
+     "GlobalID": "{71EA75A0-3618-41C0-A34E-6B6A53267E5E}",
+     "AssetID": "AD.M0011521",
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": null,
+     "last_edited_date": null
+    },
+    "expect": {
+     "number": "900",
+     "street": "S TENNESSEE ST",
+     "city": "MCKINNEY"
+    }
+   }
+  ]
+ }
+}

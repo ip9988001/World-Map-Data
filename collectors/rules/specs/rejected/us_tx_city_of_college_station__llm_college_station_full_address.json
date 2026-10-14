@@ -1,0 +1,194 @@
+{
+ "_rejected": {
+  "source_id": "us/tx/city_of_college_station",
+  "model": "deepseek-flash",
+  "errs": [
+   "single 列不存在：{FULL_ADDRESS}",
+   "example1 洗不出（spec_empty_single）",
+   "example2 洗不出（spec_empty_single）",
+   "example3 洗不出（spec_empty_single）",
+   "example4 洗不出（spec_empty_single）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 199,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 23:13:43"
+ },
+ "spec": {
+  "name": "college_station_full_address",
+  "version": 1,
+  "note": "号码与街名同在一列 FULL_ADDRESS（形如 '4300 HARVEY RD'、'1806 FM 158'），用 single 模式整串解析；源内无 city/zip/state 列，故豁免。",
+  "match": {
+   "columns_any": [
+    "FULL_ADDRESS"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "FULL_ADDRESS",
+  "single": "{FULL_ADDRESS}",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "该 FeatureServer 图层仅含 FULL_ADDRESS/OCCUPANT/BUILDING_NO/UNIT_LOW 等列，无任何 city、state、zip 字段，城市/邮编不可得"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "FIRE",
+     "last_edited_date": 1751292280000,
+     "FEATURE_TYPE": "BANK",
+     "JURISDICTION": "CS",
+     "OCCUPANT": "DON ADAM BLDG/AMERICAN MONUMENT BANK (MAIN)",
+     "FULL_ADDRESS": "1 MOMENTUM BLVD",
+     "MF_TYPE": null,
+     "BUILDING_NO": null,
+     "UNIT_LOW": null,
+     "UNIT_HIGH": null,
+     "PROJECT_NO": null,
+     "LANDUSE_TYPE": null,
+     "PROJECT_STATUS": null,
+     "LANDMARK_CLASS": "BANK/LOAN SHOP",
+     "CONTACT_NUMBER": "(979) 774-1111",
+     "Shape__Area": 45953.23046875,
+     "Shape__Length": 1244.5723621491418,
+     "GlobalID": "{F5CCB3A3-261B-4EAD-8575-90888049EB32}",
+     "FIRE_DIST": 6,
+     "CONTACT_NAME": null,
+     "SECONDARY_NUMBER": null
+    },
+    "expect": {
+     "number": "1",
+     "street": "MOMENTUM BLVD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 8,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "FIRE",
+     "last_edited_date": 1751292280000,
+     "FEATURE_TYPE": "LOW-DENSITY RESIDENTIAL",
+     "JURISDICTION": "CS",
+     "OCCUPANT": null,
+     "FULL_ADDRESS": "4300 HARVEY RD",
+     "MF_TYPE": null,
+     "BUILDING_NO": null,
+     "UNIT_LOW": null,
+     "UNIT_HIGH": null,
+     "PROJECT_NO": null,
+     "LANDUSE_TYPE": "RESIDENTIAL",
+     "PROJECT_STATUS": null,
+     "LANDMARK_CLASS": "LOW-DENSITY RESIDENTIAL",
+     "CONTACT_NUMBER": null,
+     "Shape__Area": 294.7265625,
+     "Shape__Length": 72.83676811082756,
+     "GlobalID": "{5DAE3630-C0B3-4CC9-8156-7A4DDFECA600}",
+     "FIRE_DIST": 1,
+     "CONTACT_NAME": null,
+     "SECONDARY_NUMBER": null
+    },
+    "expect": {
+     "number": "4300",
+     "street": "HARVEY RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 2,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "FIRE",
+     "last_edited_date": 1751292280000,
+     "FEATURE_TYPE": "LOW-DENSITY RESIDENTIAL",
+     "JURISDICTION": "CS",
+     "OCCUPANT": null,
+     "FULL_ADDRESS": "1806 FM 158",
+     "MF_TYPE": null,
+     "BUILDING_NO": null,
+     "UNIT_LOW": null,
+     "UNIT_HIGH": null,
+     "PROJECT_NO": null,
+     "LANDUSE_TYPE": "RESIDENTIAL",
+     "PROJECT_STATUS": null,
+     "LANDMARK_CLASS": "LOW-DENSITY RESIDENTIAL",
+     "CONTACT_NUMBER": null,
+     "Shape__Area": 6833.609375,
+     "Shape__Length": 345.6849991088077,
+     "GlobalID": "{BF9B26B9-8C74-411C-B3A3-52A5171C491B}",
+     "FIRE_DIST": 6,
+     "CONTACT_NAME": null,
+     "SECONDARY_NUMBER": null
+    },
+    "expect": {
+     "number": "1806",
+     "street": "FM 158"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 17,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "FIRE",
+     "last_edited_date": 1751292280000,
+     "FEATURE_TYPE": "COMMERCIAL",
+     "JURISDICTION": "TAMU",
+     "OCCUPANT": "AIRPORT-AIRCRAFT HANGAR J",
+     "FULL_ADDRESS": "1838 GEORGE BUSH DR W",
+     "MF_TYPE": null,
+     "BUILDING_NO": null,
+     "UNIT_LOW": null,
+     "UNIT_HIGH": null,
+     "PROJECT_NO": null,
+     "LANDUSE_TYPE": null,
+     "PROJECT_STATUS": null,
+     "LANDMARK_CLASS": "TAMU",
+     "CONTACT_NUMBER": null,
+     "Shape__Area": 4418.21875,
+     "Shape__Length": 266.83500452956474,
+     "GlobalID": "{369B279A-126F-4646-9076-D682E4CBCE5C}",
+     "FIRE_DIST": 4,
+     "CONTACT_NAME": null,
+     "SECONDARY_NUMBER": null
+    },
+    "expect": {
+     "number": "1838",
+     "street": "GEORGE BUSH DR W"
+    }
+   }
+  ]
+ }
+}

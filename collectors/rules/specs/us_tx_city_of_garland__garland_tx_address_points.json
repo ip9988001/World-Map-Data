@@ -1,0 +1,108 @@
+{
+ "name": "us_tx_city_of_garland__garland_tx_address_points",
+ "version": 1,
+ "note": "ArcGIS REST 地址点图层，门牌号在 STREETNUM、完整街名（含前置方位与类型后缀）在 STREETLABEL，城市/州/邮编为独立列，直接按列映射即可。",
+ "match": {
+  "columns_any": [
+   "STREETLABEL"
+  ],
+  "columns_all": [
+   "STREETNUM"
+  ],
+  "columns_none": [
+   "FULL_ADDRESS"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STREETNUM",
+  "street": "STREETLABEL",
+  "city": "CITY",
+  "zip": "ZIPCODE",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "ADDRESSID": 3,
+    "STREETNUM": 3101,
+    "STREETLABEL": "ABBEY CT",
+    "STREETPREFIX": " ",
+    "STREETNAME": "ABBEY",
+    "STREETTYPE": "CT",
+    "STREETSUFFIX": " ",
+    "BUILDING": " ",
+    "UNIT": null,
+    "ZIPCODE": 75044,
+    "ZIPPLUS": null,
+    "CITY": "GARLAND",
+    "STATE": "TX",
+    "COUNTY": "DALLAS",
+    "FULL_ADDRESS": "3101 ABBEY CT"
+   },
+   "expect": {
+    "number": "3101",
+    "street": "ABBEY CT",
+    "city": "GARLAND",
+    "zip": "75044",
+    "state": "TX"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 18,
+    "ADDRESSID": 20,
+    "STREETNUM": 321,
+    "STREETLABEL": "E WALNUT ST",
+    "STREETPREFIX": "E",
+    "STREETNAME": "WALNUT",
+    "STREETTYPE": "ST",
+    "STREETSUFFIX": " ",
+    "BUILDING": " ",
+    "UNIT": null,
+    "ZIPCODE": 75040,
+    "ZIPPLUS": null,
+    "CITY": "GARLAND",
+    "STATE": "TX",
+    "COUNTY": "DALLAS",
+    "FULL_ADDRESS": "321 E WALNUT ST"
+   },
+   "expect": {
+    "number": "321",
+    "street": "E WALNUT ST",
+    "city": "GARLAND",
+    "zip": "75040",
+    "state": "TX"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/city_of_garland",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 23:13:48",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

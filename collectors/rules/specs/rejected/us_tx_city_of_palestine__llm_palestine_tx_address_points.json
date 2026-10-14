@@ -1,0 +1,109 @@
+{
+ "_rejected": {
+  "source_id": "us/tx/city_of_palestine",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 S US HIGHWAY 79 实得 S US HWY 79",
+   "example3 街名不符：期望 WEST POINT TAP RD 实得 W POINT TAP RD"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 23:14:26"
+ },
+ "spec": {
+  "name": "palestine_tx_address_points",
+  "version": 1,
+  "note": "ArcGIS 地址点图层，门牌号与街名分列存放，街名需由前方位+名称+类型三列拼出，无 city/zip 列故豁免。",
+  "match": {
+   "columns_any": [
+    "LSt_Name"
+   ],
+   "columns_all": [
+    "Add_Number",
+    "LSt_Name"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "Add_Number",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{LSt_PreDir} {LSt_Name} {LSt_Type}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "样本列仅有 Add_Number / AddressFullName / LSt_Name / LSt_PosDir / LSt_PreDir / LSt_Type / OBJECTID / GlobalID，不存在 city 或 zip 列，无法派生"
+  },
+  "examples": [
+   {
+    "row": {
+     "Add_Number": 535,
+     "AddressFullName": "535 E REAGAN ST",
+     "LSt_Name": "REAGAN",
+     "LSt_PosDir": "",
+     "LSt_PreDir": "E",
+     "LSt_Type": "ST",
+     "OBJECTID": 3,
+     "GlobalID": "{6E77A924-7485-4B45-B795-2A0C7E9142F5}"
+    },
+    "expect": {
+     "number": "535",
+     "street": "E REAGAN ST"
+    }
+   },
+   {
+    "row": {
+     "Add_Number": 7469,
+     "AddressFullName": "7469 S US HIGHWAY 79",
+     "LSt_Name": "US HIGHWAY 79",
+     "LSt_PosDir": "",
+     "LSt_PreDir": "S",
+     "LSt_Type": "",
+     "OBJECTID": 8,
+     "GlobalID": "{EB81F306-43D4-4721-A837-3ECB147ED3AB}"
+    },
+    "expect": {
+     "number": "7469",
+     "street": "S US HIGHWAY 79"
+    }
+   },
+   {
+    "row": {
+     "Add_Number": 822,
+     "AddressFullName": "822 WEST POINT TAP RD",
+     "LSt_Name": "WEST POINT TAP",
+     "LSt_PosDir": "",
+     "LSt_PreDir": "",
+     "LSt_Type": "RD",
+     "OBJECTID": 1,
+     "GlobalID": "{26211FB6-916D-4AF7-A1BB-D067F574AC45}"
+    },
+    "expect": {
+     "number": "822",
+     "street": "WEST POINT TAP RD"
+    }
+   }
+  ]
+ }
+}

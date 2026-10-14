@@ -1,0 +1,96 @@
+{
+ "name": "us_tx_city_of_round_rock__round_rock_address_points",
+ "version": 1,
+ "note": "ArcGIS REST 门牌点图层，门牌号与街名分列存放（ADDR_NUMBER + RD_FULLNAME），城市用全称列 POSTAL_COMM（CITY 只是 WC/HU/JA 等机构缩写码），ZIP 为整数列。",
+ "match": {
+  "columns_any": [
+   "RD_FULLNAME",
+   "ADDR_NUMBER"
+  ],
+  "columns_all": [
+   "ADDR_NUMBER",
+   "RD_FULLNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADDR_NUMBER",
+  "street": "RD_FULLNAME",
+  "city": "POSTAL_COMM",
+  "zip": "ZIP",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "ADDRESS_ID": 7153611,
+    "LABEL_NAME": "4235 PEBBLESTONE TRL",
+    "ADDR_NUMBER": 4235,
+    "ADDR_UNIT": "",
+    "RD_FULLNAME": "PEBBLESTONE TRL",
+    "CITY": "WC",
+    "POSTAL_COMM": "ROUND ROCK",
+    "ZIP": 78665,
+    "COUNTY": "WILLIAMSON"
+   },
+   "expect": {
+    "number": "4235",
+    "street": "PEBBLESTONE TRL",
+    "city": "ROUND ROCK",
+    "zip": "78665"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 14,
+    "ADDRESS_ID": 7088240,
+    "LABEL_NAME": "107 N 1ST ST",
+    "ADDR_NUMBER": 107,
+    "ADDR_UNIT": "",
+    "RD_FULLNAME": "N 1ST ST",
+    "CITY": "JA",
+    "POSTAL_COMM": "JARRELL",
+    "ZIP": 76537,
+    "COUNTY": "WILLIAMSON"
+   },
+   "expect": {
+    "number": "107",
+    "street": "N 1ST ST",
+    "city": "JARRELL",
+    "zip": "76537"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/city_of_round_rock",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 23:14:33",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.864
+  }
+ }
+}

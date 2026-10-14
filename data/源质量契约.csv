@@ -25,3 +25,7 @@ us/pa/potter,0.2,0.2,0.2,1,1,源中无 city/zip 字段；SCRUMUNI 类字段（ST
 us/pa/york,0.2,0.2,0.2,1,1,Post_Comm/Post_Code/Post_Code4 样本中全为 null，本图层无 ZIP 列可用；Inc_Muni 与 MSAGComm 值为 SPRINGFIELD TWP / HANOVER BORO 等 township/borough 名，不是邮政城市名，写入会污染去重 key，故 city/zip 均豁免不输出。
 us/sc/city_of_myrtle_beach,0.2,0.2,0.2,,,
 us/tx/city_of_amarillo,0.2,0.2,0.2,,,
+us/tx/city_of_cedar_park,0.2,0.2,0.2,,,
+us/tx/city_of_garland,0.2,0.2,0.2,,,
+us/tx/city_of_horseshoe_bay,0.2,0.2,0.2,1,,"No true postal city column exists: MUNICIPAL/MSAG_COM/POSTAL_COM hold 911 district codes such as 'HSB LLANO CO' and 'HSB BURNET CO', not a city name, so emitting them would pollute the dedup key; ZIP "
+us/tx/city_of_round_rock,0.2,0.2,0.2,,,

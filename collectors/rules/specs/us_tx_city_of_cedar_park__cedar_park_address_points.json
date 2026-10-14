@@ -1,0 +1,159 @@
+{
+ "name": "us_tx_city_of_cedar_park__cedar_park_address_points",
+ "version": 1,
+ "note": "arcgis_rest 源已把门牌号(ADDR_NUMBER)与完整街名(RD_FULLNAME,含前置方位)拆成干净两列，直接列映射即可；CITY 是 CP/WC 缩写垃圾，市名只取 POSTAL_COMM。",
+ "match": {
+  "columns_any": [
+   "LABEL_NAME",
+   "ADDR_NUMBER",
+   "RD_FULLNAME"
+  ],
+  "columns_all": [
+   "ADDR_NUMBER",
+   "RD_FULLNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADDR_NUMBER",
+  "street": "RD_FULLNAME",
+  "city": "POSTAL_COMM",
+  "zip": "ZIP",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "LABEL_NAME": "1907 CARRIAGE CLUB DR",
+    "ADDR_NUMBER": 1907,
+    "ADDR_UNIT": null,
+    "RD_FULLNAME": "CARRIAGE CLUB DR",
+    "SEGMENT_ID": null,
+    "RD_PREFIX": null,
+    "RD_NAME": "CARRIAGE CLUB",
+    "RD_TYPE": "DR",
+    "RD_SUFFIX": "",
+    "RD_ALIAS_NAME": "",
+    "CITY": "CP",
+    "POSTAL_COMM": "CEDAR PARK",
+    "ZIP": 78613,
+    "COUNTY": "WILLIAMSON",
+    "ADDR_TYPE": "SINGLE FAMILY",
+    "SUPP_INFO": "",
+    "ADDR_NOTES1": "",
+    "ESN": 416,
+    "UPDATING_AGENCY": "CP",
+    "GIS_ID": "2058030073",
+    "AddressStatus": 5,
+    "CreatedBy": null,
+    "CreatedDate": null,
+    "LastEditUser": null,
+    "EditDate": null
+   },
+   "expect": {
+    "number": "1907",
+    "street": "CARRIAGE CLUB DR"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 25,
+    "LABEL_NAME": "1861 S LAKELINE BLVD",
+    "ADDR_NUMBER": 1861,
+    "ADDR_UNIT": null,
+    "RD_FULLNAME": "S LAKELINE BLVD",
+    "SEGMENT_ID": null,
+    "RD_PREFIX": "S",
+    "RD_NAME": "LAKELINE",
+    "RD_TYPE": "BLVD",
+    "RD_SUFFIX": "",
+    "RD_ALIAS_NAME": "",
+    "CITY": "CP",
+    "POSTAL_COMM": "CEDAR PARK",
+    "ZIP": 78613,
+    "COUNTY": "WILLIAMSON",
+    "ADDR_TYPE": "COMMERCIAL",
+    "SUPP_INFO": "",
+    "ADDR_NOTES1": "",
+    "ESN": 416,
+    "UPDATING_AGENCY": "CP",
+    "GIS_ID": "3038010001",
+    "AddressStatus": 5,
+    "CreatedBy": null,
+    "CreatedDate": null,
+    "LastEditUser": null,
+    "EditDate": null
+   },
+   "expect": {
+    "number": "1861",
+    "street": "S LAKELINE BLVD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 3,
+    "LABEL_NAME": "613 KATHLEEN LN",
+    "ADDR_NUMBER": 613,
+    "ADDR_UNIT": null,
+    "RD_FULLNAME": "KATHLEEN LN",
+    "SEGMENT_ID": null,
+    "RD_PREFIX": null,
+    "RD_NAME": "KATHLEEN",
+    "RD_TYPE": "LN",
+    "RD_SUFFIX": "",
+    "RD_ALIAS_NAME": "",
+    "CITY": "WC",
+    "POSTAL_COMM": "LEANDER",
+    "ZIP": 78641,
+    "COUNTY": "WILLIAMSON",
+    "ADDR_TYPE": "SINGLE FAMILY",
+    "SUPP_INFO": "",
+    "ADDR_NOTES1": "",
+    "ESN": 443,
+    "UPDATING_AGENCY": "CP",
+    "GIS_ID": "1005270006",
+    "AddressStatus": 5,
+    "CreatedBy": null,
+    "CreatedDate": null,
+    "LastEditUser": null,
+    "EditDate": null
+   },
+   "expect": {
+    "number": "613",
+    "street": "KATHLEEN LN"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/city_of_cedar_park",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 23:13:35",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}
