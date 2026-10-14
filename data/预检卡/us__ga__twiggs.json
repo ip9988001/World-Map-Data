@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:43",
+ "county": "Twiggs",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+ "source_id": "us/ga/twiggs",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services1.arcgis.com/YwCV9A7cLN6cgxhP/ArcGIS/rest/services/AMI_Tax_Parcels/FeatureServer/1",
+ "verdict": "REJECTED_P0"
+}

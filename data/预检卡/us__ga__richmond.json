@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:32",
+ "county": "Richmond",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service BasemapGenAGS/MapServer not found ', 'details': []}",
+ "source_id": "us/ga/richmond",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://gismap.augustaga.gov/arcgis/rest/services/BasemapGenAGS/MapServer/159",
+ "verdict": "REJECTED_P0"
+}

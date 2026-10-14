@@ -1,0 +1,40 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:31:02",
+ "county": "Lyon",
+ "curated_cols": {},
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "NAME",
+  "CITY",
+  "QTR_ADD",
+  "Shape_Length",
+  "Shape_Area"
+ ],
+ "fields_n": 7,
+ "guessed_cols": {
+  "city": "CITY"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Subdivisions",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "7 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 None）",
+ "site_cols": [],
+ "source_id": "us/ia/lyon",
+ "stage": "p0",
+ "state": "IA",
+ "url": "https://wfs.schneidercorp.com/arcgis/rest/services/LyonCountyIA_WFS/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

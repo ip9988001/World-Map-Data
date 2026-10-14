@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:44",
+ "county": "hawaii",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'details': []}",
+ "source_id": "us/hi/hawaii",
+ "stage": "p0",
+ "state": "HI",
+ "url": "https://gis.hawaiicounty.gov/arcgis/rest/services/DIT/County_of_Hawaii/FeatureServer/1",
+ "verdict": "REJECTED_P0"
+}

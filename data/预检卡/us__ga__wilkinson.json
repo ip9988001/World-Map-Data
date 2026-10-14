@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:44",
+ "county": "Wilkinson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+ "source_id": "us/ga/wilkinson",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services1.arcgis.com/YwCV9A7cLN6cgxhP/arcgis/rest/services/AMI_Tax_Parcels/FeatureServer/2",
+ "verdict": "REJECTED_P0"
+}

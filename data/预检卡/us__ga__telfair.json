@@ -1,0 +1,220 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "HOUSE_NO",
+  "street": "Road"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:37",
+ "county": "Telfair",
+ "curated_cols": {
+  "number": "HOUSE_NO",
+  "street": "Road"
+ },
+ "fields": [
+  "OBJECTID",
+  "REALKEY",
+  "PIN",
+  "Owner",
+  "HOUSE_NO",
+  "Road",
+  "Rd_Type",
+  "Homestead",
+  "CUV_Year",
+  "Acres",
+  "Class",
+  "LEGAL_DESC",
+  "Neighborhood",
+  "Subdivision",
+  "LAND_TYPE",
+  "ACC",
+  "DESIRE",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Telfair_Parcels_Webmap",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACC": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "5",
+    "空": 169,
+    "空率": 0.563
+   },
+   "Acres": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "230.42",
+    "空": 80,
+    "空率": 0.267
+   },
+   "CUV_Year": {
+    "带特殊字符": 0,
+    "最短": "2018",
+    "最长": "2018",
+    "空": 270,
+    "空率": 0.9
+   },
+   "Class": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "R",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DESIRE": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "NULL",
+    "空": 38,
+    "空率": 0.127
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "2605",
+    "空": 162,
+    "空率": 0.54
+   },
+   "Homestead": {
+    "带特殊字符": 0,
+    "最短": "S0",
+    "最长": "S0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAND_TYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LEGAL_DESC": {
+    "带特殊字符": 182,
+    "最短": "V/L  3H 129",
+    "最长": "M/H 5Q 655                       (7-16-23-5A)",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Neighborhood": {
+    "带特殊字符": 0,
+    "最短": "Milan",
+    "最长": "Comm-Office/Medical Office",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 66,
+    "最短": "POPE ERNIE",
+    "最长": "MCCORMICK EDWARD & BEATRICE AS EXECUTORS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "S00200 066",
+    "最长": "055 00 023 02A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REALKEY": {
+    "带特殊字符": 0,
+    "最短": "61",
+    "最长": "6777",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Rd_Type": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 110,
+    "空率": 0.367
+   },
+   "Road": {
+    "带特殊字符": 1,
+    "最短": "5TH",
+    "最长": "TOWNS RD & SCOTLAND-TOWNS",
+    "空": 101,
+    "空率": 0.337
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "2630",
+    "最长": "1263473.802734375",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "324.20035434225",
+    "最长": "216.13563099564146",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Subdivision": {
+    "带特殊字符": 0,
+    "最短": "Focal Pointe",
+    "最长": "FLANDERS BROTHERS SUBDIVISION",
+    "空": 281,
+    "空率": 0.937
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "36ece69abc2d1130",
+  "total": 8871,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "number": 0.0014,
+   "street": 0.0014
+  },
+  "nonnull": {
+   "number": 8859,
+   "street": 8859
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0014, 'street': 0.0014}）→ 可全量采集",
+  "total": 8871,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NO street=Road（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "36ece69abc2d1130",
+ "site_cols": [],
+ "source_id": "us/ga/telfair",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Telfair_2025_WFL1/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

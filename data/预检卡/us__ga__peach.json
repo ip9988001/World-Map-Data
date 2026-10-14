@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:30",
+ "county": "Peach",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': '', 'details': ['The requested layer (layerId: 0) was not found.']}",
+ "source_id": "us/ga/peach",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Peach_County_Parcels/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

@@ -1,0 +1,244 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "HOUSE_NO",
+  "street": "Road"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 07:29:32",
+ "county": "Talbot",
+ "curated_cols": {
+  "number": "HOUSE_NO",
+  "street": "Road"
+ },
+ "fields": [
+  "OBJECTID",
+  "Parcel_No",
+  "Realkey",
+  "Owner",
+  "HOUSE_NO",
+  "Road",
+  "Rd_Type",
+  "LEGAL_DESC",
+  "Homestead",
+  "CUV_Year",
+  "Acres",
+  "Class",
+  "ACC",
+  "DESIRE",
+  "LAND_TYPE",
+  "PREV_VAL",
+  "CURR_VAL",
+  "TAXDISTRIC",
+  "NEIGHBHOOD",
+  "SUBD_NAME",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Talbot_Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACC": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 2,
+    "空率": 0.007
+   },
+   "Acres": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1058.12",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CURR_VAL": {
+    "带特殊字符": 0,
+    "最短": "6000",
+    "最长": "2068893",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CUV_Year": {
+    "带特殊字符": 0,
+    "最短": "2023",
+    "最长": "2023",
+    "空": 258,
+    "空率": 0.86
+   },
+   "Class": {
+    "带特殊字符": 0,
+    "最短": "J",
+    "最长": "J",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DESIRE": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "47",
+    "最长": "1938",
+    "空": 136,
+    "空率": 0.453
+   },
+   "Homestead": {
+    "带特殊字符": 0,
+    "最短": "S1",
+    "最长": "S1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAND_TYPE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LEGAL_DESC": {
+    "带特殊字符": 11,
+    "最短": "CHURCH",
+    "最长": "TRACT D2 OF SURVEY FOR PLUM CREEK PLAT 245/14",
+    "空": 4,
+    "空率": 0.013
+   },
+   "NEIGHBHOOD": {
+    "带特殊字符": 25,
+    "最短": "R5",
+    "最长": "RL500+",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 93,
+    "最短": "HOOD F L",
+    "最长": "KIRKLAND ELLA & HOWARD ETHEL EST & FORD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREV_VAL": {
+    "带特殊字符": 0,
+    "最短": "5000",
+    "最长": "1747891",
+    "空": 11,
+    "空率": 0.037
+   },
+   "Parcel_No": {
+    "带特殊字符": 0,
+    "最短": "005 00301",
+    "最长": "005 00528  D02A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Rd_Type": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "ROAD",
+    "空": 108,
+    "空率": 0.36
+   },
+   "Realkey": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "3103",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Road": {
+    "带特殊字符": 0,
+    "最短": "ETHEL",
+    "最长": "CLARK-MOUNT PARON",
+    "空": 105,
+    "空率": 0.35
+   },
+   "SUBD_NAME": {
+    "带特殊字符": 0,
+    "最短": "Carter Loop",
+    "最长": "Carter Loop",
+    "空": 275,
+    "空率": 0.917
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "5736.5",
+    "最长": "12818634.12890625",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "338.9165267996",
+    "最长": "1204.7465286650818",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TAXDISTRIC": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e868502ea47c5392",
+  "total": 6652,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "number": 6652,
+   "street": 6652
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0}）→ 可全量采集",
+  "total": 6652,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NO street=Road（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "e868502ea47c5392",
+ "site_cols": [],
+ "source_id": "us/ga/talbot",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Talbot_Web_Map_2026_WFL1/FeatureServer/7",
+ "verdict": "CONTRACTED"
+}
