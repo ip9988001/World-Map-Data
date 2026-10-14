@@ -2,7 +2,7 @@
  "source_id": "us/tx/city_of_sherman",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 19,176 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物；concat_addr@v2:合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674））→ 造新规则",
- "decided_at": "2026-10-14 01:54:31",
+ "decided_at": "2026-10-14 07:33:22",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -42,7 +42,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 20,169 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
-   "seconds": 1.0
+   "seconds": 1.6
   },
   {
    "rule": "field_guess@v2",
@@ -83,7 +83,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 19,176 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
-   "seconds": 2.0
+   "seconds": 3.3
   },
   {
    "rule": "concat_addr@v2",
@@ -124,7 +124,7 @@
     "contract": false
    },
    "why": "合规 3129/20169 = 16%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 3.6
+   "seconds": 6.1
   },
   {
    "rule": "concat_addr@v1",
@@ -166,7 +166,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 20,075 条 > 真门牌号行 5,674 条×150% → 拒绝这套产物",
-   "seconds": 4.6
+   "seconds": 7.8
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
@@ -207,7 +207,48 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 5.1
+   "seconds": 8.7
+  },
+  {
+   "rule": "llm_us_ca_city_of_rancho_cucamonga_rancho_cucamonga_address_points@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 9.7
   },
   {
    "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
@@ -248,7 +289,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 5.6
+   "seconds": 10.6
   },
   {
    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
@@ -289,7 +330,48 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 6.3
+   "seconds": 11.7
+  },
+  {
+   "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
+   "rows": 20170,
+   "kept": 0,
+   "contentful": 20169,
+   "kept_contentful": 0,
+   "true_addr": 5674,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 20169,
+    "no_address_trace": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
+   "seconds": 12.6
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -330,7 +412,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 6.8
+   "seconds": 13.5
   },
   {
    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
@@ -371,7 +453,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 7.4
+   "seconds": 14.5
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
@@ -412,7 +494,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 8.1
+   "seconds": 15.5
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -453,7 +535,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 8.7
+   "seconds": 16.5
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -494,7 +576,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 9.3
+   "seconds": 17.4
   },
   {
    "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
@@ -535,7 +617,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 10.0
+   "seconds": 18.4
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -576,7 +658,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 10.7
+   "seconds": 19.4
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -617,7 +699,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 11.2
+   "seconds": 20.3
   },
   {
    "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
@@ -658,7 +740,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 11.7
+   "seconds": 21.2
   },
   {
    "rule": "llm_us_nc_caswell_caswell_addpts@v1",
@@ -699,7 +781,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 12.3
+   "seconds": 22.0
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -740,7 +822,7 @@
     "contract": false
    },
    "why": "合规 0/20169 = 0%（阈 30%；总行 20,170，带地址 20,169，真门牌号 5,674）",
-   "seconds": 12.9
+   "seconds": 23.1
   }
  ],
  "evidence": {},
