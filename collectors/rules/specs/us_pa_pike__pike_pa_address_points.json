@@ -1,0 +1,96 @@
+{
+ "name": "us_pa_pike__pike_pa_address_points",
+ "version": 1,
+ "note": "门牌号在 Add_Number 数值列、街名在 LegacyFullStreet 列，二者独立成列且无 city/zip，直接按列取用即可（PrimaryAddress 为可选校验源）。",
+ "match": {
+  "columns_any": [
+   "LegacyFullStreet"
+  ],
+  "columns_all": [
+   "Add_Number"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Add_Number",
+  "street": "LegacyFullStreet",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "图层字段仅含 OBJECTID/SiteType/PrimaryAddress/GlobalID/LegacyFullStreet/Add_Number，不存在 city 或 zip 列，无法解析市名与邮编"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 5483889,
+    "SiteType": "R1",
+    "PrimaryAddress": "145 RODEO DR",
+    "GlobalID": "{3514C1C4-36A5-4D98-B61E-7E0F0C182761}",
+    "LegacyFullStreet": "RODEO DR",
+    "Add_Number": 145
+   },
+   "expect": {
+    "number": "145",
+    "street": "RODEO DR"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 5483896,
+    "SiteType": "R1",
+    "PrimaryAddress": "131 CORRAL LN",
+    "GlobalID": "{9F09DA2E-31A9-4731-95F7-FCD4E851AEA5}",
+    "LegacyFullStreet": "CORRAL LN",
+    "Add_Number": 131
+   },
+   "expect": {
+    "number": "131",
+    "street": "CORRAL LN"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 5483913,
+    "SiteType": "R1",
+    "PrimaryAddress": "800 BLUESTONE CT N",
+    "GlobalID": "{4733984C-7C6D-46FD-B7C5-16D0668BC546}",
+    "LegacyFullStreet": "BLUESTONE CT N",
+    "Add_Number": 800
+   },
+   "expect": {
+    "number": "800",
+    "street": "BLUESTONE CT N"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/pa/pike",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 18:32:38",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

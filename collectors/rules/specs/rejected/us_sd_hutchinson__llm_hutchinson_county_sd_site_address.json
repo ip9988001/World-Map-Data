@@ -1,0 +1,118 @@
+{
+ "_rejected": {
+  "source_id": "us/sd/hutchinson",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 SD HIGHWAY 37 实得 SD HWY 37"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 18:33:35"
+ },
+ "spec": {
+  "name": "hutchinson_county_sd_site_address",
+  "version": 1,
+  "note": "Z 列是纯门牌号（与 ADDRESS 首段一致），ST 是街名，COMMUNITY/STATE 提供市/州，源无 ZIP 列（Z 是门牌号不是邮编），故按 columns 模式取列并对 zip 做豁免。",
+  "match": {
+   "columns_any": [
+    "UniqueSiteID",
+    "ADDRESS",
+    "COMMUNITY",
+    "ST"
+   ],
+   "columns_all": [
+    "Z",
+    "ST",
+    "ADDRESS"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "Z",
+   "street": "ST",
+   "city": "COMMUNITY",
+   "zip": "",
+   "state": "STATE"
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源中无 ZIP 字段；字段 Z 为门牌号（如 27436），与 ADDRESS 首段数值一致，并非邮编；仅 COMMUNITY（城市）与 STATE 可用。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "Z": 27436,
+     "D": " ",
+     "ST": "COUNTY RD 11",
+     "COMMUNITY": "PARKSTON",
+     "LOC": " ",
+     "COMMENTS": "",
+     "TELCO": "N9",
+     "ESN": 221,
+     "UPDATED": 1583798400000,
+     "ADDRESS": "27436  COUNTY RD 11",
+     "SOURCE": "HUTCH_CO_911-GIS_ADMIN",
+     "UniqueSiteID": "SITE_1@HUTCHINSON_SD",
+     "COUNTRY": "US",
+     "STATE": "SD",
+     "COUNTY": "Hutchinson_County",
+     "INC_MUNIC": "Unincorporated",
+     "UNINC_COMM": null,
+     "GC_EXCEPTION": null
+    },
+    "expect": {
+     "number": "27436",
+     "street": "COUNTY RD 11"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 12,
+     "Z": 27003,
+     "D": " ",
+     "ST": "SD HIGHWAY 37",
+     "COMMUNITY": "DIMOCK",
+     "LOC": " ",
+     "COMMENTS": "",
+     "TELCO": "N9",
+     "ESN": 221,
+     "UPDATED": 1583884800000,
+     "ADDRESS": "27003 SD HIGHWAY 37",
+     "SOURCE": "HUTCH_CO_911-GIS_ADMIN",
+     "UniqueSiteID": "SITE_12@HUTCHINSON_SD",
+     "COUNTRY": "US",
+     "STATE": "SD",
+     "COUNTY": "Hutchinson_County",
+     "INC_MUNIC": "Unincorporated",
+     "UNINC_COMM": null,
+     "GC_EXCEPTION": null
+    },
+    "expect": {
+     "number": "27003",
+     "street": "SD HIGHWAY 37"
+    }
+   }
+  ]
+ }
+}

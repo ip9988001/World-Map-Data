@@ -1,0 +1,115 @@
+{
+ "name": "us_sc_city_of_myrtle_beach__myrtle_beach_address_points",
+ "version": 1,
+ "note": "ArcGIS 地址点图层，门牌号(STNUM)与街名分量(PREDIR/STNAME/SUFFIX/POSTDIR)分列存放，直接拼装最稳，避免解析已合并的 ADDRESS 列。",
+ "match": {
+  "columns_any": [
+   "STNUM",
+   "STNAME",
+   "SUFFIX",
+   "PREDIR",
+   "POSTDIR"
+  ],
+  "columns_all": [
+   "STNUM",
+   "STNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STNUM",
+  "street": "",
+  "city": "CITY",
+  "zip": "ZIPCODE",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "{PREDIR} {STNAME} {SUFFIX} {POSTDIR}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 3,
+    "TMS": "1870106014",
+    "STNUM": 1405,
+    "PREDIR": "S",
+    "STNAME": "OCEAN",
+    "SUFFIX": "BLVD",
+    "POSTDIR": "",
+    "UNIT": "",
+    "ADDRESS": "1405 S OCEAN BLVD",
+    "CITY": "MYRTLE BEACH",
+    "STATE": "SC",
+    "ZIPCODE": 29577,
+    "DESCRIP": "",
+    "IN_OUT_CITY": "IN",
+    "ZONING_DIST": "MUH",
+    "PIN": "44314011020",
+    "GlobalID": "6f46e8c4-f29b-45f8-8935-0905b547cd4c"
+   },
+   "expect": {
+    "number": "1405",
+    "street": "S OCEAN BLVD",
+    "city": "MYRTLE BEACH",
+    "zip": "29577",
+    "state": "SC"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 5,
+    "TMS": "1811321058",
+    "STNUM": 805,
+    "PREDIR": "",
+    "STNAME": "9TH",
+    "SUFFIX": "AVE",
+    "POSTDIR": "S",
+    "UNIT": "",
+    "ADDRESS": "805 9TH AVE S",
+    "CITY": "MYRTLE BEACH",
+    "STATE": "SC",
+    "ZIPCODE": 29577,
+    "DESCRIP": "",
+    "IN_OUT_CITY": "IN",
+    "ZONING_DIST": "R7",
+    "PIN": "44311010038",
+    "GlobalID": "937a2bc2-aa40-41ba-8ea7-149bc4d39ba8"
+   },
+   "expect": {
+    "number": "805",
+    "street": "9TH AVE S",
+    "city": "MYRTLE BEACH",
+    "zip": "29577",
+    "state": "SC"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/sc/city_of_myrtle_beach",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 18:33:22",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

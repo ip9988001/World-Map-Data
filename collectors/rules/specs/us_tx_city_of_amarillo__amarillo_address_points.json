@@ -1,0 +1,145 @@
+{
+ "name": "us_tx_city_of_amarillo__amarillo_address_points",
+ "version": 1,
+ "note": "Amarillo FeatureServer 门牌点表把门牌号(ADDRESS/Tyler_ST_NUMBER)与街名拆成 ST_DIR/ST_NAME/ST_TYPE/ST_POSTDIR 多列，用 columns 模式模板拼装最稳，city/zip/state 直接取 POST_CITY/ZIPCODE/State。",
+ "match": {
+  "columns_any": [
+   "Tyler_CONCATENATED_ADDRESS",
+   "Tyler_ST_NUMBER",
+   "Tyler_ID"
+  ],
+  "columns_all": [
+   "ST_NAME",
+   "ADDRESS"
+  ],
+  "columns_none": [
+   "OwnerAddress",
+   "TaxpayerAddress"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Tyler_ST_NUMBER",
+  "street": "",
+  "city": "POST_CITY",
+  "zip": "ZIPCODE",
+  "state": "State"
+ },
+ "number_template": "",
+ "street_template": "{ST_DIR} {ST_NAME} {ST_TYPE} {ST_POSTDIR}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "MSLINK": 1997.0,
+    "FEA_MSLINK": 77.0,
+    "ADDRESS": 3502.0,
+    "APP_UNIT_ID": null,
+    "ST_DIR": null,
+    "ST_NAME": "KENSINGTON",
+    "ST_TYPE": "PL",
+    "ST_POSTDIR": null,
+    "MUN": "AMAR",
+    "COUNTY": "RAN",
+    "ZIPCODE": 79121.0,
+    "POST_CITY": "AMARILLO",
+    "State": "TX",
+    "Tyler_ID": "AP1997",
+    "Tyler_ST_DIR": null,
+    "Tyler_ST_NAME": "KENSINGTON",
+    "Tyler_ST_TYPE": "PL",
+    "Tyler_ST_POSTDIR": null,
+    "Tyler_CONCATENATED_ADDRESS": "3502 KENSINGTON PL",
+    "Tyler_ST_NUMBER": 3502
+   },
+   "expect": {
+    "number": "3502",
+    "street": "KENSINGTON PL"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 116,
+    "MSLINK": 1355.0,
+    "FEA_MSLINK": 5291.0,
+    "ADDRESS": 7727.0,
+    "APP_UNIT_ID": null,
+    "ST_DIR": null,
+    "ST_NAME": "STUYVESANT",
+    "ST_TYPE": "AVE",
+    "ST_POSTDIR": null,
+    "MUN": "AMAR",
+    "COUNTY": "RAN",
+    "ZIPCODE": 79121.0,
+    "POST_CITY": "AMARILLO",
+    "State": "TX",
+    "Tyler_ID": "AP1355",
+    "Tyler_ST_DIR": null,
+    "Tyler_ST_NAME": "STUYVESANT",
+    "Tyler_ST_TYPE": "AVE",
+    "Tyler_ST_POSTDIR": null,
+    "Tyler_CONCATENATED_ADDRESS": "7727 STUYVESANT AVE",
+    "Tyler_ST_NUMBER": 7727
+   },
+   "expect": {
+    "number": "7727",
+    "street": "STUYVESANT AVE"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 117,
+    "MSLINK": 1672.0,
+    "FEA_MSLINK": 237.0,
+    "ADDRESS": 6018.0,
+    "APP_UNIT_ID": null,
+    "ST_DIR": null,
+    "ST_NAME": "LINDEN",
+    "ST_TYPE": "LN",
+    "ST_POSTDIR": null,
+    "MUN": "AMAR",
+    "COUNTY": "POT",
+    "ZIPCODE": 79106.0,
+    "POST_CITY": "AMARILLO",
+    "State": "TX",
+    "Tyler_ID": "AP1672",
+    "Tyler_ST_DIR": null,
+    "Tyler_ST_NAME": "LINDEN",
+    "Tyler_ST_TYPE": "LN",
+    "Tyler_ST_POSTDIR": null,
+    "Tyler_CONCATENATED_ADDRESS": "6018 LINDEN LN",
+    "Tyler_ST_NUMBER": 6018
+   },
+   "expect": {
+    "number": "6018",
+    "street": "LINDEN LN"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/city_of_amarillo",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 18:33:47",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

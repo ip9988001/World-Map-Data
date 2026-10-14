@@ -1,0 +1,150 @@
+{
+ "_rejected": {
+  "source_id": "us/pa/luzerne",
+  "model": "deepseek-flash",
+  "errs": [
+   "number_template 引用了不存在的列：{SAN",
+   "street_template 引用了不存在的列：{STNAME",
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.998
+  },
+  "at": "2026-10-14 18:32:34"
+ },
+ "spec": {
+  "name": "luzerne_pa_structure_address_points",
+  "version": 1,
+  "note": "SAN 就是门牌号，STNAME 已是完整街名（含前置方位 PRD 与类型后缀 STS），故直接按列取用；源无 city/ZIP 列，MCN 只是乡镇/自治市镇（TWP/BORO）名称，不能当地址城市用。",
+  "match": {
+   "columns_any": [
+    "STNAME",
+    "SAN",
+    "FULL_ADDRE"
+   ],
+   "columns_all": [
+    "SAN",
+    "STNAME"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "SAN",
+   "street": "STNAME",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{{SAN}}",
+  "street_template": "{{STNAME}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源中只有 SAN(门牌号)、PRD/STN/STS(街名构成)、STNAME(完整街名)、MCN(乡镇/自治市镇，如 BEAR CREEK TWP、DUPONT BORO，非邮政城市名)，没有任何 city 或 ZIP 列"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "FCODE": null,
+     "SAN": 47,
+     "SAN_SUF": "",
+     "PRD": "",
+     "STN": "BONN",
+     "STS": "LN",
+     "POD": "",
+     "MCN": "BEAR CREEK TWP",
+     "UNITTYPE": "",
+     "UNITNO": "",
+     "FULL_ADDRE": "47 BONN LN",
+     "STNAME": "BONN LN",
+     "DIR": null,
+     "GlobalID": "{2C3D2A34-EFE2-4520-B8EC-CD37AA473344}",
+     "STR_STATUS": 10,
+     "CROSS1": null,
+     "CROSS2": null,
+     "Publish_Date": 1761241453918
+    },
+    "expect": {
+     "number": "47",
+     "street": "BONN LN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 4,
+     "FCODE": null,
+     "SAN": 80,
+     "SAN_SUF": "",
+     "PRD": "E",
+     "STN": "MOUNTAIN LAKE",
+     "STS": "DR",
+     "POD": "",
+     "MCN": "BEAR CREEK TWP",
+     "UNITTYPE": "",
+     "UNITNO": "",
+     "FULL_ADDRE": "80 E MOUNTAIN LAKE DR",
+     "STNAME": "E MOUNTAIN LAKE DR",
+     "DIR": null,
+     "GlobalID": "{A30EBB5B-A527-4E75-9D3A-5EC67FF5679D}",
+     "STR_STATUS": 10,
+     "CROSS1": null,
+     "CROSS2": null,
+     "Publish_Date": 1761241453918
+    },
+    "expect": {
+     "number": "80",
+     "street": "E MOUNTAIN LAKE DR"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 26,
+     "FCODE": null,
+     "SAN": 74,
+     "SAN_SUF": "",
+     "PRD": "",
+     "STN": "1",
+     "STS": "ST",
+     "POD": "",
+     "MCN": "DUPONT BORO",
+     "UNITTYPE": "",
+     "UNITNO": "",
+     "FULL_ADDRE": "74 1 ST",
+     "STNAME": "1 ST",
+     "DIR": null,
+     "GlobalID": "{BAB0CD43-3A6A-4B18-873C-16C797FC68C0}",
+     "STR_STATUS": 10,
+     "CROSS1": null,
+     "CROSS2": null,
+     "Publish_Date": 1761241453918
+    },
+    "expect": {
+     "number": "74",
+     "street": "1 ST"
+    }
+   }
+  ]
+ }
+}

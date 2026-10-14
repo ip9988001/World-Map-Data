@@ -1,0 +1,160 @@
+{
+ "name": "us_pa_potter__potter_pa_road_address",
+ "version": 1,
+ "note": "门牌号在 HSENUMBER、街名在预拼好的 STREET 列（已含 PREFIXDIR/POSTDIR/后缀），直接按列取值；本源无 city/ZIP 列，STRUMUNI 只是乡镇名不能当市名，故豁免。",
+ "match": {
+  "columns_any": [
+   "STRUMUNI"
+  ],
+  "columns_all": [
+   "HSENUMBER",
+   "STREET"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HSENUMBER",
+  "street": "STREET",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "源中无 city/zip 字段；SCRUMUNI 类字段（STRUMUNI）仅为 township/borough 名（如 WHARTON TWP、COUDERSPORT BORO），不是邮政市名，混入会污染去重 key，故对 city/zip 全部豁免。"
+ },
+ "examples": [
+  {
+   "row": {
+    "FID": 1,
+    "OBJECTID_1": 1,
+    "TYPE": "GWL",
+    "STRU_NUM": 0,
+    "HSENUMBER": 68,
+    "PREFIXDIR": " ",
+    "STREETNAME": "HORTON RUN",
+    "STREETSUF": "RD",
+    "POSTDIR": " ",
+    "LOCATION": " ",
+    "STREET": "HORTON RUN RD",
+    "STRUMUNI": "WHARTON TWP",
+    "OBJECTID": 0,
+    "SOURCE": " ",
+    "ADDEXT": " ",
+    "KEEP": " ",
+    "EDIT": 0,
+    "PRIVATERD_": " ",
+    "GasWell": "YES",
+    "Status": " ",
+    "GlobalID": "{095E7FD5-B9BF-48E5-AA7F-3356823A11C1}",
+    "GlobalID_2": "9167e095-3e3a-4e18-adf7-9f62ec80f28a",
+    "CreationDate": 1436368456034,
+    "Creator": "whunt",
+    "EditDate": 1436368456034,
+    "Editor": "whunt",
+    "App_Search": "68 HORTON RUN RD"
+   },
+   "expect": {
+    "number": "68",
+    "street": "HORTON RUN RD"
+   }
+  },
+  {
+   "row": {
+    "FID": 20,
+    "OBJECTID_1": 20,
+    "TYPE": "ADR",
+    "STRU_NUM": 3808,
+    "HSENUMBER": 202,
+    "PREFIXDIR": " ",
+    "STREETNAME": "ALLEGANY",
+    "STREETSUF": "AVE",
+    "POSTDIR": " ",
+    "LOCATION": " ",
+    "STREET": "ALLEGANY AVE",
+    "STRUMUNI": "COUDERSPORT BORO",
+    "OBJECTID": 200000,
+    "SOURCE": " ",
+    "ADDEXT": " ",
+    "KEEP": " ",
+    "EDIT": 0,
+    "PRIVATERD_": " ",
+    "GasWell": " ",
+    "Status": " ",
+    "GlobalID": "{A40A9C88-8CB8-497C-A073-1A11C583FC00}",
+    "GlobalID_2": "4a21719a-c8b6-40a8-bfd5-8013d3fc77c4",
+    "CreationDate": 1436368456034,
+    "Creator": "whunt",
+    "EditDate": 1436368456034,
+    "Editor": "whunt",
+    "App_Search": "202 ALLEGANY AVE"
+   },
+   "expect": {
+    "number": "202",
+    "street": "ALLEGANY AVE"
+   }
+  },
+  {
+   "row": {
+    "FID": 27,
+    "OBJECTID_1": 27,
+    "TYPE": "ADR",
+    "STRU_NUM": 292,
+    "HSENUMBER": 1,
+    "PREFIXDIR": "S",
+    "STREETNAME": "MAIN",
+    "STREETSUF": "ST",
+    "POSTDIR": " ",
+    "LOCATION": "APT 8",
+    "STREET": "S MAIN ST",
+    "STRUMUNI": "COUDERSPORT BORO",
+    "OBJECTID": 200007,
+    "SOURCE": " ",
+    "ADDEXT": " ",
+    "KEEP": " ",
+    "EDIT": 0,
+    "PRIVATERD_": " ",
+    "GasWell": " ",
+    "Status": " ",
+    "GlobalID": "{0B9E8CC3-7B5C-4142-B7BE-28DC6D9869CC}",
+    "GlobalID_2": "bc3b4fe1-baa6-4254-9c78-0934e6920a78",
+    "CreationDate": 1436368456034,
+    "Creator": "whunt",
+    "EditDate": 1436368456034,
+    "Editor": "whunt",
+    "App_Search": "1 S MAIN ST"
+   },
+   "expect": {
+    "number": "1",
+    "street": "S MAIN ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/pa/potter",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 18:32:48",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.957
+  }
+ }
+}
