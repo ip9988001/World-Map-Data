@@ -1,0 +1,433 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Post_Comm",
+  "number": "AddNum_Pre",
+  "state": "State",
+  "street": "St_PreMod",
+  "unit": "Building",
+  "zip": "Post_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:21",
+ "county": "Boone",
+ "curated_cols": {
+  "city": "Post_Comm",
+  "number": "AddNum_Pre",
+  "state": "State",
+  "street": "St_PreMod",
+  "zip": "Post_Code"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "Source_Of_Data",
+  "DateUpdate",
+  "State",
+  "County",
+  "Country",
+  "Post_Code",
+  "Post_Comm",
+  "Inc_Muni",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "Street_Name_other",
+  "St_PosTyp_Other",
+  "St_PosDir",
+  "St_PosMod",
+  "ESN",
+  "MSAGComm",
+  "LandmkName",
+  "Mile_Post",
+  "PIN",
+  "PWD",
+  "Suite",
+  "dmNotesXML",
+  "dmValidation",
+  "dmClientUploadedFileID",
+  "GlobalID",
+  "Unit",
+  "Full_Street",
+  "POI",
+  "DiscrpAgID",
+  "Lat",
+  "Long",
+  "St_Name",
+  "Site_NGUID",
+  "Prop_code",
+  "LSt_Name",
+  "LSt_Type",
+  "LSt_PosDir",
+  "LSt_PreDir",
+  "Address_Number",
+  "Agency_ID",
+  "Effective",
+  "Expire",
+  "AddCode",
+  "AddDataURI",
+  "Uninc_Comm",
+  "Nbrhd_Comm",
+  "St_PreSep",
+  "St_PosTyp",
+  "Post_Code4",
+  "Building",
+  "Floor",
+  "Room",
+  "Seat",
+  "Addtl_Loc",
+  "Place_Type",
+  "Placement",
+  "Elev"
+ ],
+ "fields_n": 63,
+ "guessed_cols": {
+  "unit": "Building"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "AddressPoints",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "17",
+    "最长": "11809",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "BOONE COUNTY",
+    "最长": "BOONE COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DateUpdate": {
+    "带特殊字符": 0,
+    "最短": "-2209161600000",
+    "最长": "-2209161600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 300,
+    "最短": "@boonecountyil.gov",
+    "最长": "@boonecountyil.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "619",
+    "最长": "619",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Full_Street": {
+    "带特殊字符": 1,
+    "最短": "137 2ND ST",
+    "最长": "324 ELEVATOR (HERBERT) RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{D6DEF836-9EC2-4509-98A3-36F23EC9F015}",
+    "最长": "{D6DEF836-9EC2-4509-98A3-36F23EC9F015}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "UNINCORPORATED",
+    "最长": "UNINCORPORATED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "REEDS CROSSING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LandmkName": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Lat": {
+    "带特殊字符": 0,
+    "最短": "42.187431582588",
+    "最长": "42.153835802256886",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Long": {
+    "带特殊字符": 0,
+    "最短": "-88.88026061905",
+    "最长": "-88.76232129293439",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "GENOA",
+    "最长": "GARDEN PRAIRIE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Mile_Post": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "0834300008",
+    "最长": "0834300008",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POI": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PWD": {
+    "带特殊字符": 0,
+    "最短": "08-34-300-008",
+    "最长": "08-34-300-008",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "60135",
+    "最长": "60135",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "GENOA",
+    "最长": "GARDEN PRAIRIE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Prop_code": {
+    "带特殊字符": 0,
+    "最短": "110",
+    "最长": "110",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Site_NGUID": {
+    "带特殊字符": 300,
+    "最短": "Site1@boonecountyil.gov",
+    "最长": "Site100@boonecountyil.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Source_Of_Data": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "REEDS CROSSING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp_Other": {
+    "带特殊字符": 0,
+    "最短": "ROAD",
+    "最长": "STREET",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "IL",
+    "最长": "IL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Name_other": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "REEDS CROSSING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Suite": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "dmClientUploadedFileID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "dmNotesXML": {
+    "带特殊字符": 48,
+    "最短": "<?xml version=\"1.0\" encoding=\"utf-8\"?><N",
+    "最长": "<?xml version=\"1.0\" encoding=\"utf-8\"?><Notes xmlns:xsi=\"http://www.w3.org/2001/X",
+    "空": 252,
+    "空率": 0.84
+   },
+   "dmValidation": {
+    "带特殊字符": 48,
+    "最短": "<?xml version=\"1.0\" encoding=\"utf-8\"?><E",
+    "最长": "<?xml version=\"1.0\" encoding=\"utf-8\"?><Errors xmlns:xsi=\"http://www.w3.org/2001/",
+    "空": 252,
+    "空率": 0.84
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "2ff391e62b9cdf58",
+  "total": 22807,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 22807,
+   "full": 22807,
+   "number": 22807,
+   "state": 22807,
+   "street": 22807,
+   "zip": 22807
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 22807,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AddNum_Pre street=St_PreMod city=Post_Comm zip=Post_Code",
+ "sample_hash": "2ff391e62b9cdf58",
+ "site_cols": [
+  "Street_Name_other",
+  "Full_Street",
+  "Site_NGUID",
+  "Address_Number"
+ ],
+ "source_id": "us/il/boone",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://maps.boonecountyil.org/arcgis/rest/services/Address_Points/MapServer/0",
+ "verdict": "CONTRACTED"
+}

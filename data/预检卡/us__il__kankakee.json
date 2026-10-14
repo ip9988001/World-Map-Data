@@ -1,0 +1,434 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "site_city",
+  "number": "site_address",
+  "state": "site_state",
+  "street": "site_address",
+  "unit": "nonfarm_building",
+  "zip": "site_zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:42",
+ "county": "Kankakee",
+ "curated_cols": {
+  "city": "site_city",
+  "number": "site_address",
+  "street": "site_address",
+  "zip": "site_zip"
+ },
+ "fields": [
+  "ntv",
+  "objectid",
+  "shape",
+  "pin",
+  "twp",
+  "site_csz",
+  "tax_status",
+  "lot_dimension",
+  "owner1_id",
+  "document_no1",
+  "owner1_name",
+  "owner1_csz",
+  "owner2_id",
+  "document_no2",
+  "owner2_name",
+  "owner2_csz",
+  "mailto_name_id",
+  "mailto_name",
+  "mailto_addr1",
+  "mailto_addr2",
+  "mailto_csz",
+  "assessed_last",
+  "tax_billed",
+  "tax_code",
+  "eav",
+  "farm_land",
+  "formatted_parcel",
+  "st_length(shape)",
+  "st_area(shape)",
+  "parcel_number",
+  "township",
+  "site_address",
+  "site_city",
+  "site_state",
+  "site_zip",
+  "gross_acres",
+  "homesite_acres",
+  "farm_acres",
+  "use_code",
+  "owner1_address1",
+  "owner1_address2",
+  "owner2_address1",
+  "owner2_address2",
+  "legal_description",
+  "sale_date",
+  "homestead_exemp",
+  "historical_exemp",
+  "home_imp_exemp",
+  "senior_exemp",
+  "partial_homestead_exemp",
+  "fraternal_ass_freeze",
+  "veteran_freeze",
+  "exempt",
+  "senior_freeze",
+  "drainage",
+  "tif_freeze",
+  "farm_building",
+  "nonfarm_land",
+  "nonfarm_building",
+  "newyear_rollover_date",
+  "namaddrdat",
+  "longitude",
+  "latitude"
+ ],
+ "fields_n": 63,
+ "guessed_cols": {
+  "state": "site_state",
+  "unit": "nonfarm_building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Tax Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://www.k3gis.com/#contact",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "assessed_last": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "document_no1": {
+    "带特殊字符": 1,
+    "最短": "201601566",
+    "最长": "201108669&70",
+    "空": 157,
+    "空率": 0.523
+   },
+   "document_no2": {
+    "带特殊字符": 0,
+    "最短": "9513621",
+    "最长": "202501361",
+    "空": 206,
+    "空率": 0.687
+   },
+   "eav": {
+    "带特殊字符": 0,
+    "最短": "50.0",
+    "最长": "1063870.0",
+    "空": 4,
+    "空率": 0.013
+   },
+   "farm_acres": {
+    "带特殊字符": 0,
+    "最短": "3.0",
+    "最长": "150.52",
+    "空": 167,
+    "空率": 0.557
+   },
+   "farm_land": {
+    "带特殊字符": 0,
+    "最短": "758.0",
+    "最长": "116620.0",
+    "空": 167,
+    "空率": 0.557
+   },
+   "formatted_parcel": {
+    "带特殊字符": 0,
+    "最短": "10-27-04-102-023",
+    "最长": "10-27-04-102-023",
+    "空": 0,
+    "空率": 0.0
+   },
+   "gross_acres": {
+    "带特殊字符": 0,
+    "最短": "5.0",
+    "最长": "151.83",
+    "空": 167,
+    "空率": 0.557
+   },
+   "homesite_acres": {
+    "带特殊字符": 0,
+    "最短": "1.4",
+    "最长": "0.52",
+    "空": 275,
+    "空率": 0.917
+   },
+   "lot_dimension": {
+    "带特殊字符": 0,
+    "最短": "20A",
+    "最长": "20A/ 484X 1740.42X 55.33X 45.69X 426.43X 2000",
+    "空": 1,
+    "空率": 0.003
+   },
+   "mailto_addr1": {
+    "带特殊字符": 0,
+    "最短": "LOC 1150",
+    "最长": "7165 E COUNTRY CLUB DRIVE APT 14",
+    "空": 1,
+    "空率": 0.003
+   },
+   "mailto_addr2": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 4372",
+    "最长": "10 PEACHTREE PLACE NE",
+    "空": 292,
+    "空率": 0.973
+   },
+   "mailto_csz": {
+    "带特殊字符": 0,
+    "最短": "ALSIP IL 60803",
+    "最长": "PEMBROKE TOWNSHIP IL 609584562",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mailto_name": {
+    "带特殊字符": 86,
+    "最短": "UNKNOWN",
+    "最长": "TRANOS, CONNIE L & CANKAR, JILL L & SCHERTZ, ROBIN L",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mailto_name_id": {
+    "带特殊字符": 0,
+    "最短": "122",
+    "最长": "367704",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ntv": {
+    "带特殊字符": 0,
+    "最短": "616.0",
+    "最长": "1063870.0",
+    "空": 7,
+    "空率": 0.023
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "275023",
+    "最长": "275023",
+    "空": 0,
+    "空率": 0.0
+   },
+   "owner1_address1": {
+    "带特殊字符": 0,
+    "最短": "LOC 1150",
+    "最长": "7165 E COUNTRY CLUB DRIVE APT 14",
+    "空": 1,
+    "空率": 0.003
+   },
+   "owner1_address2": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 4372",
+    "最长": "10 PEACHTREE PLACE NE",
+    "空": 291,
+    "空率": 0.97
+   },
+   "owner1_csz": {
+    "带特殊字符": 0,
+    "最短": "ALSIP IL 60803",
+    "最长": "PEMBROKE TOWNSHIP IL 609584697",
+    "空": 0,
+    "空率": 0.0
+   },
+   "owner1_id": {
+    "带特殊字符": 0,
+    "最短": "122",
+    "最长": "307646",
+    "空": 0,
+    "空率": 0.0
+   },
+   "owner1_name": {
+    "带特殊字符": 15,
+    "最短": "UNKNOWN",
+    "最长": "MARYMILL FARMS LLC C/O MELINDA BOSCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "owner2_csz": {
+    "带特殊字符": 0,
+    "最短": "ELGIN IL 60123",
+    "最长": "PEMBROKE TOWNSHIP IL 609584697",
+    "空": 195,
+    "空率": 0.65
+   },
+   "owner2_id": {
+    "带特殊字符": 0,
+    "最短": "64863",
+    "最长": "365889",
+    "空": 195,
+    "空率": 0.65
+   },
+   "owner2_name": {
+    "带特殊字符": 1,
+    "最短": "HUNT LENDA",
+    "最长": "REVOCABLE TRUST OF DEBORAH J CLEMENT",
+    "空": 195,
+    "空率": 0.65
+   },
+   "parcel_number": {
+    "带特殊字符": 0,
+    "最短": "102704102023",
+    "最长": "102704102023",
+    "空": 0,
+    "空率": 0.0
+   },
+   "pin": {
+    "带特殊字符": 0,
+    "最短": "10-27-04-102-023",
+    "最长": "10-27-04-102-023",
+    "空": 0,
+    "空率": 0.0
+   },
+   "site_address": {
+    "带特殊字符": 0,
+    "最短": "6000 RD S",
+    "最长": "5948  S STATE RTE 1",
+    "空": 169,
+    "空率": 0.563
+   },
+   "site_city": {
+    "带特殊字符": 0,
+    "最短": "CABERY",
+    "最长": "PEMBROKE TOWNSHIP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "site_csz": {
+    "带特殊字符": 0,
+    "最短": "CABERY IL 60919",
+    "最长": "PEMBROKE TOWNSHIP IL 60958",
+    "空": 0,
+    "空率": 0.0
+   },
+   "site_state": {
+    "带特殊字符": 0,
+    "最短": "IL",
+    "最长": "IL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "site_zip": {
+    "带特殊字符": 0,
+    "最短": "60958",
+    "最长": "60958",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_area(shape)": {
+    "带特殊字符": 0,
+    "最短": "288178.413426364",
+    "最长": "128034.69375994749",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_length(shape)": {
+    "带特殊字符": 0,
+    "最短": "3256.5655096129",
+    "最长": "2236.3422122823467",
+    "空": 0,
+    "空率": 0.0
+   },
+   "tax_billed": {
+    "带特殊字符": 0,
+    "最短": "54.9",
+    "最长": "76747.58",
+    "空": 7,
+    "空率": 0.023
+   },
+   "tax_code": {
+    "带特殊字符": 0,
+    "最短": "10006",
+    "最长": "10006",
+    "空": 0,
+    "空率": 0.0
+   },
+   "tax_status": {
+    "带特殊字符": 0,
+    "最短": "T",
+    "最长": "T",
+    "空": 0,
+    "空率": 0.0
+   },
+   "township": {
+    "带特殊字符": 0,
+    "最短": "OTTO",
+    "最长": "PEMBROKE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "twp": {
+    "带特殊字符": 0,
+    "最短": "10",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "use_code": {
+    "带特殊字符": 0,
+    "最短": "0030",
+    "最长": "0030",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "643cddad6d9e65e5",
+  "total": 54906,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0012,
+   "full": 0.001,
+   "number": 0.001,
+   "state": 0.0012,
+   "street": 0.001,
+   "zip": 0.0011
+  },
+  "nonnull": {
+   "city": 54842,
+   "full": 54849,
+   "number": 54849,
+   "state": 54842,
+   "street": 54849,
+   "zip": 54847
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.001, 'street': 0.001, 'city': 0.0012, 'zip': 0.0011, 'state': 0.0012, 'full': 0.001}）→ 可全量采集",
+  "total": 54906,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=site_address street=site_address city=site_city zip=site_zip",
+ "sample_hash": "643cddad6d9e65e5",
+ "site_cols": [
+  "site_csz",
+  "mailto_addr1",
+  "mailto_addr2",
+  "site_address",
+  "site_city"
+ ],
+ "source_id": "us/il/kankakee",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://k3gis.net/arcgis/rest/services/Cadastral/Tax_Parcels_and_Subdivisions/MapServer/0",
+ "verdict": "CONTRACTED"
+}

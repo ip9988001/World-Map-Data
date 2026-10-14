@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:17",
+ "county": "Lemhi",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'json', 'details': []}",
+ "source_id": "us/id/lemhi",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://gis.itd.idaho.gov/arcgisprod/rest/services/D6/D6_Read_Only/MapServer/14",
+ "verdict": "REJECTED_P0"
+}

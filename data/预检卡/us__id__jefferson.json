@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:12",
+ "county": "Jefferson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试",
+ "source_id": "us/id/jefferson",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://grant.co.jefferson.id.us/arcgis/rest/services/Labels/MapServer/0",
+ "verdict": "TRANSIENT"
+}

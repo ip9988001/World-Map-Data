@@ -1,0 +1,137 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "msag",
+  "number": "fulladdr",
+  "street": "fulladdr",
+  "unit": "Building"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:16:04",
+ "county": "Bonner",
+ "curated_cols": {
+  "city": "msag",
+  "number": "fulladdr",
+  "street": "fulladdr"
+ },
+ "fields": [
+  "objectid",
+  "fulladdr",
+  "municipality",
+  "msag",
+  "shape",
+  "Old_Address",
+  "Building",
+  "Floor"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {
+  "unit": "Building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Structure",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Building": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Old_Address": {
+    "带特殊字符": 1,
+    "最短": "56 Ullr Dr",
+    "最长": "263 Panhandle Estates Dr\n457676 Highway 95",
+    "空": 242,
+    "空率": 0.807
+   },
+   "fulladdr": {
+    "带特殊字符": 0,
+    "最短": "22 Eagle Way",
+    "最长": "2374 Kalispell Bay Road Unit 50",
+    "空": 0,
+    "空率": 0.0
+   },
+   "msag": {
+    "带特殊字符": 0,
+    "最短": "Hope",
+    "最长": "Priest River",
+    "空": 0,
+    "空率": 0.0
+   },
+   "municipality": {
+    "带特殊字符": 0,
+    "最短": "Dover",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "2f248cff170eae42",
+  "total": 37329,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 37329,
+   "full": 37329,
+   "number": 37329,
+   "street": 37329
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 37329,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=fulladdr street=fulladdr city=msag",
+ "sample_hash": "2f248cff170eae42",
+ "site_cols": [
+  "fulladdr",
+  "Old_Address"
+ ],
+ "source_id": "us/id/bonner",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://cloudgis.bonnercountyid.gov/server/rest/services/Map_Services/Addressing_Public/MapServer/0",
+ "verdict": "CONTRACTED"
+}

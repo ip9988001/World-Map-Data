@@ -1,0 +1,28 @@
+{
+ "attribution": "",
+ "candidate_cols": {},
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:15",
+ "county": "Kootenai",
+ "curated_cols": {},
+ "fields": [],
+ "fields_n": 0,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": null,
+  "name": null,
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "0 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 None）",
+ "site_cols": [],
+ "source_id": "us/id/kootenai",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://gis.kcgov.us/arcgis/rest/services/External/KC_CRW_View_Layers/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

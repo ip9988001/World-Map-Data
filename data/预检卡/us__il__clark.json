@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:17:28",
+ "county": "Clark",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/il/clark",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://services2.bhamaps.com/arcgis/rest/services/AGS_clark_co_il_taxmap/MapServer/0",
+ "verdict": "TRANSIENT"
+}

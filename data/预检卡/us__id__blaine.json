@@ -1,0 +1,444 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "full_stname",
+  "unit": "unit_range",
+  "zip": "post_code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 22:15:35",
+ "county": "Blaine",
+ "curated_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "full_stname",
+  "zip": "post_code"
+ },
+ "fields": [
+  "addnum_suf",
+  "full_stname",
+  "full_address",
+  "address_status",
+  "parcel_id",
+  "dateeffective",
+  "dateexpire",
+  "longitude",
+  "latitude",
+  "elevation",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "luid",
+  "muid",
+  "apa_code",
+  "comments",
+  "gis_steward",
+  "lst_label",
+  "muid_fips",
+  "qc_notes",
+  "qc_status",
+  "unit_range",
+  "unit_type",
+  "unit_value",
+  "datecreate",
+  "objectid",
+  "placename",
+  "esn",
+  "addrclass",
+  "globalid",
+  "country",
+  "state",
+  "county",
+  "discrpagid",
+  "dateupdate",
+  "addcode",
+  "adddatauri",
+  "inc_muni",
+  "uninc_comm",
+  "nbrhd_comm",
+  "addnum_pre",
+  "add_number",
+  "st_premod",
+  "st_predir",
+  "st_pretyp",
+  "st_presep",
+  "st_name",
+  "st_postyp",
+  "st_posdir",
+  "st_posmod",
+  "lst_predir",
+  "lst_name",
+  "lst_type",
+  "lst_posdir",
+  "msagcomm",
+  "post_comm",
+  "post_code",
+  "post_code4",
+  "building",
+  "floor",
+  "unit",
+  "room",
+  "seat",
+  "addtl_loc",
+  "landmkname",
+  "mile_post",
+  "place_type",
+  "placement",
+  "gc_except",
+  "site_nguid",
+  "shape"
+ ],
+ "fields_n": 73,
+ "guessed_cols": {
+  "unit": "unit_range"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "House Number",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "addcode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "adddatauri": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addrclass": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "address_status": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "apa_code": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "comments": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "Blaine",
+    "最长": "Blaine",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "datecreate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "dateeffective": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "dateexpire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "dateupdate": {
+    "带特殊字符": 0,
+    "最短": "1746550885000",
+    "最长": "1746550885000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "discrpagid": {
+    "带特殊字符": 0,
+    "最短": "Blaine911.ID.US",
+    "最长": "Blaine911.ID.US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "elevation": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "923",
+    "最长": "923",
+    "空": 1,
+    "空率": 0.003
+   },
+   "full_address": {
+    "带特殊字符": 0,
+    "最短": "6 S 4TH ST",
+    "最长": "100 LITTLE WOOD RESERVOIR RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "full_stname": {
+    "带特殊字符": 0,
+    "最短": "ELM ST",
+    "最长": "LITTLE WOOD RESERVOIR RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "gis_steward": {
+    "带特殊字符": 0,
+    "最短": "Blaine",
+    "最长": "Blaine",
+    "空": 0,
+    "空率": 0.0
+   },
+   "globalid": {
+    "带特殊字符": 300,
+    "最短": "{B5D86714-7D42-4622-8314-1769BAE1F3E6}",
+    "最长": "{B5D86714-7D42-4622-8314-1769BAE1F3E6}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "inc_muni": {
+    "带特殊字符": 0,
+    "最短": "Carey",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1775507227000",
+    "最长": "1775507227000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "GISADMIN",
+    "最长": "DATAOWNER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "latitude": {
+    "带特殊字符": 0,
+    "最短": "43.299877",
+    "最长": "43.30343841",
+    "空": 0,
+    "空率": 0.0
+   },
+   "longitude": {
+    "带特殊字符": 0,
+    "最短": "-113.9462725",
+    "最长": "-113.94546718",
+    "空": 0,
+    "空率": 0.0
+   },
+   "lst_label": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "luid": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "15955",
+    "空": 0,
+    "空率": 0.0
+   },
+   "muid": {
+    "带特殊字符": 0,
+    "最短": "106749",
+    "最长": "106749",
+    "空": 0,
+    "空率": 0.0
+   },
+   "muid_fips": {
+    "带特殊字符": 0,
+    "最短": "16013",
+    "最长": "16013",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parcel_id": {
+    "带特殊字符": 0,
+    "最短": "RPC1S210273730",
+    "最长": "RPC1S210273730",
+    "空": 0,
+    "空率": 0.0
+   },
+   "placename": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "qc_notes": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "qc_status": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "ID",
+    "最长": "ID",
+    "空": 0,
+    "空率": 0.0
+   },
+   "unit_range": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unit_type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unit_value": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "18ec2d0664067e28",
+  "total": 17965,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0001,
+   "full": 0.0,
+   "number": 1.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 17964,
+   "full": 17965,
+   "number": 0,
+   "state": 17965,
+   "street": 17965,
+   "zip": 17965
+  },
+  "reason": "契约全项通过（缺失率 {'number': 1.0, 'street': 0.0, 'city': 0.0001, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 full_address 拆**（concat_addr）",
+  "total": 17965,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addnum_pre street=full_stname city=post_comm zip=post_code",
+ "sample_hash": "18ec2d0664067e28",
+ "site_cols": [
+  "full_address",
+  "address_status",
+  "addrclass",
+  "site_nguid"
+ ],
+ "source_id": "us/id/blaine",
+ "stage": "p0",
+ "state": "ID",
+ "url": "https://maps.blainecountyid.gov/server/rest/services/Parcel_Information_Service_V2/MapServer/3",
+ "verdict": "CONTRACTED"
+}
