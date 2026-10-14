@@ -78,3 +78,23 @@ us/fl/clay,FL,Clay County,https://maps.claycountygov.com:6443/arcgis/rest/servic
 us/fl/desoto,FL,,https://skyview.hornershifrin.com/Geocortex/Essentials/REST/sites/DeSotoCoFL/map/mapservices/5/rest/services/x/MapServer/0,https://skyview.hornershifrin.com/DesotoCoFL/,以官方页面为准，待补
 us/fl/indian_river,FL,,https://gisportal.ircgov.com/server3/rest/services/Addressing/IRC_Address_Points_woLabels_MS/MapServer/0,,以官方页面为准，待补
 us/fl/leon,FL,,https://intervector.leoncountyfl.gov/intervector/rest/services/MapServices/TLC_OverlaySiteAddressPoints_D_WM/MapServer/0,https://geodata-tlcgis.opendata.arcgis.com/datasets/tlcgis::site-address-points-tallahassee-leon-county/about,以官方页面为准，待补
+us/fl/osceola,FL,,https://gis.osceola.org/hosting/rest/services/Address_Points/FeatureServer/0,,以官方页面为准，待补
+us/fl/volusia,FL,Volusia County,https://maps5.vcgov.org/arcgis/rest/services/Open_Data/Open_Data_1/FeatureServer/2,https://opendata-volusiacountyfl.hub.arcgis.com/datasets/VolusiaCountyFL::address-situs/about,以官方页面为准，待补
+us/ga/bleckley,GA,,https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Bleckley_Parcels/FeatureServer/0,,以官方页面为准，待补
+us/ga/burke,GA,,https://services1.arcgis.com/YwCV9A7cLN6cgxhP/ArcGIS/rest/services/Base_TaxParcels/FeatureServer/0,,以官方页面为准，待补
+us/ga/carroll,GA,,https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Carroll_Parcels_20240923_ExportFeatures/FeatureServer/0,,以官方页面为准，待补
+us/ga/coffee,GA,,https://www.sgrcmaps.com/alma/rest/services/Coffee/CoffeeMainLayers/MapServer/0,,以官方页面为准，待补
+us/ga/dade,GA,,https://gis.dadecounty-ga.gov/arcgis/rest/services/DADEGIS/Geovfy/MapServer/0,,以官方页面为准，待补
+us/ga/dougherty,GA,,https://services6.arcgis.com/VKHi8CC6pMIyYUIs/ArcGIS/rest/services/Address_Point_Master_File_View_Layer/FeatureServer/1,,以官方页面为准，待补
+us/ga/emanuel,GA,,https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Emanuel_Web_Map/FeatureServer/0,,以官方页面为准，待补
+us/ga/fannin,GA,,https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/ArcGIS/rest/services/Fannin_Webmap/FeatureServer/0,,以官方页面为准，待补
+us/ga/glascock,GA,,https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Glascock_Web_Map_2026_WFL1/FeatureServer/1,,以官方页面为准，待补
+us/ga/habersham,GA,,https://arcgis4.roktech.net/arcgis/rest/services/habersham/habersham_rokmaps/MapServer/1,,以官方页面为准，待补
+us/ga/lamar,GA,,https://services2.arcgis.com/EN0aHtzWcUlVk3ny/arcgis/rest/services/Map1/FeatureServer/37,,以官方页面为准，待补
+us/ga/laurens,GA,,https://services8.arcgis.com/XxLBcrikqFM0vkoy/ArcGIS/rest/services/Address/FeatureServer/0,,以官方页面为准，待补
+us/ga/lumpkin,GA,,https://arcgis4.roktech.net/arcgis/rest/services/Lumpkin/Lumpkin_BaseMap/MapServer/0,,以官方页面为准，待补
+us/ga/madison,GA,,https://services2.arcgis.com/OF0WyGtuMU8HJ04j/arcgis/rest/services/Address_points/FeatureServer/0,,以官方页面为准，待补
+us/ga/mcduffie,GA,,https://gis.thomson-mcduffie.net/portal/sharing/servers/e75fa80580074db48b7b3e468993d96b/rest/services/Public/MapServer/0,,以官方页面为准，待补
+us/ga/monroe,GA,,https://www.mgrcmaps.org/arcgis/rest/services/MonroeCounty/TaxParcelQuery/MapServer/0,,以官方页面为准，待补
+us/ga/newton,GA,,https://services.arcgis.com/mq0BGE5kHpm8mHFz/arcgis/rest/services/Site_Structure_Address_Point/FeatureServer/0,,以官方页面为准，待补
+us/ga/oglethrope,GA,,https://services1.arcgis.com/IX9GvidKl201KteW/ArcGIS/rest/services/The_Official_Zoning_Map_of_Oglethorpe_County__Georgia_WFL1/FeatureServer/5,,以官方页面为准，待补

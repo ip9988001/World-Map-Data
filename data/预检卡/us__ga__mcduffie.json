@@ -1,0 +1,263 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "GISStreetN",
+  "state": "State",
+  "street": "GIS_ST_Nam",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:50:50",
+ "county": "McDuffie",
+ "curated_cols": {
+  "city": "City",
+  "number": "GISStreetN",
+  "state": "State",
+  "street": "GIS_ST_Nam",
+  "zip": "Zip"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "Adr_Sfx_",
+  "St__Suffix",
+  "Customer",
+  "City",
+  "State",
+  "Zip",
+  "Res_Bus",
+  "Reserved",
+  "Descriptio",
+  "Entry_Date",
+  "GISStreetN",
+  "GIS_ST_Nam",
+  "GISAddress",
+  "Source",
+  "Comments",
+  "Shape",
+  "Verified",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "AddressClearlyMarked"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "E911 Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddressClearlyMarked": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "Yes",
+    "空": 259,
+    "空率": 0.863
+   },
+   "Adr_Sfx_": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "-A",
+    "空": 297,
+    "空率": 0.99
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "THOMSON",
+    "最长": "CITY OF DEARING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Comments": {
+    "带特殊字符": 0,
+    "最短": "GONE",
+    "最长": "DEPARTMENT OF NATURAL RESOURCES",
+    "空": 195,
+    "空率": 0.65
+   },
+   "Customer": {
+    "带特殊字符": 15,
+    "最短": "#19",
+    "最长": "MCDUFFIE COUNTY-THOMSON PLASTICS",
+    "空": 31,
+    "空率": 0.103
+   },
+   "Descriptio": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "H TAN SIDING/ WHITE TRIM- COLUMNS/ BLACK SHINGLE ROOF",
+    "空": 15,
+    "空率": 0.05
+   },
+   "Entry_Date": {
+    "带特殊字符": 0,
+    "最短": "780969600000",
+    "最长": "1214438400000",
+    "空": 37,
+    "空率": 0.123
+   },
+   "GISAddress": {
+    "带特殊字符": 0,
+    "最短": "108 GUY RD",
+    "最长": "168 PYLANT CROSSING RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GISStreetN": {
+    "带特殊字符": 0,
+    "最短": "103.0",
+    "最长": "1227.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ST_Nam": {
+    "带特殊字符": 0,
+    "最短": "GUY RD",
+    "最长": "PYLANT CROSSING RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Res_Bus": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Reserved": {
+    "带特殊字符": 0,
+    "最短": "DEARING",
+    "最长": "MCDUFFIE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Source": {
+    "带特殊字符": 0,
+    "最短": "County E911",
+    "最长": "County E911",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St__Suffix": {
+    "带特殊字符": 0,
+    "最短": "N.W",
+    "最长": "NORTH",
+    "空": 10,
+    "空率": 0.033
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "GA",
+    "最长": "GA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Verified": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "30824.0",
+    "最长": "30824.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1617817074000",
+    "最长": "1617817074000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 293,
+    "最短": "SA",
+    "最长": "Esri_Anonymous",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "37f1d1cad4b0a17f",
+  "total": 12233,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 12233,
+   "full": 12233,
+   "number": 12233,
+   "state": 12233,
+   "street": 12233,
+   "zip": 12233
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 12233,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=GISStreetN street=GIS_ST_Nam city=City zip=Zip",
+ "sample_hash": "37f1d1cad4b0a17f",
+ "site_cols": [
+  "GISStreetN",
+  "GISAddress",
+  "AddressClearlyMarked"
+ ],
+ "source_id": "us/ga/mcduffie",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://gis.thomson-mcduffie.net/portal/sharing/servers/e75fa80580074db48b7b3e468993d96b/rest/services/Public/MapServer/0",
+ "verdict": "CONTRACTED"
+}

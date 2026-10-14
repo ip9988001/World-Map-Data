@@ -1,0 +1,239 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CityCode",
+  "number": "STNUM",
+  "street": "STDIR",
+  "unit": "UnitType"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:50:34",
+ "county": "Dougherty",
+ "curated_cols": {
+  "number": "STNUM",
+  "street": "STDIR"
+ },
+ "fields": [
+  "OBJECTID",
+  "PARCEL_NUM",
+  "STNUM",
+  "SUBADD",
+  "STDIR",
+  "STNAME",
+  "STSUF",
+  "ADDRESS",
+  "AssignDate",
+  "Source",
+  "AptType",
+  "UnitType",
+  "Comments",
+  "CityCode",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "UnitName",
+  "GlobalID"
+ ],
+ "fields_n": 20,
+ "guessed_cols": {
+  "city": "CityCode",
+  "unit": "UnitType"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Point Master File",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 10,
+    "最短": "119 DALE DR",
+    "最长": "800 OLD FLOWING WELL RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AptType": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AssignDate": {
+    "带特殊字符": 0,
+    "最短": "1307404800000",
+    "最长": "-2209939200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CityCode": {
+    "带特殊字符": 0,
+    "最短": "ALB",
+    "最长": "CNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Comments": {
+    "带特殊字符": 1,
+    "最短": "Produce Stand",
+    "最长": "National Distributing Company, INC.",
+    "空": 294,
+    "空率": 0.98
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "5c7f10ef-6be3-4db5-a957-574e52118052",
+    "最长": "5c7f10ef-6be3-4db5-a957-574e52118052",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_NUM": {
+    "带特殊字符": 0,
+    "最短": "00128/00001/002",
+    "最长": "00128/00001/002",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 286,
+    "空率": 0.953
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "DALE",
+    "最长": "OLD FLOWING WELL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNUM": {
+    "带特殊字符": 0,
+    "最短": "800",
+    "最长": "2521",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STSUF": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBADD": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "10",
+    "空": 290,
+    "空率": 0.967
+   },
+   "Source": {
+    "带特殊字符": 0,
+    "最短": "RW",
+    "最长": "Parcels",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UnitName": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1777553665277",
+    "最长": "1777553665277",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "jkendall8",
+    "最长": "jkendall8",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1777553665277",
+    "最长": "1777553665277",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "jkendall8",
+    "最长": "jkendall8",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "519cf48997788f16",
+  "total": 41051,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0005,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0548
+  },
+  "nonnull": {
+   "city": 41031,
+   "full": 41051,
+   "number": 41051,
+   "street": 38803
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0548, 'city': 0.0005, 'full': 0.0}）→ 可全量采集",
+  "total": 41051,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STNUM street=STDIR",
+ "sample_hash": "519cf48997788f16",
+ "site_cols": [
+  "ADDRESS"
+ ],
+ "source_id": "us/ga/dougherty",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services6.arcgis.com/VKHi8CC6pMIyYUIs/ArcGIS/rest/services/Address_Point_Master_File_View_Layer/FeatureServer/1",
+ "verdict": "CONTRACTED"
+}

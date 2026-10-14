@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:50:45",
+ "county": "Lamar",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",
+ "source_id": "us/ga/lamar",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services2.arcgis.com/EN0aHtzWcUlVk3ny/arcgis/rest/services/Map1/FeatureServer/37",
+ "verdict": "REJECTED_P0"
+}

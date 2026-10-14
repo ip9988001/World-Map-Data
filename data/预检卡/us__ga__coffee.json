@@ -1,0 +1,183 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMM",
+  "number": "AddNew",
+  "street": "ROADNAME"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:49:22",
+ "county": "Coffee",
+ "curated_cols": {
+  "city": "COMM",
+  "number": "AddNew",
+  "street": "ROADNAME"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "OBJECTID",
+  "ADD_DESC",
+  "RESIDENT",
+  "ADDR",
+  "ROADNAME",
+  "NUMBER",
+  "COMM",
+  "MODIFIED",
+  "AddNew",
+  "STREET",
+  "OR_STREET",
+  "Shape",
+  "Matc"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDR": {
+    "带特殊字符": 2,
+    "最短": "600 7TH ST",
+    "最长": "166 ALBERT PETERSON RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_DESC": {
+    "带特殊字符": 7,
+    "最短": "T",
+    "最长": "WH/BLU T BEHIND FLASH",
+    "空": 5,
+    "空率": 0.017
+   },
+   "AddNew": {
+    "带特殊字符": 2,
+    "最短": "600 7TH ST",
+    "最长": "166 ALBERT PETERSON RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMM": {
+    "带特殊字符": 0,
+    "最短": "WRAY",
+    "最长": "WILLACOOCHEE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MODIFIED": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Matc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NUMBER": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "1068",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "960689",
+    "最长": "960689",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OR_STREET": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RESIDENT": {
+    "带特殊字符": 225,
+    "最短": "EMPTY",
+    "最长": "Corner Lott Properties (Jeff Harper)",
+    "空": 24,
+    "空率": 0.08
+   },
+   "ROADNAME": {
+    "带特殊字符": 2,
+    "最短": "7TH ST",
+    "最长": "ALBERT PETERSON RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET": {
+    "带特殊字符": 2,
+    "最短": "7TH ST",
+    "最长": "ALBERT PETERSON RD",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "2ac6d62f247ddffc",
+  "total": 21029,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 21029,
+   "full": 21029,
+   "number": 21029,
+   "street": 21029
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 21029,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AddNew street=ROADNAME city=COMM",
+ "sample_hash": "2ac6d62f247ddffc",
+ "site_cols": [
+  "ADDR",
+  "STREET",
+  "OR_STREET"
+ ],
+ "source_id": "us/ga/coffee",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://www.sgrcmaps.com/alma/rest/services/Coffee/CoffeeMainLayers/MapServer/0",
+ "verdict": "CONTRACTED"
+}

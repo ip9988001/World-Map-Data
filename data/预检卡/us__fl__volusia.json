@@ -1,0 +1,271 @@
+{
+ "attribution": "Volusia County",
+ "candidate_cols": {
+  "city": "CITYNAME",
+  "number": "HOUSE_NUM",
+  "street": "PRE_DIR",
+  "unit": "UNIT",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:49:07",
+ "county": "Volusia",
+ "curated_cols": {
+  "city": "CITYNAME",
+  "number": "HOUSE_NUM",
+  "street": "PRE_DIR",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "PID",
+  "UNIT",
+  "HOUSE_NUM",
+  "PRE_DIR",
+  "STREET_NAME",
+  "STREET_TYPE",
+  "POST_DIR",
+  "CITY_ABBRV",
+  "CITYNAME",
+  "ZIP",
+  "TYPE",
+  "ADDRESS",
+  "Date_",
+  "TARG_P",
+  "TARG_F",
+  "TARG_E",
+  "MOD_P",
+  "MOD_F",
+  "MOD_E",
+  "INIT",
+  "last_edited_date",
+  "Address_ID"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Situs",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "9 KIM CT",
+    "最长": "1165 UNDERHILL BRANCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_ID": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITYNAME": {
+    "带特殊字符": 0,
+    "最短": "MIMS",
+    "最长": "ORMOND BEACH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY_ABBRV": {
+    "带特殊字符": 0,
+    "最短": "OB",
+    "最长": "OST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Date_": {
+    "带特殊字符": 0,
+    "最短": "1153713600000",
+    "最长": "1153713600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_NUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "10000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MOD_E": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MOD_F": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MOD_P": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PID": {
+    "带特殊字符": 0,
+    "最短": "030400000020",
+    "最长": "030400000020",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POST_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 299,
+    "空率": 0.997
+   },
+   "STREET_NAME": {
+    "带特殊字符": 0,
+    "最短": "KIM",
+    "最长": "KNOLLWOOD ESTATES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "RUN",
+    "空": 9,
+    "空率": 0.03
+   },
+   "TARG_E": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TARG_F": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TARG_P": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "10",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "32764",
+    "最长": "32764",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1790209372000",
+    "最长": "1790209372000",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6983dd5212b78cb1",
+  "total": 277566,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.8494,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 277565,
+   "full": 277566,
+   "number": 277566,
+   "street": 41793,
+   "zip": 277565
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.8494, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 STREET_NAME 拆**（concat_addr）",
+  "total": 277566,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NUM street=PRE_DIR city=CITYNAME zip=ZIP",
+ "sample_hash": "6983dd5212b78cb1",
+ "site_cols": [
+  "STREET_NAME",
+  "STREET_TYPE",
+  "ADDRESS",
+  "Address_ID"
+ ],
+ "source_id": "us/fl/volusia",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://maps5.vcgov.org/arcgis/rest/services/Open_Data/Open_Data_1/FeatureServer/2",
+ "verdict": "CONTRACTED"
+}

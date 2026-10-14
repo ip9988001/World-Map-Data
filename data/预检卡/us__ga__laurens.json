@@ -1,0 +1,314 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ZONE_VENUE",
+  "number": "HOUSE_NUMB",
+  "state": "ST",
+  "street": "PREFIX_DIR",
+  "unit": "UNIT",
+  "zip": "ZIP_CODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:50:45",
+ "county": "Laurens",
+ "curated_cols": {
+  "city": "ZONE_VENUE",
+  "number": "HOUSE_NUMB",
+  "state": "ST",
+  "street": "PREFIX_DIR",
+  "zip": "ZIP_CODE"
+ },
+ "fields": [
+  "FID",
+  "STATUS",
+  "SCORE",
+  "MATCH_TYPE",
+  "SIDE",
+  "MATCH_ADDR",
+  "ARC_STREET",
+  "TYPE",
+  "PHONE",
+  "HOUSE_NUMB",
+  "STREET_NAM",
+  "SUBDIVISIO",
+  "ESN",
+  "ZONE_VENUE",
+  "ST",
+  "CUSTOMER",
+  "TELCO",
+  "GEOCODE_AD",
+  "DESCRIPTIO",
+  "ADR_FRAC",
+  "PREFIX_DIR",
+  "STREET_TYP",
+  "SUFFIX_DIR",
+  "ZIP_CODE",
+  "JOIN_ID",
+  "OBJECTID",
+  "UNIT",
+  "CreatedDat"
+ ],
+ "fields_n": 28,
+ "guessed_cols": {
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADR_FRAC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ARC_STREET": {
+    "带特殊字符": 0,
+    "最短": "526 FAIR ST",
+    "最长": "308 CHARLES W. MANNING SR. WAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CUSTOMER": {
+    "带特殊字符": 199,
+    "最短": "ARK",
+    "最长": "WILLIAM & DOT BAILEYS PROPERTIES LLC",
+    "空": 6,
+    "空率": 0.02
+   },
+   "CreatedDat": {
+    "带特殊字符": 0,
+    "最短": "1524614400000",
+    "最长": "1524614400000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DESCRIPTIO": {
+    "带特殊字符": 2,
+    "最短": "MH",
+    "最长": "LDW TO TIN FARM BLDG",
+    "空": 194,
+    "空率": 0.647
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "141 - RENTZ",
+    "最长": "146 - EAST DUBLIN FIRE/LCSO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GEOCODE_AD": {
+    "带特殊字符": 0,
+    "最短": "526 FAIR ST",
+    "最长": "308 CHARLES W. MANNING SR. WAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_NUMB": {
+    "带特殊字符": 0,
+    "最短": "17",
+    "最长": "2125",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JOIN_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MATCH_ADDR": {
+    "带特殊字符": 0,
+    "最短": "2125 HWY 26",
+    "最长": "312 CHARLES W. MANNING SR. WAY",
+    "空": 3,
+    "空率": 0.01
+   },
+   "MATCH_TYPE": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "PP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "8.4879841e-314",
+    "最长": "8.4879840734e-314",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PHONE": {
+    "带特殊字符": 0,
+    "最短": "4782790515",
+    "最长": "I4782752878",
+    "空": 70,
+    "空率": 0.233
+   },
+   "PREFIX_DIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 262,
+    "空率": 0.873
+   },
+   "SCORE": {
+    "带特殊字符": 0,
+    "最短": "53",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SIDE": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "R",
+    "空": 3,
+    "空率": 0.01
+   },
+   "ST": {
+    "带特殊字符": 0,
+    "最短": "GA",
+    "最长": "GA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "M",
+    "最长": "M",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAM": {
+    "带特殊字符": 0,
+    "最短": "FAIR",
+    "最长": "CHARLES W. MANNING SR.",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_TYP": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 34,
+    "空率": 0.113
+   },
+   "SUBDIVISIO": {
+    "带特殊字符": 15,
+    "最短": "FAIRFIELD",
+    "最长": "OLD PINE PLANTATION (OLD HAWKINSVILLE RD)",
+    "空": 246,
+    "空率": 0.82
+   },
+   "SUFFIX_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TELCO": {
+    "带特殊字符": 0,
+    "最短": "WIN",
+    "最长": "BELSO",
+    "空": 78,
+    "空率": 0.26
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "GAS",
+    "最长": "RESTAURANT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "B",
+    "空": 297,
+    "空率": 0.99
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "31027",
+    "最长": "31027",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZONE_VENUE": {
+    "带特殊字符": 0,
+    "最短": "RENTZ",
+    "最长": "EAST DUBLIN",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "edb9babf622826c7",
+  "total": 29507,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 29507,
+   "full": 29507,
+   "number": 29507,
+   "state": 29507,
+   "street": 29507,
+   "zip": 29507
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 29507,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NUMB street=PREFIX_DIR city=ZONE_VENUE zip=ZIP_CODE",
+ "sample_hash": "edb9babf622826c7",
+ "site_cols": [
+  "MATCH_ADDR",
+  "ARC_STREET",
+  "STREET_NAM",
+  "STREET_TYP"
+ ],
+ "source_id": "us/ga/laurens",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services8.arcgis.com/XxLBcrikqFM0vkoy/ArcGIS/rest/services/Address/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

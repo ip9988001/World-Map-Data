@@ -1,0 +1,168 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MSAGComm",
+  "number": "AddNum_Pre",
+  "street": "LSt_PreDir"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:51:58",
+ "county": "Newton",
+ "curated_cols": {
+  "city": "MSAGComm",
+  "number": "AddNum_Pre",
+  "street": "LSt_PreDir"
+ },
+ "fields": [
+  "OBJECTID",
+  "NGUID",
+  "AddNum_Pre",
+  "AddNumber",
+  "AddNum_Suf",
+  "St_Name",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Typ",
+  "LSt_PosDir",
+  "ESN",
+  "MSAGComm"
+ ],
+ "fields_n": 12,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "SiteStructureAddressPoints",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNumber": {
+    "带特殊字符": 0,
+    "最短": "15",
+    "最长": "10921",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "RAY",
+    "最长": "NEWTON FACTORY BRIDGE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SW",
+    "空": 202,
+    "空率": 0.673
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 297,
+    "空率": 0.99
+   },
+   "LSt_Typ": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "PASS",
+    "空": 5,
+    "空率": 0.017
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "OXFORD",
+    "最长": "COVINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NGUID": {
+    "带特殊字符": 300,
+    "最短": "urn:emergency:uid:gis:RCL:{DCD3CD78-240E",
+    "最长": "urn:emergency:uid:gis:RCL:{DCD3CD78-240E-4EFC-8097-8FEE5B1CCE26}:ncboc.org",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "RAY",
+    "最长": "NEWTON FACTORY BRIDGE",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e0f5c05a1de168b4",
+  "total": 51175,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 51175,
+   "number": 51175,
+   "street": 51175
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0}）→ 可全量采集",
+  "total": 51175,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AddNum_Pre street=LSt_PreDir city=MSAGComm",
+ "sample_hash": "e0f5c05a1de168b4",
+ "site_cols": [],
+ "source_id": "us/ga/newton",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services.arcgis.com/mq0BGE5kHpm8mHFz/arcgis/rest/services/Site_Structure_Address_Point/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

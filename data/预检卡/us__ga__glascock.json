@@ -1,0 +1,244 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "House_No",
+  "street": "Road"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-14 01:50:39",
+ "county": "Glascock",
+ "curated_cols": {
+  "number": "House_No",
+  "street": "Road"
+ },
+ "fields": [
+  "FID",
+  "Realkey",
+  "PIN",
+  "Owner",
+  "House_No",
+  "Road",
+  "Rd_Type",
+  "LEGAL_DESC",
+  "Homestead",
+  "CUV_Year",
+  "Acres",
+  "Class",
+  "ACC",
+  "DESIRE",
+  "LAND_TYPE",
+  "Neighborho",
+  "Subdivisio",
+  "PREV_VAL",
+  "CURR_VAL",
+  "Land_Val",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Glascock_Webmap",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACC": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Acres": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "132.18",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CURR_VAL": {
+    "带特殊字符": 0,
+    "最短": "8629",
+    "最长": "1212977",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CUV_Year": {
+    "带特殊字符": 0,
+    "最短": "2026",
+    "最长": "2026",
+    "空": 194,
+    "空率": 0.647
+   },
+   "Class": {
+    "带特殊字符": 0,
+    "最短": "V",
+    "最长": "V",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DESIRE": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Homestead": {
+    "带特殊字符": 0,
+    "最短": "S0",
+    "最长": "S0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "House_No": {
+    "带特殊字符": 0,
+    "最短": "7761",
+    "最长": "10693",
+    "空": 148,
+    "空率": 0.493
+   },
+   "LAND_TYPE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LEGAL_DESC": {
+    "带特殊字符": 11,
+    "最短": "44.76",
+    "最长": "12.00 CITY OF MITC  2.00 RES 43.74 COUNTY",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Land_Val": {
+    "带特殊字符": 0,
+    "最短": "7343",
+    "最长": "1212977",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Neighborho": {
+    "带特殊字符": 0,
+    "最短": "NULL",
+    "最长": "NULL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner": {
+    "带特殊字符": 78,
+    "最短": "GRAY MARK",
+    "最长": "KENT MARK OLIN & BROOKINS LUCINDA TRUSTE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "001    001",
+    "最长": "003    003AM",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREV_VAL": {
+    "带特殊字符": 0,
+    "最短": "5868",
+    "最长": "433201",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Rd_Type": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "NULL",
+    "空": 159,
+    "空率": 0.53
+   },
+   "Realkey": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1842",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Road": {
+    "带特殊字符": 0,
+    "最短": "NULL",
+    "最长": "MITCHELL WARRENTON RD",
+    "空": 95,
+    "空率": 0.317
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "59627",
+    "最长": "2966406.82421875",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "531.34805066841",
+    "最长": "14719.736908591993",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Subdivisio": {
+    "带特殊字符": 0,
+    "最短": "NULL",
+    "最长": "LAYS LANDING MAP 4A",
+    "空": 258,
+    "空率": 0.86
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b6926ffebc9a2480",
+  "total": 2455,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "number": 2455,
+   "street": 2455
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0}）→ 可全量采集",
+  "total": 2455,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=House_No street=Road（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "b6926ffebc9a2480",
+ "site_cols": [],
+ "source_id": "us/ga/glascock",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://services.arcgis.com/ISpzx3B5ZsVA6e1Z/arcgis/rest/services/Glascock_Web_Map_2026_WFL1/FeatureServer/1",
+ "verdict": "CONTRACTED"
+}
