@@ -1,0 +1,169 @@
+{
+ "name": "us_oh_seneca__seneca_oh_address_points",
+ "version": 1,
+ "note": "ArcGIS 门牌点图层，门牌号在 HOUSENUM，街名由 ST_PREFIX/ST_NAME/ST_TYPE/ST_SUFFIX 分列组合，市/州/ZIP 另有 USPS_CITY/STATE/ZIPCODE 列，故走 columns 模式。",
+ "match": {
+  "columns_any": [
+   "HOUSENUM",
+   "ST_NAME",
+   "NLFIDNEW",
+   "LSN"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "HOUSENUM",
+  "street": "ST_NAME",
+  "city": "USPS_CITY",
+  "zip": "ZIPCODE",
+  "state": "STATE"
+ },
+ "number_template": "{HOUSENUM}",
+ "street_template": "{ST_PREFIX} {ST_NAME} {ST_TYPE} {ST_SUFFIX}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "FID": 1,
+    "FEATUREID": 100346,
+    "ROADTYPE": "T",
+    "ROADNUMBER": "84",
+    "HOUSENUM": 12961,
+    "UNITNUM": " ",
+    "HNRANGE": " ",
+    "UNITEXTRA": " ",
+    "BUILDING": " ",
+    "FLOOR": " ",
+    "ST_PREFIX": "W",
+    "ST_NAME": "TR 84",
+    "ST_TYPE": " ",
+    "ST_SUFFIX": " ",
+    "ST_SUFFIX2": " ",
+    "MUNI": " ",
+    "ALTPREFIX": " ",
+    "ALTNAME": " ",
+    "ALTTYPE": " ",
+    "ALTSUFFIX": " ",
+    "ALTSUFFIX2": " ",
+    "SUBDIV": " ",
+    "VILLAGE": " ",
+    "SIDE": 0,
+    "ABSSIDE": "N",
+    "STRUC_TYPE": 1,
+    "SOURCE": 0,
+    "COMMENT": " ",
+    "FIELDNOTE": " ",
+    "STATE": "OH",
+    "COUNTY": "SEN",
+    "LSN": "12961 W TR 84",
+    "ALSN": " ",
+    "LHN": "12961",
+    "NLFIDNEW": "TSENTR00084**C",
+    "ZIPCODE": "44830",
+    "USPS_CITY": "FOSTORIA",
+    "SEGID": 18520,
+    "TSSEGID": 18520,
+    "PT_LEN": 187.706,
+    "MPVAL": 0.036,
+    "FIPSCODE": "38066",
+    "COMM": "JACKSON TWP",
+    "X": 1715323.44586,
+    "Y": 558539.863935,
+    "DATEMODIFI": 1308700800000,
+    "GlobalID": "{3159DD18-A427-4DA2-B0FF-F268045EFDD3}",
+    "GlobalID_2": "{1EC2C48B-B63B-4547-A49B-906BD2EB5663}"
+   },
+   "expect": {
+    "number": "12961",
+    "street": "W TR 84"
+   }
+  },
+  {
+   "row": {
+    "FID": 30,
+    "FEATUREID": 100406,
+    "ROADTYPE": "C",
+    "ROADNUMBER": "592",
+    "HOUSENUM": 7163,
+    "UNITNUM": " ",
+    "HNRANGE": " ",
+    "UNITEXTRA": " ",
+    "BUILDING": " ",
+    "FLOOR": " ",
+    "ST_PREFIX": "W",
+    "ST_NAME": "CR 592",
+    "ST_TYPE": " ",
+    "ST_SUFFIX": " ",
+    "ST_SUFFIX2": " ",
+    "MUNI": " ",
+    "ALTPREFIX": " ",
+    "ALTNAME": " ",
+    "ALTTYPE": " ",
+    "ALTSUFFIX": " ",
+    "ALTSUFFIX2": " ",
+    "SUBDIV": " ",
+    "VILLAGE": " ",
+    "SIDE": 0,
+    "ABSSIDE": "N",
+    "STRUC_TYPE": 1,
+    "SOURCE": 0,
+    "COMMENT": " ",
+    "FIELDNOTE": " ",
+    "STATE": "OH",
+    "COUNTY": "SEN",
+    "LSN": "7163 W CR 592",
+    "ALSN": " ",
+    "LHN": "7163",
+    "NLFIDNEW": "CSENCR00592**C",
+    "ZIPCODE": "44830",
+    "USPS_CITY": "FOSTORIA",
+    "SEGID": 40160,
+    "TSSEGID": 40160,
+    "PT_LEN": 2950.514,
+    "MPVAL": 5.908,
+    "FIPSCODE": "38066",
+    "COMM": "JACKSON TWP",
+    "X": 1746160.17553,
+    "Y": 553196.449425,
+    "DATEMODIFI": 1308700800000,
+    "GlobalID": "{6B5B05B8-1E8C-41C5-9C02-1B9F2456E11C}",
+    "GlobalID_2": "{10659E59-983E-4198-880E-366B299176A3}"
+   },
+   "expect": {
+    "number": "7163",
+    "street": "W CR 592"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/oh/seneca",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 08:30:22",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.995
+  }
+ }
+}

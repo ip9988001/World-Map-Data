@@ -14,3 +14,7 @@ us/nc/alleghany,0.2,0.2,0.2,,1,该源无任何 ZIP 列（可用列仅 OBJECTID/L
 us/nc/caswell,0.2,0.2,0.2,1,1,样本列仅有 OBJECTID/Add_Number/AddNum_Suf/LSt_PreDir/LSt_Name/LSt_Type/LSt_PosDir/UID/STRUCTYPE/SHORTADDR/STFULLNAME/NewNumber/Account，无任何 city、zip、state 列
 us/ca/city_of_rancho_cucamonga,0.2,0.2,0.2,,,
 us/co/city_of_fort_collins,0.2,0.2,0.2,,,
+us/nv/carson_city,0.2,0.2,0.2,1,1,该源字段仅 OBJECTID/StrName/StrDir/StrNumb/Unit/Address/Notes/Updated/GlobalID/created_user/created_date/last_edited_user/last_edited_date/Str_Concat/Adr_Concat/USPS，不存在 city / state / zip 列，地址要素仅由 StrNumb
+us/nv/humboldt,0.2,0.2,0.2,1,1,该源仅有 Label/ST_NUM/ST_* 地址组件列与地图页码，无任何 city/state/zip 列可引用
+us/nv/storey,0.2,0.2,0.2,,,
+us/oh/seneca,0.2,0.2,0.2,,,

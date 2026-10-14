@@ -1,0 +1,107 @@
+{
+ "name": "us_nv_storey__storey_nv_address_points",
+ "version": 1,
+ "note": "ArcGIS Address_Points 已把门牌号与街名拆成 STR_NUMB / STR_NAME / STR_TYPE 等独立列，直接用模板拼接即可 100% 命中。",
+ "match": {
+  "columns_any": [
+   "STR_NUMB",
+   "STR_NAME",
+   "LABEL"
+  ],
+  "columns_all": [
+   "STR_NUMB",
+   "STR_NAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STR_NUMB",
+  "street": "",
+  "city": "CITY",
+  "zip": "ZIP",
+  "state": "STATE"
+ },
+ "number_template": "{STR_NUMB}",
+ "street_template": "{STR_NAME} {STR_TYPE}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 6858,
+    "STR_NUMB": 1341,
+    "STR_UNIT": null,
+    "STR_PREFIX": null,
+    "STR_NAME": "BONANZA",
+    "STR_TYPE": "RD",
+    "STR_SUFFIX": null,
+    "COMMENTS": null,
+    "CREATED_DATE": 1490227200000,
+    "LAST_UPDATED": 1517961600000,
+    "LAST_EDITOR": "MForrest",
+    "LABEL": "1341 BONANZA RD",
+    "GIS": null,
+    "ZIP": 89521,
+    "CITY": "RENO",
+    "STATE": "NV",
+    "GlobalID": "7c2a4065-2f36-4a6d-a41b-591474877af9"
+   },
+   "expect": {
+    "number": "1341",
+    "street": "BONANZA RD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 6887,
+    "STR_NUMB": 1407,
+    "STR_UNIT": null,
+    "STR_PREFIX": null,
+    "STR_NAME": "CALAVARAS",
+    "STR_TYPE": "RD",
+    "STR_SUFFIX": null,
+    "COMMENTS": null,
+    "CREATED_DATE": 1490227200000,
+    "LAST_UPDATED": 1517961600000,
+    "LAST_EDITOR": "MForrest",
+    "LABEL": "1407 CALAVARAS RD",
+    "GIS": null,
+    "ZIP": 89521,
+    "CITY": "RENO",
+    "STATE": "NV",
+    "GlobalID": "1358346e-fcb8-4273-a172-704c6c5b99a7"
+   },
+   "expect": {
+    "number": "1407",
+    "street": "CALAVARAS RD"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/nv/storey",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 08:29:37",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.998
+  }
+ }
+}

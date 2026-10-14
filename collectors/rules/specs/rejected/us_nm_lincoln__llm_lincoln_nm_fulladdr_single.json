@@ -1,0 +1,92 @@
+{
+ "_rejected": {
+  "source_id": "us/nm/lincoln",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 12% 低于阈 30%",
+   "不如现有规则（12% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 25,
+   "kept_contentful": 25,
+   "ratio": 0.125,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 08:29:19"
+ },
+ "spec": {
+  "name": "lincoln_nm_fulladdr_single",
+  "version": 1,
+  "note": "源只有一列 FULLADDR 且已是完整「号+街名」形态（如 '313 APACHE TRL'），无 city/state 列、ZIP 列全空，故用 single 模式整列解析并剥离尾部市/州/ZIP。",
+  "match": {
+   "columns_any": [
+    "FULLADDR"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "FULLADDR",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "本源无 city 列；ZIP 列存在但样本 30 行及抽检 200 行全为 null，无从取值，故豁免 city/zip 校验（依据列名：ZIP）"
+  },
+  "examples": [
+   {
+    "row": {
+     "FULLADDR": "313 APACHE TRL",
+     "OBJECTID": 1
+    },
+    "expect": {
+     "number": "313",
+     "street": "APACHE TRL"
+    }
+   },
+   {
+    "row": {
+     "FULLADDR": "1272 LITTLE CREEK RD",
+     "OBJECTID": 11
+    },
+    "expect": {
+     "number": "1272",
+     "street": "LITTLE CREEK RD"
+    }
+   },
+   {
+    "row": {
+     "FULLADDR": "106 BILLY THE KID CT",
+     "OBJECTID": 26
+    },
+    "expect": {
+     "number": "106",
+     "street": "BILLY THE KID CT"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "_rejected": {
+  "source_id": "us/oh/coshocton",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.995
+  },
+  "at": "2026-10-14 08:30:12"
+ },
+ "spec": {
+  "name": "coshocton_addresses_lsn_single",
+  "version": 1,
+  "note": "LSN 列本身就是「门牌号 + 街名」完整串（如 32623 CR 368），走 single 模式自动拆号；号列 LHN 仅作后备不单独用，city/zip 从 USPS_CITY/ZIPCODE 取。",
+  "match": {
+   "columns_any": [
+    "LSN"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "USPS_CITY",
+   "zip": "ZIPCODE",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "LSN",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "STRUC_TYPE": 1,
+     "LSN": "32623 CR 368",
+     "LHN": "32623",
+     "USPS_CITY": "WALHONDING",
+     "ZIPCODE": "43843",
+     "COMM": "TIVERTON TWP",
+     "LATITUDE": 40.43253899,
+     "LONGITUDE": -82.1475764
+    },
+    "expect": {
+     "number": "32623",
+     "street": "CR 368"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 9,
+     "STRUC_TYPE": 1,
+     "LSN": "32599 SR 206",
+     "LHN": "32599",
+     "USPS_CITY": "BRINKHAVEN",
+     "ZIPCODE": "43006",
+     "COMM": "TIVERTON TWP",
+     "LATITUDE": 40.43300012,
+     "LONGITUDE": -82.14315559
+    },
+    "expect": {
+     "number": "32599",
+     "street": "SR 206"
+    }
+   }
+  ]
+ }
+}

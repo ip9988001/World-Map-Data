@@ -1,0 +1,116 @@
+{
+ "name": "us_nv_humboldt__humboldt_nv_site_address_points",
+ "version": 1,
+ "note": "ArcGIS SiteAddressPoints 用 ST_NUM 加 ST_PREFIX/ST_PRETYP/ST_NAME/ST_POSTTYP/ST_POSTDIR 拼街名，无 city/zip/state 列故豁免。",
+ "match": {
+  "columns_any": [
+   "SITEADDID"
+  ],
+  "columns_all": [
+   "ST_NUM",
+   "ST_NAME"
+  ],
+  "columns_none": [
+   "OWNER_ADDR",
+   "MAIL_ADDR"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ST_NUM",
+  "street": "ST_NAME",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "{ST_NUM}",
+ "street_template": "{ST_PREFIX} {ST_PRETYP} {ST_NAME} {ST_POSTTYP} {ST_POSTDIR}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "该源仅有 Label/ST_NUM/ST_* 地址组件列与地图页码，无任何 city/state/zip 列可引用"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "SITEADDID": "SID-1",
+    "ADDPTKEY": " ",
+    "STATUS": " ",
+    "Label": "3318 HACKAMORE WAY",
+    "ST_NUM": 3318,
+    "ST_PREFIX": " ",
+    "ST_PRETYP": " ",
+    "ST_NAME": "HACKAMORE",
+    "ST_POSTTYP": "WAY",
+    "ST_POSTDIR": " ",
+    "APT": " ",
+    "SPACE": " ",
+    "Primary_": 1,
+    "POINT_X": 2866477.25847,
+    "POINT_Y": 15386227.3695,
+    "LASTUPDATE": null,
+    "LASTEDITOR": " ",
+    "LSN": " ",
+    "PARCEL_NUM": " ",
+    "Map_Page": "16-067-3",
+    "GlobalID": "d09b8163-763d-4476-bc58-aa593f459090"
+   },
+   "expect": {
+    "number": "3318",
+    "street": "HACKAMORE WAY"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 7,
+    "SITEADDID": "SID-7",
+    "ADDPTKEY": " ",
+    "STATUS": " ",
+    "Label": "5377 MARLA DR",
+    "ST_NUM": 5377,
+    "ST_PREFIX": " ",
+    "ST_PRETYP": " ",
+    "ST_NAME": "MARLA",
+    "ST_POSTTYP": "DR",
+    "ST_POSTDIR": " ",
+    "APT": " ",
+    "SPACE": " ",
+    "Primary_": 1,
+    "POINT_X": 2866486.69611,
+    "POINT_Y": 15385891.8534,
+    "LASTUPDATE": null,
+    "LASTEDITOR": " ",
+    "LSN": " ",
+    "PARCEL_NUM": " ",
+    "Map_Page": "16-067-3",
+    "GlobalID": "f0907d87-6744-4b2b-9148-1d9ac6c73f1e"
+   },
+   "expect": {
+    "number": "5377",
+    "street": "MARLA DR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/nv/humboldt",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 08:29:33",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

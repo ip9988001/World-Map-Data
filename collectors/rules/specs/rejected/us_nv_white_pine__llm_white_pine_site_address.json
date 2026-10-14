@@ -1,0 +1,111 @@
+{
+ "_rejected": {
+  "source_id": "us/nv/white_pine",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 街名不符：期望 WEST 900 NORTH STREET 实得 W 900 N ST",
+   "example2 街名不符：期望 EAST 900TH NORTH STREET 实得 E 900TH N ST",
+   "example3 街名不符：期望 NORTH STATE ROUTE 318 实得 N STATE ROUTE 318",
+   "不如现有规则（46% < 86%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 93,
+   "kept_contentful": 93,
+   "ratio": 0.465,
+   "fabricated": 0,
+   "best_ratio": 0.856
+  },
+  "at": "2026-10-14 08:30:01"
+ },
+ "spec": {
+  "name": "white_pine_site_address",
+  "version": 1,
+  "note": "场地地址来自字段对 Loc1(门牌号) + street_name(街名)，86% 的行 Loc1=0 且 street_name 为空（无场地地址），自然不出地址；TSC_mcity/TSC_mzip 全是业主邮寄城市（含 LAS VEGAS NV、STAFFORD VA 等外州），不能当场地 city/zip，故留空。",
+  "match": {
+   "columns_any": [
+    "TSC_Site_Address"
+   ],
+   "columns_all": [
+    "Loc1",
+    "street_name"
+   ],
+   "columns_none": [
+    "TSC_Owner1_Address"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "Loc1",
+   "street": "street_name",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源为地籍地块层，未提供场地 city/zip；仅有的 TSC_mcity/TSC_mzip 是业主邮寄城市（如 'LAS VEGAS, NV 89120-'、'STAFFORD, VA 22554-'），与 White Pine 县现场地址无关，故 city/zip 豁免"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 6,
+     "Loc1": 1047,
+     "Dir": "",
+     "street_name": "WEST 900 NORTH STREET",
+     "unit": "",
+     "TSC_Site_Address": "1047 WEST 900 NORTH STREET",
+     "TSC_mcity": "ELY, NV",
+     "TSC_mzip": "89301-    "
+    },
+    "expect": {
+     "number": "1047",
+     "street": "WEST 900 NORTH STREET"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 21,
+     "Loc1": 12,
+     "Dir": "",
+     "street_name": "EAST 900TH NORTH STREET",
+     "unit": "",
+     "TSC_Site_Address": "12 EAST 900TH NORTH STREET",
+     "TSC_mcity": "LUND, NV",
+     "TSC_mzip": "89317-    "
+    },
+    "expect": {
+     "number": "12",
+     "street": "EAST 900TH NORTH STREET"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 16,
+     "Loc1": 920,
+     "Dir": "",
+     "street_name": "NORTH STATE ROUTE 318",
+     "unit": "",
+     "TSC_Site_Address": "920 NORTH STATE ROUTE 318",
+     "TSC_mcity": "LUND, NV",
+     "TSC_mzip": "89317-    "
+    },
+    "expect": {
+     "number": "920",
+     "street": "NORTH STATE ROUTE 318"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "name": "us_nv_carson_city__carson_city_nv_addpts",
+ "version": 1,
+ "note": "门牌号与街名分列存放在 StrNumb / StrName（方位在 StrDir），按列取值并拼接方位+街名，本表无 city/zip 列故豁免。",
+ "match": {
+  "columns_any": [
+   "Adr_Concat",
+   "StrNumb"
+  ],
+  "columns_all": [
+   "StrNumb",
+   "StrName"
+  ],
+  "columns_none": [
+   "PARCEL",
+   "APN",
+   "OWNER"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "StrNumb",
+  "street": "StrName",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "{StrDir} {StrName}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "该源字段仅 OBJECTID/StrName/StrDir/StrNumb/Unit/Address/Notes/Updated/GlobalID/created_user/created_date/last_edited_user/last_edited_date/Str_Concat/Adr_Concat/USPS，不存在 city / state / zip 列，地址要素仅由 StrNumb+StrDir+StrName 构成"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 137811,
+    "StrName": "10TH ST",
+    "StrDir": "W",
+    "StrNumb": 308,
+    "Unit": null,
+    "Address": "308 W 10TH ST",
+    "Notes": null,
+    "Updated": null,
+    "GlobalID": "{2B4DE6BE-A1B3-409C-A4C4-9551B36CF710}",
+    "created_user": "SDE_GISA",
+    "created_date": 1727100287000,
+    "last_edited_user": "SDE_GISA",
+    "last_edited_date": 1727100287000,
+    "Str_Concat": "W 10TH ST",
+    "Adr_Concat": "308 W 10TH ST",
+    "USPS": "308 W TENTH ST"
+   },
+   "expect": {
+    "number": "308",
+    "street": "W 10TH ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 137819,
+    "StrName": "2ND ST",
+    "StrDir": "E",
+    "StrNumb": 406,
+    "Unit": null,
+    "Address": "406 E 2ND ST",
+    "Notes": "(CONSL)",
+    "Updated": null,
+    "GlobalID": "{11B43C2A-50EC-48B5-AAE1-EEAA0CDA7A11}",
+    "created_user": "SDE_GISA",
+    "created_date": 1727100287000,
+    "last_edited_user": "SDE_GISA",
+    "last_edited_date": 1727100287000,
+    "Str_Concat": "E 2ND ST",
+    "Adr_Concat": "406 E 2ND ST",
+    "USPS": "406 E SECOND ST"
+   },
+   "expect": {
+    "number": "406",
+    "street": "E 2ND ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 137838,
+    "StrName": "2ND ST",
+    "StrDir": "W",
+    "StrNumb": 123,
+    "Unit": null,
+    "Address": "123 W 2ND ST",
+    "Notes": null,
+    "Updated": null,
+    "GlobalID": "{8E716B12-8C0E-40EF-80E2-C8CA887E40D4}",
+    "created_user": "SDE_GISA",
+    "created_date": 1727100287000,
+    "last_edited_user": "MJAMES",
+    "last_edited_date": 1775847908000,
+    "Str_Concat": "W 2ND ST",
+    "Adr_Concat": "123 W 2ND ST",
+    "USPS": "123 W SECOND ST"
+   },
+   "expect": {
+    "number": "123",
+    "street": "W 2ND ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/nv/carson_city",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 08:29:27",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

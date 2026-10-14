@@ -6,3 +6,5 @@
 2026-10-13 02:40:15,us/ga/dougherty,us_ga_dougherty__dougherty_address_point,"city,zip",源字段中无 city / zip / state 列；CityCode 值形如 CNTY 为区域代码（非市名），不能当 city 使用，故豁免。,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
 2026-10-13 23:53:34,us/nc/alleghany,us_nc_alleghany__alleghany_nc_site_address,zip,该源无任何 ZIP 列（可用列仅 OBJECTID/LOC_911/Add_Number/MSAGComm/Unit/LSt_FullName/LSt_FullAddress），故豁免 zip,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
 2026-10-13 23:53:42,us/nc/caswell,us_nc_caswell__caswell_addpts,"city,zip",样本列仅有 OBJECTID/Add_Number/AddNum_Suf/LSt_PreDir/LSt_Name/LSt_Type/LSt_PosDir/UID/STRUCTYPE/SHORTADDR/STFULLNAME/NewNumber/Account，无任何 city、zip、state 列,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
+2026-10-14 08:29:27,us/nv/carson_city,us_nv_carson_city__carson_city_nv_addpts,"city,zip",该源字段仅 OBJECTID/StrName/StrDir/StrNumb/Unit/Address/Notes/Updated/GlobalID/created_user/created_date/last_edited_user/last_edited_date/Str_Concat/Adr_Concat/USPS，不存在 city / state / zip 列，地址要素仅由 StrNumb,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
+2026-10-14 08:29:33,us/nv/humboldt,us_nv_humboldt__humboldt_nv_site_address_points,"city,zip",该源仅有 Label/ST_NUM/ST_* 地址组件列与地图页码，无任何 city/state/zip 列可引用,待人工复核：确认该源确实没有这个字段列；撤销＝删掉契约表对应行
