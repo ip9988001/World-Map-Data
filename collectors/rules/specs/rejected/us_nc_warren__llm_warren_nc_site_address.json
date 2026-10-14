@@ -1,0 +1,106 @@
+{
+ "_rejected": {
+  "source_id": "us/nc/warren",
+  "model": "deepseek-flash",
+  "errs": [
+   "number_template 引用了不存在的列：{ADD_NUM",
+   "street_template 引用了不存在的列：{PREDIR",
+   "street_template 引用了不存在的列：{ST_NAME",
+   "street_template 引用了不存在的列：{ST_TYPE",
+   "street_template 引用了不存在的列：{POSTDIR",
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 199,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-14 03:07:31"
+ },
+ "spec": {
+  "name": "warren_nc_site_address",
+  "version": 1,
+  "note": "ADD_NUM 是门牌号，ST_NAME/ST_TYPE/PREDIR/POSTDIR 是街名各成分，NEW_ADDR 是其拼接结果；用列模式按字段拼装最稳，city 取 COMMUN，源无 ZIP 列。",
+  "match": {
+   "columns_any": [
+    "ADD_NUM"
+   ],
+   "columns_all": [
+    "ST_NAME"
+   ],
+   "columns_none": [
+    "OLDADDR"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "ADD_NUM",
+   "street": "",
+   "city": "COMMUN",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{{ADD_NUM}}",
+  "street_template": "{{PREDIR}} {{ST_NAME}} {{ST_TYPE}} {{POSTDIR}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.3,
+   "zip_max_miss": 1.0,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "源中不存在 ZIP 列，可用列仅 OBJECTID/ADD_NUM/PREDIR/ST_NAME/ST_TYPE/POSTDIR/NEW_ADDR/OLDADDR/DESCRIPTIO/FULLNAME/NEWUNIT/COMMUN，ZIP 无法从任何列取得"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 108990,
+     "ADD_NUM": 1002.0,
+     "PREDIR": " ",
+     "ST_NAME": "CAPPS FARM",
+     "ST_TYPE": "RD",
+     "POSTDIR": " ",
+     "NEW_ADDR": "1002 CAPPS FARM RD",
+     "OLDADDR": " ",
+     "DESCRIPTIO": " ",
+     "FULLNAME": " ",
+     "NEWUNIT": " ",
+     "COMMUN": " "
+    },
+    "expect": {
+     "number": "1002",
+     "street": "CAPPS FARM RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 109002,
+     "ADD_NUM": 3895.0,
+     "PREDIR": " ",
+     "ST_NAME": "NC HIGHWAY 58",
+     "ST_TYPE": " ",
+     "POSTDIR": " ",
+     "NEW_ADDR": "3895 NC HIGHWAY 58",
+     "OLDADDR": "RT 3 BOX 113",
+     "DESCRIPTIO": "WHITE/TAN TRAILER",
+     "FULLNAME": "NC HIGHWAY 58",
+     "NEWUNIT": " ",
+     "COMMUN": "WARRENTON"
+    },
+    "expect": {
+     "number": "3895",
+     "street": "NC HIGHWAY 58"
+    }
+   }
+  ]
+ }
+}

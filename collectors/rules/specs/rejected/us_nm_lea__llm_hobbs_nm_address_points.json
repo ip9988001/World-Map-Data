@@ -1,0 +1,112 @@
+{
+ "_rejected": {
+  "source_id": "us/nm/lea",
+  "model": "deepseek-flash",
+  "errs": [
+   "street_template 引用了不存在的列：{PRD",
+   "street_template 引用了不存在的列：{STNAME",
+   "street_template 引用了不存在的列：{POSDIR",
+   "street_template 引用了不存在的列：{STTYPE",
+   "example2 街名不符：期望 S AVENUE C 实得 S AVE C"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 03:07:36"
+ },
+ "spec": {
+  "name": "hobbs_nm_address_points",
+  "version": 1,
+  "note": "ArcGIS 地址点图层，门牌号(ADDNO)与街名分量(PRD/STNAME/POSDIR/STTYPE)分列存放，用模板拼接为完整街名；无 city/zip 列，故豁免。",
+  "match": {
+   "columns_any": [
+    "ADDNO",
+    "STNAME"
+   ],
+   "columns_all": [
+    "ADDNO",
+    "STNAME",
+    "STTYPE"
+   ],
+   "columns_none": [
+    "OWNER",
+    "MAIL_ADDR"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "ADDNO",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{{PRD}} {{STNAME}} {{POSDIR}} {{STTYPE}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源中不存在 city/zip 列：仅有 ADDNO/PRD/STNAME/POSDIR/STTYPE/LABEL/OBJECTID，无任何市名或邮编字段，故无法解析城市与邮编。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "ADDNO": 309,
+     "PRD": "W",
+     "STNAME": "WOODFIN",
+     "POSDIR": " ",
+     "STTYPE": "DR",
+     "LABEL": "309 W WOODFIN DR"
+    },
+    "expect": {
+     "number": "309",
+     "street": "W WOODFIN DR"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 4,
+     "ADDNO": 401,
+     "PRD": "S",
+     "STNAME": "AVENUE C",
+     "POSDIR": " ",
+     "STTYPE": " ",
+     "LABEL": "401 S AVENUE C"
+    },
+    "expect": {
+     "number": "401",
+     "street": "S AVENUE C"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 30,
+     "ADDNO": 3616,
+     "PRD": "W",
+     "STNAME": "BENDER",
+     "POSDIR": " ",
+     "STTYPE": "BLVD",
+     "LABEL": "3616 W BENDER BLVD"
+    },
+    "expect": {
+     "number": "3616",
+     "street": "W BENDER BLVD"
+    }
+   }
+  ]
+ }
+}

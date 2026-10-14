@@ -1,0 +1,125 @@
+{
+ "name": "us_ca_city_of_rancho_cucamonga__rancho_cucamonga_address_points",
+ "version": 1,
+ "note": "ArcGIS REST 门牌点图层，门牌号/街名/后缀分列存放，直接按列拼接，city/state/zip 有独立干净列",
+ "match": {
+  "columns_any": [
+   "StreetNumber",
+   "StreetName"
+  ],
+  "columns_all": [
+   "StreetName"
+  ],
+  "columns_none": [],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "StreetNumber",
+  "street": "StreetName",
+  "city": "City",
+  "zip": "Zipcode",
+  "state": "State"
+ },
+ "number_template": "{StreetNumber}",
+ "street_template": "{StreetName} {StreetSuffix}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "StreetNumber": 6113,
+    "StreetNumberFractional": null,
+    "StreetName": "SAPPHIRE",
+    "StreetSuffix": "ST",
+    "Unit": null,
+    "City": "RANCHO CUCAMONGA",
+    "State": "CA",
+    "Zipcode": 91701,
+    "Label": "6113 SAPPHIRE ST",
+    "APN": "106234108",
+    "APNNumber": 106234108,
+    "APN_TEXT": "106234108-0000",
+    "OBJECTID": 1,
+    "GlobalID": "80f49129-1542-4cd6-b88d-55fdfe68c1b8",
+    "Status": "Active",
+    "FireFirstDueId": "RANCHO_CUCAMONGA_CA_9112"
+   },
+   "expect": {
+    "number": "6113",
+    "street": "SAPPHIRE ST"
+   }
+  },
+  {
+   "row": {
+    "StreetNumber": 11313,
+    "StreetNumberFractional": null,
+    "StreetName": "MT WALLACE",
+    "StreetSuffix": "CT",
+    "Unit": null,
+    "City": "RANCHO CUCAMONGA",
+    "State": "CA",
+    "Zipcode": 91737,
+    "Label": "11313 MT WALLACE CT",
+    "APN": "022523108",
+    "APNNumber": 22523108,
+    "APN_TEXT": "022523108-0000",
+    "OBJECTID": 19,
+    "GlobalID": "6be5c460-226a-4238-92e6-a9dc1f92bef1",
+    "Status": "Active",
+    "FireFirstDueId": "RANCHO_CUCAMONGA_CA_9130"
+   },
+   "expect": {
+    "number": "11313",
+    "street": "MT WALLACE CT"
+   }
+  },
+  {
+   "row": {
+    "StreetNumber": 6219,
+    "StreetNumberFractional": null,
+    "StreetName": "ORANGEWOOD",
+    "StreetSuffix": "DR",
+    "Unit": null,
+    "City": "RANCHO CUCAMONGA",
+    "State": "CA",
+    "Zipcode": 91701,
+    "Label": "6219 ORANGEWOOD DR",
+    "APN": "106243139",
+    "APNNumber": 106243139,
+    "APN_TEXT": "106243139-0000",
+    "OBJECTID": 30,
+    "GlobalID": "684e8391-4ff7-4aac-838a-6a0d6dd8f9bb",
+    "Status": "Active",
+    "FireFirstDueId": "RANCHO_CUCAMONGA_CA_9141"
+   },
+   "expect": {
+    "number": "6219",
+    "street": "ORANGEWOOD DR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ca/city_of_rancho_cucamonga",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 03:06:29",
+  "validated": {
+   "rows": 200,
+   "contentful": 198,
+   "kept": 200,
+   "kept_contentful": 198,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  }
+ }
+}

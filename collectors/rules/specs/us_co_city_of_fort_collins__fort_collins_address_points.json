@@ -1,0 +1,163 @@
+{
+ "name": "us_co_city_of_fort_collins__fort_collins_address_points",
+ "version": 1,
+ "note": "ArcGIS FeatureServer 门牌点图层，门牌号与街名已拆成独立列（NUMBER_ / STRNAME），STRNAME 自带方位前缀（如 S COLLEGE AVE），直接取列即可，无需拼接。",
+ "match": {
+  "columns_any": [
+   "STRNAME"
+  ],
+  "columns_all": [
+   "NUMBER_",
+   "STRNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "NUMBER_",
+  "street": "STRNAME",
+  "city": "CITY",
+  "zip": "ZIP",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "MSTRID": 2275,
+    "CATEGORY": "PRIMARY",
+    "ADDRESSID": 79980000,
+    "BASEID": 29783,
+    "FLOOR": 1,
+    "NUMBER_": 3237,
+    "ZIP": 80525,
+    "ACTIVE": "YES",
+    "MAILING": "YES",
+    "FDPRE": null,
+    "PRE_TYPE": null,
+    "FENAME": "SILVERWOOD",
+    "FNAME": "SILVERWOOD",
+    "FTYPE": "DR",
+    "FDSUF": null,
+    "STRNAME": "SILVERWOOD DR",
+    "BUILDING": null,
+    "UNIT": null,
+    "BLDGUNIT": null,
+    "ADDRESS": "3237 SILVERWOOD DR",
+    "UNITTYPE": null,
+    "FULL_ADDRESS": "3237 SILVERWOOD DR",
+    "CITY": "FORT COLLINS",
+    "STATE": "CO"
+   },
+   "expect": {
+    "number": "3237",
+    "street": "SILVERWOOD DR",
+    "city": "FORT COLLINS",
+    "zip": "80525",
+    "state": "CO"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 22,
+    "MSTRID": 535,
+    "CATEGORY": "PRIMARY",
+    "ADDRESSID": 145990000,
+    "BASEID": 48952,
+    "FLOOR": 1,
+    "NUMBER_": 7408,
+    "ZIP": 80525,
+    "ACTIVE": "YES",
+    "MAILING": "YES",
+    "FDPRE": "S",
+    "PRE_TYPE": null,
+    "FENAME": "COLLEGE",
+    "FNAME": "COLLEGE",
+    "FTYPE": "AVE",
+    "FDSUF": null,
+    "STRNAME": "S COLLEGE AVE",
+    "BUILDING": null,
+    "UNIT": null,
+    "BLDGUNIT": null,
+    "ADDRESS": "7408 S COLLEGE AVE",
+    "UNITTYPE": null,
+    "FULL_ADDRESS": "7408 S COLLEGE AVE",
+    "CITY": "FORT COLLINS",
+    "STATE": "CO"
+   },
+   "expect": {
+    "number": "7408",
+    "street": "S COLLEGE AVE",
+    "city": "FORT COLLINS",
+    "zip": "80525",
+    "state": "CO"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 21,
+    "MSTRID": 2020,
+    "CATEGORY": "PRIMARY",
+    "ADDRESSID": 537370000,
+    "BASEID": 4571,
+    "FLOOR": 1,
+    "NUMBER_": 1244,
+    "ZIP": 80526,
+    "ACTIVE": "YES",
+    "MAILING": "YES",
+    "FDPRE": null,
+    "PRE_TYPE": null,
+    "FENAME": "REEVES",
+    "FNAME": "REEVES",
+    "FTYPE": "DR",
+    "FDSUF": null,
+    "STRNAME": "REEVES DR",
+    "BUILDING": null,
+    "UNIT": null,
+    "BLDGUNIT": null,
+    "ADDRESS": "1244 REEVES DR",
+    "UNITTYPE": null,
+    "FULL_ADDRESS": "1244 REEVES DR",
+    "CITY": "FORT COLLINS",
+    "STATE": "CO"
+   },
+   "expect": {
+    "number": "1244",
+    "street": "REEVES DR",
+    "city": "FORT COLLINS",
+    "zip": "80526",
+    "state": "CO"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/co/city_of_fort_collins",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-14 03:06:36",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

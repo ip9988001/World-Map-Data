@@ -1,0 +1,128 @@
+{
+ "_rejected": {
+  "source_id": "us/nc/rockingham",
+  "model": "deepseek-flash",
+  "errs": [
+   "street_template 引用了不存在的列：{ROAD_PRE",
+   "street_template 引用了不存在的列：{STREET_NAM",
+   "street_template 引用了不存在的列：{STREET_TYP",
+   "street_template 引用了不存在的列：{ROAD_SUF"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 03:06:48"
+ },
+ "spec": {
+  "name": "rockingham_street_address",
+  "version": 1,
+  "note": "号码与街名分列存放在 ADDRESS_NU / ROAD_PRE+STREET_NAM+STREET_TYP+ROAD_SUF，属 A 模式；CITY 列是 4 字符截断代码(REID/STOK/STON/MAY)不是真实市名，故 city 留空并豁免，避免污染去重 key；州固定为 NC。",
+  "match": {
+   "columns_any": [
+    "ADDRESS_NU"
+   ],
+   "columns_all": [
+    "STREET_NAM"
+   ],
+   "columns_none": [
+    "OWNER_ADDR",
+    "MAILING_ADDRESS",
+    "PARCEL_ID",
+    "LABEL"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "ADDRESS_NU",
+   "street": "",
+   "city": "",
+   "zip": "ZIP",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{{ROAD_PRE}} {{STREET_NAM}} {{STREET_TYP}} {{ROAD_SUF}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": false,
+   "exempt_reason": "CITY 列存在但仅存 4 字符截断代码（样本中为 REID/STOK/STON/EDEN/MAY），非真实市名，采用会污染去重 key，故不取 city；ZIP 列(27320/27288/27048/27357/27027)为完整 5 位邮编，正常使用"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 3,
+     "ADDRESS_NU": 510,
+     "ROAD_PRE": "S",
+     "STREET_NAM": "TIPTON",
+     "STREET_TYP": "PL",
+     "ROAD_SUF": null,
+     "ADDRESS": "510 S TIPTON PL",
+     "APARTMENT": null,
+     "ZIP": 27320,
+     "CITY": "REID",
+     "COMPLETE_NAME": "S TIPTON PL",
+     "BUILDING_NUMBER": null,
+     "STRUCTURE_TYPE": "RESIDENTIAL"
+    },
+    "expect": {
+     "number": "510",
+     "street": "S TIPTON PL"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 2,
+     "ADDRESS_NU": 840,
+     "ROAD_PRE": null,
+     "STREET_NAM": "LAWSONVILLE",
+     "STREET_TYP": "AVE",
+     "ROAD_SUF": null,
+     "ADDRESS": "840 LAWSONVILLE AVE",
+     "APARTMENT": null,
+     "ZIP": 27320,
+     "CITY": "REID",
+     "COMPLETE_NAME": "LAWSONVILLE AVE",
+     "BUILDING_NUMBER": null,
+     "STRUCTURE_TYPE": "RESIDENTIAL"
+    },
+    "expect": {
+     "number": "840",
+     "street": "LAWSONVILLE AVE"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 5,
+     "ADDRESS_NU": 570,
+     "ROAD_PRE": null,
+     "STREET_NAM": "GIDEON GROVE CHURCH",
+     "STREET_TYP": "RD",
+     "ROAD_SUF": null,
+     "ADDRESS": "570 GIDEON GROVE CHURCH RD",
+     "APARTMENT": null,
+     "ZIP": 27357,
+     "CITY": "STOK",
+     "COMPLETE_NAME": "GIDEON GROVE CHURCH RD",
+     "BUILDING_NUMBER": null,
+     "STRUCTURE_TYPE": "MOBILE HOME"
+    },
+    "expect": {
+     "number": "570",
+     "street": "GIDEON GROVE CHURCH RD"
+    }
+   }
+  ]
+ }
+}

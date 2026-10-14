@@ -1,0 +1,122 @@
+{
+ "_rejected": {
+  "source_id": "us/nc/wake",
+  "model": "deepseek-flash",
+  "errs": [
+   "example2 街名不符：期望 BONSAL CROSSING RD 实得 BONSAL XING RD"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-14 03:06:57"
+ },
+ "spec": {
+  "name": "wake_county_addpts",
+  "version": 1,
+  "note": "ArcGIS REST 门牌点图层：ST_NUM 是纯数字门牌号，街名由 DIR_PREFIX/ST_NAME/ST_TYPE/DIR_SUFFIX 四列声明式拼出，POSTAL_CITY 为有效邮政城市；无 ZIP 列故豁免。",
+  "match": {
+   "columns_any": [
+    "ST_NUM",
+    "FULLADDR"
+   ],
+   "columns_all": [
+    "ST_NUM",
+    "ST_NAME"
+   ],
+   "columns_none": [
+    "OWNER_ADDR",
+    "MAIL_ADDR"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "ST_NUM",
+   "street": "",
+   "city": "POSTAL_CITY",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "{DIR_PREFIX} {ST_NAME} {ST_TYPE} {DIR_SUFFIX}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.0,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "样本及图层字段中只有 POSTAL_CITY、FULLADDR，无任何 ZIP/ZIPCODE 列，故豁免 zip 校验"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 877566278,
+     "PIN_NUM": "0609648978",
+     "ST_NUM": 5137,
+     "DIR_PREFIX": null,
+     "ST_NAME": "DAISEY",
+     "ST_TYPE": "ST",
+     "DIR_SUFFIX": null,
+     "POSTAL_CITY": "NEW HILL",
+     "FULLADDR": "5137 DAISEY ST",
+     "FULLNAME": "DAISEY ST",
+     "X": 2006873,
+     "Y": 694981
+    },
+    "expect": {
+     "number": "5137",
+     "street": "DAISEY ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 877566290,
+     "PIN_NUM": "0609756983",
+     "ST_NUM": 9943,
+     "DIR_PREFIX": null,
+     "ST_NAME": "BONSAL CROSSING",
+     "ST_TYPE": "RD",
+     "DIR_SUFFIX": null,
+     "POSTAL_CITY": "NEW HILL",
+     "FULLADDR": "9943 BONSAL CROSSING RD",
+     "FULLNAME": "BONSAL CROSSING RD",
+     "X": 2007660,
+     "Y": 695898
+    },
+    "expect": {
+     "number": "9943",
+     "street": "BONSAL CROSSING RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 877566295,
+     "PIN_NUM": "0609764444",
+     "ST_NUM": 230,
+     "DIR_PREFIX": null,
+     "ST_NAME": "BONSAL",
+     "ST_TYPE": "CRSG",
+     "DIR_SUFFIX": null,
+     "POSTAL_CITY": "NEW HILL",
+     "FULLADDR": "230 BONSAL CRSG",
+     "FULLNAME": "BONSAL CRSG",
+     "X": 2007436,
+     "Y": 696564
+    },
+    "expect": {
+     "number": "230",
+     "street": "BONSAL CRSG"
+    }
+   }
+  ]
+ }
+}
