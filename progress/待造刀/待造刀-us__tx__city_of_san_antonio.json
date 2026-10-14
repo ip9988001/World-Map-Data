@@ -2,7 +2,7 @@
  "source_id": "us/tx/city_of_san_antonio",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 625,690 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物；field_guess@v2:合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）；concat_addr@v2:合规 68726/625690 = 11%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064））→ 造新规则",
- "decided_at": "2026-10-13 23:18:58",
+ "decided_at": "2026-10-14 02:24:11",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -42,7 +42,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 625,690 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物",
-   "seconds": 45.4
+   "seconds": 45.2
   },
   {
    "rule": "field_guess@v2",
@@ -83,7 +83,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 70.3
+   "seconds": 69.9
   },
   {
    "rule": "concat_addr@v2",
@@ -124,7 +124,7 @@
     "contract": false
    },
    "why": "合规 68726/625690 = 11%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 134.8
+   "seconds": 133.1
   },
   {
    "rule": "concat_addr@v1",
@@ -165,7 +165,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 624,069 条 > 真门牌号行 320,064 条×150% → 拒绝这套产物",
-   "seconds": 183.3
+   "seconds": 181.9
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
@@ -206,7 +206,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 209.0
+   "seconds": 207.2
   },
   {
    "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
@@ -247,7 +247,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 234.4
+   "seconds": 232.4
   },
   {
    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
@@ -288,7 +288,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 266.1
+   "seconds": 263.5
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -329,7 +329,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 291.7
+   "seconds": 288.6
   },
   {
    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
@@ -370,7 +370,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 320.6
+   "seconds": 317.4
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
@@ -411,7 +411,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 349.2
+   "seconds": 345.6
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -452,7 +452,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 377.0
+   "seconds": 373.4
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -493,7 +493,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 402.2
+   "seconds": 398.4
   },
   {
    "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
@@ -534,7 +534,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 430.5
+   "seconds": 426.2
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -575,7 +575,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 459.4
+   "seconds": 454.5
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -616,7 +616,89 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 484.6
+   "seconds": 479.5
+  },
+  {
+   "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+   "rows": 625715,
+   "kept": 0,
+   "contentful": 625690,
+   "kept_contentful": 0,
+   "true_addr": 320064,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 625690,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
+   "seconds": 504.5
+  },
+  {
+   "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+   "rows": 625715,
+   "kept": 0,
+   "contentful": 625690,
+   "kept_contentful": 0,
+   "true_addr": 320064,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 625690,
+    "no_address_trace": 25
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
+   "seconds": 529.5
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -657,7 +739,7 @@
     "contract": false
    },
    "why": "合规 0/625690 = 0%（阈 30%；总行 625,715，带地址 625,690，真门牌号 320,064）",
-   "seconds": 513.7
+   "seconds": 558.2
   }
  ],
  "evidence": {},

@@ -2,7 +2,7 @@
  "source_id": "us/or/city_of_la_grande",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 6,293 条 > 真门牌号行 132 条×150% → 拒绝这套产物；field_guess@v2:合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）；concat_addr@v2:合规 132/6297 = 2%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132））→ 造新规则",
- "decided_at": "2026-10-13 22:56:54",
+ "decided_at": "2026-10-14 01:58:40",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -579,7 +579,7 @@
     "contract": false
    },
    "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
-   "seconds": 3.4
+   "seconds": 3.3
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -623,6 +623,88 @@
    "seconds": 3.5
   },
   {
+   "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 3.7
+  },
+  {
+   "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+   "rows": 6314,
+   "kept": 0,
+   "contentful": 6297,
+   "kept_contentful": 0,
+   "true_addr": 132,
+   "ratio": 0.0,
+   "coverage": 0.997,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 6297,
+    "no_address_trace": 17
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
+   "seconds": 3.9
+  },
+  {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
    "rows": 6314,
    "kept": 0,
@@ -661,7 +743,7 @@
     "contract": false
    },
    "why": "合规 0/6297 = 0%（阈 30%；总行 6,314，带地址 6,297，真门牌号 132）",
-   "seconds": 3.8
+   "seconds": 4.1
   }
  ],
  "evidence": {},

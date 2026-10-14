@@ -2,7 +2,7 @@
  "source_id": "us/tx/city_of_round_rock",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 345,861 条 > 真门牌号行 176,973 条×150% → 拒绝这套产物；mapping@v1:合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）；field_guess@v2:疑似凭空造数据：合规 316,159 条 > 真门牌号行 176,973 条×150% → 拒绝这套产物）→ 造新规则",
- "decided_at": "2026-10-13 22:56:03",
+ "decided_at": "2026-10-14 02:08:32",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -45,7 +45,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 345,861 条 > 真门牌号行 176,973 条×150% → 拒绝这套产物",
-   "seconds": 42.0
+   "seconds": 40.6
   },
   {
    "rule": "mapping@v1",
@@ -87,7 +87,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 64.7
+   "seconds": 62.9
   },
   {
    "rule": "field_guess@v2",
@@ -129,7 +129,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 316,159 条 > 真门牌号行 176,973 条×150% → 拒绝这套产物",
-   "seconds": 100.0
+   "seconds": 97.0
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
@@ -170,7 +170,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 122.2
+   "seconds": 118.6
   },
   {
    "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
@@ -211,7 +211,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 144.4
+   "seconds": 140.2
   },
   {
    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
@@ -252,7 +252,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 170.9
+   "seconds": 165.8
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -293,7 +293,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 193.1
+   "seconds": 187.4
   },
   {
    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
@@ -334,7 +334,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 217.9
+   "seconds": 211.5
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
@@ -375,7 +375,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 242.6
+   "seconds": 235.4
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -416,7 +416,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 266.5
+   "seconds": 258.9
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -457,7 +457,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 288.7
+   "seconds": 280.6
   },
   {
    "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
@@ -498,7 +498,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 312.9
+   "seconds": 304.3
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -539,7 +539,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 337.4
+   "seconds": 328.2
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -580,7 +580,89 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 359.5
+   "seconds": 349.7
+  },
+  {
+   "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+   "rows": 422420,
+   "kept": 0,
+   "contentful": 400475,
+   "kept_contentful": 0,
+   "true_addr": 176973,
+   "ratio": 0.0,
+   "coverage": 0.948,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 400475,
+    "no_address_trace": 21945
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
+   "seconds": 371.2
+  },
+  {
+   "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+   "rows": 422420,
+   "kept": 0,
+   "contentful": 400475,
+   "kept_contentful": 0,
+   "true_addr": 176973,
+   "ratio": 0.0,
+   "coverage": 0.948,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 400475,
+    "no_address_trace": 21945
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
+   "seconds": 392.7
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -621,7 +703,7 @@
     "contract": false
    },
    "why": "合规 0/400475 = 0%（阈 30%；总行 422,420，带地址 400,475，真门牌号 176,973）",
-   "seconds": 384.0
+   "seconds": 416.9
   }
  ],
  "evidence": {},

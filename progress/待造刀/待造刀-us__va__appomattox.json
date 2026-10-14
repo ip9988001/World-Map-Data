@@ -2,7 +2,7 @@
  "source_id": "us/va/appomattox",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 9,226 条 > 真门牌号行 820 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 2,475 条 > 真门牌号行 820 条×150% → 拒绝这套产物；field_guess@v2:合规 311/9252 = 3%（阈 30%；总行 9,475，带地址 9,252，真门牌号 820））→ 造新规则",
- "decided_at": "2026-10-13 22:47:35",
+ "decided_at": "2026-10-14 01:57:31",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -582,6 +582,88 @@
    "seconds": 2.9
   },
   {
+   "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+   "rows": 9475,
+   "kept": 0,
+   "contentful": 9252,
+   "kept_contentful": 0,
+   "true_addr": 820,
+   "ratio": 0.0,
+   "coverage": 0.976,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9252,
+    "no_address_trace": 223
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9252 = 0%（阈 30%；总行 9,475，带地址 9,252，真门牌号 820）",
+   "seconds": 3.0
+  },
+  {
+   "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+   "rows": 9475,
+   "kept": 0,
+   "contentful": 9252,
+   "kept_contentful": 0,
+   "true_addr": 820,
+   "ratio": 0.0,
+   "coverage": 0.976,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 9252,
+    "no_address_trace": 223
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/9252 = 0%（阈 30%；总行 9,475，带地址 9,252，真门牌号 820）",
+   "seconds": 3.2
+  },
+  {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
    "rows": 9475,
    "kept": 0,
@@ -620,7 +702,7 @@
     "contract": false
    },
    "why": "合规 0/9252 = 0%（阈 30%；总行 9,475，带地址 9,252，真门牌号 820）",
-   "seconds": 3.1
+   "seconds": 3.4
   }
  ],
  "evidence": {},
