@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 07:26:48",
+ "county": "Kingman",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/ks/kingman_county",
+ "stage": "p0",
+ "state": "KS",
+ "url": "https://72.205.198.131/ArcGIS/rest/services/Kingman/Kingman/MapServer/38",
+ "verdict": "TRANSIENT"
+}

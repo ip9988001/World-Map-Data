@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 07:25:45",
+ "county": "Jackson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service JacksonKs/JacksonKsDynamic/MapServer not found ', 'details': []}",
+ "source_id": "us/ks/jackson_county",
+ "stage": "p0",
+ "state": "KS",
+ "url": "https://gis.publicaccessnow.com/arcgis/rest/services/JacksonKs/JacksonKsDynamic/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

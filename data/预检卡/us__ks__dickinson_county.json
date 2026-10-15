@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 07:22:37",
+ "county": "Dickinson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/ks/dickinson_county",
+ "stage": "p0",
+ "state": "KS",
+ "url": "https://67.214.197.22/arcgis/rest/services/BasicMap2013/MapServer/7",
+ "verdict": "TRANSIENT"
+}
