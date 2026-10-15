@@ -1,0 +1,87 @@
+{
+ "name": "us_tx_vanzandt__vanzandt_county_addpts",
+ "version": 1,
+ "note": "VanZandt County 门牌点图层：Add_Number 为门牌号，LSt_PreDir/LSt_Name/LSt_Type/LSt_PosDir 拼出街名，源内无 city/state/zip 列故豁免。",
+ "match": {
+  "columns_any": [
+   "AddressFullName"
+  ],
+  "columns_all": [
+   "Add_Number",
+   "LSt_Name"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Add_Number",
+  "street": "",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "{LSt_PreDir} {LSt_Name} {LSt_Type} {LSt_PosDir}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "样本 30 行中不存在任何 city/state/zip 列；AddressFullName 仅为「门牌号+街名」拼接（如 327 VZ COUNTY ROAD 3225），无市级或邮政编码信息，故 city/zip 豁免。"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 2,
+    "Add_Number": 301,
+    "LSt_PreDir": null,
+    "LSt_Name": "WHIPPORWILL",
+    "LSt_Type": "DR",
+    "LSt_PosDir": null,
+    "AddressFullName": "301 WHIPPORWILL DR",
+    "GlobalID": "{141B7E4F-3BD4-4042-8E91-47B1AF059ECC}"
+   },
+   "expect": {
+    "number": "301",
+    "street": "WHIPPORWILL DR"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 558,
+    "Add_Number": 166,
+    "LSt_PreDir": "N",
+    "LSt_Name": "BUFFALO",
+    "LSt_Type": "ST",
+    "LSt_PosDir": null,
+    "AddressFullName": "166 N BUFFALO ST",
+    "GlobalID": "{A7BCFFF8-E971-454B-AC01-28EA9E91724D}"
+   },
+   "expect": {
+    "number": "166",
+    "street": "N BUFFALO ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/vanzandt",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 08:26:07",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

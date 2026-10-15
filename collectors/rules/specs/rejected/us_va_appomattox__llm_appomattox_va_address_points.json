@@ -1,0 +1,120 @@
+{
+ "_rejected": {
+  "source_id": "us/va/appomattox",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 6% 低于阈 30%",
+   "不如现有规则（6% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 11,
+   "kept_contentful": 11,
+   "ratio": 0.055,
+   "fabricated": 0,
+   "best_ratio": 0.997
+  },
+  "at": "2026-10-15 08:26:47"
+ },
+ "spec": {
+  "name": "appomattox_va_address_points",
+  "version": 1,
+  "note": "ADDRESS 列已是完整的『门牌号 + 街名』串（ADDR/ROADNAME/TYPE 三列常为空或只有片段），故用 single 模式整列解析；源内无 city/zip/state 列，city/zip 走豁免。",
+  "match": {
+   "columns_any": [
+    "ADDRESS"
+   ],
+   "columns_all": [
+    "ADDR"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "ADDRESS",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源字段仅 OBJECTID/ADDR/ROADNAME/TYPE/ADDRESS/ACTIVE/GlobalID/创建编辑信息，无任何 city 或 zip 列；ADDR 是纯门牌数字列，不能当城市或邮编。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 2,
+     "ADDR": 121,
+     "ROADNAME": "SHERMAN",
+     "TYPE": "LN",
+     "ADDRESS": "121 SHERMAN LN",
+     "ACTIVE": 1,
+     "GlobalID": "ba53dcb3-2d24-443d-964c-37e47dcf6539",
+     "CreationDate": null,
+     "Creator": null,
+     "EditDate": null,
+     "Editor": null
+    },
+    "expect": {
+     "number": "121",
+     "street": "SHERMAN LN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 14,
+     "ADDR": 12791,
+     "ROADNAME": null,
+     "TYPE": null,
+     "ADDRESS": "12791 OAKVILLE RD",
+     "ACTIVE": 1,
+     "GlobalID": "b6df2dfd-5485-41ff-8dea-3ce096fe6b71",
+     "CreationDate": null,
+     "Creator": null,
+     "EditDate": null,
+     "Editor": null
+    },
+    "expect": {
+     "number": "12791",
+     "street": "OAKVILLE RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 27,
+     "ADDR": 439,
+     "ROADNAME": null,
+     "TYPE": null,
+     "ADDRESS": "439 WALKER'S FORD RD",
+     "ACTIVE": 1,
+     "GlobalID": "068abded-dbc5-4b86-ba74-c9d1df2eb17a",
+     "CreationDate": null,
+     "Creator": null,
+     "EditDate": null,
+     "Editor": null
+    },
+    "expect": {
+     "number": "439",
+     "street": "WALKER'S FORD RD"
+    }
+   }
+  ]
+ }
+}

@@ -29,3 +29,7 @@ us/tx/city_of_cedar_park,0.2,0.2,0.2,,,
 us/tx/city_of_garland,0.2,0.2,0.2,,,
 us/tx/city_of_horseshoe_bay,0.2,0.2,0.2,1,,"No true postal city column exists: MUNICIPAL/MSAG_COM/POSTAL_COM hold 911 district codes such as 'HSB LLANO CO' and 'HSB BURNET CO', not a city name, so emitting them would pollute the dedup key; ZIP "
 us/tx/city_of_round_rock,0.2,0.2,0.2,,,
+us/tx/city_of_sherman,0.2,0.2,0.2,,,
+us/tx/vanzandt,0.2,0.2,0.2,1,1,样本 30 行中不存在任何 city/state/zip 列；AddressFullName 仅为「门牌号+街名」拼接（如 327 VZ COUNTY ROAD 3225），无市级或邮政编码信息，故 city/zip 豁免。
+us/ut/cache,0.2,0.2,0.2,,,
+us/ut/statewide,0.2,0.2,0.2,,,

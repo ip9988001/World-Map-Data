@@ -1,0 +1,107 @@
+{
+ "name": "us_ut_cache__cache_county_master_address_list",
+ "version": 1,
+ "note": "号码与街名分量列齐全（addnum + prefixdir/streetname/streettype/suffixdir），典型的 Utah 网格地址，用模板拼街名即可，城市/邮编/州都有真实列",
+ "match": {
+  "columns_any": [
+   "fulladd",
+   "addsystem"
+  ],
+  "columns_all": [
+   ""
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "addnum",
+  "street": "streetname",
+  "city": "city",
+  "zip": "zipcode",
+  "state": "state"
+ },
+ "number_template": "",
+ "street_template": "{prefixdir} {streetname} {streettype} {suffixdir}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "objectid": 1,
+    "addsystem": "LOGAN",
+    "fulladd": "1245 N 290 W",
+    "addnum": "1245",
+    "addnumsuffix": null,
+    "prefixdir": "N",
+    "streetname": "290",
+    "aliasstreetname": null,
+    "streettype": null,
+    "suffixdir": "W",
+    "landmarkname": null,
+    "building": null,
+    "unittype": null,
+    "unitid": null,
+    "city": "LOGAN",
+    "zipcode": "84341",
+    "countyid": "49005 - Cache",
+    "state": "UT"
+   },
+   "expect": {
+    "number": "1245",
+    "street": "N 290 W"
+   }
+  },
+  {
+   "row": {
+    "objectid": 23,
+    "addsystem": "LOGAN",
+    "fulladd": "1564 N 160 W APT 101",
+    "addnum": "1564",
+    "addnumsuffix": null,
+    "prefixdir": "N",
+    "streetname": "160",
+    "aliasstreetname": null,
+    "streettype": null,
+    "suffixdir": "W",
+    "landmarkname": null,
+    "building": null,
+    "unittype": "APT",
+    "unitid": "101",
+    "city": "LOGAN",
+    "zipcode": "84341",
+    "countyid": "49005 - Cache",
+    "state": "UT"
+   },
+   "expect": {
+    "number": "1564",
+    "street": "N 160 W"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/ut/cache",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 08:26:15",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  }
+ }
+}

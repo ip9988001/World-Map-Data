@@ -1,0 +1,135 @@
+{
+ "_rejected": {
+  "source_id": "us/tx/city_of_san_antonio",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）",
+   "合规率 16% 低于阈 30%",
+   "不如现有规则（16% < 100%）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 33,
+   "kept_contentful": 33,
+   "ratio": 0.165,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-15 08:25:54"
+ },
+ "spec": {
+  "name": "san_antonio_cosa_address",
+  "version": 1,
+  "note": "ArcGIS REST 地址点图层，Address 列已是格式化好的『门牌号 + 街名(含方位/后缀)』，直接单列解析最稳，无需拼接易带空格的 Name/AbbrevType/PostDirection 列。",
+  "match": {
+   "columns_any": [
+    "AddrKey"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "Address",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": true,
+   "exempt_reason": "源中无城市名列（TownCode 只是两位数字代码，非市名）也无 ZIP/州列；唯一地址承载列是 Address，故 city/zip 豁免。"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 9,
+     "AddrKey": 1131491,
+     "HouseNumber": 12611,
+     "StreetNameID": 80761,
+     "PreDirection": null,
+     "Name": "IH 10",
+     "AbbrevType": null,
+     "PostDirection": "W ",
+     "TownCode": "00",
+     "CouncilDist": "8",
+     "XCoord": 2099357.5,
+     "YCoord": 13751309.4,
+     "EntryDate": 1554395706000,
+     "ModifiedDate": 1554395729000,
+     "Address": "12611 IH 10 W",
+     "ExpiredDate": null
+    },
+    "expect": {
+     "number": "12611",
+     "street": "IH 10 W"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 7,
+     "AddrKey": 1131441,
+     "HouseNumber": 430,
+     "StreetNameID": 66299,
+     "PreDirection": null,
+     "Name": "CENTER",
+     "AbbrevType": "ST    ",
+     "PostDirection": null,
+     "TownCode": "00",
+     "CouncilDist": "2",
+     "XCoord": 2135568.2,
+     "YCoord": 13701469,
+     "EntryDate": 1553605523000,
+     "ModifiedDate": 1553605740000,
+     "Address": "430 CENTER ST",
+     "ExpiredDate": null
+    },
+    "expect": {
+     "number": "430",
+     "street": "CENTER ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 16,
+     "AddrKey": 1172167,
+     "HouseNumber": 21350,
+     "StreetNameID": 97349,
+     "PreDirection": null,
+     "Name": "TREETOP TERRACE",
+     "AbbrevType": null,
+     "PostDirection": null,
+     "TownCode": "00",
+     "CouncilDist": "8",
+     "XCoord": 2096293.9,
+     "YCoord": 13780616.9,
+     "EntryDate": 1701265287000,
+     "ModifiedDate": 1701265467000,
+     "Address": "21350 TREETOP TERRACE",
+     "ExpiredDate": null
+    },
+    "expect": {
+     "number": "21350",
+     "street": "TREETOP TERRACE"
+    }
+   }
+  ]
+ }
+}

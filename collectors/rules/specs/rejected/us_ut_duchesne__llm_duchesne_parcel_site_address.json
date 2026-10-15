@@ -1,0 +1,114 @@
+{
+ "_rejected": {
+  "source_id": "us/ut/duchesne",
+  "model": "deepseek-flash",
+  "errs": [
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "洗出太少：0 条（阈 5）",
+   "合规率 0% 低于阈 30%",
+   "不如现有规则（0% < 100%）",
+   "契约 city_max_miss=0.9 比全局硬门 0.2 松 —— 不许放宽全局门（只能更严）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 107,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-15 08:26:30"
+ },
+ "spec": {
+  "name": "duchesne_parcel_site_address",
+  "version": 1,
+  "note": "场地地址整串在 PARCEL_ADD（形如 '443 W MAIN'/'7980 N HWY 121'），无独立号码列，故用 single 模式拆分；城市/邮编取 PARCEL_CITY/PARCEL_ZIP，UT 由 FIPS 49013 保证但不硬写常量。",
+  "match": {
+   "columns_any": [
+    "PARCEL_ADD"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "single",
+  "columns": {
+   "number": "",
+   "street": "",
+   "city": "PARCEL_CITY",
+   "zip": "PARCEL_ZIP",
+   "state": ""
+  },
+  "number_template": "",
+  "street_template": "",
+  "full": "",
+  "single": "PARCEL_ADD",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.9,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 5,
+     "FIPS": 49013,
+     "PARCEL_ID": "00-0000-5581",
+     "PARCEL_ADD": "443 W MAIN",
+     "PARCEL_CITY": "Duchesne",
+     "PARCEL_ZIP": "84021",
+     "OWN_TYPE": "Private",
+     "RECORDER": "1-435-738-1160",
+     "ParcelsCur": 1789948800000,
+     "ParcelsRec": 1789948800000,
+     "ParcelsPub": 1789948800000,
+     "ParcelYear": "2026",
+     "ParcelNotes": "Supplied by county as latest",
+     "CoParcel_URL": "https://arcg.is/vXnPX",
+     "ACCOUNT_NUM": "D-0358",
+     "Shape__Area": 10369.640625,
+     "Shape__Length": 582.5279388133446
+    },
+    "expect": {
+     "number": "443",
+     "street": "W MAIN"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 28,
+     "FIPS": 49013,
+     "PARCEL_ID": "00-0003-8848",
+     "PARCEL_ADD": "7980 N HWY 121",
+     "PARCEL_CITY": "",
+     "PARCEL_ZIP": "84053",
+     "OWN_TYPE": "Private",
+     "RECORDER": "1-435-738-1160",
+     "ParcelsCur": 1789948800000,
+     "ParcelsRec": 1789948800000,
+     "ParcelsPub": 1789948800000,
+     "ParcelYear": "2026",
+     "ParcelNotes": "Supplied by county as latest",
+     "CoParcel_URL": "https://arcg.is/vXnPX",
+     "ACCOUNT_NUM": "0334-0002",
+     "Shape__Area": 507005.94921875,
+     "Shape__Length": 3045.0407039340025
+    },
+    "expect": {
+     "number": "7980",
+     "street": "N HWY 121"
+    }
+   }
+  ]
+ }
+}

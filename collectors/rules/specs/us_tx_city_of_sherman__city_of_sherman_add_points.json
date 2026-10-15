@@ -1,0 +1,124 @@
+{
+ "name": "us_tx_city_of_sherman__city_of_sherman_add_points",
+ "version": 1,
+ "note": "本地证据显示只有 ADD_FULLNA / ADD_NUMBER 等场地地址列是真门牌点（RR_ADD 多为 PO BOX / RT BOX 业主邮寄地址，不可用），故用分列的 ADD_NUMBER + ADD_PRE/ADD_NAME/ADD_TYPE/ADD_SUF 拼街名。",
+ "match": {
+  "columns_any": [
+   "ADD_FULLNA"
+  ],
+  "columns_all": [
+   "ADD_NUMBER"
+  ],
+  "columns_none": [
+   "RR_ADD"
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADD_NUMBER",
+  "street": "ADD_FULLNA",
+  "city": "POSTAL_COM",
+  "zip": "ZIP5",
+  "state": ""
+ },
+ "number_template": "{ADD_NUMBER}",
+ "street_template": "{ADD_PRE} {ADD_NAME} {ADD_TYPE} {ADD_SUF}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 38,
+    "ADD_NUMBER": 2103,
+    "ADD_PRE": "N",
+    "ADD_PRE_TY": " ",
+    "ADD_NAME": "WOODS",
+    "ADD_TYPE": "ST",
+    "ADD_SUF": " ",
+    "ADD_FULLNA": "2103 N WOODS ST",
+    "ADD_UNIT": " ",
+    "ADD_HIST_A": " ",
+    "RR_ADD": " ",
+    "ALIAS_ADD": "",
+    "STRUCT_TYP": " ",
+    "DATE_CREAT": 1320796800000,
+    "ZIP5": 75092,
+    "POSTAL_COM": "SHERMAN",
+    "CITY_CODE": "SHER",
+    "EnerGOV_ID": 2011,
+    "UBA_ACCOUNT": "303-0380",
+    "TYPE": "MAIN",
+    "SWU_CLASS": "RES2",
+    "IA_AREA": 0,
+    "DATE_UPDATED": 1512000000000,
+    "SWF_UNITS": 0,
+    "POINT_X": 2540290.5228065,
+    "POINT_Y": 7290458.34526607,
+    "PROP_ID": 156363
+   },
+   "expect": {
+    "number": "2103",
+    "street": "N WOODS ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 101,
+    "ADD_NUMBER": 523,
+    "ADD_PRE": "S",
+    "ADD_PRE_TY": " ",
+    "ADD_NAME": "WALNUT",
+    "ADD_TYPE": "ST",
+    "ADD_SUF": " ",
+    "ADD_FULLNA": "523 S WALNUT ST",
+    "ADD_UNIT": "A",
+    "ADD_HIST_A": " ",
+    "RR_ADD": " ",
+    "ALIAS_ADD": "",
+    "STRUCT_TYP": " ",
+    "DATE_CREAT": 1452470400000,
+    "ZIP5": 75090,
+    "POSTAL_COM": "SHERMAN",
+    "CITY_CODE": "SHER",
+    "EnerGOV_ID": 2016,
+    "UBA_ACCOUNT": "102-0660",
+    "TYPE": "MAIN",
+    "SWU_CLASS": "COM",
+    "IA_AREA": 11336.1625808,
+    "DATE_UPDATED": 1563148800000,
+    "SWF_UNITS": 3,
+    "POINT_X": 2544855.33552724,
+    "POINT_Y": 7281989.36023557,
+    "PROP_ID": 163291
+   },
+   "expect": {
+    "number": "523",
+    "street": "S WALNUT ST"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/tx/city_of_sherman",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 08:26:02",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}
