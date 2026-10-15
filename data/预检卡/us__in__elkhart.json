@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:25:26",
+ "county": "Elkhart",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试",
+ "source_id": "us/in/elkhart",
+ "stage": "p0",
+ "state": "IN",
+ "url": "https://elb2.39dn.com/arcgis/rest/services/eGISDynamicServices/ElkhartINDynamic/MapServer/59",
+ "verdict": "TRANSIENT"
+}

@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:26",
+ "county": "Madison",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试",
+ "source_id": "us/il/madison",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://gis.madisoncountyil.gov/server/rest/services/Hosted/County_Parcels_View/FeatureServer/1",
+ "verdict": "TRANSIENT"
+}

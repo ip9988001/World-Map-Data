@@ -1,0 +1,204 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDRESS",
+  "state": "State",
+  "street": "ADDRESS",
+  "unit": "Building",
+  "zip": "Post_Code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:31",
+ "county": "McLean",
+ "curated_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS"
+ },
+ "fields": [
+  "ADDRESS",
+  "Shape",
+  "OBJECTID_1",
+  "Building",
+  "Post_Comm",
+  "Post_Code",
+  "Inc_Muni",
+  "County",
+  "State",
+  "Country",
+  "Unit",
+  "GlobalID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date"
+ ],
+ "fields_n": 16,
+ "guessed_cols": {
+  "state": "State",
+  "unit": "Building",
+  "zip": "Post_Code"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "305 BOON CT",
+    "最长": "503 A E COLUMBIA ST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Building": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 294,
+    "空率": 0.98
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "MCLEAN COUNTY",
+    "最长": "MCLEAN COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{84315076-E32A-4AA2-88AC-270026C45CC8}",
+    "最长": "{84315076-E32A-4AA2-88AC-270026C45CC8}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "HUDSON",
+    "最长": "STANFORD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Code": {
+    "带特殊字符": 0,
+    "最短": "61774",
+    "最长": "61774",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "HUDSON",
+    "最长": "STANFORD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "IL",
+    "最长": "IL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "UNIT A",
+    "空": 293,
+    "空率": 0.977
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "337c9ca40e2019c1",
+  "total": 85254,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0002
+  },
+  "nonnull": {
+   "full": 85253,
+   "number": 85253,
+   "state": 85254,
+   "street": 85253,
+   "zip": 85239
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'zip': 0.0002, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 85254,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ADDRESS",
+ "sample_hash": "337c9ca40e2019c1",
+ "site_cols": [
+  "ADDRESS"
+ ],
+ "source_id": "us/il/mclean",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://www.mcgisweb.org/mcgc/rest/services/OpenData/OpenData/MapServer/0",
+ "verdict": "CONTRACTED"
+}

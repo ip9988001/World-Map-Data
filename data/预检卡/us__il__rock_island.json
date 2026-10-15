@@ -1,0 +1,236 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "num_only",
+  "street": "address",
+  "unit": "apt",
+  "zip": "prp_zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:47",
+ "county": "Rock Island",
+ "curated_cols": {
+  "city": "city",
+  "number": "num_only",
+  "street": "address"
+ },
+ "fields": [
+  "objectid",
+  "address",
+  "apt",
+  "x",
+  "y",
+  "city",
+  "rico_parce",
+  "name",
+  "fname",
+  "lname",
+  "prp_addr",
+  "prp_ctyst",
+  "prp_zip",
+  "num_only",
+  "add_city",
+  "class",
+  "label_ang",
+  "dateupdate",
+  "note"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {
+  "unit": "apt",
+  "zip": "prp_zip"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "address_points",
+  "objectIdField": "objectid",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "add_city": {
+    "带特殊字符": 0,
+    "最短": "321 2ND ST RI",
+    "最长": "1720 BIG ISLAND PKWY RI",
+    "空": 0,
+    "空率": 0.0
+   },
+   "address": {
+    "带特殊字符": 0,
+    "最短": "321 2ND ST",
+    "最长": "22156 LOUD THUNDER RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "apt": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "IC",
+    "最长": "SIL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "class": {
+    "带特殊字符": 0,
+    "最短": "MUNICIPAL",
+    "最长": "UNINCORP COMMUNITY",
+    "空": 58,
+    "空率": 0.193
+   },
+   "dateupdate": {
+    "带特殊字符": 0,
+    "最短": "1596585600000",
+    "最长": "1596585600000",
+    "空": 297,
+    "空率": 0.99
+   },
+   "fname": {
+    "带特殊字符": 1,
+    "最短": "E",
+    "最长": "JAMES LUTHERAN CHURC",
+    "空": 34,
+    "空率": 0.113
+   },
+   "label_ang": {
+    "带特殊字符": 0,
+    "最短": "90",
+    "最长": "90",
+    "空": 145,
+    "空率": 0.483
+   },
+   "lname": {
+    "带特殊字符": 1,
+    "最短": "R",
+    "最长": "HIRSCHBUEHLER",
+    "空": 34,
+    "空率": 0.113
+   },
+   "name": {
+    "带特殊字符": 2,
+    "最短": "GEHN E",
+    "最长": "R I PRKS & REC/HODGE PARK",
+    "空": 34,
+    "空率": 0.113
+   },
+   "note": {
+    "带特殊字符": 0,
+    "最短": "UPDATED INCORRECT STREET NUMBER",
+    "最长": "UPDATED INCORRECT STREET NUMBER",
+    "空": 299,
+    "空率": 0.997
+   },
+   "num_only": {
+    "带特殊字符": 0,
+    "最短": "303",
+    "最长": "851 1/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "prp_addr": {
+    "带特殊字符": 0,
+    "最短": "208 1 ST",
+    "最长": "512 2 AVE W/PO BOX 297",
+    "空": 51,
+    "空率": 0.17
+   },
+   "prp_ctyst": {
+    "带特殊字符": 0,
+    "最短": "MILAN IL",
+    "最长": "ILLINOIS CITY IL",
+    "空": 51,
+    "空率": 0.17
+   },
+   "prp_zip": {
+    "带特殊字符": 0,
+    "最短": "61244",
+    "最长": "61244",
+    "空": 34,
+    "空率": 0.113
+   },
+   "rico_parce": {
+    "带特殊字符": 0,
+    "最短": "1043",
+    "最长": "101508-3-B",
+    "空": 34,
+    "空率": 0.113
+   },
+   "x": {
+    "带特殊字符": 0,
+    "最短": "2189264.060062",
+    "最长": "2067892.32439697",
+    "空": 0,
+    "空率": 0.0
+   },
+   "y": {
+    "带特殊字符": 0,
+    "最短": "1739725.107179",
+    "最长": "1720327.78543293",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "03dfe5b197ac711b",
+  "total": 69144,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0001,
+   "full": 0.0001,
+   "number": 0.0021,
+   "street": 0.0001,
+   "zip": 0.0501
+  },
+  "nonnull": {
+   "city": 69139,
+   "full": 69139,
+   "number": 68996,
+   "street": 69139,
+   "zip": 65681
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0021, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0501, 'full': 0.0001}）→ 可全量采集",
+  "total": 69144,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=num_only street=address city=city",
+ "sample_hash": "03dfe5b197ac711b",
+ "site_cols": [
+  "address",
+  "prp_addr"
+ ],
+ "source_id": "us/il/rock_island",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://gis.rockislandcountyil.gov/arcgis/rest/services/Hosted/AddressPoints/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

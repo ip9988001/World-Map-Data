@@ -1,0 +1,348 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPALITY",
+  "number": "HOUSE_NUMBER",
+  "state": "State",
+  "street": "PREFIX",
+  "unit": "UNIT_DESIGNATOR",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:25:05",
+ "county": "Allen",
+ "curated_cols": {
+  "number": "HOUSE_NUMBER",
+  "street": "PREFIX",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESS",
+  "STREET",
+  "UNIQUE_ADDRESS",
+  "HOUSE_NUMBER",
+  "HOUSE_SUFFIX",
+  "PREFIX",
+  "NAME",
+  "TYPE",
+  "SUFFIX",
+  "UNIT",
+  "UNIT_DESIGNATOR",
+  "COMMUNITY",
+  "ZIP",
+  "TWP",
+  "MUNICIPALITY",
+  "COUNTY",
+  "ADDRESS_SUBTYPE",
+  "STRUCTURE_TYPE",
+  "PIN",
+  "GIS_ID",
+  "X_COORD",
+  "Y_COORD",
+  "ADDRKEY",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "ACCELA_ID",
+  "ACCELA_TWNSHP",
+  "State",
+  "Community_Full",
+  "Shape"
+ ],
+ "fields_n": 33,
+ "guessed_cols": {
+  "city": "MUNICIPALITY",
+  "state": "State",
+  "unit": "UNIT_DESIGNATOR"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACCELA_ID": {
+    "带特殊字符": 0,
+    "最短": "30022",
+    "最长": "30022",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ACCELA_TWNSHP": {
+    "带特殊字符": 0,
+    "最短": "NEW HAVEN",
+    "最长": "FORT WAYNE",
+    "空": 65,
+    "空率": 0.065
+   },
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "4431 REED ST",
+    "最长": "4309 ANTHONY WAYNE DR SW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_SUBTYPE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRKEY": {
+    "带特殊字符": 0,
+    "最短": "4235",
+    "最长": "100861",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "FW",
+    "最长": "FW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "ALLEN",
+    "最长": "ALLEN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Community_Full": {
+    "带特殊字符": 0,
+    "最短": "NEW HAVEN",
+    "最长": "MONROEVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "02-12-21-201-009.000-074",
+    "最长": "02-12-21-201-009.000-074",
+    "空": 1,
+    "空率": 0.001
+   },
+   "HOUSE_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "340",
+    "最长": "14709",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "MUNICIPALITY": {
+    "带特殊字符": 0,
+    "最短": "FW",
+    "最长": "FW",
+    "空": 65,
+    "空率": 0.065
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "REED",
+    "最长": "LAFAYETTE ESPLANADE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "28449",
+    "最长": "28449",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "021221201009000074",
+    "最长": "021221201009000074",
+    "空": 1,
+    "空率": 0.001
+   },
+   "PREFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 939,
+    "空率": 0.939
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "REED ST",
+    "最长": "ANTHONY WAYNE DR SW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUCTURE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "11",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "SW",
+    "空": 948,
+    "空率": 0.948
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "IN",
+    "最长": "IN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TWP": {
+    "带特殊字符": 0,
+    "最短": "WY",
+    "最长": "WY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "BLVD",
+    "空": 8,
+    "空率": 0.008
+   },
+   "UNIQUE_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "4431 REED ST",
+    "最长": "4309 ANTHONY WAYNE DR SW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "UNIT_DESIGNATOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "X_COORD": {
+    "带特殊字符": 0,
+    "最短": "-85.24",
+    "最长": "-85.178417",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_COORD": {
+    "带特殊字符": 0,
+    "最短": "41.044",
+    "最长": "41.044042",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "46809",
+    "最长": "46809",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1775744009000",
+    "最长": "1775744009000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 1000,
+    "最短": "SDE_NWSCAA",
+    "最长": "SDE_NWSCAA",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 1000,
+  "partitions": {
+   "head": 1000,
+   "mid": 1000,
+   "tail": 1000
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "42e83f7a095e6e84",
+  "total": 187637,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0461,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0001,
+   "street": 0.0249,
+   "zip": 0.0012
+  },
+  "nonnull": {
+   "city": 178984,
+   "full": 187631,
+   "number": 187631,
+   "state": 187624,
+   "street": 182962,
+   "zip": 187417
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0249, 'city': 0.0461, 'zip': 0.0012, 'state': 0.0001, 'full': 0.0}）→ 可全量采集",
+  "total": 187637,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NUMBER street=PREFIX zip=ZIP",
+ "sample_hash": "42e83f7a095e6e84",
+ "site_cols": [
+  "ADDRESS",
+  "STREET",
+  "UNIQUE_ADDRESS",
+  "ADDRESS_SUBTYPE",
+  "ADDRKEY"
+ ],
+ "source_id": "us/in/allen",
+ "stage": "p0",
+ "state": "IN",
+ "url": "https://gis.acimap.us/projectservicesadmin/rest/services/Accela/Accela_Production/MapServer/0",
+ "verdict": "CONTRACTED"
+}

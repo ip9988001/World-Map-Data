@@ -1,0 +1,451 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "sitecity",
+  "number": "sitenum",
+  "state": "sitest",
+  "street": "sitepref",
+  "unit": "siteunit",
+  "zip": "sitezip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:52",
+ "county": "St. Clair",
+ "curated_cols": {
+  "city": "sitecity",
+  "number": "sitenum",
+  "state": "sitest",
+  "street": "sitepref",
+  "zip": "sitezip"
+ },
+ "fields": [
+  "st_area(shape)",
+  "st_length(shape)",
+  "objectid",
+  "parcel_number",
+  "acreage",
+  "hectares",
+  "parcelid",
+  "sitenum",
+  "sitepref",
+  "sitename",
+  "sitetype",
+  "sitesuff",
+  "siteunit",
+  "sitecity",
+  "sitest",
+  "sitezip",
+  "siteadr1",
+  "siteadr2",
+  "legal1",
+  "legal2",
+  "legal3",
+  "legal4",
+  "subdivnum",
+  "subdiv",
+  "owner",
+  "address",
+  "address2",
+  "cityst",
+  "zipcode",
+  "lendcd",
+  "document_number1",
+  "trust_number",
+  "twp",
+  "twpname",
+  "tcacode",
+  "class",
+  "landuse",
+  "totacre",
+  "landval",
+  "bldgval",
+  "farmhome",
+  "farmland",
+  "farmdwel",
+  "farmbldg",
+  "totamt",
+  "status",
+  "alt_name",
+  "alt_address",
+  "alt_address2",
+  "alt_cityst",
+  "alt_zipcode",
+  "alt_lendcd",
+  "alt_relationship",
+  "neighborhood_code",
+  "neighborhood_description",
+  "paryear",
+  "c_id",
+  "c_name",
+  "dd_id",
+  "dd_name",
+  "ec_id",
+  "ec_name",
+  "ee_id",
+  "ee_name",
+  "eh_id",
+  "eh_name",
+  "eu_id",
+  "eu_name",
+  "fd_id",
+  "fd_name",
+  "lt_id",
+  "lt_name",
+  "lv_id",
+  "lv_name",
+  "ly_id",
+  "ly_name",
+  "ma_id",
+  "ma_name",
+  "md_id",
+  "md_name"
+ ],
+ "fields_n": 100,
+ "guessed_cols": {
+  "unit": "siteunit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "acreage": {
+    "带特殊字符": 0,
+    "最短": "0.34404",
+    "最长": "119.422729",
+    "空": 0,
+    "空率": 0.0
+   },
+   "address": {
+    "带特殊字符": 0,
+    "最短": "7102 HWY E",
+    "最长": "11329 RANDOLPH COUNTY LINE RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "address2": {
+    "带特殊字符": 0,
+    "最短": "500 S 27TH ST  E-30",
+    "最长": "133 S 4TH ST STE 306",
+    "空": 274,
+    "空率": 0.913
+   },
+   "bldgval": {
+    "带特殊字符": 0,
+    "最短": "344.0",
+    "最长": "105624.0",
+    "空": 203,
+    "空率": 0.677
+   },
+   "cityst": {
+    "带特殊字符": 0,
+    "最短": "TILDEN IL",
+    "最长": "COLORADO SPRINGS CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "class": {
+    "带特殊字符": 0,
+    "最短": "0010",
+    "最长": "0010",
+    "空": 0,
+    "空率": 0.0
+   },
+   "document_number1": {
+    "带特殊字符": 0,
+    "最短": "A0227007",
+    "最长": "A02601514",
+    "空": 114,
+    "空率": 0.38
+   },
+   "hectares": {
+    "带特殊字符": 0,
+    "最短": "0.064",
+    "最长": "131.433171",
+    "空": 0,
+    "空率": 0.0
+   },
+   "landuse": {
+    "带特殊字符": 0,
+    "最短": "0010",
+    "最长": "0010",
+    "空": 0,
+    "空率": 0.0
+   },
+   "landval": {
+    "带特殊字符": 0,
+    "最短": "473.0",
+    "最长": "13294.0",
+    "空": 152,
+    "空率": 0.507
+   },
+   "legal1": {
+    "带特殊字符": 70,
+    "最短": "WHITEWOOD SUB LOT/SEC-1 A01829308",
+    "最长": "LENZBURG TWP SEC 35 LOT/SEC-35-SUBL/TWP-3S-BLK/RG-7W PT SW BK A01523257 EX PT FO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "legal2": {
+    "带特殊字符": 1,
+    "最短": "S",
+    "最长": "72 A02724759 BFD A02737856 A02744054 A02",
+    "空": 262,
+    "空率": 0.873
+   },
+   "legal3": {
+    "带特殊字符": 0,
+    "最短": "62864 A02784307 A02787654 A02792589 A028",
+    "最长": "62864 A02784307 A02787654 A02792589 A028",
+    "空": 299,
+    "空率": 0.997
+   },
+   "legal4": {
+    "带特殊字符": 0,
+    "最短": "9601 A02819139 A02826402 A02839545 A0284",
+    "最长": "9601 A02819139 A02826402 A02839545 A0284",
+    "空": 299,
+    "空率": 0.997
+   },
+   "lendcd": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "owner": {
+    "带特殊字符": 213,
+    "最短": "STATE OF IL",
+    "最长": "HACKER KATHRYN L & GREEN CAROL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parcel_number": {
+    "带特殊字符": 0,
+    "最短": "21350300010",
+    "最长": "21350300010",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parcelid": {
+    "带特殊字符": 0,
+    "最短": "21-35.0-300-010",
+    "最长": "21-35.0-300-010",
+    "空": 0,
+    "空率": 0.0
+   },
+   "siteadr1": {
+    "带特殊字符": 2,
+    "最短": "ELM ST",
+    "最长": "11329 RANDOLOPH COUNTY LI",
+    "空": 0,
+    "空率": 0.0
+   },
+   "siteadr2": {
+    "带特殊字符": 300,
+    "最短": "MARISSA, IL 62257",
+    "最长": "NEW ATHENS, IL 62264",
+    "空": 0,
+    "空率": 0.0
+   },
+   "sitecity": {
+    "带特殊字符": 0,
+    "最短": "MARISSA",
+    "最长": "NEW ATHENS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "sitename": {
+    "带特殊字符": 2,
+    "最短": "ELM",
+    "最长": "RANDOLOPH COUNTY LIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "sitenum": {
+    "带特殊字符": 0,
+    "最短": "44",
+    "最长": "11329",
+    "空": 190,
+    "空率": 0.633
+   },
+   "sitepref": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 256,
+    "空率": 0.853
+   },
+   "sitest": {
+    "带特殊字符": 0,
+    "最短": "IL",
+    "最长": "IL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "sitesuff": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sitetype": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "AVE",
+    "空": 55,
+    "空率": 0.183
+   },
+   "siteunit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sitezip": {
+    "带特殊字符": 0,
+    "最短": "62257",
+    "最长": "622570000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_area(shape)": {
+    "带特殊字符": 0,
+    "最短": "230553.78435666",
+    "最长": "11949.903208305499",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_length(shape)": {
+    "带特殊字符": 0,
+    "最短": "3279.69012257903",
+    "最长": "1728.2558597223024",
+    "空": 0,
+    "空率": 0.0
+   },
+   "subdiv": {
+    "带特殊字符": 26,
+    "最短": "WHITEWOOD SUB",
+    "最长": "SOUTH MARISSA MOBILEHOME VIL SUB NO 1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "subdivnum": {
+    "带特殊字符": 0,
+    "最短": "4230",
+    "最长": "4230",
+    "空": 0,
+    "空率": 0.0
+   },
+   "tcacode": {
+    "带特殊字符": 0,
+    "最短": "16001",
+    "最长": "16001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "totacre": {
+    "带特殊字符": 0,
+    "最短": "5.5",
+    "最长": "119.41999817",
+    "空": 1,
+    "空率": 0.003
+   },
+   "trust_number": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "twp": {
+    "带特殊字符": 0,
+    "最短": "16",
+    "最长": "16",
+    "空": 0,
+    "空率": 0.0
+   },
+   "twpname": {
+    "带特殊字符": 0,
+    "最短": "MARISSA",
+    "最长": "LENZBURG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zipcode": {
+    "带特殊字符": 0,
+    "最短": "62257",
+    "最长": "622572114",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "732fb6d899bffd35",
+  "total": 148004,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0015,
+   "full": 0.0015,
+   "number": 0.0015,
+   "state": 0.0015,
+   "street": 0.0015,
+   "zip": 0.0015
+  },
+  "nonnull": {
+   "city": 147788,
+   "full": 147788,
+   "number": 147788,
+   "state": 147788,
+   "street": 147788,
+   "zip": 147788
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0015, 'street': 0.0015, 'city': 0.0015, 'zip': 0.0015, 'state': 0.0015, 'full': 0.0015}）→ 可全量采集",
+  "total": 148004,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=sitenum street=sitepref city=sitecity zip=sitezip",
+ "sample_hash": "732fb6d899bffd35",
+ "site_cols": [
+  "sitenum",
+  "sitepref",
+  "sitename",
+  "sitetype",
+  "sitesuff"
+ ],
+ "source_id": "us/il/st_clair",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://arcgispublicmap.co.st-clair.il.us/server/rest/services/SCC_parcel_map_data/MapServer/29",
+ "verdict": "CONTRACTED"
+}

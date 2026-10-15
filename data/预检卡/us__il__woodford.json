@@ -1,0 +1,104 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "Address"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:58",
+ "county": "Woodford",
+ "curated_cols": {
+  "number": "Add_Number",
+  "street": "Address"
+ },
+ "fields": [
+  "OBJECTID",
+  "Add_Number",
+  "Address",
+  "GlobalID"
+ ],
+ "fields_n": 4,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1799",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "78 IRONS RD",
+    "最长": "1117 UPPER SPRING BAY RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "e4e01768-44ae-49e2-a218-b1f8e5a6a9a5",
+    "最长": "e4e01768-44ae-49e2-a218-b1f8e5a6a9a5",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6373e6a401edfa51",
+  "total": 16892,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 16892,
+   "number": 16892,
+   "street": 16892
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 16892,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=Address（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "6373e6a401edfa51",
+ "site_cols": [
+  "Address"
+ ],
+ "source_id": "us/il/woodford",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://services1.arcgis.com/iOG1OLysrxLAswZi/arcgis/rest/services/Address_Points_Public_View/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

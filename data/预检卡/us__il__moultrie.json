@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 01:24:40",
+ "county": "Moultrie",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/il/moultrie",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://ags.bhamaps.com/arcgisserver/rest/services/MoultrieIL/MoultrieIL_PAT_Taxmap_WM/MapServer/0",
+ "verdict": "TRANSIENT"
+}
