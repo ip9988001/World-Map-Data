@@ -1,0 +1,165 @@
+{
+ "name": "us_va_greene__greene_county_va_address_points",
+ "version": 1,
+ "note": "该 ArcGIS 门牌点图层自带 Add_Number 与 FULLNAME（缩写路名，与 FULLADDR 一致）分列，直接按列取号+街名即可，无需解析整串字符串。",
+ "match": {
+  "columns_any": [
+   "FULLADDR",
+   "Add_Number",
+   "FULLNAME"
+  ],
+  "columns_all": [
+   "Add_Number",
+   "FULLNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "Add_Number",
+  "street": "FULLNAME",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "{Add_Number}",
+ "street_template": "{FULLNAME}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "源内只有 Add_Number/FULLNAME/FULLROADNAME 等门牌与道路字段，MUNICIPALITY 列全为空值，且无 ZIP/STATE 列，故豁免 city/zip"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "FULLADDR": "8315 SEMINOLE TRL STE 7",
+    "AddNum_Pre": "",
+    "Add_Number": 8315,
+    "AddNum_Suf": "",
+    "FULLNAME": "SEMINOLE TRL",
+    "UNITTYPE": "STE",
+    "UNITID": "7",
+    "MUNICIPALITY": "",
+    "ADDRCLASS": 0,
+    "ACTIVE": "Yes",
+    "created_user": null,
+    "created_date": null,
+    "last_edited_user": "ADODSON",
+    "last_edited_date": 1739818592000,
+    "Location": null,
+    "Unit_Type": null,
+    "StructureDesc": null,
+    "CaptureMethod": null,
+    "PrimaryUsage": null,
+    "OldAddr": "8315 SEMINOLE TRL STE 7",
+    "PermitNumber": null,
+    "FULLROADNAME": "SEMINOLE TRAIL",
+    "LOT": null,
+    "POINT_X": null,
+    "POINT_Y": null,
+    "SUBDIVISION": null,
+    "FeaCode": 0
+   },
+   "expect": {
+    "number": "8315",
+    "street": "SEMINOLE TRL"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 7,
+    "FULLADDR": "268 FORD AVE APT 6",
+    "AddNum_Pre": "",
+    "Add_Number": 268,
+    "AddNum_Suf": "",
+    "FULLNAME": "FORD AVE",
+    "UNITTYPE": "APT",
+    "UNITID": "6",
+    "MUNICIPALITY": "",
+    "ADDRCLASS": 0,
+    "ACTIVE": "Yes",
+    "created_user": null,
+    "created_date": null,
+    "last_edited_user": "ADODSON",
+    "last_edited_date": 1739818592000,
+    "Location": null,
+    "Unit_Type": null,
+    "StructureDesc": null,
+    "CaptureMethod": null,
+    "PrimaryUsage": null,
+    "OldAddr": "268 FORD AVE APT 6",
+    "PermitNumber": null,
+    "FULLROADNAME": "FORD AVENUE",
+    "LOT": null,
+    "POINT_X": null,
+    "POINT_Y": null,
+    "SUBDIVISION": null,
+    "FeaCode": 0
+   },
+   "expect": {
+    "number": "268",
+    "street": "FORD AVE"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 19,
+    "FULLADDR": "194 MIDFIELDS DR",
+    "AddNum_Pre": "",
+    "Add_Number": 194,
+    "AddNum_Suf": "",
+    "FULLNAME": "MIDFIELDS DR",
+    "UNITTYPE": "",
+    "UNITID": "",
+    "MUNICIPALITY": "",
+    "ADDRCLASS": 0,
+    "ACTIVE": "Yes",
+    "created_user": null,
+    "created_date": null,
+    "last_edited_user": "ADODSON",
+    "last_edited_date": 1739818592000,
+    "Location": null,
+    "Unit_Type": null,
+    "StructureDesc": null,
+    "CaptureMethod": null,
+    "PrimaryUsage": null,
+    "OldAddr": "194 MIDFIELDS DR",
+    "PermitNumber": null,
+    "FULLROADNAME": "MIDFIELDS DRIVE",
+    "LOT": null,
+    "POINT_X": null,
+    "POINT_Y": null,
+    "SUBDIVISION": null,
+    "FeaCode": 1
+   },
+   "expect": {
+    "number": "194",
+    "street": "MIDFIELDS DR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/va/greene",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 13:21:05",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.995
+  }
+ }
+}

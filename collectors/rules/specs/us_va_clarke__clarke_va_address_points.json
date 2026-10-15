@@ -1,0 +1,89 @@
+{
+ "name": "us_va_clarke__clarke_va_address_points",
+ "version": 1,
+ "note": "ArcGIS 地址点图层，门牌号(NUMBER)与街道名(NAME)+后缀(TYPE)分列存放，可直接映射，无需解析整串地址",
+ "match": {
+  "columns_any": [
+   "SITE_NGUID"
+  ],
+  "columns_all": [
+   "NUMBER",
+   "NAME"
+  ],
+  "columns_none": [],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "NUMBER",
+  "street": "NAME",
+  "city": "POST",
+  "zip": "ZIPCODE",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "{NAME} {TYPE}",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "FID": 1,
+    "NUMBER": 922,
+    "NUM_EX": " ",
+    "NAME": "MANOR",
+    "TYPE": "RD",
+    "ADDRESS": "922 MANOR RD",
+    "ZIPCODE": 22630,
+    "POST": "FRONT ROYAL",
+    "STATE": "VA",
+    "SITE_NGUID": "SITE2310@clarkecounty.gov"
+   },
+   "expect": {
+    "number": "922",
+    "street": "MANOR RD"
+   }
+  },
+  {
+   "row": {
+    "FID": 3,
+    "NUMBER": 81,
+    "NUM_EX": " ",
+    "NAME": "FARMS RIDGE",
+    "TYPE": "LN",
+    "ADDRESS": "81 FARMS RIDGE LN",
+    "ZIPCODE": 22630,
+    "POST": "FRONT ROYAL",
+    "STATE": "VA",
+    "SITE_NGUID": "SITE2308@clarkecounty.gov"
+   },
+   "expect": {
+    "number": "81",
+    "street": "FARMS RIDGE LN"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/va/clarke",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 13:20:56",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

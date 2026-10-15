@@ -1,0 +1,103 @@
+{
+ "name": "us_va_louisa__louisa_va_site_address",
+ "version": 1,
+ "note": "该 FeatureServer 是标准门牌点图层，门牌号在 ADDRESS（纯数字）、完整街名在 ROADNAME，二者分列且齐全，故用 columns 模式直接取列，不用 FULLADDR 拼接；图层无 city/zip/state 字段，全部留空并豁免。",
+ "match": {
+  "columns_any": [
+   "ADDR_KEY"
+  ],
+  "columns_all": [
+   "ROADNAME",
+   "ADDRESS"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "ADDRESS",
+  "street": "ROADNAME",
+  "city": "",
+  "zip": "",
+  "state": ""
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": true,
+  "exempt_zip": true,
+  "exempt_reason": "该 FeatureServer 图层字段仅有 OBJECTID/ADDR_KEY/ROADNAME/ADDRESS/APARTMENT/FULLADDR/MSTRT/MDIRCT/MSTTYP/NENA_Name/POINT_X/POINT_Y 等，无 city、无 ZIP、无 state 列，故豁免。"
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "ADDR_KEY": 9420,
+    "ROADNAME": "LANDOVER ROAD",
+    "ADDRESS": 60,
+    "APARTMENT": " ",
+    "FULLADDR": "60 LANDOVER ROAD",
+    "MSTRT": "LANDOVER",
+    "MDIRCT": " ",
+    "MSTTYP": "RD",
+    "NENA_Name": "LANDOVER RD",
+    "POINT_X": 11556550.7747,
+    "POINT_Y": 3886944.63667,
+    "CreationDate": null,
+    "Creator": null,
+    "EditDate": null,
+    "Editor": null
+   },
+   "expect": {
+    "number": "60",
+    "street": "LANDOVER ROAD"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 12,
+    "ADDR_KEY": 744,
+    "ROADNAME": "HOLLY GROVE DRIVE",
+    "ADDRESS": 4593,
+    "APARTMENT": " ",
+    "FULLADDR": "4593 HOLLY GROVE DRIVE",
+    "MSTRT": "HOLLY GROVE",
+    "MDIRCT": " ",
+    "MSTTYP": "DR",
+    "NENA_Name": "HOLLY GROVE DR",
+    "POINT_X": 11694478.3476,
+    "POINT_Y": 3816866.28447,
+    "CreationDate": null,
+    "Creator": null,
+    "EditDate": null,
+    "Editor": null
+   },
+   "expect": {
+    "number": "4593",
+    "street": "HOLLY GROVE DRIVE"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/va/louisa",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 13:21:13",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

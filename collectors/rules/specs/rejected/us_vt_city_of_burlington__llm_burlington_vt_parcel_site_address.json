@@ -1,0 +1,171 @@
+{
+ "_rejected": {
+  "source_id": "us/vt/city_of_burlington",
+  "model": "deepseek-flash",
+  "errs": [
+   "example3 街名不符：期望 SOUTH COVE RD 实得 S COVE RD"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 193,
+   "kept": 196,
+   "kept_contentful": 192,
+   "ratio": 0.995,
+   "fabricated": 0,
+   "best_ratio": 0.988
+  },
+  "at": "2026-10-15 13:21:22"
+ },
+ "spec": {
+  "name": "burlington_vt_parcel_site_address",
+  "version": 1,
+  "note": "Assessor parcel layer carries structured site-address parts (ST_NUM + ST_NAME + ST_TYPE) plus TOWN; a single-column parse would lose the suffix/type, so use column templates.",
+  "match": {
+   "columns_any": [
+    "SITEADDRESS"
+   ],
+   "columns_all": [
+    "ST_NUM",
+    "ST_NAME"
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "ST_NUM",
+   "street": "ST_NAME",
+   "city": "TOWN",
+   "zip": "",
+   "state": ""
+  },
+  "number_template": "{ST_NUM}",
+  "street_template": "{ST_NAME} {ST_TYPE}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": true,
+   "exempt_reason": "No ZIP/postal column exists in this layer; only TOWN is present, so zip is left empty."
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1605333,
+     "SITEADDRESS": "350 QUEEN CITY PARK RD",
+     "MAPLOTNO": "060-1-059-000",
+     "ST_NUM": 350,
+     "ST_NAME": "QUEEN CITY PARK",
+     "ST_TYPE": "RD",
+     "PIN": 312331710331.0,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "SDELOADER",
+     "last_edited_date": 1758727408000,
+     "UniqueId": 8704,
+     "AssessorPrimaryLandUse": "Utility",
+     "LandUse_generalized": "Commercial",
+     "BTV_ID": 4806,
+     "GlobalID": "{9DA436DC-242F-4A10-94C5-530649595B2D}",
+     "SPAN": "114-035-20464",
+     "PROPTYPE": "PARCEL",
+     "YEAR": 2025,
+     "TOWN": "BURLINGTON",
+     "SOURCENAME": "City of Burlington",
+     "SOURCETYPE": "UNKNOWN",
+     "EDITMETHOD": "HEADS UP DIGITIZING",
+     "EDITOR": "W. Rich",
+     "EDITDATE": "09/22/25",
+     "MATCHSTAT": "MATCHED",
+     "EDITNOTE": null,
+     "Shape__Area": 480.80415703,
+     "Shape__Length": 88.19258796533684
+    },
+    "expect": {
+     "number": "350",
+     "street": "QUEEN CITY PARK RD"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 1605361,
+     "SITEADDRESS": "1123 PINE ST",
+     "MAPLOTNO": "060-1-035-000",
+     "ST_NUM": 1123,
+     "ST_NAME": "PINE",
+     "ST_TYPE": "ST",
+     "PIN": 313143710787.0,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "SDELOADER",
+     "last_edited_date": 1758727408000,
+     "UniqueId": 8680,
+     "AssessorPrimaryLandUse": "R1 - Single Fam",
+     "LandUse_generalized": "Residential",
+     "BTV_ID": 4211,
+     "GlobalID": "{797261A8-909D-4B66-B527-3F2AFC750453}",
+     "SPAN": "C-535-4211",
+     "PROPTYPE": "PARCEL",
+     "YEAR": 2025,
+     "TOWN": "BURLINGTON",
+     "SOURCENAME": "City of Burlington",
+     "SOURCETYPE": "UNKNOWN",
+     "EDITMETHOD": "HEADS UP DIGITIZING",
+     "EDITOR": "W. Rich",
+     "EDITDATE": "09/22/25",
+     "MATCHSTAT": "MATCHED",
+     "EDITNOTE": null,
+     "Shape__Area": 875.4606875,
+     "Shape__Length": 130.0801453780235
+    },
+    "expect": {
+     "number": "1123",
+     "street": "PINE ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 1605345,
+     "SITEADDRESS": "203 SOUTH COVE RD",
+     "MAPLOTNO": "059-1-032-000",
+     "ST_NUM": 203,
+     "ST_NAME": "SOUTH COVE",
+     "ST_TYPE": "RD",
+     "PIN": 309331710536.0,
+     "created_user": null,
+     "created_date": null,
+     "last_edited_user": "SDELOADER",
+     "last_edited_date": 1758727408000,
+     "UniqueId": 8588,
+     "AssessorPrimaryLandUse": "R1 - Single Fam",
+     "LandUse_generalized": "Residential",
+     "BTV_ID": 5520,
+     "GlobalID": "{DE27F0DD-8979-4470-9A73-E83ACE0D6967}",
+     "SPAN": "114-035-20212",
+     "PROPTYPE": "PARCEL",
+     "YEAR": 2025,
+     "TOWN": "BURLINGTON",
+     "SOURCENAME": "City of Burlington",
+     "SOURCETYPE": "UNKNOWN",
+     "EDITMETHOD": "HEADS UP DIGITIZING",
+     "EDITOR": "W. Rich",
+     "EDITDATE": "09/22/25",
+     "MATCHSTAT": "MATCHED",
+     "EDITNOTE": null,
+     "Shape__Area": 2487.2821125,
+     "Shape__Length": 204.8864971880554
+    },
+    "expect": {
+     "number": "203",
+     "street": "SOUTH COVE RD"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,115 @@
+{
+ "name": "us_va_arlington__arlington_va_address_points",
+ "version": 1,
+ "note": "ArcGIS 地址点图层，门牌号在 STNUM、完整街名（含前置方位与类型后缀）已在 STNAME 列，直接按列取用即可，FULL_ADDRESS 也一致。",
+ "match": {
+  "columns_any": [
+   "STCODE"
+  ],
+  "columns_all": [
+   "STNUM",
+   "STNAME"
+  ],
+  "columns_none": [
+   ""
+  ],
+  "engine": "arcgis_rest"
+ },
+ "mode": "columns",
+ "columns": {
+  "number": "STNUM",
+  "street": "STNAME",
+  "city": "CITY",
+  "zip": "ZIP5",
+  "state": "STATE"
+ },
+ "number_template": "",
+ "street_template": "",
+ "full": "",
+ "single": "",
+ "unit_drop": true,
+ "contract": {
+  "city_max_miss": 0.2,
+  "zip_max_miss": 0.2,
+  "max_junk": 0.2,
+  "exempt_city": false,
+  "exempt_zip": false,
+  "exempt_reason": ""
+ },
+ "examples": [
+  {
+   "row": {
+    "OBJECTID": 1,
+    "STNUM": 1,
+    "STCODE": "NFENST",
+    "STRTDIR": "N",
+    "STRTDIRPREFIX": "N",
+    "STRTNAME": "FENWICK",
+    "STRTTYPE": "ST",
+    "STRTDIRSUFFIX": null,
+    "FULL_ADDRESS": "1 N FENWICK ST",
+    "STATUS": "VERIFIED",
+    "UNITCOUNT": 1.0,
+    "STNAME": "N FENWICK ST",
+    "UNIT": null,
+    "UPDATE_DATE": 1156305600000,
+    "ZIP5": 22201,
+    "GISID": 101,
+    "GeoSyncDate": 1791436146000,
+    "CITY": "ARLINGTON",
+    "STATE": "VA",
+    "CITY_STATE_ZIP": "ARLINGTON VA 22201",
+    "ADDRESS_TYPE": "Standard",
+    "APS_ELIGIBLE": "Yes"
+   },
+   "expect": {
+    "number": "1",
+    "street": "N FENWICK ST"
+   }
+  },
+  {
+   "row": {
+    "OBJECTID": 25,
+    "STNUM": 100,
+    "STCODE": "NGEODR",
+    "STRTDIR": "N",
+    "STRTDIRPREFIX": "N",
+    "STRTNAME": "GEORGE MASON",
+    "STRTTYPE": "DR",
+    "STRTDIRSUFFIX": null,
+    "FULL_ADDRESS": "100 N GEORGE MASON DR",
+    "STATUS": "VERIFIED",
+    "UNITCOUNT": 4.0,
+    "STNAME": "N GEORGE MASON DR",
+    "UNIT": null,
+    "UPDATE_DATE": 1156305600000,
+    "ZIP5": 22203,
+    "GISID": 125,
+    "GeoSyncDate": 1791436146000,
+    "CITY": "ARLINGTON",
+    "STATE": "VA",
+    "CITY_STATE_ZIP": "ARLINGTON VA 22203",
+    "ADDRESS_TYPE": "Standard",
+    "APS_ELIGIBLE": "Yes"
+   },
+   "expect": {
+    "number": "100",
+    "street": "N GEORGE MASON DR"
+   }
+  }
+ ],
+ "_provenance": {
+  "source_id": "us/va/arlington",
+  "generated_by": "deepseek-flash",
+  "generated_at": "2026-10-15 13:20:51",
+  "validated": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  }
+ }
+}

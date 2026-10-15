@@ -33,3 +33,7 @@ us/tx/city_of_sherman,0.2,0.2,0.2,,,
 us/tx/vanzandt,0.2,0.2,0.2,1,1,样本 30 行中不存在任何 city/state/zip 列；AddressFullName 仅为「门牌号+街名」拼接（如 327 VZ COUNTY ROAD 3225），无市级或邮政编码信息，故 city/zip 豁免。
 us/ut/cache,0.2,0.2,0.2,,,
 us/ut/statewide,0.2,0.2,0.2,,,
+us/va/arlington,0.2,0.2,0.2,,,
+us/va/clarke,0.2,0.2,0.2,,,
+us/va/greene,0.2,0.2,0.2,1,1,源内只有 Add_Number/FULLNAME/FULLROADNAME 等门牌与道路字段，MUNICIPALITY 列全为空值，且无 ZIP/STATE 列，故豁免 city/zip
+us/va/louisa,0.2,0.2,0.2,1,1,该 FeatureServer 图层字段仅有 OBJECTID/ADDR_KEY/ROADNAME/ADDRESS/APARTMENT/FULLADDR/MSTRT/MDIRCT/MSTTYP/NENA_Name/POINT_X/POINT_Y 等，无 city、无 ZIP、无 state 列，故豁免。
