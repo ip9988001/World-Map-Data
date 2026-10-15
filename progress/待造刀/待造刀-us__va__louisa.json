@@ -2,7 +2,7 @@
  "source_id": "us/va/louisa",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 22,547 条 > 真门牌号行 757 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 21,472 条 > 真门牌号行 757 条×150% → 拒绝这套产物；concat_addr@v2:合规 757/22547 = 3%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757））→ 造新规则",
- "decided_at": "2026-10-15 01:28:33",
+ "decided_at": "2026-10-15 07:30:23",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -165,7 +165,7 @@
     "contract": false
    },
    "why": "疑似凭空造数据：合规 22,538 条 > 真门牌号行 757 条×150% → 拒绝这套产物",
-   "seconds": 6.6
+   "seconds": 6.5
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
@@ -411,7 +411,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 11.6
+   "seconds": 11.7
   },
   {
    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
@@ -452,7 +452,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 12.5
+   "seconds": 12.6
   },
   {
    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
@@ -493,7 +493,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 13.4
+   "seconds": 13.5
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -534,7 +534,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 14.3
+   "seconds": 14.4
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -575,7 +575,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 15.2
+   "seconds": 15.3
   },
   {
    "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
@@ -616,7 +616,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 16.0
+   "seconds": 16.2
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -657,7 +657,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 17.0
+   "seconds": 17.1
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -698,7 +698,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 17.7
+   "seconds": 17.9
   },
   {
    "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
@@ -739,7 +739,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 18.5
+   "seconds": 18.7
   },
   {
    "rule": "llm_us_nc_caswell_caswell_addpts@v1",
@@ -780,7 +780,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 19.3
+   "seconds": 19.5
   },
   {
    "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
@@ -821,7 +821,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 20.2
+   "seconds": 20.4
   },
   {
    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
@@ -862,7 +862,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 21.1
+   "seconds": 21.3
   },
   {
    "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
@@ -903,7 +903,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 22.0
+   "seconds": 22.2
   },
   {
    "rule": "llm_us_oh_seneca_seneca_oh_address_points@v1",
@@ -944,7 +944,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 23.0
+   "seconds": 23.2
   },
   {
    "rule": "llm_us_ok_city_of_lawton_city_of_lawton_address_points@v1",
@@ -985,7 +985,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 23.9
+   "seconds": 24.1
   },
   {
    "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
@@ -1026,7 +1026,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 24.9
+   "seconds": 25.1
   },
   {
    "rule": "llm_us_pa_pike_pike_pa_address_points@v1",
@@ -1067,7 +1067,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 25.7
+   "seconds": 25.9
   },
   {
    "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
@@ -1108,7 +1108,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 26.5
+   "seconds": 26.7
   },
   {
    "rule": "llm_us_pa_york_york_pa_address_points@v1",
@@ -1149,7 +1149,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 27.4
+   "seconds": 27.6
   },
   {
    "rule": "llm_us_sc_city_of_myrtle_beach_myrtle_beach_address_points@v1",
@@ -1190,7 +1190,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 28.3
+   "seconds": 28.5
   },
   {
    "rule": "llm_us_tx_city_of_amarillo_amarillo_address_points@v1",
@@ -1231,7 +1231,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 29.3
+   "seconds": 29.5
   },
   {
    "rule": "llm_us_tx_city_of_cedar_park_cedar_park_address_points@v1",
@@ -1272,7 +1272,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 30.0
+   "seconds": 30.3
   },
   {
    "rule": "llm_us_tx_city_of_garland_garland_tx_address_points@v1",
@@ -1313,7 +1313,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 30.8
+   "seconds": 31.0
   },
   {
    "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
@@ -1354,7 +1354,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 31.6
+   "seconds": 31.8
   },
   {
    "rule": "llm_us_tx_city_of_round_rock_round_rock_address_points@v1",
@@ -1395,7 +1395,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 32.4
+   "seconds": 32.6
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -1436,7 +1436,7 @@
     "contract": false
    },
    "why": "合规 0/22547 = 0%（阈 30%；总行 22,548，带地址 22,547，真门牌号 757）",
-   "seconds": 33.3
+   "seconds": 33.6
   }
  ],
  "evidence": {},

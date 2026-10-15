@@ -2,7 +2,7 @@
  "source_id": "us/ca/inyo",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 11,214 条 > 真门牌号行 2,609 条×150% → 拒绝这套产物；field_guess@v2:合规 0/11221 = 0%（阈 30%；总行 11,355，带地址 11,221，真门牌号 2,609）；concat_addr@v2:合规 1470/11221 = 13%（阈 30%；总行 11,355，带地址 11,221，真门牌号 2,609））→ 造新规则",
- "decided_at": "2026-10-15 01:27:59",
+ "decided_at": "2026-10-15 07:29:49",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -824,7 +824,7 @@
     "contract": false
    },
    "why": "合规 0/11221 = 0%（阈 30%；总行 11,355，带地址 11,221，真门牌号 2,609）",
-   "seconds": 9.2
+   "seconds": 9.3
   },
   {
    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",

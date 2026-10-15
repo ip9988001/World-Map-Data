@@ -2,7 +2,7 @@
  "source_id": "us/ga/telfair",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 4,286 条 > 真门牌号行 725 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 2,938 条 > 真门牌号行 725 条×150% → 拒绝这套产物；field_guess@v2:合规 161/6682 = 2%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725））→ 造新规则",
- "decided_at": "2026-10-15 01:27:43",
+ "decided_at": "2026-10-15 07:29:33",
  "chain": [
   {
    "rule": "concat_addr@v1",
@@ -209,7 +209,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 2.2
+   "seconds": 2.1
   },
   {
    "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
@@ -332,7 +332,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 3.3
+   "seconds": 3.2
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -496,7 +496,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 4.8
+   "seconds": 4.7
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -578,7 +578,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 5.5
+   "seconds": 5.4
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -619,7 +619,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 5.9
+   "seconds": 5.8
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -701,7 +701,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 6.6
+   "seconds": 6.5
   },
   {
    "rule": "llm_us_nc_caswell_caswell_addpts@v1",
@@ -783,7 +783,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 7.3
+   "seconds": 7.2
   },
   {
    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
@@ -824,7 +824,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 7.7
+   "seconds": 7.6
   },
   {
    "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
@@ -865,7 +865,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 8.1
+   "seconds": 8.0
   },
   {
    "rule": "llm_us_oh_seneca_seneca_oh_address_points@v1",
@@ -906,7 +906,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 8.5
+   "seconds": 8.4
   },
   {
    "rule": "llm_us_ok_city_of_lawton_city_of_lawton_address_points@v1",
@@ -947,7 +947,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 8.9
+   "seconds": 8.8
   },
   {
    "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
@@ -1029,7 +1029,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 9.6
+   "seconds": 9.5
   },
   {
    "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
@@ -1193,7 +1193,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 11.1
+   "seconds": 11.0
   },
   {
    "rule": "llm_us_tx_city_of_cedar_park_cedar_park_address_points@v1",
@@ -1275,7 +1275,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 11.8
+   "seconds": 11.7
   },
   {
    "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
@@ -1357,7 +1357,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 12.5
+   "seconds": 12.4
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -1398,7 +1398,7 @@
     "contract": false
    },
    "why": "合规 0/6682 = 0%（阈 30%；总行 8,871，带地址 6,682，真门牌号 725）",
-   "seconds": 12.9
+   "seconds": 12.8
   }
  ],
  "evidence": {},

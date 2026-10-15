@@ -2,7 +2,7 @@
  "source_id": "us/ak/city_of_bethel",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:合规 0/3 = 0%（阈 30%；总行 2,732，带地址 3，真门牌号 1）；field_guess@v2:合规 0/3 = 0%（阈 30%；总行 2,732，带地址 3，真门牌号 1）；concat_addr@v2:合规 0/3 = 0%（阈 30%；总行 2,732，带地址 3，真门牌号 1））→ 造新规则",
- "decided_at": "2026-10-15 01:31:21",
+ "decided_at": "2026-10-15 07:33:32",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -617,7 +617,7 @@
     "contract": false
    },
    "why": "合规 0/3 = 0%（阈 30%；总行 2,732，带地址 3，真门牌号 1）",
-   "seconds": 1.1
+   "seconds": 1.0
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",

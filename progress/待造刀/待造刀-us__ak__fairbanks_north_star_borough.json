@@ -2,7 +2,7 @@
  "source_id": "us/ak/fairbanks_north_star_borough",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 36,500 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 35,554 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物；concat_addr@v2:合规 9796/36500 = 27%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412））→ 造新规则",
- "decided_at": "2026-10-15 01:31:41",
+ "decided_at": "2026-10-15 07:33:30",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -165,7 +165,7 @@
     "contract": true
    },
    "why": "疑似凭空造数据：合规 36,107 条 > 真门牌号行 11,412 条×150% → 拒绝这套产物",
-   "seconds": 12.6
+   "seconds": 12.5
   },
   {
    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
@@ -493,7 +493,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 26.8
+   "seconds": 26.9
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -616,7 +616,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 31.6
+   "seconds": 31.7
   },
   {
    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
@@ -657,7 +657,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 33.3
+   "seconds": 33.4
   },
   {
    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
@@ -698,7 +698,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 34.8
+   "seconds": 34.9
   },
   {
    "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
@@ -780,7 +780,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 37.7
+   "seconds": 37.8
   },
   {
    "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
@@ -821,7 +821,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 39.3
+   "seconds": 39.4
   },
   {
    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
@@ -862,7 +862,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 41.1
+   "seconds": 41.2
   },
   {
    "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
@@ -903,7 +903,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 42.8
+   "seconds": 42.9
   },
   {
    "rule": "llm_us_oh_seneca_seneca_oh_address_points@v1",
@@ -944,7 +944,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 44.5
+   "seconds": 44.6
   },
   {
    "rule": "llm_us_ok_city_of_lawton_city_of_lawton_address_points@v1",
@@ -985,7 +985,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 46.2
+   "seconds": 46.3
   },
   {
    "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
@@ -1026,7 +1026,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 47.9
+   "seconds": 48.0
   },
   {
    "rule": "llm_us_pa_pike_pike_pa_address_points@v1",
@@ -1067,7 +1067,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 49.4
+   "seconds": 49.5
   },
   {
    "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
@@ -1108,7 +1108,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 50.9
+   "seconds": 51.0
   },
   {
    "rule": "llm_us_pa_york_york_pa_address_points@v1",
@@ -1149,7 +1149,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 52.6
+   "seconds": 52.7
   },
   {
    "rule": "llm_us_sc_city_of_myrtle_beach_myrtle_beach_address_points@v1",
@@ -1190,7 +1190,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 54.2
+   "seconds": 54.4
   },
   {
    "rule": "llm_us_tx_city_of_amarillo_amarillo_address_points@v1",
@@ -1231,7 +1231,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 55.9
+   "seconds": 56.1
   },
   {
    "rule": "llm_us_tx_city_of_cedar_park_cedar_park_address_points@v1",
@@ -1272,7 +1272,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 57.4
+   "seconds": 57.6
   },
   {
    "rule": "llm_us_tx_city_of_garland_garland_tx_address_points@v1",
@@ -1313,7 +1313,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 58.9
+   "seconds": 59.0
   },
   {
    "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
@@ -1354,7 +1354,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 60.4
+   "seconds": 60.5
   },
   {
    "rule": "llm_us_tx_city_of_round_rock_round_rock_address_points@v1",
@@ -1395,7 +1395,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 61.9
+   "seconds": 62.0
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
@@ -1436,7 +1436,7 @@
     "contract": true
    },
    "why": "合规 0/36500 = 0%（阈 30%；总行 36,501，带地址 36,500，真门牌号 11,412）",
-   "seconds": 63.6
+   "seconds": 63.7
   }
  ],
  "evidence": {},

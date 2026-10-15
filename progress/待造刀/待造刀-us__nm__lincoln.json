@@ -2,7 +2,7 @@
  "source_id": "us/nm/lincoln",
  "kind": "RULE_GAP",
  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 20,224 条 > 真门牌号行 2,481 条×150% → 拒绝这套产物；field_guess@v2:合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）；concat_addr@v2:合规 2232/20232 = 11%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481））→ 造新规则",
- "decided_at": "2026-10-15 01:29:03",
+ "decided_at": "2026-10-15 07:30:53",
  "chain": [
   {
    "rule": "mapping@v1",
@@ -331,7 +331,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 8.7
+   "seconds": 8.8
   },
   {
    "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
@@ -372,7 +372,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 9.4
+   "seconds": 9.5
   },
   {
    "rule": "llm_us_de_kent_kent_de_addresses@v1",
@@ -495,7 +495,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 11.8
+   "seconds": 11.9
   },
   {
    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
@@ -536,7 +536,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 12.6
+   "seconds": 12.7
   },
   {
    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
@@ -577,7 +577,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 13.3
+   "seconds": 13.4
   },
   {
    "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
@@ -741,7 +741,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 16.4
+   "seconds": 16.5
   },
   {
    "rule": "llm_us_nc_caswell_caswell_addpts@v1",
@@ -782,7 +782,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 17.1
+   "seconds": 17.2
   },
   {
    "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
@@ -823,7 +823,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 17.9
+   "seconds": 18.0
   },
   {
    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
@@ -987,7 +987,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 21.3
+   "seconds": 21.4
   },
   {
    "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
@@ -1028,7 +1028,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 22.1
+   "seconds": 22.2
   },
   {
    "rule": "llm_us_pa_pike_pike_pa_address_points@v1",
@@ -1069,7 +1069,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 22.8
+   "seconds": 22.9
   },
   {
    "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
@@ -1151,7 +1151,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 24.4
+   "seconds": 24.5
   },
   {
    "rule": "llm_us_sc_city_of_myrtle_beach_myrtle_beach_address_points@v1",
@@ -1192,7 +1192,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 25.2
+   "seconds": 25.3
   },
   {
    "rule": "llm_us_tx_city_of_amarillo_amarillo_address_points@v1",
@@ -1315,7 +1315,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 27.5
+   "seconds": 27.6
   },
   {
    "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
@@ -1356,7 +1356,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 28.2
+   "seconds": 28.3
   },
   {
    "rule": "llm_us_tx_city_of_round_rock_round_rock_address_points@v1",
@@ -1397,7 +1397,7 @@
     "contract": false
    },
    "why": "合规 0/20232 = 0%（阈 30%；总行 22,916，带地址 20,232，真门牌号 2,481）",
-   "seconds": 28.9
+   "seconds": 29.0
   },
   {
    "rule": "llm_us_wa_clark_clark_situs_address@v1",
