@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 22:12:38",
+ "county": "Bienville",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Item does not exist or is inaccessible.', 'messageCode': 'CONT_0001', 'deta",
+ "source_id": "us/la/bienville",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://services.arcgis.com/mq0BGE5kHpm8mHFz/ArcGIS/rest/services/Address_Points/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

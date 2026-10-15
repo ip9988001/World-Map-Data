@@ -1,0 +1,138 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "NUMADDR",
+  "street": "NUMADDR"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 22:12:00",
+ "county": "Kenton",
+ "curated_cols": {
+  "number": "NUMADDR",
+  "street": "NUMADDR"
+ },
+ "fields": [
+  "OBJECTID",
+  "GlobalID",
+  "EDITDATE",
+  "SOURCE",
+  "COMMENTS",
+  "NUMADDR",
+  "Shape",
+  "POINTTYPE",
+  "BUSINESS_NAME",
+  "BUSINESS_DATE"
+ ],
+ "fields_n": 10,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points - Kenton County",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BUSINESS_DATE": {
+    "带特殊字符": 0,
+    "最短": "1760313600000",
+    "最长": "1760313600000",
+    "空": 297,
+    "空率": 0.99
+   },
+   "BUSINESS_NAME": {
+    "带特殊字符": 1,
+    "最短": "McDonald's",
+    "最长": "Ludlow Bromley Yacht Club",
+    "空": 297,
+    "空率": 0.99
+   },
+   "COMMENTS": {
+    "带特殊字符": 3,
+    "最短": "Was 218",
+    "最长": "Was 401-A MOORE ST; should be addressed on HIGHWATER RD; changed to HIGHWATER RD",
+    "空": 289,
+    "空率": 0.963
+   },
+   "EDITDATE": {
+    "带特殊字符": 0,
+    "最短": "1212105600000",
+    "最长": "1212105600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUMADDR": {
+    "带特殊字符": 0,
+    "最短": "843 ELM ST",
+    "最长": "692 BROMLEY CRESCENT SPRINGS RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINTTYPE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "1000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "KCPVA",
+    "最长": "FIELDWORK",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "dcc059f5ed49d254",
+  "total": 98087,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 98087,
+   "number": 98087,
+   "street": 98087
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 98087,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=NUMADDR street=NUMADDR（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "dcc059f5ed49d254",
+ "site_cols": [
+  "NUMADDR"
+ ],
+ "source_id": "us/ky/kenton",
+ "stage": "p0",
+ "state": "KY",
+ "url": "https://maps.linkgis.org/server/rest/services/addressPoints/MapServer/3",
+ "verdict": "CONTRACTED"
+}

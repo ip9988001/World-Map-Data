@@ -1,0 +1,291 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRNUM",
+  "street": "PREDIR",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 22:12:31",
+ "county": "Ascension",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDRNUM",
+  "street": "PREDIR",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "ADDRNUM",
+  "QUALIFIER",
+  "PREDIR",
+  "PRETYPE",
+  "ROADNAME",
+  "ROADTYPE",
+  "POSTDIR",
+  "CITY",
+  "ZIP",
+  "FULLADDR",
+  "PLACENAME",
+  "USETYPE",
+  "LOT",
+  "JOINID",
+  "JURISDICTION",
+  "CouncilDistrict",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "Shape",
+  "GlobalID",
+  "X_Point",
+  "Y_Point",
+  "FULLWZIP",
+  "MATID",
+  "OBJECTID"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRNUM": {
+    "带特殊字符": 0,
+    "最短": "322",
+    "最长": "37047",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "Darrow",
+    "最长": "Donaldsonville",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CouncilDistrict": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "11",
+    "空": 3,
+    "空率": 0.01
+   },
+   "FULLADDR": {
+    "带特殊字符": 3,
+    "最短": "5050 Hwy 44",
+    "最长": "800 Riverview Complex unit B205",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLWZIP": {
+    "带特殊字符": 3,
+    "最短": "5050 Hwy 44 70725",
+    "最长": "800 Riverview Complex unit B205 70346",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{8EFFCA0E-4136-4CD4-A07A-91DF5B9D2395}",
+    "最长": "{8EFFCA0E-4136-4CD4-A07A-91DF5B9D2395}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JOINID": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "16",
+    "空": 275,
+    "空率": 0.917
+   },
+   "JURISDICTION": {
+    "带特殊字符": 0,
+    "最短": "Parish",
+    "最长": "Donaldsonville",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LOT": {
+    "带特殊字符": 4,
+    "最短": "A",
+    "最长": "X 2 D 1 A 2",
+    "空": 144,
+    "空率": 0.48
+   },
+   "MATID": {
+    "带特殊字符": 0,
+    "最短": "MAT0000001",
+    "最长": "MAT0000001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLACENAME": {
+    "带特殊字符": 28,
+    "最短": "APG",
+    "最长": "Cypress Trace Manufactured Housing Community",
+    "空": 211,
+    "空率": 0.703
+   },
+   "POSTDIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 293,
+    "空率": 0.977
+   },
+   "PREDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 261,
+    "空率": 0.87
+   },
+   "PRETYPE": {
+    "带特殊字符": 0,
+    "最短": "Hwy",
+    "最长": "Hwy",
+    "空": 265,
+    "空率": 0.883
+   },
+   "QUALIFIER": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "B205",
+    "空": 273,
+    "空率": 0.91
+   },
+   "ROADNAME": {
+    "带特殊字符": 3,
+    "最短": "1",
+    "最长": "RUE DE CHENE BLANC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADTYPE": {
+    "带特殊字符": 0,
+    "最短": "Rd",
+    "最长": "Blvd",
+    "空": 36,
+    "空率": 0.12
+   },
+   "USETYPE": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "Residential Mobile Home",
+    "空": 95,
+    "空率": 0.317
+   },
+   "X_Point": {
+    "带特殊字符": 0,
+    "最短": "-90.919318",
+    "最长": "-90.98899832",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_Point": {
+    "带特殊字符": 0,
+    "最短": "30.336072",
+    "最长": "30.28642987",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "70769",
+    "最长": "70769",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1698678599000",
+    "最长": "1698678599000",
+    "空": 288,
+    "空率": 0.96
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "KYRSTIN",
+    "最长": "Gonzales",
+    "空": 288,
+    "空率": 0.96
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1769547022000",
+    "最长": "1769547022000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "SDE",
+    "最长": "SDE",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a7322f58540c9dbd",
+  "total": 66871,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0003,
+   "full": 0.0001,
+   "number": 0.0001,
+   "street": 0.8696,
+   "zip": 0.0003
+  },
+  "nonnull": {
+   "city": 66849,
+   "full": 66867,
+   "number": 66867,
+   "street": 8721,
+   "zip": 66849
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0001, 'street': 0.8696, 'city': 0.0003, 'zip': 0.0003, 'full': 0.0001}）→ 可全量采集；**必须用整条地址列 ADDRNUM 拆**（concat_addr）",
+  "total": 66871,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRNUM street=PREDIR city=CITY zip=ZIP",
+ "sample_hash": "a7322f58540c9dbd",
+ "site_cols": [
+  "ADDRNUM",
+  "FULLADDR"
+ ],
+ "source_id": "us/la/ascension",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://gis.ascensionparishla.gov/server/rest/services/Base_Layers/Address/MapServer/416",
+ "verdict": "CONTRACTED"
+}

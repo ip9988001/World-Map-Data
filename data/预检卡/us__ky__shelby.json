@@ -1,0 +1,189 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMMUNITY",
+  "number": "ADD_NUMBER",
+  "street": "STR_NAME",
+  "unit": "COMMUNITY",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 22:12:27",
+ "county": "Shelby",
+ "curated_cols": {
+  "city": "COMMUNITY",
+  "number": "ADD_NUMBER",
+  "street": "STR_NAME",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADD_NUMBER",
+  "STREET_DIR",
+  "STR_NAME",
+  "STREET_TYP",
+  "FULL_NAME",
+  "ZIP",
+  "fulladdcal",
+  "stplsuf",
+  "st_wzip",
+  "COMMUNITY",
+  "Add_suffix",
+  "OR_STREET"
+ ],
+ "fields_n": 13,
+ "guessed_cols": {
+  "unit": "COMMUNITY"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADD_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "84",
+    "最长": "2822",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Add_suffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "SHELBYVILLE",
+    "最长": "SHELBYVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_NAME": {
+    "带特殊字符": 0,
+    "最短": "1239 TROON CT",
+    "最长": "101 NORTH COUNTRY DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OR_STREET": {
+    "带特殊字符": 0,
+    "最短": "TROON CT",
+    "最长": "NORTH COUNTRY DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_DIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 243,
+    "空率": 0.81
+   },
+   "STREET_TYP": {
+    "带特殊字符": 0,
+    "最短": "PL",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_NAME": {
+    "带特殊字符": 0,
+    "最短": "TROON",
+    "最长": "BRASSFIELD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "40065",
+    "最长": "40065",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fulladdcal": {
+    "带特殊字符": 0,
+    "最短": "1239 TROON CT",
+    "最长": "101 NORTH COUNTRY DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_wzip": {
+    "带特殊字符": 0,
+    "最短": "TROON CT 40065",
+    "最长": "NORTH COUNTRY DR 40065",
+    "空": 0,
+    "空率": 0.0
+   },
+   "stplsuf": {
+    "带特殊字符": 0,
+    "最短": "TROON CT",
+    "最长": "NORTH COUNTRY DR",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8f6441f2da35e22d",
+  "total": 20759,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 20759,
+   "full": 20759,
+   "number": 20759,
+   "street": 20759,
+   "zip": 20759
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 20759,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADD_NUMBER street=STR_NAME city=COMMUNITY zip=ZIP",
+ "sample_hash": "8f6441f2da35e22d",
+ "site_cols": [
+  "STREET_DIR",
+  "STREET_TYP",
+  "OR_STREET"
+ ],
+ "source_id": "us/ky/shelby",
+ "stage": "p0",
+ "state": "KY",
+ "url": "https://services2.arcgis.com/VqPd1Ybcc46AvijK/arcgis/rest/services/Address_Service/FeatureServer/43",
+ "verdict": "CONTRACTED"
+}

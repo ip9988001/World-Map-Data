@@ -1,0 +1,412 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDNUM",
+  "street": "STREET",
+  "unit": "bldgpermit",
+  "zip": "ZIP_CODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-15 22:12:05",
+ "county": "Madison",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDNUM",
+  "street": "STREET",
+  "zip": "ZIP_CODE"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "STREET",
+  "SUITE",
+  "NAME",
+  "ACCESS",
+  "TYPE",
+  "LAND_USE",
+  "STORIES",
+  "EXTERIOR",
+  "COMMENT",
+  "FULL_ADD",
+  "CITY",
+  "PREFIX_DIR",
+  "STREET_NAM",
+  "ROAD_TYPE",
+  "SUFFIX_DIR",
+  "LAST_UPDT",
+  "UPDT_COMM",
+  "newadd",
+  "oldadd",
+  "Flood",
+  "Flood1990",
+  "ENGRD_STRC",
+  "JURISD",
+  "ADDNUM",
+  "GlobalID",
+  "POINT_X",
+  "POINT_Y",
+  "ESN",
+  "ZIP_CODE",
+  "CRIT_FAC",
+  "ADDTL_LOCN",
+  "LANDMK_NAM",
+  "unitcount",
+  "police_r",
+  "fire_r",
+  "subdiv",
+  "lu_planned",
+  "bldgpermit",
+  "trash_rt",
+  "recycle_rt",
+  "permitno",
+  "permitdate",
+  "zone",
+  "industryti",
+  "Shape",
+  "created_date",
+  "GlobalID_1"
+ ],
+ "fields_n": 48,
+ "guessed_cols": {
+  "unit": "bldgpermit"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "GPS Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACCESS": {
+    "带特殊字符": 0,
+    "最短": "NORMAL",
+    "最长": "COULD BE GATED",
+    "空": 93,
+    "空率": 0.31
+   },
+   "ADDNUM": {
+    "带特殊字符": 0,
+    "最短": "615",
+    "最长": "1849",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDTL_LOCN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "BEREA",
+    "最长": "PAINT LICK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMENT": {
+    "带特殊字符": 128,
+    "最短": "AG",
+    "最长": "COULD BE IN ROCKCASTLE COUNTY NOTHING POSTED COULD BE 825 A B",
+    "空": 79,
+    "空率": 0.263
+   },
+   "CRIT_FAC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ENGRD_STRC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "59",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EXTERIOR": {
+    "带特殊字符": 229,
+    "最短": "LOG",
+    "最长": "FIELDSTONE VINYL",
+    "空": 1,
+    "空率": 0.003
+   },
+   "FULL_ADD": {
+    "带特殊字符": 0,
+    "最短": "110 BLOOD RD",
+    "最长": "1089 BUFFALO HOLLOW RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Flood": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Flood1990": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{D124F2C4-70CE-47A9-A7BC-A4EC08DFE6C6}",
+    "最长": "{D124F2C4-70CE-47A9-A7BC-A4EC08DFE6C6}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JURISD": {
+    "带特殊字符": 0,
+    "最短": "COUNTY",
+    "最长": "XCOUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LANDMK_NAM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LAND_USE": {
+    "带特殊字符": 0,
+    "最短": "PSP",
+    "最长": "RESIDENTIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAST_UPDT": {
+    "带特殊字符": 0,
+    "最短": "1791213014000",
+    "最长": "1791213014000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME": {
+    "带特殊字符": 1,
+    "最短": "LANHAM IRON & METAL",
+    "最长": "CALDWELLS STORE AND GAME ROOM",
+    "空": 296,
+    "空率": 0.987
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "2095665.3750183",
+    "最长": "2095791.37509438",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "37.524058",
+    "最长": "37.54682205",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREFIX_DIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ROAD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "WAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STORIES": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1.5",
+    "空": 1,
+    "空率": 0.003
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "MCKEE RD",
+    "最长": "BUFFALO HOLLOW RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAM": {
+    "带特殊字符": 0,
+    "最短": "MCKEE",
+    "最长": "BUFFALO HOLLOW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUFFIX_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUITE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "SF",
+    "最长": "RADIO TOWER 800 MHZ",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UPDT_COMM": {
+    "带特殊字符": 1,
+    "最短": "RDNM EDIT",
+    "最长": "ADDNUM FM 567- OWNER JANICE DAY CONFIRMED 1377",
+    "空": 210,
+    "空率": 0.7
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "40403",
+    "最长": "40403",
+    "空": 0,
+    "空率": 0.0
+   },
+   "bldgpermit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "fire_r": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lu_planned": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "newadd": {
+    "带特殊字符": 0,
+    "最短": "301",
+    "最长": "3095",
+    "空": 102,
+    "空率": 0.34
+   },
+   "oldadd": {
+    "带特殊字符": 0,
+    "最短": "24",
+    "最长": "5615",
+    "空": 98,
+    "空率": 0.327
+   },
+   "police_r": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "subdiv": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "trash_rt": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "unitcount": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "741e2b4e44038093",
+  "total": 60550,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 60550,
+   "full": 60550,
+   "number": 60550,
+   "street": 60550,
+   "zip": 60550
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 60550,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDNUM street=STREET city=CITY zip=ZIP_CODE",
+ "sample_hash": "741e2b4e44038093",
+ "site_cols": [
+  "STREET",
+  "STREET_NAM"
+ ],
+ "source_id": "us/ky/madison",
+ "stage": "p0",
+ "state": "KY",
+ "url": "https://arcserver.madisoncountyky.us/arcgis/rest/services/County_Web_Maps/Structures/MapServer/0",
+ "verdict": "CONTRACTED"
+}
