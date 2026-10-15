@@ -649,7 +649,7 @@ us/mi/semcog,MI,"Livingston, Macomb, Monroe, Oakland, Saint Clair, Washtenaw, Wa
 us/mi/st_clair,MI,St. Clair,26147,1,mapping@v1,77885,0.998,,,0.0,38.46,PASS,A,60.0,B,
 us/mi/troy,MI,City of Troy,2680700,1,mapping@v1,33106,1.0,,,0.0,26.87,PASS,A,60.0,B,
 us/mi/washtenaw,MI,Washtenaw,26161,0,,0,,,,,,,,,X,TRANSIENT
-us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物；field_guess@v2:合规 0/449285 = 0%（阈 30%；"
+us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
 us/mn/aitkin,MN,Aitkin,27001,1,mapping@v1,16204,0.924,,,0.0,18.19,PASS,A,60.0,B,
 us/mn/anoka,MN,Anoka,27003,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/mn/beltrami,MN,Beltrami,27007,1,mapping@v1,20671,1.0,,,0.0,10.15,PASS,A,60.0,B,
@@ -800,7 +800,7 @@ us/nc/rockingham,NC,Rockingham,37157,0,,0,,,,,,,,,X,"本地抽查：有地址味
 us/nc/rowan,NC,Rowan,37159,1,mapping@v1,78041,1.0,,,0.0,18.93,PASS_DOWNGRADED,B,60.0,B,"合规 78041/78056 = 100%（带地址行分母；真门牌号行 77,504）总行 78,061｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/nc/rutherford,NC,Rutherford,37161,1,mapping@v1,40788,1.0,,,0.0002,13.83,PASS,A,60.0,B,
 us/nc/transylvania,NC,Transylvania,37175,1,concat_addr@v1,23713,0.881,,,0.0,2.97,PASS_DOWNGRADED,B,44.3,C,"合规 23713/26904 = 88%（带地址行分母；真门牌号行 26,662）总行 29,172｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/z"
-us/nc/wake,NC,Wake,37183,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
+us/nc/wake,NC,Wake,37183,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 527,570 条 > 真门牌号行 90,196 条×150% → 拒绝这套产物；field_guess@v2:合规 0/527570 = 0%（阈 30%；"
 us/nc/warren,NC,Warren,37185,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 15,781 条 > 真门牌号行 1,724 条×150% → 拒绝这套产物；field_guess@v2:合规 0/15790 = 0%（阈 30%；总行 "
 us/nc/wilson,NC,Wilson,37195,1,mapping@v1,53105,0.999,,,0.0,30.26,PASS_DOWNGRADED,B,60.0,B,"合规 53105/53147 = 100%（带地址行分母；真门牌号行 50,620）总行 53,147｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/nc/yancey,NC,Yancey,37199,1,concat_addr@v1,15865,0.999,,,0.0,9.14,PASS_DOWNGRADED,B,60.0,B,"合规 15865/15878 = 100%（带地址行分母；真门牌号行 15,604）总行 15,878｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/"

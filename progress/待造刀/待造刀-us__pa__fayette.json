@@ -1,0 +1,1567 @@
+{
+ "source_id": "us/pa/fayette",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 67,462 条 > 真门牌号行 36,343 条×150% → 拒绝这套产物；field_guess@v2:合规 1441/67556 = 2%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）；concat_addr@v2:合规 12010/67556 = 18%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343））→ 造新规则",
+ "decided_at": "2026-10-15 01:29:41",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 67575,
+   "kept": 67462,
+   "contentful": 67556,
+   "kept_contentful": 67462,
+   "true_addr": 36343,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 92,
+    "no_address_trace": 19,
+    "no_number": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 35564
+    },
+    "junk_rate": 0.0014,
+    "per_street": 20.25,
+    "streets": 3332,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 67,462 条 > 真门牌号行 36,343 条×150% → 拒绝这套产物",
+   "seconds": 7.1
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 67575,
+   "kept": 1441,
+   "contentful": 67556,
+   "kept_contentful": 1441,
+   "true_addr": 36343,
+   "ratio": 0.021,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 66113,
+    "no_address_trace": 19,
+    "guess_bad_number": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 1441,
+     "zip": 1441
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.79,
+    "streets": 81,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 1441/67556 = 2%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 12.0
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 67575,
+   "kept": 12010,
+   "contentful": 67556,
+   "kept_contentful": 12010,
+   "true_addr": 36343,
+   "ratio": 0.178,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 55546,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 11251,
+     "zip": 12010
+    },
+    "junk_rate": 0.0,
+    "per_street": 17.23,
+    "streets": 697,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 12010/67556 = 18%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 27.0
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 67575,
+   "kept": 67249,
+   "contentful": 67556,
+   "kept_contentful": 67249,
+   "true_addr": 36343,
+   "ratio": 0.995,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 284,
+    "no_full_address": 21,
+    "no_address_trace": 19,
+    "junk_rejected": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 67249,
+     "zip": 67249
+    },
+    "junk_rate": 0.0,
+    "per_street": 18.59,
+    "streets": 3617,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 67,249 条 > 真门牌号行 36,343 条×150% → 拒绝这套产物",
+   "seconds": 34.1
+  },
+  {
+   "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 38.4
+  },
+  {
+   "rule": "llm_us_ca_city_of_rancho_cucamonga_rancho_cucamonga_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 42.9
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 47.1
+  },
+  {
+   "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 52.0
+  },
+  {
+   "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 56.2
+  },
+  {
+   "rule": "llm_us_de_kent_kent_de_addresses@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 60.4
+  },
+  {
+   "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 65.0
+  },
+  {
+   "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 69.6
+  },
+  {
+   "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 74.1
+  },
+  {
+   "rule": "llm_us_ia_wapello_wapello_site_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 78.3
+  },
+  {
+   "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 82.8
+  },
+  {
+   "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 87.4
+  },
+  {
+   "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 91.6
+  },
+  {
+   "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 95.8
+  },
+  {
+   "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 100.0
+  },
+  {
+   "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 104.5
+  },
+  {
+   "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 109.3
+  },
+  {
+   "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 114.0
+  },
+  {
+   "rule": "llm_us_oh_seneca_seneca_oh_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 118.7
+  },
+  {
+   "rule": "llm_us_ok_city_of_lawton_city_of_lawton_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 123.7
+  },
+  {
+   "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 128.3
+  },
+  {
+   "rule": "llm_us_pa_pike_pike_pa_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_street": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 132.4
+  },
+  {
+   "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 136.6
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 67575,
+   "kept": 67554,
+   "contentful": 67556,
+   "kept_contentful": 67554,
+   "true_addr": 36343,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 19,
+    "junk_rejected": 2
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 67554,
+     "zip": 67554
+    },
+    "junk_rate": 0.0,
+    "per_street": 20.35,
+    "streets": 3320,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 67,554 条 > 真门牌号行 36,343 条×150% → 拒绝这套产物",
+   "seconds": 143.6
+  },
+  {
+   "rule": "llm_us_sc_city_of_myrtle_beach_myrtle_beach_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 148.1
+  },
+  {
+   "rule": "llm_us_tx_city_of_amarillo_amarillo_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 152.7
+  },
+  {
+   "rule": "llm_us_tx_city_of_cedar_park_cedar_park_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 157.0
+  },
+  {
+   "rule": "llm_us_tx_city_of_garland_garland_tx_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 161.2
+  },
+  {
+   "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 165.4
+  },
+  {
+   "rule": "llm_us_tx_city_of_round_rock_round_rock_address_points@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 169.6
+  },
+  {
+   "rule": "llm_us_wa_clark_clark_situs_address@v1",
+   "rows": 67575,
+   "kept": 0,
+   "contentful": 67556,
+   "kept_contentful": 0,
+   "true_addr": 36343,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 67556,
+    "no_address_trace": 19
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/67556 = 0%（阈 30%；总行 67,575，带地址 67,556，真门牌号 36,343）",
+   "seconds": 174.2
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID_1": 1,
+   "OBJECTID": 68225,
+   "FCODE": 2000,
+   "SAN": 139,
+   "SAN_SUF": " ",
+   "PRD": " ",
+   "STN": "HILL",
+   "STS": "ST",
+   "POD": " ",
+   "MCN": "NORTH UNION",
+   "FULL_ADDRE": "139 HILL ST",
+   "DiscrpAgID": "fcema.org",
+   "DateUpdate": 1738886400000,
+   "Effective": 1638748800000,
+   "Expire": null,
+   "Site_NGUID": "SSAP7971@fcema.org",
+   "Country": "US",
+   "State": "PA",
+   "AddCode": " ",
+   "AddDateURI": " ",
+   "Inc_Muni": "NORTH UNION TOWNSHIP",
+   "Uninc_Comm": " ",
+   "Nbrhd_Comm": " ",
+   "AddNum_Pre": " ",
+   "Add_Number": 139,
+   "AddNum_Suf": " ",
+   "St_PreMod": " ",
+   "St_PreDir": " ",
+   "St_PreTyp": " ",
+   "St_Name": "Hill",
+   "St_PosTyp": "Street",
+   "St_PosDir": " ",
+   "St_PosMod": " ",
+   "LSt_PreDir": " ",
+   "LSt_Name": "HILL",
+   "LSt_Type": "ST",
+   "LSt_PosDir": " ",
+   "ESN_New": " ",
+   "MSAGComm": "NORTH UNION",
+   "Post_Comm": " ",
+   "Post_Code": " ",
+   "Post_Code4": " ",
+   "Building": " ",
+   "Floor": " ",
+   "Room": " ",
+   "Seat": " ",
+   "Mile_Post": " ",
+   "Place_Type": " ",
+   "Placement": " ",
+   "Lat": 0,
+   "Long": 0,
+   "Elev": 0,
+   "Unit": " ",
+   "County": "Fayette County",
+   "GC_Excepti": " ",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AddCode",
+  "AddDateURI",
+  "AddNum_Pre",
+  "AddNum_Suf",
+  "Add_Number",
+  "Building",
+  "Country",
+  "County",
+  "DateUpdate",
+  "DiscrpAgID",
+  "ESN_New",
+  "Effective",
+  "Elev",
+  "Expire",
+  "FCODE",
+  "FULL_ADDRE",
+  "Floor",
+  "GC_Excepti",
+  "Inc_Muni",
+  "LSt_Name",
+  "LSt_PosDir",
+  "LSt_PreDir",
+  "LSt_Type",
+  "Lat",
+  "Long",
+  "MCN",
+  "MSAGComm",
+  "Mile_Post",
+  "Nbrhd_Comm",
+  "OBJECTID",
+  "OBJECTID_1",
+  "POD",
+  "PRD",
+  "Place_Type",
+  "Placement",
+  "Post_Code",
+  "Post_Code4",
+  "Post_Comm",
+  "Room",
+  "SAN",
+  "SAN_SUF",
+  "STN",
+  "STS",
+  "Seat",
+  "Site_NGUID",
+  "St_Name",
+  "St_PosDir",
+  "St_PosMod",
+  "St_PosTyp",
+  "St_PreDir",
+  "St_PreMod",
+  "St_PreTyp",
+  "State",
+  "Uninc_Comm",
+  "Unit",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
