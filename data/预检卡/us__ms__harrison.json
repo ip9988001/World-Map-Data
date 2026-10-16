@@ -1,0 +1,78 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMMUNITY",
+  "number": "ADDR_NUM",
+  "street": "NAME_COMPL",
+  "unit": "BLDG_CLASS",
+  "zip": "ZCTA5CE10"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 20:58:54",
+ "county": "Harrison",
+ "curated_cols": {
+  "city": "COMMUNITY",
+  "number": "ADDR_NUM",
+  "street": "NAME_COMPL",
+  "zip": "ZCTA5CE10"
+ },
+ "fields": [
+  "FID",
+  "Shape",
+  "OBJECTID_1",
+  "OBJECTID",
+  "STREET_ADD",
+  "COMMUNITY",
+  "ZCTA5CE10",
+  "PRE_DIR",
+  "POST_DIR",
+  "ADDR_NUM",
+  "ROAD_NAME",
+  "TYPE",
+  "NAME_COMPL",
+  "UNIT",
+  "ADDRESS",
+  "XI",
+  "YI",
+  "LongitudeI",
+  "LatitudeI",
+  "GlobalID",
+  "NOTES1",
+  "UNIT_TYPE",
+  "BLDG_CLASS",
+  "ROAD_NAME_",
+  "created_us",
+  "created_da",
+  "last_edite",
+  "last_edi_1"
+ ],
+ "fields_n": 28,
+ "guessed_cols": {
+  "unit": "BLDG_CLASS"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Harrison_PointAddresses_Oct2022",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "reason": "服务端自报 104,299 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_NUM street=NAME_COMPL city=COMMUNITY zip=ZCTA5CE10",
+ "site_cols": [
+  "STREET_ADD",
+  "ADDR_NUM",
+  "ADDRESS"
+ ],
+ "source_id": "us/ms/harrison",
+ "stage": "p0",
+ "state": "MS",
+ "url": "https://gis.mississippi.edu/server/rest/services/CountyPointAddresses/Harrrison_PointAddresses_Oct2022/MapServer/0",
+ "verdict": "FAIL_P1"
+}
