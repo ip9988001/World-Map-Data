@@ -1,0 +1,153 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "HouseNumber",
+  "street": "StreetPrefix",
+  "zip": "ZipCode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:30:26",
+ "county": "Buncombe",
+ "curated_cols": {
+  "number": "HouseNumber",
+  "street": "StreetPrefix",
+  "zip": "ZipCode"
+ },
+ "fields": [
+  "ObjectId",
+  "LocationID",
+  "FullCivicAddress",
+  "ZipCode",
+  "HouseNumber",
+  "StreetPrefix",
+  "StreetName",
+  "StreetType",
+  "StreetPostDirection"
+ ],
+ "fields_n": 9,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "ObjectId",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "FullCivicAddress": {
+    "带特殊字符": 0,
+    "最短": "15 DONNA LN",
+    "最长": "100 LOWER SHEPHARD BRANCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseNumber": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "1000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LocationID": {
+    "带特殊字符": 0,
+    "最短": "9712556092.0",
+    "最长": "9712556092.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ObjectId": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "DONNA",
+    "最长": "LOWER SHEPHARD BRANCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetPostDirection": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StreetPrefix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZipCode": {
+    "带特殊字符": 0,
+    "最短": "28701",
+    "最长": "28701",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "2bfcc48b1064e2bc",
+  "total": 187771,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.9369,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "full": 187771,
+   "number": 187771,
+   "street": 11856,
+   "zip": 187771
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9369, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LocationID 拆**（concat_addr）",
+  "total": 187771,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HouseNumber street=StreetPrefix zip=ZipCode",
+ "sample_hash": "2bfcc48b1064e2bc",
+ "site_cols": [
+  "LocationID",
+  "FullCivicAddress",
+  "StreetPrefix",
+  "StreetName",
+  "StreetType"
+ ],
+ "source_id": "us/nc/buncombe",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://gis.buncombecounty.org/arcgis/rest/services/opendata/FeatureServer/2",
+ "verdict": "CONTRACTED"
+}

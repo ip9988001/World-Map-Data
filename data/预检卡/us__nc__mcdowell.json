@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:31:11",
+ "county": "McDowell",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：TypeError: 'NoneType' object is not iterable",
+ "source_id": "us/nc/mcdowell",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://www.webgis.net/arcgis/rest/services/NC/McDowell/MapServer/215",
+ "verdict": "REJECTED_P0"
+}

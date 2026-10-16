@@ -1,0 +1,357 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POCity",
+  "number": "St_Number",
+  "street": "PreDir",
+  "unit": "Bldg_Type",
+  "zip": "Zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:30:57",
+ "county": "Iredell",
+ "curated_cols": {
+  "city": "POCity",
+  "number": "St_Number",
+  "street": "PreDir",
+  "zip": "Zipcode"
+ },
+ "fields": [
+  "OBJECTID",
+  "FullAddr",
+  "St_Number",
+  "St_NumSuffix",
+  "PreDir",
+  "St_Name",
+  "St_Type",
+  "PostDir",
+  "Bldg_Type",
+  "Bldg_Num",
+  "Floor",
+  "UnitType",
+  "Unit",
+  "POCity",
+  "Zipcode",
+  "Street",
+  "Old_Add",
+  "Comment",
+  "Location",
+  "Add_Use",
+  "Effective_Status",
+  "Ent_Type",
+  "Ent_By",
+  "Ent_Date",
+  "Upd_By",
+  "Upd_Date",
+  "Permit",
+  "CO_Date",
+  "RuleID_1",
+  "UniqueID",
+  "Anomoly",
+  "AnomolyComment",
+  "X_Coord",
+  "Y_Coord"
+ ],
+ "fields_n": 34,
+ "guessed_cols": {
+  "unit": "Bldg_Type"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Use": {
+    "带特殊字符": 0,
+    "最短": "RES",
+    "最长": "RES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Anomoly": {
+    "带特殊字符": 0,
+    "最短": "OtherAnomoly",
+    "最长": "Odd Even Mismatch",
+    "空": 297,
+    "空率": 0.99
+   },
+   "AnomolyComment": {
+    "带特殊字符": 0,
+    "最短": "Street outside county",
+    "最长": "Street outside county",
+    "空": 299,
+    "空率": 0.997
+   },
+   "Bldg_Num": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Bldg_Type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CO_Date": {
+    "带特殊字符": 0,
+    "最短": "1710806400000",
+    "最长": "1710806400000",
+    "空": 290,
+    "空率": 0.967
+   },
+   "Comment": {
+    "带特殊字符": 1,
+    "最短": "NG401",
+    "最长": "OWNERS BEEN USING 100 AND NEIGHBOR IS USING 112",
+    "空": 270,
+    "空率": 0.9
+   },
+   "Effective_Status": {
+    "带特殊字符": 0,
+    "最短": "ACTIVE",
+    "最长": "ACTIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Ent_By": {
+    "带特殊字符": 0,
+    "最短": "ADD",
+    "最长": "ADD",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Ent_Date": {
+    "带特殊字符": 0,
+    "最短": "1262736000000",
+    "最长": "1262736000000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Ent_Type": {
+    "带特殊字符": 0,
+    "最短": "EST",
+    "最长": "EST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FullAddr": {
+    "带特殊字符": 0,
+    "最短": "116 COLT LN",
+    "最长": "124 TALBERT POINTE DR STE A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Location": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Old_Add": {
+    "带特殊字符": 3,
+    "最短": "LOT 8",
+    "最长": "WAS 103 RACHEL LN.  OWNER BEEN USING 100",
+    "空": 48,
+    "空率": 0.16
+   },
+   "POCity": {
+    "带特殊字符": 0,
+    "最短": "MT ULLA",
+    "最长": "MOORESVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Permit": {
+    "带特殊字符": 0,
+    "最短": "3621",
+    "最长": "2023-34259",
+    "空": 262,
+    "空率": 0.873
+   },
+   "PostDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PreDir": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 292,
+    "空率": 0.973
+   },
+   "RuleID_1": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "13",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "COLT",
+    "最长": "WASHINGTON RIDGE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_NumSuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_Number": {
+    "带特殊字符": 0,
+    "最短": "132",
+    "最长": "2320",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_Type": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "LOOP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street": {
+    "带特殊字符": 0,
+    "最短": "COLT LN",
+    "最长": "WASHINGTON RIDGE RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UniqueID": {
+    "带特殊字符": 0,
+    "最短": "ADD1",
+    "最长": "ADD1000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 234,
+    "空率": 0.78
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "STE",
+    "最长": "STE",
+    "空": 234,
+    "空率": 0.78
+   },
+   "Upd_By": {
+    "带特殊字符": 0,
+    "最短": "KMW",
+    "最长": "KMW",
+    "空": 2,
+    "空率": 0.007
+   },
+   "Upd_Date": {
+    "带特殊字符": 0,
+    "最短": "1262736000000",
+    "最长": "1262736000000",
+    "空": 1,
+    "空率": 0.003
+   },
+   "X_Coord": {
+    "带特殊字符": 0,
+    "最短": "1426057.422786",
+    "最长": "1474304.52273493",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_Coord": {
+    "带特殊字符": 0,
+    "最短": "692779.48171",
+    "最长": "666909.90318991",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zipcode": {
+    "带特殊字符": 0,
+    "最短": "28115",
+    "最长": "28115",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "76109f37f6a1b781",
+  "total": 118781,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 118781,
+   "full": 118781,
+   "number": 118781,
+   "street": 118781,
+   "zip": 118781
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 118781,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=St_Number street=PreDir city=POCity zip=Zipcode",
+ "sample_hash": "76109f37f6a1b781",
+ "site_cols": [
+  "FullAddr",
+  "Street",
+  "Location"
+ ],
+ "source_id": "us/nc/iredell",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://icgis.co.iredell.nc.us/arcgis/rest/services/Data/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,191 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRESS_NU",
+  "street": "ROAD_PRE",
+  "unit": "BUILDING_NUMBER",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:31:20",
+ "county": "Rockingham",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDRESS_NU",
+  "street": "ROAD_PRE",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESS_NU",
+  "ROAD_PRE",
+  "STREET_NAM",
+  "STREET_TYP",
+  "ROAD_SUF",
+  "ADDRESS",
+  "APARTMENT",
+  "ZIP",
+  "CITY",
+  "Shape",
+  "COMPLETE_NAME",
+  "BUILDING_NUMBER",
+  "STRUCTURE_TYPE"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {
+  "unit": "BUILDING_NUMBER"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Addressed Structures",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "518 C ST",
+    "最长": "1487 HARRISON CROSSROAD LOOP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_NU": {
+    "带特殊字符": 0,
+    "最短": "47",
+    "最长": "14570",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APARTMENT": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "506",
+    "空": 275,
+    "空率": 0.917
+   },
+   "BUILDING_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "500",
+    "空": 293,
+    "空率": 0.977
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "MAY",
+    "最长": "REID",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMPLETE_NAME": {
+    "带特殊字符": 0,
+    "最短": "C ST",
+    "最长": "COMMUNITY BAPTIST CH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROAD_PRE": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 263,
+    "空率": 0.877
+   },
+   "ROAD_SUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET_NAM": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "COMMUNITY BAPTIST CH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_TYP": {
+    "带特殊字符": 0,
+    "最短": "PL",
+    "最长": "LOOP",
+    "空": 21,
+    "空率": 0.07
+   },
+   "STRUCTURE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "INDUSTRIAL",
+    "最长": "INSTITUTIONAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "27320",
+    "最长": "27320",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "282ac08386775ce7",
+  "total": 54513,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 54513,
+   "full": 54513,
+   "number": 54513,
+   "street": 54513,
+   "zip": 54513
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 54513,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS_NU street=ROAD_PRE city=CITY zip=ZIP",
+ "sample_hash": "282ac08386775ce7",
+ "site_cols": [
+  "ADDRESS_NU",
+  "STREET_NAM",
+  "STREET_TYP",
+  "ADDRESS"
+ ],
+ "source_id": "us/nc/rockingham",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://www.webgis.net/arcgis/rest/services/NC/Rockingham/MapServer/1",
+ "verdict": "CONTRACTED"
+}

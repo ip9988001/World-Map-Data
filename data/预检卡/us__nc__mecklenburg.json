@@ -1,0 +1,418 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "nme_po_city",
+  "number": "txt_street_number",
+  "state": "state",
+  "street": "cde_street_dir_prfx",
+  "unit": "txt_addr_unit",
+  "zip": "cde_zip1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:31:11",
+ "county": "Mecklenburg",
+ "curated_cols": {
+  "city": "nme_po_city",
+  "number": "txt_street_number",
+  "street": "cde_street_dir_prfx",
+  "zip": "cde_zip1"
+ },
+ "fields": [
+  "num_addr",
+  "id_giskey",
+  "num_x_coord",
+  "num_y_coord",
+  "txt_street_number",
+  "cde_street_dir_prfx",
+  "nme_street",
+  "cde_roadway_type",
+  "repl_txt_roadway_abbrev",
+  "cde_street_dir_suff",
+  "txt_addr_unit",
+  "cde_juris",
+  "nme_city",
+  "cde_use",
+  "txt_cdeuse",
+  "txt_model",
+  "county_street_code",
+  "num_parent_parcel",
+  "id_ncpin",
+  "id_footpt",
+  "ind_occup",
+  "id_add_by",
+  "dte_add",
+  "id_upd_by",
+  "dte_upd",
+  "cde_status",
+  "ind_gis_override",
+  "ind_public",
+  "num_link",
+  "num_subdivision",
+  "num_units",
+  "txt_block",
+  "txt_lot",
+  "nme_po_city",
+  "cde_zip1",
+  "cde_zip2",
+  "address",
+  "full_address",
+  "latitude",
+  "longitude",
+  "state",
+  "effective_from_date",
+  "effective_to_date",
+  "orig_fid",
+  "objectid",
+  "shape"
+ ],
+ "fields_n": 46,
+ "guessed_cols": {
+  "state": "state",
+  "unit": "txt_addr_unit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "address": {
+    "带特殊字符": 0,
+    "最短": "19422 META RD",
+    "最长": "14050 CLARENDON POINTE CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "cde_juris": {
+    "带特殊字符": 0,
+    "最短": "06",
+    "最长": "06",
+    "空": 0,
+    "空率": 0.0
+   },
+   "cde_roadway_type": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "DR",
+    "空": 4,
+    "空率": 0.013
+   },
+   "cde_status": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "cde_street_dir_prfx": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "cde_street_dir_suff": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "cde_use": {
+    "带特殊字符": 0,
+    "最短": "01",
+    "最长": "101",
+    "空": 0,
+    "空率": 0.0
+   },
+   "cde_zip1": {
+    "带特殊字符": 0,
+    "最短": "28078",
+    "最长": "28078",
+    "空": 0,
+    "空率": 0.0
+   },
+   "cde_zip2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "county_street_code": {
+    "带特殊字符": 0,
+    "最短": "480.0",
+    "最长": "14521.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "dte_add": {
+    "带特殊字符": 0,
+    "最短": "2000-04-04",
+    "最长": "2000-04-04",
+    "空": 0,
+    "空率": 0.0
+   },
+   "dte_upd": {
+    "带特殊字符": 0,
+    "最短": "2020-05-05",
+    "最长": "2020-05-05",
+    "空": 0,
+    "空率": 0.0
+   },
+   "full_address": {
+    "带特殊字符": 0,
+    "最短": "19422 META RD CORNELIUS NC 28031",
+    "最长": "14050 CLARENDON POINTE CT HUNTERSVILLE NC 28078",
+    "空": 0,
+    "空率": 0.0
+   },
+   "id_add_by": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "148",
+    "空": 0,
+    "空率": 0.0
+   },
+   "id_footpt": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "id_giskey": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "id_ncpin": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "id_upd_by": {
+    "带特殊字符": 0,
+    "最短": "SDE",
+    "最长": "LEWISNK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ind_gis_override": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ind_occup": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ind_public": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "latitude": {
+    "带特殊字符": 0,
+    "最短": "35.429673",
+    "最长": "35.43362536",
+    "空": 0,
+    "空率": 0.0
+   },
+   "longitude": {
+    "带特殊字符": 0,
+    "最短": "-80.917428",
+    "最长": "-80.93650765",
+    "空": 0,
+    "空率": 0.0
+   },
+   "nme_city": {
+    "带特殊字符": 0,
+    "最短": "CORNELIUS",
+    "最长": "HUNTERSVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "nme_po_city": {
+    "带特殊字符": 0,
+    "最短": "CORNELIUS",
+    "最长": "HUNTERSVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "nme_street": {
+    "带特殊字符": 0,
+    "最短": "META",
+    "最长": "CLARENDON POINTE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "num_addr": {
+    "带特殊字符": 0,
+    "最短": "52809",
+    "最长": "501318",
+    "空": 0,
+    "空率": 0.0
+   },
+   "num_link": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "num_parent_parcel": {
+    "带特殊字符": 0,
+    "最短": "00101316",
+    "最长": "00101316",
+    "空": 0,
+    "空率": 0.0
+   },
+   "num_subdivision": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "num_units": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "num_x_coord": {
+    "带特殊字符": 0,
+    "最短": "1423197.0001528",
+    "最长": "1423460.00028297",
+    "空": 0,
+    "空率": 0.0
+   },
+   "num_y_coord": {
+    "带特殊字符": 0,
+    "最短": "618863.0003273",
+    "最长": "618371.00032707",
+    "空": 0,
+    "空率": 0.0
+   },
+   "repl_txt_roadway_abbrev": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "HWY",
+    "空": 4,
+    "空率": 0.013
+   },
+   "txt_addr_unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "txt_block": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "txt_cdeuse": {
+    "带特殊字符": 0,
+    "最短": "METER",
+    "最长": "SINGLE FAMILY RESIDENTIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "txt_lot": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "21",
+    "空": 191,
+    "空率": 0.637
+   },
+   "txt_model": {
+    "带特殊字符": 0,
+    "最短": "ASSET",
+    "最长": "SINGLE FAMILY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "txt_street_number": {
+    "带特殊字符": 0,
+    "最短": "6814.0",
+    "最长": "16429.0",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "d199b3162345a0d2",
+  "total": 678577,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.9284,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 678577,
+   "full": 678577,
+   "number": 678574,
+   "state": 678577,
+   "street": 48595,
+   "zip": 678577
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9284, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 num_addr 拆**（concat_addr）",
+  "total": 678577,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=txt_street_number street=cde_street_dir_prfx city=nme_po_city zip=cde_zip1",
+ "sample_hash": "d199b3162345a0d2",
+ "site_cols": [
+  "num_addr",
+  "txt_street_number",
+  "cde_street_dir_prfx",
+  "nme_street",
+  "cde_street_dir_suff"
+ ],
+ "source_id": "us/nc/mecklenburg",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://meckgis.mecklenburgcountync.gov/server/rest/services/MasterAddressPoints/MapServer/0",
+ "verdict": "CONTRACTED"
+}

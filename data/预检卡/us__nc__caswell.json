@@ -1,0 +1,177 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "STFULLNAME"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:30:49",
+ "county": "Caswell",
+ "curated_cols": {
+  "number": "Add_Number",
+  "street": "STFULLNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "Add_Number",
+  "AddNum_Suf",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Type",
+  "LSt_PosDir",
+  "UID",
+  "STRUCTYPE",
+  "SHORTADDR",
+  "STFULLNAME",
+  "NewNumber",
+  "Account",
+  "Shape"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Account": {
+    "带特殊字符": 0,
+    "最短": "0082000000030000",
+    "最长": "0082000000030000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "61",
+    "最长": "1233",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 5,
+    "最短": "COURT",
+    "最长": "CASWELL PINES CLUBHOUSE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 210,
+    "空率": 0.7
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_Type": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "CIR",
+    "空": 83,
+    "空率": 0.277
+   },
+   "NewNumber": {
+    "带特殊字符": 0,
+    "最短": "0082.00.00.0003.0000",
+    "最长": "0082.00.00.0003.0000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SHORTADDR": {
+    "带特殊字符": 5,
+    "最短": "144 COURT SQ",
+    "最长": "1104 CASWELL PINES CLUBHOUSE DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STFULLNAME": {
+    "带特殊字符": 5,
+    "最短": "COURT SQ",
+    "最长": "CASWELL PINES CLUBHOUSE DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUCTYPE": {
+    "带特殊字符": 0,
+    "最短": "Ch",
+    "最长": "MFR/APT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UID": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7ec37177c08a1630",
+  "total": 13189,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 13189,
+   "number": 13189,
+   "street": 13189
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 13189,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=STFULLNAME（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "7ec37177c08a1630",
+ "site_cols": [
+  "SHORTADDR"
+ ],
+ "source_id": "us/nc/caswell",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://www.webgis.net/arcgis/rest/services/NC/Caswell/MapServer/1",
+ "verdict": "CONTRACTED"
+}

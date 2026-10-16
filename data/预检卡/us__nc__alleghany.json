@@ -1,0 +1,128 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "unit": "Unit"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 23:30:22",
+ "county": "Alleghany",
+ "curated_cols": {},
+ "fields": [
+  "OBJECTID",
+  "LOC_911",
+  "Shape",
+  "Add_Number",
+  "MSAGComm",
+  "Unit",
+  "LSt_FullName",
+  "LSt_FullAddress"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {
+  "number": "Add_Number",
+  "unit": "Unit"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Addressed Bldgs",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "12760",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOC_911": {
+    "带特殊字符": 0,
+    "最短": "358 ROE ST",
+    "最长": "18 GLADE VALLEY CHURCH RD APT A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_FullAddress": {
+    "带特殊字符": 0,
+    "最短": "32 JONES ST",
+    "最长": "18 GLADE VALLEY CHURCH RD APARTMENT B",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_FullName": {
+    "带特殊字符": 0,
+    "最短": "ROE ST",
+    "最长": "GLADE VALLEY CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "Ennice",
+    "最长": "Laurel Springs",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "APT 20",
+    "最长": "APARTMENT F32",
+    "空": 39,
+    "空率": 0.13
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "92300c615500da0c",
+  "total": 9731,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0
+  },
+  "nonnull": {
+   "full": 9731,
+   "number": 9731
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LSt_FullAddress 拆**（concat_addr）",
+  "total": 9731,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['LSt_FullAddress'] → 交给 concat_addr 拆",
+ "sample_hash": "92300c615500da0c",
+ "site_cols": [
+  "LSt_FullAddress"
+ ],
+ "source_id": "us/nc/alleghany",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://www.webgis.net/arcgis/rest/services/NC/Alleghany/MapServer/2",
+ "verdict": "CONTRACTED"
+}
