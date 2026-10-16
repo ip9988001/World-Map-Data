@@ -269,7 +269,7 @@ us/fl/sarasota,FL,Sarasota,12115,1,mapping@v1,334022,1.0,,,0.0,35.38,PASS,A,60.0
 us/fl/st-johns,FL,St. Johns,12109,1,mapping@v1,181079,1.0,,,0.0,28.92,PASS,A,60.0,B,
 us/fl/st-lucie,FL,St. Lucie,12111,1,mapping@v1,209712,1.0,,,0.0,37.11,PASS,A,60.0,B,
 us/fl/sumter,FL,Sumter,12119,1,mapping@v1,114314,1.0,,,0.0,21.54,PASS,A,60.0,B,
-us/fl/volusia,FL,Volusia,12127,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 277,537 条 > 真门牌号行 39,516 条×150% → 拒绝这套产物；field_guess@v2:合规 4168/277539 = 2%（阈 3"
+us/fl/volusia,FL,Volusia,12127,0,,0,,,,,,,,,X,规则级联触到单源时间上限，余下规则下一窗口再试
 us/fl/walton,FL,Walton,12131,1,mapping@v1,70626,0.663,,,0.0,17.39,PASS,A,60.0,B,
 us/ga/appling,GA,Appling,13001,1,mapping@v1,13877,0.95,,,,,,,,N,
 us/ga/atkinson,GA,Atkinson,13003,1,mapping@v1,6731,0.92,,,0.0003,10.42,PASS,A,60.0,B,
