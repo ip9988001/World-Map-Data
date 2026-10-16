@@ -1,0 +1,190 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "address",
+  "state": "state2",
+  "street": "address",
+  "zip": "szip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:37",
+ "county": "Marquette",
+ "curated_cols": {
+  "city": "city",
+  "number": "address",
+  "street": "address",
+  "zip": "szip"
+ },
+ "fields": [
+  "FID",
+  "address",
+  "saddstr",
+  "city",
+  "county",
+  "state2",
+  "szip",
+  "ll_address",
+  "ll_uuid",
+  "UseClass",
+  "Cust",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 13,
+ "guessed_cols": {
+  "state": "state2"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "MarquetteParcelData",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Cust": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 299,
+    "空率": 0.997
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "1.9063175386691e-05",
+    "最长": "5.8075329434359446e-08",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "0.0269998981289786",
+    "最长": "0.0010980283291607369",
+    "空": 1,
+    "空率": 0.003
+   },
+   "UseClass": {
+    "带特殊字符": 0,
+    "最短": "Res",
+    "最长": "Other",
+    "空": 0,
+    "空率": 0.0
+   },
+   "address": {
+    "带特殊字符": 2,
+    "最短": "US 41",
+    "最长": "58 MICHIGAMME LAKE LODGE RD",
+    "空": 74,
+    "空率": 0.247
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "ely",
+    "最长": "ishpeming-twp",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "marquette",
+    "最长": "marquette",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ll_address": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 135,
+    "空率": 0.45
+   },
+   "ll_uuid": {
+    "带特殊字符": 0,
+    "最短": "00018847-c0a3-4164-8c48-d7932ef8bd00",
+    "最长": "00018847-c0a3-4164-8c48-d7932ef8bd00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "saddstr": {
+    "带特殊字符": 1,
+    "最短": "CO",
+    "最长": "VACANT LAND (LAKESHORE)",
+    "空": 77,
+    "空率": 0.257
+   },
+   "state2": {
+    "带特殊字符": 0,
+    "最短": "MI",
+    "最长": "MI",
+    "空": 0,
+    "空率": 0.0
+   },
+   "szip": {
+    "带特殊字符": 0,
+    "最短": "49861",
+    "最长": "49866-1633",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "49655b9e061f2a31",
+  "total": 45674,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 45674,
+   "full": 45674,
+   "number": 45674,
+   "state": 45674,
+   "street": 45674,
+   "zip": 45674
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 45674,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=address street=address city=city zip=szip",
+ "sample_hash": "49655b9e061f2a31",
+ "site_cols": [
+  "address",
+  "ll_address"
+ ],
+ "source_id": "us/mi/marquette",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://services9.arcgis.com/6EuFgO4fLTqfNOhu/ArcGIS/rest/services/MarquetteParcelData/FeatureServer/2",
+ "verdict": "CONTRACTED"
+}

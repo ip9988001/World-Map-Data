@@ -1,0 +1,113 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ACT_CITY",
+  "number": "LOC_ADDR",
+  "street": "LOC_ADDR",
+  "zip": "LOC_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:50",
+ "county": "Anoka",
+ "curated_cols": {
+  "city": "ACT_CITY",
+  "number": "LOC_ADDR",
+  "street": "LOC_ADDR",
+  "zip": "LOC_ZIP"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "LOC_ADDR",
+  "LOC_ZIP",
+  "ACT_CITY",
+  "Shape"
+ ],
+ "fields_n": 5,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACT_CITY": {
+    "带特殊字符": 0,
+    "最短": "SAINT FRANCIS",
+    "最长": "SAINT FRANCIS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOC_ADDR": {
+    "带特殊字符": 0,
+    "最短": "22546 ZEA ST NW",
+    "最长": "7758 HILL AND DALE DR NW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOC_ZIP": {
+    "带特殊字符": 0,
+    "最短": "55070",
+    "最长": "55070",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "666104521100482c",
+  "total": 160074,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 160074,
+   "full": 160074,
+   "number": 160074,
+   "street": 160074,
+   "zip": 160074
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 160074,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=LOC_ADDR street=LOC_ADDR city=ACT_CITY zip=LOC_ZIP",
+ "sample_hash": "666104521100482c",
+ "site_cols": [
+  "LOC_ADDR"
+ ],
+ "source_id": "us/mn/anoka",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://gis.anokacountymn.gov/anoka_gis/rest/services/Address_Pts/MapServer/0",
+ "verdict": "CONTRACTED"
+}

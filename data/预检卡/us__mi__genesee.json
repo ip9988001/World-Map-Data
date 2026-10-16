@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:23",
+ "county": "Genesee",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",
+ "source_id": "us/mi/genesee",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://services2.arcgis.com/5ckbIY7K9TUKoseK/ArcGIS/rest/services/Parcels/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

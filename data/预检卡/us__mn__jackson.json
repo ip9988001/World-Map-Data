@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:15:52",
+ "county": "Jackson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/mn/jackson",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://136.234.46.34/arcgis/rest/services/CriticalInfrastructureSites/MapServer/1",
+ "verdict": "TRANSIENT"
+}

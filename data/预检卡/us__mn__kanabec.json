@@ -1,0 +1,352 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "OwnerCityStZip",
+  "number": "SiteAddress",
+  "street": "SiteAddress",
+  "unit": "ESTIMATEDBUILDING",
+  "zip": "OwnerCityStZip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:16:55",
+ "county": "Kanabec",
+ "curated_cols": {
+  "number": "SiteAddress",
+  "street": "SiteAddress"
+ },
+ "fields": [
+  "OBJECTID",
+  "SHAPE",
+  "PIN",
+  "OWNER_ORIG",
+  "ACRES_CALC",
+  "ACRES_DEED",
+  "ACRES_MAP",
+  "SHAPE_Length",
+  "SHAPE_Area",
+  "COMMENTS",
+  "PIN2",
+  "CH",
+  "OwnerName1",
+  "OwnerName2",
+  "OwnerCityStZip",
+  "SiteAddress",
+  "SiteCityStZip",
+  "ADDRESS",
+  "Duplicate",
+  "DEEDADDR1",
+  "DEEDADDR2",
+  "DEEDADDR3",
+  "DEEDZIP",
+  "PLSECTN",
+  "PLTWSHP",
+  "PLRANGE",
+  "ESTIMATEDLAND",
+  "ESTIMATEDBUILDING",
+  "ESTIMATEDMACHINERY",
+  "ESTIMATEDTOTAL",
+  "SALEDATE",
+  "PIN_DASHES",
+  "OwnerAddres1",
+  "OwnerAddres2"
+ ],
+ "fields_n": 34,
+ "guessed_cols": {
+  "city": "OwnerCityStZip",
+  "unit": "ESTIMATEDBUILDING",
+  "zip": "OwnerCityStZip"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACRES_CALC": {
+    "带特殊字符": 0,
+    "最短": "-1",
+    "最长": "0.0023253504157127076",
+    "空": 2,
+    "空率": 0.007
+   },
+   "ACRES_DEED": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "16.37",
+    "空": 247,
+    "空率": 0.823
+   },
+   "ACRES_MAP": {
+    "带特殊字符": 0,
+    "最短": "1.2916570590897",
+    "最长": "0.0723184055977364",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "118 OAK ST",
+    "最长": "103 PROSPECT AVE N UNIT A",
+    "空": 55,
+    "空率": 0.183
+   },
+   "CH": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "11",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMENTS": {
+    "带特殊字符": 2,
+    "最短": "Unknown Areas found during Urban build, ",
+    "最长": "Unknown Areas found during Urban build, needs researched",
+    "空": 298,
+    "空率": 0.993
+   },
+   "DEEDADDR1": {
+    "带特殊字符": 12,
+    "最短": "CLERK",
+    "最长": "1000 OPPORTUNTIY BLVD S APT 329",
+    "空": 4,
+    "空率": 0.013
+   },
+   "DEEDADDR2": {
+    "带特殊字符": 0,
+    "最短": "BOX 42",
+    "最长": "1801 CALIFORNIA ST STE 800",
+    "空": 4,
+    "空率": 0.013
+   },
+   "DEEDADDR3": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 105",
+    "最长": "BROOK PARK MN  55007",
+    "空": 263,
+    "空率": 0.877
+   },
+   "DEEDZIP": {
+    "带特殊字符": 0,
+    "最短": "55080",
+    "最长": "55080",
+    "空": 4,
+    "空率": 0.013
+   },
+   "Duplicate": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ESTIMATEDBUILDING": {
+    "带特殊字符": 0,
+    "最短": "1281",
+    "最长": "2001200",
+    "空": 86,
+    "空率": 0.287
+   },
+   "ESTIMATEDLAND": {
+    "带特殊字符": 0,
+    "最短": "219",
+    "最长": "130400",
+    "空": 38,
+    "空率": 0.127
+   },
+   "ESTIMATEDMACHINERY": {
+    "带特殊字符": 0,
+    "最短": "300",
+    "最长": "2131600",
+    "空": 43,
+    "空率": 0.143
+   },
+   "ESTIMATEDTOTAL": {
+    "带特殊字符": 0,
+    "最短": "600",
+    "最长": "4263200",
+    "空": 38,
+    "空率": 0.127
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "108",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNER_ORIG": {
+    "带特殊字符": 63,
+    "最短": "DLC INC",
+    "最长": "SEMI PRO TRUCK DRIVING ACADEMY LLC",
+    "空": 2,
+    "空率": 0.007
+   },
+   "OwnerAddres1": {
+    "带特殊字符": 1,
+    "最短": "BOX 135",
+    "最长": "1000 OPPORTUNTIY BLVD S APT 329",
+    "空": 4,
+    "空率": 0.013
+   },
+   "OwnerAddres2": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 105",
+    "最长": "PO BOX 105",
+    "空": 299,
+    "空率": 0.997
+   },
+   "OwnerCityStZip": {
+    "带特殊字符": 0,
+    "最短": "MORA MN  55051",
+    "最长": "BROOK PARK MN  55007-4672",
+    "空": 4,
+    "空率": 0.013
+   },
+   "OwnerName1": {
+    "带特殊字符": 62,
+    "最短": "DLC INC",
+    "最长": "SEMI PRO TRUCK DRIVING ACADEMY LLC",
+    "空": 2,
+    "空率": 0.007
+   },
+   "OwnerName2": {
+    "带特殊字符": 11,
+    "最短": "CLERK",
+    "最长": "% RUSSELL & SHARON JOHNSON",
+    "空": 273,
+    "空率": 0.91
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "000UNK",
+    "最长": "00020.00200.00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN2": {
+    "带特殊字符": 0,
+    "最短": "UNK",
+    "最长": "20.00200.00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN_DASHES": {
+    "带特殊字符": 0,
+    "最短": "20-00200-00",
+    "最长": "20-00200-00",
+    "空": 2,
+    "空率": 0.007
+   },
+   "PLRANGE": {
+    "带特殊字符": 0,
+    "最短": "23",
+    "最长": "23",
+    "空": 2,
+    "空率": 0.007
+   },
+   "PLSECTN": {
+    "带特殊字符": 0,
+    "最短": "35",
+    "最长": "35",
+    "空": 2,
+    "空率": 0.007
+   },
+   "PLTWSHP": {
+    "带特殊字符": 0,
+    "最短": "38",
+    "最长": "38",
+    "空": 2,
+    "空率": 0.007
+   },
+   "SALEDATE": {
+    "带特殊字符": 0,
+    "最短": "20230428",
+    "最长": "20230428",
+    "空": 235,
+    "空率": 0.783
+   },
+   "SHAPE_Area": {
+    "带特殊字符": 0,
+    "最短": "59824.8990106289",
+    "最长": "433062.28367966367",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SHAPE_Length": {
+    "带特殊字符": 0,
+    "最短": "440.18512415249",
+    "最长": "1461.7397725650335",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SiteAddress": {
+    "带特殊字符": 0,
+    "最短": "118 OAK ST",
+    "最长": "103 PROSPECT AVE N UNIT A",
+    "空": 55,
+    "空率": 0.183
+   },
+   "SiteCityStZip": {
+    "带特殊字符": 245,
+    "最短": "MORA, MN  55051",
+    "最长": "BROOK PARK, MN  55007",
+    "空": 55,
+    "空率": 0.183
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "73c8a4ad9e558f16",
+  "total": 12131,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0186,
+   "full": 0.0007,
+   "number": 0.0007,
+   "street": 0.0007,
+   "zip": 0.0186
+  },
+  "nonnull": {
+   "city": 11905,
+   "full": 12123,
+   "number": 12123,
+   "street": 12123,
+   "zip": 11905
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0007, 'street': 0.0007, 'city': 0.0186, 'zip': 0.0186, 'full': 0.0007}）→ 可全量采集",
+  "total": 12131,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SiteAddress street=SiteAddress",
+ "sample_hash": "73c8a4ad9e558f16",
+ "site_cols": [
+  "SiteAddress",
+  "SiteCityStZip",
+  "ADDRESS",
+  "DEEDADDR1",
+  "DEEDADDR2"
+ ],
+ "source_id": "us/mn/kanabec",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://wfs.schneidercorp.com/arcgis/rest/services/KanabecCountyMN_WFS/MapServer/0",
+ "verdict": "CONTRACTED"
+}

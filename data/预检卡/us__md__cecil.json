@@ -1,0 +1,262 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMMUNITY",
+  "number": "STRT_ADD",
+  "state": "State",
+  "street": "STRT_PFX",
+  "unit": "COMMUNITY"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:12:40",
+ "county": "Cecil",
+ "curated_cols": {
+  "city": "COMMUNITY",
+  "number": "STRT_ADD",
+  "state": "State",
+  "street": "STRT_PFX"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "DATEADDRES",
+  "TYPE",
+  "NAME",
+  "UNIT",
+  "STRT_ADD",
+  "STRT_PFX",
+  "STRT_NAME",
+  "TYP",
+  "STRT_SUF",
+  "COMMUNITY",
+  "ADDRESS",
+  "Comment",
+  "CONFIDENCE",
+  "MAP",
+  "Site_NGUID",
+  "Country",
+  "CITY4",
+  "State",
+  "County",
+  "Inc_Muni",
+  "DiscrpAgID"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "COMMUNITY"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "46 KIST RD",
+    "最长": "467 CAMP MEETING GROUND RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY4": {
+    "带特殊字符": 0,
+    "最短": "PORT",
+    "最长": "PORT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "ELKTON",
+    "最长": "PORT DEPOSIT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CONFIDENCE": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Comment": {
+    "带特殊字符": 0,
+    "最短": "NP",
+    "最长": "Permit DWEL-24-155",
+    "空": 285,
+    "空率": 0.95
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "Cecil County",
+    "最长": "Cecil County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DATEADDRES": {
+    "带特殊字符": 0,
+    "最短": "1610496000000",
+    "最长": "1610496000000",
+    "空": 299,
+    "空率": 0.997
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "Cecil County Department of Emergency Ser",
+    "最长": "Cecil County Department of Emergency Services",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "Elkton",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAP": {
+    "带特殊字符": 300,
+    "最短": "E_5",
+    "最长": "E_11",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "CREATIVE CUSTOMS",
+    "最长": "BIBLE CHURCH OF JESUS CHRIST",
+    "空": 297,
+    "空率": 0.99
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRT_ADD": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1440",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRT_NAME": {
+    "带特殊字符": 0,
+    "最短": "MIKE",
+    "最长": "CAMP MEETING GROUND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRT_PFX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STRT_SUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Site_NGUID": {
+    "带特殊字符": 300,
+    "最短": "SITE0@911Authority_ccgov.org",
+    "最长": "SITE100@911Authority_ccgov.org",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "MD",
+    "最长": "MD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYP": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "WAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "CHURCH",
+    "最长": "NO STRUCTURE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "400",
+    "空": 294,
+    "空率": 0.98
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a9338fdf3efc6b91",
+  "total": 51751,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.7727,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 51751,
+   "full": 11765,
+   "number": 51751,
+   "state": 51751,
+   "street": 51751
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'state': 0.0, 'full': 0.7727}）→ 可全量采集",
+  "total": 51751,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STRT_ADD street=STRT_PFX city=COMMUNITY",
+ "sample_hash": "a9338fdf3efc6b91",
+ "site_cols": [
+  "DATEADDRES",
+  "ADDRESS",
+  "Site_NGUID"
+ ],
+ "source_id": "us/md/cecil",
+ "stage": "p0",
+ "state": "MD",
+ "url": "https://cecilmaps.org/arcgis/rest/services/ConsolidatedWebService/MapServer/1",
+ "verdict": "CONTRACTED"
+}

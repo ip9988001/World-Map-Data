@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:55",
+ "county": "Dodge",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service not found', 'details': []}",
+ "source_id": "us/mn/dodge",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://maps.co.goodhue.mn.us/server/rest/services/CountyDataDC/DodgeAssessors/MapServer/12",
+ "verdict": "REJECTED_P0"
+}

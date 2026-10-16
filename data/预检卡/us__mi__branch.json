@@ -1,0 +1,168 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRESS",
+  "street": "ADDRESS",
+  "unit": "APT"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:19",
+ "county": "Branch",
+ "curated_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESS",
+  "APT",
+  "LATITUDE",
+  "LONGITUDE",
+  "CITY",
+  "NUMBER",
+  "PARCEL_ID",
+  "ESN",
+  "ADDRESS0",
+  "NOTES"
+ ],
+ "fields_n": 11,
+ "guessed_cols": {
+  "city": "CITY",
+  "unit": "APT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "CAD_address_points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "402 MILL RD",
+    "最长": "183 N CENTENNIAL RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS0": {
+    "带特殊字符": 1,
+    "最短": "NO CHANGE",
+    "最长": "1170 MARSHALL RD (BARN)",
+    "空": 10,
+    "空率": 0.033
+   },
+   "APT": {
+    "带特殊字符": 2,
+    "最短": "?",
+    "最长": "MUNICIPAL BUILDING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "COL",
+    "最长": "CCTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "860",
+    "最长": "860",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "42.026",
+    "最长": "41.95603",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-84.98",
+    "最长": "-85.01268",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NOTES": {
+    "带特殊字符": 1,
+    "最短": "SUBSTATION",
+    "最长": "SUITE B-APARTMENT LOCATED ABOVE THE STORE??",
+    "空": 295,
+    "空率": 0.983
+   },
+   "NUMBER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f14b3c8572161b64",
+  "total": 22344,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0012,
+   "full": 0.0001,
+   "number": 0.0001,
+   "street": 0.0001
+  },
+  "nonnull": {
+   "city": 22317,
+   "full": 22342,
+   "number": 22342,
+   "street": 22342
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0001, 'street': 0.0001, 'city': 0.0012, 'full': 0.0001}）→ 可全量采集",
+  "total": 22344,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ADDRESS",
+ "sample_hash": "f14b3c8572161b64",
+ "site_cols": [
+  "ADDRESS",
+  "ADDRESS0"
+ ],
+ "source_id": "us/mi/branch",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://services2.arcgis.com/OHynDFZ1SVDsGFwm/ArcGIS/rest/services/BranchCountyAddressPoints/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

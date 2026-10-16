@@ -1,0 +1,164 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "propcity",
+  "number": "propstreetcombined",
+  "state": "propstate",
+  "street": "propstreetcombined",
+  "zip": "propzip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 01:13:41",
+ "county": "Wayne",
+ "curated_cols": {
+  "city": "propcity",
+  "number": "propstreetcombined",
+  "state": "propstate",
+  "street": "propstreetcombined",
+  "zip": "propzip"
+ },
+ "fields": [
+  "OBJECTID",
+  "ownername1",
+  "propstreetcombined",
+  "propcity",
+  "propstate",
+  "propzip",
+  "packedParcelNumber",
+  "Area_Ac",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 10,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Wayne_County_Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Area_Ac": {
+    "带特殊字符": 0,
+    "最短": "0.4977326505931",
+    "最长": "0.30360854790887193",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "768055",
+    "最长": "768055",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "5369.6875",
+    "最长": "13225.188232421875",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "425.61292136162",
+    "最长": "346.83963641700063",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ownername1": {
+    "带特殊字符": 286,
+    "最短": "CCF2",
+    "最长": "PUENTE, TRST OF KATHLEEN M & F JOSE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "packedParcelNumber": {
+    "带特殊字符": 0,
+    "最短": "32091712600100",
+    "最长": "32091712600100",
+    "空": 1,
+    "空率": 0.003
+   },
+   "propcity": {
+    "带特殊字符": 0,
+    "最短": "DEARBORN",
+    "最长": "DEARBORN",
+    "空": 1,
+    "空率": 0.003
+   },
+   "propstate": {
+    "带特殊字符": 0,
+    "最短": "MI",
+    "最长": "MI",
+    "空": 1,
+    "空率": 0.003
+   },
+   "propstreetcombined": {
+    "带特殊字符": 0,
+    "最短": "HIGHVIEW",
+    "最长": "25307 HERBERT WEIER DR",
+    "空": 1,
+    "空率": 0.003
+   },
+   "propzip": {
+    "带特殊字符": 0,
+    "最短": "48128",
+    "最长": "48128",
+    "空": 1,
+    "空率": 0.003
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "164c8aec02ca8fd5",
+  "total": 768054,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 768054,
+   "full": 768054,
+   "number": 768054,
+   "state": 768054,
+   "street": 768054,
+   "zip": 768054
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 768054,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=propstreetcombined street=propstreetcombined city=propcity zip=propzip",
+ "sample_hash": "164c8aec02ca8fd5",
+ "site_cols": [
+  "propstreetcombined"
+ ],
+ "source_id": "us/mi/wayne",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://services1.arcgis.com/b6rkZNtCd6Mx2gvB/arcgis/rest/services/Wayne_County_Parcels/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}
