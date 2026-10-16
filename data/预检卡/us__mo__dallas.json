@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:20",
+ "county": "Dallas",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试",
+ "source_id": "us/mo/dallas",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://sites.integritygis.com/Geocortex/Essentials/REST/sites/Dallas_County_MO_Public/map/mapservices/1/layers/4",
+ "verdict": "TRANSIENT"
+}

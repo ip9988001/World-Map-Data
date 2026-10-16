@@ -1,0 +1,197 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "FullAddress",
+  "street": "FullAddress",
+  "unit": "SubUnit"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:46",
+ "county": "Saint Francois",
+ "curated_cols": {
+  "number": "FullAddress",
+  "street": "FullAddress"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "FullAddress",
+  "StructureNumber",
+  "Type",
+  "SubUnit",
+  "StreetName",
+  "Alias",
+  "Alias2",
+  "Longitude",
+  "Latitude",
+  "X_Coord",
+  "Y_Coord",
+  "NAT_GRID",
+  "PARCEL_ID",
+  "DataSource"
+ ],
+ "fields_n": 16,
+ "guessed_cols": {
+  "unit": "SubUnit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Alias": {
+    "带特殊字符": 0,
+    "最短": "ZOLA RD",
+    "最长": "ZOLA RD",
+    "空": 294,
+    "空率": 0.98
+   },
+   "Alias2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DataSource": {
+    "带特殊字符": 0,
+    "最短": "SFC 911",
+    "最长": "SFC 911",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FullAddress": {
+    "带特殊字符": 0,
+    "最短": "3440 RABY RD",
+    "最长": "945 LOWER HAWK HOLLOW DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Latitude": {
+    "带特殊字符": 0,
+    "最短": "37.69232126",
+    "最长": "37.7054838323",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Longitude": {
+    "带特殊字符": 0,
+    "最短": "-90.41820078",
+    "最长": "-90.4132609745",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAT_GRID": {
+    "带特殊字符": 0,
+    "最短": "15SYB2803476288",
+    "最长": "15SYB2803476288",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "41399",
+    "最长": "41399",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "13-90-30-00-000-0022.02",
+    "最长": "13-90-30-00-000-0022.02",
+    "空": 1,
+    "空率": 0.003
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "RABY",
+    "最长": "LOWER HAWK HOLLOW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StructureNumber": {
+    "带特殊字符": 0,
+    "最短": "947",
+    "最长": "1710",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SubUnit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Type": {
+    "带特殊字符": 0,
+    "最短": "-7",
+    "最长": "-REAR",
+    "空": 298,
+    "空率": 0.993
+   },
+   "X_Coord": {
+    "带特殊字符": 0,
+    "最短": "-90.413575",
+    "最长": "-90.41353168",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_Coord": {
+    "带特殊字符": 0,
+    "最短": "37.69686",
+    "最长": "37.70547687",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "0f9e32d3706a2045",
+  "total": 42709,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 42709,
+   "number": 42709,
+   "street": 42709
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 42709,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=FullAddress street=FullAddress（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "0f9e32d3706a2045",
+ "site_cols": [
+  "FullAddress",
+  "StreetName"
+ ],
+ "source_id": "us/mo/saint_francois",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://maps.semogis.com/server/rest/services/Region/Public_911/MapServer/10",
+ "verdict": "CONTRACTED"
+}

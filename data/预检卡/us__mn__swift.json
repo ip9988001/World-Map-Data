@@ -1,0 +1,425 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTCOMM",
+  "number": "ANUMBER",
+  "state": "STATE_CODE",
+  "street": "LABEL_ST",
+  "unit": "BUILDING",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:07",
+ "county": "Swift",
+ "curated_cols": {
+  "city": "POSTCOMM",
+  "number": "ANUMBER",
+  "state": "STATE_CODE",
+  "street": "LABEL_ST",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "FID",
+  "Shape",
+  "ADD_ID",
+  "ADD_ID_LOC",
+  "PIN",
+  "STATE_PIN",
+  "ANUMBERPRE",
+  "ANUMBER",
+  "ANUMBERSUF",
+  "LABEL_ST",
+  "LST_PREDIR",
+  "LST_PRETYP",
+  "LST_NAME",
+  "LST_POSTYP",
+  "LST_POSDIR",
+  "ST_PRE_MOD",
+  "ST_PRE_DIR",
+  "ST_PRE_TYP",
+  "ST_PRE_SEP",
+  "ST_NAME",
+  "ST_POS_TYP",
+  "ST_POS_DIR",
+  "ST_POS_MOD",
+  "SUB_TYPE1",
+  "SUB_ID1",
+  "SUB_TYPE2",
+  "SUB_ID2",
+  "BUILDING",
+  "FLOOR",
+  "UNIT",
+  "ROOM",
+  "SEAT",
+  "LOC_DESC",
+  "LANDMARK",
+  "ADDTL_LOC",
+  "POSTCOMM",
+  "ZIP",
+  "ZIP4",
+  "ESN",
+  "MSAG_ESN",
+  "VESN",
+  "MSAG_C",
+  "PSAP_CODE",
+  "CTU_NAME",
+  "CTU_ID_TXT",
+  "UNINC_COMM",
+  "NBRHD_COMM",
+  "CO_NAME",
+  "CO_CODE",
+  "STATE_CODE",
+  "COUNTRY",
+  "LONGITUDE",
+  "LATITUDE",
+  "USNG_CODE",
+  "MILE_POST",
+  "ELEV",
+  "PLACE_TYPE",
+  "RESIDENCE",
+  "MAILABLE",
+  "PLACE_LOC",
+  "PLACEMETH",
+  "CEN_GEO",
+  "UNI_WO_SUB",
+  "GIS911POC",
+  "VERROR_911",
+  "SOURCE",
+  "INT_SOURCE",
+  "AAUTHORITY",
+  "EFF_DATE",
+  "RET_DATE",
+  "STATUS",
+  "EDIT_DATE",
+  "EDIT_ORG",
+  "COMMENTS",
+  "ADDCODE",
+  "ADDDATAURI",
+  "CO_COMMENT",
+  "Address_Qu",
+  "City_Answe",
+  "QC_work"
+ ],
+ "fields_n": 84,
+ "guessed_cols": {
+  "unit": "BUILDING"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Labels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDTL_LOC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "ADD_ID": {
+    "带特殊字符": 0,
+    "最短": "1de6b115-0c3c-4f1a-9c01-223f67c554f8",
+    "最长": "1de6b115-0c3c-4f1a-9c01-223f67c554f8",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_ID_LOC": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ANUMBER": {
+    "带特殊字符": 0,
+    "最短": "24",
+    "最长": "1260",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ANUMBERPRE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "ANUMBERSUF": {
+    "带特殊字符": 0,
+    "最短": "1/2",
+    "最长": "1/2",
+    "空": 996,
+    "空率": 0.996
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "North",
+    "最长": "North",
+    "空": 999,
+    "空率": 0.999
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "208",
+    "最长": "208",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 1,
+    "空率": 0.001
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "LABEL_ST": {
+    "带特殊字符": 0,
+    "最短": "LED ST",
+    "最长": "CHIP SWIFT ST NW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LANDMARK": {
+    "带特殊字符": 0,
+    "最短": "NEM Woods",
+    "最长": "Fischer Kenneth Interior Decorators Designers",
+    "空": 958,
+    "空率": 0.958
+   },
+   "LOC_DESC": {
+    "带特殊字符": 20,
+    "最短": "House",
+    "最长": "Riverview Dairy Apartments; 4 units; (2nd building to west of this enterance)",
+    "空": 928,
+    "空率": 0.928
+   },
+   "LST_NAME": {
+    "带特殊字符": 0,
+    "最短": "3RD",
+    "最长": "HIGHWAY 59",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LST_POSDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SE",
+    "空": 430,
+    "空率": 0.43
+   },
+   "LST_POSTYP": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 48,
+    "空率": 0.048
+   },
+   "LST_PREDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SW",
+    "空": 738,
+    "空率": 0.738
+   },
+   "LST_PRETYP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "MSAG_ESN": {
+    "带特殊字符": 0,
+    "最短": "0208",
+    "最长": "0208",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "15-0040-100",
+    "最长": "15-0040-100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTCOMM": {
+    "带特殊字符": 0,
+    "最短": "MILAN",
+    "最长": "MONTEVIDEO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROOM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "SEAT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "STATE_PIN": {
+    "带特殊字符": 0,
+    "最短": "27151-15-0040-100",
+    "最长": "27151-15-0040-100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "Van Norman",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_POS_DIR": {
+    "带特殊字符": 0,
+    "最短": "East",
+    "最长": "Southeast",
+    "空": 430,
+    "空率": 0.43
+   },
+   "ST_POS_MOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "ST_POS_TYP": {
+    "带特殊字符": 0,
+    "最短": "Lane",
+    "最长": "Street",
+    "空": 48,
+    "空率": 0.048
+   },
+   "ST_PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "East",
+    "最长": "Southwest",
+    "空": 738,
+    "空率": 0.738
+   },
+   "ST_PRE_MOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "ST_PRE_SEP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "ST_PRE_TYP": {
+    "带特殊字符": 0,
+    "最短": "Highway",
+    "最长": "Highway",
+    "空": 952,
+    "空率": 0.952
+   },
+   "SUB_ID1": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "North",
+    "空": 993,
+    "空率": 0.993
+   },
+   "SUB_ID2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "SUB_TYPE1": {
+    "带特殊字符": 0,
+    "最短": "Unit",
+    "最长": "Building",
+    "空": 993,
+    "空率": 0.993
+   },
+   "SUB_TYPE2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 1000,
+    "空率": 1.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "Unit B",
+    "最长": "Unit B",
+    "空": 998,
+    "空率": 0.998
+   },
+   "VESN": {
+    "带特殊字符": 0,
+    "最短": "6049",
+    "最长": "6049",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "56271",
+    "最长": "56271",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP4": {
+    "带特殊字符": 0,
+    "最短": "1243",
+    "最长": "1243",
+    "空": 997,
+    "空率": 0.997
+   }
+  },
+  "main_n": 1000,
+  "partitions": {
+   "head": 1000,
+   "mid": 1000,
+   "tail": 1000
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7b1b70972321c821",
+  "total": 5823,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "reason": "统计接口不可用（{'code': 400, 'message': 'Unable to complete operation.', 'details': []}）→ 退回下载后统计",
+  "verdict": "DEFERRED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ANUMBER street=LABEL_ST city=POSTCOMM zip=ZIP",
+ "sample_hash": "7b1b70972321c821",
+ "site_cols": [
+  "Address_Qu"
+ ],
+ "source_id": "us/mn/swift",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://www.gismidwest.com/arcgis/rest/services/Swift/Transportation/MapServer/1",
+ "verdict": "PASS_P1"
+}

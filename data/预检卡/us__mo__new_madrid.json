@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:33",
+ "county": "New Madrid",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试",
+ "source_id": "us/mo/new_madrid",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://elb2.39dn.com/arcgis/rest/services/eGISDynamicServices/NewMadridMODynamic/MapServer/0",
+ "verdict": "TRANSIENT"
+}

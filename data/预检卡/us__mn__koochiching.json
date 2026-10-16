@@ -1,0 +1,423 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDR_1",
+  "street": "ADDR_1",
+  "unit": "TAXABLEBUILDING",
+  "zip": "ZIP_CODE_5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:04:45",
+ "county": "Koochiching",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDR_1",
+  "street": "ADDR_1",
+  "zip": "ZIP_CODE_5"
+ },
+ "fields": [
+  "OBJECTID",
+  "PARCEL_ID",
+  "PIDCODE",
+  "PIDCODE2",
+  "Water",
+  "Hosp",
+  "Fire",
+  "Amb",
+  "SchD1",
+  "GISAcres",
+  "TAXYEAR",
+  "PARCELNBR",
+  "MULTIPROPNBR",
+  "HSTDCHOICE",
+  "OWNNAME",
+  "OWNADR1",
+  "OWNADR2",
+  "OWNADR3",
+  "OWNZIP5",
+  "EMG_NBR",
+  "CLASSCODE1",
+  "HSTDCODE",
+  "CLASSCODE2",
+  "HSTDCODE2",
+  "CLASSCODE3",
+  "HSTDCODE3",
+  "LANDEST",
+  "BUILDING",
+  "TAXABLELANDVALUE",
+  "TAXABLEBUILDING",
+  "NETTAX",
+  "TOTALSPECASMT",
+  "DFRTYPE",
+  "SCHLDIST",
+  "STR",
+  "DEEDEDACRES",
+  "DSDESC",
+  "LAKENBR",
+  "LKLAKD",
+  "PLDESC",
+  "TWPCITY",
+  "ETENTD",
+  "DFRNEWIMP",
+  "ADDR_1",
+  "CITY",
+  "ZIP_CODE_5",
+  "Expr1",
+  "PRCL_NBR",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "SQFT",
+  "SECTION",
+  "RANGE",
+  "TOWNSHIP",
+  "STArea__",
+  "STLength__",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 60,
+ "guessed_cols": {
+  "unit": "TAXABLEBUILDING"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Amb": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "300",
+    "最长": "159200",
+    "空": 258,
+    "空率": 0.86
+   },
+   "CLASSCODE1": {
+    "带特殊字符": 0,
+    "最短": "662",
+    "最长": "662",
+    "空": 3,
+    "空率": 0.01
+   },
+   "CLASSCODE2": {
+    "带特殊字符": 0,
+    "最短": "101",
+    "最长": "101",
+    "空": 287,
+    "空率": 0.957
+   },
+   "CLASSCODE3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DEEDEDACRES": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "240.04",
+    "空": 45,
+    "空率": 0.15
+   },
+   "DFRTYPE": {
+    "带特殊字符": 0,
+    "最短": "SF",
+    "最长": "SF",
+    "空": 267,
+    "空率": 0.89
+   },
+   "DSDESC": {
+    "带特殊字符": 26,
+    "最短": "SESW",
+    "最长": "LOT 35 EXC W 20 FT, ALL LOT 36 AND W 20 FT OF",
+    "空": 3,
+    "空率": 0.01
+   },
+   "EMG_NBR": {
+    "带特殊字符": 0,
+    "最短": "13",
+    "最长": "2024A",
+    "空": 289,
+    "空率": 0.963
+   },
+   "Fire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GISAcres": {
+    "带特殊字符": 0,
+    "最短": "45.56722",
+    "最长": "156.45177397",
+    "空": 1,
+    "空率": 0.003
+   },
+   "HSTDCHOICE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "17",
+    "空": 292,
+    "空率": 0.973
+   },
+   "HSTDCODE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 270,
+    "空率": 0.9
+   },
+   "HSTDCODE2": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 298,
+    "空率": 0.993
+   },
+   "HSTDCODE3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Hosp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LAKENBR": {
+    "带特殊字符": 0,
+    "最短": "36900100",
+    "最长": "36900100",
+    "空": 278,
+    "空率": 0.927
+   },
+   "LANDEST": {
+    "带特殊字符": 0,
+    "最短": "500",
+    "最长": "184000",
+    "空": 3,
+    "空率": 0.01
+   },
+   "LKLAKD": {
+    "带特殊字符": 1,
+    "最短": "RAINY LAKE",
+    "最长": "TUEFER LAKE(WAS LA BRIE)",
+    "空": 278,
+    "空率": 0.927
+   },
+   "MULTIPROPNBR": {
+    "带特殊字符": 0,
+    "最短": "77-020-12000",
+    "最长": "77-020-12000",
+    "空": 3,
+    "空率": 0.01
+   },
+   "NETTAX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNADR1": {
+    "带特殊字符": 4,
+    "最短": "PO BOX 356",
+    "最长": "C/O THE MOLPUS WOODLANDS GROUP LLC",
+    "空": 18,
+    "空率": 0.06
+   },
+   "OWNADR2": {
+    "带特殊字符": 28,
+    "最短": "PO BOX 7",
+    "最长": "INTERNATIONAL FALLS MN  56649-2709",
+    "空": 21,
+    "空率": 0.07
+   },
+   "OWNADR3": {
+    "带特殊字符": 1,
+    "最短": "PO BOX 80615",
+    "最长": "INTERNATIONAL FALLS MN  56649",
+    "空": 270,
+    "空率": 0.9
+   },
+   "OWNNAME": {
+    "带特殊字符": 86,
+    "最短": "STAY, JESSICA",
+    "最长": "MINNESOTA DEPT OF NATURAL RESOURCES",
+    "空": 3,
+    "空率": 0.01
+   },
+   "OWNZIP5": {
+    "带特殊字符": 0,
+    "最短": "55101",
+    "最长": "55101",
+    "空": 10,
+    "空率": 0.033
+   },
+   "PARCELNBR": {
+    "带特殊字符": 0,
+    "最短": "77-020-12000",
+    "最长": "77-020-12000",
+    "空": 3,
+    "空率": 0.01
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "Road",
+    "最长": "77-020-12000",
+    "空": 1,
+    "空率": 0.003
+   },
+   "PIDCODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PIDCODE2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PLDESC": {
+    "带特殊字符": 10,
+    "最短": "RAINYVIEW",
+    "最长": "AUDITOR'S PLAT 25 (AKA:HADLER & LINSTENS ADD)",
+    "空": 258,
+    "空率": 0.86
+   },
+   "SCHLDIST": {
+    "带特殊字符": 0,
+    "最短": "36",
+    "最长": "2142",
+    "空": 3,
+    "空率": 0.01
+   },
+   "STR": {
+    "带特殊字符": 0,
+    "最短": "206525",
+    "最长": "2015929",
+    "空": 28,
+    "空率": 0.093
+   },
+   "SchD1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TAXABLEBUILDING": {
+    "带特殊字符": 0,
+    "最短": "300",
+    "最长": "159200",
+    "空": 261,
+    "空率": 0.87
+   },
+   "TAXABLELANDVALUE": {
+    "带特殊字符": 0,
+    "最短": "500",
+    "最长": "184000",
+    "空": 213,
+    "空率": 0.71
+   },
+   "TAXYEAR": {
+    "带特殊字符": 0,
+    "最短": "2026",
+    "最长": "2026",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TOTALSPECASMT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Water": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "3471ab55599d8dd5",
+  "total": 55289,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.8495,
+   "full": 0.8495,
+   "number": 0.8495,
+   "street": 0.8495,
+   "zip": 0.0081
+  },
+  "nonnull": {
+   "city": 8323,
+   "full": 8323,
+   "number": 8323,
+   "street": 8323,
+   "zip": 54840
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.8495, 'street': 0.8495, 'city': 0.8495, 'zip': 0.0081, 'full': 0.8495}）→ 全量数据证伪，拒收",
+  "total": 55289,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_1 street=ADDR_1 city=CITY zip=ZIP_CODE_5",
+ "sample_hash": "3471ab55599d8dd5",
+ "site_cols": [
+  "ADDR_1"
+ ],
+ "source_id": "us/mn/koochiching",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://services3.arcgis.com/8mdusDCY0WncdJVw/arcgis/rest/services/KoochichingCountyParcelDataPublish/FeatureServer/0",
+ "verdict": "REJECTED_P2"
+}

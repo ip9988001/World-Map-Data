@@ -1,0 +1,81 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "RedLakeCountyTaxData.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "number": "RedLakeCountyTaxData.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "zip": "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:03",
+ "county": "Red Lake",
+ "curated_cols": {},
+ "fields": [
+  "RedLake_LGIM.DBO.TaxParcel.OBJECTID",
+  "RedLake_LGIM.DBO.TaxParcel.PARCELID",
+  "RedLake_LGIM.DBO.TaxParcel.SHAPE",
+  "SHAPE.STArea()",
+  "SHAPE.STLength()",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PARCEL_NUMBER",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAX_YEAR",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.DEEDED_ACRES",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ADDRESS",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_NAME",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS_2",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS_3",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS_4",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.OWNER_NAME",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.OWNER_ADDRESS_1",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.OWNER_ADDRESS_2",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.OWNER_ADDRESS_3",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.OWNER_ADDRESS_4",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.SECTION",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TOWNSHIP",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.RANGE",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.LOT",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.BLOCK",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PLAT_NUMBER",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PLAT_NAME",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.CITY_TWP_NAME",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.SCHOOL_DISTRICT_NAME",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAX_INCREMENT",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.RURAL_SERVICE_DISTRICT",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.LEGAL"
+ ],
+ "fields_n": 34,
+ "guessed_cols": {
+  "city": "RedLakeCountyTaxData.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "number": "RedLakeCountyTaxData.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "zip": "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "reason": "服务端自报 4,215 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ADDRESS', 'RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP'] → 交给 concat_addr 拆",
+ "site_cols": [
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ADDRESS",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS_2",
+  "RedLakeCountyTaxData.dbo.tblParcelJoin.TAXPAYER_ADDRESS_3"
+ ],
+ "source_id": "us/mn/red_lake",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://gismap.co.pennington.mn.us/arcgis/rest/services/RedLake/RedLake_Internal/MapServer/26",
+ "verdict": "FAIL_P1"
+}

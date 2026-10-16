@@ -1,0 +1,210 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRESS",
+  "street": "ADDRESS",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:04:58",
+ "county": "Polk",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDRESS",
+  "street": "ADDRESS",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "ID",
+  "NAME",
+  "ADDRESS",
+  "ROUTE",
+  "BOX",
+  "DIRECTION",
+  "ROAD",
+  "PLACE",
+  "CITY",
+  "ZIP",
+  "ESN",
+  "HNUM",
+  "STREET",
+  "Shape",
+  "OBJECTID_1",
+  "OBJECTID",
+  "GlobalID"
+ ],
+ "fields_n": 17,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "44909 DAWN LN",
+    "最长": "15669 OAK COVE RESORT RD SE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BOX": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "708 DESTINY DR",
+    "空": 27,
+    "空率": 0.09
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "OSLO",
+    "最长": "THIEF RIVER FALLS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DIRECTION": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 1,
+    "空率": 0.003
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "1034",
+    "最长": "1034",
+    "空": 1,
+    "空率": 0.003
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{3F4BBCC4-0D55-4EE3-BF81-3392F269B578}",
+    "最长": "{3F4BBCC4-0D55-4EE3-BF81-3392F269B578}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HNUM": {
+    "带特殊字符": 0,
+    "最短": "13595",
+    "最长": "13595",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ID": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "PK-10017",
+    "空": 28,
+    "空率": 0.093
+   },
+   "NAME": {
+    "带特殊字符": 140,
+    "最短": "UNK",
+    "最长": "MNDOT STREET LIGHT CONTROL BOX",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLACE": {
+    "带特殊字符": 0,
+    "最短": "790",
+    "最长": "790",
+    "空": 1,
+    "空率": 0.003
+   },
+   "ROAD": {
+    "带特殊字符": 0,
+    "最短": "ROAD",
+    "最长": "OAK COVE RESORT RD",
+    "空": 5,
+    "空率": 0.017
+   },
+   "ROUTE": {
+    "带特殊字符": 0,
+    "最短": "PO",
+    "最长": "RR 1",
+    "空": 27,
+    "空率": 0.09
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "DAWN LN",
+    "最长": "OAK COVE RESORT RD SE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "56736",
+    "最长": "56736",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8d0ab7b5f3d58c02",
+  "total": 14470,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 14470,
+   "full": 14470,
+   "number": 14470,
+   "street": 14470,
+   "zip": 14470
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 14470,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ADDRESS city=CITY zip=ZIP",
+ "sample_hash": "8d0ab7b5f3d58c02",
+ "site_cols": [
+  "ADDRESS",
+  "STREET"
+ ],
+ "source_id": "us/mn/polk",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://gis.co.polk.mn.us/arcgis/rest/services/PolkALL/MapServer/20",
+ "verdict": "CONTRACTED"
+}

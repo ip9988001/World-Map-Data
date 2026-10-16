@@ -1,0 +1,444 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "Address",
+  "state": "State",
+  "street": "FullName",
+  "unit": "BldgName",
+  "zip": "Zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:06:59",
+ "county": "Calhoun",
+ "curated_cols": {
+  "city": "City",
+  "number": "Address",
+  "state": "State",
+  "street": "FullName",
+  "zip": "Zipcode"
+ },
+ "fields": [
+  "FID",
+  "OBJECTID",
+  "DiscrpAgID",
+  "NGUID_ADD",
+  "FullAddr",
+  "FullName",
+  "Label",
+  "AddPre",
+  "Address",
+  "AddSuf",
+  "PreMod",
+  "PreDir",
+  "PreTyp",
+  "PreTypeSep",
+  "Street",
+  "StreetType",
+  "SufDir",
+  "SufMod",
+  "Country",
+  "State",
+  "County",
+  "City",
+  "Uninc_Comm",
+  "Nbrhd_Comm",
+  "ESN",
+  "PSAP",
+  "MSAGComm",
+  "Post_Comm",
+  "Zipcode",
+  "Zipcode4",
+  "LandmkName",
+  "Addtl_Loc",
+  "BldgName",
+  "Floor",
+  "BldgUnit",
+  "Room",
+  "Seat",
+  "GrpQuarter",
+  "OccupTime",
+  "StrmSheltr",
+  "Basement",
+  "PlaceType",
+  "Placement",
+  "Mile_Post",
+  "Longitude",
+  "Latitude",
+  "Elevation",
+  "AddDataURI",
+  "InitiSrce",
+  "InitiDate",
+  "RevEditor",
+  "RevDate",
+  "EffectDate",
+  "ExpireDate",
+  "Comment",
+  "LgcyAdd",
+  "LgcyPreDir",
+  "LgcyStreet",
+  "LgcyType",
+  "LgcySufDir",
+  "LayerName",
+  "Source",
+  "Steward",
+  "AGD_Commen",
+  "AGD_Placem",
+  "EDITOR",
+  "EDITDATE",
+  "NOTES",
+  "STATUS",
+  "google",
+  "xcoord",
+  "ycoord",
+  "GlobalID"
+ ],
+ "fields_n": 73,
+ "guessed_cols": {
+  "unit": "BldgName"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "addresspoiints",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddPre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddSuf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "235",
+    "空": 2,
+    "空率": 0.007
+   },
+   "Addtl_Loc": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "APARTMENT",
+    "空": 268,
+    "空率": 0.893
+   },
+   "BldgName": {
+    "带特殊字符": 6,
+    "最短": "B",
+    "最长": "BENNET APARTMENTS. APT NUMBERS IN BLUE",
+    "空": 257,
+    "空率": 0.857
+   },
+   "BldgUnit": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "RESTRAUNT",
+    "空": 289,
+    "空率": 0.963
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "BRUCE",
+    "最长": "CALHOUN CITY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "CALHOUN",
+    "最长": "CALHOUN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "004",
+    "最长": "004",
+    "空": 299,
+    "空率": 0.997
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FullAddr": {
+    "带特殊字符": 0,
+    "最短": "111 LEE ST",
+    "最长": "436 NORTH NEWBURGER AVE APT # 10",
+    "空": 40,
+    "空率": 0.133
+   },
+   "FullName": {
+    "带特殊字符": 0,
+    "最短": "AVE",
+    "最长": "JIMMY BECKLY DR",
+    "空": 42,
+    "空率": 0.14
+   },
+   "GrpQuarter": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Label": {
+    "带特殊字符": 6,
+    "最短": "1",
+    "最长": "204 CHILD DEVELOPMENT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LandmkName": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NGUID_ADD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Nbrhd_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "8806",
+    "最长": "8806",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OccupTime": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PSAP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Post_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PreDir": {
+    "带特殊字符": 0,
+    "最短": "East",
+    "最长": "NORTH AVE",
+    "空": 136,
+    "空率": 0.453
+   },
+   "PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PreTyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PreTypeSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Room": {
+    "带特殊字符": 0,
+    "最短": "40",
+    "最长": "40",
+    "空": 295,
+    "空率": 0.983
+   },
+   "Seat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "MS",
+    "最长": "MS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 51,
+    "空率": 0.17
+   },
+   "StrmSheltr": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SufDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SufMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Uninc_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Zipcode": {
+    "带特殊字符": 0,
+    "最短": "38916",
+    "最长": "38916",
+    "空": 299,
+    "空率": 0.997
+   },
+   "Zipcode4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "eac214f39e78569e",
+  "total": 8180,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 8180,
+   "full": 8180,
+   "number": 8180,
+   "state": 8180,
+   "street": 8180,
+   "zip": 8180
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 8180,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Address street=FullName city=City zip=Zipcode",
+ "sample_hash": "eac214f39e78569e",
+ "site_cols": [
+  "FullAddr",
+  "Address",
+  "Street",
+  "StreetType",
+  "LgcyStreet"
+ ],
+ "source_id": "us/ms/calhoun",
+ "stage": "p0",
+ "state": "MS",
+ "url": "https://services6.arcgis.com/7N4GmWKq7bTZvjri/ArcGIS/rest/services/addresspoiints/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,377 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "OwnerCity",
+  "number": "LocationSt",
+  "state": "OwnerState",
+  "street": "LocationSt",
+  "zip": "OwnerZip1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:28",
+ "county": "Madison",
+ "curated_cols": {
+  "number": "LocationSt",
+  "street": "LocationSt"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "Shape",
+  "_hg_id",
+  "OGR_FID",
+  "objectid",
+  "parcelid2",
+  "ParcelID",
+  "ParcelNumb",
+  "FormattedP",
+  "LocationAd",
+  "LocationDi",
+  "LocationSt",
+  "LocationSu",
+  "LegalDescr",
+  "LegalDes_1",
+  "LegalDes_2",
+  "LegalDes_3",
+  "FullLegalD",
+  "Sec",
+  "Twp",
+  "Rge",
+  "DeedAcres",
+  "SurveyAcre",
+  "MappedAcre",
+  "OverrideAc",
+  "CalcAcres",
+  "Owner1",
+  "Owner2",
+  "OwnerCareO",
+  "OwnerMaili",
+  "OwnerMai_1",
+  "OwnerCity",
+  "OwnerState",
+  "OwnerZip1",
+  "OwnerZip2",
+  "Shape_Length",
+  "Shape_Area"
+ ],
+ "fields_n": 37,
+ "guessed_cols": {
+  "city": "OwnerCity",
+  "state": "OwnerState",
+  "zip": "OwnerZip1"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcel",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "CalcAcres": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "0.30000001192092896",
+    "空": 3,
+    "空率": 0.01
+   },
+   "DeedAcres": {
+    "带特殊字符": 0,
+    "最短": "40",
+    "最长": "20.299999237060547",
+    "空": 281,
+    "空率": 0.937
+   },
+   "FormattedP": {
+    "带特殊字符": 0,
+    "最短": "01-4.0-19-000-000-001.000",
+    "最长": "01-4.0-19-000-000-001.000",
+    "空": 3,
+    "空率": 0.01
+   },
+   "FullLegalD": {
+    "带特殊字符": 0,
+    "最短": "VACANT",
+    "最长": "house is in st. francois county",
+    "空": 283,
+    "空率": 0.943
+   },
+   "LegalDes_1": {
+    "带特殊字符": 1,
+    "最短": "211)",
+    "最长": "FACE ONLY",
+    "空": 293,
+    "空率": 0.977
+   },
+   "LegalDes_2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LegalDes_3": {
+    "带特殊字符": 0,
+    "最短": "VACANT",
+    "最长": "VACANT",
+    "空": 299,
+    "空率": 0.997
+   },
+   "LegalDescr": {
+    "带特殊字符": 98,
+    "最短": "SESE",
+    "最长": "PT W1/2SE; PT- S 300' OF W1/2NE; PT NESE; SESE SUR",
+    "空": 10,
+    "空率": 0.033
+   },
+   "LocationAd": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LocationDi": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LocationSt": {
+    "带特殊字符": 1,
+    "最短": "HWY OO",
+    "最长": "SPILLWAY DR. AT LAKEFRONT",
+    "空": 39,
+    "空率": 0.13
+   },
+   "LocationSu": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MappedAcre": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "0.47999998927116394",
+    "空": 3,
+    "空率": 0.01
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OGR_FID": {
+    "带特殊字符": 0,
+    "最短": "10991",
+    "最长": "10991",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OverrideAc": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "0.30000001192092896",
+    "空": 104,
+    "空率": 0.347
+   },
+   "Owner1": {
+    "带特殊字符": 268,
+    "最短": "USA",
+    "最长": "WHITE, GREGORY W. & REGINA L. REV TRUST",
+    "空": 3,
+    "空率": 0.01
+   },
+   "Owner2": {
+    "带特殊字符": 14,
+    "最短": "TRUST",
+    "最长": "FREEMAN, THOMAS S. & BONITA L. RLT",
+    "空": 281,
+    "空率": 0.937
+   },
+   "OwnerCareO": {
+    "带特殊字符": 1,
+    "最短": "DAVID RAMSEY",
+    "最长": "WOLFSBERGER, DARYL L.",
+    "空": 296,
+    "空率": 0.987
+   },
+   "OwnerCity": {
+    "带特殊字符": 2,
+    "最短": "CUBA",
+    "最长": "MARYLAND HEIGHTS",
+    "空": 14,
+    "空率": 0.047
+   },
+   "OwnerMai_1": {
+    "带特殊字符": 0,
+    "最短": "P O BOX 27",
+    "最长": "17427 HILLTOP RIDGE DRIVE",
+    "空": 283,
+    "空率": 0.943
+   },
+   "OwnerMaili": {
+    "带特殊字符": 8,
+    "最短": "INC",
+    "最长": "MELL, SHAUN & STACY;LONG, PAUL",
+    "空": 16,
+    "空率": 0.053
+   },
+   "OwnerState": {
+    "带特殊字符": 0,
+    "最短": "MO",
+    "最长": "MO",
+    "空": 15,
+    "空率": 0.05
+   },
+   "OwnerZip1": {
+    "带特殊字符": 0,
+    "最短": "63385",
+    "最长": "63385",
+    "空": 15,
+    "空率": 0.05
+   },
+   "OwnerZip2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ParcelID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "29142",
+    "空": 3,
+    "空率": 0.01
+   },
+   "ParcelNumb": {
+    "带特殊字符": 0,
+    "最短": "014019000000001000",
+    "最长": "014019000000001000",
+    "空": 3,
+    "空率": 0.01
+   },
+   "Rge": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "08",
+    "空": 3,
+    "空率": 0.01
+   },
+   "Sec": {
+    "带特殊字符": 0,
+    "最短": "19",
+    "最长": "19",
+    "空": 3,
+    "空率": 0.01
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "4203597.44321773",
+    "最长": "117347.71919030372",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Length": {
+    "带特殊字符": 0,
+    "最短": "713.2712472163",
+    "最长": "1062.8706011048585",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SurveyAcre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Twp": {
+    "带特殊字符": 0,
+    "最短": "34",
+    "最长": "34",
+    "空": 3,
+    "空率": 0.01
+   },
+   "_hg_id": {
+    "带特殊字符": 0,
+    "最短": "10991",
+    "最长": "10991",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "parcelid2": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "28639",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "63704b335514a467",
+  "total": 11181,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 11181,
+   "full": 11181,
+   "number": 11181,
+   "state": 11181,
+   "street": 11181,
+   "zip": 11181
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 11181,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=LocationSt street=LocationSt",
+ "sample_hash": "63704b335514a467",
+ "site_cols": [
+  "LocationAd",
+  "LocationDi",
+  "LocationSt",
+  "LocationSu"
+ ],
+ "source_id": "us/mo/madison",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://maps.semogis.com/server/rest/services/Madison_CO/MadisonCo_Assessment/MapServer/5",
+ "verdict": "CONTRACTED"
+}

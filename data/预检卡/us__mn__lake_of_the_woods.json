@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:04:49",
+ "county": "Lake of the Woods",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试",
+ "source_id": "us/mn/lake_of_the_woods",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://oak.co.lake-of-the-woods.mn.us/arcgis/rest/services/LOW_Internal/MapServer/31",
+ "verdict": "TRANSIENT"
+}

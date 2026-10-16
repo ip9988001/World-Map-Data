@@ -1,0 +1,76 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "NormanCountyTax.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "number": "NormanCountyTax.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "zip": "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:04:52",
+ "county": "Norman",
+ "curated_cols": {},
+ "fields": [
+  "Norman_LGIM.DBO.TaxParcel.OBJECTID",
+  "Norman_LGIM.DBO.TaxParcel.PARCELID",
+  "Norman_LGIM.DBO.TaxParcel.SHAPE",
+  "NormanCountyTax.dbo.tblParcelJoin.DEEDED_ACRES",
+  "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ADDRESS",
+  "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_NAME",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS_2",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS_3",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS_4",
+  "NormanCountyTax.dbo.tblParcelJoin.OWNER_NAME",
+  "NormanCountyTax.dbo.tblParcelJoin.OWNER_ADDRESS_1",
+  "NormanCountyTax.dbo.tblParcelJoin.OWNER_ADDRESS_2",
+  "NormanCountyTax.dbo.tblParcelJoin.OWNER_ADDRESS_3",
+  "NormanCountyTax.dbo.tblParcelJoin.OWNER_ADDRESS_4",
+  "NormanCountyTax.dbo.tblParcelJoin.SECTION",
+  "NormanCountyTax.dbo.tblParcelJoin.TOWNSHIP",
+  "NormanCountyTax.dbo.tblParcelJoin.RANGE",
+  "NormanCountyTax.dbo.tblParcelJoin.LOT",
+  "NormanCountyTax.dbo.tblParcelJoin.BLOCK",
+  "NormanCountyTax.dbo.tblParcelJoin.PLAT_NUMBER",
+  "NormanCountyTax.dbo.tblParcelJoin.PLAT_NAME",
+  "NormanCountyTax.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "NormanCountyTax.dbo.tblParcelJoin.CITY_TWP_NAME",
+  "NormanCountyTax.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "NormanCountyTax.dbo.tblParcelJoin.SCHOOL_DISTRICT_NAME",
+  "NormanCountyTax.dbo.tblParcelJoin.RURAL_SERVICE_DISTRICT",
+  "NormanCountyTax.dbo.tblParcelJoin.LEGAL"
+ ],
+ "fields_n": 29,
+ "guessed_cols": {
+  "city": "NormanCountyTax.dbo.tblParcelJoin.CITY_TWP_NUMBER",
+  "number": "NormanCountyTax.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER",
+  "zip": "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "reason": "服务端自报 9,689 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ADDRESS', 'NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP'] → 交给 concat_addr 拆",
+ "site_cols": [
+  "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ADDRESS",
+  "NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS_2",
+  "NormanCountyTax.dbo.tblParcelJoin.TAXPAYER_ADDRESS_3"
+ ],
+ "source_id": "us/mn/norman",
+ "stage": "p0",
+ "state": "MN",
+ "url": "https://gismap.co.pennington.mn.us/arcgis/rest/services/Norman/Norman_Internal_LINK/MapServer/26",
+ "verdict": "FAIL_P1"
+}

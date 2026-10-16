@@ -1,0 +1,223 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "StructureNumber",
+  "street": "CompositeStreet",
+  "unit": "SubUnit"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-16 07:05:36",
+ "county": "Perry",
+ "curated_cols": {
+  "number": "StructureNumber",
+  "street": "CompositeStreet"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "Alias2",
+  "PARCEL_ID",
+  "Longitude",
+  "Latitude",
+  "X_Coord",
+  "Y_Coord",
+  "NAT_GRID",
+  "FullAddress",
+  "StructureNumber",
+  "StructureNumber2",
+  "Type",
+  "Designation",
+  "SubUnit",
+  "CompositeStreet",
+  "StreetName",
+  "StreetType",
+  "Alias"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {
+  "unit": "SubUnit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "County Address (911)",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://semogis.com/maps/perry-county/",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Alias": {
+    "带特殊字符": 0,
+    "最短": "624",
+    "最长": "624",
+    "空": 299,
+    "空率": 0.997
+   },
+   "Alias2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CompositeStreet": {
+    "带特殊字符": 0,
+    "最短": "HWY B",
+    "最长": "BLACK OAK FOREST LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Designation": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FullAddress": {
+    "带特殊字符": 0,
+    "最短": "6 DAM RD",
+    "最长": "122 BLACK OAK FOREST LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Latitude": {
+    "带特殊字符": 0,
+    "最短": "37.61932754",
+    "最长": "37.5984009928",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Longitude": {
+    "带特殊字符": 0,
+    "最短": "-89.9869165",
+    "最长": "-89.9292413534",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NAT_GRID": {
+    "带特殊字符": 0,
+    "最短": "16SBG4139565294",
+    "最长": "16SBG4139565294",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "76-10-8.0-034-000-000-011.00000",
+    "最长": "76-10-8.0-034-000-000-011.00000",
+    "空": 8,
+    "空率": 0.027
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "DAM",
+    "最长": "BLACK OAK FOREST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "CIR",
+    "空": 2,
+    "空率": 0.007
+   },
+   "StructureNumber": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "6065",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StructureNumber2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SubUnit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "X_Coord": {
+    "带特殊字符": 0,
+    "最短": "781092.59",
+    "最长": "771101.4646",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_Coord": {
+    "带特殊字符": 0,
+    "最短": "4176444.35",
+    "最长": "4176146.0607",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7083edafcc8bf60d",
+  "total": 11403,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 11403,
+   "number": 11403,
+   "street": 11403
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 11403,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=StructureNumber street=CompositeStreet（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "7083edafcc8bf60d",
+ "site_cols": [
+  "FullAddress",
+  "CompositeStreet",
+  "StreetName",
+  "StreetType"
+ ],
+ "source_id": "us/mo/perry",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://maps.semogis.com/server/rest/services/Perry_CO/PerryCo_PublicBase/MapServer/27",
+ "verdict": "CONTRACTED"
+}
