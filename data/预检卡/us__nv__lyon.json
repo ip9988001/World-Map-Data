@@ -1,0 +1,442 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "PTOWN",
+  "number": "PLOCNUM",
+  "street": "PLOCDR",
+  "zip": "PSPECP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:13:13",
+ "county": "Lyon",
+ "curated_cols": {
+  "city": "PTOWN",
+  "number": "PLOCNUM",
+  "street": "PLOCDR"
+ },
+ "fields": [
+  "APN",
+  "YPNO",
+  "YYEAR",
+  "YDIST",
+  "YLDUSE",
+  "YEXEMP",
+  "YLANDV",
+  "YIMPRV",
+  "YPERPV",
+  "YAGLNV",
+  "YEXMP",
+  "YNETV",
+  "YNEWLV",
+  "STRAP",
+  "YNEWIV",
+  "YNEWPV",
+  "YOORNT",
+  "YORPCT",
+  "PUPDDT",
+  "POLDPNUM",
+  "POLDDT",
+  "PLOCNUM",
+  "PLOCDR",
+  "PLOCNM",
+  "PLOCUNUM",
+  "PTOWN",
+  "PSUBDV",
+  "PPNAME",
+  "PLOT",
+  "PBLOCK",
+  "PMAPID",
+  "PREMRK",
+  "PACRES",
+  "PSQFT",
+  "PAGACR",
+  "PNUMSFDU",
+  "PNUMMOBL",
+  "PNUMMFIU",
+  "PNUMSFAU",
+  "PNUMDWEL",
+  "PNUMNDWL",
+  "PNUMMHHK",
+  "PNUMWELL",
+  "PNUMSEPT",
+  "PBLDSF",
+  "PRESSF",
+  "PGARSF",
+  "PGARAD",
+  "PANAME",
+  "PMADD1",
+  "PMADD2",
+  "PMCTST",
+  "PZIP",
+  "PLNAME",
+  "PDOCDT",
+  "PDEEDNUM",
+  "PDSFX",
+  "PDYEAR",
+  "PDBOOK",
+  "PDPAGE",
+  "PDCORR",
+  "PMAPNUM1",
+  "PM1SFX",
+  "PMAPNUM2",
+  "PM2SFX",
+  "PMAPNUM3",
+  "PM3SFX",
+  "PMAPNUM4",
+  "PM4SFX",
+  "PZONE1",
+  "PZONE2",
+  "PZONE3",
+  "PZONE4",
+  "PAPRGP",
+  "PFACGP",
+  "PAPPYR",
+  "PSPECP",
+  "PSPECO",
+  "PCONYR",
+  "PCMPYR"
+ ],
+ "fields_n": 210,
+ "guessed_cols": {
+  "zip": "PSPECP"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "APN": {
+    "带特殊字符": 0,
+    "最短": "021-121-18",
+    "最长": "021-121-18",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PACRES": {
+    "带特殊字符": 0,
+    "最短": "1.0",
+    "最长": "16861.57",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PAGACR": {
+    "带特殊字符": 0,
+    "最短": "1.07",
+    "最长": "17.74",
+    "空": 288,
+    "空率": 0.96
+   },
+   "PBLOCK": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PLOCDR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 248,
+    "空率": 0.827
+   },
+   "PLOCNM": {
+    "带特殊字符": 0,
+    "最短": "HWY 95A",
+    "最长": "FARM DISTRICT RD",
+    "空": 44,
+    "空率": 0.147
+   },
+   "PLOCNUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "13300",
+    "空": 77,
+    "空率": 0.257
+   },
+   "PLOCUNUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PLOT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PMAPID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PNUMDWEL": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "126",
+    "空": 120,
+    "空率": 0.4
+   },
+   "PNUMMFIU": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "8",
+    "空": 299,
+    "空率": 0.997
+   },
+   "PNUMMOBL": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "12",
+    "空": 235,
+    "空率": 0.783
+   },
+   "PNUMSFAU": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 299,
+    "空率": 0.997
+   },
+   "PNUMSFDU": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "92",
+    "空": 182,
+    "空率": 0.607
+   },
+   "POLDDT": {
+    "带特殊字符": 0,
+    "最短": "20090604",
+    "最长": "20090604",
+    "空": 187,
+    "空率": 0.623
+   },
+   "POLDPNUM": {
+    "带特殊字符": 0,
+    "最短": "162102",
+    "最长": "2112113",
+    "空": 187,
+    "空率": 0.623
+   },
+   "PPNAME": {
+    "带特殊字符": 1,
+    "最短": "DRAINAGE",
+    "最长": "YERINGTON INTERMEDIATE SCHOOL",
+    "空": 294,
+    "空率": 0.98
+   },
+   "PREMRK": {
+    "带特殊字符": 31,
+    "最短": "SEE F16",
+    "最长": "1.00 NET ACRES SPLIT BY REQUEST D241892 F16 FOR %",
+    "空": 235,
+    "空率": 0.783
+   },
+   "PSQFT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PSUBDV": {
+    "带特殊字符": 0,
+    "最短": "PIONEER 1",
+    "最长": "FRIENDLY 5 RANCH VILLAGE 3",
+    "空": 157,
+    "空率": 0.523
+   },
+   "PTOWN": {
+    "带特殊字符": 0,
+    "最短": "SMITH",
+    "最长": "SILVER SPRINGS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PUPDDT": {
+    "带特殊字符": 0,
+    "最短": "20211116",
+    "最长": "20211116",
+    "空": 41,
+    "空率": 0.137
+   },
+   "STRAP": {
+    "带特殊字符": 0,
+    "最短": "2124224",
+    "最长": "02112118",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YAGLNV": {
+    "带特殊字符": 0,
+    "最短": "149",
+    "最长": "10010",
+    "空": 288,
+    "空率": 0.96
+   },
+   "YDIST": {
+    "带特殊字符": 0,
+    "最短": "6.0",
+    "最长": "6.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YEXEMP": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "G08",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YEXMP": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "2414181",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YIMPRV": {
+    "带特殊字符": 0,
+    "最短": "801",
+    "最长": "2261658",
+    "空": 101,
+    "空率": 0.337
+   },
+   "YLANDV": {
+    "带特殊字符": 0,
+    "最短": "170",
+    "最长": "124913",
+    "空": 2,
+    "空率": 0.007
+   },
+   "YLDUSE": {
+    "带特殊字符": 0,
+    "最短": "200",
+    "最长": "200",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YNETV": {
+    "带特殊字符": 0,
+    "最短": "170",
+    "最长": "118279",
+    "空": 17,
+    "空率": 0.057
+   },
+   "YNEWIV": {
+    "带特殊字符": 0,
+    "最短": "7728",
+    "最长": "37760",
+    "空": 294,
+    "空率": 0.98
+   },
+   "YNEWLV": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "YNEWPV": {
+    "带特殊字符": 0,
+    "最短": "32785",
+    "最长": "32785",
+    "空": 299,
+    "空率": 0.997
+   },
+   "YOORNT": {
+    "带特殊字符": 0,
+    "最短": "O",
+    "最长": "NQR",
+    "空": 165,
+    "空率": 0.55
+   },
+   "YORPCT": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 191,
+    "空率": 0.637
+   },
+   "YPERPV": {
+    "带特殊字符": 0,
+    "最短": "189",
+    "最长": "68436",
+    "空": 289,
+    "空率": 0.963
+   },
+   "YPNO": {
+    "带特殊字符": 0,
+    "最短": "162108",
+    "最长": "2112118",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YYEAR": {
+    "带特殊字符": 0,
+    "最短": "2027",
+    "最长": "2027",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "32e95ca363e1a20d",
+  "total": 35343,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0038,
+   "full": 0.0617,
+   "number": 0.0037,
+   "street": 0.8945,
+   "zip": 0.9798
+  },
+  "nonnull": {
+   "city": 35210,
+   "full": 33164,
+   "number": 35211,
+   "street": 3727,
+   "zip": 715
+  },
+  "reason": "number/street 达标（经整条地址列 PHY_ADDR 兜底：号/街独立列缺失），但 zip 缺失率超上限（{'number': 0.0037, 'street': 0.8945, 'city': 0.0038, 'zip': 0.9798, 'full': 0.0617}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 35343,
+  "verdict": "CONTRACTED_DOWNGRADED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=PLOCNUM street=PLOCDR city=PTOWN",
+ "sample_hash": "32e95ca363e1a20d",
+ "site_cols": [
+  "PHY_ADDR"
+ ],
+ "source_id": "us/nv/lyon",
+ "stage": "p0",
+ "state": "NV",
+ "url": "https://gis.lyon-county.org/server/rest/services/Landbase/Parcels/MapServer/1",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

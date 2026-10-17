@@ -291,3 +291,23 @@ us/nm/san_juan,NM,,https://webmaps.sjcounty.net/arcgis/rest/services/opendata/Ba
 us/nv/carson_city,NV,,https://portal.carsoncity.gov/server/rest/services/CarsonCity/CarsonCityNV_OpenData/MapServer/37,https://data-carsoncity.opendata.arcgis.com/datasets/CarsonCity::address-points-1/about,以官方页面为准，待补
 us/nv/clark,NV,,https://gisgate.co.clark.nv.us/arcgis/rest/services/GISMO/Address/MapServer/2,,以官方页面为准，待补
 us/nv/humboldt,NV,,https://services7.arcgis.com/cbx6hozJyAREK9DB/arcgis/rest/services/SiteAddressPoints/FeatureServer/0/,,以官方页面为准，待补
+us/nv/lyon,NV,,https://gis.lyon-county.org/server/rest/services/Landbase/Parcels/MapServer/1,,以官方页面为准，待补
+us/nv/storey,NV,,https://services6.arcgis.com/uqDdpZNvJheIun5o/ArcGIS/rest/services/Address_Points/FeatureServer/0,,以官方页面为准，待补
+us/nv/white_pine,NV,,https://services9.arcgis.com/ihyPHe2KRRmOsTPa/arcgis/rest/services/TaxParcelJoined_WhitePineNV/FeatureServer/0,,以官方页面为准，待补
+us/ny/cayuga,NY,,https://ccgis.cayugacounty.us/arcgis/rest/services/District/AddressPoints/MapServer/100,https://www.cayugacounty.gov/687/Interactive-GIS,以官方页面为准，待补
+us/ny/washington,NY,,https://gis.washingtoncountyny.gov/arcgis/rest/services/Layers2/MapServer/4,https://gis.washingtoncountyny.gov/,以官方页面为准，待补
+us/oh/coshocton,OH,,https://services5.arcgis.com/zhyAQE7C1EXFJ6bG/arcgis/rest/services/Addresses/FeatureServer/0,https://experience.arcgis.com/experience/dcc7010b7b4f47a983273a642fa8164d,以官方页面为准，待补
+us/oh/hamilton,OH,,https://cagisonline.hamilton-co.org/arcgis/rest/services/Countywide_Layers/addressesTables/MapServer/0,,以官方页面为准，待补
+us/oh/lorain,OH,,https://loraincountyauditor.com/arcgis/rest/services/GISData/Address_Points/FeatureServer/0,,以官方页面为准，待补
+us/oh/seneca,OH,,https://services.arcgis.com/b8eHPJ5KRnX3dHNa/arcgis/rest/services/Current_Addresses/FeatureServer/0,,以官方页面为准，待补
+us/ok/carter-county,OK,,https://ardmoregis.ardmorecity.org/arcgis/rest/services/ArdGIS/ArdCarterAddress/MapServer/0,,以官方页面为准，待补
+us/ok/incog-counties,OK,INCOG (Indian Nations Council of Governments),https://map11.incog.org/arcgis11wa/rest/services/Address_Points_V3/FeatureServer/2,,以官方页面为准，待补
+us/ok/acog-counties,OK,Oklahoma and Logan Counties - Association of Central Oklahoma Governments,https://arcgis4.roktech.net/arcgis/rest/services/ACOG/acog_query/MapServer/16,,以官方页面为准，待补
+us/or/douglas,OR,,https://gis.co.douglas.or.us/server/rest/services/Common/DouglasCountyCommonMappingBase/MapServer/1,https://gis.co.douglas.or.us/portal/home/item.html?id=3669ec71741f47e0a8463706ccc8d3c6,以官方页面为准，待补
+us/or/linn,OR,,https://gis.co.linn.or.us/public/rest/services/baselayers/Pub_address/MapServer/0,,以官方页面为准，待补
+us/or/morrow,OR,,https://services3.arcgis.com/e3KSI9Py4B7m3xu6/ArcGIS/rest/services/Morrow03AddressPoint/FeatureServer/0,https://harneycounty.maps.arcgis.com/home/item.html?id=fa6b5215859d4d4cbe5864186e3766ee,以官方页面为准，待补
+us/or/polk,OR,,https://maps.co.polk.or.us/gis/rest/services/Site_Address/MapServer/0,,以官方页面为准，待补
+us/pa/cameron,PA,,https://services5.arcgis.com/NN66N9nlzcCXJ9he/ArcGIS/rest/services/AddressPoints_08302022/FeatureServer/0,,以官方页面为准，待补
+us/pa/centre,PA,,https://gissites4.centrecountypa.gov/arcgis/rest/services/OpenData/MapServer/1,https://centrecountypa.gov/202/GIS,以官方页面为准，待补
+us/pa/clinton,PA,,https://maps.clintoncountypa.gov/arcgis/rest/services/Testing/STRUCTURES417/MapServer/0,https://www.clintoncountypa.com/departments/geographic_information/mapping_services.php,以官方页面为准，待补
+us/pa/fayette,PA,,https://mapservices.pasda.psu.edu/server/rest/services/pasda/FayetteCounty/MapServer/3,https://mapservices.pasda.psu.edu/server/rest/services/pasda/FayetteCounty/MapServer,以官方页面为准，待补

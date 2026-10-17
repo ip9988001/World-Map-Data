@@ -1,0 +1,16 @@
+{
+ "attribution": "Oklahoma and Logan Counties - Association of Central Oklahoma Governments",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:17:06",
+ "county": "Oklahoma and Logan",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service ACOG/acog_query/MapServer not found ', 'details': []}",
+ "source_id": "us/ok/acog-counties",
+ "stage": "p0",
+ "state": "OK",
+ "url": "https://arcgis4.roktech.net/arcgis/rest/services/ACOG/acog_query/MapServer/16",
+ "verdict": "REJECTED_P0"
+}

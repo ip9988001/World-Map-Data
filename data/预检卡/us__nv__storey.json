@@ -1,0 +1,219 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "STR_NUMB",
+  "state": "STATE",
+  "street": "STR_PREFIX",
+  "unit": "STR_UNIT",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:13:38",
+ "county": "Storey",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "STR_NUMB",
+  "state": "STATE",
+  "street": "STR_PREFIX",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "STR_NUMB",
+  "STR_UNIT",
+  "STR_PREFIX",
+  "STR_NAME",
+  "STR_TYPE",
+  "STR_SUFFIX",
+  "COMMENTS",
+  "CREATED_DATE",
+  "LAST_UPDATED",
+  "LAST_EDITOR",
+  "LABEL",
+  "GIS",
+  "ZIP",
+  "CITY",
+  "STATE",
+  "GlobalID"
+ ],
+ "fields_n": 17,
+ "guessed_cols": {
+  "unit": "STR_UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Locations",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "RENO",
+    "最长": "DAYTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMENTS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CREATED_DATE": {
+    "带特殊字符": 0,
+    "最短": "1490227200000",
+    "最长": "1490227200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 72,
+    "空率": 0.24
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "7c2a4065-2f36-4a6d-a41b-591474877af9",
+    "最长": "7c2a4065-2f36-4a6d-a41b-591474877af9",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LABEL": {
+    "带特殊字符": 0,
+    "最短": "225 MARY LN",
+    "最长": "143 JUMPING FROG CIRCLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAST_EDITOR": {
+    "带特殊字符": 0,
+    "最短": "areid",
+    "最长": "MForrest",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAST_UPDATED": {
+    "带特殊字符": 0,
+    "最短": "1517961600000",
+    "最长": "1517961600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "6858",
+    "最长": "6858",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "NV",
+    "最长": "NV",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_NAME": {
+    "带特殊字符": 0,
+    "最短": "FEY",
+    "最长": "HIGHLAND SPUR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_NUMB": {
+    "带特殊字符": 0,
+    "最短": "325",
+    "最长": "21550",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STR_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STR_TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "GULCH",
+    "空": 17,
+    "空率": 0.057
+   },
+   "STR_UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "89521",
+    "最长": "89521",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f09bbeaeb993caeb",
+  "total": 4080,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0029,
+   "state": 0.0,
+   "street": 0.7255,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 4080,
+   "number": 4068,
+   "state": 4080,
+   "street": 1120,
+   "zip": 4080
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.0029, 'street': 0.7255, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 全量数据证伪，拒收",
+  "total": 4080,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STR_NUMB street=STR_PREFIX city=CITY zip=ZIP",
+ "sample_hash": "f09bbeaeb993caeb",
+ "site_cols": [],
+ "source_id": "us/nv/storey",
+ "stage": "p0",
+ "state": "NV",
+ "url": "https://services6.arcgis.com/uqDdpZNvJheIun5o/ArcGIS/rest/services/Address_Points/FeatureServer/0",
+ "verdict": "REJECTED_P2"
+}

@@ -1,0 +1,426 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Place_Type",
+  "number": "Add_Number",
+  "state": "State",
+  "street": "St_Name1",
+  "unit": "TotalUnit",
+  "zip": "PostCodeEx"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:17:06",
+ "county": "Douglas",
+ "curated_cols": {},
+ "fields": [
+  "OBJECTID",
+  "ID",
+  "TAXID",
+  "PROP_ID",
+  "UNIT",
+  "TYPE",
+  "ESN",
+  "SMALL_MAP",
+  "IN_CITY",
+  "INSET",
+  "OEM_QC",
+  "SHAPE",
+  "DiscrpAgID",
+  "DateUpdate",
+  "Effective",
+  "Expire",
+  "NGUID",
+  "Country",
+  "State",
+  "County",
+  "AddCode",
+  "AddDataURI",
+  "Inc_Muni",
+  "Uninc_Comm",
+  "Nbrhd_Comm",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name1",
+  "St_PosTyp",
+  "St_PosDir",
+  "St_PosMod",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Typ",
+  "LSt_PosDir",
+  "MSAGComm",
+  "Post_Comm",
+  "Post_Code",
+  "PostCodeEx",
+  "Building",
+  "Floor",
+  "Room",
+  "Seat",
+  "Addtl_Loc",
+  "LandmkName",
+  "Milepost",
+  "Place_Type",
+  "Placement",
+  "Longitude",
+  "Latitude",
+  "Elevation",
+  "Note",
+  "GlobalID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "UnitType",
+  "TotalUnit"
+ ],
+ "fields_n": 64,
+ "guessed_cols": {
+  "city": "Place_Type",
+  "number": "Add_Number",
+  "state": "State",
+  "street": "St_Name1",
+  "unit": "TotalUnit",
+  "zip": "PostCodeEx"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "House Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_WEAK",
+ "p1": {
+  "extremes": {
+   "AddCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddDataURI": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "668",
+    "最长": "31302",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "Douglas County",
+    "最长": "Douglas County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DateUpdate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DiscrpAgID": {
+    "带特殊字符": 0,
+    "最短": "douglascountyor.gov",
+    "最长": "douglascountyor.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "2248",
+    "最长": "2248",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Effective": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Expire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INSET": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 72,
+    "空率": 0.24
+   },
+   "IN_CITY": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 97,
+    "空率": 0.323
+   },
+   "Inc_Muni": {
+    "带特殊字符": 0,
+    "最短": "Glendale",
+    "最长": "Glendale",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "SIXTH",
+    "最长": "HAMILTON HEIGHTS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 298,
+    "空率": 0.993
+   },
+   "LSt_Typ": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSAGComm": {
+    "带特殊字符": 0,
+    "最短": "GLENDALE",
+    "最长": "GLENDALE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NGUID": {
+    "带特殊字符": 300,
+    "最短": "urn:emergency:uid:gis:SSAP:1:douglascoun",
+    "最长": "urn:emergency:uid:gis:SSAP:100:douglascountyor.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Nbrhd_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OEM_QC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PROP_ID": {
+    "带特殊字符": 0,
+    "最短": "R63554",
+    "最长": "R134183",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SMALL_MAP": {
+    "带特殊字符": 0,
+    "最短": "Y",
+    "最长": "Y",
+    "空": 36,
+    "空率": 0.12
+   },
+   "St_Name1": {
+    "带特殊字符": 0,
+    "最短": "Sixth",
+    "最长": "Hamilton Heights",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "Road",
+    "最长": "Street",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "North",
+    "最长": "North",
+    "空": 298,
+    "空率": 0.993
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "OR",
+    "最长": "OR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TAXID": {
+    "带特殊字符": 0,
+    "最短": "33070100100",
+    "最长": "330605AC01100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "ER",
+    "最长": "ER",
+    "空": 298,
+    "空率": 0.993
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Uninc_Comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "50275b71dd374ebc",
+  "total": 58443,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 1.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 1.0
+  },
+  "nonnull": {
+   "city": 0,
+   "number": 58443,
+   "state": 58443,
+   "street": 58443,
+   "zip": 0
+  },
+  "reason": "number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 1.0, 'zip': 1.0, 'state': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 58443,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段可能是够的（**猜的**）：number=Add_Number street=St_Name1 —— 需造刀时用样本确认",
+ "sample_hash": "50275b71dd374ebc",
+ "site_cols": [],
+ "source_id": "us/or/douglas",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://gis.co.douglas.or.us/server/rest/services/Common/DouglasCountyCommonMappingBase/MapServer/1",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

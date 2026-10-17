@@ -1,0 +1,411 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "NUMBER",
+  "state": "STATE",
+  "street": "PRE_DIR",
+  "unit": "UNIT",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:17:11",
+ "county": "Linn",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "NUMBER",
+  "street": "PRE_DIR",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID_12",
+  "MAP_PIN",
+  "MAP_NUM",
+  "MAP_LOT",
+  "NUMBER",
+  "NUM_FRAC",
+  "PRE_DIR",
+  "STREET",
+  "SUFFIX",
+  "POST_DIR",
+  "CITY",
+  "ZIP",
+  "SITUS_1",
+  "SITUS_2",
+  "YRBUILT",
+  "TYPE",
+  "IMPTYPE",
+  "IMPDESC",
+  "MH_NUM",
+  "MISC",
+  "MOD_DATE",
+  "X_COORD",
+  "Y_COORD",
+  "FIRE_DIST",
+  "County",
+  "In_City",
+  "UNIT",
+  "ACT_NUM",
+  "CityL",
+  "OBJECTID",
+  "Fire_Dst_2",
+  "ASSR_NUM",
+  "STATE",
+  "Sanitation",
+  "Shape",
+  "LAW_AGENCY",
+  "GlobalID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date"
+ ],
+ "fields_n": 41,
+ "guessed_cols": {
+  "state": "STATE",
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACT_NUM": {
+    "带特殊字符": 0,
+    "最短": "81741",
+    "最长": "758173",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ASSR_NUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "ALBANY",
+    "最长": "ALBANY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CityL": {
+    "带特殊字符": 0,
+    "最短": "ALB",
+    "最长": "ALB",
+    "空": 0,
+    "空率": 0.0
+   },
+   "County": {
+    "带特殊字符": 0,
+    "最短": "LINN",
+    "最长": "BENTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIRE_DIST": {
+    "带特殊字符": 0,
+    "最短": "ALBANY",
+    "最长": "ALBANY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Fire_Dst_2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{3FEA6A5F-EEB5-4B35-B9E9-6477DC347883}",
+    "最长": "{3FEA6A5F-EEB5-4B35-B9E9-6477DC347883}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "IMPDESC": {
+    "带特殊字符": 0,
+    "最短": "Park",
+    "最长": "Water Treatment",
+    "空": 0,
+    "空率": 0.0
+   },
+   "IMPTYPE": {
+    "带特殊字符": 0,
+    "最短": "R1",
+    "最长": "CSR",
+    "空": 5,
+    "空率": 0.017
+   },
+   "In_City": {
+    "带特殊字符": 0,
+    "最短": "ALBANY",
+    "最长": "NORTH ALBANY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAW_AGENCY": {
+    "带特殊字符": 0,
+    "最短": "APD",
+    "最长": "APD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAP_LOT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MAP_NUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MAP_PIN": {
+    "带特殊字符": 0,
+    "最短": "11S03W06CC11800",
+    "最长": "11S03W06CC11800",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MH_NUM": {
+    "带特殊字符": 0,
+    "最短": "517694.0",
+    "最长": "517694.0",
+    "空": 299,
+    "空率": 0.997
+   },
+   "MISC": {
+    "带特殊字符": 0,
+    "最短": "PUB",
+    "最长": "2012",
+    "空": 286,
+    "空率": 0.953
+   },
+   "MOD_DATE": {
+    "带特殊字符": 0,
+    "最短": "1488960000000",
+    "最长": "1488960000000",
+    "空": 20,
+    "空率": 0.067
+   },
+   "NUMBER": {
+    "带特殊字符": 0,
+    "最短": "236",
+    "最长": "1517",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUM_FRAC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID_12": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POST_DIR": {
+    "带特殊字符": 0,
+    "最短": "SE",
+    "最长": "SE",
+    "空": 6,
+    "空率": 0.02
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SITUS_1": {
+    "带特殊字符": 0,
+    "最短": "236 LYON ST",
+    "最长": "3800 MOUNTAIN VIEW DR SE  151",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITUS_2": {
+    "带特殊字符": 0,
+    "最短": "ALBANY OR 97321",
+    "最长": "ALBANY OR 97321",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "OR",
+    "最长": "OR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "CHURCHILL DOWNS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Sanitation": {
+    "带特殊字符": 0,
+    "最短": "Republic Services",
+    "最长": "Republic Services",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "CI",
+    "最长": "MFH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "151",
+    "最长": "151",
+    "空": 298,
+    "空率": 0.993
+   },
+   "X_COORD": {
+    "带特殊字符": 0,
+    "最短": "7524183.0",
+    "最长": "7524183.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YRBUILT": {
+    "带特殊字符": 0,
+    "最短": "1900",
+    "最长": "1900",
+    "空": 30,
+    "空率": 0.1
+   },
+   "Y_COORD": {
+    "带特殊字符": 0,
+    "最短": "364319.0",
+    "最长": "364319.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "97321",
+    "最长": "97321",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1792133265000",
+    "最长": "1792133265000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "SQLMGMT",
+    "最长": "SQLMGMT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1792133265000",
+    "最长": "1792133265000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "SQLMGMT",
+    "最长": "SQLMGMT",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "01bae9303cb17546",
+  "total": 65706,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.85,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 65706,
+   "full": 65706,
+   "number": 65706,
+   "state": 65706,
+   "street": 9857,
+   "zip": 65706
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.85, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 STREET 拆**（concat_addr）",
+  "total": 65706,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=NUMBER street=PRE_DIR city=CITY zip=ZIP",
+ "sample_hash": "01bae9303cb17546",
+ "site_cols": [
+  "STREET",
+  "SITUS_1",
+  "SITUS_2"
+ ],
+ "source_id": "us/or/linn",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://gis.co.linn.or.us/public/rest/services/baselayers/Pub_address/MapServer/0",
+ "verdict": "CONTRACTED"
+}

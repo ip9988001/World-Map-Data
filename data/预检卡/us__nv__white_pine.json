@@ -1,0 +1,427 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "TSC_mcity",
+  "number": "TSC_Site_Address",
+  "street": "TSC_Site_Address",
+  "unit": "total_nondwunits",
+  "zip": "TSC_mzip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:13:43",
+ "county": "White Pine",
+ "curated_cols": {
+  "number": "TSC_Site_Address",
+  "street": "TSC_Site_Address"
+ },
+ "fields": [
+  "OBJECTID",
+  "GIS_LOWPARCELID",
+  "GIS_Parcel_Number",
+  "GIS_STATEDAREA",
+  "GIS_LGLSTARTDT",
+  "GIS_LASTUPDATE",
+  "GIS_DeedAcres",
+  "GIS_ALTPin",
+  "TSC_Parcel_Number",
+  "TSC_Land_Use_Code",
+  "TSC_exempt_property_class",
+  "Z1",
+  "Z2",
+  "Z3",
+  "Z4",
+  "TSC_Subdivision",
+  "TSC_legal_name",
+  "TSC_assess_name",
+  "TSC_address1",
+  "TSC_address2",
+  "TSC_mcity",
+  "TSC_mzip",
+  "Loc1",
+  "Dir",
+  "street_name",
+  "unit",
+  "TSC_Acreage",
+  "TSC_Total_Square_Feet",
+  "total_dwunits",
+  "total_nondwunits",
+  "improv_value",
+  "TSC_land_value",
+  "TSC_net_assessed_value",
+  "ResSqFt",
+  "GarSqFt",
+  "basemtsqft",
+  "finbase",
+  "gar_detach",
+  "wells",
+  "septic",
+  "pools",
+  "spas",
+  "taxid",
+  "TSC_Property_Name",
+  "TSC_Site_Address",
+  "TSC_Owner1_Address",
+  "SHAPE__Area",
+  "SHAPE__Length",
+  "stories",
+  "year_of_construction",
+  "last_year_assessed",
+  "deed_number",
+  "res_sqft",
+  "reappraisal_year",
+  "tax_district",
+  "master_plan_code",
+  "TV_improvement",
+  "TV_land",
+  "TV_net",
+  "neighborhood"
+ ],
+ "fields_n": 60,
+ "guessed_cols": {
+  "city": "TSC_mcity",
+  "unit": "total_nondwunits",
+  "zip": "TSC_mzip"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "TaxParcelJoined_WhitePineNV_polygons",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Dir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_ALTPin": {
+    "带特殊字符": 0,
+    "最短": "514510",
+    "最长": "1241018",
+    "空": 1,
+    "空率": 0.003
+   },
+   "GIS_DeedAcres": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "21709.66",
+    "空": 1,
+    "空率": 0.003
+   },
+   "GIS_LASTUPDATE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_LGLSTARTDT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_LOWPARCELID": {
+    "带特殊字符": 0,
+    "最短": "01241018",
+    "最长": "01241018",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_Parcel_Number": {
+    "带特殊字符": 0,
+    "最短": "01241018",
+    "最长": "01241018",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_STATEDAREA": {
+    "带特殊字符": 0,
+    "最短": "1.0",
+    "最长": "22534.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GarSqFt": {
+    "带特殊字符": 0,
+    "最短": "314",
+    "最长": "1440",
+    "空": 286,
+    "空率": 0.953
+   },
+   "Loc1": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "13300",
+    "空": 85,
+    "空率": 0.283
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ResSqFt": {
+    "带特殊字符": 0,
+    "最短": "704",
+    "最长": "4032",
+    "空": 247,
+    "空率": 0.823
+   },
+   "TSC_Acreage": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "21709.66",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_Land_Use_Code": {
+    "带特殊字符": 0,
+    "最短": "600",
+    "最长": "600",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_Parcel_Number": {
+    "带特殊字符": 0,
+    "最短": "514510",
+    "最长": "1241018",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TSC_Subdivision": {
+    "带特殊字符": 0,
+    "最短": "BAKER TOWNSITE",
+    "最长": "SCHOOL OF NATURAL ORDER",
+    "空": 119,
+    "空率": 0.397
+   },
+   "TSC_Total_Square_Feet": {
+    "带特殊字符": 0,
+    "最短": "22",
+    "最长": "1000486516",
+    "空": 72,
+    "空率": 0.24
+   },
+   "TSC_address1": {
+    "带特殊字符": 3,
+    "最短": "BOX 9",
+    "最长": "901 SOUTH STEWART STREET SUITE #5003",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_address2": {
+    "带特殊字符": 1,
+    "最短": "BOX 28",
+    "最长": "901 SOUTH STEWART ST. STE 5003",
+    "空": 273,
+    "空率": 0.91
+   },
+   "TSC_assess_name": {
+    "带特殊字符": 83,
+    "最短": "BLM",
+    "最长": "SOUTHERN NEVADA WATER AUTHORITY ZANE MARSHALL, DIRECTOR WATER RESOURCES",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_exempt_property_class": {
+    "带特殊字符": 0,
+    "最短": "10",
+    "最长": "361.055-A",
+    "空": 239,
+    "空率": 0.797
+   },
+   "TSC_land_value": {
+    "带特殊字符": 0,
+    "最短": "43",
+    "最长": "55720",
+    "空": 60,
+    "空率": 0.2
+   },
+   "TSC_legal_name": {
+    "带特殊字符": 83,
+    "最短": "BLM",
+    "最长": "SOUTHERN NEVADA WATER AUTHORITY ZANE MARSHALL, DIRECTOR WATER RESOURCES",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_mcity": {
+    "带特殊字符": 297,
+    "最短": "ELY, NV",
+    "最长": "SALT LAKE CITY, UT",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_mzip": {
+    "带特殊字符": 0,
+    "最短": "89311-",
+    "最长": "89193-9956",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TSC_net_assessed_value": {
+    "带特殊字符": 0,
+    "最短": "43",
+    "最长": "110258",
+    "空": 60,
+    "空率": 0.2
+   },
+   "Z1": {
+    "带特殊字符": 0,
+    "最短": "O-5",
+    "最长": "M-H-3",
+    "空": 3,
+    "空率": 0.01
+   },
+   "Z2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Z3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Z4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "basemtsqft": {
+    "带特殊字符": 0,
+    "最短": "128",
+    "最长": "1728",
+    "空": 289,
+    "空率": 0.963
+   },
+   "finbase": {
+    "带特殊字符": 0,
+    "最短": "416",
+    "最长": "1728",
+    "空": 295,
+    "空率": 0.983
+   },
+   "gar_detach": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 286,
+    "空率": 0.953
+   },
+   "improv_value": {
+    "带特殊字符": 0,
+    "最短": "376",
+    "最长": "110220",
+    "空": 177,
+    "空率": 0.59
+   },
+   "septic": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "12",
+    "空": 251,
+    "空率": 0.837
+   },
+   "street_name": {
+    "带特殊字符": 1,
+    "最短": "HARD WAY",
+    "最长": "SOUTH WHITE PINE COUNTY  ROAD NO. 45",
+    "空": 85,
+    "空率": 0.283
+   },
+   "total_dwunits": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 247,
+    "空率": 0.823
+   },
+   "total_nondwunits": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "10",
+    "空": 200,
+    "空率": 0.667
+   },
+   "unit": {
+    "带特殊字符": 0,
+    "最短": "BAKER",
+    "最长": "WARD MOUNTAIN ESTATES",
+    "空": 261,
+    "空率": 0.87
+   },
+   "wells": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 253,
+    "空率": 0.843
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "d29b4663a9089044",
+  "total": 7771,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 7771,
+   "full": 7771,
+   "number": 7771,
+   "street": 7771,
+   "zip": 7771
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 7771,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=TSC_Site_Address street=TSC_Site_Address",
+ "sample_hash": "d29b4663a9089044",
+ "site_cols": [
+  "TSC_exempt_property_class",
+  "TSC_address1",
+  "TSC_address2",
+  "street_name",
+  "TSC_Property_Name"
+ ],
+ "source_id": "us/nv/white_pine",
+ "stage": "p0",
+ "state": "NV",
+ "url": "https://services9.arcgis.com/ihyPHe2KRRmOsTPa/arcgis/rest/services/TaxParcelJoined_WhitePineNV/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

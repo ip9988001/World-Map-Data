@@ -1,0 +1,148 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "USPS_CITY",
+  "number": "LHN",
+  "street": "LSN",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:14:23",
+ "county": "Coshocton",
+ "curated_cols": {
+  "city": "USPS_CITY",
+  "number": "LHN",
+  "street": "LSN",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "STRUC_TYPE",
+  "LSN",
+  "LHN",
+  "USPS_CITY",
+  "ZIPCODE",
+  "COMM",
+  "LATITUDE",
+  "LONGITUDE"
+ ],
+ "fields_n": 9,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "COMM": {
+    "带特殊字符": 0,
+    "最短": "CLARK TWP",
+    "最长": "NEWCASTLE TWP",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "40.43546",
+    "最长": "40.43253899",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LHN": {
+    "带特殊字符": 0,
+    "最短": "32623",
+    "最长": "30728 1/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-82.10845",
+    "最长": "-82.17742125",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSN": {
+    "带特殊字符": 0,
+    "最短": "33380 TR 20",
+    "最长": "33279 TR 1519",
+    "空": 1,
+    "空率": 0.003
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUC_TYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "USPS_CITY": {
+    "带特殊字符": 0,
+    "最短": "WARSAW",
+    "最长": "WALHONDING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "43843",
+    "最长": "43843",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c0ef9b47106be156",
+  "total": 20039,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0017,
+   "number": 0.0,
+   "street": 0.0001,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 20005,
+   "number": 20038,
+   "street": 20037,
+   "zip": 20038
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0001, 'city': 0.0017, 'zip': 0.0}）→ 可全量采集",
+  "total": 20039,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=LHN street=LSN city=USPS_CITY zip=ZIPCODE",
+ "sample_hash": "c0ef9b47106be156",
+ "site_cols": [],
+ "source_id": "us/oh/coshocton",
+ "stage": "p0",
+ "state": "OH",
+ "url": "https://services5.arcgis.com/zhyAQE7C1EXFJ6bG/arcgis/rest/services/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

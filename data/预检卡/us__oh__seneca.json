@@ -1,0 +1,411 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNI",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "ST_PREFIX",
+  "unit": "UNITEXTRA",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 09:16:14",
+ "county": "Seneca",
+ "curated_cols": {
+  "city": "MUNI",
+  "number": "HOUSENUM",
+  "state": "STATE",
+  "street": "ST_PREFIX",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "FID",
+  "FEATUREID",
+  "ROADTYPE",
+  "ROADNUMBER",
+  "HOUSENUM",
+  "UNITNUM",
+  "HNRANGE",
+  "UNITEXTRA",
+  "BUILDING",
+  "FLOOR",
+  "ST_PREFIX",
+  "ST_NAME",
+  "ST_TYPE",
+  "ST_SUFFIX",
+  "ST_SUFFIX2",
+  "MUNI",
+  "ALTPREFIX",
+  "ALTNAME",
+  "ALTTYPE",
+  "ALTSUFFIX",
+  "ALTSUFFIX2",
+  "SUBDIV",
+  "VILLAGE",
+  "SIDE",
+  "ABSSIDE",
+  "STRUC_TYPE",
+  "SOURCE",
+  "COMMENT",
+  "FIELDNOTE",
+  "STATE",
+  "COUNTY",
+  "LSN",
+  "ALSN",
+  "LHN",
+  "NLFIDNEW",
+  "ZIPCODE",
+  "USPS_CITY",
+  "SEGID",
+  "TSSEGID",
+  "PT_LEN",
+  "MPVAL",
+  "FIPSCODE",
+  "COMM",
+  "X",
+  "Y",
+  "DATEMODIFI",
+  "GlobalID",
+  "GlobalID_2"
+ ],
+ "fields_n": 48,
+ "guessed_cols": {
+  "unit": "UNITEXTRA"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Current_Addresses",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ABSSIDE": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ALSN": {
+    "带特殊字符": 0,
+    "最短": "4660 TR 65",
+    "最长": "118 FALLS ST",
+    "空": 221,
+    "空率": 0.737
+   },
+   "ALTNAME": {
+    "带特殊字符": 0,
+    "最短": "CR 5",
+    "最长": "TR 65",
+    "空": 221,
+    "空率": 0.737
+   },
+   "ALTPREFIX": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 298,
+    "空率": 0.993
+   },
+   "ALTSUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTSUFFIX2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ALTTYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "ST",
+    "空": 287,
+    "空率": 0.957
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMMENT": {
+    "带特殊字符": 0,
+    "最短": "RCR LLC",
+    "最长": "SAINT CATHERINE CARE CENTER OF FOSTORIA INC",
+    "空": 295,
+    "空率": 0.983
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "SEN",
+    "最长": "SEN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FEATUREID": {
+    "带特殊字符": 0,
+    "最短": "100346",
+    "最长": "100346",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIELDNOTE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HNRANGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HOUSENUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "12961",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LHN": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "108 108-114",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSN": {
+    "带特殊字符": 0,
+    "最短": "717 N CR 5",
+    "最长": "108 108-114 BARCELONA DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNI": {
+    "带特殊字符": 0,
+    "最短": "FOSTORIA",
+    "最长": "FOSTORIA",
+    "空": 251,
+    "空率": 0.837
+   },
+   "NLFIDNEW": {
+    "带特殊字符": 300,
+    "最短": "TSENTR00084**C",
+    "最长": "TSENTR00084**C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PT_LEN": {
+    "带特殊字符": 0,
+    "最短": "232",
+    "最长": "2825.8761",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNUMBER": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "592",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADTYPE": {
+    "带特殊字符": 0,
+    "最短": "T",
+    "最长": "T",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SEGID": {
+    "带特殊字符": 0,
+    "最短": "18520",
+    "最长": "18520",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SIDE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 142,
+    "空率": 0.473
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 279,
+    "空率": 0.93
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "OH",
+    "最长": "OH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRUC_TYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "TR 3",
+    "最长": "CHRISTOPHER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 49,
+    "空率": 0.163
+   },
+   "ST_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_SUFFIX2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "DR",
+    "空": 251,
+    "空率": 0.837
+   },
+   "SUBDIV": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TSSEGID": {
+    "带特殊字符": 0,
+    "最短": "18520",
+    "最长": "18520",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITEXTRA": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITNUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "108-114",
+    "空": 297,
+    "空率": 0.99
+   },
+   "USPS_CITY": {
+    "带特殊字符": 0,
+    "最短": "FOSTORIA",
+    "最长": "NEW RIEGEL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "VILLAGE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "44830",
+    "最长": "44830",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6492728533e68431",
+  "total": 27936,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 27936,
+   "number": 27936,
+   "state": 27936,
+   "street": 27936,
+   "zip": 27936
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",
+  "total": 27936,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSENUM street=ST_PREFIX city=MUNI zip=ZIPCODE",
+ "sample_hash": "6492728533e68431",
+ "site_cols": [],
+ "source_id": "us/oh/seneca",
+ "stage": "p0",
+ "state": "OH",
+ "url": "https://services.arcgis.com/b8eHPJ5KRnX3dHNa/arcgis/rest/services/Current_Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}
