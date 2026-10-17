@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:15:12",
+ "county": "Ramsey",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/nd/ramsey",
+ "stage": "p0",
+ "state": "ND",
+ "url": "https://gis.co.ramsey.nd.us/arcgis/rest/services/EM/911_Points/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

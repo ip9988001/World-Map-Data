@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:15:12",
+ "county": "Dawes",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试",
+ "source_id": "us/ne/dawes",
+ "stage": "p0",
+ "state": "NE",
+ "url": "https://maps5.gisworkshop.com/ArcGIS/rest/services/CityofChadronMGMT/MapServer/16",
+ "verdict": "TRANSIENT"
+}

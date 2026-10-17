@@ -1,0 +1,205 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "StrNumb",
+  "street": "StrDir",
+  "unit": "Unit"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:15:38",
+ "county": "Carson City",
+ "curated_cols": {
+  "number": "StrNumb",
+  "street": "StrDir"
+ },
+ "fields": [
+  "OBJECTID",
+  "StrName",
+  "StrDir",
+  "StrNumb",
+  "Unit",
+  "Address",
+  "Notes",
+  "Updated",
+  "GlobalID",
+  "Shape",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "Str_Concat",
+  "Adr_Concat",
+  "USPS"
+ ],
+ "fields_n": 17,
+ "guessed_cols": {
+  "unit": "Unit"
+ },
+ "layer": {
+  "maxRecordCount": 20000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "223 A ST",
+    "最长": "2595 WARM SPRINGS CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Adr_Concat": {
+    "带特殊字符": 0,
+    "最短": "223 A ST",
+    "最长": "2595 WARM SPRINGS CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{2B4DE6BE-A1B3-409C-A4C4-9551B36CF710}",
+    "最长": "{2B4DE6BE-A1B3-409C-A4C4-9551B36CF710}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Notes": {
+    "带特殊字符": 7,
+    "最短": "(CONSL)",
+    "最长": "OLD ADDRESS-1281 E 5TH ST",
+    "空": 290,
+    "空率": 0.967
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "137811",
+    "最长": "137811",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StrDir": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 13,
+    "空率": 0.043
+   },
+   "StrName": {
+    "带特殊字符": 0,
+    "最短": "A ST",
+    "最长": "WARM SPRINGS CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StrNumb": {
+    "带特殊字符": 0,
+    "最短": "308",
+    "最长": "1009",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Str_Concat": {
+    "带特殊字符": 0,
+    "最短": "A ST",
+    "最长": "WARM SPRINGS CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "USPS": {
+    "带特殊字符": 0,
+    "最短": "223 A ST",
+    "最长": "116 E SEVENTH ST #201",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "#1",
+    "最长": "#102",
+    "空": 267,
+    "空率": 0.89
+   },
+   "Updated": {
+    "带特殊字符": 0,
+    "最短": "1482969600000",
+    "最长": "1482969600000",
+    "空": 295,
+    "空率": 0.983
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1727100287000",
+    "最长": "1727100287000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_user": {
+    "带特殊字符": 300,
+    "最短": "SDE_GISA",
+    "最长": "SDE_GISA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1727100287000",
+    "最长": "1727100287000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 287,
+    "最短": "MJAMES",
+    "最长": "SDE_GISA",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "8a12e99dc333084c",
+  "total": 28398,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.8157
+  },
+  "nonnull": {
+   "full": 28398,
+   "number": 28398,
+   "street": 5233
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.8157, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 Address 拆**（concat_addr）",
+  "total": 28398,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=StrNumb street=StrDir（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "8a12e99dc333084c",
+ "site_cols": [
+  "Address"
+ ],
+ "source_id": "us/nv/carson_city",
+ "stage": "p0",
+ "state": "NV",
+ "url": "https://portal.carsoncity.gov/server/rest/services/CarsonCity/CarsonCityNV_OpenData/MapServer/37",
+ "verdict": "CONTRACTED"
+}

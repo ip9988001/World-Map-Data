@@ -1,0 +1,124 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDNO",
+  "street": "PRD"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:15:33",
+ "county": "Lea",
+ "curated_cols": {
+  "number": "ADDNO",
+  "street": "PRD"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDNO",
+  "PRD",
+  "STNAME",
+  "POSDIR",
+  "STTYPE",
+  "LABEL"
+ ],
+ "fields_n": 7,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "City of Hobbs Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDNO": {
+    "带特殊字符": 0,
+    "最短": "309",
+    "最长": "1522",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LABEL": {
+    "带特殊字符": 0,
+    "最短": "401 E ZIA DR",
+    "最长": "3001 W MARLAND BLVD SP 1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRD": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "ZIA",
+    "最长": "FOURTEENTH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STTYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "BLVD",
+    "空": 4,
+    "空率": 0.013
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b5eaa34af4dcda74",
+  "total": 22697,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "number": 22697,
+   "street": 22697
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0}）→ 可全量采集",
+  "total": 22697,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDNO street=PRD（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "b5eaa34af4dcda74",
+ "site_cols": [],
+ "source_id": "us/nm/lea",
+ "stage": "p0",
+ "state": "NM",
+ "url": "https://services3.arcgis.com/haQkIWW9RWRd8Arf/ArcGIS/rest/services/City_of_Hobbs_Addresses/FeatureServer/56",
+ "verdict": "CONTRACTED"
+}

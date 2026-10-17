@@ -1,0 +1,179 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_CITY",
+  "number": "ST_NUM",
+  "street": "DIR_PREFIX",
+  "zip": "POSTAL_CITY"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:14:00",
+ "county": "Wake",
+ "curated_cols": {
+  "city": "POSTAL_CITY",
+  "number": "ST_NUM",
+  "street": "DIR_PREFIX"
+ },
+ "fields": [
+  "OBJECTID",
+  "PIN_NUM",
+  "ST_NUM",
+  "DIR_PREFIX",
+  "ST_NAME",
+  "ST_TYPE",
+  "DIR_SUFFIX",
+  "POSTAL_CITY",
+  "FULLADDR",
+  "FULLNAME",
+  "X",
+  "Y",
+  "SHAPE"
+ ],
+ "fields_n": 13,
+ "guessed_cols": {
+  "zip": "POSTAL_CITY"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://data.wakegov.com/pages/metadata",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "DIR_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DIR_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "5608 REX RD",
+    "最长": "9529 SHADY GROVE CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "REX RD",
+    "最长": "SHADY GROVE CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "879676841",
+    "最长": "879676841",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN_NUM": {
+    "带特殊字符": 0,
+    "最短": "0609625590",
+    "最长": "0609625590",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_CITY": {
+    "带特殊字符": 0,
+    "最短": "NEW HILL",
+    "最长": "HOLLY SPRINGS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "REX",
+    "最长": "SHADY GROVE CHURCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NUM": {
+    "带特殊字符": 0,
+    "最短": "230",
+    "最长": "7634",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "CRSG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "X": {
+    "带特殊字符": 0,
+    "最短": "2006596",
+    "最长": "2006596",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y": {
+    "带特殊字符": 0,
+    "最短": "692482",
+    "最长": "692482",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "73655b3881351d01",
+  "total": 527602,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0014,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.9632,
+   "zip": 0.0014
+  },
+  "nonnull": {
+   "city": 526889,
+   "full": 527602,
+   "number": 527602,
+   "street": 19401,
+   "zip": 526889
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9632, 'city': 0.0014, 'zip': 0.0014, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 FULLADDR 拆**（concat_addr）",
+  "total": 527602,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ST_NUM street=DIR_PREFIX city=POSTAL_CITY",
+ "sample_hash": "73655b3881351d01",
+ "site_cols": [
+  "FULLADDR"
+ ],
+ "source_id": "us/nc/wake",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://maps.wakegov.com/arcgis/rest/services/Property/Addresses/MapServer/0",
+ "verdict": "CONTRACTED"
+}

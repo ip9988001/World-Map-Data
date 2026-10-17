@@ -1,0 +1,251 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ST_NUM",
+  "street": "ST_PREFIX",
+  "unit": "APT"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 04:15:46",
+ "county": "Humboldt",
+ "curated_cols": {
+  "number": "ST_NUM",
+  "street": "ST_PREFIX"
+ },
+ "fields": [
+  "OBJECTID",
+  "SITEADDID",
+  "ADDPTKEY",
+  "STATUS",
+  "Label",
+  "ST_NUM",
+  "ST_PREFIX",
+  "ST_PRETYP",
+  "ST_NAME",
+  "ST_POSTTYP",
+  "ST_POSTDIR",
+  "APT",
+  "SPACE",
+  "Primary_",
+  "POINT_X",
+  "POINT_Y",
+  "LASTUPDATE",
+  "LASTEDITOR",
+  "LSN",
+  "PARCEL_NUM",
+  "Map_Page",
+  "GlobalID"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {
+  "unit": "APT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "SiteAddressPoint",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDPTKEY": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "APT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "d09b8163-763d-4476-bc58-aa593f459090",
+    "最长": "d09b8163-763d-4476-bc58-aa593f459090",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LASTEDITOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LASTUPDATE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Label": {
+    "带特殊字符": 0,
+    "最短": "5377 MARLA DR",
+    "最长": "3677 CROWN ROYAL CIRCLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Map_Page": {
+    "带特殊字符": 0,
+    "最短": "16-065",
+    "最长": "16-067-3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_NUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "2866322.745",
+    "最长": "2866477.25847",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "15386670.7",
+    "最长": "15386227.3695",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Primary_": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITEADDID": {
+    "带特殊字符": 0,
+    "最短": "SID-1",
+    "最长": "SID-100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SPACE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "MARLA",
+    "最长": "SNOWY MOUNTAIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NUM": {
+    "带特殊字符": 0,
+    "最短": "3318",
+    "最长": "3318",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_POSTDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_POSTTYP": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "CIRCLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ST_PRETYP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "db4fe79ffe0e9dc8",
+  "total": 8998,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0064,
+   "number": 0.0,
+   "street": 0.0062
+  },
+  "nonnull": {
+   "full": 8940,
+   "number": 8998,
+   "street": 8942
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0062, 'full': 0.0064}）→ 可全量采集",
+  "total": 8998,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ST_NUM street=ST_PREFIX（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "db4fe79ffe0e9dc8",
+ "site_cols": [
+  "SITEADDID"
+ ],
+ "source_id": "us/nv/humboldt",
+ "stage": "p0",
+ "state": "NV",
+ "url": "https://services7.arcgis.com/cbx6hozJyAREK9DB/arcgis/rest/services/SiteAddressPoints/FeatureServer/0/",
+ "verdict": "CONTRACTED"
+}
