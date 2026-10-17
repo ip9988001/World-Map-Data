@@ -1,0 +1,408 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "st_premod",
+  "unit": "building",
+  "zip": "post_code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:24",
+ "county": "Warren",
+ "curated_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "st_premod",
+  "zip": "post_code"
+ },
+ "fields": [
+  "objectid_1",
+  "objectid",
+  "discrpagid",
+  "dateupdate",
+  "country",
+  "state",
+  "county",
+  "addcode",
+  "inc_muni",
+  "addnum_pre",
+  "add_number",
+  "addnum_suf",
+  "st_premod",
+  "st_predir",
+  "st_pretyp",
+  "st_presep",
+  "st_name",
+  "st_postyp",
+  "st_posdir",
+  "st_posmod",
+  "lst_predir",
+  "lst_name",
+  "lst_type",
+  "lstposdir",
+  "msagcomm",
+  "post_comm",
+  "post_code",
+  "building",
+  "floor",
+  "unit",
+  "room",
+  "mile_post",
+  "long",
+  "lat",
+  "elev",
+  "join_id",
+  "fullname",
+  "f_st_name",
+  "taxauth",
+  "lst_pretyp",
+  "housenumbe",
+  "f_st_predi",
+  "f_st_posty",
+  "f_st_posdi",
+  "shape"
+ ],
+ "fields_n": 45,
+ "guessed_cols": {
+  "unit": "building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Numbers",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "add_number": {
+    "带特殊字符": 0,
+    "最短": "60",
+    "最长": "11275",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addcode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "building": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "WARREN COUNTY",
+    "最长": "WARREN COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "dateupdate": {
+    "带特殊字符": 0,
+    "最短": "1096588800000",
+    "最长": "1096588800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "discrpagid": {
+    "带特殊字符": 0,
+    "最短": "warrencopa.com",
+    "最长": "warrencopa.com",
+    "空": 0,
+    "空率": 0.0
+   },
+   "elev": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "f_st_name": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "HUMPHREYS CORNERS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "fullname": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "inc_muni": {
+    "带特殊字符": 0,
+    "最短": "ELK TWP",
+    "最长": "SUGAR GROVE BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "join_id": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "long": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lst_name": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "HUMPHREYS CORNERS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "lst_predir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lst_pretyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lst_type": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "HOLW",
+    "空": 10,
+    "空率": 0.033
+   },
+   "lstposdir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "mile_post": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "msagcomm": {
+    "带特殊字符": 0,
+    "最短": "ELK TWP",
+    "最长": "SUGAR GROVE BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "objectid_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "post_code": {
+    "带特殊字符": 0,
+    "最短": "16405",
+    "最长": "16405",
+    "空": 0,
+    "空率": 0.0
+   },
+   "post_comm": {
+    "带特殊字符": 0,
+    "最短": "CORRY",
+    "最长": "SUGAR GROVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "room": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_name": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "HUMPHREYS CORNERS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_posdir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_posmod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_postyp": {
+    "带特殊字符": 0,
+    "最短": "ROAD",
+    "最长": "STREET",
+    "空": 10,
+    "空率": 0.033
+   },
+   "st_predir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_premod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_presep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_pretyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "PA",
+    "最长": "PA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "taxauth": {
+    "带特殊字符": 0,
+    "最短": "ELK TWP",
+    "最长": "SUGAR GROVE BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "53c993543a65c8d8",
+  "total": 25597,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 25597,
+   "number": 25597,
+   "state": 25597,
+   "street": 25597,
+   "zip": 25597
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",
+  "total": 25597,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addnum_pre street=st_premod city=post_comm zip=post_code",
+ "sample_hash": "53c993543a65c8d8",
+ "site_cols": [],
+ "source_id": "us/pa/warren",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://arcgis.vgsi.com/server/rest/services/Warren_County_PA/WarrenCountyPAPropMap/MapServer/1",
+ "verdict": "CONTRACTED"
+}

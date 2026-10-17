@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:20:53",
+ "county": "Greenville",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service GCGIA/Greenville_Base/MapServer not found ', 'details': []}",
+ "source_id": "us/sc/greenville",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://www.gcgis.org/arcgis/rest/services/GCGIA/Greenville_Base/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

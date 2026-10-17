@@ -1,0 +1,232 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MCN",
+  "number": "SAN",
+  "street": "PRD",
+  "unit": "UNITTYPE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:18:52",
+ "county": "Luzerne",
+ "curated_cols": {
+  "city": "MCN",
+  "number": "SAN",
+  "street": "PRD"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "FCODE",
+  "SAN",
+  "SAN_SUF",
+  "PRD",
+  "STN",
+  "STS",
+  "POD",
+  "MCN",
+  "UNITTYPE",
+  "UNITNO",
+  "FULL_ADDRE",
+  "STNAME",
+  "DIR",
+  "GlobalID",
+  "STR_STATUS",
+  "CROSS1",
+  "CROSS2",
+  "Publish_Date"
+ ],
+ "fields_n": 20,
+ "guessed_cols": {
+  "unit": "UNITTYPE"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "STRUCTURE SITES",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "CROSS1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CROSS2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FCODE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULL_ADDRE": {
+    "带特殊字符": 0,
+    "最短": "74 1 ST",
+    "最长": "716 E 4 AND A HALF ST APT C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{2C3D2A34-EFE2-4520-B8EC-CD37AA473344}",
+    "最长": "{2C3D2A34-EFE2-4520-B8EC-CD37AA473344}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MCN": {
+    "带特殊字符": 0,
+    "最短": "ROSS TWP",
+    "最长": "WEST HAZLETON BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRD": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 235,
+    "空率": 0.783
+   },
+   "Publish_Date": {
+    "带特殊字符": 0,
+    "最短": "1761241453918",
+    "最长": "1761241453918",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SAN": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "5761",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SAN_SUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STN": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "SHICKSHINNY VALLEY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "1 ST",
+    "最长": "SHICKSHINNY VALLEY RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_STATUS": {
+    "带特殊字符": 0,
+    "最短": "10",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STS": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITNO": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "C",
+    "空": 299,
+    "空率": 0.997
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "REAR",
+    "空": 298,
+    "空率": 0.993
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "cd213990238bbf3a",
+  "total": 145164,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0217
+  },
+  "nonnull": {
+   "city": 145164,
+   "full": 145164,
+   "number": 145164,
+   "street": 142009
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0217, 'city': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 145164,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SAN street=PRD city=MCN",
+ "sample_hash": "cd213990238bbf3a",
+ "site_cols": [
+  "FULL_ADDRE"
+ ],
+ "source_id": "us/pa/luzerne",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://gis.luzernecounty.org/server/rest/services/PublicStreetsStructures/MapServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,450 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "st_premod",
+  "unit": "building",
+  "zip": "post_code"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:18:58",
+ "county": "McKean",
+ "curated_cols": {
+  "city": "post_comm",
+  "number": "addnum_pre",
+  "state": "state",
+  "street": "st_premod",
+  "zip": "post_code"
+ },
+ "fields": [
+  "objectid",
+  "discrpagid",
+  "dateupdate",
+  "effective",
+  "expire",
+  "site_nguid",
+  "country",
+  "state",
+  "county",
+  "addcode",
+  "adddatauri",
+  "inc_muni",
+  "uninc_comm",
+  "nbrhd_comm",
+  "addnum_pre",
+  "add_number",
+  "addnum_suf",
+  "st_premod",
+  "st_predir",
+  "st_pretyp",
+  "st_presep",
+  "st_name",
+  "st_postyp",
+  "st_posdir",
+  "st_posmod",
+  "lst_predir",
+  "lst_name",
+  "lst_type",
+  "esn",
+  "msagcomm",
+  "post_comm",
+  "post_code",
+  "post_code4",
+  "building",
+  "floor",
+  "room",
+  "seat",
+  "addtl_loc",
+  "landmkname",
+  "mile_post",
+  "place_type",
+  "placement",
+  "long",
+  "lat",
+  "elev",
+  "join_id",
+  "fcode",
+  "aid",
+  "aid_old",
+  "clid",
+  "x_string",
+  "y_string",
+  "fullname",
+  "x_coor",
+  "y_coor",
+  "alias1",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "precinctnum",
+  "globalid",
+  "notes_edits",
+  "mckeanexception",
+  "gc_excepti",
+  "unit",
+  "shape",
+  "lst_posdir",
+  "taxauth",
+  "upi",
+  "gcfullstreetname",
+  "gcfulladdr",
+  "gclgfullstreetname",
+  "gcnotes",
+  "geocommchangenotes",
+  "at_name",
+  "sp_name",
+  "cr_name",
+  "cr_date",
+  "esn_cad"
+ ],
+ "fields_n": 82,
+ "guessed_cols": {
+  "unit": "building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://www.mckeancountypa.gov/Document%20Center/Departments/GIS/GIS%20Forms/McKean%20County%20GIS%20Disclaimer.pdf",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "add_number": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "12376",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addcode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "adddatauri": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addnum_suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "addtl_loc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "building": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "McKean County",
+    "最长": "McKean County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "dateupdate": {
+    "带特殊字符": 0,
+    "最短": "1712229780000",
+    "最长": "1712229780000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "discrpagid": {
+    "带特殊字符": 0,
+    "最短": "mckeancountypa.gov",
+    "最长": "mckeancountypa.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "effective": {
+    "带特殊字符": 0,
+    "最短": "1712188800000",
+    "最长": "1712188800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "800",
+    "最长": "800",
+    "空": 0,
+    "空率": 0.0
+   },
+   "expire": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "floor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "inc_muni": {
+    "带特殊字符": 0,
+    "最短": "OTTO TWP",
+    "最长": "PORT ALLEGANY BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "landmkname": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "lst_name": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "COLONIAL HEIGHTS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "lst_predir": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 251,
+    "空率": 0.837
+   },
+   "lst_type": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "HOLW",
+    "空": 34,
+    "空率": 0.113
+   },
+   "mile_post": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "msagcomm": {
+    "带特殊字符": 0,
+    "最短": "OTTO TWP",
+    "最长": "PORT ALLEGANY BORO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "nbrhd_comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "107918",
+    "最长": "107918",
+    "空": 0,
+    "空率": 0.0
+   },
+   "post_code": {
+    "带特殊字符": 0,
+    "最短": "16701",
+    "最长": "16701",
+    "空": 0,
+    "空率": 0.0
+   },
+   "post_code4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "post_comm": {
+    "带特殊字符": 0,
+    "最短": "REW",
+    "最长": "EAST SMETHPORT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "room": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "seat": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "site_nguid": {
+    "带特殊字符": 300,
+    "最短": "SSAP1@mckeancountypa.gov",
+    "最长": "SSAP100@mckeancountypa.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_name": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "Colonial Heights",
+    "空": 0,
+    "空率": 0.0
+   },
+   "st_posdir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_posmod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_postyp": {
+    "带特殊字符": 0,
+    "最短": "Row",
+    "最长": "Parkway",
+    "空": 34,
+    "空率": 0.113
+   },
+   "st_predir": {
+    "带特殊字符": 0,
+    "最短": "West",
+    "最长": "South",
+    "空": 250,
+    "空率": 0.833
+   },
+   "st_premod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_presep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "st_pretyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "PA",
+    "最长": "PA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "uninc_comm": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a87049e3e038679f",
+  "total": 23219,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0107,
+   "state": 0.0,
+   "street": 0.0107,
+   "zip": 0.0004
+  },
+  "nonnull": {
+   "city": 23219,
+   "full": 23219,
+   "number": 22971,
+   "state": 23219,
+   "street": 22970,
+   "zip": 23209
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0107, 'street': 0.0107, 'city': 0.0, 'zip': 0.0004, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 23219,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addnum_pre street=st_premod city=post_comm zip=post_code",
+ "sample_hash": "a87049e3e038679f",
+ "site_cols": [
+  "site_nguid",
+  "gcfullstreetname",
+  "gcfulladdr",
+  "gclgfullstreetname"
+ ],
+ "source_id": "us/pa/mckean",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://gis.mckeancountypa.gov/server/rest/services/ParcelViewer/BPV3_MainMap/MapServer/1",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,295 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "STRUMUNI",
+  "number": "HSENUMBER",
+  "street": "PREFIXDIR"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:19",
+ "county": "Potter",
+ "curated_cols": {
+  "city": "STRUMUNI",
+  "number": "HSENUMBER",
+  "street": "PREFIXDIR"
+ },
+ "fields": [
+  "FID",
+  "OBJECTID_1",
+  "TYPE",
+  "STRU_NUM",
+  "HSENUMBER",
+  "PREFIXDIR",
+  "STREETNAME",
+  "STREETSUF",
+  "POSTDIR",
+  "LOCATION",
+  "STREET",
+  "STRUMUNI",
+  "OBJECTID",
+  "SOURCE",
+  "ADDEXT",
+  "KEEP",
+  "EDIT",
+  "PRIVATERD_",
+  "GasWell",
+  "Status",
+  "GlobalID",
+  "GlobalID_2",
+  "CreationDate",
+  "Creator",
+  "EditDate",
+  "Editor",
+  "App_Search"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Structures",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDEXT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "App_Search": {
+    "带特殊字符": 0,
+    "最短": "1 S MAIN ST",
+    "最长": "1160 HARRISON FOX HILL RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreationDate": {
+    "带特殊字符": 0,
+    "最短": "1436368456034",
+    "最长": "1436368456034",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Creator": {
+    "带特殊字符": 0,
+    "最短": "whunt",
+    "最长": "whunt",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EDIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "EditDate": {
+    "带特殊字符": 0,
+    "最短": "1436368456034",
+    "最长": "1436368456034",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Editor": {
+    "带特殊字符": 0,
+    "最短": "whunt",
+    "最长": "whunt",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GasWell": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 281,
+    "空率": 0.937
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{095E7FD5-B9BF-48E5-AA7F-3356823A11C1}",
+    "最长": "{095E7FD5-B9BF-48E5-AA7F-3356823A11C1}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID_2": {
+    "带特殊字符": 0,
+    "最短": "9167e095-3e3a-4e18-adf7-9f62ec80f28a",
+    "最长": "9167e095-3e3a-4e18-adf7-9f62ec80f28a",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HSENUMBER": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "2988",
+    "空": 6,
+    "空率": 0.02
+   },
+   "KEEP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LOCATION": {
+    "带特殊字符": 0,
+    "最短": "APT 2",
+    "最长": "APT 130",
+    "空": 256,
+    "空率": 0.853
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "200000",
+    "最长": "200000",
+    "空": 19,
+    "空率": 0.063
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTDIR": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 285,
+    "空率": 0.95
+   },
+   "PREFIXDIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 276,
+    "空率": 0.92
+   },
+   "PRIVATERD_": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "E OAK ST",
+    "最长": "HARRISON FOX HILL RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNAME": {
+    "带特殊字符": 0,
+    "最短": "OAK",
+    "最长": "HARRISON FOX HILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETSUF": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "TRL",
+    "空": 19,
+    "空率": 0.063
+   },
+   "STRUMUNI": {
+    "带特殊字符": 0,
+    "最短": "CLARA TWP",
+    "最长": "PLEASANT VALLEY TWP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRU_NUM": {
+    "带特殊字符": 0,
+    "最短": "89",
+    "最长": "10267",
+    "空": 24,
+    "空率": 0.08
+   },
+   "Status": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "GWL",
+    "最长": "GWL",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "3da3cf5af19cdeb5",
+  "total": 14129,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 14129,
+   "full": 14129,
+   "number": 14129,
+   "street": 14129
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 14129,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HSENUMBER street=PREFIXDIR city=STRUMUNI",
+ "sample_hash": "3da3cf5af19cdeb5",
+ "site_cols": [
+  "STREETNAME",
+  "STREETSUF",
+  "LOCATION",
+  "STREET"
+ ],
+ "source_id": "us/pa/potter",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://services3.arcgis.com/vqFmmrJngO1NzsuX/ArcGIS/rest/services/Potter_Data/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

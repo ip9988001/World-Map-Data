@@ -1,0 +1,372 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPAL1",
+  "number": "SITUS_ADDR",
+  "state": "STATE",
+  "street": "SITUS_ADDR",
+  "unit": "BUILDING_A",
+  "zip": "SITUS_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:18:44",
+ "county": "Lebanon",
+ "curated_cols": {
+  "city": "MUNICIPAL1",
+  "number": "SITUS_ADDR",
+  "street": "SITUS_ADDR"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "MAP_NUMBER",
+  "GEO_PIN",
+  "OWNER",
+  "SECOND_LIS",
+  "THIRD_LIST",
+  "MAILING_AD",
+  "CITY",
+  "STATE",
+  "ZIP_CODE",
+  "SITUS_ADDR",
+  "SITUS_CITY",
+  "SITUS_STAT",
+  "SITUS_ZIP",
+  "MUNICIPAL1",
+  "SCHOOL_DIS",
+  "DEEDED_ACR",
+  "DEED_BOOK_",
+  "LAND_ASSES",
+  "BUILDING_A",
+  "TOTAL_ASSE",
+  "LIVING_ARE",
+  "SALE_DATE",
+  "SALE_PRICE",
+  "YEAR_BUILT",
+  "PROPERTY_T",
+  "LU_CODE",
+  "TAX_STATUS",
+  "CG_STATUS",
+  "Ag_Securit",
+  "Ag_Preserv",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "ID",
+  "CTRL_NO"
+ ],
+ "fields_n": 36,
+ "guessed_cols": {
+  "state": "STATE",
+  "unit": "BUILDING_A",
+  "zip": "SITUS_ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Property Lines",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Ag_Preserv": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "-1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Ag_Securit": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "-1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUILDING_A": {
+    "带特殊字符": 0,
+    "最短": "900.0",
+    "最长": "35845600.0",
+    "空": 52,
+    "空率": 0.173
+   },
+   "CG_STATUS": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "MEDIA",
+    "最长": "FREDERICKSBURG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CTRL_NO": {
+    "带特殊字符": 0,
+    "最短": "38049174",
+    "最长": "38049174",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DEEDED_ACR": {
+    "带特殊字符": 0,
+    "最短": "5.5",
+    "最长": "104.49",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DEED_BOOK_": {
+    "带特殊字符": 0,
+    "最短": "2374-29",
+    "最长": "023473-2988",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GEO_PIN": {
+    "带特殊字符": 0,
+    "最短": "2315794-437480",
+    "最长": "2315794-437480",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ID": {
+    "带特殊字符": 0,
+    "最短": "43453.0",
+    "最长": "43453.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAND_ASSES": {
+    "带特殊字符": 0,
+    "最短": "7500.0",
+    "最长": "3654400.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LIVING_ARE": {
+    "带特殊字符": 0,
+    "最短": "384",
+    "最长": "854586",
+    "空": 58,
+    "空率": 0.193
+   },
+   "LU_CODE": {
+    "带特殊字符": 0,
+    "最短": "110",
+    "最长": "110",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_AD": {
+    "带特殊字符": 1,
+    "最短": "3 MAY LN",
+    "最长": "2632 SWEET SASSAFRAS ST NE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAP_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "33-2315794-437480-0000",
+    "最长": "33-2315794-437480-0000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNICIPAL1": {
+    "带特殊字符": 0,
+    "最短": "UNION TOWNSHIP",
+    "最长": "COLD SPRINGS TOWNSHIP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNER": {
+    "带特殊字符": 284,
+    "最短": "WIX, SONYA",
+    "最长": "JAMES R FULK AND BETTY M FULK REVOCABLE TRUST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PROPERTY_T": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "RS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SALE_DATE": {
+    "带特殊字符": 0,
+    "最短": "6408000000",
+    "最长": "1441339200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SALE_PRICE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "45000000",
+    "空": 19,
+    "空率": 0.063
+   },
+   "SCHOOL_DIS": {
+    "带特殊字符": 0,
+    "最短": "NORTHERN LEBANON SD",
+    "最长": "NORTHERN LEBANON SD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SECOND_LIS": {
+    "带特殊字符": 191,
+    "最短": "HOY, APRIL",
+    "最长": "SEIBERT IRREVOCABLE REALTY TRUST",
+    "空": 102,
+    "空率": 0.34
+   },
+   "SITUS_ADDR": {
+    "带特殊字符": 0,
+    "最短": "SS I 81",
+    "最长": "N OF GREEN POINT SCHOOL RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITUS_CITY": {
+    "带特殊字符": 0,
+    "最短": "JONESTOWN",
+    "最长": "FREDERICKSBURG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITUS_STAT": {
+    "带特殊字符": 0,
+    "最短": "PA",
+    "最长": "PA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITUS_ZIP": {
+    "带特殊字符": 0,
+    "最短": "17963.0",
+    "最长": "17963.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "PA",
+    "最长": "PA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape.STArea()": {
+    "带特殊字符": 0,
+    "最短": "82241.5",
+    "最长": "252403.75714111328",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape.STLength()": {
+    "带特殊字符": 0,
+    "最短": "967.06777524359",
+    "最长": "1667.0163425313954",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TAX_STATUS": {
+    "带特殊字符": 0,
+    "最短": "T",
+    "最长": "T",
+    "空": 0,
+    "空率": 0.0
+   },
+   "THIRD_LIST": {
+    "带特殊字符": 4,
+    "最短": "SUITE 330",
+    "最长": "C/O  JEREMY RIDER TREASURER",
+    "空": 287,
+    "空率": 0.957
+   },
+   "TOTAL_ASSE": {
+    "带特殊字符": 0,
+    "最短": "7500.0",
+    "最长": "39500000.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YEAR_BUILT": {
+    "带特殊字符": 0,
+    "最短": "1932",
+    "最长": "1932",
+    "空": 58,
+    "空率": 0.193
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "17038",
+    "最长": "17026-9437",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "17933591e79edb2a",
+  "total": 54383,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 54383,
+   "full": 54383,
+   "number": 54383,
+   "state": 54383,
+   "street": 54383,
+   "zip": 54383
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 54383,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SITUS_ADDR street=SITUS_ADDR city=MUNICIPAL1",
+ "sample_hash": "17933591e79edb2a",
+ "site_cols": [
+  "SITUS_ADDR",
+  "SITUS_CITY",
+  "SITUS_STAT",
+  "SITUS_ZIP",
+  "PROPERTY_T"
+ ],
+ "source_id": "us/pa/lebanon",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://utility.arcgis.com/usrsvcs/servers/7072ca11c43c43feb1ab453851e847b9/rest/services/LandRecords/TaxParcels/MapServer/0",
+ "verdict": "CONTRACTED"
+}

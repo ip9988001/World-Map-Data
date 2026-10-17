@@ -1,0 +1,415 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMMUNITY",
+  "number": "HOUSE_NO",
+  "street": "PREFIX",
+  "unit": "BUILDINGID",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:29",
+ "county": "Wayne",
+ "curated_cols": {
+  "city": "COMMUNITY",
+  "number": "HOUSE_NO",
+  "street": "PREFIX",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "COUNTY",
+  "DISTRICT",
+  "BUILDINGID",
+  "ROADSEGMENTID",
+  "ESN",
+  "CONTROL",
+  "COMMUNITY",
+  "ADDRESS",
+  "HOUSE_NO",
+  "SUPPLEMENTAL",
+  "PREFIX",
+  "STREET",
+  "SUFFIX",
+  "PDS",
+  "SUBADDRESSPREFIX",
+  "SUBADDRESS",
+  "ZIP",
+  "TYPE",
+  "NORTHING",
+  "EASTING",
+  "BASE_ELEVATION",
+  "REASON",
+  "INITIALS",
+  "DATECHANGED",
+  "ORIGINDATE",
+  "EXCEPTIONS",
+  "HouseNumber",
+  "HouseSuffix",
+  "PreDirectional",
+  "PreType",
+  "StreetName",
+  "PostType",
+  "PostTypeSuffix",
+  "PostDirectional",
+  "UNIT",
+  "Venue",
+  "PostalCity",
+  "JOIN_ID",
+  "ZipCo",
+  "GlobalID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "NG911EXCEPTION",
+  "VALIDATIONSTATUS"
+ ],
+ "fields_n": 47,
+ "guessed_cols": {
+  "unit": "BUILDINGID"
+ },
+ "layer": {
+  "maxRecordCount": 50000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "6 PAR CT",
+    "最长": "1094 TEXAS PALMYRA HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BASE_ELEVATION": {
+    "带特殊字符": 0,
+    "最短": "955.0",
+    "最长": "1934.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUILDINGID": {
+    "带特殊字符": 0,
+    "最短": "017973",
+    "最长": "017973",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "LONG POND",
+    "最长": "MOUNT PLEASANT TOWNSHIP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CONTROL": {
+    "带特殊字符": 0,
+    "最短": "017469",
+    "最长": "OUTOFCTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "WAYN",
+    "最长": "WAYN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DATECHANGED": {
+    "带特殊字符": 0,
+    "最短": "1444867200000",
+    "最长": "1444867200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DISTRICT": {
+    "带特殊字符": 0,
+    "最短": "14",
+    "最长": "LJT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EASTING": {
+    "带特殊字符": 0,
+    "最短": "2601137.232",
+    "最长": "2602704.271517",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "55020",
+    "最长": "55020",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EXCEPTIONS": {
+    "带特殊字符": 0,
+    "最短": "TOWER CELL",
+    "最长": "TOWER CELL",
+    "空": 298,
+    "空率": 0.993
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "1042",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseNumber": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "1042",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseSuffix": {
+    "带特殊字符": 0,
+    "最短": "D",
+    "最长": "D",
+    "空": 294,
+    "空率": 0.98
+   },
+   "INITIALS": {
+    "带特殊字符": 0,
+    "最短": "JZ",
+    "最长": "PLAN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JOIN_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NORTHING": {
+    "带特殊字符": 0,
+    "最短": "589599.8643",
+    "最长": "400643.241886",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "44385",
+    "最长": "44385",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ORIGINDATE": {
+    "带特殊字符": 0,
+    "最短": "1104451200000",
+    "最长": "1104451200000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PDS": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 290,
+    "空率": 0.967
+   },
+   "PREFIX": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 273,
+    "空率": 0.91
+   },
+   "PostDirectional": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 290,
+    "空率": 0.967
+   },
+   "PostType": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "TPKE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PostTypeSuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PostalCity": {
+    "带特殊字符": 0,
+    "最短": "18424",
+    "最长": "18424",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PreDirectional": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 273,
+    "空率": 0.91
+   },
+   "PreType": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REASON": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "SEAS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADSEGMENTID": {
+    "带特殊字符": 0,
+    "最短": "S00087",
+    "最长": "S00087",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "OAK",
+    "最长": "BRIGHTON CORNERS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUBADDRESS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUBADDRESSPREFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "TPKE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUPPLEMENTAL": {
+    "带特殊字符": 0,
+    "最短": "D",
+    "最长": "D",
+    "空": 294,
+    "空率": 0.98
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "OAK",
+    "最长": "BRIGHTON CORNERS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "UTILITY",
+    "最长": "RECREATIONAL BUILDING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Venue": {
+    "带特殊字符": 0,
+    "最短": "LONG POND",
+    "最长": "MOUNT PLEASANT TOWNSHIP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "18424",
+    "最长": "18424",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZipCo": {
+    "带特殊字符": 0,
+    "最短": "18424",
+    "最长": "18424",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "94b645ac7418b05b",
+  "total": 44214,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.9588,
+   "zip": 0.0516
+  },
+  "nonnull": {
+   "city": 44214,
+   "full": 44214,
+   "number": 44214,
+   "street": 1822,
+   "zip": 41933
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9588, 'city': 0.0, 'zip': 0.0516, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESS 拆**（concat_addr）",
+  "total": 44214,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE_NO street=PREFIX city=COMMUNITY zip=ZIP",
+ "sample_hash": "94b645ac7418b05b",
+ "site_cols": [
+  "ADDRESS",
+  "STREET",
+  "SUBADDRESSPREFIX",
+  "SUBADDRESS",
+  "StreetName"
+ ],
+ "source_id": "us/pa/wayne",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://utility.arcgis.com/usrsvcs/servers/3235cb73ea054cf69033e113ddf881e2/rest/services/Parcel_Address/FeatureServer/7",
+ "verdict": "CONTRACTED"
+}

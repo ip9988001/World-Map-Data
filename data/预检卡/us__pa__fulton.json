@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:18:44",
+ "county": "Fulton",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",
+ "source_id": "us/pa/fulton",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://services6.arcgis.com/pcp4UiBBXQK2kACC/ArcGIS/rest/services/Addresses/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

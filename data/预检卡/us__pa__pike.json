@@ -1,0 +1,123 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "LegacyFullStreet"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:13",
+ "county": "Pike",
+ "curated_cols": {
+  "number": "Add_Number",
+  "street": "LegacyFullStreet"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "SiteType",
+  "PrimaryAddress",
+  "GlobalID",
+  "LegacyFullStreet",
+  "Add_Number"
+ ],
+ "fields_n": 7,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "4085",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{29089946-ACD1-4D16-B8EE-DE73F8F96777}",
+    "最长": "{29089946-ACD1-4D16-B8EE-DE73F8F96777}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LegacyFullStreet": {
+    "带特殊字符": 0,
+    "最短": "RT 739",
+    "最长": "MILFORD TOWN GREEN LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "5619726",
+    "最长": "5619726",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PrimaryAddress": {
+    "带特殊字符": 0,
+    "最短": "752 RT 739",
+    "最长": "168 BETWEEN THE LAKES RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SiteType": {
+    "带特殊字符": 0,
+    "最短": "R1",
+    "最长": "R1",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f34cebb4d3252d2c",
+  "total": 45196,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 45196,
+   "number": 45194,
+   "street": 45194
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 45196,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=LegacyFullStreet（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "f34cebb4d3252d2c",
+ "site_cols": [
+  "SiteType",
+  "PrimaryAddress",
+  "LegacyFullStreet"
+ ],
+ "source_id": "us/pa/pike",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://gis.pikepa.org/arcgis/rest/services/PikeCo_AddressPoints/MapServer/1",
+ "verdict": "CONTRACTED"
+}

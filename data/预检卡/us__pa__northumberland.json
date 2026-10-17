@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:11",
+ "county": "Northumberland",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试",
+ "source_id": "us/pa/northumberland",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://gis.norrycopa.net/arcgis/rest/services/Parcels/MapServer/0",
+ "verdict": "TRANSIENT"
+}

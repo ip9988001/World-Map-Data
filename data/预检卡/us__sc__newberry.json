@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:21:02",
+ "county": "Newberry",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 500: Internal Server Error",
+ "source_id": "us/sc/newberry",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://map.newberrycounty.net/gis/rest/services/PropertyParcel/MapServer/7",
+ "verdict": "REJECTED_P0"
+}

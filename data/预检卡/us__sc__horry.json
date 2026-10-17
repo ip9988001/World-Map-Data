@@ -1,0 +1,203 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "StreetNum",
+  "state": "STATE",
+  "street": "STREETNAME",
+  "unit": "UNIT",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:20:53",
+ "county": "Horry",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "StreetNum",
+  "state": "STATE",
+  "street": "STREETNAME",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "POINTTYPE",
+  "PIN",
+  "TMS",
+  "STREETNAME",
+  "UNIT",
+  "ADDRESS",
+  "CITY",
+  "STATE",
+  "ZIPCODE",
+  "LRSN",
+  "StreetNum",
+  "SitusKey",
+  "WorkflowID",
+  "Shape"
+ ],
+ "fields_n": 15,
+ "guessed_cols": {
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "120 BEN ST",
+    "最长": "742 UNIVERSITY FOREST CIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "Longs",
+    "最长": "Galivants Ferry",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LRSN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "29612040003",
+    "最长": "29612040003",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINTTYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "SC",
+    "最长": "SC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNAME": {
+    "带特殊字符": 0,
+    "最短": "BEN ST",
+    "最长": "UNIVERSITY FOREST CIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusKey": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StreetNum": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "3936",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TMS": {
+    "带特殊字符": 0,
+    "最短": "1120002045",
+    "最长": "1120002045",
+    "空": 3,
+    "空率": 0.01
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "2A",
+    "空": 292,
+    "空率": 0.973
+   },
+   "WorkflowID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "29526",
+    "最长": "29526",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "9cc6a3898abfa8ec",
+  "total": 229863,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 229863,
+   "full": 229863,
+   "number": 229863,
+   "state": 229863,
+   "street": 229863,
+   "zip": 229863
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 229863,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=StreetNum street=STREETNAME city=CITY zip=ZIPCODE",
+ "sample_hash": "9cc6a3898abfa8ec",
+ "site_cols": [
+  "STREETNAME",
+  "ADDRESS",
+  "StreetNum",
+  "SitusKey"
+ ],
+ "source_id": "us/sc/horry",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://www.horrycounty.org/gisweb/rest/services/Public/AddressPoints/MapServer/0",
+ "verdict": "CONTRACTED"
+}

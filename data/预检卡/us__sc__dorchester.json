@@ -1,0 +1,422 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POST_COMM",
+  "number": "ADD_NUMBER",
+  "state": "STATE",
+  "street": "ST_PREDIR",
+  "unit": "UNIT_TYPE",
+  "zip": "ZIP_CODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:20:48",
+ "county": "Dorchester",
+ "curated_cols": {
+  "city": "POST_COMM",
+  "number": "ADD_NUMBER",
+  "street": "ST_PREDIR",
+  "zip": "ZIP_CODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "SITE_NGUID",
+  "ADDRESS_ID",
+  "SEGMENT_ID",
+  "ST_NAME_ID",
+  "COMPLETE_ADD",
+  "FULL_HOUSE_NUM",
+  "UNIT_TYPE",
+  "UNIT_NUM",
+  "ADD_NUMBER",
+  "ADDNUM_SUF",
+  "ST_PREMOD",
+  "ST_PREDIR",
+  "ST_PRETYP",
+  "ST_PRESEP",
+  "ST_NAME",
+  "ST_POSTYP",
+  "ST_POSDIR",
+  "ST_POSMOD",
+  "LST_PREDIR",
+  "LST_NAME",
+  "LST_TYPE",
+  "LST_POSDIR",
+  "POST_COMM",
+  "ZIP_CODE",
+  "COUNTY",
+  "STATE",
+  "COUNTRY",
+  "INC_MUNI",
+  "NBRHD_COMM",
+  "ESN",
+  "MSAGCOMM",
+  "PLACE_TYPE",
+  "STATUS",
+  "PARCELID",
+  "TAX_DISTRICT",
+  "SIDE",
+  "ANOMALY",
+  "CREATE_DATE",
+  "CREATE_USER",
+  "EDIT_DATE",
+  "EDIT_USER",
+  "LONG",
+  "LAT",
+  "X_COORD",
+  "Y_COORD",
+  "DISCRPAGID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "GlobalID",
+  "FULL_ST_NAME",
+  "FULL_UNIT"
+ ],
+ "fields_n": 54,
+ "guessed_cols": {
+  "state": "STATE",
+  "unit": "UNIT_TYPE"
+ },
+ "layer": {
+  "maxRecordCount": 90000,
+  "name": "Site Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDNUM_SUF": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "B",
+    "空": 292,
+    "空率": 0.973
+   },
+   "ADDRESS_ID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1208",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ANOMALY": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COMPLETE_ADD": {
+    "带特殊字符": 9,
+    "最短": "235 ANN ST",
+    "最长": "1208 BOONE HILL RD, APT A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTRY": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "BERKELEY",
+    "最长": "DORCHESTER COUNTY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CREATE_DATE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CREATE_USER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "77",
+    "最长": "368",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_HOUSE_NUM": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1208 A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INC_MUNI": {
+    "带特殊字符": 0,
+    "最短": "SUMMERVILLE",
+    "最长": "UNINCORPORATED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LST_NAME": {
+    "带特殊字符": 0,
+    "最短": "ANN",
+    "最长": "CAMPBELL THICKETT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LST_POSDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LST_PREDIR": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 287,
+    "空率": 0.957
+   },
+   "LST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "RNGE",
+    "空": 1,
+    "空率": 0.003
+   },
+   "MSAGCOMM": {
+    "带特殊字符": 0,
+    "最短": "LADSON",
+    "最长": "NORTH CHARLESTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NBRHD_COMM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "350169",
+    "最长": "350169",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "045-10-15-013.000",
+    "最长": "045-10-15-013.000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLACE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "BUSINESS",
+    "最长": "SINGLE FAMILY MANUFACTURED RES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POST_COMM": {
+    "带特殊字符": 0,
+    "最短": "LADSON",
+    "最长": "NORTH CHARLESTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SEGMENT_ID": {
+    "带特殊字符": 0,
+    "最短": "72",
+    "最长": "10303",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SIDE": {
+    "带特殊字符": 0,
+    "最短": "LEFT",
+    "最长": "RIGHT",
+    "空": 1,
+    "空率": 0.003
+   },
+   "SITE_NGUID": {
+    "带特殊字符": 300,
+    "最短": "SITE1@DorchesterCounty.SC.US",
+    "最长": "SITE100@DorchesterCounty.SC.US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "SC",
+    "最长": "SC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "Active",
+    "最长": "Active",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "61",
+    "最长": "CAMPBELL THICKETT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAME_ID": {
+    "带特殊字符": 0,
+    "最短": "83",
+    "最长": "1111",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_POSDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_POSMOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_POSTYP": {
+    "带特殊字符": 0,
+    "最短": "WAY",
+    "最长": "BOULEVARD",
+    "空": 1,
+    "空率": 0.003
+   },
+   "ST_PREDIR": {
+    "带特殊字符": 0,
+    "最短": "EAST",
+    "最长": "EAST",
+    "空": 287,
+    "空率": 0.957
+   },
+   "ST_PREMOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_PRESEP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_PRETYP": {
+    "带特殊字符": 0,
+    "最短": "HIGHWAY",
+    "最长": "HIGHWAY",
+    "空": 299,
+    "空率": 0.997
+   },
+   "TAX_DISTRICT": {
+    "带特殊字符": 0,
+    "最短": "405",
+    "最长": "405",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT_NUM": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 299,
+    "空率": 0.997
+   },
+   "UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "APT",
+    "最长": "APT",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ZIP_CODE": {
+    "带特殊字符": 0,
+    "最短": "29477",
+    "最长": "29477",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "d9a26af49362c96c",
+  "total": 86098,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.1575,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 86098,
+   "full": 86098,
+   "number": 86098,
+   "state": 86098,
+   "street": 72539,
+   "zip": 86098
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.1575, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 86098,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADD_NUMBER street=ST_PREDIR city=POST_COMM zip=ZIP_CODE",
+ "sample_hash": "d9a26af49362c96c",
+ "site_cols": [
+  "SITE_NGUID",
+  "ADDRESS_ID"
+ ],
+ "source_id": "us/sc/dorchester",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://gisportal.dorchestercounty.net/hosting/rest/services/General_Data/Address_Points_Public/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

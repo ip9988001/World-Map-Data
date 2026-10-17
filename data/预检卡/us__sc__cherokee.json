@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:43",
+ "county": "Cherokee",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/sc/cherokee",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://gis.scacog.org/arcgis/rest/services/CherokeeCountyPublic/MapServer/6",
+ "verdict": "TRANSIENT"
+}

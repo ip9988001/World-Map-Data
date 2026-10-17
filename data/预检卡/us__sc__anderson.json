@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:40",
+ "county": "Anderson",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试",
+ "source_id": "us/sc/anderson",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://propertyviewer.andersoncountysc.org/arcgis/rest/services/QueryMap/MapServer/0",
+ "verdict": "TRANSIENT"
+}

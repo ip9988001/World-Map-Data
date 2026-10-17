@@ -1,0 +1,66 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "STRUMUNI",
+  "number": "HSENUMBER",
+  "street": "PREFIXDIR"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 19:19:23",
+ "county": "Tioga",
+ "curated_cols": {
+  "city": "STRUMUNI",
+  "number": "HSENUMBER",
+  "street": "PREFIXDIR"
+ },
+ "fields": [
+  "OBJECTID",
+  "STRU_NUM",
+  "TYPE",
+  "SOURCE",
+  "HSENUMBER",
+  "ADDEXT",
+  "PREFIXDIR",
+  "STREETNAME",
+  "STREETSUF",
+  "POSTDIR",
+  "LOCATION",
+  "STREET",
+  "KEEP",
+  "STRUMUNI",
+  "EDIT",
+  "PRIVATERD_",
+  "GasWell",
+  "ADDRESSING",
+  "Shape"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Structure Location Points (911 Verified)",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "reason": "计数失败：{'code': 400, 'extendedCode': -2147220222, 'message': 'Requested operation is not supported by this service.', 'details'",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HSENUMBER street=PREFIXDIR city=STRUMUNI",
+ "site_cols": [
+  "STREETNAME",
+  "STREETSUF",
+  "LOCATION",
+  "STREET",
+  "ADDRESSING"
+ ],
+ "source_id": "us/pa/tioga",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://tiogagis.tiogacountypa.us/arcgis2017/rest/services/13_Structure_Location_Points_HST/MapServer/0",
+ "verdict": "FAIL_P1"
+}
