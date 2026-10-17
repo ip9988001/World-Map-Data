@@ -1,0 +1,44 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "LABEL",
+  "street": "DLVRY_ADD"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:14:03",
+ "county": "Ziebach",
+ "curated_cols": {
+  "number": "LABEL",
+  "street": "DLVRY_ADD"
+ },
+ "fields": [
+  "FID",
+  "Shape",
+  "UID",
+  "DLVRY_ADD",
+  "LABEL"
+ ],
+ "fields_n": 5,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "ADDRESS POINTS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "reason": "服务端自报 1,110 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=LABEL street=DLVRY_ADD（无 city/zip 列 → 交付会降级，靠字典补）",
+ "site_cols": [],
+ "source_id": "us/sd/ziebach",
+ "stage": "p0",
+ "state": "SD",
+ "url": "https://gis.districtiii.org/server/rest/services/ZIEBACH_WEB_LAYERS/MapServer/24",
+ "verdict": "FAIL_P1"
+}

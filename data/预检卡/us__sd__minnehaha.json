@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:12:59",
+ "county": "Minnehaha",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/sd/minnehaha",
+ "stage": "p0",
+ "state": "SD",
+ "url": "https://gis.minnehahacounty.gov/minnemap/rest/services/Planning/AddressPoints/MapServer/0",
+ "verdict": "TRANSIENT"
+}

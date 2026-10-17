@@ -1,0 +1,137 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "LSt_PreDir"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:16:19",
+ "county": "Van Zandt",
+ "curated_cols": {
+  "number": "Add_Number",
+  "street": "LSt_PreDir"
+ },
+ "fields": [
+  "OBJECTID",
+  "Add_Number",
+  "LSt_PreDir",
+  "LSt_Name",
+  "LSt_Type",
+  "LSt_PosDir",
+  "AddressFullName",
+  "GlobalID"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Van Zandt County 9-1-1 Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "327",
+    "最长": "13870",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddressFullName": {
+    "带特殊字符": 1,
+    "最短": "8588 FM 17",
+    "最长": "10238 STATE HIGHWAY 198, UNIT 2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{DFBA72D5-B0D0-4F42-8782-3F4D48D0608F}",
+    "最长": "{DFBA72D5-B0D0-4F42-8782-3F4D48D0608F}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "ELM",
+    "最长": "INTERSTATE 20 N ACCESS RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 294,
+    "空率": 0.98
+   },
+   "LSt_Type": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "CIR",
+    "空": 283,
+    "空率": 0.943
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "20169",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7bb65c874fa47c69",
+  "total": 35814,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.8781
+  },
+  "nonnull": {
+   "full": 35814,
+   "number": 35814,
+   "street": 4365
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.8781, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 AddressFullName 拆**（concat_addr）",
+  "total": 35814,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=LSt_PreDir（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "7bb65c874fa47c69",
+ "site_cols": [
+  "AddressFullName"
+ ],
+ "source_id": "us/tx/vanzandt",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://maps.etcog.org/arcgis/rest/services/VanZandtCounty/VanZandtCounty/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

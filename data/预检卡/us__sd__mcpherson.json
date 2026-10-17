@@ -1,0 +1,283 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "TOWNSHIP_RANGE_SECTION",
+  "number": "SITE_ADDRESS",
+  "street": "SITE_ADDRESS",
+  "zip": "MAILING_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:12:54",
+ "county": "McPherson",
+ "curated_cols": {
+  "number": "SITE_ADDRESS",
+  "street": "SITE_ADDRESS"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "Shape",
+  "OBJECTID",
+  "TOWNSHIP_NAME",
+  "TOWNSHIP",
+  "RANGE",
+  "SECTION",
+  "TOWNSHIP_RANGE_SECTION",
+  "FEATURE_TYPE",
+  "SOURCE",
+  "PARCEL_ID",
+  "COMMENTS",
+  "LEASED_ID",
+  "Shape_Length",
+  "Shape_Area",
+  "PARCEL_NUMBER",
+  "OWNERNAME",
+  "SITE_ADDRESS",
+  "LEGAL",
+  "DEEDED_ACRE",
+  "MAILING_ADDRESS",
+  "MAILING_CITY",
+  "MAILING_ST",
+  "MAILING_ZIP",
+  "SCHOOL_DIST",
+  "FIRE_DIST"
+ ],
+ "fields_n": 26,
+ "guessed_cols": {
+  "city": "TOWNSHIP_RANGE_SECTION",
+  "zip": "MAILING_ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "PARCELS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "COMMENTS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DEEDED_ACRE": {
+    "带特殊字符": 0,
+    "最短": "80",
+    "最长": "165.63",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FEATURE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "PARCEL",
+    "最长": "PARCEL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIRE_DIST": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LEASED_ID": {
+    "带特殊字符": 0,
+    "最短": "8926",
+    "最长": "8926",
+    "空": 295,
+    "空率": 0.983
+   },
+   "LEGAL": {
+    "带特殊字符": 22,
+    "最短": "SE1/4",
+    "最长": "NE1/4 EXCEPT THAT PORTION OF THE MINNESOTA, DAKOTA, & PACIFIC RAILWAY COMPANY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_ADDRESS": {
+    "带特殊字符": 14,
+    "最短": "PO BOX 84",
+    "最长": "% HARVEY GOEHRING 1020 6TH AVE. SE #167",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_CITY": {
+    "带特殊字符": 0,
+    "最短": "TEA",
+    "最长": "SAINT SIMONS IS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_ST": {
+    "带特殊字符": 0,
+    "最短": "ND",
+    "最长": "ND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING_ZIP": {
+    "带特殊字符": 0,
+    "最短": "T7Y 1B8",
+    "最长": "58439-0000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "71761",
+    "最长": "71761",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNERNAME": {
+    "带特殊字符": 144,
+    "最短": "MARA HART",
+    "最长": "LARRY & JOYCE WOLF IRREVOCABLE FAMILY LEGACY TRUST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "1021",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "1021",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RANGE": {
+    "带特殊字符": 0,
+    "最短": "66W",
+    "最长": "66W",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SCHOOL_DIST": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SECTION": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "18",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "STR 2-127-66",
+    "最长": "36756 109TH STREET",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE": {
+    "带特殊字符": 300,
+    "最短": "DISTRICT_3",
+    "最长": "DISTRICT_3",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "8163579.158535",
+    "最长": "6984979.4055059105",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Length": {
+    "带特殊字符": 0,
+    "最短": "10564.4715712343",
+    "最长": "10545.775968100797",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TOWNSHIP": {
+    "带特殊字符": 0,
+    "最短": "127N",
+    "最长": "127N",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TOWNSHIP_NAME": {
+    "带特殊字符": 0,
+    "最短": "CARL",
+    "最长": "WASHINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TOWNSHIP_RANGE_SECTION": {
+    "带特殊字符": 300,
+    "最短": "127N_66W_2",
+    "最长": "127N_66W_18",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "1641e9a229464d81",
+  "total": 8857,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0423,
+   "number": 0.0423,
+   "street": 0.0423,
+   "zip": 0.0423
+  },
+  "nonnull": {
+   "city": 8857,
+   "full": 8482,
+   "number": 8482,
+   "street": 8482,
+   "zip": 8482
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0423, 'street': 0.0423, 'city': 0.0, 'zip': 0.0423, 'full': 0.0423}）→ 可全量采集",
+  "total": 8857,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SITE_ADDRESS street=SITE_ADDRESS",
+ "sample_hash": "1641e9a229464d81",
+ "site_cols": [
+  "SITE_ADDRESS",
+  "MAILING_ADDRESS"
+ ],
+ "source_id": "us/sd/mcpherson",
+ "stage": "p0",
+ "state": "SD",
+ "url": "https://gis.districtiii.org/server/rest/services/MCPHERSON_COUNTY_WEB_LAYERS/MapServer/2",
+ "verdict": "CONTRACTED"
+}

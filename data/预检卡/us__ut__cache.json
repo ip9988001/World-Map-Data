@@ -1,0 +1,347 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "addnum",
+  "state": "state",
+  "street": "prefixdir",
+  "unit": "building",
+  "zip": "zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:16:42",
+ "county": "Cache",
+ "curated_cols": {
+  "city": "city",
+  "number": "addnum",
+  "state": "state",
+  "street": "prefixdir",
+  "zip": "zipcode"
+ },
+ "fields": [
+  "objectid",
+  "addsystem",
+  "fulladd",
+  "addnum",
+  "addnumsuffix",
+  "prefixdir",
+  "streetname",
+  "aliasstreetname",
+  "streettype",
+  "suffixdir",
+  "landmarkname",
+  "building",
+  "unittype",
+  "unitid",
+  "city",
+  "zipcode",
+  "countyid",
+  "state",
+  "ptlocation",
+  "pttype",
+  "structure",
+  "parcelid",
+  "addsource",
+  "address_quality",
+  "notes",
+  "point_x",
+  "point_y",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "alias"
+ ],
+ "fields_n": 32,
+ "guessed_cols": {
+  "unit": "building"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Master Address List",
+  "objectIdField": "objectid",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "addnum": {
+    "带特殊字符": 0,
+    "最短": "14",
+    "最长": "338 1/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addnumsuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "address_quality": {
+    "带特殊字符": 0,
+    "最短": "Bad",
+    "最长": "Good",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addsource": {
+    "带特殊字符": 0,
+    "最短": "USPS",
+    "最长": "SUBDIVISION PLAT",
+    "空": 3,
+    "空率": 0.01
+   },
+   "addsystem": {
+    "带特殊字符": 0,
+    "最短": "AVON",
+    "最长": "NORTH LOGAN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "alias": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "aliasstreetname": {
+    "带特殊字符": 0,
+    "最短": "N 600 E",
+    "最长": "N 600 E",
+    "空": 295,
+    "空率": 0.983
+   },
+   "building": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "AVON",
+    "最长": "NORTH LOGAN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "countyid": {
+    "带特殊字符": 0,
+    "最短": "49005 - Cache",
+    "最长": "49005 - Cache",
+    "空": 2,
+    "空率": 0.007
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1421874691000",
+    "最长": "1421874691000",
+    "空": 17,
+    "空率": 0.057
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "ONE",
+    "最长": "SFRANCIS",
+    "空": 17,
+    "空率": 0.057
+   },
+   "fulladd": {
+    "带特殊字符": 0,
+    "最短": "14 N 300 E",
+    "最长": "707 N CROW MOUNTAIN RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "landmarkname": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1557845993000",
+    "最长": "1557845993000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "ONE",
+    "最长": "SFRANCIS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "notes": {
+    "带特殊字符": 12,
+    "最短": "ADDED AS PER ZC AND MIKE GLEED 5/19",
+    "最长": "CHUCK SHAW, AGRC prmary street name is N CROW MOUNTAIN RD, ADDRESS MARKER ON GRO",
+    "空": 280,
+    "空率": 0.933
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parcelid": {
+    "带特殊字符": 0,
+    "最短": "05-116-0012",
+    "最长": "05-116-0012",
+    "空": 0,
+    "空率": 0.0
+   },
+   "point_x": {
+    "带特殊字符": 0,
+    "最短": "1547213.39777",
+    "最长": "1547211.66188107",
+    "空": 40,
+    "空率": 0.133
+   },
+   "point_y": {
+    "带特殊字符": 0,
+    "最短": "3799212.9126334",
+    "最长": "3798874.80471382",
+    "空": 40,
+    "空率": 0.133
+   },
+   "prefixdir": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 1,
+    "空率": 0.003
+   },
+   "ptlocation": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "pttype": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "UT",
+    "最长": "UT",
+    "空": 2,
+    "空率": 0.007
+   },
+   "streetname": {
+    "带特殊字符": 0,
+    "最短": "50",
+    "最长": "CROW MOUNTAIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "streettype": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "RD",
+    "空": 294,
+    "空率": 0.98
+   },
+   "structure": {
+    "带特殊字符": 0,
+    "最短": "Club House",
+    "最长": "Club House",
+    "空": 299,
+    "空率": 0.997
+   },
+   "suffixdir": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 6,
+    "空率": 0.02
+   },
+   "unitid": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "101",
+    "空": 198,
+    "空率": 0.66
+   },
+   "unittype": {
+    "带特殊字符": 0,
+    "最短": "#",
+    "最长": "APT",
+    "空": 197,
+    "空率": 0.657
+   },
+   "zipcode": {
+    "带特殊字符": 0,
+    "最短": "84341",
+    "最长": "84341",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b347c6677bf0a5a5",
+  "total": 58092,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0053,
+   "full": 0.0004,
+   "number": 0.0004,
+   "state": 0.0055,
+   "street": 0.0646,
+   "zip": 0.0054
+  },
+  "nonnull": {
+   "city": 57782,
+   "full": 58067,
+   "number": 58071,
+   "state": 57770,
+   "street": 54338,
+   "zip": 57781
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0004, 'street': 0.0646, 'city': 0.0053, 'zip': 0.0054, 'state': 0.0055, 'full': 0.0004}）→ 可全量采集",
+  "total": 58092,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addnum street=prefixdir city=city zip=zipcode",
+ "sample_hash": "b347c6677bf0a5a5",
+ "site_cols": [
+  "streetname",
+  "aliasstreetname",
+  "streettype",
+  "ptlocation",
+  "address_quality"
+ ],
+ "source_id": "us/ut/cache",
+ "stage": "p0",
+ "state": "UT",
+ "url": "http://gis.cachecounty.org/arcgis/rest/services/Misc/Master_Address_List/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,47 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "street": "PRETYPE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:15:12",
+ "county": "Hamilton",
+ "curated_cols": {
+  "street": "PRETYPE"
+ },
+ "fields": [
+  "OBJECTID_1",
+  "ObjectID",
+  "PREFIX",
+  "PRETYPE",
+  "NAME",
+  "TYPE",
+  "SUFFIX",
+  "CLASS",
+  "CLASS_RTE",
+  "HWY_TYPE",
+  "HWY_SYMBOL",
+  "GlobalID",
+  "Shape",
+  "Shape_Length"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Minor Highways",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "14 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 'PRETYPE'）",
+ "site_cols": [],
+ "source_id": "us/tn/hamilton",
+ "stage": "p0",
+ "state": "TN",
+ "url": "https://mapsdev.hamiltontn.gov/hcwa/rest/services/Base_Map/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

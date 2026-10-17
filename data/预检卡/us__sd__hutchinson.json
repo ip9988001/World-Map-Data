@@ -1,0 +1,237 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "COMMUNITY",
+  "number": "Z",
+  "state": "STATE",
+  "street": "D",
+  "unit": "COMMUNITY"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:12:42",
+ "county": "Hutchinson",
+ "curated_cols": {
+  "city": "COMMUNITY",
+  "number": "Z",
+  "state": "STATE",
+  "street": "D"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "Z",
+  "D",
+  "ST",
+  "COMMUNITY",
+  "LOC",
+  "COMMENTS",
+  "TELCO",
+  "ESN",
+  "UPDATED",
+  "ADDRESS",
+  "SOURCE",
+  "UniqueSiteID",
+  "COUNTRY",
+  "STATE",
+  "COUNTY",
+  "INC_MUNIC",
+  "UNINC_COMM",
+  "GC_EXCEPTION"
+ ],
+ "fields_n": 20,
+ "guessed_cols": {
+  "unit": "COMMUNITY"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "ADDRESS POINTS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "179 S 5TH ST",
+    "最长": "28757  US HIGHWAY 81",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMENTS": {
+    "带特殊字符": 0,
+    "最短": "APT 6",
+    "最长": "NO PLUMBING",
+    "空": 274,
+    "空率": 0.913
+   },
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "MENNO",
+    "最长": "BRIDGEWATER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTRY": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 300,
+    "最短": "Hutchinson_County",
+    "最长": "Hutchinson_County",
+    "空": 0,
+    "空率": 0.0
+   },
+   "D": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 287,
+    "空率": 0.957
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "221",
+    "最长": "221",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GC_EXCEPTION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "INC_MUNIC": {
+    "带特殊字符": 0,
+    "最短": "Menno",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOC": {
+    "带特殊字符": 0,
+    "最短": "APT 6",
+    "最长": "CLAYTON",
+    "空": 290,
+    "空率": 0.967
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE": {
+    "带特殊字符": 300,
+    "最短": "HUTCH_CO_911-GIS_ADMIN",
+    "最长": "HUTCH_CO_911-GIS_ADMIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST": {
+    "带特殊字符": 0,
+    "最短": "5TH ST",
+    "最长": "US HIGHWAY 81",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "SD",
+    "最长": "SD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TELCO": {
+    "带特殊字符": 0,
+    "最短": "N9",
+    "最长": "N9",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNINC_COMM": {
+    "带特殊字符": 0,
+    "最短": "Clayton",
+    "最长": "Clayton",
+    "空": 299,
+    "空率": 0.997
+   },
+   "UPDATED": {
+    "带特殊字符": 0,
+    "最短": "995587200000",
+    "最长": "1583798400000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UniqueSiteID": {
+    "带特殊字符": 300,
+    "最短": "SITE_1@HUTCHINSON_SD",
+    "最长": "SITE_5440@HUTCHINSON_SD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Z": {
+    "带特殊字符": 0,
+    "最短": "306",
+    "最长": "27436",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e468a0f5c0898042",
+  "total": 4572,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0017
+  },
+  "nonnull": {
+   "city": 4572,
+   "full": 4572,
+   "number": 4572,
+   "state": 4572,
+   "street": 4564
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0017, 'city': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 4572,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Z street=D city=COMMUNITY",
+ "sample_hash": "e468a0f5c0898042",
+ "site_cols": [
+  "ADDRESS",
+  "UniqueSiteID"
+ ],
+ "source_id": "us/sd/hutchinson",
+ "stage": "p0",
+ "state": "SD",
+ "url": "https://gis.districtiii.org/server/rest/services/HUTCHINSON_COUNTY_WEB_LAYERS2/MapServer/16",
+ "verdict": "CONTRACTED"
+}

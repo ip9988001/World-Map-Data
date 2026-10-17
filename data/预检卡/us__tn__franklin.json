@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-17 22:15:09",
+ "county": "Franklin",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试",
+ "source_id": "us/tn/franklin",
+ "stage": "p0",
+ "state": "TN",
+ "url": "https://gis.franklin-gov.com/publicmaps/rest/services/Maps/PublicSafety/MapServer/18",
+ "verdict": "TRANSIENT"
+}
