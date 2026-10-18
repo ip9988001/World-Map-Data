@@ -1,0 +1,268 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "STREETNUM",
+  "state": "STATE",
+  "street": "STREETPREFIX",
+  "unit": "BUILDING",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:04:59",
+ "county": "City of Garland",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "STREETNUM",
+  "state": "STATE",
+  "street": "STREETPREFIX",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESSID",
+  "STREETNUM",
+  "STREETLABEL",
+  "STREETPREFIX",
+  "STREETNAME",
+  "STREETTYPE",
+  "STREETSUFFIX",
+  "BUILDING",
+  "UNIT",
+  "ZIPCODE",
+  "ZIPPLUS",
+  "XCOORD",
+  "YCOORD",
+  "CITY",
+  "STATE",
+  "COUNTY",
+  "FULL_ADDRESS",
+  "LAT",
+  "LONG",
+  "SHAPE",
+  "created_user",
+  "EFA"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "BUILDING"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "ADDRESS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESSID": {
+    "带特殊字符": 0,
+    "最短": "3",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "GARLAND",
+    "最长": "GARLAND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "DALLAS",
+    "最长": "DALLAS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EFA": {
+    "带特殊字符": 0,
+    "最短": "NO",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "806 EASY ST",
+    "最长": "3802 EASTON MEADOWS DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAT": {
+    "带特殊字符": 0,
+    "最短": "32.927649",
+    "最长": "32.97015176",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONG": {
+    "带特殊字符": 0,
+    "最短": "-96.647229",
+    "最长": "-96.67652734",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "TX",
+    "最长": "TX",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETLABEL": {
+    "带特殊字符": 0,
+    "最短": "EASY ST",
+    "最长": "ALLEGHENY TRAIL LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNAME": {
+    "带特殊字符": 0,
+    "最短": "I30",
+    "最长": "ALLEGHENY TRAIL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETNUM": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "3101",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREETPREFIX": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 292,
+    "空率": 0.973
+   },
+   "STREETSUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STREETTYPE": {
+    "带特殊字符": 0,
+    "最短": "CT",
+    "最长": "FRWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "102",
+    "最长": "102",
+    "空": 299,
+    "空率": 0.997
+   },
+   "XCOORD": {
+    "带特殊字符": 0,
+    "最短": "2560365.5",
+    "最长": "2527676.53776042",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YCOORD": {
+    "带特殊字符": 0,
+    "最短": "6994258.0",
+    "最长": "7040776.95182292",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "75044",
+    "最长": "75044",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPPLUS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a9f5a3244cfd701c",
+  "total": 74180,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0004
+  },
+  "nonnull": {
+   "city": 74180,
+   "full": 74180,
+   "number": 74180,
+   "state": 74180,
+   "street": 74180,
+   "zip": 74149
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0004, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 74180,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STREETNUM street=STREETPREFIX city=CITY zip=ZIPCODE",
+ "sample_hash": "a9f5a3244cfd701c",
+ "site_cols": [
+  "ADDRESSID",
+  "STREETNUM",
+  "STREETLABEL",
+  "STREETPREFIX",
+  "STREETNAME"
+ ],
+ "source_id": "us/tx/city_of_garland",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://maps2.garlandtx.gov/server1/rest/services/BASEMAP/ADDRESS/MapServer/0",
+ "verdict": "CONTRACTED"
+}

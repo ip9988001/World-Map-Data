@@ -1,0 +1,354 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "NUMBER",
+  "state": "ST",
+  "street": "PRE_DIR",
+  "unit": "MAPTAXLOT",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:01:59",
+ "county": "City of Lebanon",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "NUMBER",
+  "state": "ST",
+  "street": "PRE_DIR",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESSID",
+  "NUMBER",
+  "SUB_NUM",
+  "PRE_DIR",
+  "PRE_TYPE",
+  "STR_NAME",
+  "STR_TYPE",
+  "SUF_DIR",
+  "UNITTYPE",
+  "UNIT_NUM",
+  "SITUS",
+  "CITY",
+  "ST",
+  "ZIP5",
+  "ZIP4",
+  "PREVIOUSADDRESS",
+  "MAPTAXLOT",
+  "ASSR_NUM",
+  "DATEMADE",
+  "BUSINESS",
+  "TYPE",
+  "STATUS",
+  "DOCPATH",
+  "ACCELAPATH",
+  "GlobalID",
+  "INCITYLIMITS",
+  "MULTIFAMILY",
+  "DOORS",
+  "NOTES",
+  "CUSTOMERID",
+  "SBTYPE",
+  "ACCOUNTID"
+ ],
+ "fields_n": 33,
+ "guessed_cols": {
+  "unit": "MAPTAXLOT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACCELAPATH": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ACCOUNTID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDRESSID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ASSR_NUM": {
+    "带特殊字符": 0,
+    "最短": "204285",
+    "最长": "204285",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BUSINESS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "LEBANON",
+    "最长": "LEBANON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CUSTOMERID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DATEMADE": {
+    "带特殊字符": 0,
+    "最短": "1102896000000",
+    "最长": "1102896000000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DOCPATH": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 263,
+    "空率": 0.877
+   },
+   "DOORS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 13,
+    "空率": 0.043
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "ea7afbf2-c808-4588-8d47-6f0144d5fb3d",
+    "最长": "ea7afbf2-c808-4588-8d47-6f0144d5fb3d",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INCITYLIMITS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 265,
+    "空率": 0.883
+   },
+   "MAPTAXLOT": {
+    "带特殊字符": 0,
+    "最短": "12S02W15BC00100",
+    "最长": "12S02W15BC00100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MULTIFAMILY": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 296,
+    "空率": 0.987
+   },
+   "NOTES": {
+    "带特殊字符": 0,
+    "最短": "SF",
+    "最长": "JUSTICE CENTER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUMBER": {
+    "带特殊字符": 0,
+    "最短": "40",
+    "最长": "36585",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PREVIOUSADDRESS": {
+    "带特殊字符": 0,
+    "最短": "120 OAK LN",
+    "最长": "31818 STOLTZ HILL RD",
+    "空": 6,
+    "空率": 0.02
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "SW",
+    "空": 216,
+    "空率": 0.72
+   },
+   "PRE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SBTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SITUS": {
+    "带特殊字符": 0,
+    "最短": "120 OAK LN",
+    "最长": "1855 S 9TH ST UNIT C118",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST": {
+    "带特殊字符": 0,
+    "最短": "OR",
+    "最长": "OR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATUS": {
+    "带特殊字符": 300,
+    "最短": "Exists & Active",
+    "最长": "Exists & Active",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_NAME": {
+    "带特殊字符": 0,
+    "最短": "9TH",
+    "最长": "STOLTZ HILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STR_TYPE": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "LOOP",
+    "空": 9,
+    "空率": 0.03
+   },
+   "SUB_NUM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUF_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "RES",
+    "最长": "NRES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "UNIT",
+    "最长": "UNIT",
+    "空": 298,
+    "空率": 0.993
+   },
+   "UNIT_NUM": {
+    "带特殊字符": 0,
+    "最短": "100",
+    "最长": "C118",
+    "空": 298,
+    "空率": 0.993
+   },
+   "ZIP4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "97355",
+    "最长": "97355",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "d60915a00cf9a6fc",
+  "total": 10058,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.5327,
+   "zip": 0.0001
+  },
+  "nonnull": {
+   "city": 10058,
+   "full": 10058,
+   "number": 10058,
+   "state": 10058,
+   "street": 4700,
+   "zip": 10057
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.5327, 'city': 0.0, 'zip': 0.0001, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESSID 拆**（concat_addr）",
+  "total": 10058,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=NUMBER street=PRE_DIR city=CITY zip=ZIP5",
+ "sample_hash": "d60915a00cf9a6fc",
+ "site_cols": [
+  "ADDRESSID",
+  "SITUS",
+  "PREVIOUSADDRESS"
+ ],
+ "source_id": "us/or/city_of_lebanon",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://services1.arcgis.com/K1vRaK7vKFsLv6fj/ArcGIS/rest/services/Civic/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

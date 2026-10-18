@@ -1,0 +1,208 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "TownCode",
+  "number": "HouseNumber",
+  "street": "PreDirection"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:05:18",
+ "county": "City of San Antonio",
+ "curated_cols": {
+  "number": "HouseNumber",
+  "street": "PreDirection"
+ },
+ "fields": [
+  "OBJECTID",
+  "AddrKey",
+  "HouseNumber",
+  "StreetNameID",
+  "PreDirection",
+  "Name",
+  "AbbrevType",
+  "PostDirection",
+  "TownCode",
+  "CouncilDist",
+  "XCoord",
+  "YCoord",
+  "EntryDate",
+  "ModifiedDate",
+  "Address",
+  "ExpiredDate"
+ ],
+ "fields_n": 16,
+ "guessed_cols": {
+  "city": "TownCode"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "COSA_Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AbbrevType": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "AVE",
+    "空": 238,
+    "空率": 0.793
+   },
+   "AddrKey": {
+    "带特殊字符": 0,
+    "最短": "500854",
+    "最长": "1131125",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "127 CASS",
+    "最长": "14110 BLIND BANDIT CREEK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CouncilDist": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EntryDate": {
+    "带特殊字符": 0,
+    "最短": "1552555073000",
+    "最长": "1552555073000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ExpiredDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HouseNumber": {
+    "带特殊字符": 0,
+    "最短": "54",
+    "最长": "12611",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ModifiedDate": {
+    "带特殊字符": 0,
+    "最短": "1552555211000",
+    "最长": "1552555211000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Name": {
+    "带特殊字符": 0,
+    "最短": "LEE",
+    "最长": "BLIND BANDIT CREEK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PostDirection": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 299,
+    "空率": 0.997
+   },
+   "PreDirection": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "NW",
+    "空": 294,
+    "空率": 0.98
+   },
+   "StreetNameID": {
+    "带特殊字符": 0,
+    "最短": "94364",
+    "最长": "94364",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TownCode": {
+    "带特殊字符": 0,
+    "最短": "14",
+    "最长": "14",
+    "空": 0,
+    "空率": 0.0
+   },
+   "XCoord": {
+    "带特殊字符": 0,
+    "最短": "2157370",
+    "最长": "2031278.7",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YCoord": {
+    "带特殊字符": 0,
+    "最短": "13701469",
+    "最长": "13736147.7",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "e0d86eb42afce5d8",
+  "total": 625732,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0015,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.9201
+  },
+  "nonnull": {
+   "city": 624769,
+   "full": 625732,
+   "number": 625732,
+   "street": 50021
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9201, 'city': 0.0015, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 AddrKey 拆**（concat_addr）",
+  "total": 625732,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HouseNumber street=PreDirection",
+ "sample_hash": "e0d86eb42afce5d8",
+ "site_cols": [
+  "AddrKey",
+  "StreetNameID",
+  "Address"
+ ],
+ "source_id": "us/tx/city_of_san_antonio",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://services.arcgis.com/g1fRTDLeMgspWrYp/ArcGIS/rest/services/COSA_Address/FeatureServer/15",
+ "verdict": "CONTRACTED"
+}

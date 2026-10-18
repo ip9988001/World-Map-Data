@@ -1,0 +1,215 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "stnum",
+  "street": "stprefix",
+  "unit": "unittype",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:02:09",
+ "county": "City of Newberg",
+ "curated_cols": {
+  "city": "city",
+  "number": "stnum",
+  "street": "stprefix",
+  "zip": "Zip"
+ },
+ "fields": [
+  "OBJECTID",
+  "stnum",
+  "stprefix",
+  "sttype",
+  "stname",
+  "tempadd",
+  "unittype",
+  "unitnum",
+  "incity",
+  "city",
+  "fulladd",
+  "GlobalID",
+  "stsuffix",
+  "InUGB",
+  "InURA",
+  "Add_ID",
+  "Zip"
+ ],
+ "fields_n": 17,
+ "guessed_cols": {
+  "unit": "unittype"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Newberg Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_ID": {
+    "带特殊字符": 0,
+    "最短": "Add00376",
+    "最长": "Add00376",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "f0bc48b3-90a1-4144-8c2b-328225f74077",
+    "最长": "f0bc48b3-90a1-4144-8c2b-328225f74077",
+    "空": 0,
+    "空率": 0.0
+   },
+   "InUGB": {
+    "带特殊字符": 0,
+    "最短": "no",
+    "最长": "no",
+    "空": 1,
+    "空率": 0.003
+   },
+   "InURA": {
+    "带特殊字符": 0,
+    "最短": "no",
+    "最长": "no",
+    "空": 1,
+    "空率": 0.003
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "134945",
+    "最长": "134945",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "97132",
+    "最长": "97132",
+    "空": 0,
+    "空率": 0.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "Newberg",
+    "最长": "Newberg",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fulladd": {
+    "带特殊字符": 0,
+    "最短": "617 N MAIN ST",
+    "最长": "2601 E CRESTVIEW DR BLDG 7C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "incity": {
+    "带特殊字符": 0,
+    "最短": "yes",
+    "最长": "yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "stname": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "OLD HIGHWAY 99W",
+    "空": 0,
+    "空率": 0.0
+   },
+   "stnum": {
+    "带特殊字符": 0,
+    "最短": "300",
+    "最长": "2880",
+    "空": 0,
+    "空率": 0.0
+   },
+   "stprefix": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "NE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "stsuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "sttype": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "PKWY",
+    "空": 1,
+    "空率": 0.003
+   },
+   "tempadd": {
+    "带特殊字符": 0,
+    "最短": "617 N MAIN ST",
+    "最长": "1000 S INDUSTRIAL PKWY",
+    "空": 1,
+    "空率": 0.003
+   },
+   "unitnum": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "105",
+    "空": 223,
+    "空率": 0.743
+   },
+   "unittype": {
+    "带特殊字符": 0,
+    "最短": "apt",
+    "最长": "duplex unit - residence",
+    "空": 141,
+    "空率": 0.47
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "89e00ce74a98e589",
+  "total": 14233,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.002,
+   "number": 0.0155,
+   "street": 0.081,
+   "zip": 0.0054
+  },
+  "nonnull": {
+   "city": 14205,
+   "number": 14012,
+   "street": 13080,
+   "zip": 14156
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0155, 'street': 0.081, 'city': 0.002, 'zip': 0.0054}）→ 可全量采集",
+  "total": 14233,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=stnum street=stprefix city=city zip=Zip",
+ "sample_hash": "89e00ce74a98e589",
+ "site_cols": [],
+ "source_id": "us/or/city_of_newberg",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://services.arcgis.com/LJLnwUl0uTPWJE9B/arcgis/rest/services/Newberg_Addresses_2_view/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,209 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "housenum",
+  "state": "state",
+  "street": "directional",
+  "unit": "unit",
+  "zip": "zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:02:03",
+ "county": "City of McMinnville",
+ "curated_cols": {
+  "city": "city",
+  "number": "housenum",
+  "street": "directional",
+  "zip": "zipcode"
+ },
+ "fields": [
+  "objectid",
+  "misc",
+  "acad_text",
+  "point_x",
+  "point_y",
+  "situs",
+  "unit",
+  "taxlotnum",
+  "housenum",
+  "streetname",
+  "directional",
+  "streettype",
+  "city",
+  "state",
+  "zipcode"
+ ],
+ "fields_n": 15,
+ "guessed_cols": {
+  "state": "state",
+  "unit": "unit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "objectid",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "acad_text": {
+    "带特殊字符": 3,
+    "最短": "RIV",
+    "最长": "R4428BA002556",
+    "空": 0,
+    "空率": 0.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "MCMINNVILLE",
+    "最长": "MCMINNVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "directional": {
+    "带特殊字符": 0,
+    "最短": "SW",
+    "最长": "SW",
+    "空": 256,
+    "空率": 0.853
+   },
+   "housenum": {
+    "带特殊字符": 0,
+    "最短": "400",
+    "最长": "1317",
+    "空": 256,
+    "空率": 0.853
+   },
+   "misc": {
+    "带特殊字符": 0,
+    "最短": "Lot 154",
+    "最长": "Lot 154",
+    "空": 298,
+    "空率": 0.993
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "point_x": {
+    "带特殊字符": 0,
+    "最短": "7518451.8922",
+    "最长": "7523471.26077017",
+    "空": 0,
+    "空率": 0.0
+   },
+   "point_y": {
+    "带特殊字符": 0,
+    "最短": "571590.9828",
+    "最长": "561502.40159925",
+    "空": 0,
+    "空率": 0.0
+   },
+   "situs": {
+    "带特殊字符": 0,
+    "最短": "230 NE 2ND ST",
+    "最长": "2700 SW REDMOND HILL RD",
+    "空": 256,
+    "空率": 0.853
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "OREGON",
+    "最长": "OREGON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "streetname": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "REDMOND HILL",
+    "空": 256,
+    "空率": 0.853
+   },
+   "streettype": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "AVE",
+    "空": 256,
+    "空率": 0.853
+   },
+   "taxlotnum": {
+    "带特殊字符": 3,
+    "最短": "STR",
+    "最长": "R4436  01302",
+    "空": 0,
+    "空率": 0.0
+   },
+   "unit": {
+    "带特殊字符": 0,
+    "最短": "n/a",
+    "最长": "Lot 154",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zipcode": {
+    "带特殊字符": 0,
+    "最短": "97128",
+    "最长": "97128",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6df57c059ed5c563",
+  "total": 15116,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0013,
+   "full": 0.0,
+   "number": 0.0447,
+   "state": 0.0013,
+   "street": 0.0542,
+   "zip": 0.0013
+  },
+  "nonnull": {
+   "city": 15097,
+   "full": 15116,
+   "number": 14440,
+   "state": 15097,
+   "street": 14296,
+   "zip": 15097
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0447, 'street': 0.0542, 'city': 0.0013, 'zip': 0.0013, 'state': 0.0013, 'full': 0.0}）→ 可全量采集",
+  "total": 15116,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=housenum street=directional city=city zip=zipcode",
+ "sample_hash": "6df57c059ed5c563",
+ "site_cols": [
+  "situs",
+  "streetname",
+  "streettype"
+ ],
+ "source_id": "us/or/city_of_mcminnville",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://macgisworx.ci.mcminnville.or.us/mac_or/rest/services/Hosted/Addresses/FeatureServer/2",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:03:45",
+ "county": "Shelby",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/tn/city_of_memphis",
+ "stage": "p0",
+ "state": "TN",
+ "url": "https://mapview.memphistn.gov/arcgis/rest/services/AGO_MapMemphis/MapMemphis_Addresses/MapServer/0",
+ "verdict": "TRANSIENT"
+}

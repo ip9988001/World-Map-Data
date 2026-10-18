@@ -425,3 +425,20 @@ us/nm/city_of_las_cruces,NM,,https://maps.las-cruces.org/gis/rest/services/Commu
 us/nm/city_of_carlsbad,NM,,https://services1.arcgis.com/4ii5mmz1d3LIlzwY/ArcGIS/rest/services/CommunityInformationMar17/FeatureServer/3,,以官方页面为准，待补
 us/ny/city_of_rochester,NY,,https://maps.cityofrochester.gov/arcgis/rest/services/App_PropertyInformation/ROC_Parcel_Query_RPS_Merged/MapServer/0,https://maps.cityofrochester.gov/propinfo/,以官方页面为准，待补
 us/ok/city_of_lawton,OK,,https://services2.arcgis.com/baoUryRiOxhCY0yb/arcgis/rest/services/LawtonData/FeatureServer/13,https://www.lawtonok.gov,以官方页面为准，待补
+us/or/city_of_unity,OR,,https://services3.arcgis.com/QNL6ESLaMOiSE2DQ/ArcGIS/rest/services/Unity_Parcels/FeatureServer/0,,以官方页面为准，待补
+us/or/city_of_la_grande,OR,, https://services8.arcgis.com/fctQFRCLcuzAFEur/ArcGIS/rest/services/Planning_View/FeatureServer/0,,以官方页面为准，待补
+us/or/city_of_lebanon,OR,,https://services1.arcgis.com/K1vRaK7vKFsLv6fj/ArcGIS/rest/services/Civic/FeatureServer/0,https://lebanon.maps.arcgis.com/home/item.html?id=5d224d2362664218a07f960c90ed0bca,以官方页面为准，待补
+us/or/city_of_mcminnville,OR,,https://macgisworx.ci.mcminnville.or.us/mac_or/rest/services/Hosted/Addresses/FeatureServer/2,https://macgisworx.ci.mcminnville.or.us/cityofmcminnville/home/item.html?id=2385cef52cf24d119b98d5d90279f263,以官方页面为准，待补
+us/or/city_of_newberg,OR,,https://services.arcgis.com/LJLnwUl0uTPWJE9B/arcgis/rest/services/Newberg_Addresses_2_view/FeatureServer/0,https://map-newberg.hub.arcgis.com/datasets/Newberg::nddl-addresses/about,以官方页面为准，待补
+us/or/city_of_oregon_city,OR,,https://maps.orcity.org/arcgis/rest/services/AddressPts_PUBLIC/MapServer/0,,以官方页面为准，待补
+us/sc/city_of_aiken,SC,,https://utility.arcgis.com/usrsvcs/servers/d8fb519296c346ccae2a04083406a5e2/rest/services/BaseMap/MapServer/14,https://open-data-aiken-sc.hub.arcgis.com/datasets/aiken-sc::aiken-basemap-default-image-layer/about?layer=14,以官方页面为准，待补
+us/sc/city_of_myrtle_beach,SC,,https://services2.arcgis.com/650sW8BhgpAHhq6u/ArcGIS/rest/services/ADDRESSES_view/FeatureServer/0,https://www.cityofmyrtlebeach.com/departments/gis_division.php,以官方页面为准，待补
+us/sc/city_of_rock_hill,SC,,https://rockhillgis.cityofrockhill.com/arcgis/rest/services/mbl_add/address/MapServer/0,,以官方页面为准，待补
+us/tn/city_of_murfreesboro,TN,,https://maps3.murfreesborotn.gov/mboro/rest/services/GIS/PARCELS_NEW/MapServer/0,,以官方页面为准，待补
+us/tn/city_of_memphis,TN,,https://mapview.memphistn.gov/arcgis/rest/services/AGO_MapMemphis/MapMemphis_Addresses/MapServer/0,,以官方页面为准，待补
+us/tx/city_of_mesquite,TX,,https://gisservice.cityofmesquite.com/arcgis/rest/services/cached_services/buildings_addresses/MapServer/1,,以官方页面为准，待补
+us/tx/city_of_palestine,TX,,https://maps.etcog.org/arcgis/rest/services/Addresses/PalestineAddresses/FeatureServer/0,,以官方页面为准，待补
+us/tx/city_of_garland,TX,,https://maps2.garlandtx.gov/server1/rest/services/BASEMAP/ADDRESS/MapServer/0,https://data-garland.hub.arcgis.com,以官方页面为准，待补
+us/tx/city_of_horseshoe_bay,TX,,https://services2.arcgis.com/PGv0SS9sE3M9RybT/ArcGIS/rest/services/Address_Pts/FeatureServer/0,,以官方页面为准，待补
+us/tx/city_of_round_rock,TX,,https://maps.roundrocktexas.gov/arcgis/rest/services/Base/AddressPoints/MapServer/0,https://geohub.roundrocktexas.gov/datasets/CORR::address-points-round-rock/about,以官方页面为准，待补
+us/tx/city_of_san_antonio,TX,,https://services.arcgis.com/g1fRTDLeMgspWrYp/ArcGIS/rest/services/COSA_Address/FeatureServer/15,,以官方页面为准，待补

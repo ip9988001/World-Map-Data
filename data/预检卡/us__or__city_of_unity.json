@@ -1,0 +1,265 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITYSTATE",
+  "number": "HSENO",
+  "state": "CITYSTATE",
+  "street": "DIRECTN",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:01:51",
+ "county": "Baker",
+ "curated_cols": {
+  "number": "HSENO",
+  "street": "DIRECTN"
+ },
+ "fields": [
+  "OBJECTID",
+  "MapAcres",
+  "REFNO",
+  "MAP",
+  "TAXLT",
+  "OWNER",
+  "CONTRACTBU",
+  "ADDLINE_1",
+  "ADDLINE_2",
+  "CITYSTATE",
+  "ZIP",
+  "ACRES",
+  "HSENO",
+  "HSEEXT",
+  "DIRECTN",
+  "STRDNAME",
+  "STTYPE",
+  "YRBLT",
+  "BLDSQFT",
+  "LOTSQFT",
+  "Shape_Leng",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "city": "CITYSTATE",
+  "state": "CITYSTATE",
+  "zip": "ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "UnityParcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACRES": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "1876.78",
+    "空": 62,
+    "空率": 0.207
+   },
+   "ADDLINE_1": {
+    "带特殊字符": 7,
+    "最短": "PO BOX 635",
+    "最长": "WAKEMAN, JAY & PAULETTE M",
+    "空": 273,
+    "空率": 0.91
+   },
+   "ADDLINE_2": {
+    "带特殊字符": 1,
+    "最短": "GEN DEL",
+    "最长": "22277 UPPER PLEASANT RIDGE RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BLDSQFT": {
+    "带特殊字符": 0,
+    "最短": "96",
+    "最长": "1056",
+    "空": 168,
+    "空率": 0.56
+   },
+   "CITYSTATE": {
+    "带特殊字符": 299,
+    "最短": "VALE, OR",
+    "最长": "COEUR D ALENE, ID",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CONTRACTBU": {
+    "带特殊字符": 4,
+    "最短": "DBA ROCKRIM RANCH",
+    "最长": "HAUSOTTER, THEODORE & JODIE CP",
+    "空": 295,
+    "空率": 0.983
+   },
+   "DIRECTN": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 299,
+    "空率": 0.997
+   },
+   "HSEEXT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HSENO": {
+    "带特殊字符": 0,
+    "最短": "205",
+    "最长": "31622",
+    "空": 167,
+    "空率": 0.557
+   },
+   "LOTSQFT": {
+    "带特殊字符": 0,
+    "最短": "300",
+    "最长": "284577.4",
+    "空": 240,
+    "空率": 0.8
+   },
+   "MAP": {
+    "带特殊字符": 0,
+    "最短": "12S36",
+    "最长": "12S3827AB",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MapAcres": {
+    "带特殊字符": 0,
+    "最短": "1.1072",
+    "最长": "92.30864",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNER": {
+    "带特殊字符": 259,
+    "最短": "FLR LLC",
+    "最长": "CLUGSTON, BONNIE M        TTEE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REFNO": {
+    "带特殊字符": 0,
+    "最短": "10834",
+    "最长": "10834",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRDNAME": {
+    "带特殊字符": 5,
+    "最短": "MUNN",
+    "最长": "RATTLESNAKE",
+    "空": 167,
+    "空率": 0.557
+   },
+   "STTYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "LOOP",
+    "空": 192,
+    "空率": 0.64
+   },
+   "Shape_Leng": {
+    "带特殊字符": 0,
+    "最短": "12237.94785",
+    "最长": "8635.60885985",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "96508469.5",
+    "最长": "4020964.3884277344",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "10508.029580792",
+    "最长": "23856.050504634655",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TAXLT": {
+    "带特殊字符": 0,
+    "最短": "200",
+    "最长": "1100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YRBLT": {
+    "带特殊字符": 0,
+    "最短": "1986",
+    "最长": "1986",
+    "空": 176,
+    "空率": 0.587
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "97884",
+    "最长": "97884",
+    "空": 5,
+    "空率": 0.017
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "f1cd6e55d7862f49",
+  "total": 394,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 394,
+   "number": 394,
+   "state": 394,
+   "street": 394,
+   "zip": 394
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",
+  "total": 394,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HSENO street=DIRECTN",
+ "sample_hash": "f1cd6e55d7862f49",
+ "site_cols": [],
+ "source_id": "us/or/city_of_unity",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://services3.arcgis.com/QNL6ESLaMOiSE2DQ/ArcGIS/rest/services/Unity_Parcels/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

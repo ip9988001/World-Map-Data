@@ -1,0 +1,136 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "LSt_PreDir"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:03:47",
+ "county": "Anderson",
+ "curated_cols": {
+  "street": "LSt_PreDir"
+ },
+ "fields": [
+  "Add_Number",
+  "AddressFullName",
+  "LSt_Name",
+  "LSt_PosDir",
+  "LSt_PreDir",
+  "LSt_Type",
+  "OBJECTID",
+  "GlobalID"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {
+  "number": "Add_Number"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Palestine Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_WEAK",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "1202",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddressFullName": {
+    "带特殊字符": 0,
+    "最短": "405 2ND ST",
+    "最长": "1510 MARTIN LUTHER KING JR BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{26211FB6-916D-4AF7-A1BB-D067F574AC45}",
+    "最长": "{26211FB6-916D-4AF7-A1BB-D067F574AC45}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_Name": {
+    "带特殊字符": 0,
+    "最短": "OAK",
+    "最长": "MARTIN LUTHER KING JR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LSt_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LSt_PreDir": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 185,
+    "空率": 0.617
+   },
+   "LSt_Type": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 14,
+    "空率": 0.047
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a678307df7e6d910",
+  "total": 8360,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.019,
+   "number": 0.0,
+   "street": 0.0329
+  },
+  "nonnull": {
+   "full": 8201,
+   "number": 8360,
+   "street": 8085
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0329, 'full': 0.019}）→ 可全量采集",
+  "total": 8360,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段可能是够的（**猜的**）：number=Add_Number street=LSt_PreDir —— 需造刀时用样本确认",
+ "sample_hash": "a678307df7e6d910",
+ "site_cols": [
+  "AddressFullName"
+ ],
+ "source_id": "us/tx/city_of_palestine",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://maps.etcog.org/arcgis/rest/services/Addresses/PalestineAddresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

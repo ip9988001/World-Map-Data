@@ -1,0 +1,372 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDR_NUMBER",
+  "unit": "ADDR_UNIT",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:05:08",
+ "county": "City of Round Rock",
+ "curated_cols": {
+  "number": "ADDR_NUMBER",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRESS_ID",
+  "LABEL_NAME",
+  "ADDR_NUMBER",
+  "ADDR_UNIT",
+  "RD_FULLNAME",
+  "SEGMENT_ID",
+  "RD_PREFIX",
+  "RD_NAME",
+  "RD_TYPE",
+  "RD_SUFFIX",
+  "RD_TRAVEL_DIR",
+  "RD_ALIAS_NAME",
+  "CITY",
+  "POSTAL_COMM",
+  "ZIP",
+  "COUNTY",
+  "ADDR_TYPE",
+  "SUPP_INFO",
+  "ADDR_NOTES1",
+  "ESN",
+  "UPDATING_AGENCY",
+  "STATUS",
+  "COLLECTION_METHOD",
+  "GlobalID",
+  "UID",
+  "PARCEL_UID",
+  "UIDWC",
+  "UIDGT",
+  "UIDCP",
+  "UIDLE",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "ADDR_CLASS",
+  "SHAPE"
+ ],
+ "fields_n": 37,
+ "guessed_cols": {
+  "city": "CITY",
+  "unit": "ADDR_UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "extremes": {
+   "ADDRESS_ID": {
+    "带特殊字符": 0,
+    "最短": "780165",
+    "最长": "7153611",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_CLASS": {
+    "带特殊字符": 0,
+    "最短": "SUB",
+    "最长": "MAIN",
+    "空": 297,
+    "空率": 0.99
+   },
+   "ADDR_NOTES1": {
+    "带特殊字符": 1,
+    "最短": "B",
+    "最长": "Retired Commerical Address",
+    "空": 290,
+    "空率": 0.967
+   },
+   "ADDR_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "13420",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_TYPE": {
+    "带特殊字符": 0,
+    "最短": "OTHER",
+    "最长": "MULTI FAMILY HOUSE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_UNIT": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "C2",
+    "空": 289,
+    "空率": 0.963
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "WC",
+    "最长": "WC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COLLECTION_METHOD": {
+    "带特殊字符": 0,
+    "最短": "DIGITAL SURVEY",
+    "最长": "DIGITAL SURVEY",
+    "空": 299,
+    "空率": 0.997
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "WILLIAMSON",
+    "最长": "WILLIAMSON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "433",
+    "最长": "433",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{6BB15A75-69B7-40DC-B990-81AC1B5AE28D}",
+    "最长": "{6BB15A75-69B7-40DC-B990-81AC1B5AE28D}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LABEL_NAME": {
+    "带特殊字符": 0,
+    "最短": "8076",
+    "最长": "238 LITTLE GABRIEL RIVER DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_UID": {
+    "带特殊字符": 0,
+    "最短": "1100073",
+    "最长": "1100073",
+    "空": 206,
+    "空率": 0.687
+   },
+   "POSTAL_COMM": {
+    "带特殊字符": 0,
+    "最短": "HUTTO",
+    "最长": "LIBERTY HILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_ALIAS_NAME": {
+    "带特殊字符": 0,
+    "最短": "1855 S SH 95",
+    "最长": "was 303 CR 179",
+    "空": 298,
+    "空率": 0.993
+   },
+   "RD_FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "CR 234",
+    "最长": "LITTLE GABRIEL RIVER DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_NAME": {
+    "带特殊字符": 0,
+    "最短": "1ST",
+    "最长": "LITTLE GABRIEL RIVER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "SW",
+    "空": 278,
+    "空率": 0.927
+   },
+   "RD_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RD_TRAVEL_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "SPUR",
+    "空": 79,
+    "空率": 0.263
+   },
+   "SEGMENT_ID": {
+    "带特殊字符": 0,
+    "最短": "787235",
+    "最长": "787235",
+    "空": 23,
+    "空率": 0.077
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "OPEN",
+    "最长": "RETIRE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUPP_INFO": {
+    "带特殊字符": 1,
+    "最短": "T DON HUTTO CENTER",
+    "最长": "Retired with Pecan Creek: 4",
+    "空": 297,
+    "空率": 0.99
+   },
+   "UID": {
+    "带特殊字符": 0,
+    "最短": "1105580",
+    "最长": "1105580",
+    "空": 205,
+    "空率": 0.683
+   },
+   "UIDCP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UIDGT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UIDLE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UIDWC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UPDATING_AGENCY": {
+    "带特殊字符": 0,
+    "最短": "WC",
+    "最长": "WC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "78665",
+    "最长": "78665",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1578747344000",
+    "最长": "1578747344000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "GIS",
+    "最长": "TREVOR.BARRINGTON",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "4d5cbcb668603f77",
+  "total": 422420,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.008,
+   "full": 0.6481,
+   "number": 0.0069,
+   "zip": 0.0073
+  },
+  "nonnull": {
+   "city": 419044,
+   "full": 148648,
+   "number": 419521,
+   "zip": 419336
+  },
+  "reason": "服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.0069, 'city': 0.008, 'zip': 0.0073, 'full': 0.6481}）→ 全量数据证伪，拒收",
+  "total": 422420,
+  "verdict": "REJECTED_P2"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['ADDRESS_ID', 'ADDR_NUMBER'] → 交给 concat_addr 拆",
+ "sample_hash": "4d5cbcb668603f77",
+ "site_cols": [
+  "ADDRESS_ID",
+  "ADDR_NUMBER",
+  "ADDR_UNIT",
+  "ADDR_TYPE",
+  "ADDR_NOTES1"
+ ],
+ "source_id": "us/tx/city_of_round_rock",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://maps.roundrocktexas.gov/arcgis/rest/services/Base/AddressPoints/MapServer/0",
+ "verdict": "REJECTED_P2"
+}

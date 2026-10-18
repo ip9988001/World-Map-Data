@@ -1,0 +1,139 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS",
+  "unit": "MAPTAXLOT"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:01:55",
+ "county": "City of La Grande",
+ "curated_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS"
+ },
+ "fields": [
+  "OBJECTID",
+  "MAPTAXLOT",
+  "PARENTTAXLOT",
+  "ADDRESS",
+  "NONCONFORM",
+  "NONCONFNOTES",
+  "NOTES",
+  "GlobalID"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {
+  "unit": "MAPTAXLOT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "PlanningPoint",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "602 M AV",
+    "最长": "62085 BLACKHAWK TRAIL LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "cff97d8f-97d6-40df-a3b3-e917b1337a27",
+    "最长": "cff97d8f-97d6-40df-a3b3-e917b1337a27",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAPTAXLOT": {
+    "带特殊字符": 0,
+    "最短": "03S38E00101",
+    "最长": "02S38E31DC02800",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NONCONFNOTES": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NONCONFORM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NOTES": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "6059",
+    "最长": "6059",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARENTTAXLOT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "cbdf604fa7c624df",
+  "total": 6314,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 6314,
+   "number": 6314,
+   "street": 6314
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 6314,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ADDRESS（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "cbdf604fa7c624df",
+ "site_cols": [
+  "ADDRESS"
+ ],
+ "source_id": "us/or/city_of_la_grande",
+ "stage": "p0",
+ "state": "OR",
+ "url": " https://services8.arcgis.com/fctQFRCLcuzAFEur/ArcGIS/rest/services/Planning_View/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

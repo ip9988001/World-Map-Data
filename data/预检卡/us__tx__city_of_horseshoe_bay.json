@@ -1,0 +1,419 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPAL",
+  "number": "ADDR_NUM",
+  "state": "STATE",
+  "street": "FULL_NAME",
+  "unit": "FLOOR",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:05:03",
+ "county": "City of Horseshoe Bay",
+ "curated_cols": {
+  "number": "ADDR_NUM",
+  "state": "STATE",
+  "street": "FULL_NAME",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "FID",
+  "SOURCE",
+  "PROVIDER",
+  "LAST_MOD",
+  "EFF_DATE",
+  "SITE_ID",
+  "SITEUNQID",
+  "COUNTRY",
+  "STATE",
+  "COUNTY",
+  "MUNICIPAL",
+  "MUNI_DIV",
+  "NBRHOOD",
+  "ADDNUM_PRE",
+  "ADDR_NUM",
+  "ADDNUM_SUF",
+  "PRE_MOD",
+  "PRE_DIR",
+  "PRE_TYPE",
+  "ST_NAME",
+  "ST_TYPE",
+  "POST_DIR",
+  "POST_MOD",
+  "FULL_NAME",
+  "ST_ALIAS",
+  "FULL_ADDR",
+  "ESN",
+  "MSAG_COM",
+  "POSTAL_COM",
+  "ZIP",
+  "ZIP4",
+  "BLDG",
+  "FLOOR",
+  "UNIT",
+  "ROOM",
+  "SEAT",
+  "LANDMARK",
+  "MILEPOST",
+  "SITE_TYPE",
+  "POINT_X",
+  "POINT_Y",
+  "NOTES",
+  "ELEVATION",
+  "GC_Excepti",
+  "created_us",
+  "created_da",
+  "last_edite",
+  "last_edi_1"
+ ],
+ "fields_n": 48,
+ "guessed_cols": {
+  "city": "MUNICIPAL",
+  "unit": "FLOOR"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address_Pts",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDNUM_PRE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDNUM_SUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADDR_NUM": {
+    "带特殊字符": 0,
+    "最短": "30",
+    "最长": "1101",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BLDG": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "COUNTRY": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "LLANO",
+    "最长": "BURNET",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EFF_DATE": {
+    "带特殊字符": 0,
+    "最短": "888278400000",
+    "最长": "1156896000000",
+    "空": 234,
+    "空率": 0.78
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "00412",
+    "最长": "00412",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULL_ADDR": {
+    "带特殊字符": 0,
+    "最短": "1110 UTE",
+    "最长": "305 HORSESHOE BAY NORTH BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_NAME": {
+    "带特殊字符": 0,
+    "最短": "UTE",
+    "最长": "HORSESHOE BAY NORTH BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LANDMARK": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LAST_MOD": {
+    "带特殊字符": 0,
+    "最短": "1369958400000",
+    "最长": "1369958400000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MILEPOST": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MSAG_COM": {
+    "带特殊字符": 0,
+    "最短": "HSB LLANO CO",
+    "最长": "HSB BURNET CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNICIPAL": {
+    "带特殊字符": 0,
+    "最短": "HSB LLANO CO",
+    "最长": "HSB BURNET CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNI_DIV": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NBRHOOD": {
+    "带特殊字符": 0,
+    "最短": "HSB",
+    "最长": "APPLEHEAD ISLAND",
+    "空": 253,
+    "空率": 0.843
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "-98.36742",
+    "最长": "-98.40360417",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_COM": {
+    "带特殊字符": 0,
+    "最短": "HSB LLANO CO",
+    "最长": "HSB BURNET CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POST_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POST_MOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 280,
+    "空率": 0.933
+   },
+   "PRE_MOD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PROVIDER": {
+    "带特殊字符": 0,
+    "最短": "CAPCOG911",
+    "最长": "CAPCOG911",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROOM": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SEAT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SITEUNQID": {
+    "带特殊字符": 300,
+    "最短": "7369AP@burnetcountytexas.org",
+    "最长": "25138AP@burnetcountytexas.org",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_ID": {
+    "带特殊字符": 0,
+    "最短": "7369",
+    "最长": "25138",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "BURNET",
+    "最长": "BURNET",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "TX",
+    "最长": "TX",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_ALIAS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "UTE",
+    "最长": "HORSESHOE BAY NORTH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "PL",
+    "最长": "BLVD",
+    "空": 188,
+    "空率": 0.627
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "SUNSHINE 6",
+    "空": 212,
+    "空率": 0.707
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "78657",
+    "最长": "78657",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b80a6f56b3fb4a46",
+  "total": 4999,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 4999,
+   "full": 4999,
+   "number": 4999,
+   "state": 4999,
+   "street": 4999,
+   "zip": 4999
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 4999,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_NUM street=FULL_NAME zip=ZIP",
+ "sample_hash": "b80a6f56b3fb4a46",
+ "site_cols": [
+  "SITE_ID",
+  "SITEUNQID",
+  "ADDR_NUM",
+  "FULL_ADDR",
+  "SITE_TYPE"
+ ],
+ "source_id": "us/tx/city_of_horseshoe_bay",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://services2.arcgis.com/PGv0SS9sE3M9RybT/ArcGIS/rest/services/Address_Pts/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

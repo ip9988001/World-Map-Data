@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:02:17",
+ "county": "City of Tigard",
+ "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+ "license_status": "ok",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'details': []}",
+ "source_id": "us/or/city_of_tigard",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://svr.tigardmaps.com/arcgis/rest/services/Framework/tig_addresses/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

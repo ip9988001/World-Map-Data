@@ -1,0 +1,255 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MAIL_CITY",
+  "number": "HOUSE",
+  "state": "STATE",
+  "street": "FDPRE",
+  "unit": "UNIT_TYPE",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:02:18",
+ "county": "Portland Metro",
+ "curated_cols": {
+  "city": "MAIL_CITY",
+  "number": "HOUSE",
+  "state": "STATE",
+  "street": "FDPRE",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "FID",
+  "HOUSE_NO",
+  "HOUSE",
+  "UNIT_TYPE",
+  "UNIT_NO",
+  "FDPRE",
+  "FNAME",
+  "FTYPE",
+  "FDSUF",
+  "FULLADD",
+  "STATE",
+  "ZIP",
+  "ZIP4",
+  "TLID",
+  "SOURCE",
+  "X_COORD",
+  "Y_COORD",
+  "ADDRESS",
+  "JURIS_CITY",
+  "MAIL_CITY",
+  "METRO_ID"
+ ],
+ "fields_n": 21,
+ "guessed_cols": {
+  "unit": "UNIT_TYPE"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Master Address File MAF",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "https://rlisdiscovery.oregonmetro.gov/pages/open-database-license",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "13395 SW 2ND ST",
+    "最长": "10090 SW BEAVERTON HILLSDALE HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FDPRE": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "SW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FDSUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FNAME": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "BEAVERTON HILLSDALE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FTYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLADD": {
+    "带特殊字符": 0,
+    "最短": "13395 SW 2ND ST",
+    "最长": "9880 SW BEAVERTON HILLSDALE HWY # 104",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE": {
+    "带特殊字符": 0,
+    "最短": "715",
+    "最长": "12875",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "715",
+    "最长": "12875",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JURIS_CITY": {
+    "带特殊字符": 0,
+    "最短": "BEAVERTON",
+    "最长": "BEAVERTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAIL_CITY": {
+    "带特殊字符": 0,
+    "最短": "TIGARD",
+    "最长": "BEAVERTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "METRO_ID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1201",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCE": {
+    "带特殊字符": 0,
+    "最短": "BEAV",
+    "最长": "BEAV",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "OR",
+    "最长": "OR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TLID": {
+    "带特殊字符": 0,
+    "最短": "1S121DD ROW",
+    "最长": "1S122CC13200",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT_NO": {
+    "带特殊字符": 0,
+    "最短": "I",
+    "最长": "1038",
+    "空": 161,
+    "空率": 0.537
+   },
+   "UNIT_TYPE": {
+    "带特殊字符": 0,
+    "最短": "#",
+    "最长": "#",
+    "空": 161,
+    "空率": 0.537
+   },
+   "X_COORD": {
+    "带特殊字符": 0,
+    "最短": "7601424",
+    "最长": "7611006.48786",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_COORD": {
+    "带特殊字符": 0,
+    "最短": "681841.5",
+    "最长": "663206.66207",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "97008",
+    "最长": "97008",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "01f5e15939ec24a6",
+  "total": 903746,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 903746,
+   "full": 903746,
+   "number": 903746,
+   "state": 903746,
+   "street": 903746,
+   "zip": 903746
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 903746,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HOUSE street=FDPRE city=MAIL_CITY zip=ZIP",
+ "sample_hash": "01f5e15939ec24a6",
+ "site_cols": [
+  "ADDRESS"
+ ],
+ "source_id": "us/or/portland_metro",
+ "stage": "p0",
+ "state": "OR",
+ "url": "https://services2.arcgis.com/McQ0OlIABe29rJJy/ArcGIS/rest/services/Master_Address_File_MAF/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

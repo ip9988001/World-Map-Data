@@ -1,0 +1,267 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "FULL_ADDRESS",
+  "street": "FULL_ADDRESS",
+  "unit": "BUILDING_NO"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:05:23",
+ "county": "College Station",
+ "curated_cols": {
+  "number": "FULL_ADDRESS",
+  "street": "FULL_ADDRESS"
+ },
+ "fields": [
+  "OBJECTID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "FEATURE_TYPE",
+  "JURISDICTION",
+  "OCCUPANT",
+  "FULL_ADDRESS",
+  "MF_TYPE",
+  "BUILDING_NO",
+  "UNIT_LOW",
+  "UNIT_HIGH",
+  "PROJECT_NO",
+  "LANDUSE_TYPE",
+  "PROJECT_STATUS",
+  "LANDMARK_CLASS",
+  "CONTACT_NUMBER",
+  "Shape__Area",
+  "Shape__Length",
+  "GlobalID",
+  "FIRE_DIST",
+  "CONTACT_NAME",
+  "SECONDARY_NUMBER"
+ ],
+ "fields_n": 24,
+ "guessed_cols": {
+  "unit": "BUILDING_NO"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Structures",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BUILDING_NO": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "PARKING",
+    "空": 157,
+    "空率": 0.523
+   },
+   "CONTACT_NAME": {
+    "带特殊字符": 0,
+    "最短": "Eduardo cisneros",
+    "最长": "Eduardo cisneros",
+    "空": 299,
+    "空率": 0.997
+   },
+   "CONTACT_NUMBER": {
+    "带特殊字符": 142,
+    "最短": "NONE",
+    "最长": "(979) 774-1111",
+    "空": 151,
+    "空率": 0.503
+   },
+   "FEATURE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "BANK",
+    "最长": "HIGH-DENSITY RESIDENTIAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIRE_DIST": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "6",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 23,
+    "最短": "1806 FM 158",
+    "最长": "202 HARVEY MITCHELL PKWY S STE 1210",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{F5CCB3A3-261B-4EAD-8575-90888049EB32}",
+    "最长": "{F5CCB3A3-261B-4EAD-8575-90888049EB32}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JURISDICTION": {
+    "带特殊字符": 0,
+    "最短": "CS",
+    "最长": "TAMU",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LANDMARK_CLASS": {
+    "带特殊字符": 0,
+    "最短": "TAMU",
+    "最长": "HOSPITAL/HEALTH FACILITY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LANDUSE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "MIXED USE",
+    "最长": "RESIDENTIAL",
+    "空": 136,
+    "空率": 0.453
+   },
+   "MF_TYPE": {
+    "带特殊字符": 0,
+    "最短": "CONDO",
+    "最长": "APARTMENT COMPLEX",
+    "空": 156,
+    "空率": 0.52
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OCCUPANT": {
+    "带特殊字符": 47,
+    "最短": "SONIC",
+    "最长": "TEXAS A&M UNIV NATIONAL AEROTHERMOCHEMISTRY LAB",
+    "空": 41,
+    "空率": 0.137
+   },
+   "PROJECT_NO": {
+    "带特殊字符": 0,
+    "最短": "SP2016-000076",
+    "最长": "SPR2012-500190",
+    "空": 277,
+    "空率": 0.923
+   },
+   "PROJECT_STATUS": {
+    "带特殊字符": 0,
+    "最短": "EXISTING",
+    "最长": "EXISTING",
+    "空": 152,
+    "空率": 0.507
+   },
+   "SECONDARY_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "358.5",
+    "最长": "153361.71484375",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "510.299669710077",
+    "最长": "1244.5723621491418",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT_HIGH": {
+    "带特殊字符": 0,
+    "最短": "D",
+    "最长": "1008",
+    "空": 184,
+    "空率": 0.613
+   },
+   "UNIT_LOW": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "1001",
+    "空": 184,
+    "空率": 0.613
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1751292280000",
+    "最长": "1751292280000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "FIRE",
+    "最长": "ABEANE",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "3b430ee1ca06d666",
+  "total": 44525,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0306,
+   "number": 0.0306,
+   "street": 0.0306
+  },
+  "nonnull": {
+   "full": 43163,
+   "number": 43163,
+   "street": 43163
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0306, 'street': 0.0306, 'full': 0.0306}）→ 可全量采集",
+  "total": 44525,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=FULL_ADDRESS street=FULL_ADDRESS（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "3b430ee1ca06d666",
+ "site_cols": [
+  "FULL_ADDRESS"
+ ],
+ "source_id": "us/tx/city_of_college_station",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://gis.cstx.gov/csgis/rest/services/_OpenData/OpenData_FDS/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

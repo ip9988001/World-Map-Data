@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 23:02:37",
+ "county": "City of Aiken",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Layer not found', 'details': []}",
+ "source_id": "us/sc/city_of_aiken",
+ "stage": "p0",
+ "state": "SC",
+ "url": "https://utility.arcgis.com/usrsvcs/servers/d8fb519296c346ccae2a04083406a5e2/rest/services/BaseMap/MapServer/14",
+ "verdict": "REJECTED_P0"
+}
