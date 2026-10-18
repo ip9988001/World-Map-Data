@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:36:49",
+ "county": "Cheshire",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: IP address mismatch, certificate is not valid → 下轮重试",
+ "source_id": "us/nh/jaffrey",
+ "stage": "p0",
+ "state": "NH",
+ "url": "https://35.172.145.31/arcgis/rest/services/JaffreyNH/JaffreyE911/MapServer/0",
+ "verdict": "TRANSIENT"
+}

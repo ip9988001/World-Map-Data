@@ -1,0 +1,414 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "STREET_NUM",
+  "state": "STATEDAREA",
+  "street": "STREET_NAME",
+  "unit": "NORESUNITS",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:37:01",
+ "county": "City of Rochester",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "STREET_NUM",
+  "street": "STREET_NAME",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "PARCELID",
+  "PRINTKEY",
+  "STREET_NUM",
+  "STREET_NAME",
+  "SITEADDRESS",
+  "CITY",
+  "ZIP5",
+  "CLASSCD",
+  "CLASSDSCRP",
+  "PROPERTYTYPE",
+  "OWNERNME1",
+  "PSTLADDRESS",
+  "PSTLCITY",
+  "LOT_FRONTAGE",
+  "LOT_DEPTH",
+  "STATEDAREA",
+  "CURRENT_LAND_VALUE",
+  "CURRENT_TOTAL_VALUE",
+  "CURRENT_TAXABLE_VALUE",
+  "TENTATIVE_LAND_VALUE",
+  "TENTATIVE_TOTAL_VALUE",
+  "TENTATIVE_TAXABLE_VALUE",
+  "SALE_DATE",
+  "SALE_PRICE",
+  "BOOK",
+  "PAGE",
+  "DEED_TYPE",
+  "VALID",
+  "RESCOM",
+  "SHAPEACRES",
+  "BISZONING",
+  "OWNERSHIPCODE",
+  "NORESUNITS",
+  "LOW_STREET_NUM",
+  "HIGH_STREET_NUM",
+  "GISEXTDATE",
+  "SHAPE",
+  "SHAPE.STArea()",
+  "SHAPE.STLength()",
+  "LOW_STREET_SORT",
+  "MultiSale",
+  "PARCEL_SOURCE"
+ ],
+ "fields_n": 43,
+ "guessed_cols": {
+  "state": "STATEDAREA",
+  "unit": "NORESUNITS"
+ },
+ "layer": {
+  "maxRecordCount": 200000,
+  "name": "TaxParcel",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BISZONING": {
+    "带特殊字符": 0,
+    "最短": "R-1",
+    "最长": "R-1",
+    "空": 8,
+    "空率": 0.027
+   },
+   "BOOK": {
+    "带特殊字符": 0,
+    "最短": "9260",
+    "最长": "12165",
+    "空": 34,
+    "空率": 0.113
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "ROCHESTER",
+    "最长": "ROCHESTER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CLASSCD": {
+    "带特殊字符": 0,
+    "最短": "312",
+    "最长": "312",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CLASSDSCRP": {
+    "带特殊字符": 72,
+    "最短": "Parking Lot",
+    "最长": "Residential with Improvements",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CURRENT_LAND_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "172500",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CURRENT_TAXABLE_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "1300000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CURRENT_TOTAL_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "1300000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DEED_TYPE": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "B",
+    "空": 39,
+    "空率": 0.13
+   },
+   "GISEXTDATE": {
+    "带特殊字符": 0,
+    "最短": "1792303292000",
+    "最长": "1792303292000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HIGH_STREET_NUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "640.5",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOT_DEPTH": {
+    "带特殊字符": 0,
+    "最短": "6.0",
+    "最长": "257.38",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LOT_FRONTAGE": {
+    "带特殊字符": 0,
+    "最短": "5.0",
+    "最长": "138.14",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LOW_STREET_NUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "640.5",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOW_STREET_SORT": {
+    "带特殊字符": 0,
+    "最短": "1.0",
+    "最长": "790.0",
+    "空": 3,
+    "空率": 0.01
+   },
+   "NORESUNITS": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 92,
+    "空率": 0.307
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNERNME1": {
+    "带特殊字符": 8,
+    "最短": "Stek Mary",
+    "最长": "Kristopher P Klinkbeil Jr TTEE of Klinkbeil Family Irrev Trus",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OWNERSHIPCODE": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 159,
+    "空率": 0.53
+   },
+   "PAGE": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "00290",
+    "空": 34,
+    "空率": 0.113
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "04628000010010000000",
+    "最长": "04628000010010000000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PRINTKEY": {
+    "带特殊字符": 0,
+    "最短": "046.28-1-1",
+    "最长": "046.84-1-16.001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PROPERTYTYPE": {
+    "带特殊字符": 0,
+    "最短": "Commercial",
+    "最长": "Community Services",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PSTLADDRESS": {
+    "带特殊字符": 0,
+    "最短": "18 East Av",
+    "最长": "500 E 77th St Apt 1922",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PSTLCITY": {
+    "带特殊字符": 300,
+    "最短": "Davie, FL 33314",
+    "最长": "Valley Stream, NY 11581",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RESCOM": {
+    "带特殊字符": 0,
+    "最短": "R",
+    "最长": "R",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SALE_DATE": {
+    "带特殊字符": 0,
+    "最短": "03/19/2019",
+    "最长": "03/19/2019",
+    "空": 34,
+    "空率": 0.113
+   },
+   "SALE_PRICE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1175000",
+    "空": 34,
+    "空率": 0.113
+   },
+   "SHAPE.STArea()": {
+    "带特殊字符": 0,
+    "最短": "70.1104837",
+    "最长": "5099.125200745",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SHAPE.STLength()": {
+    "带特殊字符": 0,
+    "最短": "142.27404007665",
+    "最长": "137.67374832343933",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SHAPEACRES": {
+    "带特殊字符": 0,
+    "最短": "0.130472",
+    "最长": "0.66782706",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITEADDRESS": {
+    "带特殊字符": 0,
+    "最短": "Beach Ave",
+    "最长": "451-0455 Beach Ave",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATEDAREA": {
+    "带特殊字符": 0,
+    "最短": "0.00",
+    "最长": "0.00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME": {
+    "带特殊字符": 0,
+    "最短": "Clio St",
+    "最长": "Cloverdale St",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "451-0455",
+    "空": 3,
+    "空率": 0.01
+   },
+   "TENTATIVE_LAND_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "172500",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TENTATIVE_TAXABLE_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "1300000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TENTATIVE_TOTAL_VALUE": {
+    "带特殊字符": 0,
+    "最短": "1000",
+    "最长": "1300000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "VALID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "14612",
+    "最长": "14612",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "fba4f47df2cfaa7c",
+  "total": 64707,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0004,
+   "full": 0.0004,
+   "number": 0.0004,
+   "state": 0.0004,
+   "street": 0.0004,
+   "zip": 0.0004
+  },
+  "nonnull": {
+   "city": 64683,
+   "full": 64683,
+   "number": 64683,
+   "state": 64683,
+   "street": 64683,
+   "zip": 64683
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0004, 'street': 0.0004, 'city': 0.0004, 'zip': 0.0004, 'state': 0.0004, 'full': 0.0004}）→ 可全量采集",
+  "total": 64707,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STREET_NUM street=STREET_NAME city=CITY zip=ZIP5",
+ "sample_hash": "fba4f47df2cfaa7c",
+ "site_cols": [
+  "STREET_NUM",
+  "STREET_NAME",
+  "SITEADDRESS",
+  "PROPERTYTYPE",
+  "PSTLADDRESS"
+ ],
+ "source_id": "us/ny/city_of_rochester",
+ "stage": "p0",
+ "state": "NY",
+ "url": "https://maps.cityofrochester.gov/arcgis/rest/services/App_PropertyInformation/ROC_Parcel_Query_RPS_Merged/MapServer/0",
+ "verdict": "CONTRACTED"
+}

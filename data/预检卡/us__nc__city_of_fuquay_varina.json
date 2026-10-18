@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:51",
+ "county": "City of Fuquay-Varina",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试",
+ "source_id": "us/nc/city_of_fuquay_varina",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://arcgis.fuquay-varina.org/arcgis/rest/services/public/Address_Points/MapServer/0",
+ "verdict": "TRANSIENT"
+}

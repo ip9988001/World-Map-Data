@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:36:51",
+ "county": "Somerset",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/nj/franklin_township",
+ "stage": "p0",
+ "state": "NJ",
+ "url": "https://ags2.cdm.com/ArcGIS/rest/services/FTSA_Flex/MapServer/3",
+ "verdict": "TRANSIENT"
+}

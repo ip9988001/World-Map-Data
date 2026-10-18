@@ -1,0 +1,203 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Owner_city",
+  "number": "Address",
+  "street": "Address",
+  "zip": "Owner_zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:26",
+ "county": "City of Tecumseh",
+ "curated_cols": {
+  "number": "Address",
+  "street": "Address"
+ },
+ "fields": [
+  "FID",
+  "PARCEL_ID",
+  "ACRES",
+  "Shape_Area",
+  "Parcel_No",
+  "Address",
+  "Owner_Name",
+  "Owner_Addr",
+  "Owner_city",
+  "Owner_stat",
+  "Owner_zip",
+  "Class",
+  "SEV",
+  "Taxable",
+  "Street_no"
+ ],
+ "fields_n": 15,
+ "guessed_cols": {
+  "city": "Owner_city",
+  "zip": "Owner_zip"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "tecumseh_parcel",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACRES": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "19.48",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address": {
+    "带特殊字符": 4,
+    "最短": "301 CREE CT",
+    "最长": "900 N OCCIDENTAL RD BLK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Class": {
+    "带特殊字符": 0,
+    "最短": "90",
+    "最长": "401",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner_Addr": {
+    "带特殊字符": 0,
+    "最短": "PO BOX 50",
+    "最长": "ONE MAIN BANK PO BOX 718",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner_Name": {
+    "带特殊字符": 284,
+    "最短": "SMITH, JAN",
+    "最长": "BATTLE REVOC TRUST, ANTHONY M & LEE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner_city": {
+    "带特殊字符": 0,
+    "最短": "ADRIAN",
+    "最长": "BOYNTON BEACH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner_stat": {
+    "带特殊字符": 0,
+    "最短": "MI",
+    "最长": "MI",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Owner_zip": {
+    "带特殊字符": 0,
+    "最短": "49286",
+    "最长": "49286",
+    "空": 4,
+    "空率": 0.013
+   },
+   "PARCEL_ID": {
+    "带特殊字符": 0,
+    "最短": "XT0-320-0410-00",
+    "最长": "XT0-320-0410-00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Parcel_No": {
+    "带特殊字符": 0,
+    "最短": "XT0-320-0410-00",
+    "最长": "XT0-320-0410-00",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SEV": {
+    "带特殊字符": 0,
+    "最短": "6500",
+    "最长": "153000",
+    "空": 7,
+    "空率": 0.023
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "9637.008832",
+    "最长": "82000.0683349",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_no": {
+    "带特殊字符": 0,
+    "最短": "952",
+    "最长": "4587",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Taxable": {
+    "带特殊字符": 0,
+    "最短": "8716",
+    "最长": "148169",
+    "空": 7,
+    "空率": 0.023
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "0b2b6e05af042909",
+  "total": 3707,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 3707,
+   "full": 3707,
+   "number": 3707,
+   "street": 3707,
+   "zip": 3707
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 3707,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Address street=Address",
+ "sample_hash": "0b2b6e05af042909",
+ "site_cols": [
+  "Address",
+  "Owner_Addr",
+  "Street_no"
+ ],
+ "source_id": "us/mi/city_of_tecumseh",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://services6.arcgis.com/vseBlcrQsepHsjub/ArcGIS/rest/services/tecumseh_parcel/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

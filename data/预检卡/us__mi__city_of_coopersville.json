@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:31",
+ "county": "Ottawa",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/mi/city_of_coopersville",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://web1.mobile311.com/arcgis/rest/services/Michigan/CoopersvilleMI/MapServer/46",
+ "verdict": "REJECTED_P0"
+}

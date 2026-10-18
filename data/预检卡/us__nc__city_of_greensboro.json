@@ -1,0 +1,260 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITYCODE",
+  "number": "AD_ST_NUM",
+  "street": "AD_ST_PFX",
+  "unit": "AD_ST_APT",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:53",
+ "county": "Guilford",
+ "curated_cols": {
+  "number": "AD_ST_NUM",
+  "street": "AD_ST_PFX",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "OBJECTID",
+  "X_COORD",
+  "Y_COORD",
+  "AD_SAKEY",
+  "ACTIVE",
+  "AD_ST_NUM",
+  "AD_ST_APT",
+  "AD_ST_PFX",
+  "AD_ST_NAME",
+  "AD_ST_TYPE",
+  "AD_ST_SFX",
+  "ADDRESS",
+  "COMPLETE_ST_NAME",
+  "COMMENTS",
+  "ADD_TYPE",
+  "ADD_TYPE_MISC",
+  "ZIPCODE",
+  "ZIP_PLUS4",
+  "CITYCODE",
+  "GISOBJID",
+  "Address_Label",
+  "Shape",
+  "GlobalID"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "city": "CITYCODE",
+  "unit": "AD_ST_APT"
+ },
+ "layer": {
+  "maxRecordCount": 200000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACTIVE": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "5412 GGO DR",
+    "最长": "5920 HAGAN STONE PARK RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "SF",
+    "最长": "REC",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_TYPE_MISC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AD_SAKEY": {
+    "带特殊字符": 0,
+    "最短": "65158",
+    "最长": "230599",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AD_ST_APT": {
+    "带特殊字符": 0,
+    "最短": "C",
+    "最长": "C",
+    "空": 299,
+    "空率": 0.997
+   },
+   "AD_ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "GGO",
+    "最长": "HAGAN STONE PARK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AD_ST_NUM": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "3611",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AD_ST_PFX": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 299,
+    "空率": 0.997
+   },
+   "AD_ST_SFX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AD_ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "CIR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Label": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "5315-C",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITYCODE": {
+    "带特殊字符": 0,
+    "最短": "P",
+    "最长": "xG",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COMMENTS": {
+    "带特殊字符": 0,
+    "最短": "Water",
+    "最长": "Changed from 5601 LIBERTY RD/Water/Sewer",
+    "空": 13,
+    "空率": 0.043
+   },
+   "COMPLETE_ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "GGO DR",
+    "最长": "HAGAN STONE PARK RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GISOBJID": {
+    "带特殊字符": 0,
+    "最短": "296086",
+    "最长": "296086",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{49D36C13-CC9E-4334-8402-50EE52997DA2}",
+    "最长": "{49D36C13-CC9E-4334-8402-50EE52997DA2}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "X_COORD": {
+    "带特殊字符": 0,
+    "最短": "1763687.543763",
+    "最长": "1780053.27901024",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_COORD": {
+    "带特殊字符": 0,
+    "最短": "809642.563434",
+    "最长": "798702.08585581",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "27313",
+    "最长": "27313",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP_PLUS4": {
+    "带特殊字符": 0,
+    "最短": "8204.0",
+    "最长": "8204.0",
+    "空": 5,
+    "空率": 0.017
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "fd817123a7618c0b",
+  "total": 195275,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0036,
+   "zip": 0.0012
+  },
+  "nonnull": {
+   "city": 195275,
+   "full": 195275,
+   "number": 195275,
+   "street": 194563,
+   "zip": 195045
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0036, 'city': 0.0, 'zip': 0.0012, 'full': 0.0}）→ 可全量采集",
+  "total": 195275,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AD_ST_NUM street=AD_ST_PFX zip=ZIPCODE",
+ "sample_hash": "fd817123a7618c0b",
+ "site_cols": [
+  "ADDRESS",
+  "Address_Label"
+ ],
+ "source_id": "us/nc/city_of_greensboro",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenGateCityLaunch/MapServer/0",
+ "verdict": "CONTRACTED"
+}

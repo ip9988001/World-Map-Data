@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:39",
+ "county": "City of Biloxi",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/ms/city_of_biloxi",
+ "stage": "p0",
+ "state": "MS",
+ "url": "https://gis.biloxi.ms.us:6080/arcgis/rest/services/Geoportal/Property_Lines/MapServer/0",
+ "verdict": "TRANSIENT"
+}

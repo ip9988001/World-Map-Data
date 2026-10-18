@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:42",
+ "county": "City of Diamondhead",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/ms/city_of_diamondhead",
+ "stage": "p0",
+ "state": "MS",
+ "url": "https://services.geoportalmaps.com/arcgis/rest/services/Diamondhead_Services/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

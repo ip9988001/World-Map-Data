@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 20:34:35",
+ "county": "Perryville",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试",
+ "source_id": "us/mo/city_of_perryville",
+ "stage": "p0",
+ "state": "MO",
+ "url": "https://www.semogis.com/arcgis/rest/services/PerryvilleBase/MapServer/0",
+ "verdict": "TRANSIENT"
+}
