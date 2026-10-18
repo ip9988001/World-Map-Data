@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:57:40",
+ "county": "City of New Iberia",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/la/city_of_new_iberia",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://services.geoportalmaps.com/arcgis/rest/services/NewIberia_Services/MapServer/14",
+ "verdict": "REJECTED_P0"
+}

@@ -1,0 +1,236 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SITE_CITY",
+  "number": "Street_Number",
+  "state": "SITE_STATE",
+  "street": "Street_Name",
+  "unit": "Street_Unit",
+  "zip": "SITE_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:54:59",
+ "county": "Fairfield",
+ "curated_cols": {
+  "city": "SITE_CITY",
+  "number": "Street_Number",
+  "state": "SITE_STATE",
+  "street": "Street_Name",
+  "zip": "SITE_ZIP"
+ },
+ "fields": [
+  "ObjectID",
+  "Shape",
+  "Street_Name",
+  "Street_Number",
+  "Street_Unit",
+  "Map",
+  "Block",
+  "Lot",
+  "Unit",
+  "MBL",
+  "SITE_ADDRESS",
+  "SITE_CITY",
+  "SITE_STATE",
+  "SITE_ZIP",
+  "Complete",
+  "CreateDate",
+  "Creater",
+  "Editor",
+  "EditDate"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {
+  "unit": "Street_Unit"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Number",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Block": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Complete": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreateDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Creater": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "EditDate": {
+    "带特殊字符": 0,
+    "最短": "1392303918000",
+    "最长": "1392303918000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Editor": {
+    "带特殊字符": 0,
+    "最短": "gobeng",
+    "最长": "gobeng",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Lot": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MBL": {
+    "带特殊字符": 18,
+    "最短": "9611 4",
+    "最长": "5502C 9H 9K 9L 8 9 10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Map": {
+    "带特殊字符": 18,
+    "最短": "9611 4",
+    "最长": "5502C 9H 9K 9L 8 9 10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ObjectID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "6 RIDGEWAY",
+    "最长": "21 MORNING GLORY DRIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_CITY": {
+    "带特殊字符": 0,
+    "最短": "Easton",
+    "最长": "Easton",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_STATE": {
+    "带特殊字符": 0,
+    "最短": "CT",
+    "最长": "CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_ZIP": {
+    "带特殊字符": 0,
+    "最短": "06612",
+    "最长": "06612",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Name": {
+    "带特殊字符": 0,
+    "最短": "RIDGEWAY",
+    "最长": "MORNING GLORY DRIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Number": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1068",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Street_Unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "406a78afb37612d3",
+  "total": 9840,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0025,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.007,
+   "street": 0.0,
+   "zip": 0.0073
+  },
+  "nonnull": {
+   "city": 9815,
+   "full": 9840,
+   "number": 9840,
+   "state": 9771,
+   "street": 9840,
+   "zip": 9768
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0025, 'zip': 0.0073, 'state': 0.007, 'full': 0.0}）→ 可全量采集",
+  "total": 9840,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Street_Number street=Street_Name city=SITE_CITY zip=SITE_ZIP",
+ "sample_hash": "406a78afb37612d3",
+ "site_cols": [
+  "Street_Name",
+  "Street_Number",
+  "Street_Unit",
+  "SITE_ADDRESS",
+  "SITE_CITY"
+ ],
+ "source_id": "us/ct/town_of_easton_monroe",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://maps.ctmetro.org/server/rest/services/GBRC/GBRC_Parcels/MapServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -385,3 +385,23 @@ us/ct/city_of_haddam,CT,City of Haddam,https://54.243.125.146/arcgis/rest/servic
 us/ct/city_of_lyme,CT,City of Lyme,https://107.20.209.214/ArcGIS/rest/services/ELYME/EastLymeDynamic/MapServer/0,https://townlyme.org/,以官方页面为准，待补
 us/ct/city_of_manchester,CT,City of Manchester,https://gis1.townofmanchester.org/arcgis/rest/services/Basemaps/ToMMI3_BaseMap/MapServer/2,,以官方页面为准，待补
 us/ct/city_of_bridgeport,CT,,https://maps.ctmetro.org/server/rest/services/Bridgeport/Bridgeport_Parcels_NAD83/MapServer/7,https://metrocog.mapxpress.net/Bridgeport/,以官方页面为准，待补
+us/ct/town_of_easton_monroe,CT,,https://maps.ctmetro.org/server/rest/services/GBRC/GBRC_Parcels/MapServer/0,https://metrocogct.gov/gis-shared-services/,以官方页面为准，待补
+us/ct/city_of_stonington,CT,,https://gis.stonington-ct.gov/arcgis/rest/services/StoningtonOpenGov/MapServer/2,https://gis.stonington-ct.gov/home.html,以官方页面为准，待补
+us/ct/city_of_plainfield,CT,,https://hostingdata3.tighebond.com/arcgis/rest/services/PlainfieldCT/PlainfieldCTDynamic/MapServer/0,https://www.plainfieldct.org,以官方页面为准，待补
+us/fl/city_of_pinellas_park,FL,,https://arcgis4.roktech.net/arcgis/rest/services/PinellasPark/GoMaps4/MapServer/10,,以官方页面为准，待补
+us/il/skokie,IL,,https://cookviewer1.cookcountyil.gov/ArcGIS/rest/services/cookElectnSrvc/MapServer/1,,以官方页面为准，待补
+us/il/city_of_east_peoria,IL,,https://mapping.cityofeastpeoria.com/epgis/rest/services/Planning/Address_Points/FeatureServer/0,https://www.cityofeastpeoria.com/301/Geographic-Information-Services-GIS,以官方页面为准，待补
+us/il/city_of_west_peoria,IL,,https://www.centralilmaps.com/arcgis/rest/services/ArcGISOnline/City_of_West_Peoria/MapServer/1,,以官方页面为准，待补
+us/il/city_of_evanston,IL,,https://maps.cityofevanston.org/arcgis/rest/services/OpenData/ArcGISOpenData/MapServer/4,,以官方页面为准，待补
+us/in/city_of_evansville,IN,,https://maps.evansvillegis.com/arcgis_server/rest/services/PROPERTY/ADDRESSES/MapServer/0,,以官方页面为准，待补
+us/in/city-of-hobart,IN,,https://elb2.39dn.com/arcgis/rest/services/eGISDynamicServices/HobartINDynamic/MapServer/83,,以官方页面为准，待补
+us/ks/city_of_lenexa,KS,,https://maps.lenexa.com/arcgis/rest/services/GovernmentServices/SiteAddressPoints_RES_OCC_only/MapServer/0,,以官方页面为准，待补
+us/ks/city_of_olathe,KS,,https://ozone.olatheks.org/arcgis/rest/services/govoutreach/olathecc/MapServer/0,,以官方页面为准，待补
+us/ks/city_of_salina,KS,,https://70.167.136.51/arcgis/rest/services/ArcGIS_Online/MapServer/98,,以官方页面为准，待补
+us/ks/city_of_wichita,KS,,https://gismaps.wichita.gov/agsweb/rest/services/COWGIS/Property_and_Location/MapServer/4,,以官方页面为准，待补
+us/la/city_of_alexandria,LA,,https://gis.rapc.info/gis/rest/services/portal_rapc/Addresses/MapServer/0,,以官方页面为准，待补
+us/la/city_of_bossier,LA,,https://services.geoportalmaps.com/arcgis/rest/services/Bossier_Internal/MapServer/1,,以官方页面为准，待补
+us/la/city_of_denham_springs,LA,,https://services.geoportalmaps.com/arcgis/rest/services/DenhamSprings_Services/MapServer/32,,以官方页面为准，待补
+us/la/city_of_new_iberia,LA,,https://services.geoportalmaps.com/arcgis/rest/services/NewIberia_Services/MapServer/14,,以官方页面为准，待补
+us/me/lewiston,ME,,https://maps2.lewistonmaine.gov/arcgis/rest/services/Public/AddressPointsNo_ID/FeatureServer/0,https://www.lewistonmaine.gov/1135/Geographic-Services-Maps,以官方页面为准，待补
+us/mi/city_of_rochester,MI,,https://atlas.rochesterhills.org/arcgis/rest/services/MasterAddressPoints/FeatureServer/0,https://www.rochesterhills.org/departments/planning___economic_development/maps.php,以官方页面为准，待补

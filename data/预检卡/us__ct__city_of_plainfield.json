@@ -1,0 +1,68 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CAMA.Mailing_City",
+  "state": "CAMA.Mailing_State",
+  "street": "Parcel_Polygon.StreetAddr",
+  "unit": "CAMA.Assessed_Outbuilding",
+  "zip": "CAMA.Mailing_Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:55:10",
+ "county": "Windham",
+ "curated_cols": {},
+ "fields": [
+  "Parcel_Polygon.OBJECTID",
+  "Parcel_Polygon.Shape",
+  "Parcel_Polygon.Parcel_ID",
+  "Parcel_Polygon.CAMA_PID",
+  "Parcel_Polygon.StreetAddr",
+  "CAMA.Owner",
+  "CAMA.Mailing_Address",
+  "CAMA.Mailing_City",
+  "CAMA.Mailing_State",
+  "CAMA.Mailing_Zip",
+  "CAMA.Assessed_Total",
+  "CAMA.Assessed_Land",
+  "CAMA.Assessed_Building",
+  "CAMA.Assessed_Extra_Feature",
+  "CAMA.Assessed_Outbuilding",
+  "CAMA.Land_Acres",
+  "CAMA.Book_Page",
+  "CAMA.Sale_Price",
+  "CAMA.Sale_Date",
+  "Parcel_Polygon.PhotoURL"
+ ],
+ "fields_n": 20,
+ "guessed_cols": {
+  "city": "CAMA.Mailing_City",
+  "state": "CAMA.Mailing_State",
+  "street": "Parcel_Polygon.StreetAddr",
+  "unit": "CAMA.Assessed_Outbuilding",
+  "zip": "CAMA.Mailing_Zip"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "reason": "服务端自报 6,324 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['Parcel_Polygon.StreetAddr', 'CAMA.Mailing_Address'] → 交给 concat_addr 拆",
+ "site_cols": [
+  "Parcel_Polygon.StreetAddr",
+  "CAMA.Mailing_Address"
+ ],
+ "source_id": "us/ct/city_of_plainfield",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://hostingdata3.tighebond.com/arcgis/rest/services/PlainfieldCT/PlainfieldCTDynamic/MapServer/0",
+ "verdict": "FAIL_P1"
+}

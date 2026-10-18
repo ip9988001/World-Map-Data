@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:57:40",
+ "county": "City of Denham Springs",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/la/city_of_denham_springs",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://services.geoportalmaps.com/arcgis/rest/services/DenhamSprings_Services/MapServer/32",
+ "verdict": "REJECTED_P0"
+}

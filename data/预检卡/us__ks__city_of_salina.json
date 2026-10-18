@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:56:33",
+ "county": "City of Salina",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/ks/city_of_salina",
+ "stage": "p0",
+ "state": "KS",
+ "url": "https://70.167.136.51/arcgis/rest/services/ArcGIS_Online/MapServer/98",
+ "verdict": "TRANSIENT"
+}

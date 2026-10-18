@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:56:19",
+ "county": "City of East Peoria",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/il/city_of_east_peoria",
+ "stage": "p0",
+ "state": "IL",
+ "url": "https://mapping.cityofeastpeoria.com/epgis/rest/services/Planning/Address_Points/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

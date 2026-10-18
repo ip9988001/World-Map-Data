@@ -1,0 +1,263 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDRNO",
+  "street": "PRE_DIR",
+  "unit": "UNIT"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:57:41",
+ "county": "Lewiston",
+ "curated_cols": {
+  "number": "ADDRNO",
+  "street": "PRE_DIR"
+ },
+ "fields": [
+  "OBJECTID",
+  "TYPE",
+  "LOCATION",
+  "DateEdit",
+  "UNIT",
+  "ADDRNO",
+  "STREET",
+  "PARCELID",
+  "X",
+  "Y",
+  "PID",
+  "PRE_DIR",
+  "STREET_NM",
+  "SUFFIX",
+  "POST_DIR",
+  "ADD_ID",
+  "Facility_ID",
+  "GIS_ID",
+  "JURISTICTION",
+  "CreationUser",
+  "CreationDate",
+  "ModifiedbyUser",
+  "ModifiedDate"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "LewGIS.SDE.LEW_address_points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRNO": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1637",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_ID": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "23260",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreationDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CreationUser": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DateEdit": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Facility_ID": {
+    "带特殊字符": 0,
+    "最短": "addr-4",
+    "最长": "addr-23260",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "99-9",
+    "最长": "195-448",
+    "空": 0,
+    "空率": 0.0
+   },
+   "JURISTICTION": {
+    "带特殊字符": 0,
+    "最短": "LEWISTON",
+    "最长": "LEWISTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOCATION": {
+    "带特殊字符": 2,
+    "最短": "50 MARK ST",
+    "最长": "10 SAINT JEAN BAPTISTE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ModifiedDate": {
+    "带特殊字符": 0,
+    "最短": "1692027470000",
+    "最长": "1692027470000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ModifiedbyUser": {
+    "带特殊字符": 0,
+    "最短": "JWARD",
+    "最长": "JWARD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "308",
+    "最长": "308",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELID": {
+    "带特殊字符": 0,
+    "最短": "RE00011241",
+    "最长": "RE00011241",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POST_DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PRE_DIR": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 298,
+    "空率": 0.993
+   },
+   "STREET": {
+    "带特殊字符": 2,
+    "最短": "OAK ST",
+    "最长": "SAINT JEAN BAPTISTE AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NM": {
+    "带特殊字符": 2,
+    "最短": "OAK",
+    "最长": "SAINT JEAN BAPTISTE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "98",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "SUITE 1",
+    "最长": "SUITE 1",
+    "空": 299,
+    "空率": 0.997
+   },
+   "X": {
+    "带特殊字符": 0,
+    "最短": "2947820.15",
+    "最长": "2949989.67054264",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y": {
+    "带特殊字符": 0,
+    "最短": "455375.75",
+    "最长": "461690.39951551",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7b723710edf09704",
+  "total": 13065,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0003,
+   "street": 0.9911
+  },
+  "nonnull": {
+   "full": 13065,
+   "number": 13061,
+   "street": 116
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0003, 'street': 0.9911, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LOCATION 拆**（concat_addr）",
+  "total": 13065,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRNO street=PRE_DIR（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "7b723710edf09704",
+ "site_cols": [
+  "LOCATION",
+  "ADDRNO",
+  "STREET",
+  "STREET_NM"
+ ],
+ "source_id": "us/me/lewiston",
+ "stage": "p0",
+ "state": "ME",
+ "url": "https://maps2.lewistonmaine.gov/arcgis/rest/services/Public/AddressPointsNo_ID/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

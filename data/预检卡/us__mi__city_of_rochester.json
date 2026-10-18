@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:57:49",
+ "county": "City of Rochester Hills",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': None, 'details': []}",
+ "source_id": "us/mi/city_of_rochester",
+ "stage": "p0",
+ "state": "MI",
+ "url": "https://atlas.rochesterhills.org/arcgis/rest/services/MasterAddressPoints/FeatureServer/0",
+ "verdict": "REJECTED_P0"
+}

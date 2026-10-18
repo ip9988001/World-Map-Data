@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:57:37",
+ "county": "City of Alexandria",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试",
+ "source_id": "us/la/city_of_alexandria",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://gis.rapc.info/gis/rest/services/portal_rapc/Addresses/MapServer/0",
+ "verdict": "TRANSIENT"
+}

@@ -1,0 +1,264 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ZN",
+  "number": "ADDRNUM",
+  "street": "STREET",
+  "unit": "ADDRUNIT",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 10:55:04",
+ "county": "New London County",
+ "curated_cols": {
+  "city": "ZN",
+  "number": "ADDRNUM",
+  "street": "STREET",
+  "zip": "Zip"
+ },
+ "fields": [
+  "Shape",
+  "PIN",
+  "MBL",
+  "MULTIOWN",
+  "Num_Dups",
+  "LOCATION",
+  "HOUSE_NO",
+  "STREET",
+  "X",
+  "Y",
+  "ADDRNUM",
+  "ADDRUNIT",
+  "ADDRLABEL",
+  "BUILDING",
+  "ALIAS",
+  "Zip",
+  "ZN",
+  "PD",
+  "PT",
+  "SN",
+  "ST",
+  "SD",
+  "OBJECTID_1"
+ ],
+ "fields_n": 23,
+ "guessed_cols": {
+  "unit": "ADDRUNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address Number",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRLABEL": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "306",
+    "空": 16,
+    "空率": 0.053
+   },
+   "ADDRNUM": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "306",
+    "空": 16,
+    "空率": 0.053
+   },
+   "ADDRUNIT": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "4",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ALIAS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "306",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOCATION": {
+    "带特殊字符": 0,
+    "最短": "5 ASH ST",
+    "最长": "183 MASONS ISLAND RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MBL": {
+    "带特殊字符": 0,
+    "最短": "9-3-9",
+    "最长": "101-33-10C1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MULTIOWN": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 280,
+    "空率": 0.933
+   },
+   "Num_Dups": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "18",
+    "空": 278,
+    "空率": 0.927
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PD": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 285,
+    "空率": 0.95
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "9-3-9",
+    "最长": "101-33-10C1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SD": {
+    "带特殊字符": 0,
+    "最短": "LP",
+    "最长": "LP",
+    "空": 297,
+    "空率": 0.99
+   },
+   "SN": {
+    "带特殊字符": 0,
+    "最短": "ASH",
+    "最长": "OLD STONINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "PATH",
+    "空": 4,
+    "空率": 0.013
+   },
+   "STREET": {
+    "带特殊字符": 0,
+    "最短": "ASH ST",
+    "最长": "OLD STONINGTON RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "X": {
+    "带特殊字符": 0,
+    "最短": "1214901.37994802",
+    "最长": "1214568.3176220208",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y": {
+    "带特殊字符": 0,
+    "最短": "683075.85331586",
+    "最长": "680495.4099859297",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZN": {
+    "带特殊字符": 0,
+    "最短": "MYSTIC",
+    "最长": "STONINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "06355",
+    "最长": "06355",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "1c7b50788bfbaed5",
+  "total": 9416,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0001,
+   "full": 0.0001,
+   "number": 0.0002,
+   "street": 0.0001,
+   "zip": 0.0001
+  },
+  "nonnull": {
+   "city": 9415,
+   "full": 9415,
+   "number": 9414,
+   "street": 9415,
+   "zip": 9415
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0002, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0001, 'full': 0.0001}）→ 可全量采集",
+  "total": 9416,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRNUM street=STREET city=ZN zip=Zip",
+ "sample_hash": "1c7b50788bfbaed5",
+ "site_cols": [
+  "LOCATION",
+  "STREET",
+  "ADDRNUM",
+  "ADDRUNIT",
+  "ADDRLABEL"
+ ],
+ "source_id": "us/ct/city_of_stonington",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://gis.stonington-ct.gov/arcgis/rest/services/StoningtonOpenGov/MapServer/2",
+ "verdict": "CONTRACTED"
+}
