@@ -1,0 +1,446 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "msag",
+  "number": "addrnum",
+  "state": "state",
+  "street": "FullStNm",
+  "unit": "capturemeth",
+  "zip": "zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:55:09",
+ "county": "Vilas",
+ "curated_cols": {
+  "city": "msag",
+  "number": "addrnum",
+  "state": "state",
+  "street": "FullStNm",
+  "zip": "zip"
+ },
+ "fields": [
+  "objectid",
+  "shape",
+  "address",
+  "unitid",
+  "addrnum",
+  "predir",
+  "placename",
+  "streettype",
+  "fullname",
+  "fulladdr",
+  "municipality",
+  "county",
+  "state",
+  "country",
+  "esn",
+  "psap",
+  "msag",
+  "zip",
+  "lz",
+  "fz",
+  "ez",
+  "usngcoord",
+  "compno",
+  "addrtype",
+  "description",
+  "capturemeth",
+  "status",
+  "oldaddress",
+  "oldstreetname",
+  "pendingaddress",
+  "pendingstreet",
+  "notificationdate",
+  "signinstalldate",
+  "retireddate",
+  "addresschangecomment",
+  "picture",
+  "rotation",
+  "St_PreMod",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_PreSep",
+  "St_Name",
+  "St_PosDir",
+  "St_PosTyp",
+  "St_PosMod",
+  "FullStNm",
+  "joinid",
+  "DiscrpAgID",
+  "Site_NGUID",
+  "RCL_NGUID",
+  "globalid",
+  "siteaddid",
+  "addptkey",
+  "preaddrnum",
+  "addrnumsuf",
+  "addrrange",
+  "unittype",
+  "altunittype",
+  "altunitid",
+  "addrclass",
+  "pointtype",
+  "mapno",
+  "mapbookpg",
+  "lastupdate",
+  "lasteditor",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "pictureid",
+  "imagepath",
+  "hyperlink",
+  "Mile_Post",
+  "EditTrackDate",
+  "EditTrackCmnt"
+ ],
+ "fields_n": 75,
+ "guessed_cols": {
+  "unit": "capturemeth"
+ },
+ "layer": {
+  "maxRecordCount": 6000,
+  "name": "Address Sites",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreMod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreSep": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "County Highway",
+    "最长": "United States Highway",
+    "空": 246,
+    "空率": 0.82
+   },
+   "address": {
+    "带特殊字符": 0,
+    "最短": "5424",
+    "最长": "12020",
+    "空": 110,
+    "空率": 0.367
+   },
+   "addresschangecomment": {
+    "带特殊字符": 0,
+    "最短": "Unaddressed guest cabin on parcel.",
+    "最长": "3770 is on the wrong side of the rd. Demoed bldg",
+    "空": 298,
+    "空率": 0.993
+   },
+   "addrnum": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "12020",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addrtype": {
+    "带特殊字符": 0,
+    "最短": "Lodging",
+    "最长": "Accessory Building",
+    "空": 0,
+    "空率": 0.0
+   },
+   "capturemeth": {
+    "带特殊字符": 0,
+    "最短": "J",
+    "最长": "J",
+    "空": 2,
+    "空率": 0.007
+   },
+   "compno": {
+    "带特殊字符": 0,
+    "最短": "2-3",
+    "最长": "2-2280-00013",
+    "空": 83,
+    "空率": 0.277
+   },
+   "country": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "county": {
+    "带特殊字符": 0,
+    "最短": "Vilas",
+    "最长": "Vilas",
+    "空": 0,
+    "空率": 0.0
+   },
+   "description": {
+    "带特殊字符": 200,
+    "最短": "COON",
+    "最长": "Rebuild cabin 53' X 35' with new additions 7' X 24' porch, 10' X 28' addition, a",
+    "空": 0,
+    "空率": 0.0
+   },
+   "esn": {
+    "带特殊字符": 0,
+    "最短": "307",
+    "最长": "307",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ez": {
+    "带特殊字符": 0,
+    "最短": "BJA",
+    "最长": "WINA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fulladdr": {
+    "带特殊字符": 0,
+    "最短": "0 USH 51",
+    "最长": "4173 Timber Meadows Rd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fullname": {
+    "带特殊字符": 0,
+    "最短": "CTH W",
+    "最长": "Timber Meadows Rd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "fz": {
+    "带特殊字符": 0,
+    "最短": "BJFD",
+    "最长": "BJFD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "lz": {
+    "带特殊字符": 0,
+    "最短": "VISO",
+    "最长": "VISO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "msag": {
+    "带特殊字符": 0,
+    "最短": "BJ",
+    "最长": "WIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "municipality": {
+    "带特殊字符": 0,
+    "最短": "BJ",
+    "最长": "WIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "notificationdate": {
+    "带特殊字符": 0,
+    "最短": "1505714400000",
+    "最长": "1505714400000",
+    "空": 233,
+    "空率": 0.777
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "843298",
+    "最长": "843298",
+    "空": 0,
+    "空率": 0.0
+   },
+   "oldaddress": {
+    "带特殊字符": 0,
+    "最短": "4198",
+    "最长": "11800",
+    "空": 227,
+    "空率": 0.757
+   },
+   "oldstreetname": {
+    "带特殊字符": 0,
+    "最短": "USH 51",
+    "最长": "Witches Lake Rd",
+    "空": 226,
+    "空率": 0.753
+   },
+   "pendingaddress": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "pendingstreet": {
+    "带特殊字符": 0,
+    "最短": "Witches Lake Rd",
+    "最长": "Witches Lake Rd",
+    "空": 299,
+    "空率": 0.997
+   },
+   "picture": {
+    "带特殊字符": 187,
+    "最短": "\\WI\\Vilas\\town\\t102\\picts\\100_0553.jpg",
+    "最长": "\\WI\\Vilas\\town\\t101\\picts\\DSC001266.JPG",
+    "空": 113,
+    "空率": 0.377
+   },
+   "placename": {
+    "带特殊字符": 0,
+    "最短": "Our",
+    "最长": "Timber Meadows",
+    "空": 0,
+    "空率": 0.0
+   },
+   "predir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "psap": {
+    "带特殊字符": 0,
+    "最短": "VILA",
+    "最长": "VILA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "retireddate": {
+    "带特殊字符": 0,
+    "最短": "1737612000000",
+    "最长": "1737612000000",
+    "空": 299,
+    "空率": 0.997
+   },
+   "rotation": {
+    "带特殊字符": 0,
+    "最短": "90",
+    "最长": "180",
+    "空": 46,
+    "空率": 0.153
+   },
+   "signinstalldate": {
+    "带特殊字符": 0,
+    "最短": "1507096800000",
+    "最长": "1507096800000",
+    "空": 226,
+    "空率": 0.753
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "WI",
+    "最长": "WI",
+    "空": 0,
+    "空率": 0.0
+   },
+   "status": {
+    "带特殊字符": 0,
+    "最短": "Null",
+    "最长": "Current",
+    "空": 1,
+    "空率": 0.003
+   },
+   "streettype": {
+    "带特殊字符": 0,
+    "最短": "St",
+    "最长": "Trl",
+    "空": 54,
+    "空率": 0.18
+   },
+   "unitid": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "usngcoord": {
+    "带特殊字符": 0,
+    "最短": "16T BS 95947 09540",
+    "最长": "16T BS 95947 09540",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zip": {
+    "带特殊字符": 0,
+    "最短": "54512",
+    "最长": "54512",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "792299424c798413",
+  "total": 48147,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0007,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0001
+  },
+  "nonnull": {
+   "city": 48147,
+   "full": 48111,
+   "number": 48147,
+   "state": 48147,
+   "street": 48147,
+   "zip": 48144
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0001, 'state': 0.0, 'full': 0.0007}）→ 可全量采集",
+  "total": 48147,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=addrnum street=FullStNm city=msag zip=zip",
+ "sample_hash": "792299424c798413",
+ "site_cols": [
+  "address",
+  "addrnum",
+  "streettype",
+  "fulladdr",
+  "addrtype"
+ ],
+ "source_id": "us/wi/vilas",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://maps.vilascountywi.gov/vilasgis/rest/services/V4/SiteAddress/MapServer/0",
+ "verdict": "CONTRACTED"
+}

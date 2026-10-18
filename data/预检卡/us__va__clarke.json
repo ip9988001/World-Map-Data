@@ -1,0 +1,305 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POST",
+  "number": "NUMBER",
+  "state": "STATE",
+  "street": "DIR",
+  "unit": "LOC_APT",
+  "zip": "ZIPCODE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:12",
+ "county": "Clarke",
+ "curated_cols": {
+  "city": "POST",
+  "number": "NUMBER",
+  "street": "DIR",
+  "zip": "ZIPCODE"
+ },
+ "fields": [
+  "FID",
+  "NUMBER",
+  "NUM_EX",
+  "NAME",
+  "TYPE",
+  "ADD_DATE",
+  "ADDRESS",
+  "RESIDENT",
+  "CLASS",
+  "ZIPCODE",
+  "POST",
+  "BUILT",
+  "DIR",
+  "LOC_APT",
+  "SUBADDR",
+  "OLD_ADD",
+  "COUNTRY",
+  "STATE",
+  "COUNTY",
+  "INC_MUNI",
+  "DISCRPAGID",
+  "SITE_NGUID",
+  "ST_PREDIR",
+  "ST_POSTYP",
+  "LOCALUID",
+  "X_COORD",
+  "Y_COORD"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {
+  "state": "STATE",
+  "unit": "LOC_APT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "FID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "65 MANOR RD",
+    "最长": "1686 SHENANDOAH RIVER LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_DATE": {
+    "带特殊字符": 0,
+    "最短": "949449600000",
+    "最长": "1391040000000",
+    "空": 235,
+    "空率": 0.783
+   },
+   "BUILT": {
+    "带特殊字符": 0,
+    "最短": "NO",
+    "最长": "NO",
+    "空": 298,
+    "空率": 0.993
+   },
+   "CLASS": {
+    "带特殊字符": 0,
+    "最短": "CNTY",
+    "最长": "OTHER",
+    "空": 206,
+    "空率": 0.687
+   },
+   "COUNTRY": {
+    "带特殊字符": 0,
+    "最短": "US",
+    "最长": "US",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "CLARKE",
+    "最长": "CLARKE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "DISCRPAGID": {
+    "带特殊字符": 0,
+    "最短": "clarkecounty.gov",
+    "最长": "clarkecounty.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "INC_MUNI": {
+    "带特殊字符": 0,
+    "最短": "CLARKE",
+    "最长": "CLARKE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOCALUID": {
+    "带特殊字符": 0,
+    "最短": "2310",
+    "最长": "2310",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LOC_APT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NAME": {
+    "带特殊字符": 0,
+    "最短": "MANOR",
+    "最长": "SHENANDOAH RIVER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUMBER": {
+    "带特殊字符": 0,
+    "最短": "81",
+    "最长": "22540",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUM_EX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OLD_ADD": {
+    "带特殊字符": 0,
+    "最短": "2163 WILDCAT HOLLOW RD",
+    "最长": "2163 WILDCAT HOLLOW RD",
+    "空": 298,
+    "空率": 0.993
+   },
+   "POST": {
+    "带特殊字符": 0,
+    "最短": "BOYCE",
+    "最长": "FRONT ROYAL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RESIDENT": {
+    "带特殊字符": 0,
+    "最短": "NO",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITE_NGUID": {
+    "带特殊字符": 300,
+    "最短": "SITE2310@clarkecounty.gov",
+    "最长": "SITE2310@clarkecounty.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "VA",
+    "最长": "VA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_POSTYP": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_PREDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUBADDR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "HWY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "X_COORD": {
+    "带特殊字符": 0,
+    "最短": "11615722.5",
+    "最长": "11619490.9954",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_COORD": {
+    "带特殊字符": 0,
+    "最短": "7050593.105",
+    "最长": "7047175.31033",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIPCODE": {
+    "带特殊字符": 0,
+    "最短": "22630",
+    "最长": "22630",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "62b31e5a45e67e84",
+  "total": 7529,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 7529,
+   "full": 7529,
+   "number": 7529,
+   "state": 7529,
+   "street": 7529,
+   "zip": 7529
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 7529,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=NUMBER street=DIR city=POST zip=ZIPCODE",
+ "sample_hash": "62b31e5a45e67e84",
+ "site_cols": [
+  "ADDRESS",
+  "SUBADDR",
+  "SITE_NGUID"
+ ],
+ "source_id": "us/va/clarke",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://services7.arcgis.com/1uNEgmtBVWGKSY5Q/arcgis/rest/services/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

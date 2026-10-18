@@ -1,0 +1,192 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "ADDRNUM",
+  "state": "STATE",
+  "street": "FULLNAME",
+  "unit": "UNITTYPE"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:50",
+ "county": "Spokane",
+ "curated_cols": {
+  "city": "CITY",
+  "number": "ADDRNUM",
+  "state": "STATE",
+  "street": "FULLNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRNUM",
+  "ADDRNUMSUF",
+  "UNITTYPE",
+  "UNITID",
+  "FULLNAME",
+  "PrefixDirection",
+  "PrefixType",
+  "StreetName",
+  "StreetType",
+  "FULLADDR",
+  "CITY",
+  "STATE",
+  "SHAPE"
+ ],
+ "fields_n": 14,
+ "guessed_cols": {
+  "unit": "UNITTYPE"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Site Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRNUM": {
+    "带特殊字符": 0,
+    "最短": "21",
+    "最长": "18407",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRNUMSUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "Mead",
+    "最长": "Nine Mile Falls",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "3428 N E St",
+    "最长": "21200 E Country Vista Dr Apt M-201",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "N E St",
+    "最长": "E Spokane Falls Blvd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PrefixDirection": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 1,
+    "空率": 0.003
+   },
+   "PrefixType": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "WA",
+    "最长": "WA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "South Riverton",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "Rd",
+    "最长": "Blvd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "11-140",
+    "空": 240,
+    "空率": 0.8
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "Apt",
+    "最长": "Bldg",
+    "空": 240,
+    "空率": 0.8
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "aafa7b2d7aabacb3",
+  "total": 236669,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 236669,
+   "full": 236669,
+   "number": 236669,
+   "state": 236669,
+   "street": 236669
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 236669,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRNUM street=FULLNAME city=CITY",
+ "sample_hash": "aafa7b2d7aabacb3",
+ "site_cols": [
+  "ADDRNUM",
+  "ADDRNUMSUF",
+  "StreetName",
+  "StreetType",
+  "FULLADDR"
+ ],
+ "source_id": "us/wa/spokane",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://gismo.spokanecounty.org/arcgis/rest/services/OpenData/Property/MapServer/12",
+ "verdict": "CONTRACTED"
+}

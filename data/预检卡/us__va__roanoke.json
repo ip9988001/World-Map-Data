@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:27",
+ "county": "Roanoke",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service AGOL_OpenData/OpenData_Community/MapServer not started ', 'details'",
+ "source_id": "us/va/roanoke",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://arcgis.roanokecountyva.gov/arcgisweb/rest/services/AGOL_OpenData/OpenData_Community/FeatureServer/1",
+ "verdict": "REJECTED_P0"
+}

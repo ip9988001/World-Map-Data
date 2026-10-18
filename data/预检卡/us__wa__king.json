@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:43",
+ "county": "King",
+ "license": "https://www5.kingcounty.gov/sdc/addl_doc/KCGISCenterTermsAndConditions.pdf",
+ "license_status": "ok",
+ "p0": "REJECTED_P0",
+ "protocol": "esri",
+ "reason": "元数据取不到（源本身）：JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+ "source_id": "us/wa/king",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://gismaps.kingcounty.gov/arcgis/rest/services/Address/KingCo_AddressPoints/MapServer/0",
+ "verdict": "REJECTED_P0"
+}

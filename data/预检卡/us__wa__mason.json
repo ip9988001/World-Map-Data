@@ -1,0 +1,71 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITYWHOLE",
+  "number": "STREETNUMB",
+  "street": "STREET",
+  "unit": "UNITTYPE",
+  "zip": "ZIP_CD"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:43",
+ "county": "Mason",
+ "curated_cols": {
+  "city": "CITYWHOLE",
+  "number": "STREETNUMB",
+  "street": "STREET",
+  "zip": "ZIP_CD"
+ },
+ "fields": [
+  "FID",
+  "Shape",
+  "PIN",
+  "ADDRESS",
+  "STREETNUMB",
+  "STREETPREF",
+  "STREETNAME",
+  "STREETTYPE",
+  "STREET",
+  "CITYCD",
+  "ZIP_CD",
+  "COMMENT",
+  "MACEADDR",
+  "DATE_MODIF",
+  "WHO_EDITED",
+  "CITYWHOLE",
+  "UNITTYPE",
+  "UNITNUM",
+  "STSUFF"
+ ],
+ "fields_n": 19,
+ "guessed_cols": {
+  "unit": "UNITTYPE"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Site Address (Zoom in to 1:3,000)",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "https://www.co.mason.wa.us/gis/disclaimer.php",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "reason": "服务端自报 41,417 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STREETNUMB street=STREET city=CITYWHOLE zip=ZIP_CD",
+ "site_cols": [
+  "ADDRESS",
+  "STREETNUMB",
+  "STREETPREF",
+  "STREETNAME",
+  "STREETTYPE"
+ ],
+ "source_id": "us/wa/mason",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://gis.masoncountywa.gov/arcgis/rest/services/MasonCoSite/SiteAddresses/MapServer/0",
+ "verdict": "FAIL_P1"
+}

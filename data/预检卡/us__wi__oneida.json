@@ -1,0 +1,180 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "Municipality",
+  "number": "Add_Number",
+  "street": "PropertyAddress",
+  "unit": "UnitType",
+  "zip": "Zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:55:04",
+ "county": "Oneida",
+ "curated_cols": {
+  "city": "Municipality",
+  "number": "Add_Number",
+  "street": "PropertyAddress",
+  "zip": "Zip"
+ },
+ "fields": [
+  "OBJECTID",
+  "Date_",
+  "Add_Number",
+  "Unit",
+  "UnitType",
+  "PropertyAddress",
+  "GIS_Pin",
+  "Municipality",
+  "Zip",
+  "PostalCity",
+  "Pinadd_key",
+  "SHAPE",
+  "St_PreTyp"
+ ],
+ "fields_n": 13,
+ "guessed_cols": {
+  "unit": "UnitType"
+ },
+ "layer": {
+  "maxRecordCount": 12000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Date_": {
+    "带特殊字符": 0,
+    "最短": "946598400000",
+    "最长": "1241740800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GIS_Pin": {
+    "带特殊字符": 0,
+    "最短": "RH-88",
+    "最长": "RH-9106-1311",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Municipality": {
+    "带特殊字符": 0,
+    "最短": "STELLA",
+    "最长": "RHINELANDER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "2040527",
+    "最长": "2040527",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Pinadd_key": {
+    "带特殊字符": 0,
+    "最短": "227",
+    "最长": "47827",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PostalCity": {
+    "带特殊字符": 0,
+    "最短": "WOODRUFF",
+    "最长": "RHINELANDER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PropertyAddress": {
+    "带特殊字符": 0,
+    "最短": "7 ANN ST",
+    "最长": "10 INDIAN SHORES CAMPGROUND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "202",
+    "空": 231,
+    "空率": 0.77
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "STE",
+    "最长": "BLDG",
+    "空": 231,
+    "空率": 0.77
+   },
+   "Zip": {
+    "带特殊字符": 0,
+    "最短": "54501",
+    "最长": "54501",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6cb79717d796418d",
+  "total": 36475,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 36475,
+   "full": 36475,
+   "number": 36475,
+   "street": 36475,
+   "zip": 36475
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 36475,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=PropertyAddress city=Municipality zip=Zip",
+ "sample_hash": "6cb79717d796418d",
+ "site_cols": [
+  "PropertyAddress"
+ ],
+ "source_id": "us/wi/oneida",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://gis.oneidacountywi.gov/arcgis/rest/services/Oneview/Parcels/MapServer/12",
+ "verdict": "CONTRACTED"
+}

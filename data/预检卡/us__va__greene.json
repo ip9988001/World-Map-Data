@@ -1,0 +1,307 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPALITY",
+  "number": "AddNum_Pre",
+  "street": "FULLNAME",
+  "unit": "CaptureMethod"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:17",
+ "county": "Greene",
+ "curated_cols": {
+  "city": "MUNICIPALITY",
+  "number": "AddNum_Pre",
+  "street": "FULLNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "Shape",
+  "FULLADDR",
+  "AddNum_Pre",
+  "Add_Number",
+  "AddNum_Suf",
+  "FULLNAME",
+  "UNITTYPE",
+  "UNITID",
+  "MUNICIPALITY",
+  "ADDRCLASS",
+  "ACTIVE",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "Location",
+  "Unit_Type",
+  "StructureDesc",
+  "CaptureMethod",
+  "PrimaryUsage",
+  "OldAddr",
+  "PermitNumber",
+  "FULLROADNAME",
+  "LOT",
+  "POINT_X",
+  "POINT_Y",
+  "SUBDIVISION",
+  "FeaCode"
+ ],
+ "fields_n": 29,
+ "guessed_cols": {
+  "unit": "CaptureMethod"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACTIVE": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRCLASS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddNum_Suf": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "20",
+    "最长": "10157",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CaptureMethod": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "27 IVY RD",
+    "最长": "639 SNOW MOUNTAIN RD STE 4",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "ABE RD",
+    "最长": "MORNING GLORY TURN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLROADNAME": {
+    "带特殊字符": 0,
+    "最短": "ABE ROAD",
+    "最长": "BUSINESS PARK DRIVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FeaCode": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 270,
+    "空率": 0.9
+   },
+   "LOT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Location": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "MUNICIPALITY": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OldAddr": {
+    "带特殊字符": 0,
+    "最短": "27 IVY RD",
+    "最长": "639 SNOW MOUNTAIN RD STE 4",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PermitNumber": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PrimaryUsage": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUBDIVISION": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StructureDesc": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "18",
+    "空": 122,
+    "空率": 0.407
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "STE",
+    "最长": "STE",
+    "空": 122,
+    "空率": 0.407
+   },
+   "Unit_Type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1739818592000",
+    "最长": "1739818592000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "ADODSON",
+    "最长": "ADODSON",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "606d0a32a40b8441",
+  "total": 11002,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 11002,
+   "full": 11002,
+   "number": 11002,
+   "street": 11002
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 11002,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=AddNum_Pre street=FULLNAME city=MUNICIPALITY",
+ "sample_hash": "606d0a32a40b8441",
+ "site_cols": [
+  "FULLADDR",
+  "ADDRCLASS",
+  "Location",
+  "OldAddr"
+ ],
+ "source_id": "us/va/greene",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://www.webgis.net/arcgis/rest/services/VA/GreeneCo_WebGIS/MapServer/0",
+ "verdict": "CONTRACTED"
+}

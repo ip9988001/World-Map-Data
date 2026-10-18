@@ -1,0 +1,162 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDR",
+  "street": "ROADNAME"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:07",
+ "county": "Appomattox",
+ "curated_cols": {
+  "number": "ADDR",
+  "street": "ROADNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDR",
+  "ROADNAME",
+  "TYPE",
+  "ADDRESS",
+  "ACTIVE",
+  "GlobalID",
+  "CreationDate",
+  "Creator",
+  "EditDate",
+  "Editor"
+ ],
+ "fields_n": 11,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Access Point",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACTIVE": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 12,
+    "空率": 0.04
+   },
+   "ADDR": {
+    "带特殊字符": 0,
+    "最短": "121",
+    "最长": "12791",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS": {
+    "带特殊字符": 19,
+    "最短": "852 CABIN LN",
+    "最长": "1303 CHESTNUT MOUNTAIN RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreationDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Creator": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "EditDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Editor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "491ccb9a-06e0-4687-a6ad-e7c5f6ca0980",
+    "最长": "491ccb9a-06e0-4687-a6ad-e7c5f6ca0980",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNAME": {
+    "带特殊字符": 0,
+    "最短": "JERSEY",
+    "最长": "CHESTNUT MOUNTAIN",
+    "空": 211,
+    "空率": 0.703
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "LN",
+    "最长": "LNDG",
+    "空": 211,
+    "空率": 0.703
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "5baa6598942824e6",
+  "total": 9475,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0241,
+   "number": 0.0241,
+   "street": 0.7347
+  },
+  "nonnull": {
+   "full": 9247,
+   "number": 9247,
+   "street": 2514
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0241, 'street': 0.7347, 'full': 0.0241}）→ 可全量采集；**必须用整条地址列 ADDR 拆**（concat_addr）",
+  "total": 9475,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR street=ROADNAME（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "5baa6598942824e6",
+ "site_cols": [
+  "ADDR",
+  "ADDRESS"
+ ],
+ "source_id": "us/va/appomattox",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://services6.arcgis.com/wnL4os9xzGCi48td/arcgis/rest/services/Appomattox_WL_P/FeatureServer/1",
+ "verdict": "CONTRACTED"
+}

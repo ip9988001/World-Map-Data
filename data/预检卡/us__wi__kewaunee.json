@@ -1,0 +1,120 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Add_Number",
+  "street": "ROADNAME"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:55:00",
+ "county": "Kewaunee",
+ "curated_cols": {
+  "number": "Add_Number",
+  "street": "ROADNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "HOUSE_NO",
+  "ROADNAME",
+  "Add_Number",
+  "AddPrefix",
+  "StreetType"
+ ],
+ "fields_n": 6,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddPrefix": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Add_Number": {
+    "带特殊字符": 0,
+    "最短": "438",
+    "最长": "1110",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HOUSE_NO": {
+    "带特殊字符": 0,
+    "最短": "E0438",
+    "最长": "E0438",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNAME": {
+    "带特殊字符": 0,
+    "最短": "KAY RD",
+    "最长": "SLEEPY HOLLOW RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetType": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "RD",
+    "空": 142,
+    "空率": 0.473
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "10f482f23f6e9c9f",
+  "total": 5737,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.4155,
+   "number": 0.0061,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 3353,
+   "number": 5702,
+   "street": 5737
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0061, 'street': 0.0, 'full': 0.4155}）→ 可全量采集",
+  "total": 5737,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Add_Number street=ROADNAME（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "10f482f23f6e9c9f",
+ "site_cols": [
+  "StreetType"
+ ],
+ "source_id": "us/wi/kewaunee",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://services6.arcgis.com/OVykjebCTL9ZTdn8/arcgis/rest/services/Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

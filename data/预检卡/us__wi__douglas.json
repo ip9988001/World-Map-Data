@@ -1,0 +1,361 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDR_HN",
+  "street": "ADDR_PD",
+  "zip": "OBJECTID_12"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:55",
+ "county": "Douglas",
+ "curated_cols": {
+  "number": "ADDR_HN",
+  "street": "ADDR_PD",
+  "zip": "OBJECTID_12"
+ },
+ "fields": [
+  "ObjectID",
+  "ADDR_HN",
+  "ADDR_PD",
+  "ADDR_SN",
+  "ADDR_ST",
+  "ADDR_SD",
+  "OBJECTID_1",
+  "Status",
+  "Score",
+  "Side",
+  "X",
+  "Y",
+  "Ref_ID",
+  "PARCELNO",
+  "Shape_Leng",
+  "PROPERTYAD",
+  "Verified",
+  "OBJECTID_12",
+  "FIRE_NO",
+  "DIR",
+  "TYPE",
+  "LONGITUDE",
+  "LATITUDE",
+  "ROAD_NAME",
+  "FIRENO_DIR",
+  "LONG_DD",
+  "LAT_DD",
+  "Join_ID",
+  "CommonName",
+  "Shape",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "LocationID",
+  "NG911_ID"
+ ],
+ "fields_n": 36,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "ADDRESS POINTS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDR_HN": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "3027",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_PD": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 194,
+    "空率": 0.647
+   },
+   "ADDR_SD": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 275,
+    "空率": 0.917
+   },
+   "ADDR_SN": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "BROADWAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_ST": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "ST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CommonName": {
+    "带特殊字符": 0,
+    "最短": "JOHN AV",
+    "最长": "BROADWAY ST",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FIRENO_DIR": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "1516 1/2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FIRE_NO": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "3027",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Join_ID": {
+    "带特殊字符": 300,
+    "最短": "{6185D22E-BA8D-45BA-9ED0-A36C0E457C7E}",
+    "最长": "{6185D22E-BA8D-45BA-9ED0-A36C0E457C7E}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 300,
+    "最短": "46° 42' 1.862\" N",
+    "最长": "46° 41' 51.667\" N",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAT_DD": {
+    "带特殊字符": 0,
+    "最短": "46.699973",
+    "最长": "46.69768539",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 300,
+    "最短": "92° 2' 8.91\" W",
+    "最长": "92° 2' 53.147\" W",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONG_DD": {
+    "带特殊字符": 0,
+    "最短": "-92.067679",
+    "最长": "-92.03580778",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LocationID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "NG911_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "16",
+    "最长": "1022",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID_12": {
+    "带特殊字符": 0,
+    "最短": "54880",
+    "最长": "54880",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ObjectID": {
+    "带特殊字符": 0,
+    "最短": "239876",
+    "最长": "239876",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCELNO": {
+    "带特殊字符": 0,
+    "最短": "018010043800",
+    "最长": "018010043800",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PROPERTYAD": {
+    "带特殊字符": 0,
+    "最短": "2 N 21ST ST",
+    "最长": "1516 1/2 HUGHITT AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROAD_NAME": {
+    "带特殊字符": 0,
+    "最短": "E 2ND ST",
+    "最长": "STINSON AVE",
+    "空": 4,
+    "空率": 0.013
+   },
+   "Ref_ID": {
+    "带特殊字符": 0,
+    "最短": "68",
+    "最长": "1564",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Score": {
+    "带特殊字符": 0,
+    "最短": "64",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Leng": {
+    "带特殊字符": 0,
+    "最短": "410.4571",
+    "最长": "25398.071809",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Side": {
+    "带特殊字符": 0,
+    "最短": "L",
+    "最长": "L",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Status": {
+    "带特殊字符": 0,
+    "最短": "M",
+    "最长": "M",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "CITY",
+    "最长": "CITY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Verified": {
+    "带特殊字符": 2,
+    "最短": "Y",
+    "最长": "CHECK",
+    "空": 81,
+    "空率": 0.27
+   },
+   "X": {
+    "带特殊字符": 0,
+    "最短": "161107.04933",
+    "最长": "164102.6502942",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y": {
+    "带特殊字符": 0,
+    "最短": "299177.77585",
+    "最长": "297018.1594343",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1711551945000",
+    "最长": "1711551945000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "FISKNESSJ",
+    "最长": "FISKNESSJ",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "6f80da39b18de309",
+  "total": 23612,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0005,
+   "number": 0.0005,
+   "street": 0.0017,
+   "zip": 0.0044
+  },
+  "nonnull": {
+   "full": 23600,
+   "number": 23600,
+   "street": 23573,
+   "zip": 23507
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0005, 'street': 0.0017, 'zip': 0.0044, 'full': 0.0005}）→ 可全量采集",
+  "total": 23612,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_HN street=ADDR_PD zip=OBJECTID_12",
+ "sample_hash": "6f80da39b18de309",
+ "site_cols": [
+  "ADDR_HN",
+  "ADDR_PD",
+  "ADDR_SN",
+  "ADDR_ST",
+  "ADDR_SD"
+ ],
+ "source_id": "us/wi/douglas",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://portal.superiordcgis.org/server/rest/services/ADDRESS_POINTS/MapServer/0",
+ "verdict": "CONTRACTED"
+}

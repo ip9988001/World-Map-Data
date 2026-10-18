@@ -1,0 +1,276 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "StCity",
+  "number": "HsNbr",
+  "street": "StDir",
+  "unit": "Building",
+  "zip": "Zp1"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:38",
+ "county": "Clark",
+ "curated_cols": {
+  "number": "HsNbr",
+  "street": "StDir",
+  "zip": "Zp1"
+ },
+ "fields": [
+  "SN",
+  "HsNbr",
+  "Stype",
+  "StName",
+  "StDir",
+  "X_Coord",
+  "Y_Coord",
+  "Zp1",
+  "Assr_SN",
+  "QTile",
+  "PSN",
+  "CAD",
+  "HsSub",
+  "Building",
+  "Apt",
+  "StCity",
+  "ModifyDate",
+  "ModifyBy",
+  "CreateDate",
+  "CreateBy",
+  "SitusId",
+  "PrimeSitus",
+  "OBJECTID",
+  "PublishDt"
+ ],
+ "fields_n": 24,
+ "guessed_cols": {
+  "city": "StCity",
+  "unit": "Building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Situs Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Apt": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "11",
+    "空": 267,
+    "空率": 0.89
+   },
+   "Assr_SN": {
+    "带特殊字符": 0,
+    "最短": "000022-000",
+    "最长": "000022-000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Building": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 299,
+    "空率": 0.997
+   },
+   "CAD": {
+    "带特殊字符": 0,
+    "最短": "VAN",
+    "最长": "VAN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreateBy": {
+    "带特殊字符": 4,
+    "最短": "newmanp",
+    "最长": "VANCOUVER\\mcellrap",
+    "空": 273,
+    "空率": 0.91
+   },
+   "CreateDate": {
+    "带特殊字符": 0,
+    "最短": "1577131831000",
+    "最长": "1577131831000",
+    "空": 273,
+    "空率": 0.91
+   },
+   "HsNbr": {
+    "带特殊字符": 0,
+    "最短": "125",
+    "最长": "11011",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HsSub": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ModifyBy": {
+    "带特殊字符": 83,
+    "最短": "gissql",
+    "最长": "VANCOUVER\\mcellrap",
+    "空": 189,
+    "空率": 0.63
+   },
+   "ModifyDate": {
+    "带特殊字符": 0,
+    "最短": "1292832000000",
+    "最长": "1292832000000",
+    "空": 189,
+    "空率": 0.63
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PSN": {
+    "带特殊字符": 0,
+    "最短": "22000",
+    "最长": "986053955",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PrimeSitus": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 6,
+    "空率": 0.02
+   },
+   "PublishDt": {
+    "带特殊字符": 0,
+    "最短": "1791583267000",
+    "最长": "1791583267000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "QTile": {
+    "带特殊字符": 0,
+    "最短": "211211",
+    "最长": "211211",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SN": {
+    "带特殊字符": 0,
+    "最短": "22000",
+    "最长": "986053955",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusId": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "242935",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StCity": {
+    "带特殊字符": 0,
+    "最短": "CAMAS",
+    "最长": "BATTLE GROUND",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StDir": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "NW",
+    "空": 92,
+    "空率": 0.307
+   },
+   "StName": {
+    "带特殊字符": 0,
+    "最短": "2ND",
+    "最长": "FRUIT VALLEY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Stype": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "X_Coord": {
+    "带特殊字符": 0,
+    "最短": "1083791.56",
+    "最长": "1080655.93099999",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Y_Coord": {
+    "带特殊字符": 0,
+    "最短": "122947.3",
+    "最长": "123091.40260001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zp1": {
+    "带特殊字符": 0,
+    "最短": "98660",
+    "最长": "98660",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "7482be50cfb4685b",
+  "total": 249891,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 249891,
+   "full": 249891,
+   "number": 249891,
+   "street": 249891,
+   "zip": 249891
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 249891,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HsNbr street=StDir zip=Zp1",
+ "sample_hash": "7482be50cfb4685b",
+ "site_cols": [
+  "SitusId",
+  "PrimeSitus"
+ ],
+ "source_id": "us/wa/clark",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://services2.arcgis.com/ylxwjFBdCPBzP16d/arcgis/rest/services/SitusAddress/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

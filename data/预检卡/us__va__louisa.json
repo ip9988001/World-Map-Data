@@ -1,0 +1,205 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDRESS",
+  "street": "ROADNAME",
+  "unit": "APARTMENT"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 00:54:22",
+ "county": "Louisa",
+ "curated_cols": {
+  "number": "ADDRESS",
+  "street": "ROADNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDR_KEY",
+  "ROADNAME",
+  "ADDRESS",
+  "APARTMENT",
+  "FULLADDR",
+  "MSTRT",
+  "MDIRCT",
+  "MSTTYP",
+  "NENA_Name",
+  "POINT_X",
+  "POINT_Y",
+  "CreationDate",
+  "Creator",
+  "EditDate",
+  "Editor"
+ ],
+ "fields_n": 16,
+ "guessed_cols": {
+  "unit": "APARTMENT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "14480",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_KEY": {
+    "带特殊字符": 0,
+    "最短": "137",
+    "最长": "9420",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APARTMENT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CreationDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Creator": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "EditDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "Editor": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "83 CHAPEL WAY",
+    "最长": "2139 OCTAGON CHURCH ROAD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MDIRCT": {
+    "带特殊字符": 0,
+    "最短": "W",
+    "最长": "W",
+    "空": 291,
+    "空率": 0.97
+   },
+   "MSTRT": {
+    "带特殊字符": 0,
+    "最短": "HICKS",
+    "最长": "OCTAGON CHURCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSTTYP": {
+    "带特殊字符": 0,
+    "最短": "RD",
+    "最长": "WAY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NENA_Name": {
+    "带特殊字符": 0,
+    "最短": "HICKS LN",
+    "最长": "OCTAGON CHURCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "11676282.92",
+    "最长": "11556550.7747",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "3823886.2",
+    "最长": "3886944.63667",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNAME": {
+    "带特殊字符": 0,
+    "最短": "CHAPEL WAY",
+    "最长": "OCTAGON CHURCH ROAD",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c2c795365316fa3c",
+  "total": 22548,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 22548,
+   "number": 22548,
+   "street": 22548
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 22548,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ROADNAME（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "c2c795365316fa3c",
+ "site_cols": [
+  "ADDR_KEY",
+  "ADDRESS",
+  "FULLADDR"
+ ],
+ "source_id": "us/va/louisa",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://services.arcgis.com/JpCRGiMdPvzLX1GI/arcgis/rest/services/Louisa_WL_P/FeatureServer/13",
+ "verdict": "CONTRACTED"
+}
