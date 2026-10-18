@@ -1,0 +1,140 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_COM",
+  "number": "FULLADDR",
+  "street": "ROADNAME",
+  "unit": "COMMUNITY",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:46:30",
+ "county": "Kanawha",
+ "curated_cols": {
+  "city": "POSTAL_COM",
+  "number": "FULLADDR",
+  "street": "ROADNAME",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "ZIP",
+  "COMMUNITY",
+  "POSTAL_COM",
+  "FULLADDR",
+  "ROADNAME",
+  "District",
+  "Shape"
+ ],
+ "fields_n": 8,
+ "guessed_cols": {
+  "unit": "COMMUNITY"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "DBO.Address_Points_Nov_2022_Online",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "COMMUNITY": {
+    "带特殊字符": 0,
+    "最短": "RAND",
+    "最长": "SOUTH CHARLESTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "District": {
+    "带特殊字符": 0,
+    "最短": "19",
+    "最长": "19",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULLADDR": {
+    "带特殊字符": 0,
+    "最短": "1 KIT RD",
+    "最长": "2003 KANAWHA STATE FOREST DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_COM": {
+    "带特殊字符": 0,
+    "最短": "MIAMI",
+    "最长": "SOUTH CHARLESTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ROADNAME": {
+    "带特殊字符": 0,
+    "最短": "COX LN",
+    "最长": "KANAWHA STATE FOREST DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "25314",
+    "最长": "25314",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "b90785f11cb78af5",
+  "total": 102309,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 102309,
+   "full": 102309,
+   "number": 102309,
+   "street": 102309,
+   "zip": 102309
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 102309,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=FULLADDR street=ROADNAME city=POSTAL_COM zip=ZIP",
+ "sample_hash": "b90785f11cb78af5",
+ "site_cols": [
+  "FULLADDR"
+ ],
+ "source_id": "us/wv/kanawha",
+ "stage": "p0",
+ "state": "WV",
+ "url": "https://kanawhacountyassessorgis.com/server/rest/services/Address_Points_Nov_2022/MapServer/0",
+ "verdict": "CONTRACTED"
+}

@@ -1,0 +1,309 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ZipMuni",
+  "number": "Full_House_Number",
+  "street": "FullStNm",
+  "unit": "UnitType",
+  "zip": "ZipCode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:46:25",
+ "county": "Washington",
+ "curated_cols": {
+  "city": "ZipMuni",
+  "number": "Full_House_Number",
+  "street": "FullStNm",
+  "zip": "ZipCode"
+ },
+ "fields": [
+  "RoadCenterlineID_Num",
+  "AddNum",
+  "Full_House_Number",
+  "UnitType",
+  "UnitNum",
+  "FullStNm",
+  "abFullStNm",
+  "ZipMuni",
+  "MailCode",
+  "Parcel_TaxKey",
+  "StatusWashCo",
+  "Full_Address",
+  "Site_Address",
+  "OBJECTID",
+  "AddPtID",
+  "AddNum_Pre",
+  "St_PreDir",
+  "St_PreTyp",
+  "St_Name",
+  "St_PosTyp",
+  "St_PosDir",
+  "ZipCode",
+  "ESN",
+  "Longitude",
+  "Latitude",
+  "GlobalID",
+  "Site_NGUID",
+  "RCL_NGUID"
+ ],
+ "fields_n": 28,
+ "guessed_cols": {
+  "unit": "UnitType"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Point",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddNum": {
+    "带特殊字符": 0,
+    "最短": "65",
+    "最长": "20051",
+    "空": 0,
+    "空率": 0.0
+   },
+   "AddNum_Pre": {
+    "带特殊字符": 0,
+    "最短": "N167W",
+    "最长": "N167W",
+    "空": 233,
+    "空率": 0.777
+   },
+   "AddPtID": {
+    "带特殊字符": 0,
+    "最短": "461",
+    "最长": "5337213108",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "531",
+    "最长": "531",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FullStNm": {
+    "带特殊字符": 0,
+    "最短": "Amys Place",
+    "最长": "Corporate Center Drive",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Full_Address": {
+    "带特殊字符": 0,
+    "最短": "250 Willow Lane",
+    "最长": "N167W 20051 Spruce Street Apartment 11",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Full_House_Number": {
+    "带特殊字符": 0,
+    "最短": "65",
+    "最长": "N167W20051",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{8EBCECC5-C19B-4B3D-A178-CF15F4713675}",
+    "最长": "{8EBCECC5-C19B-4B3D-A178-CF15F4713675}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Latitude": {
+    "带特殊字符": 0,
+    "最短": "43.228079",
+    "最长": "43.32217097",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Longitude": {
+    "带特殊字符": 0,
+    "最短": "-88.353515",
+    "最长": "-88.13043616",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MailCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "35149638",
+    "最长": "35149638",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Parcel_TaxKey": {
+    "带特殊字符": 300,
+    "最短": "T3_0036",
+    "最长": "291_11190120207",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RCL_NGUID": {
+    "带特殊字符": 300,
+    "最短": "urn:emergency:uid:gis:RCL:1:washcowisco.",
+    "最长": "urn:emergency:uid:gis:RCL:20702:washcowisco.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RoadCenterlineID_Num": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "20702",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Site_Address": {
+    "带特殊字符": 300,
+    "最短": "206 High Street Hartford, 53027",
+    "最长": "W158N 11137 Legend Avenue Apartment 1 Germantown, 53022",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Site_NGUID": {
+    "带特殊字符": 300,
+    "最短": "urn:emergency:uid:gis:SSAP:4:washcowisco",
+    "最长": "urn:emergency:uid:gis:SSAP:59071:washcowisco.gov",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_Name": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "Corporate Center",
+    "空": 0,
+    "空率": 0.0
+   },
+   "St_PosDir": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "St_PosTyp": {
+    "带特殊字符": 0,
+    "最短": "Lane",
+    "最长": "Street",
+    "空": 33,
+    "空率": 0.11
+   },
+   "St_PreDir": {
+    "带特殊字符": 0,
+    "最短": "West",
+    "最长": "North",
+    "空": 272,
+    "空率": 0.907
+   },
+   "St_PreTyp": {
+    "带特殊字符": 0,
+    "最短": "State Highway",
+    "最长": "County Highway",
+    "空": 267,
+    "空率": 0.89
+   },
+   "StatusWashCo": {
+    "带特殊字符": 0,
+    "最短": "Active",
+    "最长": "Active Sub Address",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UnitNum": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "11",
+    "空": 253,
+    "空率": 0.843
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "Unit",
+    "最长": "Apartment",
+    "空": 251,
+    "空率": 0.837
+   },
+   "ZipCode": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZipMuni": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "abFullStNm": {
+    "带特殊字符": 0,
+    "最短": "Sth 144",
+    "最长": "Corporate Center Dr",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "96b33372d33972d9",
+  "total": 71471,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 1.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 1.0
+  },
+  "nonnull": {
+   "city": 0,
+   "full": 71471,
+   "number": 71471,
+   "street": 71471,
+   "zip": 0
+  },
+  "reason": "number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 1.0, 'zip': 1.0, 'full': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",
+  "total": 71471,
+  "verdict": "CONTRACTED_DOWNGRADED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=Full_House_Number street=FullStNm city=ZipMuni zip=ZipCode",
+ "sample_hash": "96b33372d33972d9",
+ "site_cols": [
+  "Full_Address",
+  "Site_Address",
+  "Site_NGUID"
+ ],
+ "source_id": "us/wi/washington",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://maps.washcowisco.gov/server/rest/services/Addresses/Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED_DOWNGRADED"
+}

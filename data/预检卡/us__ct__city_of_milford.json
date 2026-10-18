@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:48:40",
+ "county": "",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/ct/city_of_milford",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://server2.mapxpress.net:6080/arcgis/rest/services/Milford/Parcels/MapServer/0",
+ "verdict": "TRANSIENT"
+}

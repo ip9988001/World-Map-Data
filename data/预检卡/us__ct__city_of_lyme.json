@@ -1,0 +1,16 @@
+{
+ "attribution": "City of Lyme",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:50:46",
+ "county": "City of Lyme",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: IP address mismatch, certificate is not valid → 下轮重试",
+ "source_id": "us/ct/city_of_lyme",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://107.20.209.214/ArcGIS/rest/services/ELYME/EastLymeDynamic/MapServer/0",
+ "verdict": "TRANSIENT"
+}

@@ -1,0 +1,444 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SLH_CITY",
+  "number": "ST_NUM",
+  "street": "LOCATION",
+  "unit": "BLD_BLDG_N",
+  "zip": "SLH_ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:50:50",
+ "county": "Fairfield",
+ "curated_cols": {
+  "number": "ST_NUM",
+  "street": "LOCATION"
+ },
+ "fields": [
+  "ST_NUM",
+  "Shape_Length",
+  "Shape_Area",
+  "OBJECTID_12",
+  "Shape",
+  "OBJECTID",
+  "Parcel_ID",
+  "GIS_ID",
+  "Type",
+  "Comments",
+  "OBJECTID_1",
+  "REM_MNC",
+  "REM_PID",
+  "REM_PIN",
+  "REM_GIS_ID",
+  "REM_ALT_PR",
+  "REM_STATUS",
+  "REM_MBLU_M",
+  "REM_MBLU_1",
+  "REM_MBLU_B",
+  "REM_MBLU_2",
+  "REM_MBLU_L",
+  "REM_MBLU_3",
+  "REM_MBLU_U",
+  "REM_MBLU_4",
+  "LOCATION",
+  "REM_PRCL_L",
+  "REM_PRCL_1",
+  "REM_PRCL_2",
+  "REM_PRCL_3",
+  "REM_PRCL_4",
+  "ST_NAME",
+  "REM_ACCT_N",
+  "REM_INET_S",
+  "REM_LEGAL_",
+  "SLH_PID",
+  "SLH_OWN_NA",
+  "SLH_CO_OWN",
+  "SLH_OWN_AD",
+  "SLH_OWN__1",
+  "SLH_CITY",
+  "SLH_STT",
+  "SLH_ZIP",
+  "CSZ",
+  "SLH_SALE_D",
+  "SLH_LINE_N",
+  "SLH_PRICE",
+  "SLH_BOOK_P",
+  "SLH_QUALIF",
+  "BLD_BLDG_N",
+  "CNS_AYB",
+  "CNS_STORIE",
+  "CNS_AREA_G",
+  "CNS_AREA_E",
+  "LIVING_ARE",
+  "CSN_STYLE_",
+  "CSN_OCC_DE",
+  "CNS_RM_BR_",
+  "CNS_TOTAL_",
+  "CNS_TOTAL1",
+  "CNS_TOTA_1",
+  "CNS_TOT_RM",
+  "CNS_TOT__1",
+  "LND_USE_CO",
+  "LND_USE_DE",
+  "LND_ZONE",
+  "LND_OCC_DE",
+  "LND_NBHD",
+  "LND_SITE_I",
+  "LND_PID",
+  "LND_FRONTA",
+  "PRC_CREATE",
+  "PRC_STATUS",
+  "PRC_PF_UTI",
+  "PRC_TTL_LN",
+  "LANDVAL",
+  "BLDGVAL",
+  "TOTVAL",
+  "PRC_USRFLD",
+  "PRC_USRF_1"
+ ],
+ "fields_n": 97,
+ "guessed_cols": {
+  "city": "SLH_CITY",
+  "unit": "BLD_BLDG_N",
+  "zip": "SLH_ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 5000,
+  "name": "Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Comments": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "125-9",
+    "最长": "134-41A",
+    "空": 1,
+    "空率": 0.003
+   },
+   "LOCATION": {
+    "带特殊字符": 0,
+    "最短": "1 THORNE PL",
+    "最长": "ASH CREEK WATER FRNT NA",
+    "空": 1,
+    "空率": 0.003
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID_12": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Parcel_ID": {
+    "带特殊字符": 0,
+    "最短": "125-9",
+    "最长": "134-41A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "REM_ACCT_N": {
+    "带特殊字符": 3,
+    "最短": "RN-0023980",
+    "最长": "RN-0023980",
+    "空": 2,
+    "空率": 0.007
+   },
+   "REM_ALT_PR": {
+    "带特殊字符": 3,
+    "最短": "RN-0023980",
+    "最长": "RN-0023980",
+    "空": 2,
+    "空率": 0.007
+   },
+   "REM_GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "125-9",
+    "最长": "134-41A",
+    "空": 1,
+    "空率": 0.003
+   },
+   "REM_INET_S": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_LEGAL_": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_MBLU_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_MBLU_2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_MBLU_3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_MBLU_4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_MBLU_B": {
+    "带特殊字符": 0,
+    "最短": "134",
+    "最长": "134",
+    "空": 1,
+    "空率": 0.003
+   },
+   "REM_MBLU_L": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "41",
+    "空": 1,
+    "空率": 0.003
+   },
+   "REM_MBLU_M": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 1,
+    "空率": 0.003
+   },
+   "REM_MBLU_U": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "MAIN",
+    "空": 299,
+    "空率": 0.997
+   },
+   "REM_MNC": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PID": {
+    "带特殊字符": 0,
+    "最短": "860",
+    "最长": "34497",
+    "空": 1,
+    "空率": 0.003
+   },
+   "REM_PIN": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PRCL_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PRCL_2": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PRCL_3": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PRCL_4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_PRCL_L": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "REM_STATUS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SLH_CITY": {
+    "带特殊字符": 0,
+    "最短": "LECANTO",
+    "最长": "PORT WASHINGTON",
+    "空": 1,
+    "空率": 0.003
+   },
+   "SLH_CO_OWN": {
+    "带特殊字符": 34,
+    "最短": "SCOTT",
+    "最长": "OF THE MARTHA S TURNER 2013 REVOC LIVING",
+    "空": 242,
+    "空率": 0.807
+   },
+   "SLH_OWN_AD": {
+    "带特殊字符": 1,
+    "最短": "PO BOX 11",
+    "最长": "89 GROVERS AVE AKA 41 GROVERS",
+    "空": 2,
+    "空率": 0.007
+   },
+   "SLH_OWN_NA": {
+    "带特殊字符": 134,
+    "最短": "COWAN GARY",
+    "最长": "TAMBASCIO JOANNE & ROBERT M TAMBASCIO JR  (SURV)",
+    "空": 1,
+    "空率": 0.003
+   },
+   "SLH_OWN__1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SLH_PID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "LAKE",
+    "最长": "ASH CREEK WATER FRNT",
+    "空": 1,
+    "空率": 0.003
+   },
+   "ST_NUM": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "155",
+    "空": 4,
+    "空率": 0.013
+   },
+   "Shape_Area": {
+    "带特殊字符": 0,
+    "最短": "6070.462432087",
+    "最长": "17482.530327756922",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape_Length": {
+    "带特殊字符": 0,
+    "最短": "604.88207183975",
+    "最长": "1152.8864266359428",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "135d223119ed61bc",
+  "total": 34367,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0063,
+   "full": 0.006,
+   "number": 0.0354,
+   "street": 0.006,
+   "zip": 0.0078
+  },
+  "nonnull": {
+   "city": 34152,
+   "full": 34162,
+   "number": 33151,
+   "street": 34162,
+   "zip": 34100
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0354, 'street': 0.006, 'city': 0.0063, 'zip': 0.0078, 'full': 0.006}）→ 可全量采集",
+  "total": 34367,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ST_NUM street=LOCATION",
+ "sample_hash": "135d223119ed61bc",
+ "site_cols": [
+  "LOCATION",
+  "LND_SITE_I"
+ ],
+ "source_id": "us/ct/city_of_bridgeport",
+ "stage": "p0",
+ "state": "CT",
+ "url": "https://maps.ctmetro.org/server/rest/services/Bridgeport/Bridgeport_Parcels_NAD83/MapServer/7",
+ "verdict": "CONTRACTED"
+}

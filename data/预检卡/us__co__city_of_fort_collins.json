@@ -1,0 +1,337 @@
+{
+ "attribution": "City of Fort Collins",
+ "candidate_cols": {
+  "city": "CITY",
+  "number": "NUMBER_",
+  "state": "STATE",
+  "street": "STRNAME",
+  "unit": "BUILDING",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:48:35",
+ "county": "City of Fort Collins",
+ "curated_cols": {
+  "number": "NUMBER_",
+  "street": "STRNAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "MSTRID",
+  "CATEGORY",
+  "ADDRESSID",
+  "BASEID",
+  "FLOOR",
+  "NUMBER_",
+  "ZIP",
+  "ACTIVE",
+  "MAILING",
+  "FDPRE",
+  "PRE_TYPE",
+  "FENAME",
+  "FNAME",
+  "FTYPE",
+  "FDSUF",
+  "STRNAME",
+  "BUILDING",
+  "UNIT",
+  "BLDGUNIT",
+  "ADDRESS",
+  "UNITTYPE",
+  "FULL_ADDRESS",
+  "CITY",
+  "STATE",
+  "POINT_X",
+  "POINT_Y",
+  "LONGITUDE",
+  "LATITUDE",
+  "CREATED_DATE",
+  "LAST_EDITED_DATE"
+ ],
+ "fields_n": 31,
+ "guessed_cols": {
+  "city": "CITY",
+  "state": "STATE",
+  "unit": "BUILDING",
+  "zip": "ZIP"
+ },
+ "layer": {
+  "maxRecordCount": 5000,
+  "name": "CDST.ADDRESS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ACTIVE": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "550 KIM DR",
+    "最长": "1360 GREEN GABLES CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESSID": {
+    "带特殊字符": 0,
+    "最短": "79980000",
+    "最长": "537370000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BASEID": {
+    "带特殊字符": 0,
+    "最短": "4094",
+    "最长": "29783",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BLDGUNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "BUILDING": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CATEGORY": {
+    "带特殊字符": 0,
+    "最短": "PRIMARY",
+    "最长": "PRIMARY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "FORT COLLINS",
+    "最长": "FORT COLLINS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CREATED_DATE": {
+    "带特殊字符": 0,
+    "最短": "960249600000",
+    "最长": "-5333212800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FDPRE": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 293,
+    "空率": 0.977
+   },
+   "FDSUF": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FENAME": {
+    "带特殊字符": 0,
+    "最短": "KIM",
+    "最长": "GREEN GABLES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FNAME": {
+    "带特殊字符": 0,
+    "最短": "KIM",
+    "最长": "GREEN GABLES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FTYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "AVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "550 KIM DR",
+    "最长": "1360 GREEN GABLES CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LAST_EDITED_DATE": {
+    "带特殊字符": 0,
+    "最短": "960249600000",
+    "最长": "-5333212800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LATITUDE": {
+    "带特殊字符": 0,
+    "最短": "40.633468",
+    "最长": "40.543160639999996",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LONGITUDE": {
+    "带特殊字符": 0,
+    "最短": "-105.030879",
+    "最长": "-105.05362356",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAILING": {
+    "带特殊字符": 0,
+    "最短": "YES",
+    "最长": "YES",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MSTRID": {
+    "带特殊字符": 0,
+    "最短": "96",
+    "最长": "2275",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NUMBER_": {
+    "带特殊字符": 0,
+    "最短": "324",
+    "最长": "3237",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "3123712",
+    "最长": "3124061.26000001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "1440676",
+    "最长": "1440791.8900000001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PRE_TYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "CO",
+    "最长": "CO",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRNAME": {
+    "带特殊字符": 0,
+    "最短": "KIM DR",
+    "最长": "GREEN GABLES CT",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "80525",
+    "最长": "80525",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "17336d00e3441675",
+  "total": 111089,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 111089,
+   "full": 111089,
+   "number": 111089,
+   "state": 111089,
+   "street": 111089,
+   "zip": 111089
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 111089,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=NUMBER_ street=STRNAME",
+ "sample_hash": "17336d00e3441675",
+ "site_cols": [
+  "ADDRESSID",
+  "ADDRESS",
+  "FULL_ADDRESS"
+ ],
+ "source_id": "us/co/city_of_fort_collins",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://services1.arcgis.com/dLpFH5mwVvxSN4OE/arcgis/rest/services/Addresses/FeatureServer/0/",
+ "verdict": "CONTRACTED"
+}

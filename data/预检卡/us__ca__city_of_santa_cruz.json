@@ -1,0 +1,204 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "SCCityLMT",
+  "number": "STNUM",
+  "street": "STNAME",
+  "unit": "APT",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:48:31",
+ "county": "Santa Cruz",
+ "curated_cols": {
+  "number": "STNUM",
+  "street": "STNAME",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "STNAME",
+  "STSUFFIX",
+  "STNUM",
+  "APT",
+  "NOMAIL",
+  "ZIP5",
+  "ZIP4",
+  "APN",
+  "APNNODASH",
+  "SUBParcel",
+  "Address",
+  "SiteAdd2",
+  "SCCityLMT",
+  "EPLUNID"
+ ],
+ "fields_n": 15,
+ "guessed_cols": {
+  "city": "SCCityLMT",
+  "unit": "APT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "APN": {
+    "带特殊字符": 0,
+    "最短": "034-412-62",
+    "最长": "034-412-62",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APNNODASH": {
+    "带特殊字符": 0,
+    "最短": "03441262",
+    "最长": "03441262",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APT": {
+    "带特殊字符": 0,
+    "最短": "#E",
+    "最长": "#A20",
+    "空": 201,
+    "空率": 0.67
+   },
+   "Address": {
+    "带特殊字符": 0,
+    "最短": "25 MILL RD",
+    "最长": "2750 RESEARCH PARK DR #X",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EPLUNID": {
+    "带特殊字符": 0,
+    "最短": "ADR-000001",
+    "最长": "ADR-000001",
+    "空": 0,
+    "空率": 0.0
+   },
+   "NOMAIL": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SCCityLMT": {
+    "带特殊字符": 0,
+    "最短": "No",
+    "最长": "No",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "HWY 1",
+    "最长": "RESEARCH PARK DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNUM": {
+    "带特殊字符": 0,
+    "最短": "19",
+    "最长": "21181",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STSUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUBParcel": {
+    "带特殊字符": 0,
+    "最短": "03441262",
+    "最长": "03441262",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SiteAdd2": {
+    "带特殊字符": 300,
+    "最短": "SANTA CRUZ,  CA",
+    "最长": "SANTA CRUZ,  CA  95062-2029",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP4": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "95010",
+    "最长": "95010",
+    "空": 1,
+    "空率": 0.003
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "360949d2271e6662",
+  "total": 46968,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 46968,
+   "full": 46968,
+   "number": 46967,
+   "street": 46968,
+   "zip": 46968
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 46968,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STNUM street=STNAME zip=ZIP5",
+ "sample_hash": "360949d2271e6662",
+ "site_cols": [
+  "Address",
+  "SiteAdd2"
+ ],
+ "source_id": "us/ca/city_of_santa_cruz",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://services5.arcgis.com/RjgxPpXv8MHiv19f/arcgis/rest/services/Addresses/FeatureServer/1",
+ "verdict": "CONTRACTED"
+}

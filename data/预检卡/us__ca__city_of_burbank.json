@@ -1,0 +1,281 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "city",
+  "number": "parsedrang",
+  "state": "state",
+  "street": "parsedpred",
+  "unit": "suite",
+  "zip": "zip"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:47:58",
+ "county": "",
+ "curated_cols": {
+  "city": "city",
+  "number": "parsedrang",
+  "state": "state",
+  "street": "parsedpred",
+  "zip": "zip"
+ },
+ "fields": [
+  "city",
+  "state",
+  "zip",
+  "address",
+  "shape",
+  "suite",
+  "plus4",
+  "parsedrang",
+  "parsedpred",
+  "parsedname",
+  "parsedsuff",
+  "parsedpost",
+  "parsedsuit",
+  "parsedsu_1",
+  "mak",
+  "basemak",
+  "rbdi",
+  "censuskey",
+  "addresstyp",
+  "rooftop_la",
+  "rooftop_lo",
+  "latitude",
+  "long_",
+  "objectid",
+  "globalid"
+ ],
+ "fields_n": 25,
+ "guessed_cols": {
+  "unit": "suite"
+ },
+ "layer": {
+  "maxRecordCount": 50000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "address": {
+    "带特殊字符": 0,
+    "最短": "650 S 6Th St",
+    "最长": "3304 N San Fernando Blvd",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addresstyp": {
+    "带特殊字符": 0,
+    "最短": "H",
+    "最长": "H",
+    "空": 1,
+    "空率": 0.003
+   },
+   "basemak": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "censuskey": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "BURBANK",
+    "最长": "BURBANK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "globalid": {
+    "带特殊字符": 300,
+    "最短": "{BD203163-DE05-47D3-9649-C605C4BDE2C3}",
+    "最长": "{BD203163-DE05-47D3-9649-C605C4BDE2C3}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "latitude": {
+    "带特殊字符": 0,
+    "最短": "34.177845",
+    "最长": "34.20650101",
+    "空": 0,
+    "空率": 0.0
+   },
+   "long_": {
+    "带特殊字符": 0,
+    "最短": "-118.3125",
+    "最长": "-118.29914856",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mak": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "objectid": {
+    "带特殊字符": 0,
+    "最短": "422765",
+    "最长": "422765",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parsedname": {
+    "带特殊字符": 0,
+    "最短": "6Th",
+    "最长": "San Fernando",
+    "空": 0,
+    "空率": 0.0
+   },
+   "parsedpost": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "parsedpred": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 58,
+    "空率": 0.193
+   },
+   "parsedrang": {
+    "带特殊字符": 0,
+    "最短": "28",
+    "最长": "1016 1/2",
+    "空": 4,
+    "空率": 0.013
+   },
+   "parsedsu_1": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "parsedsuff": {
+    "带特殊字符": 0,
+    "最短": "Rd",
+    "最长": "Blvd",
+    "空": 3,
+    "空率": 0.01
+   },
+   "parsedsuit": {
+    "带特殊字符": 0,
+    "最短": "Ste C",
+    "最长": "Unit 101",
+    "空": 257,
+    "空率": 0.857
+   },
+   "plus4": {
+    "带特殊字符": 0,
+    "最短": "12",
+    "最长": "1442",
+    "空": 1,
+    "空率": 0.003
+   },
+   "rbdi": {
+    "带特殊字符": 0,
+    "最短": "U",
+    "最长": "U",
+    "空": 0,
+    "空率": 0.0
+   },
+   "rooftop_la": {
+    "带特殊字符": 0,
+    "最短": "34.18",
+    "最长": "34.18457",
+    "空": 0,
+    "空率": 0.0
+   },
+   "rooftop_lo": {
+    "带特殊字符": 0,
+    "最短": "-118.34",
+    "最长": "-118.2991",
+    "空": 0,
+    "空率": 0.0
+   },
+   "state": {
+    "带特殊字符": 0,
+    "最短": "CA",
+    "最长": "CA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "suite": {
+    "带特殊字符": 0,
+    "最短": "Unit 203",
+    "最长": "Unit 203",
+    "空": 286,
+    "空率": 0.953
+   },
+   "zip": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "db81bc1e828671bf",
+  "total": 62672,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 62672,
+   "full": 62672,
+   "number": 62672,
+   "state": 62672,
+   "street": 62672,
+   "zip": 62672
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 62672,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=parsedrang street=parsedpred city=city zip=zip",
+ "sample_hash": "db81bc1e828671bf",
+ "site_cols": [
+  "address",
+  "addresstyp"
+ ],
+ "source_id": "us/ca/city_of_burbank",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://mobilegis.burbankca.gov/burgis/rest/services/Land/Core_GEMS2_Landbase_GIS3/MapServer/31",
+ "verdict": "CONTRACTED"
+}

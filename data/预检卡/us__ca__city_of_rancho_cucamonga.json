@@ -1,0 +1,218 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "StreetNumber",
+  "state": "State",
+  "street": "StreetName",
+  "unit": "Unit",
+  "zip": "Zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:48:26",
+ "county": "San Bernardino",
+ "curated_cols": {
+  "city": "City",
+  "number": "StreetNumber",
+  "state": "State",
+  "street": "StreetName",
+  "zip": "Zipcode"
+ },
+ "fields": [
+  "StreetNumber",
+  "StreetNumberFractional",
+  "StreetName",
+  "StreetSuffix",
+  "Unit",
+  "City",
+  "State",
+  "Zipcode",
+  "Label",
+  "APN",
+  "APNNumber",
+  "APN_TEXT",
+  "OBJECTID",
+  "GlobalID",
+  "Status",
+  "FireFirstDueId"
+ ],
+ "fields_n": 16,
+ "guessed_cols": {
+  "unit": "Unit"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "APN": {
+    "带特殊字符": 0,
+    "最短": "106234108",
+    "最长": "106234108",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APNNumber": {
+    "带特殊字符": 0,
+    "最短": "20125248",
+    "最长": "106234108",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APN_TEXT": {
+    "带特殊字符": 0,
+    "最短": "106234108-0000",
+    "最长": "106234108-0000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "RANCHO CUCAMONGA",
+    "最长": "RANCHO CUCAMONGA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FireFirstDueId": {
+    "带特殊字符": 300,
+    "最短": "RANCHO_CUCAMONGA_CA_9112",
+    "最长": "RANCHO_CUCAMONGA_CA_3403004",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "80f49129-1542-4cd6-b88d-55fdfe68c1b8",
+    "最长": "80f49129-1542-4cd6-b88d-55fdfe68c1b8",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Label": {
+    "带特殊字符": 0,
+    "最短": "10210",
+    "最长": "7777 VICTORIA GARDENS LN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "State": {
+    "带特殊字符": 0,
+    "最短": "CA",
+    "最长": "CA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Status": {
+    "带特殊字符": 0,
+    "最短": "Active",
+    "最长": "Active",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetName": {
+    "带特殊字符": 0,
+    "最短": "KENT",
+    "最长": "VICTORIA GARDENS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetNumber": {
+    "带特殊字符": 0,
+    "最短": "6113",
+    "最长": "11313",
+    "空": 0,
+    "空率": 0.0
+   },
+   "StreetNumberFractional": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "StreetSuffix": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 1,
+    "空率": 0.003
+   },
+   "Unit": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "4315",
+    "空": 109,
+    "空率": 0.363
+   },
+   "Zipcode": {
+    "带特殊字符": 0,
+    "最短": "91701",
+    "最长": "91701",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "75b6f21dc83586d0",
+  "total": 70986,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0002,
+   "number": 0.0002,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 70986,
+   "full": 70975,
+   "number": 70975,
+   "state": 70986,
+   "street": 70983,
+   "zip": 70984
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0002, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0002}）→ 可全量采集",
+  "total": 70986,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=StreetNumber street=StreetName city=City zip=Zipcode",
+ "sample_hash": "75b6f21dc83586d0",
+ "site_cols": [
+  "StreetNumber",
+  "StreetNumberFractional",
+  "StreetName",
+  "StreetSuffix"
+ ],
+ "source_id": "us/ca/city_of_rancho_cucamonga",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://services1.arcgis.com/bF44QtfoYZDGo7TK/ArcGIS/rest/services/Addresses/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

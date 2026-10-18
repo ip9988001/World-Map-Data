@@ -1,0 +1,47 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:46:35",
+ "county": "Lincoln",
+ "curated_cols": {
+  "number": "ADDRESS",
+  "street": "ADDRESS"
+ },
+ "fields": [
+  "FID",
+  "Shape",
+  "ADDRESS",
+  "ADD_LOCATI",
+  "Northing",
+  "Easting"
+ ],
+ "fields_n": 6,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "LincolnCoWyRuralAddress",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": false
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "reason": "服务端自报 4,257 条，但主样本一条都取不到",
+  "verdict": "FAIL_P1"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDRESS street=ADDRESS（无 city/zip 列 → 交付会降级，靠字典补）",
+ "site_cols": [
+  "ADDRESS"
+ ],
+ "source_id": "us/wy/lincoln",
+ "stage": "p0",
+ "state": "WY",
+ "url": "https://maps.lcwy.org/arcgis/rest/services/PUBLIC/Census/MapServer/0",
+ "verdict": "FAIL_P1"
+}

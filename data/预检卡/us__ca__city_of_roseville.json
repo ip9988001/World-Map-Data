@@ -1,0 +1,277 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "ADDR2",
+  "number": "STRNUM",
+  "state": "ADDR2",
+  "street": "STRPREDIR",
+  "unit": "UNITTYPE",
+  "zip": "ADDR2"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:48:22",
+ "county": "Placer",
+ "curated_cols": {
+  "city": "ADDR2",
+  "number": "STRNUM",
+  "state": "ADDR2",
+  "street": "STRPREDIR",
+  "zip": "ADDR2"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDRID",
+  "ADDRCLS",
+  "ADDR1",
+  "ADDR2",
+  "STRNUM",
+  "STRNUMSUF",
+  "STRPREDIR",
+  "STRNAME",
+  "STRTYPE",
+  "STRSUFDIR",
+  "ANNOLINK",
+  "STRSEGID",
+  "UNITTYPE",
+  "UNIT",
+  "CREATEDATE",
+  "LASTEDITDATE",
+  "GlobalID",
+  "SHAPE",
+  "ADDRSTS",
+  "USPS",
+  "CITY",
+  "STATE",
+  "ZIP"
+ ],
+ "fields_n": 24,
+ "guessed_cols": {
+  "unit": "UNITTYPE"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Point",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://www.roseville.ca.us/cms/One.aspx?portalId=7964922&pageId=10722460",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDR1": {
+    "带特殊字符": 0,
+    "最短": "200 OAK ST",
+    "最长": "6790 STANFORD RANCH RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR2": {
+    "带特殊字符": 300,
+    "最短": "ROSEVILLE, CA 95678",
+    "最长": "ROSEVILLE, CA 95678",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRCLS": {
+    "带特殊字符": 0,
+    "最短": "2",
+    "最长": "2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRSTS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ANNOLINK": {
+    "带特殊字符": 0,
+    "最短": "51",
+    "最长": "1110B",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "ROSEVILLE",
+    "最长": "ROSEVILLE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CREATEDATE": {
+    "带特殊字符": 0,
+    "最短": "1454178978000",
+    "最长": "1454178978000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{6AFF2CD6-7BD3-4A5A-BE81-037598A0BD6F}",
+    "最长": "{6AFF2CD6-7BD3-4A5A-BE81-037598A0BD6F}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LASTEDITDATE": {
+    "带特殊字符": 0,
+    "最短": "1469501767000",
+    "最长": "1469501767000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "CA",
+    "最长": "CA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRNAME": {
+    "带特殊字符": 0,
+    "最短": "OAK",
+    "最长": "PLEASANT GROVE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRNUM": {
+    "带特殊字符": 0,
+    "最短": "51",
+    "最长": "1110",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRNUMSUF": {
+    "带特殊字符": 0,
+    "最短": "B",
+    "最长": "B",
+    "空": 299,
+    "空率": 0.997
+   },
+   "STRPREDIR": {
+    "带特殊字符": 0,
+    "最短": "E",
+    "最长": "E",
+    "空": 287,
+    "空率": 0.957
+   },
+   "STRSEGID": {
+    "带特殊字符": 0,
+    "最短": "61",
+    "最长": "2461",
+    "空": 2,
+    "空率": 0.007
+   },
+   "STRSUFDIR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STRTYPE": {
+    "带特殊字符": 0,
+    "最短": "AV",
+    "最长": "AV",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "USPS": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "95678",
+    "最长": "95678",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "11b7708bf6da2ce9",
+  "total": 79987,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.9741,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 79987,
+   "full": 79987,
+   "number": 79987,
+   "state": 79987,
+   "street": 2068,
+   "zip": 79987
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.9741, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRID 拆**（concat_addr）",
+  "total": 79987,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STRNUM street=STRPREDIR city=ADDR2 zip=ADDR2",
+ "sample_hash": "11b7708bf6da2ce9",
+ "site_cols": [
+  "ADDRID",
+  "ADDRCLS",
+  "ADDR1",
+  "ADDR2",
+  "ADDRSTS"
+ ],
+ "source_id": "us/ca/city_of_roseville",
+ "stage": "p0",
+ "state": "CA",
+ "url": "https://ags.roseville.ca.us/arcgis/rest/services/PublicServices/Address/MapServer/0",
+ "verdict": "CONTRACTED"
+}

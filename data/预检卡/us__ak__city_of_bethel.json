@@ -1,0 +1,110 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "Address_Primary"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:46:39",
+ "county": "City of Bethel",
+ "curated_cols": {
+  "number": "Address_Primary"
+ },
+ "fields": [
+  "OBJECTID",
+  "Address_Primary",
+  "Address_Secondary",
+  "QC",
+  "GlobalID"
+ ],
+ "fields_n": 5,
+ "guessed_cols": {},
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Addresses",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0_SITE",
+ "p1": {
+  "extremes": {
+   "Address_Primary": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "660  A",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Address_Secondary": {
+    "带特殊字符": 0,
+    "最短": "A/B",
+    "最长": "LIONS CLUB",
+    "空": 293,
+    "空率": 0.977
+   },
+   "GlobalID": {
+    "带特殊字符": 0,
+    "最短": "8e6d5994-35ba-4d0b-9ee9-eaf92d8ee501",
+    "最长": "8e6d5994-35ba-4d0b-9ee9-eaf92d8ee501",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "QC": {
+    "带特殊字符": 0,
+    "最短": "May 2019",
+    "最长": "Empty Lot",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "57eaa85bd88419ab",
+  "total": 2732,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0286,
+   "number": 0.0286
+  },
+  "nonnull": {
+   "full": 2654,
+   "number": 2654
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0286, 'full': 0.0286}）→ 可全量采集；**必须用整条地址列 Address_Primary 拆**（concat_addr）",
+  "total": 2732,
+  "verdict": "CONTRACTED",
+  "via": "full_addr"
+ },
+ "protocol": "esri",
+ "reason": "无独立号/街列，但有整条地址列候选 ['Address_Primary', 'Address_Secondary'] → 交给 concat_addr 拆",
+ "sample_hash": "57eaa85bd88419ab",
+ "site_cols": [
+  "Address_Primary",
+  "Address_Secondary"
+ ],
+ "source_id": "us/ak/city_of_bethel",
+ "stage": "p0",
+ "state": "AK",
+ "url": "https://services9.arcgis.com/KsvX1djnL2Fjg0Hr/ArcGIS/rest/services/Bethel_Public_Data/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

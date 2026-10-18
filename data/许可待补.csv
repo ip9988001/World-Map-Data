@@ -366,3 +366,22 @@ us/wi/douglas,WI,,https://portal.superiordcgis.org/server/rest/services/ADDRESS_
 us/wi/kewaunee,WI,,https://services6.arcgis.com/OVykjebCTL9ZTdn8/arcgis/rest/services/Address_Points/FeatureServer/0,https://www.kewauneeco.org/departments/land-information/gis/,以官方页面为准，待补
 us/wi/oneida,WI,,https://gis.oneidacountywi.gov/arcgis/rest/services/Oneview/Parcels/MapServer/12,https://www.oneidacountywi.gov/departments/li/land-records-system/,以官方页面为准，待补
 us/wi/vilas,WI,,https://maps.vilascountywi.gov/vilasgis/rest/services/V4/SiteAddress/MapServer/0,https://data-vilas.opendata.arcgis.com/datasets/vilas::site-address/about,以官方页面为准，待补
+us/wi/washington,WI,,https://maps.washcowisco.gov/server/rest/services/Addresses/Address_Points/FeatureServer/0,,以官方页面为准，待补
+us/wv/kanawha,WV,,https://kanawhacountyassessorgis.com/server/rest/services/Address_Points_Nov_2022/MapServer/0,,以官方页面为准，待补
+us/wy/lincoln,WY,,https://maps.lcwy.org/arcgis/rest/services/PUBLIC/Census/MapServer/0,,以官方页面为准，待补
+us/ak/city_of_bethel,AK,,https://services9.arcgis.com/KsvX1djnL2Fjg0Hr/ArcGIS/rest/services/Bethel_Public_Data/FeatureServer/0,https://www.arcgis.com/home/item.html?id=0af21df14db44fe2938225d3c41c8162&sublayer=0,以官方页面为准，待补
+us/al/city_of_robertsdale,AL,,https://web2.mobile311.com/arcgis/rest/services/Alabama/CityOfRobertsdale/MapServer/17,,以官方页面为准，待补
+us/al/city_of_huntsville,AL,City of Huntsville,https://maps.huntsvilleal.gov/server/rest/services/Addresses/AddressPoints/MapServer/0,https://maps.huntsvilleal.gov,以官方页面为准，待补
+us/al/city_of_mobile,AL,,https://maps.cityofmobile.org/arcgis/rest/services/Address_Points_MS/MapServer/0,,以官方页面为准，待补
+us/ca/city_of_brea,CA,,https://gisweb.cityofbrea.net/arcgis/rest/services/Building/MapServer/0,,以官方页面为准，待补
+us/ca/city_of_eureka,CA,,https://arcgis-svr.ci.eureka.ca.gov/arcgis/rest/services/ProjectServices/COE_OpenGov_FlagLayers/MapServer/32,,以官方页面为准，待补
+us/ca/city_of_burbank,CA,,https://mobilegis.burbankca.gov/burgis/rest/services/Land/Core_GEMS2_Landbase_GIS3/MapServer/31,,以官方页面为准，待补
+us/ca/city_of_long_beach,CA,,https://tsdgis.longbeach.gov/webgis/rest/services/HANSENBLLIC/BLAddrDetail/MapServer/0,,以官方页面为准，待补
+us/ca/city_of_rancho_cucamonga,CA,,https://services1.arcgis.com/bF44QtfoYZDGo7TK/ArcGIS/rest/services/Addresses/FeatureServer/0,https://rcdata-regis.opendata.arcgis.com/datasets/REGIS::addresses-1/about,以官方页面为准，待补
+us/ca/city_of_santa_cruz,CA,,https://services5.arcgis.com/RjgxPpXv8MHiv19f/arcgis/rest/services/Addresses/FeatureServer/1,https://data1-cruzgis.opendata.arcgis.com/datasets/cruzgis::addresses/about,以官方页面为准，待补
+us/co/city_of_fort_collins,CO,City of Fort Collins,https://services1.arcgis.com/dLpFH5mwVvxSN4OE/arcgis/rest/services/Addresses/FeatureServer/0/,https://www.fcgov.com/gis/,以官方页面为准，待补
+us/ct/city_of_milford,CT,,https://server2.mapxpress.net:6080/arcgis/rest/services/Milford/Parcels/MapServer/0,https://www.ci.milford.ct.us/,以官方页面为准，待补
+us/ct/city_of_haddam,CT,City of Haddam,https://54.243.125.146/arcgis/rest/services/HaddamCT/HaddamDynamic/MapServer/0,https://www.haddam.org/,以官方页面为准，待补
+us/ct/city_of_lyme,CT,City of Lyme,https://107.20.209.214/ArcGIS/rest/services/ELYME/EastLymeDynamic/MapServer/0,https://townlyme.org/,以官方页面为准，待补
+us/ct/city_of_manchester,CT,City of Manchester,https://gis1.townofmanchester.org/arcgis/rest/services/Basemaps/ToMMI3_BaseMap/MapServer/2,,以官方页面为准，待补
+us/ct/city_of_bridgeport,CT,,https://maps.ctmetro.org/server/rest/services/Bridgeport/Bridgeport_Parcels_NAD83/MapServer/7,https://metrocog.mapxpress.net/Bridgeport/,以官方页面为准，待补

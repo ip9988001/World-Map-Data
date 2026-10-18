@@ -1,0 +1,447 @@
+{
+ "attribution": "City of Huntsville",
+ "candidate_cols": {
+  "city": "mail_city",
+  "number": "address",
+  "street": "street_name",
+  "unit": "unit_number",
+  "zip": "zipcode"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-18 05:46:43",
+ "county": "City of Huntsville",
+ "curated_cols": {
+  "city": "mail_city",
+  "number": "address",
+  "street": "street_name",
+  "zip": "zipcode"
+ },
+ "fields": [
+  "OBJECTID",
+  "mslink",
+  "mapid",
+  "AddressID",
+  "address",
+  "unit",
+  "street_name",
+  "street_link",
+  "quadrant",
+  "addr_type",
+  "rec_status",
+  "label_text",
+  "mail_city",
+  "zipcode",
+  "mail_county",
+  "xcoord",
+  "ycoord",
+  "latitude",
+  "longitude",
+  "PLSS_SectionName",
+  "city",
+  "city_council_distr",
+  "city_council_rep",
+  "commission_distr",
+  "commission_rep",
+  "school_board_rep",
+  "rec_league",
+  "flood_type",
+  "flood_zone",
+  "flood_map",
+  "zoning",
+  "zoneSDD",
+  "zoning_index",
+  "traffic_zone",
+  "garbage_route",
+  "Recycle_Pickup",
+  "Census_tract",
+  "iz_b",
+  "iz_e",
+  "iz_gmpsz",
+  "iz_l",
+  "hisdis",
+  "elem_sch_distr",
+  "mid_sch_distr",
+  "high_sch_distr",
+  "eng_zone_no",
+  "eng_zone",
+  "eng_insp_zone",
+  "pwo_distr",
+  "CD_InspArea",
+  "CD_TargArea",
+  "Dr_Basin",
+  "Dr_Sub_Basin",
+  "ufz_id",
+  "use_code",
+  "struct_addrtype",
+  "annex_eff_date",
+  "annex_ord_num",
+  "SubdivisionID",
+  "Subd_Name",
+  "Parcel_PPIN",
+  "street",
+  "street_suf",
+  "UpdateStamp",
+  "Shape",
+  "address_full",
+  "unit_number",
+  "FogRoute",
+  "BusinessLic",
+  "BusinessLicType",
+  "latitude_dd",
+  "longitude_dd",
+  "fire_distr",
+  "police_pct",
+  "unit_type",
+  "addr_desc",
+  "Police_Zone",
+  "created_date",
+  "last_edited_date",
+  "addr_validate"
+ ],
+ "fields_n": 89,
+ "guessed_cols": {
+  "unit": "unit_number"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Building Address Points",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AddressID": {
+    "带特殊字符": 0,
+    "最短": "57042",
+    "最长": "208876",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Census_tract": {
+    "带特殊字符": 0,
+    "最短": "17",
+    "最长": "106.27",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "2298",
+    "最长": "20732",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PLSS_SectionName": {
+    "带特殊字符": 0,
+    "最短": "3S 1W 30",
+    "最长": "3S 1W 30",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Recycle_Pickup": {
+    "带特殊字符": 0,
+    "最短": "FRI WK 1",
+    "最长": "FRI WK 1",
+    "空": 0,
+    "空率": 0.0
+   },
+   "addr_type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "address": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "10871",
+    "空": 0,
+    "空率": 0.0
+   },
+   "city": {
+    "带特殊字符": 0,
+    "最短": "HSV",
+    "最长": "HSV",
+    "空": 0,
+    "空率": 0.0
+   },
+   "city_council_distr": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "5",
+    "空": 180,
+    "空率": 0.6
+   },
+   "city_council_rep": {
+    "带特殊字符": 0,
+    "最短": "David Little",
+    "最长": "John Meredith",
+    "空": 180,
+    "空率": 0.6
+   },
+   "commission_distr": {
+    "带特殊字符": 0,
+    "最短": "6",
+    "最长": "6",
+    "空": 0,
+    "空率": 0.0
+   },
+   "commission_rep": {
+    "带特殊字符": 0,
+    "最短": "Craig Hill",
+    "最长": "Violet Edwards",
+    "空": 0,
+    "空率": 0.0
+   },
+   "flood_map": {
+    "带特殊字符": 0,
+    "最短": "01089C0306E",
+    "最长": "01089C0306E",
+    "空": 0,
+    "空率": 0.0
+   },
+   "flood_type": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "flood_zone": {
+    "带特殊字符": 0,
+    "最短": "Floodplain",
+    "最长": "Floodplain",
+    "空": 282,
+    "空率": 0.94
+   },
+   "garbage_route": {
+    "带特殊字符": 0,
+    "最短": "17C",
+    "最长": "17C",
+    "空": 180,
+    "空率": 0.6
+   },
+   "iz_b": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 180,
+    "空率": 0.6
+   },
+   "iz_e": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 180,
+    "空率": 0.6
+   },
+   "iz_gmpsz": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1",
+    "空": 180,
+    "空率": 0.6
+   },
+   "label_text": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "1019-279",
+    "空": 0,
+    "空率": 0.0
+   },
+   "latitude": {
+    "带特殊字符": 300,
+    "最短": "34°51'2.5''",
+    "最长": "34°43'37.49''",
+    "空": 0,
+    "空率": 0.0
+   },
+   "longitude": {
+    "带特殊字符": 300,
+    "最短": "-86°43'2.9''",
+    "最长": "-86°39'50.84''",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mail_city": {
+    "带特殊字符": 0,
+    "最短": "Toney",
+    "最长": "Meridianville",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mail_county": {
+    "带特殊字符": 0,
+    "最短": "MADISON",
+    "最长": "MADISON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "mapid": {
+    "带特殊字符": 0,
+    "最短": "101391",
+    "最长": "101391",
+    "空": 119,
+    "空率": 0.397
+   },
+   "mslink": {
+    "带特殊字符": 0,
+    "最短": "104957",
+    "最长": "4062166",
+    "空": 0,
+    "空率": 0.0
+   },
+   "quadrant": {
+    "带特殊字符": 0,
+    "最短": "NW",
+    "最长": "NW",
+    "空": 180,
+    "空率": 0.6
+   },
+   "rec_league": {
+    "带特殊字符": 0,
+    "最短": "Continental",
+    "最长": "International",
+    "空": 180,
+    "空率": 0.6
+   },
+   "rec_status": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "school_board_rep": {
+    "带特殊字符": 0,
+    "最短": "Holly McCarty",
+    "最长": "Carlos Mathews",
+    "空": 180,
+    "空率": 0.6
+   },
+   "street_link": {
+    "带特殊字符": 0,
+    "最短": "488",
+    "最长": "3333",
+    "空": 0,
+    "空率": 0.0
+   },
+   "street_name": {
+    "带特殊字符": 0,
+    "最短": "JEFF RD",
+    "最长": "PADDINGTON GREEN SW",
+    "空": 0,
+    "空率": 0.0
+   },
+   "traffic_zone": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "7",
+    "空": 0,
+    "空率": 0.0
+   },
+   "unit": {
+    "带特殊字符": 0,
+    "最短": "UNIT A",
+    "最长": "UNIT 279",
+    "空": 290,
+    "空率": 0.967
+   },
+   "xcoord": {
+    "带特殊字符": 0,
+    "最短": "434843.42893",
+    "最长": "406575.81584592",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ycoord": {
+    "带特殊字符": 0,
+    "最短": "1538552.5820806",
+    "最长": "1544558.81449068",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zipcode": {
+    "带特殊字符": 0,
+    "最短": "35806",
+    "最长": "35806",
+    "空": 0,
+    "空率": 0.0
+   },
+   "zoneSDD": {
+    "带特殊字符": 0,
+    "最短": "Lower SDD",
+    "最长": "Lower SDD",
+    "空": 299,
+    "空率": 0.997
+   },
+   "zoning": {
+    "带特殊字符": 0,
+    "最短": "R2",
+    "最长": "R2B",
+    "空": 180,
+    "空率": 0.6
+   },
+   "zoning_index": {
+    "带特殊字符": 0,
+    "最短": "12-09",
+    "最长": "12-09",
+    "空": 141,
+    "空率": 0.47
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "c062e902eba53f49",
+  "total": 258606,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 258606,
+   "full": 258606,
+   "number": 258606,
+   "street": 258606,
+   "zip": 258606
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 258606,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=address street=street_name city=mail_city zip=zipcode",
+ "sample_hash": "c062e902eba53f49",
+ "site_cols": [
+  "AddressID",
+  "address",
+  "street_name",
+  "street_link",
+  "addr_type"
+ ],
+ "source_id": "us/al/city_of_huntsville",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://maps.huntsvilleal.gov/server/rest/services/Addresses/AddressPoints/MapServer/0",
+ "verdict": "CONTRACTED"
+}
