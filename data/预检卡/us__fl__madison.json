@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "CSV_DIRECT",
+ "checked_at": "2026-10-19 07:40:36",
+ "county": "Madison",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/fl/madison",
+ "stage": "p0",
+ "state": "FL",
+ "url": "https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-3v592/MADISON_2026-07-01.csv",
+ "verdict": "NEEDS_DOWNLOAD"
+}

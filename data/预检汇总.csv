@@ -66,12 +66,32 @@ us/ct/statewide,CT,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWN
 us/ct/town_of_easton_monroe,CT,Fairfield,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,19,"city=SITE_CITY,number=Street_Number,state=SITE_STATE,street=Street_Name,unit=Street_Unit,zip=SITE_ZIP",9840,0.0025,0.0073,406a78afb37612d3,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0025, 'zip': 0.0073, 'state': 0.007, 'full': 0.0}）→ 可全量采集",2026-10-18 10:54:59
 us/ct/town_of_new_milford,CT,Litchfield,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 01:13:11
 us/de/kent,DE,Kent,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,31,"city=City,number=Address,street=Roadname,unit=Apartment,zip=Zipcode",87180,0.0458,0.0027,c77b5aca83080e44,unknown,"契约全项通过（缺失率 {'number': 0.0076, 'street': 0.0, 'city': 0.0458, 'zip': 0.0027, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:19
+us/de/new_castle,DE,New Castle,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/de/statewide,DE,,ARCGIS,esri,PASS_P0_WEAK,PASS_P1,CONTRACTED,CONTRACTED,17,"city=CITY,number=HOUSENUMBER,state=STATE,street=PREFIXDIRECTION,unit=COMMUNITY,zip=ZIPCODE",532164,0.0,0.0,e7b151ef6be996c6,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-12 10:53:05
+us/fl/bradford,FL,Bradford,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/calhoun,FL,Calhoun,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/charlotte,FL,Charlotte,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/city_of_pinellas_park,FL,Pinellas Park,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service PinellasPark/GoMaps4/MapServer not found ', 'details': []}",2026-10-18 10:55:15
 us/fl/clay,FL,Clay,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,18,"city=Community,number=House,state=State,street=PreDir,unit=Community,zip=Zip",91969,0.0,0.0,81b63188d4488273,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:24
 us/fl/desoto,FL,Desoto,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,21,"city=Community,number=Number,street=STREET,unit=Community,zip=ZIP_CODE",16505,0.0,0.0,0d5853e15b9929d8,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:31
+us/fl/dixie,FL,Dixie,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/escambia,FL,Escambia,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/franklin,FL,Franklin,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/gadsden,FL,Gadsden,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/gilchrist,FL,Gilchrist,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/glades,FL,Glades,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/gulf,FL,Gulf,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/hamilton,FL,Hamilton,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/holmes,FL,Holmes,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/indian_river,FL,Indian River,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,32,"city=CITY_USPS,number=HOUSENUM,street=RDLABEL_USPS,unit=UNIT_TYPE,zip=ZIP5",112218,0.0,0.0,86d87d0d4fb5b6c5,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:37
+us/fl/jackson,FL,Jackson,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/jefferson,FL,Jefferson,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/lafayette,FL,Lafayette,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/leon,FL,Leon,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,49,"city=POSTAL_TOWN,number=HOUSENUM,state=STATE,street=PREFIX,unit=HANSEN_STRUNIT,zip=ZIPCD",155771,0.0,0.0,c4259b3efbfa3d2a,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:43
+us/fl/levy,FL,Levy,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/liberty,FL,Liberty,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/madison,FL,Madison,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
+us/fl/marion,FL,Marion,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/miami-dade,FL,Miami-Dade,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,22,"city=MAILING_MUNIC,number=HSE_NUM,state=State,street=PRE_DIR,unit=BLDG,zip=ZIP",1163721,0.0,0.0,8919c731c50ea4e7,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.2563, 'city': 0.0, 'zip': 0.0, 'state': 1.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESSID 拆**（concat_addr）",2026-10-13 22:39:56
 us/fl/osceola,FL,Osceola,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-14 01:49:04
 us/fl/volusia,FL,Volusia,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=CITYNAME,number=HOUSE_NUM,street=PRE_DIR,unit=UNIT,zip=ZIP",277566,0.0,0.0,6983dd5212b78cb1,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.8494, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 STREET_NAME 拆**（concat_addr）",2026-10-14 01:49:07
