@@ -93,13 +93,24 @@ us/fl/liberty,FL,Liberty,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DO
 us/fl/madison,FL,Madison,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/marion,FL,Marion,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/fl/miami-dade,FL,Miami-Dade,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,22,"city=MAILING_MUNIC,number=HSE_NUM,state=State,street=PRE_DIR,unit=BLDG,zip=ZIP",1163721,0.0,0.0,8919c731c50ea4e7,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.2563, 'city': 0.0, 'zip': 0.0, 'state': 1.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESSID 拆**（concat_addr）",2026-10-13 22:39:56
+us/fl/monroe,FL,Monroe,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/okaloosa,FL,Okaloosa,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/okeechobee,FL,Okeechobee,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/fl/osceola,FL,Osceola,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-14 01:49:04
+us/fl/seminole,FL,Seminole,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/suwannee,FL,Suwannee,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/taylor,FL,Taylor,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/union,FL,Union,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/fl/volusia,FL,Volusia,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=CITYNAME,number=HOUSE_NUM,street=PRE_DIR,unit=UNIT,zip=ZIP",277566,0.0,0.0,6983dd5212b78cb1,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.8494, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 STREET_NAME 拆**（concat_addr）",2026-10-14 01:49:07
+us/fl/wakulla,FL,Wakulla,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/fl/washington,FL,Washington,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ga/bibb2,GA,Bibb,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/ga/bleckley,GA,Bleckley,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 01:49:21
 us/ga/burke,GA,Burke,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 01:49:21
 us/ga/carroll,GA,Carroll,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 01:49:21
 us/ga/coffee,GA,Coffee,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,14,"city=COMM,number=AddNew,street=ROADNAME",21029,0.0,,2ac6d62f247ddffc,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-14 01:49:22
 us/ga/dade,GA,Dade,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-14 01:49:30
+us/ga/dooly,GA,Dooly,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/ga/dougherty,GA,Dougherty,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,20,"city=CityCode,number=STNUM,street=STDIR,unit=UnitType",41051,0.0005,,519cf48997788f16,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0548, 'city': 0.0005, 'full': 0.0}）→ 可全量采集",2026-10-14 01:50:34
 us/ga/emanuel,GA,Emanuel,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 01:50:39
 us/ga/fannin,GA,Fannin,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 01:50:39
@@ -128,6 +139,15 @@ us/ga/washington,GA,Washington,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unkno
 us/ga/wilcox,GA,Wilcox,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 07:29:43
 us/ga/wilkinson,GA,Wilkinson,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-14 07:29:44
 us/hi/hawaii,HI,hawaii,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'details': []}",2026-10-14 07:29:44
+us/ia/benton,IA,Benton,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/black_hawk,IA,Black Hawk,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/boone,IA,Boone,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/buchanan,IA,Buchanan,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/buena_vista,IA,Buena Vista,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/calhoun,IA,Calhoun,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/carroll,IA,Carroll,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/cherokee,IA,Cherokee,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/clarke,IA,Clarke,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/ia/dallas,IA,Dallas,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,15,"city=Post_Comm,number=Add_Number,street=StN_PreDir",13729,0.0,,704f32acc16841f9,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0636, 'city': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-14 07:29:44
 us/ia/des_moines,IA,Des Moines,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,75,"city=COMMUNITY,number=HOUSE,state=State_,street=DIR,unit=COMMUNITY,zip=Post_Code4",,,,,unknown,"服务端自报 22,227 条，但主样本一条都取不到",2026-10-14 07:29:49
 us/ia/dubuque,IA,Dubuque,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-14 07:29:58

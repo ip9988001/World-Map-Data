@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-19 20:59:53",
+ "county": "Bibb",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/ga/bibb2",
+ "stage": "p0",
+ "state": "GA",
+ "url": "https://hub.arcgis.com/api/v3/datasets/c084e860b70e48aba679bcfaa9f12557_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1",
+ "verdict": "NEEDS_DOWNLOAD"
+}

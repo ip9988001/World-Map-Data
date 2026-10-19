@@ -479,3 +479,23 @@ us/fl/levy,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-0
 us/fl/liberty,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-gy8ep/LIBERTY_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
 us/fl/madison,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-3v592/MADISON_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
 us/fl/marion,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-sfq2w/MARION_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/monroe,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-ivyiw/MONROE_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/okaloosa,FL,,https://gis.myokaloosa.com/gisdata/Shape%20Files/Transportation/Transportation.zip,https://myokaloosa.com/gis_data,以官方页面为准，待补
+us/fl/okeechobee,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-f5zr1/OKEECHOBEE_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/seminole,FL,,https://scwebapp2.seminolecountyfl.gov:6443/is/gis/GISData/addresses.gdb.zip,https://www.seminolecountyfl.gov/departments-services/information-services/gis-geographic-information-systems/gis-data.stml,以官方页面为准，待补
+us/fl/suwannee,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-8jk6v/SUWANNEE_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/taylor,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-tl6g0/TAYLOR_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/union,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-kewll/UNION_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/wakulla,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-qk9mm/WAKULLA_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/fl/washington,FL,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-06-03-9a01l/WASHINGTON_2026-07-01.csv,https://pointmatch.floridarevenue.com/General/AddressFiles.aspx,以官方页面为准，待补
+us/ga/bibb2,GA,,https://hub.arcgis.com/api/v3/datasets/c084e860b70e48aba679bcfaa9f12557_0/downloads/data?format=geojson&spatialRefId=4326&where=1%3D1,https://www.maconinsights.com/datasets/c084e860b70e48aba679bcfaa9f12557_0,以官方页面为准，待补
+us/ga/dooly,GA,,https://data.openaddresses.io/cache/us-ga-dooly_county.csv,,以官方页面为准，待补
+us/ia/benton,IA,Benton County,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Benton/address_06.zip,,以官方页面为准，待补
+us/ia/black_hawk,IA,,https://github.com/user-attachments/files/16609191/BlackHawkIAParcelPts.gdb.zip,,以官方页面为准，待补
+us/ia/boone,IA,,https://github.com/user-attachments/files/16608289/AddressPts.zip,,以官方页面为准，待补
+us/ia/buchanan,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Buchanan/Address_10.zip,,以官方页面为准，待补
+us/ia/buena_vista,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Buena_Vista/Address_11.zip,,以官方页面为准，待补
+us/ia/calhoun,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Calhoun/Address_13.zip,,以官方页面为准，待补
+us/ia/carroll,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Carroll/Address_14.zip,,以官方页面为准，待补
+us/ia/cherokee,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Cherokee/Address_18.zip,,以官方页面为准，待补
+us/ia/clarke,IA,,ftp://ftp.igsb.uiowa.edu/gis_library/counties/Clarke/Address_20.zip,,以官方页面为准，待补
