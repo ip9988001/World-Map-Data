@@ -442,3 +442,20 @@ us/tx/city_of_garland,TX,,https://maps2.garlandtx.gov/server1/rest/services/BASE
 us/tx/city_of_horseshoe_bay,TX,,https://services2.arcgis.com/PGv0SS9sE3M9RybT/ArcGIS/rest/services/Address_Pts/FeatureServer/0,,以官方页面为准，待补
 us/tx/city_of_round_rock,TX,,https://maps.roundrocktexas.gov/arcgis/rest/services/Base/AddressPoints/MapServer/0,https://geohub.roundrocktexas.gov/datasets/CORR::address-points-round-rock/about,以官方页面为准，待补
 us/tx/city_of_san_antonio,TX,,https://services.arcgis.com/g1fRTDLeMgspWrYp/ArcGIS/rest/services/COSA_Address/FeatureServer/15,,以官方页面为准，待补
+us/tx/city_of_mckinney,TX,,https://maps.mckinneytexas.org/mckinney/rest/services/OpenData/Addresses_Boundaries/MapServer/0,,以官方页面为准，待补
+us/tx/city_of_sherman,TX,,https://services7.arcgis.com/iMHDvyzuG2Q2tuit/arcgis/rest/services/Addresses__By_Year_/FeatureServer/0,https://data-cityofsherman.opendata.arcgis.com/datasets/447b4ef4ece24b5ab2a1a5100a8ebd5c_0/about,以官方页面为准，待补
+us/tx/city_of_amarillo,TX,,https://gismaps.amarillo.gov/services/rest/services/AddressPoints/FeatureServer/1,https://www.amarillo.gov/gis/,以官方页面为准，待补
+us/tx/city_of_cedar_park,TX,,https://gisrest.cedarparktexas.gov/cpgis/rest/services/AddressPoints/MapServer/0,,以官方页面为准，待补
+us/ut/city_of_provo,UT,,https://gispublicweb.provo.org/arcgis/rest/services/Basemap2/MapServer/1,,以官方页面为准，待补
+us/va/arlington,VA,,https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Address_Points/FeatureServer/0,,以官方页面为准，待补
+us/va/city_of_norton,VA,,https://gis.worldviewsolutions.com/arcgis/rest/services/norton/real_estate/MapServer/21,,以官方页面为准，待补
+us/vt/city_of_burlington,VT,,https://maps.burlingtonvt.gov/arcgis/rest/services/Assessor/Parcels/FeatureServer/0,,以官方页面为准，待补
+us/wa/city_of_bellevue,WA,,https://gis-web.bellevuewa.gov/gisext/rest/services/Enterprise/PropertyAndAddress/MapServer/6,,以官方页面为准，待补
+us/wi/city_of_milwaukee,WI,,https://milwaukeemaps.milwaukee.gov/arcgis/rest/services/Accela/AccelaApo/MapServer/0,,以官方页面为准，待补
+us/wy/city_of_sheridan,WY,,https://gismaps.sheridanwy.net/arcgis/rest/services/UtilityViewer/Addresses/MapServer/0,,以官方页面为准，待补
+us/al/lee,AL,,https://leeco.maps.arcgis.com/sharing/rest/content/items/fe73fd714ec54e4a9c50a5db6583d6c7/data,https://www.leeco.us/business/gis/open_data_gis.php,以官方页面为准，待补
+us/ca/plumas,CA,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2026-01-05-qo8uh/plumas_2025_07.geojson.zip,https://plumascounty.us/2199/Interactive-GIS-Data-to-Download-Page,以官方页面为准，待补
+us/ca/sierra,CA,,https://data.openaddresses.io/cache/uploads/jeffdefacto/2025-05-06-2tr51/06091_clean.zip,https://www.sierracounty.ca.gov/249/Geographic-Information-System-GIS-Map,以官方页面为准，待补
+us/co/el_paso,CO,,https://assets-admin.elpasoco.com/wp-content/uploads/parcels1foot_public-8.zip,,以官方页面为准，待补
+us/co/gunnison,CO,Gunnison County,https://www.gunnisoncounty.org/DocumentCenter/View/2475,https://www.gunnisoncounty.org/324/Downloadable-Datasets,以官方页面为准，待补
+us/ct/town_of_new_milford,CT,"Town of New Milford, CT",https://mapgeo.s3.amazonaws.com/clients/newmilfordct/files/HostedDownloadedData2026.zip,,以官方页面为准，待补

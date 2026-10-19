@@ -1,0 +1,20 @@
+{
+ "attribution": "Gunnison County",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-19 01:13:11",
+ "county": "Gunnison",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/co/gunnison",
+ "stage": "p0",
+ "state": "CO",
+ "url": "https://www.gunnisoncounty.org/DocumentCenter/View/2475",
+ "verdict": "NEEDS_DOWNLOAD"
+}

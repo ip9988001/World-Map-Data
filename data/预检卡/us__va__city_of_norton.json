@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:10:29",
+ "county": "City of Norton",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试",
+ "source_id": "us/va/city_of_norton",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://gis.worldviewsolutions.com/arcgis/rest/services/norton/real_estate/MapServer/21",
+ "verdict": "TRANSIENT"
+}

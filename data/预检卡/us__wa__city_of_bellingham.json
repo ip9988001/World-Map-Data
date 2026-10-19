@@ -1,0 +1,367 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "MUNICIPALITY",
+  "number": "ADDR_NUM",
+  "street": "STREET_NAME",
+  "unit": "PARCEL_UNITID",
+  "zip": "Zip_Plus4"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:11:43",
+ "county": "Whatcom",
+ "curated_cols": {
+  "city": "MUNICIPALITY",
+  "number": "ADDR_NUM",
+  "street": "STREET_NAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADDR_NUM",
+  "STREET_NAME",
+  "EDITSOURCE",
+  "ST_NAMEID",
+  "ADDRESS_ID",
+  "MAIN_ADDRESS_DISPLAY",
+  "ZIP",
+  "PLUS4",
+  "STATUS",
+  "PARCEL_CODE",
+  "LABELANGLE",
+  "LABELSIZE",
+  "Jurisdiction",
+  "FireHighCallVol",
+  "Shape",
+  "ADDPTKEY",
+  "UNITTYPE",
+  "UNITID",
+  "MUNICIPALITY",
+  "ESN",
+  "POINTTYPE",
+  "FLOOR",
+  "PARCEL_UNITID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "FireDeptReview",
+  "IncMunicipality",
+  "GC_EXCEPTION",
+  "RelatedTableCheck",
+  "Community",
+  "M_Code",
+  "Zip_Plus4",
+  "GlobalID"
+ ],
+ "fields_n": 36,
+ "guessed_cols": {
+  "unit": "PARCEL_UNITID",
+  "zip": "Zip_Plus4"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "https://data.cob.org/data/gis/metadata/land_addresspoints.html",
+ "license_status": "ok",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDPTKEY": {
+    "带特殊字符": 0,
+    "最短": "82119-8",
+    "最长": "80177-7704-MR54",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDRESS_ID": {
+    "带特殊字符": 0,
+    "最短": "82119-8",
+    "最长": "80177-7704-MR54",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_NUM": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "14600",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Community": {
+    "带特殊字符": 0,
+    "最短": "ACME",
+    "最长": "Lummi Res Bellingham",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EDITSOURCE": {
+    "带特殊字符": 0,
+    "最短": "Other",
+    "最长": "Permitting",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "1243",
+    "最长": "1243",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FLOOR": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "FireDeptReview": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FireHighCallVol": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "GC_EXCEPTION": {
+    "带特殊字符": 0,
+    "最短": "401",
+    "最长": "401",
+    "空": 292,
+    "空率": 0.973
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{6DD989B9-0629-4B66-9528-86735334A0A2}",
+    "最长": "{6DD989B9-0629-4B66-9528-86735334A0A2}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "IncMunicipality": {
+    "带特殊字符": 0,
+    "最短": "LYNDEN",
+    "最长": "Unincorporated",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Jurisdiction": {
+    "带特殊字符": 0,
+    "最短": "4",
+    "最长": "10",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LABELANGLE": {
+    "带特殊字符": 0,
+    "最短": "90",
+    "最长": "360",
+    "空": 16,
+    "空率": 0.053
+   },
+   "LABELSIZE": {
+    "带特殊字符": 0,
+    "最短": "M",
+    "最长": "Medium",
+    "空": 4,
+    "空率": 0.013
+   },
+   "MAIN_ADDRESS_DISPLAY": {
+    "带特殊字符": 0,
+    "最短": "376 B ST",
+    "最长": "4751 BIRCH BAY LYNDEN RD SPC 54",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MUNICIPALITY": {
+    "带特殊字符": 0,
+    "最短": "Acme",
+    "最长": "Point Roberts",
+    "空": 0,
+    "空率": 0.0
+   },
+   "M_Code": {
+    "带特殊字符": 0,
+    "最短": "BHAM",
+    "最长": "LYNDEN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "85235228",
+    "最长": "85235228",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PARCEL_CODE": {
+    "带特殊字符": 0,
+    "最短": "390219499360",
+    "最长": "390219499360",
+    "空": 1,
+    "空率": 0.003
+   },
+   "PARCEL_UNITID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "PLUS4": {
+    "带特殊字符": 0,
+    "最短": "1018",
+    "最长": "1018",
+    "空": 194,
+    "空率": 0.647
+   },
+   "POINTTYPE": {
+    "带特殊字符": 0,
+    "最短": "Parcel",
+    "最长": "Building",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RelatedTableCheck": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "ACTIVE",
+    "最长": "PENDING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STREET_NAME": {
+    "带特殊字符": 0,
+    "最短": "H ST",
+    "最长": "BIRCH BAY LYNDEN RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NAMEID": {
+    "带特殊字符": 0,
+    "最短": "1100",
+    "最长": "20240514",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNITID": {
+    "带特殊字符": 0,
+    "最短": "7",
+    "最长": "MR54",
+    "空": 274,
+    "空率": 0.913
+   },
+   "UNITTYPE": {
+    "带特殊字符": 0,
+    "最短": "SPC",
+    "最长": "BLDG",
+    "空": 274,
+    "空率": 0.913
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "98248",
+    "最长": "98248",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Zip_Plus4": {
+    "带特殊字符": 0,
+    "最短": "98248",
+    "最长": "98225-1018",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "1139212800000",
+    "最长": "1139212800000",
+    "空": 34,
+    "空率": 0.113
+   },
+   "created_user": {
+    "带特殊字符": 1,
+    "最短": "JK",
+    "最长": "mwwright@cob.org",
+    "空": 119,
+    "空率": 0.397
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1779385337000",
+    "最长": "1779385337000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 2,
+    "最短": "MWWRIGHT",
+    "最长": "jkomac@cob.org",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "63c8f4cbe2fbfc66",
+  "total": 98391,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 98391,
+   "full": 98391,
+   "number": 98391,
+   "street": 98391,
+   "zip": 98391
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 98391,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_NUM street=STREET_NAME city=MUNICIPALITY",
+ "sample_hash": "63c8f4cbe2fbfc66",
+ "site_cols": [
+  "ADDR_NUM",
+  "STREET_NAME",
+  "ADDRESS_ID",
+  "MAIN_ADDRESS_DISPLAY"
+ ],
+ "source_id": "us/wa/city_of_bellingham",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://maps.cob.org/arcgis4/rest/services/Maps/Grp_Places/MapServer/9",
+ "verdict": "CONTRACTED"
+}

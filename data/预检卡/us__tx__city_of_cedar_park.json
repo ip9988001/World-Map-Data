@@ -1,0 +1,296 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_COMM",
+  "number": "ADDR_NUMBER",
+  "street": "RD_PREFIX",
+  "unit": "ADDR_UNIT",
+  "zip": "ZIP"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:10:17",
+ "county": "Williamson",
+ "curated_cols": {
+  "city": "POSTAL_COMM",
+  "number": "ADDR_NUMBER",
+  "street": "RD_PREFIX",
+  "zip": "ZIP"
+ },
+ "fields": [
+  "OBJECTID",
+  "LABEL_NAME",
+  "ADDR_NUMBER",
+  "ADDR_UNIT",
+  "RD_FULLNAME",
+  "SEGMENT_ID",
+  "RD_PREFIX",
+  "RD_NAME",
+  "RD_TYPE",
+  "RD_SUFFIX",
+  "RD_ALIAS_NAME",
+  "CITY",
+  "POSTAL_COMM",
+  "ZIP",
+  "COUNTY",
+  "ADDR_TYPE",
+  "SUPP_INFO",
+  "ADDR_NOTES1",
+  "ESN",
+  "UPDATING_AGENCY",
+  "GIS_ID",
+  "AddressStatus",
+  "CreatedBy",
+  "CreatedDate",
+  "LastEditUser",
+  "EditDate",
+  "Shape"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {
+  "unit": "ADDR_UNIT"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "ADDRESS POINTS",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDR_NOTES1": {
+    "带特殊字符": 0,
+    "最短": "Water Tank",
+    "最长": "Address points are in Travis County",
+    "空": 284,
+    "空率": 0.947
+   },
+   "ADDR_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "900",
+    "最长": "13210",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_TYPE": {
+    "带特殊字符": 0,
+    "最短": "NONE",
+    "最长": "MANUFACTURED HOME",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADDR_UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "AddressStatus": {
+    "带特殊字符": 0,
+    "最短": "5",
+    "最长": "5",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "CP",
+    "最长": "CP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "COUNTY": {
+    "带特殊字符": 0,
+    "最短": "TRAVIS",
+    "最长": "WILLIAMSON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CreatedBy": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CreatedDate": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ESN": {
+    "带特殊字符": 0,
+    "最短": "416",
+    "最长": "416",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EditDate": {
+    "带特殊字符": 0,
+    "最短": "1565970327000",
+    "最长": "1565970327000",
+    "空": 299,
+    "空率": 0.997
+   },
+   "GIS_ID": {
+    "带特殊字符": 0,
+    "最短": "2058030073",
+    "最长": "2058030073",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LABEL_NAME": {
+    "带特殊字符": 0,
+    "最短": "510 FERN CT",
+    "最长": "201 BUTTERCUP CREEK BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LastEditUser": {
+    "带特殊字符": 0,
+    "最短": "JOPHILLIPS",
+    "最长": "JOPHILLIPS",
+    "空": 299,
+    "空率": 0.997
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_COMM": {
+    "带特殊字符": 0,
+    "最短": "LEANDER",
+    "最长": "CEDAR PARK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_ALIAS_NAME": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RD_FULLNAME": {
+    "带特殊字符": 0,
+    "最短": "TAKU RD",
+    "最长": "BUTTERCUP CREEK BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_NAME": {
+    "带特殊字符": 0,
+    "最短": "TAKU",
+    "最长": "BUTTERCUP CREEK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RD_PREFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 285,
+    "空率": 0.95
+   },
+   "RD_SUFFIX": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "RD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "DR",
+    "最长": "PATH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SEGMENT_ID": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "SUPP_INFO": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UPDATING_AGENCY": {
+    "带特殊字符": 0,
+    "最短": "CP",
+    "最长": "CP",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP": {
+    "带特殊字符": 0,
+    "最短": "78613",
+    "最长": "78613",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "9b5b55da62536b98",
+  "total": 31259,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 31259,
+   "full": 31259,
+   "number": 31259,
+   "street": 31259,
+   "zip": 31259
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 31259,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADDR_NUMBER street=RD_PREFIX city=POSTAL_COMM zip=ZIP",
+ "sample_hash": "9b5b55da62536b98",
+ "site_cols": [
+  "ADDR_NUMBER",
+  "ADDR_UNIT",
+  "ADDR_TYPE",
+  "ADDR_NOTES1",
+  "AddressStatus"
+ ],
+ "source_id": "us/tx/city_of_cedar_park",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://gisrest.cedarparktexas.gov/cpgis/rest/services/AddressPoints/MapServer/0",
+ "verdict": "CONTRACTED"
+}

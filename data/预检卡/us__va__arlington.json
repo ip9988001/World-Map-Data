@@ -1,0 +1,264 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "CITY_STATE_ZIP",
+  "number": "STNUM",
+  "state": "STATE",
+  "street": "STNAME",
+  "unit": "UNITCOUNT",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:10:25",
+ "county": "Arlington County",
+ "curated_cols": {
+  "number": "STNUM",
+  "street": "STNAME",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "STNUM",
+  "STCODE",
+  "STRTDIR",
+  "STRTDIRPREFIX",
+  "STRTNAME",
+  "STRTTYPE",
+  "STRTDIRSUFFIX",
+  "FULL_ADDRESS",
+  "STATUS",
+  "UNITCOUNT",
+  "STNAME",
+  "UNIT",
+  "UPDATE_DATE",
+  "ZIP5",
+  "GISID",
+  "GeoSyncDate",
+  "CITY",
+  "STATE",
+  "CITY_STATE_ZIP",
+  "ADDRESS_TYPE",
+  "APS_ELIGIBLE"
+ ],
+ "fields_n": 22,
+ "guessed_cols": {
+  "city": "CITY_STATE_ZIP",
+  "state": "STATE",
+  "unit": "UNITCOUNT"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address Point",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADDRESS_TYPE": {
+    "带特殊字符": 0,
+    "最短": "Standard",
+    "最长": "Standard",
+    "空": 0,
+    "空率": 0.0
+   },
+   "APS_ELIGIBLE": {
+    "带特殊字符": 0,
+    "最短": "Yes",
+    "最长": "Yes",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY": {
+    "带特殊字符": 0,
+    "最短": "ARLINGTON",
+    "最长": "FALLS CHURCH",
+    "空": 0,
+    "空率": 0.0
+   },
+   "CITY_STATE_ZIP": {
+    "带特殊字符": 0,
+    "最短": "ARLINGTON VA 22201",
+    "最长": "FALLS CHURCH VA 22046",
+    "空": 0,
+    "空率": 0.0
+   },
+   "FULL_ADDRESS": {
+    "带特殊字符": 0,
+    "最短": "1 N GLEBE RD",
+    "最长": "1000 N ARLINGTON MILL DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GISID": {
+    "带特殊字符": 0,
+    "最短": "101",
+    "最长": "38157",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GeoSyncDate": {
+    "带特殊字符": 0,
+    "最短": "1792040937000",
+    "最长": "1792040937000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATE": {
+    "带特殊字符": 0,
+    "最短": "VA",
+    "最长": "VA",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STATUS": {
+    "带特殊字符": 0,
+    "最短": "VERIFIED",
+    "最长": "VERIFIED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STCODE": {
+    "带特殊字符": 6,
+    "最短": "NFENST",
+    "最长": "_WSNBLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNAME": {
+    "带特殊字符": 0,
+    "最短": "S PARK DR",
+    "最长": "N ARLINGTON MILL DR",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STNUM": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "1000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRTDIR": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 6,
+    "空率": 0.02
+   },
+   "STRTDIRPREFIX": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 49,
+    "空率": 0.163
+   },
+   "STRTDIRSUFFIX": {
+    "带特殊字符": 0,
+    "最短": "S",
+    "最长": "S",
+    "空": 257,
+    "空率": 0.857
+   },
+   "STRTNAME": {
+    "带特殊字符": 0,
+    "最短": "PARK",
+    "最长": "ARLINGTON MILL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "STRTTYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "BLVD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UNIT": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "UNITCOUNT": {
+    "带特殊字符": 0,
+    "最短": "1.0",
+    "最长": "385.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UPDATE_DATE": {
+    "带特殊字符": 0,
+    "最短": "1156305600000",
+    "最长": "1156305600000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "22201",
+    "最长": "22201",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "063a7d928a5ca465",
+  "total": 44016,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0,
+   "number": 0.0,
+   "state": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 44016,
+   "full": 44016,
+   "number": 44016,
+   "state": 44016,
+   "street": 44016,
+   "zip": 44016
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 44016,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=STNUM street=STNAME zip=ZIP5",
+ "sample_hash": "063a7d928a5ca465",
+ "site_cols": [
+  "FULL_ADDRESS",
+  "ADDRESS_TYPE"
+ ],
+ "source_id": "us/va/arlington",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Address_Points/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

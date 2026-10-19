@@ -1,0 +1,149 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "number": "HouseNumber",
+  "street": "HouseNumberStreetNameFull",
+  "unit": "UnitDetailFull"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:11:38",
+ "county": "City of Bellevue",
+ "curated_cols": {
+  "number": "HouseNumber",
+  "street": "HouseNumberStreetNameFull"
+ },
+ "fields": [
+  "ObjectID",
+  "BuildingFk",
+  "LocationPointID",
+  "HouseNumber",
+  "HouseNumberSuffix",
+  "HouseNumberStreetNameFull",
+  "UnitDetailFull",
+  "LifeCycleStatus",
+  "FullLabel",
+  "Shape"
+ ],
+ "fields_n": 10,
+ "guessed_cols": {
+  "unit": "UnitDetailFull"
+ },
+ "layer": {
+  "maxRecordCount": 1000,
+  "name": "Building Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "BuildingFk": {
+    "带特殊字符": 0,
+    "最短": "582",
+    "最长": "10000",
+    "空": 2,
+    "空率": 0.007
+   },
+   "FullLabel": {
+    "带特殊字符": 0,
+    "最短": "188",
+    "最长": "13700  BLDG 2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseNumber": {
+    "带特殊字符": 0,
+    "最短": "21",
+    "最长": "12700",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseNumberStreetNameFull": {
+    "带特殊字符": 0,
+    "最短": "21 ENATAI DR",
+    "最长": "4607 W LAKE SAMMAMISH PKWY SE",
+    "空": 0,
+    "空率": 0.0
+   },
+   "HouseNumberSuffix": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "LifeCycleStatus": {
+    "带特殊字符": 0,
+    "最短": "Active",
+    "最长": "Active",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LocationPointID": {
+    "带特殊字符": 0,
+    "最短": "582",
+    "最长": "51135",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ObjectID": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UnitDetailFull": {
+    "带特殊字符": 0,
+    "最短": "APT A",
+    "最长": "BLDG 40",
+    "空": 287,
+    "空率": 0.957
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "01d520c991d385e4",
+  "total": 54455,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "full": 54455,
+   "number": 54455,
+   "street": 54455
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",
+  "total": 54455,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=HouseNumber street=HouseNumberStreetNameFull（无 city/zip 列 → 交付会降级，靠字典补）",
+ "sample_hash": "01d520c991d385e4",
+ "site_cols": [
+  "LocationPointID",
+  "HouseNumberStreetNameFull"
+ ],
+ "source_id": "us/wa/city_of_bellevue",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://gis-web.bellevuewa.gov/gisext/rest/services/Enterprise/PropertyAndAddress/MapServer/6",
+ "verdict": "CONTRACTED"
+}

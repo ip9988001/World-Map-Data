@@ -1,0 +1,192 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "City",
+  "number": "SitusAdd",
+  "street": "SitusAdd",
+  "unit": "Add_Building"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:08:45",
+ "county": "Collin",
+ "curated_cols": {
+  "city": "City",
+  "number": "SitusAdd",
+  "street": "SitusAdd"
+ },
+ "fields": [
+  "OBJECTID",
+  "TAX_ID",
+  "Add_Unit",
+  "UnitType",
+  "SitusAdd",
+  "Subd_Name",
+  "City",
+  "Add_Building",
+  "Shape",
+  "GlobalID",
+  "AssetID",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date"
+ ],
+ "fields_n": 15,
+ "guessed_cols": {
+  "unit": "Add_Building"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Address",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "Add_Building": {
+    "带特殊字符": 0,
+    "最短": "1",
+    "最长": "COMPLEX 1",
+    "空": 121,
+    "空率": 0.403
+   },
+   "Add_Unit": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "1505",
+    "空": 138,
+    "空率": 0.46
+   },
+   "AssetID": {
+    "带特殊字符": 0,
+    "最短": "AD.M0001829",
+    "最长": "AD.M0001829",
+    "空": 0,
+    "空率": 0.0
+   },
+   "City": {
+    "带特殊字符": 0,
+    "最短": "MCKINNEY",
+    "最长": "MCKINNEY",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{7E69C77E-7A2B-48F3-95E8-D7AC9890658C}",
+    "最长": "{7E69C77E-7A2B-48F3-95E8-D7AC9890658C}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1829",
+    "最长": "11340",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SitusAdd": {
+    "带特殊字符": 2,
+    "最短": "402 ELM ST",
+    "最长": "3075 WILLOW GROVE BLVD UNIT 1505",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Subd_Name": {
+    "带特殊字符": 8,
+    "最短": "MOORE",
+    "最长": "VIRGINIA PARKWAY PROFESSIONAL CENTER SOUTH",
+    "空": 43,
+    "空率": 0.143
+   },
+   "TAX_ID": {
+    "带特殊字符": 0,
+    "最短": "R-6558-R00-0761-1",
+    "最长": "R-11322-00B-0CA1-1",
+    "空": 1,
+    "空率": 0.003
+   },
+   "UnitType": {
+    "带特殊字符": 0,
+    "最短": "LOT",
+    "最长": "Other",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1714413619000",
+    "最长": "1714413619000",
+    "空": 26,
+    "空率": 0.087
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "SDE",
+    "最长": "CHINOJOSA",
+    "空": 26,
+    "空率": 0.087
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "46a8df8241e9750c",
+  "total": 93507,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0001,
+   "full": 0.0,
+   "number": 0.0,
+   "street": 0.0
+  },
+  "nonnull": {
+   "city": 93499,
+   "full": 93507,
+   "number": 93507,
+   "street": 93507
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0001, 'full': 0.0}）→ 可全量采集",
+  "total": 93507,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=SitusAdd street=SitusAdd city=City",
+ "sample_hash": "46a8df8241e9750c",
+ "site_cols": [
+  "SitusAdd"
+ ],
+ "source_id": "us/tx/city_of_mckinney",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://maps.mckinneytexas.org/mckinney/rest/services/OpenData/Addresses_Boundaries/MapServer/0",
+ "verdict": "CONTRACTED"
+}

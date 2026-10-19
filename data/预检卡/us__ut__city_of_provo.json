@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:10:22",
+ "county": "Utah",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "TRANSIENT",
+ "protocol": "esri",
+ "reason": "暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试",
+ "source_id": "us/ut/city_of_provo",
+ "stage": "p0",
+ "state": "UT",
+ "url": "https://gispublicweb.provo.org/arcgis/rest/services/Basemap2/MapServer/1",
+ "verdict": "TRANSIENT"
+}

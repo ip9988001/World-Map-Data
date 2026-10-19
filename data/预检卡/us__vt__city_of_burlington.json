@@ -1,0 +1,309 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "TOWN",
+  "number": "ST_NUM",
+  "street": "ST_NAME"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:11:33",
+ "county": "City of Burlington",
+ "curated_cols": {
+  "number": "ST_NUM",
+  "street": "ST_NAME"
+ },
+ "fields": [
+  "OBJECTID",
+  "SITEADDRESS",
+  "MAPLOTNO",
+  "ST_NUM",
+  "ST_NAME",
+  "ST_TYPE",
+  "PIN",
+  "created_user",
+  "created_date",
+  "last_edited_user",
+  "last_edited_date",
+  "UniqueId",
+  "AssessorPrimaryLandUse",
+  "LandUse_generalized",
+  "BTV_ID",
+  "GlobalID",
+  "SPAN",
+  "PROPTYPE",
+  "YEAR",
+  "TOWN",
+  "SOURCENAME",
+  "SOURCETYPE",
+  "EDITMETHOD",
+  "EDITOR",
+  "EDITDATE",
+  "MATCHSTAT",
+  "EDITNOTE",
+  "Shape__Area",
+  "Shape__Length"
+ ],
+ "fields_n": 29,
+ "guessed_cols": {
+  "city": "TOWN"
+ },
+ "layer": {
+  "maxRecordCount": 8800,
+  "name": "Tax Parcels",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "AssessorPrimaryLandUse": {
+    "带特殊字符": 0,
+    "最短": "Utility",
+    "最长": "Education - Private",
+    "空": 0,
+    "空率": 0.0
+   },
+   "BTV_ID": {
+    "带特殊字符": 0,
+    "最短": "4806",
+    "最长": "4806",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EDITDATE": {
+    "带特殊字符": 0,
+    "最短": "09/22/25",
+    "最长": "09/22/25",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EDITMETHOD": {
+    "带特殊字符": 0,
+    "最短": "HEADS UP DIGITIZING",
+    "最长": "HEADS UP DIGITIZING",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EDITNOTE": {
+    "带特殊字符": 1,
+    "最短": "OWNERSHIP UNKNOWN",
+    "最长": "CONDO POOL, NO SPAN ASSOCIATED",
+    "空": 290,
+    "空率": 0.967
+   },
+   "EDITOR": {
+    "带特殊字符": 0,
+    "最短": "W. Rich",
+    "最长": "W. Rich",
+    "空": 0,
+    "空率": 0.0
+   },
+   "GlobalID": {
+    "带特殊字符": 300,
+    "最短": "{9DA436DC-242F-4A10-94C5-530649595B2D}",
+    "最长": "{9DA436DC-242F-4A10-94C5-530649595B2D}",
+    "空": 0,
+    "空率": 0.0
+   },
+   "LandUse_generalized": {
+    "带特殊字符": 0,
+    "最短": "Land",
+    "最长": "Education - Private",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MAPLOTNO": {
+    "带特殊字符": 0,
+    "最短": "060-1-059-000",
+    "最长": "060-1-059-000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "MATCHSTAT": {
+    "带特殊字符": 0,
+    "最短": "MATCHED",
+    "最长": "UNMATCHED",
+    "空": 0,
+    "空率": 0.0
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "1605333",
+    "最长": "1605333",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PIN": {
+    "带特殊字符": 0,
+    "最短": "312331710331.0",
+    "最长": "312331710331.0",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PROPTYPE": {
+    "带特殊字符": 0,
+    "最短": "PARCEL",
+    "最长": "PARCEL",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SITEADDRESS": {
+    "带特殊字符": 0,
+    "最短": "REDROCKS",
+    "最长": "388-390 QUEEN CITY PARK RD",
+    "空": 10,
+    "空率": 0.033
+   },
+   "SOURCENAME": {
+    "带特殊字符": 0,
+    "最短": "City of Burlington",
+    "最长": "City of Burlington",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SOURCETYPE": {
+    "带特殊字符": 0,
+    "最短": "UNKNOWN",
+    "最长": "UNKNOWN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "SPAN": {
+    "带特殊字符": 0,
+    "最短": "C-535-4192",
+    "最长": "114-035-20464",
+    "空": 10,
+    "空率": 0.033
+   },
+   "ST_NAME": {
+    "带特殊字符": 0,
+    "最短": "-",
+    "最长": "QUEEN CITY PARK",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ST_NUM": {
+    "带特殊字符": 0,
+    "最短": "9",
+    "最长": "1149",
+    "空": 14,
+    "空率": 0.047
+   },
+   "ST_TYPE": {
+    "带特殊字符": 0,
+    "最短": "-",
+    "最长": "RD",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Area": {
+    "带特殊字符": 0,
+    "最短": "873.4389",
+    "最长": "27990.072391685",
+    "空": 0,
+    "空率": 0.0
+   },
+   "Shape__Length": {
+    "带特殊字符": 0,
+    "最短": "127.98917673216",
+    "最长": "125.37285297754975",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TOWN": {
+    "带特殊字符": 0,
+    "最短": "BURLINGTON",
+    "最长": "BURLINGTON",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UniqueId": {
+    "带特殊字符": 0,
+    "最短": "8704",
+    "最长": "8704",
+    "空": 0,
+    "空率": 0.0
+   },
+   "YEAR": {
+    "带特殊字符": 0,
+    "最短": "2025",
+    "最长": "2025",
+    "空": 0,
+    "空率": 0.0
+   },
+   "created_date": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "created_user": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "last_edited_date": {
+    "带特殊字符": 0,
+    "最短": "1758727408000",
+    "最长": "1758727408000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "last_edited_user": {
+    "带特殊字符": 0,
+    "最短": "SDELOADER",
+    "最长": "SDELOADER",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "fdc47ad04a86376c",
+  "total": 8562,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "full": 0.0288,
+   "number": 0.0008,
+   "street": 0.0002
+  },
+  "nonnull": {
+   "city": 8562,
+   "full": 8315,
+   "number": 8555,
+   "street": 8560
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0008, 'street': 0.0002, 'city': 0.0, 'full': 0.0288}）→ 可全量采集",
+  "total": 8562,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ST_NUM street=ST_NAME",
+ "sample_hash": "fdc47ad04a86376c",
+ "site_cols": [
+  "SITEADDRESS"
+ ],
+ "source_id": "us/vt/city_of_burlington",
+ "stage": "p0",
+ "state": "VT",
+ "url": "https://maps.burlingtonvt.gov/arcgis/rest/services/Assessor/Parcels/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

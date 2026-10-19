@@ -1,0 +1,295 @@
+{
+ "attribution": "",
+ "candidate_cols": {
+  "city": "POSTAL_COM",
+  "number": "ADD_NUMBER",
+  "street": "ADD_PRE",
+  "unit": "SWF_UNITS",
+  "zip": "ZIP5"
+ },
+ "channel": "ARCGIS",
+ "checked_at": "2026-10-19 01:09:40",
+ "county": "Grayson",
+ "curated_cols": {
+  "city": "POSTAL_COM",
+  "number": "ADD_NUMBER",
+  "street": "ADD_PRE",
+  "zip": "ZIP5"
+ },
+ "fields": [
+  "OBJECTID",
+  "ADD_NUMBER",
+  "ADD_PRE",
+  "ADD_PRE_TY",
+  "ADD_NAME",
+  "ADD_TYPE",
+  "ADD_SUF",
+  "ADD_FULLNA",
+  "ADD_UNIT",
+  "ADD_HIST_A",
+  "RR_ADD",
+  "ALIAS_ADD",
+  "STRUCT_TYP",
+  "DATE_CREAT",
+  "ZIP5",
+  "POSTAL_COM",
+  "CITY_CODE",
+  "EnerGOV_ID",
+  "UBA_ACCOUNT",
+  "TYPE",
+  "SWU_CLASS",
+  "IA_AREA",
+  "DATE_UPDATED",
+  "SWF_UNITS",
+  "POINT_X",
+  "POINT_Y",
+  "PROP_ID"
+ ],
+ "fields_n": 27,
+ "guessed_cols": {
+  "unit": "SWF_UNITS"
+ },
+ "layer": {
+  "maxRecordCount": 2000,
+  "name": "Addresses (By Year)",
+  "objectIdField": "OBJECTID",
+  "supportsPagination": true
+ },
+ "license": "",
+ "license_status": "unknown",
+ "p0": "PASS_P0",
+ "p1": {
+  "extremes": {
+   "ADD_FULLNA": {
+    "带特殊字符": 0,
+    "最短": "2830 FM 691",
+    "最长": "19245 W US HIGHWAY 82 WB",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_HIST_A": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADD_NAME": {
+    "带特殊字符": 0,
+    "最短": "KING",
+    "最长": "DRIPPING SPRINGS",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_NUMBER": {
+    "带特殊字符": 0,
+    "最短": "85",
+    "最长": "19245",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ADD_PRE": {
+    "带特殊字符": 0,
+    "最短": "N",
+    "最长": "N",
+    "空": 228,
+    "空率": 0.76
+   },
+   "ADD_PRE_TY": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "ADD_SUF": {
+    "带特殊字符": 0,
+    "最短": "WB",
+    "最长": "WB",
+    "空": 289,
+    "空率": 0.963
+   },
+   "ADD_TYPE": {
+    "带特殊字符": 0,
+    "最短": "ST",
+    "最长": "CIR",
+    "空": 20,
+    "空率": 0.067
+   },
+   "ADD_UNIT": {
+    "带特殊字符": 0,
+    "最短": "A",
+    "最长": "A",
+    "空": 299,
+    "空率": 0.997
+   },
+   "ALIAS_ADD": {
+    "带特殊字符": 0,
+    "最短": "",
+    "最长": "",
+    "空": 300,
+    "空率": 1.0
+   },
+   "CITY_CODE": {
+    "带特殊字符": 0,
+    "最短": "SHER",
+    "最长": "SHER",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DATE_CREAT": {
+    "带特殊字符": 0,
+    "最短": "1320796800000",
+    "最长": "1320796800000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "DATE_UPDATED": {
+    "带特殊字符": 0,
+    "最短": "1512000000000",
+    "最长": "1512000000000",
+    "空": 0,
+    "空率": 0.0
+   },
+   "EnerGOV_ID": {
+    "带特殊字符": 0,
+    "最短": "2011",
+    "最长": "2011",
+    "空": 0,
+    "空率": 0.0
+   },
+   "IA_AREA": {
+    "带特殊字符": 0,
+    "最短": "10252.69591",
+    "最长": "11336.1625808",
+    "空": 277,
+    "空率": 0.923
+   },
+   "OBJECTID": {
+    "带特殊字符": 0,
+    "最短": "38",
+    "最长": "100",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_X": {
+    "带特殊字符": 0,
+    "最短": "2531078.051074",
+    "最长": "2536828.05991517",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POINT_Y": {
+    "带特殊字符": 0,
+    "最短": "7281255.1051424",
+    "最长": "7290458.34526607",
+    "空": 0,
+    "空率": 0.0
+   },
+   "POSTAL_COM": {
+    "带特殊字符": 0,
+    "最短": "SHERMAN",
+    "最长": "SHERMAN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "PROP_ID": {
+    "带特殊字符": 0,
+    "最短": "156363",
+    "最长": "156363",
+    "空": 0,
+    "空率": 0.0
+   },
+   "RR_ADD": {
+    "带特殊字符": 0,
+    "最短": "NO PRE",
+    "最长": "RT 06 N TRAVIS ST",
+    "空": 262,
+    "空率": 0.873
+   },
+   "STRUCT_TYP": {
+    "带特殊字符": 0,
+    "最短": "Flag For Review",
+    "最长": "Storm Water Only",
+    "空": 284,
+    "空率": 0.947
+   },
+   "SWF_UNITS": {
+    "带特殊字符": 0,
+    "最短": "8",
+    "最长": "26",
+    "空": 278,
+    "空率": 0.927
+   },
+   "SWU_CLASS": {
+    "带特殊字符": 0,
+    "最短": "COM",
+    "最长": "RES2",
+    "空": 0,
+    "空率": 0.0
+   },
+   "TYPE": {
+    "带特殊字符": 0,
+    "最短": "MAIN",
+    "最长": "MAIN",
+    "空": 0,
+    "空率": 0.0
+   },
+   "UBA_ACCOUNT": {
+    "带特殊字符": 0,
+    "最短": "0",
+    "最长": "303-0380",
+    "空": 0,
+    "空率": 0.0
+   },
+   "ZIP5": {
+    "带特殊字符": 0,
+    "最短": "75092",
+    "最长": "75092",
+    "空": 0,
+    "空率": 0.0
+   }
+  },
+  "main_n": 300,
+  "partitions": {
+   "head": 15,
+   "mid": 15,
+   "tail": 15
+  },
+  "reason": "样本量达标、分页首/中/尾都取到",
+  "sample_hash": "a70c6222e9b42f08",
+  "total": 20170,
+  "verdict": "PASS_P1"
+ },
+ "p2": {
+  "contract": {
+   "city_max_miss": 0.2,
+   "min_keep": 0.8,
+   "zip_max_miss": 0.2
+  },
+  "miss_rate": {
+   "city": 0.0,
+   "number": 0.0,
+   "street": 0.0,
+   "zip": 0.0
+  },
+  "nonnull": {
+   "city": 20170,
+   "number": 20170,
+   "street": 20170,
+   "zip": 20170
+  },
+  "reason": "契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0}）→ 可全量采集",
+  "total": 20170,
+  "verdict": "CONTRACTED"
+ },
+ "protocol": "esri",
+ "reason": "字段够用（源总表已映射）：number=ADD_NUMBER street=ADD_PRE city=POSTAL_COM zip=ZIP5",
+ "sample_hash": "a70c6222e9b42f08",
+ "site_cols": [],
+ "source_id": "us/tx/city_of_sherman",
+ "stage": "p0",
+ "state": "TX",
+ "url": "https://services7.arcgis.com/iMHDvyzuG2Q2tuit/arcgis/rest/services/Addresses__By_Year_/FeatureServer/0",
+ "verdict": "CONTRACTED"
+}

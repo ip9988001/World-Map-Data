@@ -1,0 +1,20 @@
+{
+ "attribution": "Copyright © 2021 Kenai Peninsula Borough",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-19 01:13:11",
+ "county": "Kenai Peninsula Borough",
+ "license": "https://geohub.kpb.us/datasets/kpb-physical-addresses/explore?location=60.114122%2C-151.278733%2C7.70",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/ak/kenai_peninsula_borough",
+ "stage": "p0",
+ "state": "AK",
+ "url": "ftp://ftp.borough.kenai.ak.us/GIS/Downloads/Shapefiles/PhysicalAddress.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

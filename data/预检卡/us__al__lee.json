@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-19 01:13:11",
+ "county": "Lee",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/al/lee",
+ "stage": "p0",
+ "state": "AL",
+ "url": "https://leeco.maps.arcgis.com/sharing/rest/content/items/fe73fd714ec54e4a9c50a5db6583d6c7/data",
+ "verdict": "NEEDS_DOWNLOAD"
+}
