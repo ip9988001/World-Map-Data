@@ -148,9 +148,29 @@ us/ia/calhoun,IA,Calhoun,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_
 us/ia/carroll,IA,Carroll,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/ia/cherokee,IA,Cherokee,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
 us/ia/clarke,IA,Clarke,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 20:59:53
+us/ia/clay,IA,Clay,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/clayton,IA,Clayton,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/crawford,IA,Crawford,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/dallas,IA,Dallas,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,15,"city=Post_Comm,number=Add_Number,street=StN_PreDir",13729,0.0,,704f32acc16841f9,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0636, 'city': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-14 07:29:44
+us/ia/decatur,IA,Decatur,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/delaware,IA,Delaware,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/des_moines,IA,Des Moines,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,75,"city=COMMUNITY,number=HOUSE,state=State_,street=DIR,unit=COMMUNITY,zip=Post_Code4",,,,,unknown,"服务端自报 22,227 条，但主样本一条都取不到",2026-10-14 07:29:49
+us/ia/dickinson,IA,Dickinson,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/dubuque,IA,Dubuque,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-14 07:29:58
+us/ia/emmet,IA,Emmet,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/franklin,IA,Franklin,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/fremont,IA,Fremont,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/greene,IA,Greene,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/grundy,IA,Grundy,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/guthrie,IA,Guthrie,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/harrison,IA,Harrison,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/howard,IA,Howard,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/humboldt,IA,Humboldt,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/ida,IA,Ida,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/jackson,IA,Jackson,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/jasper,IA,Jasper,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/kossuth,IA,Kossuth,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
+us/ia/lucas,IA,Lucas,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/lyon,IA,Lyon,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,7,city=CITY,,,,,unknown,7 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 None）,2026-10-14 07:31:02
 us/ia/polk,IA,Polk,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-14 07:31:02
 us/ia/statewide,IA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 10:52:30
