@@ -227,9 +227,11 @@ us/il/moultrie,IL,Moultrie,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂�
 us/il/piatt,IL,Piatt,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 403, 'messageCode': 'GWM_0003', 'message': 'You do not have permissions to access this resou",2026-10-15 01:24:43
 us/il/pike,IL,Pike,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/il/putnam,IL,Putnam,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:44
+us/il/richland,IL,Richland,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/il/rock_island,IL,Rock Island,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,19,"city=city,number=num_only,street=address,unit=apt,zip=prp_zip",69144,0.0001,0.0501,03dfe5b197ac711b,unknown,"契约全项通过（缺失率 {'number': 0.0021, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0501, 'full': 0.0001}）→ 可全量采集",2026-10-15 01:24:47
 us/il/skokie,IL,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 10:55:15
 us/il/st_clair,IL,St. Clair,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,100,"city=sitecity,number=sitenum,state=sitest,street=sitepref,unit=siteunit,zip=sitezip",148004,0.0015,0.0015,732fb6d899bffd35,unknown,"契约全项通过（缺失率 {'number': 0.0015, 'street': 0.0015, 'city': 0.0015, 'zip': 0.0015, 'state': 0.0015, 'full': 0.0015}）→ 可全量采集",2026-10-15 01:24:52
+us/il/stephenson,IL,Stephenson,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/il/williamson,IL,Williamson,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:56
 us/il/woodford,IL,Woodford,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,4,"number=Add_Number,street=Address",16892,,,6373e6a401edfa51,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 01:24:58
 us/in/allen,IN,Allen,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,33,"city=MUNICIPALITY,number=HOUSE_NUMBER,state=State,street=PREFIX,unit=UNIT_DESIGNATOR,zip=ZIP",187637,0.0461,0.0012,42e83f7a095e6e84,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0249, 'city': 0.0461, 'zip': 0.0012, 'state': 0.0001, 'full': 0.0}）→ 可全量采集",2026-10-15 01:25:05
@@ -239,6 +241,7 @@ us/in/cass,IN,Cass,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不�
 us/in/city-of-hobart,IN,City of Hobart,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-18 10:56:26
 us/in/city_of_evansville,IN,City of Evansville,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service PROPERTY/ADDRESSES/MapServer not found ', 'details': []}",2026-10-18 10:56:26
 us/in/clark,IN,Clark,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:22
+us/in/delaware,IN,Delaware,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/in/elkhart,IN,Elkhart,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:26
 us/in/floyd,IN,Floyd,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:30
 us/in/grant,IN,Grant,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:34
@@ -257,18 +260,35 @@ us/in/owen,IN,Owen,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不�
 us/in/statewide,IN,,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED_DOWNGRADED,CONTRACTED_DOWNGRADED,89,"city=post_comm,number=geohousenum,state=geostate,street=st_premod,unit=geounittype,zip=post_code",3326690,0.3452,0.1597,23ed998281419ea1,unknown,"number/street 达标（经整条地址列 dlgf_prop_address 兜底：号/街独立列缺失），但 city 缺失率超上限（{'number': 0.0106, 'street': 0.9969, 'city': 0.3452, 'zip': 0.1597, 'state': 0.0, 'full': 0",2026-10-12 19:39:20
 us/in/white,IN,White,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 07:20:27
 us/ks/allen_county,KS,Allen,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:20:31
+us/ks/anderson_county,KS,Anderson,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/atchison_county,KS,Atchison,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/bourbon_county,KS,Bourbon,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/brown_county,KS,Brown,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:21:34
+us/ks/chautauqua_county,KS,Chautauqua,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/city_of_lenexa,KS,City of Lenexa,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-18 10:56:30
 us/ks/city_of_olathe,KS,City of Olathe,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 401: Unauthorized,2026-10-18 10:56:33
 us/ks/city_of_salina,KS,City of Salina,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 10:56:33
 us/ks/city_of_wichita,KS,City of Witchita,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 10:57:36
+us/ks/coffey_county,KS,Coffey,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/crawford_county,KS,Crawford,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/dickinson_county,KS,Dickinson,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:22:37
+us/ks/doniphan_county,KS,Doniphan,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/elk_county,KS,Elk,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:23:39
+us/ks/franklin_county,KS,Franklin,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/geary_county,KS,Geary,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/greenwood_county,KS,Greenwood,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:24:42
+us/ks/harvey_county,KS,Harvey,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/jackson_county,KS,Jackson,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service JacksonKs/JacksonKsDynamic/MapServer not found ', 'details': []}",2026-10-15 07:25:45
 us/ks/kearny_county,KS,Kearny,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:25:45
 us/ks/kingman_county,KS,Kingman,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:26:48
+us/ks/lane_county,KS,Lane,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/linn_county,KS,Linn,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/marion_county,KS,Marion,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 22:09:54
+us/ks/meade_county,KS,Meade,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/nemaha_county,KS,Nemaha,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/osage_county,KS,Osage,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/pawnee_county,KS,Pawnee,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/rush_county,KS,Rush,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/statewide,KS,,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,48,"city=POSTCO,number=HNO,state=STATE,street=PRD,unit=UNIT,zip=ZIP",1035861,0.0,0.0,3472b043f28c2e20,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0002, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",2026-10-12 19:39:28
 us/ks/thomas_county,KS,Thomas,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 22:10:57
 us/ky/boyd,KY,Boyd County,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:42

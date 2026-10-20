@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-20 20:29:07",
+ "county": "Coffey",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/ks/coffey_county",
+ "stage": "p0",
+ "state": "KS",
+ "url": "https://data.openaddresses.io/cache/uploads/iandees/903d8a/CF_OpenAddresses.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}
