@@ -262,6 +262,7 @@ us/in/white,IN,White,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取�
 us/ks/allen_county,KS,Allen,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:20:31
 us/ks/anderson_county,KS,Anderson,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/atchison_county,KS,Atchison,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/barton_county,KS,barton,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/ks/bourbon_county,KS,Bourbon,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/brown_county,KS,Brown,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 07:21:34
 us/ks/chautauqua_county,KS,Chautauqua,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
@@ -289,10 +290,13 @@ us/ks/nemaha_county,KS,Nemaha,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEE
 us/ks/osage_county,KS,Osage,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/pawnee_county,KS,Pawnee,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
 us/ks/rush_county,KS,Rush,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
+us/ks/scott_county,KS,Scott,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/ks/statewide,KS,,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,48,"city=POSTCO,number=HNO,state=STATE,street=PRD,unit=UNIT,zip=ZIP",1035861,0.0,0.0,3472b043f28c2e20,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0002, 'city': 0.0, 'zip': 0.0, 'state': 0.0}）→ 可全量采集",2026-10-12 19:39:28
+us/ks/sumner_county,KS,Sumner,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/ks/thomas_county,KS,Thomas,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-15 22:10:57
 us/ky/boyd,KY,Boyd County,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:42
 us/ky/kenton,KY,Kenton,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,10,"number=NUMADDR,street=NUMADDR",98087,,,dcc059f5ed49d254,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 22:12:00
+us/ky/lexington-fayette,KY,Fayette,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/ky/madison,KY,Madison,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,48,"city=CITY,number=ADDNUM,street=STREET,unit=bldgpermit,zip=ZIP_CODE",60550,0.0,0.0,741e2b4e44038093,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 22:12:05
 us/ky/meade,KY,Meade,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-15 22:12:22
 us/ky/pendleton,KY,Pendleton,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,66,"city=Post_Comm,number=AddNum_Pre,state=State,street=STREET,unit=Building,zip=Post_Code",8051,0.0012,0.0012,5986996a7a28d621,unknown,"契约全项通过（缺失率 {'number': 0.9998, 'street': 0.0012, 'city': 0.0012, 'zip': 0.0012, 'state': 0.0012, 'full': 0.0012}）→ 可全量采集；**必须用整条地址列 STREET 拆**（concat_addr）",2026-10-15 22:12:22
@@ -310,6 +314,8 @@ us/la/city_of_new_iberia,LA,City of New Iberia,ARCGIS,esri,REJECTED_P0,,,REJECTE
 us/la/claiborne,LA,Claiborne,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:39
 us/la/concordia,LA,Concordia,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:39
 us/la/east_baton_rouge_parish,LA,East Baton Rouge,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,40,"city=CITY,number=FULL_ADDRESS,state=STATE,street=FULL_ADDRESS,zip=ZIP",207144,0.0,0.0,d65d70f9cde7640c,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 22:12:40
+us/la/orleans_parish,LA,Orleans,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-20 23:48:01
+us/la/red_river_parish,LA,Red River,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/la/st_john_the_baptist_parish,LA,St. John the Baptist,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:51
 us/la/st_martin,LA,St. Martin,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:51
 us/la/st_mary,LA,St. Mary,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:51
@@ -320,6 +326,9 @@ us/la/webster,LA,Webster,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元
 us/ma/statewide,MA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:42
 us/md/allegany,MD,Allegany,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-16 01:12:37
 us/md/cecil,MD,Cecil,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=COMMUNITY,number=STRT_ADD,state=State,street=STRT_PFX,unit=COMMUNITY",51751,0.0,,a9338fdf3efc6b91,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'state': 0.0, 'full': 0.7727}）→ 可全量采集",2026-10-16 01:12:40
+us/md/howard,MD,Howard,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
+us/md/prince_georges,MD,Prince George's,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-20 23:48:01
+us/md/st_marys,MD,Saint Mary's,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/md/statewide,MD,,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 503: Service Unavailable,2026-10-12 19:39:42
 us/md/wicomico,MD,Wicomico,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,26,"city=CITY,number=STRTNUM,street=STRTDIR,zip=ZIPCODE",52051,0.0,0.0,14ff17bdcaf948f8,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.8776, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRESS 拆**（concat_addr）",2026-10-16 01:12:45
 us/me/lewiston,ME,Lewiston,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"number=ADDRNO,street=PRE_DIR,unit=UNIT",13065,,,7b723710edf09704,unknown,"契约全项通过（缺失率 {'number': 0.0003, 'street': 0.9911, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LOCATION 拆**（concat_addr）",2026-10-18 10:57:41
@@ -329,11 +338,14 @@ us/mi/city_of_rochester,MI,City of Rochester Hills,ARCGIS,esri,REJECTED_P0,,,REJ
 us/mi/city_of_tecumseh,MI,City of Tecumseh,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,15,"city=Owner_city,number=Address,street=Address,zip=Owner_zip",3707,0.0,0.0,0b2b6e05af042909,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 20:34:26
 us/mi/genesee,MI,Genesee,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",2026-10-16 01:13:23
 us/mi/marquette,MI,Marquette,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,13,"city=city,number=address,state=state2,street=address,zip=szip",45674,0.0,0.0,49655b9e061f2a31,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 01:13:37
+us/mi/mason,MI,Mason,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mi/semcog,MI,"Livingston, Macomb, Monroe, Oakland, Saint Clair, Washtenaw, Wayne",ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,20,"city=city_id,number=loadd1,street=street1,unit=housing_units,zip=zipcode",153764,0.0,0.0,bb4f6b183fc394bb,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 01:13:32
 us/mi/statewide,MI,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:46
+us/mi/vanburen,MI,Van Buren,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mi/washtenaw,MI,Washtenaw,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-16 01:13:41
 us/mi/wayne,MI,Wayne,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,10,"city=propcity,number=propstreetcombined,state=propstate,street=propstreetcombined,zip=propzip",768054,0.0,0.0,164c8aec02ca8fd5,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 01:13:41
 us/mn/anoka,MN,Anoka,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,5,"city=ACT_CITY,number=LOC_ADDR,street=LOC_ADDR,zip=LOC_ZIP",160074,0.0,0.0,666104521100482c,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 01:13:50
+us/mn/becker,MN,Becker,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mn/dodge,MN,Dodge,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service not found', 'details': []}",2026-10-16 01:13:55
 us/mn/douglas,MN,Douglas,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service not found', 'details': []}",2026-10-16 01:13:55
 us/mn/isanti,MN,Isanti,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,68,"city=PSTLCITY,number=SITEADDRESS,state=STATEAREA,street=SITEADDRESS,unit=BUILDING,zip=PSTLZIP5",,,,,unknown,"计数失败：{'code': 500, 'message': 'Error performing query operation', 'details': []}",2026-10-16 01:15:31
@@ -343,13 +355,17 @@ us/mn/kandiyohi,MN,Kandiyohi,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,56,"city=POSTC
 us/mn/kittson,MN,Kittson,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-16 07:03:42
 us/mn/koochiching,MN,Koochiching,ARCGIS,esri,PASS_P0,PASS_P1,REJECTED_P2,REJECTED_P2,60,"city=CITY,number=ADDR_1,street=ADDR_1,unit=TAXABLEBUILDING,zip=ZIP_CODE_5",55289,0.8495,0.0081,3471ab55599d8dd5,unknown,"服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.8495, 'street': 0.8495, 'city': 0.8495, 'zip': 0.0081, 'full': 0.8495}）→ 全量数据证伪，拒收",2026-10-16 07:04:45
 us/mn/lake_of_the_woods,MN,Lake of the Woods,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-16 07:04:49
+us/mn/mcleod,MN,McLeod,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mn/metrogis,MN,,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:46
 us/mn/norman,MN,Norman,ARCGIS,esri,PASS_P0_SITE,FAIL_P1,,FAIL_P1,29,"city=NormanCountyTax.dbo.tblParcelJoin.CITY_TWP_NUMBER,number=NormanCountyTax.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER,zip=NormanCountyTax.dbo.tblParcelJoin.PROPERTY_ZIP",,,,,unknown,"服务端自报 9,689 条，但主样本一条都取不到",2026-10-16 07:04:52
 us/mn/polk,MN,Polk,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,17,"city=CITY,number=ADDRESS,street=ADDRESS,zip=ZIP",14470,0.0,0.0,8d0ab7b5f3d58c02,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 07:04:58
 us/mn/red_lake,MN,Red Lake,ARCGIS,esri,PASS_P0_SITE,FAIL_P1,,FAIL_P1,34,"city=RedLakeCountyTaxData.dbo.tblParcelJoin.CITY_TWP_NUMBER,number=RedLakeCountyTaxData.dbo.tblParcelJoin.SCHOOL_DISTRICT_NUMBER,zip=RedLakeCountyTaxData.dbo.tblParcelJoin.PROPERTY_ZIP",,,,,unknown,"服务端自报 4,215 条，但主样本一条都取不到",2026-10-16 07:05:03
 us/mn/statewide,MN,,ARCGIS,esri,PASS_P0,PASS_P1,REJECTED_P2,REJECTED_P2,54,"city=ctu_name,number=anumberpre,state=state_code,street=st_pre_mod,zip=zip",2220021,0.0026,0.0,c6af27d63e68a816,unknown,"服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 1.0, 'street': 0.9995, 'city': 0.0026, 'zip': 0.0, 'state': 0.0}）→ 全量数据证伪，拒收",2026-10-12 19:39:46
+us/mn/stearns,MN,Stearns,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mn/swift,MN,Swift,ARCGIS,esri,PASS_P0,PASS_P1,DEFERRED,PASS_P1,84,"city=POSTCOMM,number=ANUMBER,state=STATE_CODE,street=LABEL_ST,unit=BUILDING,zip=ZIP",5823,,,7b1b70972321c821,unknown,"统计接口不可用（{'code': 400, 'message': 'Unable to complete operation.', 'details': []}）→ 退回下载后统计",2026-10-16 07:05:07
 us/mn/wadena,MN,Wadena,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,30,"city=CITY,number=BLD_NUM,state=STATE,street=ADDRESS,zip=ZIP",7789,0.0001,0.0001,74e10d55fd19e6b3,unknown,"契约全项通过（缺失率 {'number': 0.0001, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0001, 'state': 0.0001, 'full': 0.0001}）→ 可全量采集",2026-10-16 07:05:12
+us/mo/bates,MO,Bates,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
+us/mo/boone,MO,Boone,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mo/buchanan,MO,Buchanan,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-16 07:05:17
 us/mo/city_of_cape_girardeau,MO,Cape Girardeau,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)> → 下轮重试,2026-10-18 20:34:31
 us/mo/city_of_ofallon,MO,St. Charles,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service Citizenserve/Address_Labels/MapServer not found ', 'details': []}",2026-10-18 20:34:38
@@ -358,9 +374,11 @@ us/mo/dallas,MO,Dallas,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取
 us/mo/livingston,MO,Livingston,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-16 07:05:24
 us/mo/madison,MO,Madison,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,37,"city=OwnerCity,number=LocationSt,state=OwnerState,street=LocationSt,zip=OwnerZip1",11181,0.0,0.0,63704b335514a467,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 07:05:28
 us/mo/new_madrid,MO,New Madrid,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-16 07:05:33
+us/mo/osage,MO,Osage,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mo/perry,MO,Perry,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,19,"number=StructureNumber,street=CompositeStreet,unit=SubUnit",11403,,,7083edafcc8bf60d,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 07:05:36
 us/mo/saint_francois,MO,Saint Francois,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,16,"number=FullAddress,street=FullAddress,unit=SubUnit",42709,,,0f9e32d3706a2045,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 07:05:46
 us/mo/statewide,MO,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:56
+us/mo/taney,MO,Taney County,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/ms/adams,MS,Adams,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,70,"city=CITY,number=STNUM,state=STATE,street=LABEL,unit=UNIT_TYPE,zip=ZIP",,,,,unknown,"服务端自报 16,121 条，但主样本一条都取不到",2026-10-16 07:05:50
 us/ms/alcorn,MS,Alcorn,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,77,"city=City,number=Label,state=State,street=FullName,unit=BldgName,zip=Zipcode",,,,,unknown,"服务端自报 10,119 条，但主样本一条都取不到",2026-10-16 07:05:54
 us/ms/calhoun,MS,Calhoun,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,73,"city=City,number=Address,state=State,street=FullName,unit=BldgName,zip=Zipcode",8180,0.0,0.0,eac214f39e78569e,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 07:06:59
@@ -399,7 +417,9 @@ us/ms/wayne,MS,Wayne,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,77,"city=City,number=L
 us/ms/webster,MS,Webster,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,77,"city=City,number=Label,state=State,street=FullName,unit=BldgName,zip=Zipcode",,,,,unknown,"服务端自报 6,837 条，但主样本一条都取不到",2026-10-16 23:30:13
 us/ms/winston,MS,Winston,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,77,"city=City,number=Label,state=State,street=FullName,unit=BldgName,zip=Zipcode",,,,,unknown,"服务端自报 13,718 条，但主样本一条都取不到",2026-10-16 23:30:17
 us/mt/statewide,MT,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:40:12
+us/nc/alamance,NC,Alamance,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/nc/alleghany,NC,Alleghany,ARCGIS,esri,PASS_P0_SITE,PASS_P1,CONTRACTED,CONTRACTED,8,"number=Add_Number,unit=Unit",9731,,,92300c615500da0c,unknown,"契约全项通过（缺失率 {'number': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LSt_FullAddress 拆**（concat_addr）",2026-10-16 23:30:22
+us/nc/anson,NC,Anson,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/nc/beaufort,NC,Beaufort,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-16 23:30:26
 us/nc/blowing_rock,NC,City of Blowing Rock,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-12 19:40:12
 us/nc/buncombe,NC,Buncombe,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,9,"number=HouseNumber,street=StreetPrefix,zip=ZipCode",187771,,0.0,2bfcc48b1064e2bc,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.9369, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LocationID 拆**（concat_addr）",2026-10-16 23:30:26

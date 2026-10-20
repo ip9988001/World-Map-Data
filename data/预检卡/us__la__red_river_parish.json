@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-20 23:48:01",
+ "county": "Red River",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/la/red_river_parish",
+ "stage": "p0",
+ "state": "LA",
+ "url": "https://www.redriver911.com/wp-content/uploads/2016/03/911_ADDRESS_Public.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}
