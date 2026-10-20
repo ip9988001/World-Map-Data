@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-20 05:55:48",
+ "county": "Muscatine",
+ "license": "https://www.co.muscatine.ia.us/departments/gis_pro.shtml",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/ia/muscatine",
+ "stage": "p0",
+ "state": "IA",
+ "url": "https://iowagisdata.org/gisdr/county/muscatine/open/download?filename=MuscatineIowaAddressPoints.gdb.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

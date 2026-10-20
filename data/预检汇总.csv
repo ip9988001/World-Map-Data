@@ -172,13 +172,31 @@ us/ia/jasper,IA,Jasper,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DO
 us/ia/kossuth,IA,Kossuth,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/lucas,IA,Lucas,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 00:15:12
 us/ia/lyon,IA,Lyon,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,7,city=CITY,,,,,unknown,7 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 None）,2026-10-14 07:31:02
+us/ia/madison,IA,Madison,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/marion,IA,Marion,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/marshall,IA,Marshall,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/monona,IA,Monona,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/monroe,IA,Monroe,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/montgomery,IA,Montgomery,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/muscatine,IA,Muscatine,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/palo_alto,IA,Palo Alto,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/pocahontas,IA,Pocahontas,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/ia/polk,IA,Polk,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-14 07:31:02
+us/ia/sac,IA,Sac,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/scott,IA,Scott,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/shelby,IA,Shelby,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/sioux,IA,Sioux,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/ia/statewide,IA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 10:52:30
 us/ia/wapello,IA,Wapello,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,131,"city=CITY,number=HOUSENUM,state=STATE,street=ADDRESS,unit=COUNTCOMBUILDING,zip=ZIP",15894,0.0016,0.0018,e84d643b88d961eb,unknown,"契约全项通过（缺失率 {'number': 0.0016, 'street': 0.0014, 'city': 0.0016, 'zip': 0.0018, 'state': 0.0016, 'full': 0.0014}）→ 可全量采集",2026-10-14 22:14:29
+us/ia/webster,IA,Webster,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/ia/winneshiek,IA,Winneshiek,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/id/bannock,ID,Bannock,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -3] Temporary failure in name resolution> → 下轮重试,2026-10-14 22:14:51
 us/id/blaine,ID,Blaine,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,73,"city=post_comm,number=addnum_pre,state=state,street=full_stname,unit=unit_range,zip=post_code",17965,0.0001,0.0,18ec2d0664067e28,unknown,"契约全项通过（缺失率 {'number': 1.0, 'street': 0.0, 'city': 0.0001, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 full_address 拆**（concat_addr）",2026-10-14 22:15:35
 us/id/bonner,ID,Bonner,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,8,"city=msag,number=fulladdr,street=fulladdr,unit=Building",37329,0.0,,2f248cff170eae42,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-14 22:16:04
+us/id/boundary,ID,Boundary,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/id/clearwater,ID,Clearwater,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-14 22:16:09
+us/id/custer,ID,Custer,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
+us/id/fremont,ID,Fremont,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/id/jefferson,ID,Jefferson,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-14 22:17:12
 us/id/kootenai,ID,Kootenai,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,0,,,,,,unknown,0 个字段里找不到门牌号/街名候选列，也找不到整条地址列（号候选 None／街候选 None）,2026-10-14 22:17:15
 us/id/lemhi,ID,Lemhi,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'json', 'details': []}",2026-10-14 22:17:17
@@ -201,11 +219,13 @@ us/il/lawrence,IL,Lawrence,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂�
 us/il/logan,IL,Logan,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,6,"number=Address,street=Address",3766,,,3443e12d7de0d9d3,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-14 22:17:50
 us/il/macoupin,IL,Macoupin,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-14 22:17:55
 us/il/madison,IL,Madison,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-15 01:24:26
+us/il/mason,IL,Mason,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/il/massac,IL,Massac,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:28
 us/il/mclean,IL,McLean,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,16,"number=ADDRESS,state=State,street=ADDRESS,unit=Building,zip=Post_Code",85254,,0.0002,337c9ca40e2019c1,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'zip': 0.0002, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 01:24:31
 us/il/menard,IL,Menard,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:37
 us/il/moultrie,IL,Moultrie,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:40
 us/il/piatt,IL,Piatt,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 403, 'messageCode': 'GWM_0003', 'message': 'You do not have permissions to access this resou",2026-10-15 01:24:43
+us/il/pike,IL,Pike,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 05:55:48
 us/il/putnam,IL,Putnam,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-15 01:24:44
 us/il/rock_island,IL,Rock Island,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,19,"city=city,number=num_only,street=address,unit=apt,zip=prp_zip",69144,0.0001,0.0501,03dfe5b197ac711b,unknown,"契约全项通过（缺失率 {'number': 0.0021, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0501, 'full': 0.0001}）→ 可全量采集",2026-10-15 01:24:47
 us/il/skokie,IL,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 10:55:15
