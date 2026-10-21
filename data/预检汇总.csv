@@ -450,11 +450,31 @@ us/nc/halifax,NC,Halifax,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS
 us/nc/haywood,NC,Haywood,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/henderson,NC,Henderson,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 530: <none>,2026-10-16 23:30:54
 us/nc/hertford,NC,Hertford,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Hertford/Hertford_Query/MapServer not found ', 'details': []}",2026-10-16 23:30:57
+us/nc/hoke,NC,Hoke,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/hyde,NC,Hyde,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
 us/nc/iredell,NC,Iredell,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,34,"city=POCity,number=St_Number,street=PreDir,unit=Bldg_Type,zip=Zipcode",118781,0.0,0.0,76109f37f6a1b781,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 23:30:57
+us/nc/jackson,NC,Jackson,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/johnston,NC,Johnston,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/jones,NC,Jones,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/lee,NC,Lee,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
 us/nc/lincoln,NC,Lincoln,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,"暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f → 下轮重试",2026-10-16 23:31:02
+us/nc/macon,NC,Macon,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/martin,NC,Martin,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
 us/nc/mcdowell,NC,McDowell,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：TypeError: 'NoneType' object is not iterable,2026-10-16 23:31:11
 us/nc/mecklenburg,NC,Mecklenburg,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,46,"city=nme_po_city,number=txt_street_number,state=state,street=cde_street_dir_prfx,unit=txt_addr_unit,zip=cde_zip1",678577,0.0,0.0,d199b3162345a0d2,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.9284, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 num_addr 拆**（concat_addr）",2026-10-16 23:31:11
+us/nc/mitchell,NC,Mitchell,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/moore,NC,Moore,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/nash,NC,Nash,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/northampton,NC,Northampton,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
 us/nc/onslow,NC,Onslow,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Onslow/GoMaps4_New/MapServer not found ', 'details': []}",2026-10-16 23:31:20
+us/nc/orange,NC,Orange,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/pamlico,NC,Pamlico,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/pasquotank,NC,Pasquotank,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/pender,NC,Pender,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/person,NC,Person,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/pitt,NC,Pitt,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/randolph,NC,Randolph,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
+us/nc/richmond,NC,Richmond,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 10:02:12
 us/nc/rockingham,NC,Rockingham,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,14,"city=CITY,number=ADDRESS_NU,street=ROAD_PRE,unit=BUILDING_NUMBER,zip=ZIP",54513,0.0,0.0,282ac08386775ce7,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 23:31:20
 us/nc/sampson,NC,Sampson,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-16 23:31:25
 us/nc/statewide,NC,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-12 19:40:12
