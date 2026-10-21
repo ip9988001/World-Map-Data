@@ -420,14 +420,34 @@ us/mt/statewide,MT,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWN
 us/nc/alamance,NC,Alamance,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/nc/alleghany,NC,Alleghany,ARCGIS,esri,PASS_P0_SITE,PASS_P1,CONTRACTED,CONTRACTED,8,"number=Add_Number,unit=Unit",9731,,,92300c615500da0c,unknown,"契约全项通过（缺失率 {'number': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LSt_FullAddress 拆**（concat_addr）",2026-10-16 23:30:22
 us/nc/anson,NC,Anson,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
+us/nc/ashe,NC,Ashe,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/beaufort,NC,Beaufort,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-16 23:30:26
+us/nc/bertie,NC,Bertie,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/blowing_rock,NC,City of Blowing Rock,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-12 19:40:12
+us/nc/brunswick,NC,Brunswick,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/buncombe,NC,Buncombe,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,9,"number=HouseNumber,street=StreetPrefix,zip=ZipCode",187771,,0.0,2bfcc48b1064e2bc,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.9369, 'zip': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 LocationID 拆**（concat_addr）",2026-10-16 23:30:26
 us/nc/caswell,NC,Caswell,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,14,"number=Add_Number,street=STFULLNAME",13189,,,7ec37177c08a1630,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 23:30:49
+us/nc/catawba,NC,Catawba,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/cherokee,NC,Cherokee,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/chowan,NC,Chowan,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/city_of_boone,NC,City of Boone,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-18 20:34:47
 us/nc/city_of_elizabeth_city,NC,City of Elizabeth City,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-18 20:34:51
 us/nc/city_of_fuquay_varina,NC,City of Fuquay-Varina,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-18 20:34:51
 us/nc/city_of_greensboro,NC,Guilford,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=CITYCODE,number=AD_ST_NUM,street=AD_ST_PFX,unit=AD_ST_APT,zip=ZIPCODE",195275,0.0,0.0012,fd817123a7618c0b,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0036, 'city': 0.0, 'zip': 0.0012, 'full': 0.0}）→ 可全量采集",2026-10-18 20:34:53
+us/nc/clay,NC,Clay,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/craven,NC,Craven,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/currituck,NC,Currituck,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/dare,NC,Dare,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/duplin,NC,Duplin,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/ebci,NC,Eastern Band of Cherokee Indians,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/edgecombe,NC,Edgecombe,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/gaston,NC,Gaston,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/gates,NC,Gates,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/graham,NC,Graham,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/granville,NC,Granville,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/greene,NC,Greene,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/halifax,NC,Halifax,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
+us/nc/haywood,NC,Haywood,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-21 04:32:55
 us/nc/henderson,NC,Henderson,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 530: <none>,2026-10-16 23:30:54
 us/nc/hertford,NC,Hertford,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 500, 'message': 'Service Hertford/Hertford_Query/MapServer not found ', 'details': []}",2026-10-16 23:30:57
 us/nc/iredell,NC,Iredell,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,34,"city=POCity,number=St_Number,street=PreDir,unit=Bldg_Type,zip=Zipcode",118781,0.0,0.0,76109f37f6a1b781,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-16 23:30:57

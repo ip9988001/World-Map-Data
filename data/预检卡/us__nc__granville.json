@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-21 04:32:55",
+ "county": "Granville",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/nc/granville",
+ "stage": "p0",
+ "state": "NC",
+ "url": "https://granvillegis.org/LinkClick.aspx?fileticket=5PPY0CUXucc%3d&tabid=55&mid=376&forcedownload=true",
+ "verdict": "NEEDS_DOWNLOAD"
+}
