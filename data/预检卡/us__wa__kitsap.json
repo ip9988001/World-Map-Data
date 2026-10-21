@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-21 23:14:59",
+ "county": "Kitsap",
+ "license": "https://www.kitsapgov.com/dis/Pages/resources.aspx#disclaimer",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/wa/kitsap",
+ "stage": "p0",
+ "state": "WA",
+ "url": "https://ftp.co.kitsap.wa.us/data/gis/datacd/arcview/layers/parcel/siteaddr.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

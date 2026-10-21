@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "CSV_DIRECT",
+ "checked_at": "2026-10-21 23:14:59",
+ "county": "Armstrong",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/pa/armstrong",
+ "stage": "p0",
+ "state": "PA",
+ "url": "https://raw.githubusercontent.com/aaronpdennis/pa-county-addresses/master/data/ARMSTRONG/ARMSTRONG_addresses.csv",
+ "verdict": "NEEDS_DOWNLOAD"
+}

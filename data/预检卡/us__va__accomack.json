@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-21 23:14:59",
+ "county": "Accomack",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/va/accomack",
+ "stage": "p0",
+ "state": "VA",
+ "url": "https://www.arcgis.com/sharing/rest/content/items/ec6c2375786e4b28b748504d961e83fd/data",
+ "verdict": "NEEDS_DOWNLOAD"
+}
