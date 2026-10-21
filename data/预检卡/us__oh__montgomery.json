@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-21 20:04:24",
+ "county": "Montgomery",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/oh/montgomery",
+ "stage": "p0",
+ "state": "OH",
+ "url": "https://go.mcohio.org/embed/auditor/downloads/Shape_files/SHAPEFILE_ADDRESS_STREETCL_BUILDINGS.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

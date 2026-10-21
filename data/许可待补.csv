@@ -615,3 +615,20 @@ us/nc/person,NC,,https://data.nconemap.gov/downloads/vector/parcels/Person_parce
 us/nc/pitt,NC,,https://data.nconemap.gov/downloads/vector/parcels/Pitt_parcels_2017_12_06.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
 us/nc/randolph,NC,,https://dit-cgia-gis-data.s3.amazonaws.com/NCOM-data/parcels/randolph_parcels.zip,https://dit-cgia-gis-data.s3.amazonaws.com/NCOM-data/parcels/randolph_parcels.zip,以官方页面为准，待补
 us/nc/richmond,NC,,https://gis3.richmondnc.com/portal/sharing/rest/content/items/3351280ce7804736886e5f486c17c1dd/data,https://gis3.richmondnc.com/portal/apps/sites/#/richmond-county-open-data-portal,以官方页面为准，待补
+us/nc/robeson,NC,,https://data.nconemap.gov/downloads/vector/parcels/Robeson_parcels_2017_10_25.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
+us/nc/scotland,NC,,https://data.nconemap.gov/downloads/vector/parcels/Scotland_parcels_2017_10_04.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
+us/nc/stanly,NC,,ftp://ftp.stanlygis.net/gisdata/Layer Zip Files/address_points.zip,https://www.stanlygis.net/,以官方页面为准，待补
+us/nc/tyrrell,NC,,https://data.nconemap.gov/downloads/vector/parcels/Tyrrell_parcels_2017_10_19.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
+us/nc/washington,NC,,https://www.washconc.org/GIS%20Maps/AddressPts_Dec13.zip,https://www.washconc.org/gis_mapping.aspx,以官方页面为准，待补
+us/nc/watauga,NC,,https://data.nconemap.gov/downloads/vector/parcels/Watauga_parcels_2017_08_18.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
+us/nc/wayne,NC,,https://www.waynegov.com/DocumentCenter/View/4818/Address-Points,https://www.waynegov.com/235/GIS-Data-Download,以官方页面为准，待补
+us/nc/wilkes,NC,,https://data.nconemap.gov/downloads/vector/parcels/Wilkes_parcels_2017_09_20.zip,https://data.nconemap.gov/geoportal/catalog/search/resource/details.page?uuid=%7B837C5704-49C8-45A3-B084-AEBF4CD09804%7D,以官方页面为准，待补
+us/nd/sioux,ND,,https://data.openaddresses.io/cache/uploads/JasonHorning-NorthDakota/2026-03-10-uq3g2/SiteStructureAddressPoints.zip,,以官方页面为准，待补
+us/nd/stutsman,ND,,https://data.openaddresses.io/cache/uploads/migurski/43717f/StutsmanAddressPoints.zip,,以官方页面为准，待补
+us/nj/cape_may,NJ,,https://www.capemaycountyims.net/Downloads/CMC_Addresses.zip,https://www.capemaycountyims.net/,以官方页面为准，待补
+us/nj/morris,NJ,,https://morrisgisapps.co.morris.nj.us/GISData/PublicData/Shapefiles/Countywide/AddressPoints.zip,https://morrisgisapps.co.morris.nj.us/gisdata.html,以官方页面为准，待补
+us/nm/de_baca,NM,,https://data.openaddresses.io/cache/uploads/ingalls/us-nm-debaca.zip,,以官方页面为准，待补
+us/nm/torrance,NM,,https://data.openaddresses.io/cache/uploads/ingalls/us-nm-torrance.zip,,以官方页面为准，待补
+us/nv/mineral,NV,,https://data.openaddresses.io/cache/uploads/ingalls/us-nv-mineral.zip,,以官方页面为准，待补
+us/ny/allegany,NY,,https://gis.ny.gov/gisdata/fileserver/?DSID=921&file=AddressPoints_SAM.shp.zip,https://gis.ny.gov/gisdata/inventories/details.cfm?dsid=921&nysgis=,以官方页面为准，待补
+us/oh/montgomery,OH,,https://go.mcohio.org/embed/auditor/downloads/Shape_files/SHAPEFILE_ADDRESS_STREETCL_BUILDINGS.zip,https://www.mcohio.org/631/GIS-Downloads,以官方页面为准，待补

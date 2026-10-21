@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-21 20:04:24",
+ "county": "Rockland",
+ "license": "https://www.rocklandgis.com/portal/apps/sites/#/data/datasets/91fc13ddca3e4f13b83ffda80f07c6c4",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/ny/rockland",
+ "stage": "p0",
+ "state": "NY",
+ "url": "https://www.rocklandgis.com/portal/sharing/rest/content/items/91fc13ddca3e4f13b83ffda80f07c6c4/data",
+ "verdict": "NEEDS_DOWNLOAD"
+}
