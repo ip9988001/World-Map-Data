@@ -1,6 +1,7 @@
 ﻿source_id,state,county,channel,protocol,p0,p1,p2,verdict,fields_n,cols,total,city_miss,zip_miss,sample_hash,license_status,reason,checked_at
 us/ak/anchorage,AK,Anchorage,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,31,"city=CITY,number=HOUSE_NUMBER,state=STATE,street=STREET_NAME,unit=UNIT_TYPE,zip=ZIPCODE",129646,0.0,0.0,1adb76adcd79f2ad,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-12 10:51:45
 us/ak/city_of_bethel,AK,City of Bethel,ARCGIS,esri,PASS_P0_SITE,PASS_P1,CONTRACTED,CONTRACTED,5,number=Address_Primary,2732,,,57eaa85bd88419ab,unknown,"契约全项通过（缺失率 {'number': 0.0286, 'full': 0.0286}）→ 可全量采集；**必须用整条地址列 Address_Primary 拆**（concat_addr）",2026-10-18 05:46:39
+us/ak/city_of_juneau,AK,Juneau,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 10:02:58
 us/ak/fairbanks_north_star_borough,AK,Fairbanks North Star,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED_DOWNGRADED,CONTRACTED_DOWNGRADED,22,"city=PLACE_NAME,number=HSE_NUMB,street=FULL_STREET,zip=ZIPCODE",36501,0.986,1.0,df230749dc98ea5a,ok,"number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 0.986, 'zip': 1.0, 'full': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",2026-10-13 09:18:41
 us/ak/kenai_peninsula_borough,AK,Kenai Peninsula Borough,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-19 01:13:11
 us/ak/north_slope_borough,AK,North Slope Borough,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=GIS_ProdTable_LTD_Location_City,number=GIS_ProdTable_LTD_Building_Number,street=GIS_ProdTable_LTD_Street_Name,unit=GIS_ProdTable_LTD_Building_Number",2707,0.0218,,766b619da4cf1cd3,unknown,"契约全项通过（缺失率 {'number': 0.0236, 'street': 0.0218, 'city': 0.0218, 'full': 0.0218}）→ 可全量采集",2026-10-13 09:18:45
@@ -29,7 +30,10 @@ us/az/statewide,AZ,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWN
 us/ca/alpine,CA,Alpine,ARCGIS,esri,PASS_P0,PASS_P1,REJECTED_P2,REJECTED_P2,12,"city=SITUSCITY,number=Situs,state=SITUSCITY,street=Situs,unit=USFS_Unit",3051,0.3061,,258feec559985ab9,unknown,"服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.3061, 'street': 0.3061, 'city': 0.3061, 'state': 0.3061, 'full': 0.3061}）→ 全量数据证伪，拒收",2026-10-13 22:38:21
 us/ca/city_of_brea,CA,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 05:46:52
 us/ca/city_of_burbank,CA,,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,25,"city=city,number=parsedrang,state=state,street=parsedpred,unit=suite,zip=zip",62672,0.0,0.0,db81bc1e828671bf,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 05:47:58
+us/ca/city_of_emeryville,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
 us/ca/city_of_eureka,CA,,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,120,"city=SITCITY,number=SITHSNBR,state=STATE,street=SITSTDIR,unit=DWELL_UNIT,zip=SITZIP",,,,,unknown,"服务端自报 72,650 条，但主样本一条都取不到",2026-10-18 05:47:55
+us/ca/city_of_jackson,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
+us/ca/city_of_kerman,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
 us/ca/city_of_long_beach,CA,City of Long Beach,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-18 05:48:18
 us/ca/city_of_rancho_cucamonga,CA,San Bernardino,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,16,"city=City,number=StreetNumber,state=State,street=StreetName,unit=Unit,zip=Zipcode",70986,0.0,0.0,75b6f21dc83586d0,unknown,"契约全项通过（缺失率 {'number': 0.0002, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0002}）→ 可全量采集",2026-10-18 05:48:26
 us/ca/city_of_roseville,CA,Placer,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,24,"city=ADDR2,number=STRNUM,state=ADDR2,street=STRPREDIR,unit=UNITTYPE,zip=ADDR2",79987,0.0,0.0,11b7708bf6da2ce9,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.9741, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRID 拆**（concat_addr）",2026-10-18 05:48:22
@@ -697,9 +701,25 @@ us/wi/oneida,WI,Oneida,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,13,"cit
 us/wi/pepin,WI,Pepin,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/polk,WI,Polk,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/price,WI,Price,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/rusk,WI,Rusk,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wi/sawyer,WI,Sawyer,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wi/st_croix,WI,Saint Croix,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
 us/wi/statewide,WI,,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-13 09:18:41
+us/wi/taylor,WI,Taylor,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wi/trempealeau,WI,Trempealeau,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
 us/wi/vilas,WI,Vilas,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,75,"city=msag,number=addrnum,state=state,street=FullStNm,unit=capturemeth,zip=zip",48147,0.0,0.0001,792299424c798413,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0001, 'state': 0.0, 'full': 0.0007}）→ 可全量采集",2026-10-18 00:55:09
+us/wi/washburn,WI,Washburn,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
 us/wi/washington,WI,Washington,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED_DOWNGRADED,CONTRACTED_DOWNGRADED,28,"city=ZipMuni,number=Full_House_Number,street=FullStNm,unit=UnitType,zip=ZipCode",71471,1.0,1.0,96b33372d33972d9,unknown,"number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 1.0, 'zip': 1.0, 'full': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",2026-10-18 05:46:25
 us/wv/kanawha,WV,Kanawha,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,8,"city=POSTAL_COM,number=FULLADDR,street=ROADNAME,unit=COMMUNITY,zip=ZIP",102309,0.0,0.0,b90785f11cb78af5,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 05:46:30
+us/wy/albany,WY,Albany,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wy/big_horn,WY,Big Horn,FILE_DOWNLOAD,http,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-22 10:02:56
+us/wy/carbon,WY,Carbon,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
 us/wy/city_of_sheridan,WY,Sheridan,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,40,"city=CITY,number=HSENO,state=STATE,street=PREDIR,unit=PREUNIT,zip=ZIP5",19572,0.0,0.0002,84f9f8edbf3900d4,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.7721, 'city': 0.0, 'zip': 0.0002, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 STREET 拆**（concat_addr）",2026-10-19 01:13:06
+us/wy/converse,WY,Converse,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wy/fremont,WY,Fremont,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wy/hot_springs,WY,Hot Springs,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 10:02:56
 us/wy/lincoln,WY,Lincoln,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,6,"number=ADDRESS,street=ADDRESS",,,,,unknown,"服务端自报 4,257 条，但主样本一条都取不到",2026-10-18 05:46:35
+us/wy/park,WY,Park,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:56
+us/wy/sublette,WY,Sublette,FILE_DOWNLOAD,http,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-22 10:02:56
+us/wy/sweetwater,WY,Sweetwater,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:57
+us/wy/teton,WY,Teton,FILE_DOWNLOAD,http,REJECTED_P0,,,REJECTED_P0,,,,,,,ok,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-22 10:02:57

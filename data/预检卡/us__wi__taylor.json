@@ -1,0 +1,20 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-22 10:02:56",
+ "county": "Taylor",
+ "license": "",
+ "license_status": "unknown",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/wi/taylor",
+ "stage": "p0",
+ "state": "WI",
+ "url": "https://web.s3.wisc.edu/rml-gisdata/TAYLOR_ADDRESSES_2025.zip",
+ "verdict": "NEEDS_DOWNLOAD"
+}

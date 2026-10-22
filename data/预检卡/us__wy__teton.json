@@ -1,0 +1,16 @@
+{
+ "attribution": "",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-22 10:02:57",
+ "county": "Teton",
+ "license": "https://www.tetoncountywy.gov/958/Geographic-Information-System",
+ "license_status": "ok",
+ "p0": "REJECTED_P0",
+ "protocol": "http",
+ "reason": "元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found",
+ "source_id": "us/wy/teton",
+ "stage": "p0",
+ "state": "WY",
+ "url": "https://maps.terragis.net/tetonwy/mapserver/download/data/ownership_shp.zip",
+ "verdict": "REJECTED_P0"
+}
