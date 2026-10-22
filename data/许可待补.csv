@@ -697,3 +697,16 @@ us/in/city_of_bloomington,IN,,https://bloomington.in.gov/geoserver/publicgis/ows
 us/ma/town_of_newton,MA,,https://github.com/NewtonMAGIS/GISData/raw/master/Addresses/Addresses.geojson,https://github.com/NewtonMAGIS/GISData/,以官方页面为准，待补
 us/mo/city_of_columbia,MO,,https://data.openaddresses.io/cache/uploads/iandees/1ffae9/city_of_columbia.geojson.zip,,以官方页面为准，待补
 us/ms/city_of_hattiesburg,MS,,https://data.openaddresses.io/cache/uploads/trescube/7fe80e/us-ms-city-of-hattiesburg.zip,,以官方页面为准，待补
+us/nc/cary,NC,,ftp://199.72.17.76/GIS/CaryBuildings.zip,,以官方页面为准，待补
+us/nh/milford,NH,,https://data.openaddresses.io/cache/uploads/ingalls/us-nh-milton.geojson,https://gis.milford.nh.gov/milfordnh/,以官方页面为准，待补
+us/nh/city_of_auburn,NH,,https://data.openaddresses.io/cache/uploads/ingalls/us-nh-auburn.geojson,https://www.auburnnh.us/assessing,以官方页面为准，待补
+us/nh/city_of_hampstead,NH,,https://data.openaddresses.io/cache/uploads/ingalls/us-nh-hampstead.geojson,https://www.hampsteadnh.us/pages/hampsteadnh_assessing/index,以官方页面为准，待补
+us/ok/city_of_muskogee,OK,,https://data.openaddresses.io/cache/uploads/trescube/90a143/us-ok-city-of-muskogee.zip,https://www.muskogeeok.gov/,以官方页面为准，待补
+us/ok/city_of_stillwater,OK,,https://data.openaddresses.io/cache/uploads/ingalls/us-ok-city_of_stillwater.zip,,以官方页面为准，待补
+us/tn/city_of_nashville,TN,City of Nashville,https://data.openaddresses.io/cache/uploads/trescube/1a6f9f/us-tn-nashville.geojson.zip,,以官方页面为准，待补
+us/tx/san_antonio,TX,,https://gis.sanantonio.gov/Download/Addresses.zip,https://www.sanantonio.gov/GIS/GISdata,以官方页面为准，待补
+us/tx/city_of_austin,TX,,https://data.austintexas.gov/api/views/9s7j-tygf/rows.geojson?accessType=DOWNLOAD,https://data.austintexas.gov/dataset/Addresses/mkjr-t5r2,以官方页面为准，待补
+us/va/city_of_charlottesville,VA,,https://widget.charlottesville.org/gis/zip_download/parcel_point.zip,,以官方页面为准，待补
+us/va/city_of_norfolk,VA,,https://data.norfolk.gov/api/views/jagz-9a37/rows.csv?fourfour=jagz-9a37&cacheBust=1722594915&date=20240802&accessType=DOWNLOAD,https://data.norfolk.gov/Real-Estate/Norfolk-Master-Address-List/jagz-9a37/about_data,以官方页面为准，待补
+us/wa/city_of_richland,WA,,https://data.openaddresses.io/cache/uploads/iandees/d6ae04/CoRAddressPoly.zip,,以官方页面为准，待补
+us/wy/city_of_gillette,WY,,https://www.arcgis.com/sharing/rest/content/items/4a2612898ac94bbb93c1dc7d9c02ed34/data,https://www.arcgis.com/home/item.html?id=4a2612898ac94bbb93c1dc7d9c02ed34,以官方页面为准，待补
