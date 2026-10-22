@@ -28,16 +28,28 @@ us/ar/ouachita,AR,Ouachita,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,�
 us/ar/statewide,AR,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -3] Temporary failure in name resolution> → 下轮重试,2026-10-12 10:51:52
 us/az/statewide,AZ,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 10:52:14
 us/ca/alpine,CA,Alpine,ARCGIS,esri,PASS_P0,PASS_P1,REJECTED_P2,REJECTED_P2,12,"city=SITUSCITY,number=Situs,state=SITUSCITY,street=Situs,unit=USFS_Unit",3051,0.3061,,258feec559985ab9,unknown,"服务端统计显示 number/street 非空率不到 80%（缺失率 {'number': 0.3061, 'street': 0.3061, 'city': 0.3061, 'state': 0.3061, 'full': 0.3061}）→ 全量数据证伪，拒收",2026-10-13 22:38:21
+us/ca/city_of_berkeley,CA,City of Berkeley,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/city_of_brea,CA,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 05:46:52
 us/ca/city_of_burbank,CA,,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,25,"city=city,number=parsedrang,state=state,street=parsedpred,unit=suite,zip=zip",62672,0.0,0.0,db81bc1e828671bf,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 05:47:58
 us/ca/city_of_emeryville,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
 us/ca/city_of_eureka,CA,,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,120,"city=SITCITY,number=SITHSNBR,state=STATE,street=SITSTDIR,unit=DWELL_UNIT,zip=SITZIP",,,,,unknown,"服务端自报 72,650 条，但主样本一条都取不到",2026-10-18 05:47:55
+us/ca/city_of_garden_grove,CA,Orange,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/city_of_jackson,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
 us/ca/city_of_kerman,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 10:02:58
+us/ca/city_of_lancaster,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/city_of_long_beach,CA,City of Long Beach,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-18 05:48:18
+us/ca/city_of_los_angeles,CA,,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_newport_beach,CA,Orange,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_oroville,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_piedmont,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/city_of_rancho_cucamonga,CA,San Bernardino,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,16,"city=City,number=StreetNumber,state=State,street=StreetName,unit=Unit,zip=Zipcode",70986,0.0,0.0,75b6f21dc83586d0,unknown,"契约全项通过（缺失率 {'number': 0.0002, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0002}）→ 可全量采集",2026-10-18 05:48:26
 us/ca/city_of_roseville,CA,Placer,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,24,"city=ADDR2,number=STRNUM,state=ADDR2,street=STRPREDIR,unit=UNITTYPE,zip=ADDR2",79987,0.0,0.0,11b7708bf6da2ce9,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.9741, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集；**必须用整条地址列 ADDRID 拆**（concat_addr）",2026-10-18 05:48:22
+us/ca/city_of_san_diego,CA,San Diego,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_san_juan_capistrano,CA,Orange,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/city_of_santa_cruz,CA,Santa Cruz,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,15,"city=SCCityLMT,number=STNUM,street=STNAME,unit=APT,zip=ZIP5",46968,0.0,0.0,360949d2271e6662,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 05:48:31
+us/ca/city_of_south_lake_tahoe,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_stockton,CA,City of Stockton,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
+us/ca/city_of_walnut_creek,CA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ca/contra_costa,CA,Contra Costa,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-19 01:13:11
 us/ca/inyo,CA,Inyo,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,11,"city=TOWN,number=ST_NUM,street=FULL_ADDR,unit=UNIT2",11355,0.0,,178dafd22febfa17,unknown,"契约全项通过（缺失率 {'number': 0.0119, 'street': 0.0, 'city': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-13 22:38:26
 us/ca/modoc,CA,Modoc,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 499, 'message': 'Token Required', 'messageCode': 'GWM_0003', 'details': ['Token Required']}",2026-10-13 22:38:31
@@ -65,10 +77,13 @@ us/ct/city_of_lyme,CT,City of Lyme,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unkno
 us/ct/city_of_manchester,CT,City of Manchester,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,42,"city=TOWN,number=MAIL_NUM,state=STATE,street=FULL_STR,unit=BLDG_INSP_ZONE,zip=ZIP_CODE",,,,,unknown,"计数失败：{'code': 400, 'message': 'Unable to complete operation.', 'details': ['Bad login user']}",2026-10-18 05:50:49
 us/ct/city_of_milford,CT,,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error timed out> → 下轮重试,2026-10-18 05:48:40
 us/ct/city_of_plainfield,CT,Windham,ARCGIS,esri,PASS_P0_SITE,FAIL_P1,,FAIL_P1,20,"city=CAMA.Mailing_City,state=CAMA.Mailing_State,street=Parcel_Polygon.StreetAddr,unit=CAMA.Assessed_Outbuilding,zip=CAMA.Mailing_Zip",,,,,unknown,"服务端自报 6,324 条，但主样本一条都取不到",2026-10-18 10:55:10
+us/ct/city_of_stamford,CT,Fairfield,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ct/city_of_stonington,CT,New London County,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=ZN,number=ADDRNUM,street=STREET,unit=ADDRUNIT,zip=Zip",9416,0.0001,0.0001,1c7b50788bfbaed5,unknown,"契约全项通过（缺失率 {'number': 0.0002, 'street': 0.0001, 'city': 0.0001, 'zip': 0.0001, 'full': 0.0001}）→ 可全量采集",2026-10-18 10:55:04
+us/ct/city_of_waterbury,CT,City of Waterbury,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ct/statewide,CT,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-12 10:52:19
 us/ct/town_of_easton_monroe,CT,Fairfield,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,19,"city=SITE_CITY,number=Street_Number,state=SITE_STATE,street=Street_Name,unit=Street_Unit,zip=SITE_ZIP",9840,0.0025,0.0073,406a78afb37612d3,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0025, 'zip': 0.0073, 'state': 0.007, 'full': 0.0}）→ 可全量采集",2026-10-18 10:54:59
 us/ct/town_of_new_milford,CT,Litchfield,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 01:13:11
+us/dc/statewide,DC,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/de/kent,DE,Kent,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,31,"city=City,number=Address,street=Roadname,unit=Apartment,zip=Zipcode",87180,0.0458,0.0027,c77b5aca83080e44,unknown,"契约全项通过（缺失率 {'number': 0.0076, 'street': 0.0, 'city': 0.0458, 'zip': 0.0027, 'full': 0.0}）→ 可全量采集",2026-10-13 22:39:19
 us/de/new_castle,DE,New Castle,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-19 07:40:36
 us/de/statewide,DE,,ARCGIS,esri,PASS_P0_WEAK,PASS_P1,CONTRACTED,CONTRACTED,17,"city=CITY,number=HOUSENUMBER,state=STATE,street=PREFIXDIRECTION,unit=COMMUNITY,zip=ZIPCODE",532164,0.0,0.0,e7b151ef6be996c6,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-12 10:53:05
@@ -243,6 +258,7 @@ us/in/bartholomew,IN,Bartholomew,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown
 us/in/benton,IN,Benton,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:14
 us/in/cass,IN,Cass,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:18
 us/in/city-of-hobart,IN,City of Hobart,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-18 10:56:26
+us/in/city_of_bloomington,IN,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/in/city_of_evansville,IN,City of Evansville,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service PROPERTY/ADDRESSES/MapServer not found ', 'details': []}",2026-10-18 10:56:26
 us/in/clark,IN,Clark,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -5] No address associated with hostname> → 下轮重试,2026-10-15 01:25:22
 us/in/delaware,IN,Delaware,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 20:29:07
@@ -315,6 +331,7 @@ us/la/city_of_alexandria,LA,City of Alexandria,ARCGIS,esri,TRANSIENT,,,TRANSIENT
 us/la/city_of_bossier,LA,City of Bossier,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 10:57:39
 us/la/city_of_denham_springs,LA,City of Denham Springs,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 10:57:40
 us/la/city_of_new_iberia,LA,City of New Iberia,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 10:57:40
+us/la/city_of_new_orleans,LA,City of New Orleans,CSV_DIRECT,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/la/claiborne,LA,Claiborne,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:39
 us/la/concordia,LA,Concordia,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-15 22:12:39
 us/la/east_baton_rouge_parish,LA,East Baton Rouge,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,40,"city=CITY,number=FULL_ADDRESS,state=STATE,street=FULL_ADDRESS,zip=ZIP",207144,0.0,0.0,d65d70f9cde7640c,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-15 22:12:40
@@ -328,6 +345,7 @@ us/la/terrebonne,LA,Terrebonne,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED
 us/la/washington,LA,Washington,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,13,"city=MSAGComm,number=HNUM,street=ADDRESS",19590,0.002,,f0840a0914f304bf,unknown,"契约全项通过（缺失率 {'number': 0.0014, 'street': 0.0006, 'city': 0.002, 'full': 0.0006}）→ 可全量采集",2026-10-16 01:12:32
 us/la/webster,LA,Webster,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-16 01:12:37
 us/ma/statewide,MA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-12 19:39:42
+us/ma/town_of_newton,MA,Middlesex,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/md/allegany,MD,Allegany,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-16 01:12:37
 us/md/cecil,MD,Cecil,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,23,"city=COMMUNITY,number=STRT_ADD,state=State,street=STRT_PFX,unit=COMMUNITY",51751,0.0,,a9338fdf3efc6b91,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'state': 0.0, 'full': 0.7727}）→ 可全量采集",2026-10-16 01:12:40
 us/md/howard,MD,Howard,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
@@ -372,6 +390,7 @@ us/mo/bates,MO,Bates,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOW
 us/mo/boone,MO,Boone,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-20 23:48:01
 us/mo/buchanan,MO,Buchanan,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)> → 下轮重试,2026-10-16 07:05:17
 us/mo/city_of_cape_girardeau,MO,Cape Girardeau,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)> → 下轮重试,2026-10-18 20:34:31
+us/mo/city_of_columbia,MO,Columbia,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/mo/city_of_ofallon,MO,St. Charles,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 404, 'message': 'Service Citizenserve/Address_Labels/MapServer not found ', 'details': []}",2026-10-18 20:34:38
 us/mo/city_of_perryville,MO,Perryville,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-18 20:34:35
 us/mo/dallas,MO,Dallas,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [Errno -2] Name or service not known> → 下轮重试,2026-10-16 07:05:20
@@ -390,6 +409,7 @@ us/ms/chickasaw,MS,Chickasaw,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,78,"city=City,
 us/ms/choctaw,MS,Choctaw,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,77,"city=City,number=Label,state=State,street=FullName,unit=BldgName,zip=Zipcode",,,,,unknown,"服务端自报 5,401 条，但主样本一条都取不到",2026-10-16 07:07:08
 us/ms/city_of_biloxi,MS,City of Biloxi,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)> → 下轮重试,2026-10-18 20:34:39
 us/ms/city_of_diamondhead,MS,City of Diamondhead,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 20:34:42
+us/ms/city_of_hattiesburg,MS,City of Hattiesburg,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 19:59:20
 us/ms/city_of_ocean_springs,MS,City of Ocean Springs,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 20:34:42
 us/ms/city_of_pelahatchie,MS,City of Pelahatchie,ARCGIS,esri,TRANSIENT,,,TRANSIENT,,,,,,,unknown,暂时取不到元数据（网络类）：URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl. → 下轮重试,2026-10-18 20:34:43
 us/ms/city_of_vicksburg,MS,City of Vicksburg,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,元数据取不到（源本身）：HTTPError: HTTP Error 404: Not Found,2026-10-18 20:34:47

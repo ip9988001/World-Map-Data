@@ -1,0 +1,20 @@
+{
+ "attribution": "City of Washington",
+ "channel": "FILE_DOWNLOAD",
+ "checked_at": "2026-10-22 19:59:20",
+ "county": "",
+ "license": "https://dc.gov/page/terms-and-conditions-use-district-data",
+ "license_status": "ok",
+ "p0": "NEEDS_DOWNLOAD",
+ "p1": {
+  "reason": "文件型源：样本要等下载后取",
+  "verdict": "NEEDS_DOWNLOAD"
+ },
+ "protocol": "http",
+ "reason": "文件型源，字段清单需下载后统计（走 P2 体检）",
+ "source_id": "us/dc/statewide",
+ "stage": "p0",
+ "state": "DC",
+ "url": "https://opendata.dc.gov/api/download/v1/items/aa514416aaf74fdc94748f1e56e7cc8a/geojson?layers=0",
+ "verdict": "NEEDS_DOWNLOAD"
+}

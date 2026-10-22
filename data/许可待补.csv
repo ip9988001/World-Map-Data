@@ -682,3 +682,18 @@ us/wy/sweetwater,WY,,https://maps.greenwoodmap.com/sweetwater/download/ownership
 us/ca/city_of_emeryville,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_emeryville.zip,,以官方页面为准，待补
 us/ca/city_of_jackson,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-jackson.zip,,以官方页面为准，待补
 us/ca/city_of_kerman,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_kerman.zip,,以官方页面为准，待补
+us/ca/city_of_lancaster,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_lancaster.zip,,以官方页面为准，待补
+us/ca/city_of_oroville,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_oroville.zip,,以官方页面为准，待补
+us/ca/city_of_piedmont,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_piedmont.zip,,以官方页面为准，待补
+us/ca/city_of_south_lake_tahoe,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_south_lake_tahoe.zip,,以官方页面为准，待补
+us/ca/city_of_walnut_creek,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_walnut_creek.zip,,以官方页面为准，待补
+us/ca/city_of_berkeley,CA,City of Berkeley,https://data.cityofberkeley.info/api/geospatial/rax9-nuvx?method=export&format=GeoJSON,https://data.cityofberkeley.info/City-Government/Parcels/bhxd-e6up,以官方页面为准，待补
+us/ca/city_of_stockton,CA,,https://www.stocktonca.gov/files/Addresses.zip,,以官方页面为准，待补
+us/ca/city_of_garden_grove,CA,,https://www.ci.garden-grove.ca.us/geoserver/gis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gis:city.public_addresses&outputFormat=csv,https://ggcity.org/maps/data-portal/,以官方页面为准，待补
+us/ca/city_of_san_juan_capistrano,CA,,https://data.openaddresses.io/cache/uploads/ingalls/us-ca-city_of_san_juan_capistrano.zip,,以官方页面为准，待补
+us/ct/city_of_waterbury,CT,,https://gis.waterburyct.org/GIS/download/Wtby_Parcels.zip,https://gis.waterburyct.org/GIS/index.asp,以官方页面为准，待补
+us/ct/city_of_stamford,CT,,https://data.openaddresses.io/cache/uploads/ingalls/us-ct-city_of_stamford.zip,,以官方页面为准，待补
+us/in/city_of_bloomington,IN,,https://bloomington.in.gov/geoserver/publicgis/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=publicgis:AddressPointsBloomington&outputFormat=shape-zip,,以官方页面为准，待补
+us/ma/town_of_newton,MA,,https://github.com/NewtonMAGIS/GISData/raw/master/Addresses/Addresses.geojson,https://github.com/NewtonMAGIS/GISData/,以官方页面为准，待补
+us/mo/city_of_columbia,MO,,https://data.openaddresses.io/cache/uploads/iandees/1ffae9/city_of_columbia.geojson.zip,,以官方页面为准，待补
+us/ms/city_of_hattiesburg,MS,,https://data.openaddresses.io/cache/uploads/trescube/7fe80e/us-ms-city-of-hattiesburg.zip,,以官方页面为准，待补
