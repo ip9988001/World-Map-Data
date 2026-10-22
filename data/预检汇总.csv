@@ -669,14 +669,34 @@ us/wa/king,WA,King,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,ok,元数据取�
 us/wa/kitsap,WA,Kitsap,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-21 23:14:59
 us/wa/lewis,WA,Lewis,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-21 23:14:59
 us/wa/mason,WA,Mason,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,19,"city=CITYWHOLE,number=STREETNUMB,street=STREET,unit=UNITTYPE,zip=ZIP_CD",,,,,ok,"服务端自报 41,417 条，但主样本一条都取不到",2026-10-18 00:54:43
+us/wa/okanogan,WA,Okanogan,FILE_DOWNLOAD,ftp,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wa/pacific,WA,Pacific,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wa/san_juan,WA,San Juan,ARCGIS,esri,PASS_P0,FAIL_P1,,FAIL_P1,54,"city=MUNICIPALI,number=ADDRNUM,street=FULLNAME,unit=ALTUNITTYP",,,,,unknown,"服务端自报 22,672 条，但主样本一条都取不到",2026-10-18 00:54:47
 us/wa/spokane,WA,Spokane,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,14,"city=CITY,number=ADDRNUM,state=STATE,street=FULLNAME,unit=UNITTYPE",236669,0.0,,aafa7b2d7aabacb3,ok,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 00:54:50
 us/wa/statewide,WA,,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-13 09:18:41
+us/wa/wakiakum,WA,Wahkiakum,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,ok,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wa/whitman,WA,Whitman,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-18 00:54:55
+us/wi/burnett,WI,Burnett,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/city_of_milwaukee,WI,City of Milwaukee,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,16,"city=City,number=HouseNumber,state=State,street=Direction,unit=Unit,zip=Zip",334308,0.0,0.0004,bc0debb9f3453161,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0004, 'state': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-19 01:11:48
+us/wi/crawford,WI,Crawford,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/douglas,WI,Douglas,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,36,"number=ADDR_HN,street=ADDR_PD,zip=OBJECTID_12",23612,,0.0044,6f80da39b18de309,unknown,"契约全项通过（缺失率 {'number': 0.0005, 'street': 0.0017, 'zip': 0.0044, 'full': 0.0005}）→ 可全量采集",2026-10-18 00:54:55
+us/wi/dunn,WI,Dunn,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/florence,WI,Florence,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/fond_du_lac,WI,Fond du Lac,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/forest,WI,Forest,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/green,WI,Green,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/iowa,WI,Iowa,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/iron,WI,Iron,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/kewaunee,WI,Kewaunee,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,6,"number=Add_Number,street=ROADNAME",5737,,,10f482f23f6e9c9f,unknown,"契约全项通过（缺失率 {'number': 0.0061, 'street': 0.0, 'full': 0.4155}）→ 可全量采集",2026-10-18 00:55:00
+us/wi/la_crosse,WI,La Crosse,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/langlade,WI,Langlade,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/marinette,WI,Marinette,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/menominee,WI,Menominee,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/monroe,WI,Monroe,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/oneida,WI,Oneida,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,13,"city=Municipality,number=Add_Number,street=PropertyAddress,unit=UnitType,zip=Zip",36475,0.0,0.0,6cb79717d796418d,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0, 'full': 0.0}）→ 可全量采集",2026-10-18 00:55:04
+us/wi/pepin,WI,Pepin,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/polk,WI,Polk,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
+us/wi/price,WI,Price,FILE_DOWNLOAD,http,NEEDS_DOWNLOAD,NEEDS_DOWNLOAD,,NEEDS_DOWNLOAD,,,,,,,unknown,文件型源：样本要等下载后取,2026-10-22 04:31:36
 us/wi/statewide,WI,,ARCGIS,esri,REJECTED_P0,,,REJECTED_P0,,,,,,,unknown,"元数据取不到（源本身）：RuntimeError: arcgis meta error: {'code': 400, 'message': 'Invalid URL', 'details': ['Invalid URL']}",2026-10-13 09:18:41
 us/wi/vilas,WI,Vilas,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED,CONTRACTED,75,"city=msag,number=addrnum,state=state,street=FullStNm,unit=capturemeth,zip=zip",48147,0.0,0.0001,792299424c798413,unknown,"契约全项通过（缺失率 {'number': 0.0, 'street': 0.0, 'city': 0.0, 'zip': 0.0001, 'state': 0.0, 'full': 0.0007}）→ 可全量采集",2026-10-18 00:55:09
 us/wi/washington,WI,Washington,ARCGIS,esri,PASS_P0,PASS_P1,CONTRACTED_DOWNGRADED,CONTRACTED_DOWNGRADED,28,"city=ZipMuni,number=Full_House_Number,street=FullStNm,unit=UnitType,zip=ZipCode",71471,1.0,1.0,96b33372d33972d9,unknown,"number/street 达标，但 city/zip 缺失率超上限（{'number': 0.0, 'street': 0.0, 'city': 1.0, 'zip': 1.0, 'full': 0.0}）→ 签约但降级：只进全量、不当 A 级交付",2026-10-18 05:46:25
