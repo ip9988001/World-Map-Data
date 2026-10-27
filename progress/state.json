@@ -49216,7 +49216,7 @@
  },
  "us/fl/miami-dade": {
   "archive": {
-   "bytes": 438041907,
+   "bytes": 439777902,
    "done": false,
    "error": "",
    "protocol": "arcgis_paged"
@@ -49229,12 +49229,12 @@
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 910796,
-    "kept_contentful": 910796,
+    "kept": 914396,
+    "kept_contentful": 914396,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49253,25 +49253,25 @@
       "city": 0,
       "zip": 0
      },
-     "per_street": 137.62,
+     "per_street": 138.17,
      "streets": 6618
     },
     "ratio": 1.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "mapping@v1",
-    "seconds": 37.1,
-    "true_addr": 563157,
+    "seconds": 76.0,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 910,796 条 > 真门牌号行 563,157 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 914,396 条 > 真门牌号行 564,598 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 11703,
-    "kept_contentful": 11703,
+    "kept": 11863,
+    "kept_contentful": 11863,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49287,23 +49287,23 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 11703,
+      "city": 11863,
       "zip": 0
      },
-     "per_street": 55.73,
-     "streets": 210
+     "per_street": 56.22,
+     "streets": 211
     },
     "ratio": 0.013,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "field_guess@v2",
-    "seconds": 59.2,
-    "true_addr": 563157,
+    "seconds": 122.6,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 11703/910796 = 1%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 11863/914396 = 1%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49331,21 +49331,21 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "concat_addr@v2",
-    "seconds": 103.2,
-    "true_addr": 563157,
+    "seconds": 212.4,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 910666,
-    "kept_contentful": 910666,
+    "kept": 914264,
+    "kept_contentful": 914264,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49361,23 +49361,23 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 910666,
-      "zip": 910666
+      "city": 914264,
+      "zip": 914264
      },
-     "per_street": 137.67,
+     "per_street": 138.21,
      "streets": 6615
     },
     "ratio": 1.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "concat_addr@v1",
-    "seconds": 148.0,
-    "true_addr": 563157,
+    "seconds": 300.8,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 910,666 条 > 真门牌号行 563,157 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 914,264 条 > 真门牌号行 564,598 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49405,53 +49405,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
-    "seconds": 168.6,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_ca_city_of_rancho_cucamonga_rancho_cucamonga_address_points@v1",
-    "seconds": 191.9,
-    "true_addr": 563157,
+    "seconds": 348.1,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49479,16 +49442,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 212.5,
-    "true_addr": 563157,
+    "seconds": 390.8,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49516,53 +49479,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
-    "seconds": 237.9,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
-    "seconds": 258.9,
-    "true_addr": 563157,
+    "seconds": 433.9,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49590,201 +49516,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_de_kent_kent_de_addresses@v1",
-    "seconds": 279.6,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 910796,
-    "kept_contentful": 910796,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 138.8,
-     "streets": 6562
-    },
-    "ratio": 1.0,
-    "rows": 910800,
-    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
-    "seconds": 318.4,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 910,796 条 > 真门牌号行 563,157 条×150% → 拒绝这套产物"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
-    "seconds": 342.4,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
-    "seconds": 364.3,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
-    "seconds": 384.7,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
-    "seconds": 407.1,
-    "true_addr": 563157,
+    "seconds": 481.4,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49812,90 +49553,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
-    "seconds": 429.5,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
-    "seconds": 449.3,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
-    "seconds": 469.1,
-    "true_addr": 563157,
+    "seconds": 524.6,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910796,
+    "contentful": 914396,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49923,129 +49590,18 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
+    "rows": 914400,
     "rule": "llm_us_nc_caswell_caswell_addpts@v1",
-    "seconds": 489.0,
-    "true_addr": 563157,
+    "seconds": 567.0,
+    "true_addr": 564598,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
-    "seconds": 510.0,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
-    "seconds": 535.3,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 910796,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 910800,
-    "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
-    "seconds": 557.4,
-    "true_addr": 563157,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/910796 = 0%（阈 30%；总行 910,800，带地址 910,796，真门牌号 563,157）"
+    "why": "合规 0/914396 = 0%（阈 30%；总行 914,400，带地址 914,396，真门牌号 564,598）"
    }
   ],
-  "seconds": 1132.4,
+  "seconds": 1142.1,
   "source_id": "us/fl/miami-dade",
   "stage": "parsed",
-  "updated": "2026-10-27 10:27:18"
+  "updated": "2026-10-27 21:15:34"
  },
  "us/fl/nassau": {
   "attempts": 1,
@@ -128046,12 +127602,11 @@
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 3,
+  "attempts": 4,
   "done": false,
   "error": "",
-  "kind": "RULE_GAP",
-  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物；field_guess@v2:合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）；concat_addr@v2:合规 3377/449285 = 1%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529））→ 造新规则",
-  "report": "out/triage/分诊-us__mi__wayne.json",
+  "kind": "TRANSIENT",
+  "reason": "规则级联触到单源时间上限，余下规则下一窗口再试",
   "rule_chain": [
    {
     "addr_hint": 0.6666666666666666,
@@ -128085,7 +127640,7 @@
     "ratio": 0.999,
     "rows": 455400,
     "rule": "mapping@v1",
-    "seconds": 17.6,
+    "seconds": 25.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物"
@@ -128122,7 +127677,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "field_guess@v2",
-    "seconds": 27.3,
+    "seconds": 40.5,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128159,7 +127714,7 @@
     "ratio": 0.008,
     "rows": 455400,
     "rule": "concat_addr@v2",
-    "seconds": 47.8,
+    "seconds": 72.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 3377/449285 = 1%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128196,7 +127751,7 @@
     "ratio": 0.995,
     "rows": 455400,
     "rule": "concat_addr@v1",
-    "seconds": 68.9,
+    "seconds": 101.4,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "疑似凭空造数据：合规 447,201 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物"
@@ -128232,45 +127787,8 @@
     },
     "ratio": 0.0,
     "rows": 455400,
-    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
-    "seconds": 79.0,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
     "rule": "llm_us_ca_city_of_rancho_cucamonga_rancho_cucamonga_address_points@v1",
-    "seconds": 90.4,
+    "seconds": 119.4,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128307,44 +127825,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 100.6,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
-    "seconds": 113.2,
+    "seconds": 135.5,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128381,192 +127862,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
-    "seconds": 123.4,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_de_kent_kent_de_addresses@v1",
-    "seconds": 133.6,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
-    "seconds": 145.0,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
-    "seconds": 156.6,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
-    "seconds": 167.8,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
-    "seconds": 178.2,
+    "seconds": 151.8,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128603,81 +127899,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
-    "seconds": 189.6,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_md_cecil_cecil_md_site_address@v1",
-    "seconds": 201.3,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_me_lewiston_lewiston_me_address_points@v1",
-    "seconds": 211.7,
+    "seconds": 169.6,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128714,7 +127936,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
-    "seconds": 222.0,
+    "seconds": 185.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128751,7 +127973,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_nc_caswell_caswell_addpts@v1",
-    "seconds": 232.1,
+    "seconds": 202.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128788,7 +128010,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_nv_carson_city_carson_city_nv_addpts@v1",
-    "seconds": 242.9,
+    "seconds": 219.2,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128825,7 +128047,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_nv_humboldt_humboldt_nv_site_address_points@v1",
-    "seconds": 255.2,
+    "seconds": 238.1,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128862,7 +128084,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_nv_storey_storey_nv_address_points@v1",
-    "seconds": 266.5,
+    "seconds": 255.8,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128899,7 +128121,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_oh_seneca_seneca_oh_address_points@v1",
-    "seconds": 278.4,
+    "seconds": 274.4,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128936,7 +128158,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ok_city_of_lawton_city_of_lawton_address_points@v1",
-    "seconds": 290.3,
+    "seconds": 292.8,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -128973,7 +128195,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_or_city_of_newberg_newberg_addresses@v1",
-    "seconds": 302.0,
+    "seconds": 311.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129010,7 +128232,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_pa_pike_pike_pa_address_points@v1",
-    "seconds": 312.4,
+    "seconds": 327.1,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129047,7 +128269,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_pa_potter_potter_pa_road_address@v1",
-    "seconds": 322.6,
+    "seconds": 343.3,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129084,7 +128306,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_pa_york_york_pa_address_points@v1",
-    "seconds": 334.5,
+    "seconds": 362.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129121,7 +128343,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_sc_city_of_myrtle_beach_myrtle_beach_address_points@v1",
-    "seconds": 346.0,
+    "seconds": 380.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129158,7 +128380,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_amarillo_amarillo_address_points@v1",
-    "seconds": 357.6,
+    "seconds": 397.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129195,7 +128417,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_cedar_park_cedar_park_address_points@v1",
-    "seconds": 368.0,
+    "seconds": 414.1,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129232,7 +128454,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_garland_garland_tx_address_points@v1",
-    "seconds": 378.3,
+    "seconds": 430.3,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129269,7 +128491,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_horseshoe_bay_horseshoe_bay_tx_address_points@v1",
-    "seconds": 388.6,
+    "seconds": 446.6,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129306,7 +128528,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_round_rock_round_rock_address_points@v1",
-    "seconds": 399.0,
+    "seconds": 462.7,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129343,7 +128565,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_city_of_sherman_city_of_sherman_add_points@v1",
-    "seconds": 411.3,
+    "seconds": 481.3,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129380,7 +128602,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_tx_vanzandt_vanzandt_county_addpts@v1",
-    "seconds": 422.8,
+    "seconds": 499.3,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129417,7 +128639,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ut_cache_cache_county_master_address_list@v1",
-    "seconds": 434.5,
+    "seconds": 517.4,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129454,7 +128676,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ut_statewide_utah_statewide_address_points@v1",
-    "seconds": 446.7,
+    "seconds": 536.6,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -129491,127 +128713,16 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_va_arlington_arlington_va_address_points@v1",
-    "seconds": 457.1,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_va_clarke_clarke_va_address_points@v1",
-    "seconds": 468.2,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_va_greene_greene_county_va_address_points@v1",
-    "seconds": 479.5,
-    "true_addr": 46529,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
-   },
-   {
-    "addr_hint": 0.6666666666666666,
-    "contentful": 449285,
-    "coverage": 0.987,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": false,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 455400,
-    "rule": "llm_us_va_louisa_louisa_va_site_address@v1",
-    "seconds": 489.8,
+    "seconds": 552.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
    }
   ],
-  "seconds": 1063.4,
+  "seconds": 1127.1,
   "source_id": "us/mi/wayne",
-  "stage": "triage",
-  "updated": "2026-10-27 10:45:27"
+  "stage": "parsed",
+  "updated": "2026-10-27 21:33:31"
  },
  "us/mn/aitkin": {
   "attempts": 1,
@@ -251859,12 +250970,12 @@
  },
  "us/ut/statewide": {
   "archive": {
-   "bytes": 511051375,
+   "bytes": 515264562,
    "done": false,
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 3,
+  "attempts": 1,
   "done": false,
   "error": "",
   "kind": "TRANSIENT",
@@ -251872,12 +250983,12 @@
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 906326,
-    "kept_contentful": 906326,
+    "kept": 913526,
+    "kept_contentful": 913526,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -251893,28 +251004,28 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 906326,
-      "zip": 906326
+      "city": 913526,
+      "zip": 913526
      },
-     "per_street": 11.88,
-     "streets": 76299
+     "per_street": 11.9,
+     "streets": 76758
     },
     "ratio": 0.999,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "concat_addr@v1",
-    "seconds": 57.6,
-    "true_addr": 523641,
+    "seconds": 76.5,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 906,326 条 > 真门牌号行 523,641 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 913,526 条 > 真门牌号行 528,860 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 905809,
-    "kept_contentful": 905809,
+    "kept": 913009,
+    "kept_contentful": 913009,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -251930,28 +251041,28 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 105387,
+      "city": 105434,
       "zip": 0
      },
-     "per_street": 25.06,
-     "streets": 36141
+     "per_street": 25.13,
+     "streets": 36335
     },
     "ratio": 0.999,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "mapping@v1",
-    "seconds": 113.2,
-    "true_addr": 523641,
+    "seconds": 152.1,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 905,809 条 > 真门牌号行 523,641 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 913,009 条 > 真门牌号行 528,860 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 10721,
-    "kept_contentful": 10721,
+    "kept": 10826,
+    "kept_contentful": 10826,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -251967,23 +251078,23 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 4931,
+      "city": 4932,
       "zip": 0
      },
-     "per_street": 28.67,
-     "streets": 374
+     "per_street": 28.87,
+     "streets": 375
     },
     "ratio": 0.012,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "field_guess@v2",
-    "seconds": 152.1,
-    "true_addr": 523641,
+    "seconds": 208.7,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "合规 10721/907151 = 1%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
+    "why": "合规 10826/914351 = 1%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -252011,53 +251122,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_ak_fairbanks_north_star_borough_fairbanks_north_star_borough_addpts@v1",
-    "seconds": 189.0,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "llm_us_ca_city_of_rancho_cucamonga_rancho_cucamonga_address_points@v1",
-    "seconds": 231.4,
-    "true_addr": 523641,
+    "seconds": 268.3,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -252085,16 +251159,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 268.4,
-    "true_addr": 523641,
+    "seconds": 322.3,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -252122,53 +251196,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_co_broomfield_broomfield_master_address@v1",
-    "seconds": 310.1,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "llm_us_co_city_of_fort_collins_fort_collins_address_points@v1",
-    "seconds": 347.2,
-    "true_addr": 523641,
+    "seconds": 376.5,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 907151,
+    "contentful": 914351,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -252196,203 +251233,92 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_de_kent_kent_de_addresses@v1",
-    "seconds": 384.2,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_fl_miami_dade_miami_dade_geo_address@v1",
-    "seconds": 424.5,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_fl_volusia_volusia_fl_site_address@v1",
-    "seconds": 464.0,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_ga_dougherty_dougherty_address_point@v1",
-    "seconds": 503.3,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
-    "rule": "llm_us_ia_wapello_wapello_site_address@v1",
-    "seconds": 539.8,
-    "true_addr": 523641,
-    "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
-   },
-   {
-    "addr_hint": 1.0,
-    "contentful": 907151,
-    "coverage": 1.0,
-    "exempt": null,
-    "grade_hint": "A",
-    "kept": 0,
-    "kept_contentful": 0,
-    "kind": "SHAPE",
-    "notes": [],
-    "quality": {
-     "contract": true,
-     "exempt": {
-      "city": false,
-      "zip": false
-     },
-     "junk_rate": 0.0,
-     "lim": {
-      "city": 0.2,
-      "zip": 0.2
-     },
-     "max_junk": 0.2,
-     "missing": {
-      "city": 0,
-      "zip": 0
-     },
-     "per_street": 0.0,
-     "streets": 0
-    },
-    "ratio": 0.0,
-    "rows": 907200,
+    "rows": 914400,
     "rule": "llm_us_ky_shelby_shelby_ky_addpts@v1",
-    "seconds": 579.0,
-    "true_addr": 523641,
+    "seconds": 433.7,
+    "true_addr": 528860,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/907151 = 0%（阈 30%；总行 907,200，带地址 907,151，真门牌号 523,641）"
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 914351,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": true,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 914400,
+    "rule": "llm_us_nc_alleghany_alleghany_nc_site_address@v1",
+    "seconds": 487.5,
+    "true_addr": 528860,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
+   },
+   {
+    "addr_hint": 1.0,
+    "contentful": 914351,
+    "coverage": 1.0,
+    "exempt": null,
+    "grade_hint": "A",
+    "kept": 0,
+    "kept_contentful": 0,
+    "kind": "SHAPE",
+    "notes": [],
+    "quality": {
+     "contract": true,
+     "exempt": {
+      "city": false,
+      "zip": false
+     },
+     "junk_rate": 0.0,
+     "lim": {
+      "city": 0.2,
+      "zip": 0.2
+     },
+     "max_junk": 0.2,
+     "missing": {
+      "city": 0,
+      "zip": 0
+     },
+     "per_street": 0.0,
+     "streets": 0
+    },
+    "ratio": 0.0,
+    "rows": 914400,
+    "rule": "llm_us_nc_caswell_caswell_addpts@v1",
+    "seconds": 541.4,
+    "true_addr": 528860,
+    "verdict": "GATE_FAIL",
+    "why": "合规 0/914351 = 0%（阈 30%；总行 914,400，带地址 914,351，真门牌号 528,860）"
    }
   ],
-  "seconds": 1153.8,
+  "seconds": 1115.6,
   "source_id": "us/ut/statewide",
   "stage": "parsed",
-  "updated": "2026-10-27 10:26:13"
+  "updated": "2026-10-27 21:14:55"
  },
  "us/ut/washington": {
   "attempts": 1,
