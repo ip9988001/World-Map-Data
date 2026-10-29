@@ -99,3 +99,4 @@ at,source_id,rule,action,rows,contentful,kept,kept_contentful,ratio,model,note
 2026-10-15 13:21:05,us/va/greene,llm_greene_county_va_address_points,ACCEPTED,200,200,200,200,1.0,deepseek-flash,该 ArcGIS 门牌点图层自带 Add_Number 与 FULLNAME（缩写路名，与 FULLADDR 一致）分列，直接按列取号+街名即可，无需解析整串字符串。
 2026-10-15 13:21:13,us/va/louisa,llm_louisa_va_site_address,ACCEPTED,200,200,200,200,1.0,deepseek-flash,该 FeatureServer 是标准门牌点图层，门牌号在 ADDRESS（纯数字）、完整街名在 ROADNAME，二者分列且齐全，故用 columns 模式直接取列，不用 FULLADDR 拼接；图层无 city/zip/state 字段，全部留空并豁免。
 2026-10-15 13:21:22,us/vt/city_of_burlington,llm_burlington_vt_parcel_site_address,REJECTED,200,193,196,192,0.995,deepseek-flash,example3 街名不符：期望 SOUTH COVE RD 实得 S COVE RD
+2026-10-29 20:52:41,us/ut/statewide,llm_ut_statewide_address_points,REJECTED,200,200,200,200,1.0,deepseek-flash,example4 街名不符：期望 N CENTER ST 实得 N CTR ST

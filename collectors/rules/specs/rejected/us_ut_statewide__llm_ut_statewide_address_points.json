@@ -1,0 +1,194 @@
+{
+ "_rejected": {
+  "source_id": "us/ut/statewide",
+  "model": "deepseek-flash",
+  "errs": [
+   "example4 街名不符：期望 N CENTER ST 实得 N CTR ST"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 200,
+   "kept_contentful": 200,
+   "ratio": 1.0,
+   "fabricated": 0,
+   "best_ratio": 0.999
+  },
+  "at": "2026-10-29 20:52:41"
+ },
+ "spec": {
+  "name": "ut_statewide_address_points",
+  "version": 1,
+  "note": "AGRC Utah address points expose discrete AddNum/PrefixDir/StreetName/StreetType/SuffixDir columns, so number and street are assembled from parts instead of parsing a single blob.",
+  "match": {
+   "columns_any": [
+    "UTAddPtID",
+    "FullAdd",
+    "AddNum"
+   ],
+   "columns_all": [
+    "AddNum",
+    "StreetName"
+   ],
+   "columns_none": [
+    "ParcelID"
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "AddNum",
+   "street": "StreetName",
+   "city": "City",
+   "zip": "ZipCode",
+   "state": "State"
+  },
+  "number_template": "{AddNum}{AddNumSuffix}",
+  "street_template": "{PrefixDir} {StreetName} {StreetType} {SuffixDir}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": false,
+   "exempt_zip": false,
+   "exempt_reason": ""
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "AddSystem": "EPHRAIM",
+     "UTAddPtID": "EPHRAIM | 170 E 400 S",
+     "FullAdd": "170 E 400 S",
+     "AddNum": "170",
+     "AddNumSuffix": "",
+     "PrefixDir": "E",
+     "StreetName": "400",
+     "StreetType": "",
+     "SuffixDir": "S",
+     "LandmarkName": "",
+     "Building": "",
+     "UnitType": "",
+     "UnitID": "",
+     "City": "EPHRAIM",
+     "ZipCode": "84627",
+     "CountyID": "49039",
+     "State": "UT",
+     "PtLocation": "Geocoded",
+     "PtType": "",
+     "Structure": "Yes",
+     "ParcelID": "4-17-3-052-04007",
+     "AddSource": "SANPETE COUNTY",
+     "LoadDate": 1626825600000,
+     "USNG": "12SVJ4956"
+    },
+    "expect": {
+     "number": "170",
+     "street": "E 400 S"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 4,
+     "AddSystem": "SPRING CITY",
+     "UTAddPtID": "SPRING CITY | 187 N MAIN ST",
+     "FullAdd": "187 N MAIN ST",
+     "AddNum": "187",
+     "AddNumSuffix": "",
+     "PrefixDir": "N",
+     "StreetName": "MAIN",
+     "StreetType": "ST",
+     "SuffixDir": "",
+     "LandmarkName": "",
+     "Building": "",
+     "UnitType": "",
+     "UnitID": "",
+     "City": "SPRING CITY",
+     "ZipCode": "84662",
+     "CountyID": "49039",
+     "State": "UT",
+     "PtLocation": "Geocoded",
+     "PtType": "",
+     "Structure": "Yes",
+     "ParcelID": "3-15-4-061-04704",
+     "AddSource": "SANPETE COUNTY",
+     "LoadDate": 1626825600000,
+     "USNG": "12SVJ5770"
+    },
+    "expect": {
+     "number": "187",
+     "street": "N MAIN ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 3,
+     "AddSystem": "ROOSEVELT",
+     "UTAddPtID": "ROOSEVELT | 38075 W 3850 N",
+     "FullAdd": "38075 W 3850 N",
+     "AddNum": "38075",
+     "AddNumSuffix": "",
+     "PrefixDir": "W",
+     "StreetName": "3850",
+     "StreetType": "",
+     "SuffixDir": "N",
+     "LandmarkName": "",
+     "Building": "",
+     "UnitType": "",
+     "UnitID": " ",
+     "City": "TABIONA",
+     "ZipCode": "84072",
+     "CountyID": "49013",
+     "State": "UT",
+     "PtLocation": "",
+     "PtType": "",
+     "Structure": "",
+     "ParcelID": "",
+     "AddSource": "UGRC",
+     "LoadDate": 1371427200000,
+     "USNG": null
+    },
+    "expect": {
+     "number": "38075",
+     "street": "W 3850 N"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 7,
+     "AddSystem": "DUCHESNE",
+     "UTAddPtID": "DUCHESNE | 766 N CENTER ST",
+     "FullAdd": "766 N CENTER ST",
+     "AddNum": "766",
+     "AddNumSuffix": "",
+     "PrefixDir": "N",
+     "StreetName": "CENTER",
+     "StreetType": "ST",
+     "SuffixDir": "",
+     "LandmarkName": "",
+     "Building": "",
+     "UnitType": "",
+     "UnitID": " ",
+     "City": "DUCHESNE",
+     "ZipCode": "84021",
+     "CountyID": "49013",
+     "State": "UT",
+     "PtLocation": "",
+     "PtType": "",
+     "Structure": "",
+     "ParcelID": "",
+     "AddSource": "UGRC",
+     "LoadDate": 1371427200000,
+     "USNG": null
+    },
+    "expect": {
+     "number": "766",
+     "street": "N CENTER ST"
+    }
+   }
+  ]
+ }
+}
