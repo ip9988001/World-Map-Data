@@ -1,0 +1,276 @@
+{
+ "source_id": "us/ut/statewide",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 913,071 条 > 真门牌号行 560,429 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 912,538 条 > 真门牌号行 560,429 条×150% → 拒绝这套产物；field_guess@v2:合规 10868/913882 = 1%（阈 30%；总行 914,400，带地址 913,882，真门牌号 560,429））→ 造新规则",
+ "decided_at": "2026-10-30 07:17:05",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 914400,
+   "kept": 913071,
+   "contentful": 913882,
+   "kept_contentful": 913071,
+   "true_addr": 560429,
+   "ratio": 0.999,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 803,
+    "no_address_trace": 518,
+    "no_full_address": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 913071,
+     "zip": 913071
+    },
+    "junk_rate": 0.0,
+    "per_street": 10.82,
+    "streets": 84422,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 913,071 条 > 真门牌号行 560,429 条×150% → 拒绝这套产物",
+   "seconds": 101.4
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 914400,
+   "kept": 912538,
+   "contentful": 913882,
+   "kept_contentful": 912538,
+   "true_addr": 560429,
+   "ratio": 0.999,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 1343,
+    "no_address_trace": 518,
+    "no_number": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 89044,
+     "zip": 1
+    },
+    "junk_rate": 0.0015,
+    "per_street": 25.76,
+    "streets": 35419,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 912,538 条 > 真门牌号行 560,429 条×150% → 拒绝这套产物",
+   "seconds": 199.0
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 914400,
+   "kept": 10868,
+   "contentful": 913882,
+   "kept_contentful": 10868,
+   "true_addr": 560429,
+   "ratio": 0.012,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 902998,
+    "no_address_trace": 518,
+    "guess_bad_number": 16
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 4801,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 30.19,
+    "streets": 360,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 10868/913882 = 1%（阈 30%；总行 914,400，带地址 913,882，真门牌号 560,429）",
+   "seconds": 267.2
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 914400,
+   "kept": 0,
+   "contentful": 913882,
+   "kept_contentful": 0,
+   "true_addr": 560429,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 913882,
+    "no_address_trace": 518
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/913882 = 0%（阈 30%；总行 914,400，带地址 913,882，真门牌号 560,429）",
+   "seconds": 332.9
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 914400,
+   "kept": 0,
+   "contentful": 913882,
+   "kept_contentful": 0,
+   "true_addr": 560429,
+   "ratio": 0.0,
+   "coverage": 0.999,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 913882,
+    "no_address_trace": 518
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/913882 = 0%（阈 30%；总行 914,400，带地址 913,882，真门牌号 560,429）",
+   "seconds": 404.8
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "AddSystem": "GUNNISON",
+   "UTAddPtID": "GUNNISON | 145 E CENTER ST",
+   "FullAdd": "145 E CENTER ST",
+   "AddNum": "145",
+   "AddNumSuffix": "",
+   "PrefixDir": "E",
+   "StreetName": "CENTER",
+   "StreetType": "ST",
+   "SuffixDir": "",
+   "LandmarkName": "",
+   "Building": "",
+   "UnitType": "",
+   "UnitID": "",
+   "City": "GUNNISON",
+   "ZipCode": "84634",
+   "CountyID": "49039",
+   "State": "UT",
+   "PtLocation": "Rooftop",
+   "PtType": "Residential",
+   "Structure": "Yes",
+   "ParcelID": "",
+   "AddSource": "SANPETE COUNTY",
+   "LoadDate": 1626825600000,
+   "USNG": "12SVJ2934",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AddNum",
+  "AddNumSuffix",
+  "AddSource",
+  "AddSystem",
+  "Building",
+  "City",
+  "CountyID",
+  "FullAdd",
+  "LandmarkName",
+  "LoadDate",
+  "OBJECTID",
+  "ParcelID",
+  "PrefixDir",
+  "PtLocation",
+  "PtType",
+  "State",
+  "StreetName",
+  "StreetType",
+  "Structure",
+  "SuffixDir",
+  "USNG",
+  "UTAddPtID",
+  "UnitID",
+  "UnitType",
+  "ZipCode",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
