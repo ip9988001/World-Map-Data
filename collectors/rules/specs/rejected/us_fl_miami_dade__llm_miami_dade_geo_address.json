@@ -1,0 +1,158 @@
+{
+ "_rejected": {
+  "source_id": "us/fl/miami-dade",
+  "model": "deepseek-flash",
+  "errs": [
+   "number_template 引用了不存在的列：{HSE_NUM",
+   "street_template 引用了不存在的列：{PRE_DIR",
+   "street_template 引用了不存在的列：{ST_NAME",
+   "street_template 引用了不存在的列：{ST_TYPE",
+   "street_template 引用了不存在的列：{SUF_DIR",
+   "example1 洗不出（no_number）",
+   "example2 洗不出（no_number）",
+   "example3 洗不出（no_number）"
+  ],
+  "stats": {
+   "rows": 200,
+   "contentful": 200,
+   "kept": 0,
+   "kept_contentful": 0,
+   "ratio": 0.0,
+   "fabricated": 0,
+   "best_ratio": 1.0
+  },
+  "at": "2026-10-30 01:29:16"
+ },
+ "spec": {
+  "name": "miami_dade_geo_address",
+  "version": 1,
+  "note": "门牌号在 HSE_NUM、街名由 PRE_DIR/ST_NAME/ST_TYPE/SUF_DIR 拼出，ZIP 独立成列；MAILING_MUNIC 是邮寄市名（与实体点 ZIP 不一致，如 33143 既有 MIAMI 又有 SOUTH MIAMI），MUNIC 只是数字代码，故不给 city，避免污染去重 key。",
+  "match": {
+   "columns_any": [
+    "HSE_NUM",
+    "SNAME",
+    "ADDRESSID"
+   ],
+   "columns_all": [
+    ""
+   ],
+   "columns_none": [
+    ""
+   ],
+   "engine": "arcgis_rest"
+  },
+  "mode": "columns",
+  "columns": {
+   "number": "HSE_NUM",
+   "street": "",
+   "city": "",
+   "zip": "ZIP",
+   "state": ""
+  },
+  "number_template": "{{HSE_NUM}}",
+  "street_template": "{{PRE_DIR}} {{ST_NAME}} {{ST_TYPE}} {{SUF_DIR}}",
+  "full": "",
+  "single": "",
+  "unit_drop": true,
+  "contract": {
+   "city_max_miss": 0.2,
+   "zip_max_miss": 0.2,
+   "max_junk": 0.2,
+   "exempt_city": true,
+   "exempt_zip": false,
+   "exempt_reason": "无可靠实体城市列：MUNIC 为数字编码，MAILING_MUNIC 是业主邮寄市名（同一 ZIP 33143 下出现 MIAMI 与 SOUTH MIAMI），State 列全为空；仅 ZIP 可直接使用"
+  },
+  "examples": [
+   {
+    "row": {
+     "OBJECTID": 1,
+     "ADDRESSID": 149248,
+     "FOLIO": "0131120140810",
+     "point_x": 920391.37505907,
+     "point_y": 550041.43746678,
+     "HSE_NUM": 7553,
+     "PRE_DIR": "N",
+     "ST_NAME": "MIAMI",
+     "ST_TYPE": "AVE",
+     "SUF_DIR": null,
+     "ZIP": 33150,
+     "PLUS4": 3545,
+     "MUNIC": 1,
+     "MAILING_MUNIC": "MIAMI",
+     "SNAME": "7553 N MIAMI AVE ",
+     "subaddressid": null,
+     "PARENT_FOLIO": "0131120140810",
+     "BLDG": null,
+     "UNIT": "",
+     "EnerGov": null,
+     "State": null,
+     "GlobalID": "35a7083d-eeed-43e2-8fd1-ca1bc15300cc"
+    },
+    "expect": {
+     "number": "7553",
+     "street": "N MIAMI AVE"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 3,
+     "ADDRESSID": 337844,
+     "FOLIO": "3041310160030",
+     "point_x": 895182.82523274,
+     "point_y": 498907.58244627,
+     "HSE_NUM": 4940,
+     "PRE_DIR": "SW",
+     "ST_NAME": "72ND",
+     "ST_TYPE": "ST",
+     "SUF_DIR": null,
+     "ZIP": 33143,
+     "PLUS4": 6050,
+     "MUNIC": 30,
+     "MAILING_MUNIC": "MIAMI",
+     "SNAME": "4940 SW 72ND ST ",
+     "subaddressid": null,
+     "PARENT_FOLIO": "3041310160030",
+     "BLDG": null,
+     "UNIT": "",
+     "EnerGov": null,
+     "State": null,
+     "GlobalID": "e415669f-3cb4-4e67-83c4-fb4be8104e48"
+    },
+    "expect": {
+     "number": "4940",
+     "street": "SW 72ND ST"
+    }
+   },
+   {
+    "row": {
+     "OBJECTID": 5,
+     "ADDRESSID": 504669,
+     "FOLIO": "2332090250210",
+     "point_x": 936564.3129226,
+     "point_y": 551715.24988727,
+     "HSE_NUM": 1865,
+     "PRE_DIR": null,
+     "ST_NAME": "JOHN F. KENNEDY",
+     "ST_TYPE": "CSWY",
+     "SUF_DIR": null,
+     "ZIP": 33141,
+     "PLUS4": 0,
+     "MUNIC": 23,
+     "MAILING_MUNIC": "NORTH BAY VILLAGE",
+     "SNAME": "1865  JOHN F. KENNEDY CSWY ",
+     "subaddressid": 18879,
+     "PARENT_FOLIO": "2332090250001",
+     "BLDG": null,
+     "UNIT": "2O",
+     "EnerGov": null,
+     "State": null,
+     "GlobalID": "3b9489f5-f001-4ebf-841a-61427b884f77"
+    },
+    "expect": {
+     "number": "1865",
+     "street": "JOHN F. KENNEDY CSWY"
+    }
+   }
+  ]
+ }
+}
