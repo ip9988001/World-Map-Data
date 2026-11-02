@@ -49216,26 +49216,26 @@
  },
  "us/fl/miami-dade": {
   "archive": {
-   "bytes": 434584014,
+   "bytes": 437181198,
    "done": false,
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 5,
+  "attempts": 1,
   "done": false,
   "error": "",
   "kind": "RULE_GAP",
-  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 903,596 条 > 真门牌号行 557,936 条×150% → 拒绝这套产物；field_guess@v2:合规 11711/903596 = 1%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936）；concat_addr@v2:合规 0/903596 = 0%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936））→ 造新规则",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 908,996 条 > 真门牌号行 561,303 条×150% → 拒绝这套产物；field_guess@v2:合规 11799/908996 = 1%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303）；concat_addr@v2:合规 0/908996 = 0%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303））→ 造新规则",
   "report": "out/triage/分诊-us__fl__miami-dade.json",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 903596,
-    "kept_contentful": 903596,
+    "kept": 908996,
+    "kept_contentful": 908996,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49254,25 +49254,25 @@
       "city": 0,
       "zip": 0
      },
-     "per_street": 136.56,
-     "streets": 6617
+     "per_street": 137.35,
+     "streets": 6618
     },
     "ratio": 1.0,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "mapping@v1",
-    "seconds": 75.3,
-    "true_addr": 557936,
+    "seconds": 75.9,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 903,596 条 > 真门牌号行 557,936 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 908,996 条 > 真门牌号行 561,303 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 11711,
-    "kept_contentful": 11711,
+    "kept": 11799,
+    "kept_contentful": 11799,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49288,23 +49288,23 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 11711,
+      "city": 11799,
       "zip": 0
      },
-     "per_street": 55.5,
+     "per_street": 55.92,
      "streets": 211
     },
     "ratio": 0.013,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "field_guess@v2",
-    "seconds": 121.4,
-    "true_addr": 557936,
+    "seconds": 122.2,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "合规 11711/903596 = 1%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936）"
+    "why": "合规 11799/908996 = 1%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49332,21 +49332,21 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "concat_addr@v2",
-    "seconds": 210.3,
-    "true_addr": 557936,
+    "seconds": 210.9,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/903596 = 0%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936）"
+    "why": "合规 0/908996 = 0%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 903464,
-    "kept_contentful": 903464,
+    "kept": 908864,
+    "kept_contentful": 908864,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -49362,23 +49362,23 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 903464,
-      "zip": 903464
+      "city": 908864,
+      "zip": 908864
      },
-     "per_street": 136.6,
-     "streets": 6614
+     "per_street": 137.39,
+     "streets": 6615
     },
     "ratio": 1.0,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "concat_addr@v1",
-    "seconds": 298.1,
-    "true_addr": 557936,
+    "seconds": 300.0,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 903,464 条 > 真门牌号行 557,936 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 908,864 条 > 真门牌号行 561,303 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49406,16 +49406,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 340.7,
-    "true_addr": 557936,
+    "seconds": 343.1,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/903596 = 0%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936）"
+    "why": "合规 0/908996 = 0%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 903596,
+    "contentful": 908996,
     "coverage": 1.0,
     "exempt": null,
     "grade_hint": "A",
@@ -49443,18 +49443,18 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 903600,
+    "rows": 909000,
     "rule": "llm_us_pa_york_york_pa_address_points@v1",
-    "seconds": 389.7,
-    "true_addr": 557936,
+    "seconds": 392.1,
+    "true_addr": 561303,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/903596 = 0%（阈 30%；总行 903,600，带地址 903,596，真门牌号 557,936）"
+    "why": "合规 0/908996 = 0%（阈 30%；总行 909,000，带地址 908,996，真门牌号 561,303）"
    }
   ],
-  "seconds": 963.7,
+  "seconds": 967.0,
   "source_id": "us/fl/miami-dade",
   "stage": "triage",
-  "updated": "2026-11-01 23:32:01"
+  "updated": "2026-11-02 05:52:46"
  },
  "us/fl/nassau": {
   "attempts": 1,
@@ -127455,7 +127455,7 @@
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 2,
+  "attempts": 3,
   "done": false,
   "error": "",
   "kind": "RULE_GAP",
@@ -127494,7 +127494,7 @@
     "ratio": 0.999,
     "rows": 455400,
     "rule": "mapping@v1",
-    "seconds": 19.0,
+    "seconds": 32.2,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物"
@@ -127531,7 +127531,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "field_guess@v2",
-    "seconds": 30.9,
+    "seconds": 49.7,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -127568,7 +127568,7 @@
     "ratio": 0.008,
     "rows": 455400,
     "rule": "concat_addr@v2",
-    "seconds": 56.5,
+    "seconds": 85.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 3377/449285 = 1%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -127605,7 +127605,7 @@
     "ratio": 0.995,
     "rows": 455400,
     "rule": "concat_addr@v1",
-    "seconds": 78.4,
+    "seconds": 123.2,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "疑似凭空造数据：合规 447,201 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物"
@@ -127642,7 +127642,7 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 90.9,
+    "seconds": 142.0,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
@@ -127679,16 +127679,16 @@
     "ratio": 0.0,
     "rows": 455400,
     "rule": "llm_us_pa_york_york_pa_address_points@v1",
-    "seconds": 105.2,
+    "seconds": 163.9,
     "true_addr": 46529,
     "verdict": "GATE_FAIL",
     "why": "合规 0/449285 = 0%（阈 30%；总行 455,400，带地址 449,285，真门牌号 46,529）"
    }
   ],
-  "seconds": 679.1,
+  "seconds": 738.2,
   "source_id": "us/mi/wayne",
   "stage": "triage",
-  "updated": "2026-11-01 23:45:27"
+  "updated": "2026-11-02 06:08:08"
  },
  "us/mn/aitkin": {
   "attempts": 1,
@@ -249936,26 +249936,26 @@
  },
  "us/ut/statewide": {
   "archive": {
-   "bytes": 523019718,
+   "bytes": 523992778,
    "done": false,
    "error": "",
    "protocol": "arcgis_paged"
   },
-  "attempts": 2,
+  "attempts": 1,
   "done": false,
   "error": "",
   "kind": "RULE_GAP",
-  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 909,471 条 > 真门牌号行 558,851 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 908,938 条 > 真门牌号行 558,851 条×150% → 拒绝这套产物；field_guess@v2:合规 10861/910282 = 1%（阈 30%；总行 910,800，带地址 910,282，真门牌号 558,851））→ 造新规则",
+  "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 911,271 条 > 真门牌号行 559,618 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 910,738 条 > 真门牌号行 559,618 条×150% → 拒绝这套产物；field_guess@v2:合规 10865/912082 = 1%（阈 30%；总行 912,600，带地址 912,082，真门牌号 559,618））→ 造新规则",
   "report": "out/triage/分诊-us__ut__statewide.json",
   "rule_chain": [
    {
     "addr_hint": 1.0,
-    "contentful": 910282,
+    "contentful": 912082,
     "coverage": 0.999,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 909471,
-    "kept_contentful": 909471,
+    "kept": 911271,
+    "kept_contentful": 911271,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -249971,28 +249971,28 @@
      },
      "max_junk": 0.2,
      "missing": {
-      "city": 909471,
-      "zip": 909471
+      "city": 911271,
+      "zip": 911271
      },
-     "per_street": 10.78,
-     "streets": 84349
+     "per_street": 10.8,
+     "streets": 84383
     },
     "ratio": 0.999,
-    "rows": 910800,
+    "rows": 912600,
     "rule": "concat_addr@v1",
-    "seconds": 61.3,
-    "true_addr": 558851,
+    "seconds": 99.4,
+    "true_addr": 559618,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 909,471 条 > 真门牌号行 558,851 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 911,271 条 > 真门牌号行 559,618 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910282,
+    "contentful": 912082,
     "coverage": 0.999,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 908938,
-    "kept_contentful": 908938,
+    "kept": 910738,
+    "kept_contentful": 910738,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -250011,25 +250011,25 @@
       "city": 89044,
       "zip": 1
      },
-     "per_street": 25.71,
-     "streets": 35352
+     "per_street": 25.74,
+     "streets": 35386
     },
     "ratio": 0.999,
-    "rows": 910800,
+    "rows": 912600,
     "rule": "mapping@v1",
-    "seconds": 120.4,
-    "true_addr": 558851,
+    "seconds": 195.7,
+    "true_addr": 559618,
     "verdict": "GATE_FAIL",
-    "why": "疑似凭空造数据：合规 908,938 条 > 真门牌号行 558,851 条×150% → 拒绝这套产物"
+    "why": "疑似凭空造数据：合规 910,738 条 > 真门牌号行 559,618 条×150% → 拒绝这套产物"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910282,
+    "contentful": 912082,
     "coverage": 0.999,
     "exempt": null,
     "grade_hint": "A",
-    "kept": 10861,
-    "kept_contentful": 10861,
+    "kept": 10865,
+    "kept_contentful": 10865,
     "kind": "SHAPE",
     "notes": [],
     "quality": {
@@ -250048,20 +250048,20 @@
       "city": 4801,
       "zip": 0
      },
-     "per_street": 30.17,
+     "per_street": 30.18,
      "streets": 360
     },
     "ratio": 0.012,
-    "rows": 910800,
+    "rows": 912600,
     "rule": "field_guess@v2",
-    "seconds": 165.5,
-    "true_addr": 558851,
+    "seconds": 263.4,
+    "true_addr": 559618,
     "verdict": "GATE_FAIL",
-    "why": "合规 10861/910282 = 1%（阈 30%；总行 910,800，带地址 910,282，真门牌号 558,851）"
+    "why": "合规 10865/912082 = 1%（阈 30%；总行 912,600，带地址 912,082，真门牌号 559,618）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910282,
+    "contentful": 912082,
     "coverage": 0.999,
     "exempt": null,
     "grade_hint": "A",
@@ -250089,16 +250089,16 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
+    "rows": 912600,
     "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
-    "seconds": 208.1,
-    "true_addr": 558851,
+    "seconds": 327.7,
+    "true_addr": 559618,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910282 = 0%（阈 30%；总行 910,800，带地址 910,282，真门牌号 558,851）"
+    "why": "合规 0/912082 = 0%（阈 30%；总行 912,600，带地址 912,082，真门牌号 559,618）"
    },
    {
     "addr_hint": 1.0,
-    "contentful": 910282,
+    "contentful": 912082,
     "coverage": 0.999,
     "exempt": null,
     "grade_hint": "A",
@@ -250126,18 +250126,18 @@
      "streets": 0
     },
     "ratio": 0.0,
-    "rows": 910800,
+    "rows": 912600,
     "rule": "llm_us_pa_york_york_pa_address_points@v1",
-    "seconds": 254.7,
-    "true_addr": 558851,
+    "seconds": 398.6,
+    "true_addr": 559618,
     "verdict": "GATE_FAIL",
-    "why": "合规 0/910282 = 0%（阈 30%；总行 910,800，带地址 910,282，真门牌号 558,851）"
+    "why": "合规 0/912082 = 0%（阈 30%；总行 912,600，带地址 912,082，真门牌号 559,618）"
    }
   ],
-  "seconds": 829.1,
+  "seconds": 973.7,
   "source_id": "us/ut/statewide",
   "stage": "triage",
-  "updated": "2026-11-01 23:31:38"
+  "updated": "2026-11-02 05:51:54"
  },
  "us/ut/washington": {
   "attempts": 1,
