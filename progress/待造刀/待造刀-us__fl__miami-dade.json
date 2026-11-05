@@ -1,0 +1,307 @@
+{
+ "source_id": "us/fl/miami-dade",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 892,797 条 > 真门牌号行 551,376 条×150% → 拒绝这套产物；field_guess@v2:合规 11513/892797 = 1%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376）；concat_addr@v2:合规 0/892797 = 0%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376））→ 造新规则",
+ "decided_at": "2026-11-04 23:51:45",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 892800,
+   "kept": 892797,
+   "contentful": 892797,
+   "kept_contentful": 892797,
+   "true_addr": 551376,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 135.13,
+    "streets": 6607,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 892,797 条 > 真门牌号行 551,376 条×150% → 拒绝这套产物",
+   "seconds": 74.3
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 892800,
+   "kept": 11513,
+   "contentful": 892797,
+   "kept_contentful": 11513,
+   "true_addr": 551376,
+   "ratio": 0.013,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 881284,
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 11513,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 54.82,
+    "streets": 210,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 11513/892797 = 1%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376）",
+   "seconds": 119.8
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 892800,
+   "kept": 0,
+   "contentful": 892797,
+   "kept_contentful": 0,
+   "true_addr": 551376,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "v2_no_site_column": 892797,
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/892797 = 0%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376）",
+   "seconds": 207.2
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 892800,
+   "kept": 892659,
+   "contentful": 892797,
+   "kept_contentful": 892659,
+   "true_addr": 551376,
+   "ratio": 1.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 138,
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 892659,
+     "zip": 892659
+    },
+    "junk_rate": 0.0,
+    "per_street": 135.17,
+    "streets": 6604,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 892,659 条 > 真门牌号行 551,376 条×150% → 拒绝这套产物",
+   "seconds": 294.9
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 892800,
+   "kept": 0,
+   "contentful": 892797,
+   "kept_contentful": 0,
+   "true_addr": 551376,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 892797,
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/892797 = 0%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376）",
+   "seconds": 336.8
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 892800,
+   "kept": 0,
+   "contentful": 892797,
+   "kept_contentful": 0,
+   "true_addr": 551376,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 892797,
+    "no_address_trace": 3
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/892797 = 0%（阈 30%；总行 892,800，带地址 892,797，真门牌号 551,376）",
+   "seconds": 384.6
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "ADDRESSID": 495634,
+   "FOLIO": "0141400321410",
+   "point_x": 918790.06290424,
+   "point_y": 515807.09407204,
+   "HSE_NUM": 2475,
+   "PRE_DIR": null,
+   "ST_NAME": "SR 5",
+   "ST_TYPE": "AVE",
+   "SUF_DIR": null,
+   "ZIP": 33129,
+   "PLUS4": 2478,
+   "MUNIC": 1,
+   "MAILING_MUNIC": "MIAMI",
+   "SNAME": "2475  SR 5 AVE ",
+   "subaddressid": 105603,
+   "PARENT_FOLIO": "0141400320001",
+   "BLDG": null,
+   "UNIT": "708",
+   "EnerGov": null,
+   "State": null,
+   "GlobalID": "ec1fbc26-693b-4869-906b-03ee1943d3ae",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "ADDRESSID",
+  "BLDG",
+  "EnerGov",
+  "FOLIO",
+  "GlobalID",
+  "HSE_NUM",
+  "MAILING_MUNIC",
+  "MUNIC",
+  "OBJECTID",
+  "PARENT_FOLIO",
+  "PLUS4",
+  "PRE_DIR",
+  "SNAME",
+  "ST_NAME",
+  "ST_TYPE",
+  "SUF_DIR",
+  "State",
+  "UNIT",
+  "ZIP",
+  "_file",
+  "point_x",
+  "point_y",
+  "subaddressid"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
