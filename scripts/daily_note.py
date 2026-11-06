@@ -147,6 +147,9 @@ def main(argv=None) -> int:
             and not any((results.get(k) or {}).get("result") in ("failure", "cancelled")
                         for k in ORDER)):
         print("（本轮窗口外空转：未采集、未发布、无失败 → 不写行）")
+        # 契约：--out 必须产出 —— 下游工作流无条件 cp 它；不产出就是假红（cp cannot stat）
+        with open(a.out, "w", encoding="utf-8") as fh:
+            fh.write(note)
         return 0
 
     if pub == "✅":

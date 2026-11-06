@@ -757,6 +757,7 @@ jobs:
           if [ -f /tmp/note.md ] && cmp -s /tmp/note.md /tmp/note_new.md; then
             echo "日报无变化，跳过"; exit 0
           fi
+          if [ ! -f /tmp/note_new.md ]; then echo "日报无变化，跳过"; exit 0; fi
           git checkout -B data origin/data
           mkdir -p progress && cp /tmp/note_new.md progress/发布日报.md
           git add progress/发布日报.md
