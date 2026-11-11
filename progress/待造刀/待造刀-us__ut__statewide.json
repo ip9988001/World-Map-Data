@@ -1,0 +1,276 @@
+{
+ "source_id": "us/ut/statewide",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 915,340 条 > 真门牌号行 561,309 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 914,807 条 > 真门牌号行 561,309 条×150% → 拒绝这套产物；field_guess@v2:合规 10873/916151 = 1%（阈 30%；总行 916,200，带地址 916,151，真门牌号 561,309））→ 造新规则",
+ "decided_at": "2026-11-11 21:38:00",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 916200,
+   "kept": 915340,
+   "contentful": 916151,
+   "kept_contentful": 915340,
+   "true_addr": 561309,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 803,
+    "no_address_trace": 49,
+    "no_full_address": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 915340,
+     "zip": 915340
+    },
+    "junk_rate": 0.0,
+    "per_street": 10.84,
+    "streets": 84473,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 915,340 条 > 真门牌号行 561,309 条×150% → 拒绝这套产物",
+   "seconds": 99.2
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 916200,
+   "kept": 914807,
+   "contentful": 916151,
+   "kept_contentful": 914807,
+   "true_addr": 561309,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 1343,
+    "no_address_trace": 49,
+    "no_number": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 89044,
+     "zip": 1
+    },
+    "junk_rate": 0.0015,
+    "per_street": 25.8,
+    "streets": 35455,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 914,807 条 > 真门牌号行 561,309 条×150% → 拒绝这套产物",
+   "seconds": 194.6
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 916200,
+   "kept": 10873,
+   "contentful": 916151,
+   "kept_contentful": 10873,
+   "true_addr": 561309,
+   "ratio": 0.012,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 905262,
+    "no_address_trace": 49,
+    "guess_bad_number": 16
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 4801,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 30.12,
+    "streets": 361,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 10873/916151 = 1%（阈 30%；总行 916,200，带地址 916,151，真门牌号 561,309）",
+   "seconds": 260.7
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 916200,
+   "kept": 0,
+   "contentful": 916151,
+   "kept_contentful": 0,
+   "true_addr": 561309,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 916151,
+    "no_address_trace": 49
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/916151 = 0%（阈 30%；总行 916,200，带地址 916,151，真门牌号 561,309）",
+   "seconds": 324.5
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 916200,
+   "kept": 0,
+   "contentful": 916151,
+   "kept_contentful": 0,
+   "true_addr": 561309,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 916151,
+    "no_address_trace": 49
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/916151 = 0%（阈 30%；总行 916,200，带地址 916,151，真门牌号 561,309）",
+   "seconds": 394.4
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "AddSystem": "ROOSEVELT",
+   "UTAddPtID": "ROOSEVELT | 38075 W 3850 N",
+   "FullAdd": "38075 W 3850 N",
+   "AddNum": "38075",
+   "AddNumSuffix": "",
+   "PrefixDir": "W",
+   "StreetName": "3850",
+   "StreetType": "",
+   "SuffixDir": "N",
+   "LandmarkName": "",
+   "Building": "",
+   "UnitType": "",
+   "UnitID": " ",
+   "City": "TABIONA",
+   "ZipCode": "84072",
+   "CountyID": "49013",
+   "State": "UT",
+   "PtLocation": "",
+   "PtType": "",
+   "Structure": "",
+   "ParcelID": "",
+   "AddSource": "UGRC",
+   "LoadDate": 1371427200000,
+   "USNG": null,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AddNum",
+  "AddNumSuffix",
+  "AddSource",
+  "AddSystem",
+  "Building",
+  "City",
+  "CountyID",
+  "FullAdd",
+  "LandmarkName",
+  "LoadDate",
+  "OBJECTID",
+  "ParcelID",
+  "PrefixDir",
+  "PtLocation",
+  "PtType",
+  "State",
+  "StreetName",
+  "StreetType",
+  "Structure",
+  "SuffixDir",
+  "USNG",
+  "UTAddPtID",
+  "UnitID",
+  "UnitType",
+  "ZipCode",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
