@@ -1,0 +1,287 @@
+{
+ "source_id": "us/mi/wayne",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 432,319 条 > 真门牌号行 45,156 条×150% → 拒绝这套产物；field_guess@v2:合规 0/432854 = 0%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156）；concat_addr@v2:合规 3186/432854 = 1%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156））→ 造新规则",
+ "decided_at": "2026-11-13 00:39:46",
+ "chain": [
+  {
+   "rule": "mapping@v1",
+   "rows": 435600,
+   "kept": 432319,
+   "contentful": 432854,
+   "kept_contentful": 432319,
+   "true_addr": 45156,
+   "ratio": 0.999,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 2746,
+    "junk_rejected": 371,
+    "no_number": 164
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 17,
+     "zip": 6491
+    },
+    "junk_rate": 0.0009,
+    "per_street": 55.21,
+    "streets": 7831,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 432,319 条 > 真门牌号行 45,156 条×150% → 拒绝这套产物",
+   "seconds": 31.0
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 435600,
+   "kept": 0,
+   "contentful": 432854,
+   "kept_contentful": 0,
+   "true_addr": 45156,
+   "ratio": 0.0,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "guess_bad_number": 432854,
+    "no_address_trace": 2746
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/432854 = 0%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156）",
+   "seconds": 47.4
+  },
+  {
+   "rule": "concat_addr@v2",
+   "rows": 435600,
+   "kept": 3186,
+   "contentful": 432854,
+   "kept_contentful": 3186,
+   "true_addr": 45156,
+   "ratio": 0.007,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "v2_no_site_column": 429668,
+    "no_address_trace": 2746
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 3177,
+     "zip": 3186
+    },
+    "junk_rate": 0.0,
+    "per_street": 60.11,
+    "streets": 53,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 3186/432854 = 1%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156）",
+   "seconds": 81.5
+  },
+  {
+   "rule": "concat_addr@v1",
+   "rows": 435600,
+   "kept": 430855,
+   "contentful": 432854,
+   "kept_contentful": 430855,
+   "true_addr": 45156,
+   "ratio": 0.995,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_address_trace": 2746,
+    "split_no_street": 1466,
+    "junk_rejected": 370,
+    "no_full_address": 163
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 430855,
+     "zip": 430855
+    },
+    "junk_rate": 0.0009,
+    "per_street": 49.54,
+    "streets": 8697,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "疑似凭空造数据：合规 430,855 条 > 真门牌号行 45,156 条×150% → 拒绝这套产物",
+   "seconds": 117.1
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 435600,
+   "kept": 0,
+   "contentful": 432854,
+   "kept_contentful": 0,
+   "true_addr": 45156,
+   "ratio": 0.0,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 432854,
+    "no_address_trace": 2746
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/432854 = 0%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156）",
+   "seconds": 135.0
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 435600,
+   "kept": 0,
+   "contentful": 432854,
+   "kept_contentful": 0,
+   "true_addr": 45156,
+   "ratio": 0.0,
+   "coverage": 0.994,
+   "addr_hint": 0.6666666666666666,
+   "drops": {
+    "no_number": 432854,
+    "no_address_trace": 2746
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": false
+   },
+   "why": "合规 0/432854 = 0%（阈 30%；总行 435,600，带地址 432,854，真门牌号 45,156）",
+   "seconds": 155.8
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 768055,
+   "ownername1": "BEYDOUN, HASSAN",
+   "propstreetcombined": "25351 FORD RD",
+   "propcity": "DEARBORN",
+   "propstate": "MI",
+   "propzip": "48128",
+   "packedParcelNumber": "32091712600100",
+   "Area_Ac": 0.30360854790887193,
+   "Shape__Area": 13225.188232421875,
+   "Shape__Length": 460.9724293446883,
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "Area_Ac",
+  "OBJECTID",
+  "Shape__Area",
+  "Shape__Length",
+  "_file",
+  "ownername1",
+  "packedParcelNumber",
+  "propcity",
+  "propstate",
+  "propstreetcombined",
+  "propzip"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
