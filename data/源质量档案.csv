@@ -256,7 +256,7 @@ us/fl/lee,FL,Lee,12071,1,mapping@v1,711467,1.0,,,0.0,56.4,PASS,A,60.0,B,
 us/fl/leon,FL,Leon,12073,0,,0,,,,,,,,,X,TRANSIENT
 us/fl/manatee,FL,Manatee,12081,1,mapping@v1,302868,1.0,,,0.0,53.57,PASS,A,60.0,B,
 us/fl/martin,FL,Martin,12085,1,mapping@v1,5080,1.0,,,0.0,25.79,PASS,A,60.0,B,
-us/fl/miami-dade,FL,Miami-Dade,12086,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 916,196 条 > 真门牌号行 566,008 条×150% → 拒绝这套产物；field_guess@v2:合规 11822/916196 = 1%（阈"
+us/fl/miami-dade,FL,Miami-Dade,12086,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 908,996 条 > 真门牌号行 561,603 条×150% → 拒绝这套产物；field_guess@v2:合规 11715/908996 = 1%（阈"
 us/fl/nassau,FL,Nassau,12089,1,mapping@v1,54324,1.0,,,0.0,16.77,PASS,A,60.0,B,
 us/fl/orange,FL,Orange,12095,1,field_guess@v2,471851,0.66,,,0.0,28.35,PASS,A,60.0,B,
 us/fl/palm_beach,FL,Palm Beach,12099,1,mapping@v1,37649,1.0,,,0.0,23.43,PASS,A,60.0,B,
@@ -649,7 +649,7 @@ us/mi/semcog,MI,"Livingston, Macomb, Monroe, Oakland, Saint Clair, Washtenaw, Wa
 us/mi/st_clair,MI,St. Clair,26147,1,mapping@v1,77885,0.998,,,0.0,38.46,PASS,A,60.0,B,
 us/mi/troy,MI,City of Troy,2680700,1,mapping@v1,33106,1.0,,,0.0,26.87,PASS,A,60.0,B,
 us/mi/washtenaw,MI,Washtenaw,26161,0,,0,,,,,,,,,X,TRANSIENT
-us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 450,608 条 > 真门牌号行 46,537 条×150% → 拒绝这套产物；field_guess@v2:合规 0/451231 = 0%（阈 30%；"
+us/mi/wayne,MI,Wayne,26163,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 448,663 条 > 真门牌号行 46,529 条×150% → 拒绝这套产物；field_guess@v2:合规 0/449285 = 0%（阈 30%；"
 us/mn/aitkin,MN,Aitkin,27001,1,mapping@v1,16204,0.924,,,0.0,18.19,PASS,A,60.0,B,
 us/mn/anoka,MN,Anoka,27003,0,,0,,,,,,,,,X,DOWNLOAD_DEFECT
 us/mn/beltrami,MN,Beltrami,27007,1,mapping@v1,20671,1.0,,,0.0,10.15,PASS,A,60.0,B,
@@ -1078,7 +1078,7 @@ us/ri/statewide,RI,,44,1,mapping@v1,394105,0.94,,,0.0,28.12,PASS,A,60.0,B,
 us/sc/beaufort,SC,Beaufort,45013,1,concat_addr@v1,151180,0.994,,,0.0044,23.99,PASS_DOWNGRADED,B,59.9,B,"合规 151180/152163 = 99%（带地址行分母；真门牌号行 140,472）总行 152,185｜完整性不过：city 缺 100%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 ci"
 us/sc/berkeley,SC,Berkeley,45015,1,mapping@v1,149363,1.0,,,0.0,13.91,PASS,A,60.0,B,
 us/sc/calhoun,SC,Calhoun,45017,1,mapping@v1,8477,0.896,,,0.0007,9.07,PASS,A,60.0,B,
-us/sc/charleston,SC,Charleston,45019,0,,0,,,,,,,,,X,TRANSIENT
+us/sc/charleston,SC,Charleston,45019,0,,0,,,,,,,,,X,本地抽查：原始字段无门牌点味（addr_hint=0.3333333333333333）→ 源不适用
 us/sc/city_of_charleston,SC,City of Charleston,4513330,1,mapping@v1,57908,1.0,,,0.0,20.76,PASS,A,60.0,B,
 us/sc/city_of_greenville,SC,Greenville,4530850,1,mapping@v1,52920,1.0,,,0.0,41.28,PASS_DOWNGRADED,B,60.0,B,"合规 52920/52920 = 100%（带地址行分母；真门牌号行 52,311）总行 52,920｜完整性不过：city 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/sc/city_of_myrtle_beach,SC,City of Myrtle Beach,4549075,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 29,506 条 > 真门牌号行 8,945 条×150% → 拒绝这套产物；field_guess@v2:疑似凭空造数据：合规 28,457 条 > 真门牌"
@@ -1219,7 +1219,7 @@ us/tx/williamson,TX,Williamson,48491,1,mapping@v1,104536,1.0,,,0.0,86.68,PASS,A,
 us/ut/cache,UT,Cache,49005,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（mapping@v1:疑似凭空造数据：合规 58,025 条 > 真门牌号行 14,321 条×150% → 拒绝这套产物；field_guess@v2:合规 1266/58089 = 2%（阈 30%"
 us/ut/city_of_morgan,UT,Utah,4951910,1,concat_addr@v2,780,0.449,,,0.0,12.79,PASS_DOWNGRADED,B,43.1,C,"合规 780/1738 = 45%（带地址行分母；真门牌号行 838）总行 1,748｜完整性不过：city 缺 95%/zip 缺 100%（上限 20%）→ 降级并进待造刀（退回第 3 步重造 spec 把 city/zip 抠出来）"
 us/ut/duchesne,UT,Duchesne,49013,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 9,775 条 > 真门牌号行 3,241 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 9,775 条 > 真门牌号行"
-us/ut/statewide,UT,,49,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 918,940 条 > 真门牌号行 562,391 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 918,407 条 >"
+us/ut/statewide,UT,,49,0,,0,,,,,,,,,X,"本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 911,740 条 > 真门牌号行 559,830 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 911,207 条 >"
 us/ut/washington,UT,Washington,49053,1,mapping@v1,66104,1.0,,,0.0001,21.34,PASS,A,60.0,B,
 us/ut/weber,UT,Weber,49057,1,mapping@v1,116907,0.999,,,0.0,35.42,PASS,A,60.0,B,
 us/va/albemarle,VA,Albemarle,51003,1,mapping@v1,54579,1.0,,,0.0,16.04,PASS,A,60.0,B,
