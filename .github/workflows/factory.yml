@@ -549,7 +549,9 @@ jobs:
     # publish 独立于 assemble：publish 模式没有 collect，assemble 会被跳过（skipped≠失败）
     if: always() && needs.assemble.result != 'cancelled' && (github.event_name == 'schedule' || github.event.inputs.mode == 'publish' || github.event.inputs.rebuild == 'true')
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # 60 分钟不够：「构建发布包」+「校验闸门」串在同一 job 里；校验单步已优化到分钟级，
+    # 但构建本身 ~40 分钟，2026-11-14 run 43589729528 就是卡在 58 分钟被 60 分钟上限掐成 cancelled。
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -557,15 +559,29 @@ jobs:
           python-version: "3.12"
       - name: 发布节拍闸门（每天一次整包发布，手动触发不受限）
         id: cadence
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "手动发布，跳过节拍检查" ; echo "go=1" >> "$GITHUB_OUTPUT" ; exit 0
           fi
-          H=$(date -u +%H)
-          if [ "$H" = "11" ]; then
-            echo "到达每日发布点（UTC 11 时 = 北京 19 时）" ; echo "go=1" >> "$GITHUB_OUTPUT"
+          # 判据：今日(UTC)是否已经发布过 —— 不再看 run 启动时是不是整点。
+          # schedule 启动会漂移（计划 11:05 实跑 11:22；11-13 三个 run 落在 07:49/16:09/22:30），
+          # 原来的 `date -u +%H == 11` 常常整天一次也落不上 → 34 天零发布。
+          TODAY=$(date -u +%F)
+          # 依据 1（发布事实）：Release v0.1.0-dataset 最新资产 updated_at
+          PUB=$(gh api "repos/${{ github.repository }}/releases/tags/v0.1.0-dataset" \
+                 --jq '[.assets[].updated_at]|max' 2>/dev/null || true)
+          # 依据 2（发布收据，兜底）：manifest.generated 的日期
+          GEN=$(python3 -c "import json;print((json.load(open('data/release-manifest.json',encoding='utf-8')).get('generated') or '')[:10])" 2>/dev/null || true)
+          PUBDAY="${PUB%%T*}"
+          echo "今日(UTC)=$TODAY ｜ Release 最新资产=${PUB:-<无>} ｜ manifest.generated=${GEN:-<无>}"
+          if [ -n "$PUBDAY" ] && [ "$PUBDAY" = "$TODAY" ]; then
+            echo "今日已发布整包（资产 $PUBDAY）→ 本小时只采集不发布" ; echo "go=0" >> "$GITHUB_OUTPUT"
+          elif [ -z "$PUBDAY" ] && [ "$GEN" = "$TODAY" ]; then
+            echo "今日已有发布收据（manifest $GEN）→ 本小时只采集不发布" ; echo "go=0" >> "$GITHUB_OUTPUT"
           else
-            echo "非发布点（UTC $H 时）→ 本小时只采集不发布" ; echo "go=0" >> "$GITHUB_OUTPUT"
+            echo "今日尚未发布整包 → 本轮执行发布" ; echo "go=1" >> "$GITHUB_OUTPUT"
           fi
       - name: 取回规则产物缓存（最近一份）
         if: steps.cadence.outputs.go == '1'

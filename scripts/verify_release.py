@@ -252,7 +252,11 @@ def provenance_check(parsed_dir: str, state_file: str, merged: str,
         return ["（无已完成源，跳过溯源检查）"], []
     random.seed(20261011)
     picked = random.sample(done, min(sample_sources, len(done)))
-    want: dict[str, set[str]] = {}
+    # 反查索引：canon_key → 命中它的采样源（key → sid 列表）。
+    # 旧实现是 merged 每行再对 k 个 set 各查一次（O(N×k)），45,064,607 行 × 3 个源 = 最坏 1.35 亿次
+    # 成员查询，单线程 58 分钟跑不完被 job timeout 掐成 cancelled。改成每条记录只查一次 dict。
+    index: dict[str, object] = {}          # 单源时存 sid（str），多源冲突时才升级成 list
+    sizes: dict[str, int] = {}
     for sid in picked:
         pdir = os.path.join(parsed_dir, *sid.split("/"))
         ks: set[str] = set()
@@ -268,9 +272,19 @@ def provenance_check(parsed_dir: str, state_file: str, merged: str,
                         ks.add(canon_key(json.loads(line), _Z2C, _C2Z))
                     except Exception:
                         continue
-        if ks:
-            want[sid] = ks
-    hit = {sid: 0 for sid in want}
+        if not ks:
+            continue
+        sizes[sid] = len(ks)
+        for k in ks:
+            cur = index.get(k)
+            if cur is None:
+                index[k] = sid
+            elif isinstance(cur, str):
+                index[k] = [cur, sid]
+            elif sid not in cur:
+                cur.append(sid)
+        del ks                              # 键已进反查表，别把 set 留到最后（省一份内存）
+    hit = {sid: 0 for sid in sizes}
     with gzip.open(merged, "rt", encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()
@@ -280,12 +294,19 @@ def provenance_check(parsed_dir: str, state_file: str, merged: str,
                 k = canon_key(json.loads(line), _Z2C, _C2Z)
             except Exception:
                 continue
-            for sid, ks in want.items():
-                if hit[sid] < len(ks) and k in ks:
-                    hit[sid] += 1
-    for sid, ks in want.items():
-        rate = hit[sid] / len(ks)
-        log.append(f"{sid}: 产物 {len(ks)} 条 → 发布包里找到 {hit[sid]} 条 = {rate:.1%}")
+            sids = index.get(k)
+            if sids is None:
+                continue
+            if isinstance(sids, str):
+                if hit[sids] < sizes[sids]:
+                    hit[sids] += 1
+            else:
+                for sid in sids:
+                    if hit[sid] < sizes[sid]:
+                        hit[sid] += 1
+    for sid, n in sizes.items():
+        rate = hit[sid] / n
+        log.append(f"{sid}: 产物 {n} 条 → 发布包里找到 {hit[sid]} 条 = {rate:.1%}")
         if rate < 0.95:
             errs.append(f"[溯源]{sid} 只有 {rate:.1%} 的产物进了发布包（疑似发布丢数据）")
     return log, errs
