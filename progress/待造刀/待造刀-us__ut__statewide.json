@@ -1,0 +1,276 @@
+{
+ "source_id": "us/ut/statewide",
+ "kind": "RULE_GAP",
+ "reason": "本地抽查：有地址味但现有规则都洗不出（concat_addr@v1:疑似凭空造数据：合规 900,997 条 > 真门牌号行 511,106 条×150% → 拒绝这套产物；mapping@v1:疑似凭空造数据：合规 900,474 条 > 真门牌号行 511,106 条×150% → 拒绝这套产物；field_guess@v2:合规 11332/901754 = 1%（阈 30%；总行 901,800，带地址 901,754，真门牌号 511,106））→ 造新规则",
+ "decided_at": "2026-11-19 21:39:21",
+ "chain": [
+  {
+   "rule": "concat_addr@v1",
+   "rows": 901800,
+   "kept": 900997,
+   "contentful": 901754,
+   "kept_contentful": 900997,
+   "true_addr": 511106,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "split_no_street": 749,
+    "no_address_trace": 46,
+    "no_full_address": 8
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 900997,
+     "zip": 900997
+    },
+    "junk_rate": 0.0,
+    "per_street": 10.72,
+    "streets": 84038,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 900,997 条 > 真门牌号行 511,106 条×150% → 拒绝这套产物",
+   "seconds": 61.6
+  },
+  {
+   "rule": "mapping@v1",
+   "rows": 901800,
+   "kept": 900474,
+   "contentful": 901754,
+   "kept_contentful": 900474,
+   "true_addr": 511106,
+   "ratio": 0.999,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "junk_rejected": 1279,
+    "no_address_trace": 46,
+    "no_number": 1
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 90549,
+     "zip": 0
+    },
+    "junk_rate": 0.0014,
+    "per_street": 23.3,
+    "streets": 38640,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "疑似凭空造数据：合规 900,474 条 > 真门牌号行 511,106 条×150% → 拒绝这套产物",
+   "seconds": 121.9
+  },
+  {
+   "rule": "field_guess@v2",
+   "rows": 901800,
+   "kept": 11332,
+   "contentful": 901754,
+   "kept_contentful": 11332,
+   "true_addr": 511106,
+   "ratio": 0.013,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "guess_street_not_text": 890406,
+    "no_address_trace": 46,
+    "guess_bad_number": 16
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 4608,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 29.21,
+    "streets": 388,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 11332/901754 = 1%（阈 30%；总行 901,800，带地址 901,754，真门牌号 511,106）",
+   "seconds": 167.0
+  },
+  {
+   "rule": "llm_us_ca_city_of_santa_cruz_santa_cruz_parcel_address@v1",
+   "rows": 901800,
+   "kept": 0,
+   "contentful": 901754,
+   "kept_contentful": 0,
+   "true_addr": 511106,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 901754,
+    "no_address_trace": 46
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/901754 = 0%（阈 30%；总行 901,800，带地址 901,754，真门牌号 511,106）",
+   "seconds": 209.9
+  },
+  {
+   "rule": "llm_us_pa_york_york_pa_address_points@v1",
+   "rows": 901800,
+   "kept": 0,
+   "contentful": 901754,
+   "kept_contentful": 0,
+   "true_addr": 511106,
+   "ratio": 0.0,
+   "coverage": 1.0,
+   "addr_hint": 1.0,
+   "drops": {
+    "no_number": 901754,
+    "no_address_trace": 46
+   },
+   "verdict": "GATE_FAIL",
+   "kind": "SHAPE",
+   "grade_hint": "A",
+   "notes": [],
+   "exempt": null,
+   "quality": {
+    "missing": {
+     "city": 0,
+     "zip": 0
+    },
+    "junk_rate": 0.0,
+    "per_street": 0.0,
+    "streets": 0,
+    "lim": {
+     "city": 0.2,
+     "zip": 0.2
+    },
+    "max_junk": 0.2,
+    "exempt": {
+     "city": false,
+     "zip": false
+    },
+    "contract": true
+   },
+   "why": "合规 0/901754 = 0%（阈 30%；总行 901,800，带地址 901,754，真门牌号 511,106）",
+   "seconds": 256.2
+  }
+ ],
+ "evidence": {},
+ "sample_rows": [
+  {
+   "OBJECTID": 1,
+   "AddSystem": "SALT LAKE CITY",
+   "UTAddPtID": "SALT LAKE CITY | 176 E FORBUSH AVE",
+   "FullAdd": "176 E FORBUSH AVE",
+   "AddNum": "176",
+   "AddNumSuffix": "",
+   "PrefixDir": "E",
+   "StreetName": "FORBUSH",
+   "StreetType": "AVE",
+   "SuffixDir": "",
+   "LandmarkName": "JORDAN VALLEY WATER",
+   "Building": "",
+   "UnitType": "",
+   "UnitID": "",
+   "City": "MIDVALE",
+   "ZipCode": "84047",
+   "CountyID": "49035",
+   "State": "UT",
+   "PtLocation": "Unknown",
+   "PtType": "Other",
+   "Structure": "Unknown",
+   "ParcelID": "22303070840000",
+   "AddSource": "SALT LAKE COUNTY",
+   "LoadDate": 1792476000000,
+   "USNG": "12TVK2596",
+   "_file": "features.ndjson"
+  }
+ ],
+ "sample_keys": [
+  "AddNum",
+  "AddNumSuffix",
+  "AddSource",
+  "AddSystem",
+  "Building",
+  "City",
+  "CountyID",
+  "FullAdd",
+  "LandmarkName",
+  "LoadDate",
+  "OBJECTID",
+  "ParcelID",
+  "PrefixDir",
+  "PtLocation",
+  "PtType",
+  "State",
+  "StreetName",
+  "StreetType",
+  "Structure",
+  "SuffixDir",
+  "USNG",
+  "UTAddPtID",
+  "UnitID",
+  "UnitType",
+  "ZipCode",
+  "_file"
+ ],
+ "next_action": "造一把新刀（collectors/engines/ 新文件 + 注册表加一行）；不要改老引擎"
+}
