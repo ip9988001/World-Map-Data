@@ -144,6 +144,20 @@ def _quality(miss: Counter, junk: int, kept: int, streets: set, sid: str) -> dic
 # 拿全部行做分母会把正常源误判成「规则洗不出」。
 NUM_ONLY = re.compile(r"^\d{1,6}[A-Za-z]?$")
 ADDR_TRACE = re.compile(r"\b\d{1,6}[A-Za-z]?\s+[A-Za-z]{2,}")
+# 网格地址（犹他/盐湖城式）：号 + 方位 + 数字街名 + 方位，可带单元（"170 E 400 S"、"470 E 25 S APT A5"）。
+# 为什么单列一条：parse_addr_v2 认的是街名后缀词（ST/AVE/RD…），而网格地址的街名就是「400 S」这种
+# 「数字+方位」，结尾是方位词不是后缀词 → 整条解析不出来，真门牌号分母被系统性低估。
+# 实测 us/ut/statewide（AGRC UtahAddressPoints，2026-10-11 原件 910,800 行）：
+#   修前 true=526,271（57.8%），未计入的 384,529 行里绝大多数是网格形态（"# <方位> # <方位>"）
+#   修后 true=901,053（98.9%），残留 9,747 行是「APT A5 201」这种单元+房号，不追（不影响判据）
+# 这一条只修「真门牌号分母」的形态盲区，**不改任何解析/落库行为，也不动 10% 缩水阈值**。
+GRID_ADDR = re.compile(
+    r"^\s*\d{1,6}[A-Za-z]?\s+"                       # 门牌号
+    r"(?:[NSEW]{1,2}\.?\s+)?"                          # 可选前置方位（E / N / SW）
+    r"\d{1,5}[A-Za-z]?\s+"                             # 网格街名（400 / 8260）
+    r"[NSEW]{1,2}\.?"                                   # 街名后缀方位（S / W）
+    r"(?:\s+(?:#|UNIT|APT|STE|SUITE|BLDG|TRLR|LOT|SP|SPACE)\s*\.?\s*[A-Za-z0-9\-]{1,8})?\s*$",
+    re.I)
 
 
 def _true_addr(raw: dict) -> bool:
@@ -158,7 +172,7 @@ def _true_addr(raw: dict) -> bool:
     vals = [str(v).strip() for k, v in raw.items()
             if not str(k).startswith("_") and isinstance(v, str) and v.strip()]
     for v in vals:
-        if parse_addr_v2(v):
+        if parse_addr_v2(v) or GRID_ADDR.match(v):
             return True
     nums = {v for v in vals if NUM_ONLY.match(v)}
     if nums:
