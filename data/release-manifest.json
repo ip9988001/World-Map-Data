@@ -1,7 +1,7 @@
 {
  "a_policy": "A=五要素齐且推断字段≤1（默认；字典只补空缺、标记为 zip_map）",
  "dedup_removed": 16549063,
- "generated": "2026-11-20 01:57:39",
+ "generated": "2026-11-21 01:49:53",
  "grades": {
   "A": 42497128,
   "B": 0,
@@ -16,7 +16,7 @@
  "merged": {
   "bytes": 457394944,
   "rows": 67306286,
-  "sha256": "24ec8eed3cba2ac8603c17ea70b301d4ce3f242a073e1aa490fc6831b46e5784"
+  "sha256": "535a8de82579aaf778e9dff6fe5556f7ea755b0a4b6be628fdf449413b044b34"
  },
  "multi_source_records": 2699679,
  "parsed_source": "parsed",
@@ -248,7 +248,7 @@
   },
   "sources_json": {
    "count": 1065,
-   "sha256": "d6a2c51823f9c9214e7e7bcc502b1ffa4f657f4fdcb90dbe764f23294b975c33"
+   "sha256": "dc1af668305c5c6c01e0f33d6efaeb6f093fe66cdafe686e42bf2392545789fb"
   }
  },
  "states": {
@@ -276,7 +276,7 @@
    },
    "multi_source": 39,
    "rows": 193286,
-   "sha256": "886e207eb98a26f5683ac28ffca8c3488fd41a124da7fb4c4f7bb927d4455a2e",
+   "sha256": "71911a3b7ed6b91f685ce980d7a3c29b262e1c5ee56129baba799d8fad536c98",
    "unique_keys": 193286
   },
   "AL": {
@@ -303,7 +303,7 @@
    },
    "multi_source": 106001,
    "rows": 1185477,
-   "sha256": "f1d1b8919189ec7127e9d981abd15e36728d4d28c7b5dde8cd970e49bf90749c",
+   "sha256": "5b2a375ca4d628af3056b014e216c34b373ccca0d3d64749b13c50743a3942a7",
    "unique_keys": 1185477
   },
   "AR": {
@@ -330,7 +330,7 @@
    },
    "multi_source": 2279,
    "rows": 398341,
-   "sha256": "f251557b7b254ace153b66d887903f4dd026cd3686fec94ce2aee099062963c7",
+   "sha256": "b6e812cb5194ccf50185c6e73215278d75351883a1636dc62de0217b5a0edfe9",
    "unique_keys": 398341
   },
   "AZ": {
@@ -357,7 +357,7 @@
    },
    "multi_source": 51272,
    "rows": 2067548,
-   "sha256": "2098c518ce834e4443b689baca2be9c2db783a3b73e5103cc1525ef07870ee33",
+   "sha256": "c03dde78bc47bd2f27591ba38d501953e8595bfcc24292175db996d052ad1098",
    "unique_keys": 2067548
   },
   "CA": {
@@ -384,7 +384,7 @@
    },
    "multi_source": 404313,
    "rows": 7641005,
-   "sha256": "4d117dde963c778f20f837e5fcc7b01e9d36c368fe8b9afd52e7c59d72809b28",
+   "sha256": "2cb0702d41c6be413c37ad49b0a8caba8d82aa9af25d1635d580ef2a7b732700",
    "unique_keys": 7641005
   },
   "CO": {
@@ -411,7 +411,7 @@
    },
    "multi_source": 124800,
    "rows": 1739737,
-   "sha256": "c8e1f28c349e6281bb73b0fe154a65b18539764dcfd12d916ed7049fb380dc88",
+   "sha256": "59139bcdbeddd4650e9a660fb3fb78dc172e9c7ae717bbe1f1c7298ad77012b8",
    "unique_keys": 1739737
   },
   "CT": {
@@ -438,7 +438,7 @@
    },
    "multi_source": 226,
    "rows": 181361,
-   "sha256": "fe2d73d956c5b46d90d01f744d81fe6e01ff406c8ffdceb66aa3854acad9792d",
+   "sha256": "f2bfc000a916fe3a6317c392b6c447ae55ff35ba862e15d44f09470d582d281e",
    "unique_keys": 181361
   },
   "DC": {
@@ -465,7 +465,7 @@
    },
    "multi_source": 0,
    "rows": 12,
-   "sha256": "42e8c54d2e8cec9060efe6ecfa994522a83ac8272042f972652e829886c3d52c",
+   "sha256": "c27efd0b5af2f03cc31b174a48f587a734fb4407b87a0eea76876f2d7e477bef",
    "unique_keys": 12
   },
   "DE": {
@@ -492,7 +492,7 @@
    },
    "multi_source": 0,
    "rows": 204446,
-   "sha256": "9c4ddcdca920ff6ce13bbcca9b3d18e84a7c6825497137cc20195af3924a872e",
+   "sha256": "ede04f98575608e73f2a84b110d910427c10092a667e5761a951301fc255acfc",
    "unique_keys": 204446
   },
   "FL": {
@@ -519,7 +519,7 @@
    },
    "multi_source": 44935,
    "rows": 6556084,
-   "sha256": "f2e3292257e19d62a7a225fc2b6381cdc32ea7d61d776546c88c9edf0f3d7fc9",
+   "sha256": "d378b6ad8de76e49ce5e9f4756c48ea62a0ac382d998ae8e7df8b9fad4090e5a",
    "unique_keys": 6556084
   },
   "GA": {
@@ -546,7 +546,7 @@
    },
    "multi_source": 284192,
    "rows": 3266188,
-   "sha256": "76d6c018f2f859ddc3c23d45cca0958b5ff1c983d42dce6908e4d6d36220616e",
+   "sha256": "acc77c33736449e96b73ac8df4d3d3d0ee21d05ca925d0782160ce6c758b67e1",
    "unique_keys": 3266188
   },
   "GU": {
@@ -573,7 +573,7 @@
    },
    "multi_source": 0,
    "rows": 1,
-   "sha256": "290a4e4a3d1354157cb9927953305f0c8eb6842dd2b12e1790ea82c4e3b9e001",
+   "sha256": "88d13e3eaafcc86a05585237484b26df1b86d784431dab61a4cd94f83db44e86",
    "unique_keys": 1
   },
   "HI": {
@@ -600,7 +600,7 @@
    },
    "multi_source": 4,
    "rows": 190577,
-   "sha256": "9737dce4b46b85e1b0d9394ade06eff2021a6e526d233df0f0dc44ceff097619",
+   "sha256": "67e86eafd4fecdda8ab5ff9f5695c19b967ce8974d9bce0673c3d67f97c67565",
    "unique_keys": 190577
   },
   "IA": {
@@ -627,7 +627,7 @@
    },
    "multi_source": 1567,
    "rows": 259691,
-   "sha256": "a43b8d498bb50f0551a01d8bedfbd8445b68aefd2fcbff80963f7076811d393f",
+   "sha256": "3cc0be2028233c54dba38577ee1e7068ef36a654220ac019449c206a02b472d4",
    "unique_keys": 259691
   },
   "ID": {
@@ -654,7 +654,7 @@
    },
    "multi_source": 56141,
    "rows": 781898,
-   "sha256": "6b223bf145df8bdf25157e4f32f2d414f8b30e840c5b0822eba51ed4d39a115f",
+   "sha256": "4b4f3a71f44a485282d2cca4acb4daded4e949092406c0607580cfea035d8f56",
    "unique_keys": 781898
   },
   "IL": {
@@ -681,7 +681,7 @@
    },
    "multi_source": 32012,
    "rows": 1827900,
-   "sha256": "38b13bb83233171d6310f66e1de1807aad4029654a437fd59dfba5f90ff49628",
+   "sha256": "75e1b00ee011c8587f29d0dce5355cbe500c9351b8c09139f8ad6ba13046f48e",
    "unique_keys": 1827900
   },
   "IN": {
@@ -708,7 +708,7 @@
    },
    "multi_source": 20270,
    "rows": 1688201,
-   "sha256": "9cf6eedd381ee6e071713b705363210b6be263517b871c0bebaa1b0464314f4a",
+   "sha256": "bd8028fa6cc363984bb28f564cbed37cbafb8b507289796603329483afe64036",
    "unique_keys": 1688201
   },
   "KS": {
@@ -735,7 +735,7 @@
    },
    "multi_source": 60218,
    "rows": 1254105,
-   "sha256": "ed2314f11f7b1fa9ef6110361bbea9200acf367a722a85bb566981a390fbd26b",
+   "sha256": "f0652cff9084f0c5ab10bada7a5cffd2a51f56a826837c030032317f9935fa8c",
    "unique_keys": 1254105
   },
   "KY": {
@@ -762,7 +762,7 @@
    },
    "multi_source": 233,
    "rows": 696816,
-   "sha256": "2ac4d39b9c48d609a153f6f973ecd17f5eaaa83eb17cf447cd8fe1d6d8937b8a",
+   "sha256": "01602c24c85dfee62c5956703d34fd5e3f676c2bb2036805bd2733e5c468af13",
    "unique_keys": 696816
   },
   "LA": {
@@ -789,7 +789,7 @@
    },
    "multi_source": 192,
    "rows": 697790,
-   "sha256": "b9c947df33830c823e3646c6d3c4fd39329d48c93a9f7e897ed983acb28e3cdc",
+   "sha256": "4373ce22c332f66885002020cd4386207f6187092fa5cf7b4d6c84b8682d8c77",
    "unique_keys": 697790
   },
   "MA": {
@@ -816,7 +816,7 @@
    },
    "multi_source": 0,
    "rows": 171317,
-   "sha256": "715b5a1785b8f8561fceafefa1d019dbd21bb3395f99930a437280dcff6a00a0",
+   "sha256": "2555116535bc81540d6b801687ace45fc30f21797b7d8a81ef214ca78889dead",
    "unique_keys": 171317
   },
   "MD": {
@@ -843,7 +843,7 @@
    },
    "multi_source": 34856,
    "rows": 1550991,
-   "sha256": "2c6d1d72775d89b7ca73cde2a4f662e08db52f518aadd7b76ff76d7b82f45690",
+   "sha256": "05605f16218140883dabfbdf4503dca6876d6add1dc6380cb472ce3a527626d7",
    "unique_keys": 1550991
   },
   "ME": {
@@ -870,7 +870,7 @@
    },
    "multi_source": 1,
    "rows": 696840,
-   "sha256": "f07b4ca1553e9475be07dfac08433459688acbbc037cd3ec4cb88a9c380a05b8",
+   "sha256": "36e409118e123cff99cb74e1fc6d8e25bceb00b509c57bee88bfb9f5852dc26a",
    "unique_keys": 696840
   },
   "MI": {
@@ -897,7 +897,7 @@
    },
    "multi_source": 36194,
    "rows": 2044256,
-   "sha256": "f8f9641f4018640df170ff670ffd8cf65f123ebaa7bddcf84d54a1d2879c6fa0",
+   "sha256": "515bb48c04a9602ba0b5c319f6d4749440f42d734251c8e5b49bbd7866526b25",
    "unique_keys": 2044256
   },
   "MN": {
@@ -924,7 +924,7 @@
    },
    "multi_source": 5589,
    "rows": 1552038,
-   "sha256": "32840c19a142e672a6ce89a85f91f019fde6f96a519f5fadd70510e18c37fa5e",
+   "sha256": "50c57e073a39c8bfbc478981189322e56cf5cfb807d85b06a7dbc3cd76844924",
    "unique_keys": 1552038
   },
   "MO": {
@@ -951,7 +951,7 @@
    },
    "multi_source": 135624,
    "rows": 1472604,
-   "sha256": "85f65c1579b5a68c0323081183b252a761bef2993b2f9159c56c36649d521874",
+   "sha256": "1aaa9b353a725e3de53791fa0db8277488774e02df36119f3ea33bdd6f0098ed",
    "unique_keys": 1472604
   },
   "MS": {
@@ -978,7 +978,7 @@
    },
    "multi_source": 301,
    "rows": 204559,
-   "sha256": "a66145783f4bbb29ffa51c148252ad614034dc7a98b4ed7347f41db081d9a9d5",
+   "sha256": "77af62e6d4779d721e4ba7dc78ab1c5f14c3a9d017cd0e562a05e0c457ca980f",
    "unique_keys": 204559
   },
   "MT": {
@@ -1005,7 +1005,7 @@
    },
    "multi_source": 0,
    "rows": 35886,
-   "sha256": "c04ce82879ccf593728002c5d2b214cad47b8ea193fa30020f7c511c5b6af349",
+   "sha256": "372dae28143ecdbf36d604aad06d6f954379777b3d6a89c9243f34e4609e9c07",
    "unique_keys": 35886
   },
   "NC": {
@@ -1032,7 +1032,7 @@
    },
    "multi_source": 2151,
    "rows": 1560057,
-   "sha256": "8074f558785056723aa4ffd98966256335c4cfc38ea341cf95f7872cd8301e55",
+   "sha256": "1c677c2fe4825908e6d3f62dbdfb7a4c3daacd6689f92f5905435a53f86d3026",
    "unique_keys": 1560057
   },
   "ND": {
@@ -1059,7 +1059,7 @@
    },
    "multi_source": 106591,
    "rows": 543962,
-   "sha256": "1548da5cde4bb27f5c07b686ed871cf8b3a30081e5744294b26071f269a3a500",
+   "sha256": "47ebb5ccbc76e36af79de412080074b985204ccdcbc0f69b822bc655c8a72b79",
    "unique_keys": 543962
   },
   "NE": {
@@ -1086,7 +1086,7 @@
    },
    "multi_source": 0,
    "rows": 313349,
-   "sha256": "a0269ca0c35eb78e03c2e29bda1a83334c59020d5af1c57eac5e4335f46b1cce",
+   "sha256": "1c65859a6aa036a69e052a184141926f03a6cbeccbe02ffcfa4cb55717b585bf",
    "unique_keys": 313349
   },
   "NH": {
@@ -1113,7 +1113,7 @@
    },
    "multi_source": 0,
    "rows": 556464,
-   "sha256": "47859bf554092bf05a65e81787736e495db96647719c0ae9ec93ab50d696f1f4",
+   "sha256": "24d2cad0f34147c5a9b80d3908a48cc00e01a8c6dd8af205abd0447299723b5b",
    "unique_keys": 556464
   },
   "NJ": {
@@ -1140,7 +1140,7 @@
    },
    "multi_source": 4260,
    "rows": 511412,
-   "sha256": "371b2a3b7ea163fbb1ea6be48b4ab162d29054aab95bd8b3b719c71c7bbd22e5",
+   "sha256": "9d3884a76288c67e3422e34bbecd7a3cf9c37d198d675b3e6c797359953e9b55",
    "unique_keys": 511412
   },
   "NM": {
@@ -1167,7 +1167,7 @@
    },
    "multi_source": 43607,
    "rows": 440328,
-   "sha256": "c51b1e92d837605fe6f80ec902cc94142db39e365db9bca60147f999440ebbd1",
+   "sha256": "2976de88d53943d8ec8224a9e339adea0230dc13eed31527a72d75d09878463d",
    "unique_keys": 440328
   },
   "NV": {
@@ -1194,7 +1194,7 @@
    },
    "multi_source": 392,
    "rows": 727524,
-   "sha256": "f9c8434df6f7eaa424efa3a41543a17855af1f5d72205136f15810d7bf2e7381",
+   "sha256": "837860eb9eb1e3ce0fda6dfca60847d0d7e2689e49166a1947d82ef4db451771",
    "unique_keys": 727524
   },
   "NY": {
@@ -1221,7 +1221,7 @@
    },
    "multi_source": 854,
    "rows": 1908870,
-   "sha256": "46fdec5c70009a3d6d26e56243f2bd680404f290e0f111119db7da87dad87d47",
+   "sha256": "21a3eeaf639960dba7481ae172c7b98318e6fa4afccbb364a608020ea52de97c",
    "unique_keys": 1908870
   },
   "OH": {
@@ -1248,7 +1248,7 @@
    },
    "multi_source": 60788,
    "rows": 1541461,
-   "sha256": "336d868a7d26104f2732658630765fb589457ab9ad997253663dadd56051fda1",
+   "sha256": "19cc19ef56d15e32ff022bb213b03841b49f45840db4c9eb1d1e197c7055fbd7",
    "unique_keys": 1541461
   },
   "OK": {
@@ -1275,7 +1275,7 @@
    },
    "multi_source": 9,
    "rows": 373954,
-   "sha256": "f588eb7e8f9bf94b7b8db816871b2f1501644dae1a579276347d4f37fe974a3b",
+   "sha256": "f619a4e34f3229fd8dbc6ecf21134af5f75bd0b43a5c744363f54767ce11d06f",
    "unique_keys": 373954
   },
   "OR": {
@@ -1302,7 +1302,7 @@
    },
    "multi_source": 352430,
    "rows": 1838824,
-   "sha256": "3e5562eaaf7403d6229ec699fe09e935db6c030ef6f1fa12bddd9f94160240d8",
+   "sha256": "2f68d156a7119ef29ff8de1702571a8e2ab958383fed6fb97c1a2e777170e394",
    "unique_keys": 1838824
   },
   "PA": {
@@ -1329,7 +1329,7 @@
    },
    "multi_source": 32217,
    "rows": 3172695,
-   "sha256": "92f0eeab8278a5cdd42af96cd982426fbd999fb2c89eaba42b36b44bee778982",
+   "sha256": "0621ffe226ae240ffae0c17dd4db82606ca3168be5c3689619fe330a624007d4",
    "unique_keys": 3172695
   },
   "RI": {
@@ -1356,7 +1356,7 @@
    },
    "multi_source": 0,
    "rows": 385752,
-   "sha256": "2dfa7707b7e678df9bb86309f22d39e10f481f3e6dc6a2899d67ecb92fbe54bb",
+   "sha256": "123d97c2fc205bc507db51282775f01a3e65b668435fb309a9c36b8a030b3caa",
    "unique_keys": 385752
   },
   "SC": {
@@ -1383,7 +1383,7 @@
    },
    "multi_source": 9927,
    "rows": 1331795,
-   "sha256": "fb599edc6c13fe2d556f1456d2eb83dd53ad91ac2f3fd6e1275190ef7389efa0",
+   "sha256": "058641eb9b445d781691a57959c2d1b868c7b95f870dea318f2ed94bbba76689",
    "unique_keys": 1331795
   },
   "SD": {
@@ -1410,7 +1410,7 @@
    },
    "multi_source": 988,
    "rows": 171475,
-   "sha256": "8f4df3e9d0f34b5d1e6906d92ace978f5263eaaf3709d9aea54e157f26e534f5",
+   "sha256": "8c3c4a68fcfbf492dcb7c41d2ad7ac95f63c29457cce7ec4740941d0de9f3b3d",
    "unique_keys": 171475
   },
   "TN": {
@@ -1437,7 +1437,7 @@
    },
    "multi_source": 9552,
    "rows": 1234649,
-   "sha256": "5f7d3d3c329338952e9e668fab1b1b28eeb2e2994c7f78a5645ac1a6ee95688b",
+   "sha256": "330f87ae826cdfa3e680f3457f5fd06170d591d9fe1c368601768c67d138a2c0",
    "unique_keys": 1234649
   },
   "TX": {
@@ -1464,7 +1464,7 @@
    },
    "multi_source": 197053,
    "rows": 4200152,
-   "sha256": "698aaec9cf0302fd54e53d86674dcb814c30e765969867efb2423d4a29570513",
+   "sha256": "2780a604eeb2c89a4403434fb2e74da33285db48cdcf9ee9e57d3d866d58cc34",
    "unique_keys": 4200152
   },
   "UT": {
@@ -1491,7 +1491,7 @@
    },
    "multi_source": 670,
    "rows": 872441,
-   "sha256": "e7f095914dfcbb2804819ca681daf0ae6d49e966bb2ee1287d008127b66a1698",
+   "sha256": "d5f5d84a281491747a2e713195985e81992af094a8556a469052ce852dec452d",
    "unique_keys": 872441
   },
   "VA": {
@@ -1518,7 +1518,7 @@
    },
    "multi_source": 13926,
    "rows": 1844413,
-   "sha256": "77c3ac3fda708944b09a69973a083a4d7af49af7ed5439fe10ad1b16e70406c0",
+   "sha256": "0dd4ad726a97700e3add6fb911d7684180e5f6bfacc9aa104d604dceb80b9344",
    "unique_keys": 1844413
   },
   "VT": {
@@ -1545,7 +1545,7 @@
    },
    "multi_source": 0,
    "rows": 331262,
-   "sha256": "310593971844ba29438565c08b9ade33f1468b916824dc74213cc6bdc461e80c",
+   "sha256": "f4f29b0f460c6db078ba81c264060ed2912b208b958a0d3e35e74d6ad3bcce23",
    "unique_keys": 331262
   },
   "WA": {
@@ -1572,7 +1572,7 @@
    },
    "multi_source": 94859,
    "rows": 1783161,
-   "sha256": "0e441cde97d065456d0c5237f2de6f2782b5857add86d2ab479c88854543cb17",
+   "sha256": "dd556576c44eb50f54fbd2d37d61c7be305b5051cb69ef31054684f0d0037743",
    "unique_keys": 1783161
   },
   "WI": {
@@ -1599,7 +1599,7 @@
    },
    "multi_source": 32034,
    "rows": 1538383,
-   "sha256": "28c1c88d247bf13e5d98db98d99ee96d53ca9d8991b66192f7d30240e04ec6d0",
+   "sha256": "0ccc2753ab5b0e0f1356f45f11bbb0785c96cdb8878ced22e3e5e5cee4d5bf90",
    "unique_keys": 1538383
   },
   "WV": {
@@ -1626,7 +1626,7 @@
    },
    "multi_source": 304487,
    "rows": 1251744,
-   "sha256": "5b71129462122d5a1ea8c011b40ce79271bdf0543f7543791ad0976257d9b219",
+   "sha256": "a498d9e8775024cb5160858fdb5a0c1db4480f8046c12a2b08ae775027aaef4b",
    "unique_keys": 1251744
   },
   "WY": {
@@ -1653,7 +1653,7 @@
    },
    "multi_source": 31625,
    "rows": 313204,
-   "sha256": "767b5215a67724bb9e32d4489a4f1c3d509a09efdd27066d13eb0e4d85986616",
+   "sha256": "47657ea7f586e04f58892f959ed7b3be8a542400c8559bb29c0dec986b85cd76",
    "unique_keys": 313204
   }
  },
